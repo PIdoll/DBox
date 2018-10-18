@@ -1,0 +1,36 @@
+@import '../../../style/theme/default/index';
+@import '../../../style/mixins/index';
+@import '../../button/style/mixin';
+@import './mixin';
+
+@search-prefix: ~'@{idoll-prefix}-input-search';
+
+
+.@{search-prefix} {
+  &-icon {
+    pointer-events: none;
+    color: @text-color-secondary;
+  }
+
+  &:not(&-small) > .@{idoll-prefix}-input-suffix {
+    right: @control-padding-horizontal;
+  }
+
+  > .@{idoll-prefix}-input-suffix > .@{search-prefix}-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0;
+    padding: @input-padding-vertical-base @input-padding-horizontal; 
+    > .@{iconfont-css-prefix}-search {
+      font-size: @font-size-base;
+    }
+  }
+
+  &.@{search-prefix}-enter-button > .@{idoll-prefix}-input {
+    padding-right: 46px;
+  }
+
+  &.@{search-prefix}-enter-button > .@{idoll-prefix}-input-suffix {
+    right: 0;
+  }
+}

@@ -1,0 +1,128 @@
+/*展示模板样式*/
+#main-container {
+    padding: 0 170px 144px 64px;
+    margin-left: -1px;
+    /*margin-top: 10px;*/
+    background: #fff;
+    min-height: 8000px;
+    overflow: hidden;
+    border-left: 1px solid #e9e9e9;
+    position: relative;
+}
+
+.h1 {
+    color: #0d1a26;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 18px;
+    font-family: Lato, "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    line-height: 38px;
+}
+.h2 {
+    font-size: 18px;
+    color: #0d1a26;
+    font-family: Lato, "Helvetica Neue For Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 1.6em 0 0.6em;
+    font-weight: 500;
+    clear: both;
+}
+/*button 样式*/
+.youling {
+    background: rgba(190, 193, 200, 1);
+}
+/*icon样式*/
+ul.iconlist li {
+    float: left;
+    width: 16.66%;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    height: 100px;
+    color: #555;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    position: relative;
+    margin: 3px 0;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 10px 0 0;
+}
+ul.iconlist li:hover {
+    background-color: #1890ff;
+    color: #fff;
+}
+ul.iconlist li .icon-class {
+    display: block;
+    text-align: center;
+    -webkit-transform: scale(0.83);
+    -ms-transform: scale(0.83);
+    transform: scale(0.83);
+    font-family: "Lucida Console", Consolas;
+    white-space: nowrap;
+}
+ul.iconlist li .icon-class .icon-name {
+    font-family: "Helvetica Neue For Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* tooltip样式 */
+.demo-tooltip .placement {
+  margin-left: 80px;
+}
+.demo-tooltip .placement .idoll-btn {
+  width: 70px;
+  margin-right: 1em;
+  margin-bottom: 8px;
+  padding: 0;
+}
+.demo-tooltip .arrow .idoll-btn{
+  margin-right: 1em;
+}
+
+/* popover样式 */
+.demo-popover .placement {
+  margin-left: 80px;
+}
+.demo-popover .placement .idoll-btn {
+  width: 70px;
+  margin-right: 1em;
+  margin-bottom: 8px;
+  padding: 0;
+}
+.demo-popover .arrow .idoll-btn{
+  margin-right: 1em;
+}
+/* title样式 */
+.demo-title .darkbg {
+  background: #F1F2F7;
+  height: 52px;
+  text-align: left;
+  line-height: 52px;
+  vertical-align: middle;
+}
+.demo-title .darkbg div {
+  display: inline-block;
+}
+
+.demo-affix {
+  height: 150px;
+  overflow: scroll;
+}
+.demo-affix .scrollable-container {
+  height: 100px;
+  background: url(../assets/images/affix-bg.jpg);
+}
+

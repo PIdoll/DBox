@@ -1,0 +1,25 @@
+@import '../../../style/theme/default/index';
+@import '../../../style/mixins/index';
+@import './mixin';
+@import './search-input';
+
+
+//Input styles
+.@{idoll-prefix}-input {
+  .input;
+}
+
+// style for input-group: input with label, with button or dropdown...
+.@{idoll-prefix}-input-group {
+  .input-group(~"@{idoll-prefix}-input");
+}
+
+// Input with affix: prefix or suffix
+.@{idoll-prefix}-input-affix-wrapper {
+  .reset-component;
+  .input-affix-wrapper(~"@{idoll-prefix}-input");
+
+  .@{idoll-prefix}-input {
+    min-height: 100%;  // use min-height, assume that no smaller height to override
+  }
+}

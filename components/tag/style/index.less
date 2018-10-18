@@ -1,0 +1,62 @@
+@import '../../../style/theme/default/index';
+@import '../../../style/index';
+
+@tag-prefix-cls: idoll-tag;
+
+.@{tag-prefix-cls} {
+    display: inline-block;
+    border-color: @primary-color;
+    color: @primary-color;
+    border-style: @border-style-base;
+    border-width: @border-width-base;
+    border-radius:  @padding-xs + @font-size-base;
+    font-size: @font-size-base;
+    padding: @padding-xs @padding-sm + 2px;
+    line-height: @line-height-base; 
+    box-sizing: border-box;
+    text-align: center;
+
+   //color
+    &-primary {
+        border-color: @primary-color;
+        color: @primary-color;
+    }
+    &-highlight {
+        border-color: @highlight-color; 
+        color: @highlight-color;
+    }
+    &-success {
+        border-color: @success-color;
+        color: @success-color;
+    }
+    &-error {
+        border-color: @error-color;
+        color: @error-color;
+    }
+    &-warning {
+        border-color: @warning-color;
+        color: @warning-color;
+    }
+
+    //hover && click  
+    &-checkable {
+        cursor: pointer;
+        &:hover,
+        &:focus,
+        &:active, {
+            transition: all .5s;  
+            background-color: @primary-color;
+            color:@background-color-base;
+        }
+        &-checked{
+            background-color: @primary-color;
+            color: @background-color-base;
+        }
+    }
+    &-close{
+        cursor: pointer;
+        font-size: @font-size-sm;
+        padding: @padding-xs - 4px @padding-xs;
+    }
+
+}

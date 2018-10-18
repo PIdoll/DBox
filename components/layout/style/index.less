@@ -1,0 +1,57 @@
+@import '../../../style/theme/default/index';
+@import './mixin';
+
+.@{idoll-prefix}-layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  background-color: @layout-backgound-color;
+}
+
+.@{idoll-prefix}-layout-has-sider {
+  flex-direction: row;
+}
+
+.@{idoll-prefix}-layout-sider {
+  // position: relative;
+  width: @layout-sider-basic-width;
+  height: 100%;
+  background-color: @layout-sider-background;
+}
+
+.@{idoll-prefix}-silder-toggle{
+  position: absolute;
+  top: 20px;
+  right: -30px;
+}
+
+.make-sider-span();
+
+.@{idoll-prefix}-layout-header {
+  width: 100%;
+  height: @layout-header-base-height;
+  background-color: @layout-header-background;
+}
+
+.@{idoll-prefix}-layout-header-1{
+  height: @layout-header-base-height + 15*1;
+}
+
+.@{idoll-prefix}-layout-header-2{
+  height: @layout-header-base-height + 15*2;
+}
+
+.@{idoll-prefix}-layout-content {
+   width: 100%;
+   height: 100%;
+   background-color: @layout-content-background;
+}
+
+.@{idoll-prefix}-layout-footer {
+  width: 100%;
+  height: @layout-footer-height;
+  background-color: @layout-footer-background;
+}
