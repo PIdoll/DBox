@@ -1,5 +1,5 @@
 import React from 'react'
-
+import CreateReactClass from 'create-react-class';
 import Table from 'components/table'
 import reqwest from 'reqwest'
 
@@ -50,7 +50,7 @@ const columnsTest = [{
   dataIndex: 'email',
 }];
 
-const Test = React.createClass({
+const Test = CreateReactClass({
   getInitialState() {
     return {
       data: [],
