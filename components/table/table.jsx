@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RcTable from 'rc-table';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
@@ -33,16 +34,16 @@ const defaultPagination = {
 
 export default class Table extends React.Component {
   static propTypes = {
-    dataSource: React.PropTypes.array,
-    prefixCls: React.PropTypes.string,
-    useFixedHeader: React.PropTypes.bool,
-    rowSelection: React.PropTypes.object,
-    className: React.PropTypes.string,
-    size: React.PropTypes.string,
-    loading: React.PropTypes.bool,
-    bordered: React.PropTypes.bool,
-    onChange: React.PropTypes.func,
-    locale: React.PropTypes.object,
+    dataSource: PropTypes.array,
+    prefixCls: PropTypes.string,
+    useFixedHeader: PropTypes.bool,
+    rowSelection: PropTypes.object,
+    className: PropTypes.string,
+    size: PropTypes.string,
+    loading: PropTypes.bool,
+    bordered: PropTypes.bool,
+    onChange: PropTypes.func,
+    locale: PropTypes.object,
   }
 
   static defaultProps = {
@@ -62,7 +63,7 @@ export default class Table extends React.Component {
   }
 
   static contextTypes = {
-    idollLocale: React.PropTypes.object,
+    idollLocale: PropTypes.object,
   }
 
   constructor(props) {
