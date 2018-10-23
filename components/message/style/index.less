@@ -21,6 +21,8 @@
   }
 
   &-notice-content {
+    // @message-notice-content-padding
+    padding: 10px 16px;
     background: @component-background;
     display: inline-block;
     pointer-events: all;
@@ -29,7 +31,7 @@
   }
 
   &-notice-content &-custom-content {
-    .size(360px; 30px);
+    // .size(360px; 30px);
     padding: @padding-xs @padding-sm+2;
     border-radius: @border-radius-base;
     box-sizing: border-box;
@@ -45,14 +47,22 @@
     background-color: @error-color;
   }
 
-  &-warning {
+  &-warning,&-warn {
+    background-color: @warning-color;
+  }
+
+  &-loading {
+    background-color: @warning-color;
+  }
+
+  &-info {
     background-color: @warning-color;
   }
 
   .@{iconfont-css-prefix} {
     margin-right: 8px;
     font-size: @font-size-lg;
-    top: 1px;
+    top: -1px;
     position: relative;
   }
 
