@@ -91,7 +91,7 @@ import Notification from 'rc-notification';
 import Icon from '../icon/index';
 import './style/index';
 
-let defaultDuration = 2; // 默认自动关闭延时 3s
+let defaultDuration = 12; // 默认自动关闭延时 3s
 let defaultTop; // 默认提示框的高度
 let messageInstance;
 let key = 1;
@@ -121,10 +121,22 @@ function getMessageInstance (callback) {
   })
 }
 
-function notice (content, duration = defaultDuration, type, onClose, icon) {
+function notice (content, duration = defaultDuration, type, onClose, icon, normal) {
+  // debugger;
+  if (typeof onClose === 'boolean') {
+    normal = onClose;
+  }
   if (typeof duration === 'function') {
     onClose = duration;
     duration = defaultDuration;
+  }
+  if (typeof duration === 'boolean') {
+    normal = duration;
+    duration = defaultDuration;
+  }
+  if (typeof icon === 'boolean') {
+    normal = icon;
+    icon = '';
   }
   const iconType = ({
     info: 'warning-circle',
@@ -149,7 +161,7 @@ function notice (content, duration = defaultDuration, type, onClose, icon) {
         duration,
         style: {},
         content: (
-          <div className={`${prefixCls}-custom-content ${type ? `${prefixCls}-${type}` : ''}`}>
+          <div className={`${prefixCls}-custom-content ${type && !normal ? `${prefixCls}-${type}` : `content-${type}`}`}>
             {icon || (iconType ? iconNode : '')}
             <span>{content}</span>
           </div>
@@ -213,23 +225,23 @@ messageType.forEach((type) => {
 });
 
 export default {
-  success(content, duration, onClose, icon) {
-    return notice(content, duration, 'success', onClose, icon)
+  success(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'success', onClose, icon, normal)
   },
-  error(content, duration, onClose, icon) {
-    return notice(content, duration, 'error', onClose, icon);
+  error(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'error', onClose, icon, normal);
   },
-  info(content, duration, onClose, icon) {
-    return notice(content, duration, 'info', onClose, icon)
+  info(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'info', onClose, icon, normal)
   },
-  warning(content, duration, onClose, icon) {
-    return notice(content, duration, 'warning', onClose, icon);
+  warning(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'warning', onClose, icon, normal);
   },
-  warn(content, duration, onClose, icon) {
-    return notice(content, duration, 'warning', onClose, icon);
+  warn(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'warning', onClose, icon, normal);
   },
-  loading(content, duration, onClose, icon) {
-    return notice(content, duration, 'loading', onClose, icon);
+  loading(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'loading', onClose, icon, normal);
   },
   open({content, duration, onClose, icon}) {
     return notice(content, duration, 'info', onClose, icon);

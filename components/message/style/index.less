@@ -20,43 +20,95 @@
     }
   }
 
-  &-notice-content {
-    // @message-notice-content-padding
-    padding: 10px 16px;
-    background: @component-background;
-    display: inline-block;
-    pointer-events: all;
-    font-size: @font-size-base;
-    border-radius: @border-radius-base;
-  }
+  // &-notice-content {
+  //   padding:  @padding-xs @padding-sm+2;
+  //   background: @component-background;
+  //   box-shadow: @shadow-2;
+  //   border-radius: @border-radius-base;
+  //   display: inline-block;
+  //   pointer-events: all;
+  //   // background-color: @success-color;
+  //   // color: #fff;
+  // }
 
   &-notice-content &-custom-content {
-    // .size(360px; 30px);
-    padding: @padding-xs @padding-sm+2;
+    padding:  @padding-xs @padding-sm+2;
+    background: @component-background;
+    box-shadow: @shadow-2;
     border-radius: @border-radius-base;
-    box-sizing: border-box;
-    line-height: 14px;
+    display: inline-block;
+    pointer-events: all;
+    // background-color: @success-color;
+    // color: #fff;
+  }
+
+  .content-success {
+    background-color: @success-color;
     color: #fff;
   }
 
-  &-success {
-    background-color: @success-color;
-  }
-
-  &-error {
+  .content-error {
     background-color: @error-color;
+    color: #fff;
   }
 
-  &-warning,&-warn {
+  .content-info {
     background-color: @warning-color;
+    color: #fff;
   }
 
-  &-loading {
+  .content-loading {
     background-color: @warning-color;
+    color: #fff;
   }
 
-  &-info {
+  .content-warning, .content-warning {
     background-color: @warning-color;
+    color: #fff;
+  }
+
+  // &-success {
+  //   background-color: @success-color;
+  // }
+
+  // &-error {
+  //   background-color: @error-color;
+  // }
+
+  // &-warning,&-warn {
+  //   background-color: @warning-color;
+  // }
+
+  // &-loading {
+  //   background-color: @warning-color;
+  // }
+
+  // &-info {
+  //   background-color: @warning-color;
+  // }
+
+  &-success .@{iconfont-css-prefix} {
+    color: @success-color;
+  }
+
+  &-error .@{iconfont-css-prefix} {
+    color: @error-color;
+  }
+
+  &-warning .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-warn .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-loading .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-info .@{iconfont-css-prefix} {
+    color: @warning-color;
   }
 
   .@{iconfont-css-prefix} {

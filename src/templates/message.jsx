@@ -15,31 +15,31 @@ import Icon from 'components/icon/index';
 //   icon: <Icon type='remove-circle-o' />
 // })
 const success = () => {
-  message.success('This is a message of success');
+  message.success('This is a message of success', () => console.log(1111), true);
 };
 
 const error = () => {
-  message.error('This is a message of error');
+  message.error('This is a message of error', false);
 }
 
 const warning = () => {
-  message.warning('This is message of warning');
+  message.warning('This is message of warning', true);
 };
 
 const warn = () => {
-  message.warn('This is message of warn');
+  message.warn('This is message of warn', 3, true);
 };
 
 const info = () => {
-  message.info('This is a normal message', () => console.log('关闭回调'));
+  message.info('This is a normal message', 10, () => console.log('关闭回调'), true);
 };
 
 const DelayInfo = () => {
-  message.info('This is a prompt message for success, and it will disappear in 10 seconds', 10);
+  message.info('This is a prompt message for success, and it will disappear in 10 seconds', 30, false);
 };
 
 const LoadingSuccess = () => {
-  const hide = message.loading('Action in progress..', 0);
+  const hide = message.loading('Action in progress..', 0, false);
   // Dismiss manually and asynchronously
   setTimeout(hide, 2500);
 };
