@@ -8,12 +8,6 @@ import Icon from 'components/icon/index';
 //   duration: 10,
 //   maxCount: 3,
 // });
-// message.open({
-//   content: '信息提示',
-//   duration: 2,
-//   onClose: () => console.log('open方法'),
-//   icon: <Icon type='remove-circle-o' />
-// })
 const success = () => {
   message.success('This is a message of success', () => console.log(1111), true);
 };
@@ -48,7 +42,8 @@ const PromiseSuccess = () => {
   message.loading('Action in progress..', 2.5)
   message.open({
     content: 'open触发了',
-    icon: <Icon type='down-circle' />
+    normal: false,
+    icon: <Icon type='down-circle' />,
   })
     .then(() => message.success('Loading finished', 2.5))
     .then(() => message.info('Loading finished is finished', 2.5));
@@ -61,7 +56,7 @@ export default class messageView extends React.Component {
           <div>
             <h1 className='h1'>其他类型的提示</h1>
             <Button style={{ marginRight: 10 }} onClick={success}>Success</Button>
-            <Button style={{ marginRight: 10 }} onClick={error}>Error</Button>
+            <Button type='danger' style={{ marginRight: 10 }} onClick={error}>Error</Button>
             <Button style={{ marginRight: 10 }} onClick={warning}>Warning</Button>
             <Button onClick={warn}>Warn</Button>
             <h1 className='h1'>普通信息提示</h1>

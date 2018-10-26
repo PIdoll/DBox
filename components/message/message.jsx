@@ -215,12 +215,19 @@ const api = {
 
 const messageType = ['success', 'info', 'warning', 'error', 'loading'];
 messageType.forEach((type) => {
-  api[type] = (content, duration, onClose) => {
+  api[type] = (content, duration, onClose, normal) => {
+    if (typeof onClose === 'boolean') {
+      normal = onClose;
+    }
     if (typeof duration === 'function') {
       onClose = duration;
       duration = undefined;
     }
-    return api.open({ content, duration: duration, type, onClose });
+    if (typeof duration === 'boolean') {
+      normal = duration;
+      duration = undefined;
+    }
+    return api.open({ content, duration: duration, type, onClose, normal });
   }
 });
 
@@ -243,8 +250,8 @@ export default {
   loading(content, duration, onClose, icon, normal) {
     return notice(content, duration, 'loading', onClose, icon, normal);
   },
-  open({content, duration, onClose, icon}) {
-    return notice(content, duration, 'info', onClose, icon);
+  open({content, duration, onClose, icon, normal}) {
+    return notice(content, duration, 'info', onClose, icon, normal);
   },
   config(options) {
     if (options.top !== undefined) {
