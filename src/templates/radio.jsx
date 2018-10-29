@@ -39,22 +39,85 @@ export default class RadioView extends React.Component {
             </Button>
           </div>
         </div>
-        <h1 className='h1'>分组单选框</h1>
-        <RadioGroup onChange={this.onChange} value={this.state.value}>
+        <h1 className='h1'>互斥单选框</h1>
+        <RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
           <Radio value={1}>A</Radio>
           <Radio value={2}>B</Radio>
           <Radio value={3}>C</Radio>
           <Radio value={4}>D</Radio>
         </RadioGroup>
-        <h1 className='h1'>按钮单选框</h1>
+        <h1 className='h1'>分组单选框</h1>
+        <RadioGroup onChange={this.onChange} defaultValue={6}>
+          <Radio value={5}>A</Radio>
+          <Radio value={6}>B</Radio>
+          <Radio value={7}>C</Radio>
+          <Radio value={8}>D</Radio>
+        </RadioGroup>
+        <br />
+        <RadioGroup onChange={this.onChange} defaultValue={11}>
+          <Radio value={10}>A</Radio>
+          <Radio value={9}>B</Radio>
+          <Radio value={11}>C</Radio>
+          <Radio value={12}>D</Radio>
+        </RadioGroup>
+        <h1 className='h1'>name单选框</h1>
+        <RadioGroup onChange={this.onChange} name='radioGroup' defaultValue={5}>
+          <Radio value={5}>A</Radio>
+          <Radio value={6}>B</Radio>
+          <Radio value={7}>C</Radio>
+          <Radio value={8}>D</Radio>
+        </RadioGroup>
+        <h1 className='h1'>按钮样式</h1>
         <RadioGroup defaultValue='a'>
           <RadioButton value='a'>杭州</RadioButton>
           <RadioButton value='b'>上海</RadioButton>
           <RadioButton value='c'>北京</RadioButton>
           <RadioButton value='d'>成都</RadioButton>
         </RadioGroup>
+        <br />
+        <RadioGroup defaultValue='a' style={{ marginTop: 20, marginBottom: 20 }}>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton disabled value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <br />
+        <RadioGroup defaultValue='a' disabled>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <h1 className='h1'>大小按钮</h1>
+        <RadioGroup defaultValue='a' size='large'>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <br />
+        <RadioGroup defaultValue='a' style={{ marginTop: 20, marginBottom: 20 }}>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <br />
+        <RadioGroup defaultValue='a' size='small'>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <h1 className='h1'>按钮底纹</h1>
+        <RadioGroup defaultValue='a' buttonStyle='solid'>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton disabled value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <br />
       </div>
     )
   }
 }
-
