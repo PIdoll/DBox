@@ -9,7 +9,7 @@
   display: inline-block;
   box-sizing: border-box;
   height: @switch-height;
-  min-width: 44px;
+  min-width: 42px;
   line-height: @switch-height - 2px;
   vertical-align: middle;
   border-radius: 100px;
@@ -51,7 +51,7 @@
   }
 
   &:before {
-    content: "1";//加载icon
+    content: "C";//加载icon
     font-family: dboxicon;
     animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
     text-align: center;
@@ -81,7 +81,7 @@
 
   &-small {
     height: @switch-sm-height;
-    min-width: 28px;
+    min-width: 30px;
     line-height: @switch-sm-height - 2px;
 
     .@{switch-prefix-cls}-inner {
