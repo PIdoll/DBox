@@ -5,14 +5,13 @@ import classNames from 'classnames';
 import './style';
 
 function noop() {
-    // console.log('change')
-    // 组件change && click 挂载到noop上
+  // console.log('change')
+  // 组件change && click 挂载到noop上
 }
 
 export default class Switch extends Component {
   constructor(props) {
     super(props);
-
     let checked = false;
     if ('checked' in props) {
       checked = !!props.checked;
@@ -21,7 +20,7 @@ export default class Switch extends Component {
     }
     this.state = { checked };
   }
-  static PropTypes = {
+  static propTypes = {
     className: PropTypes.string,
     prefixCls: PropTypes.string,
     disabled: PropTypes.bool,
@@ -117,7 +116,7 @@ export default class Switch extends Component {
       checkedChildren, tabIndex, unCheckedChildren, size, ...restProps } = this.props;
     const checked = this.state.checked;
     const switchTabIndex = disabled ? -1 : (tabIndex || 0);
-    const switchClassName = classNames('dbox-switch', {
+    const switchClassName = classNames({
       [className]: !!className,
       [prefixCls]: true,
       [`${prefixCls}-checked`]: checked,
@@ -140,4 +139,3 @@ export default class Switch extends Component {
     );
   }
 }
-
