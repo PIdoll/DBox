@@ -20,7 +20,6 @@ export default class SpinView extends React.Component {
   }
 
   toggle = (value) => {
-    alert('9999')
     this.setState({ loading: value });
   }
   render() {
