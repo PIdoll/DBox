@@ -24,7 +24,7 @@ export default class RadioGroup extends React.Component {
   static childContextTypes = {
     radioGroup: PropTypes.any
   }
-  constructor (props) {
+  constructor(props) {
     super(props);
     let value;
     if ('value' in props) {
@@ -83,7 +83,7 @@ export default class RadioGroup extends React.Component {
   }
   render() {
     const props = this.props;
-    const { prefixCls = 'idoll-radio-group', className = '', options } = props;
+    const { prefixCls = props.buttonStyle === 'solid' ? 'idoll-radio-group-solid' : 'idoll-radio-group', className = '', options } = props;
     const classString = classNames(prefixCls, {
       [`${prefixCls}-${props.size}`]: props.size
     }, className);
