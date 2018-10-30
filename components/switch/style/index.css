@@ -1803,6 +1803,10 @@ samp {
   pointer-events: none;
   opacity: 0.4;
 }
+.idoll-btn {
+  border-color: #13B886;
+  color: #13B886;
+}
 @keyframes dboxSwitchSmallLoadingCircle {
   0% {
     transform-origin: 50% 50%;
