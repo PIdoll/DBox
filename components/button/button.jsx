@@ -61,14 +61,34 @@ export default class Button extends React.Component {
 			[className]: className
 
 		})
-    const iconType = icon;
-    const kids = React.Children.map(children, insertSpace);
-    const iconNode = iconType ? <Icon type={icon} /> : null;
+	const iconType = loading ? 'loading' : icon;
+	const kids = sizeCls === 'sm' ? <span>{children}</span> : React.Children.map(children, insertSpace);
+	const iconNode = iconType ? <Icon type={iconType} /> : null;
+	if ('href' in others) {
 		return (
+  <a {...others}
+    className={classes}
+    onClick={this.handleClick}
+					>
+    {iconNode}{kids}
+  </a>
+			);
+	} else {
+		//	如果是下拉框图标，则icon放右边
+		if (icon === 'down') {
+			return (
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
-    {iconNode}{ kids }
+    {kids}{iconNode}
   </button>
-			)
+		);
+		} else {
+			return (
+  <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
+    {iconNode} {kids}
+  </button>
+			);
+		}
+	}
 	}
 }
 
@@ -78,8 +98,8 @@ function insertSpace(child) {
 		return React.cloneElement(child, {}, child.props.split('').join(' '));
 	}
 	if (isString(child)) {
-		if (isTwoCNChar(child)) { child = child.split('').join(' ') }
-		return <span>{child}</span>
+		 if (isTwoCNChar(child)) { child = child.split('').join(' ') }
+		 return <span>{child}</span>
   }
   return child;
 }
