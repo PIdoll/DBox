@@ -160,6 +160,7 @@ export default class Input extends Component {
         {props.suffix}
       </span>
     ) : null;
+
     return (
       <span
         className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}

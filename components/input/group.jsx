@@ -3,15 +3,21 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 export default function Group(props) {
-  const className = classNames({
-    'idoll-input-group': true,
-    'idoll-input-group-lg': props.size === 'large',
-    'idoll-input-group-sm': props.size === 'small',
-    [props.className]: !!props.className
-  });
+  // const className = classNames({
+  //   'idoll-input-group': true,
+  //   'idoll-input-group-lg': props.size === 'large',
+  //   'idoll-input-group-sm': props.size === 'small',
+  //   [props.className]: !!props.className
+  // });
+  const { prefixCls = 'ant-input-group', className = '' } = props;
+  const cls = classNames(prefixCls, {
+    [`${prefixCls}-lg`]: props.size === 'large',
+    [`${prefixCls}-sm`]: props.size === 'small',
+    [`${prefixCls}-compact`]: props.compact,
+  }, className);
 
   return (
-    <span className={className} style={props.style}>
+    <span className={cls} style={props.style}>
       {props.children}
     </span>
   );
