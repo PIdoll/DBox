@@ -26,21 +26,22 @@ export default class Input extends Component {
 
   static propTypes = {
     type: PropTypes.string,
-    placeholder: PropTypes.string,
-    name: PropTypes.string,
+    // placeholder: PropTypes.string,
+    // name: PropTypes.string,
     id: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
     ]),
-    autosize: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.object
-    ]),
+    // autosize: PropTypes.oneOfType([
+    //   PropTypes.bool,
+    //   PropTypes.object
+    // ]),
     size: PropTypes.oneOf(['small', 'default', 'large']),
-    maxLength: PropTypes.string,
-    readOnly: PropTypes.bool,
+    // maxLength: PropTypes.string,
+    // readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     value: PropTypes.any,
+    defaultValue: PropTypes.any,
     // intialValue: PropTypes.any,
     className: PropTypes.string,
     addonBefore: PropTypes.node,
@@ -48,13 +49,13 @@ export default class Input extends Component {
     prefixCls: PropTypes.string,
     prefix: PropTypes.node,
     suffix: PropTypes.node,
-    autoFocus: PropTypes.bool,
+    // autoFocus: PropTypes.bool,
     onPressEnter: PropTypes.func,
     onKeyDown: PropTypes.func,
     onChange: PropTypes.func,
-    onClick: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    // onClick: PropTypes.func,
+    // onFocus: PropTypes.func,
+    // onBlur: PropTypes.func
   };
 
   handleKeyDown = (e) => {
@@ -160,7 +161,6 @@ export default class Input extends Component {
         {props.suffix}
       </span>
     ) : null;
-
     return (
       <span
         className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
@@ -189,8 +189,8 @@ export default class Input extends Component {
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);
       // Input elements must be either controlled or uncontrolled,
-      // specify either the value prop, or the intialValue props, but no both
-      // delete otherProps.intialValue;
+      // specify either the value prop, or the defaultValue props, but no both
+      delete otherProps.defaultValue;
     }
     return this.renderLaybeldIcon(
       <input
