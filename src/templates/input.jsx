@@ -3,12 +3,14 @@ import React from 'react';
 import Input from 'components/input';
 import Icon from 'components/icon';
 import Select from 'components/Select';
+import Grid from 'components/Grid';
 
 
 const InputGroup = Input.Group
 const Textarea = Input.Textarea
 const Search = Input.Search
 const Option = Select.Option;
+const {Col} = Grid;
 
 const selectBefore = (
   <Select defaultValue='Http://' style={{ width: 90 }}>
@@ -54,12 +56,16 @@ export default () => (
     <h1 className='h1'>三种大小</h1>
     <Input size='large' placeholder='large size' /><br /><br />
     <Input placeholder='default size' /><br /><br />
-    <Input size='small' placeholder='small size' />
+    <Input size='small' placeholder='default size' />
 
     <h1 className='h1'>输入框组合</h1>
     <InputGroup size='large'>
-      <Input defaultValue='0571' />
-      <Input defaultValue='26888888' />
+      <Col span={5}>
+        <Input defaultValue='0571' />
+      </Col>
+      <Col span={8}>
+        <Input defaultValue='26888888' />
+      </Col>
     </InputGroup>
 
     <h1 className='h1'>文本框</h1>
