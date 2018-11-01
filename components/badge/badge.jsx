@@ -18,22 +18,30 @@ export default class Badge extends React.Component {
       PropTypes.string,
       PropTypes.number
     ]),
+    showZero: PropTypes.bool,
     dot: PropTypes.bool,
     overflowCount: PropTypes.number
   }
 
   render() {
-    let { count, prefixCls, overflowCount, className, style, children, dot, ...restProps } = this.props;
-
+    let { count, offset, status, prefixCls, showZero, overflowCount, className, style, children, dot, ...restProps } = this.props;
     count = count > overflowCount ? `${overflowCount}+` : count;
-
+    // offset = Array.from(offset);
     // dot mode don't need count
     if (dot) {
-      count = '';
+      count = ''
     }
-
     // null undefined "" "0" 0
-    const hidden = (!count || count === '0') && !dot;
+    let hidden = '';
+    if (!showZero) {
+      hidden = (!count || count === '0') && !showZero
+    }
+    if (dot) {
+      hidden = (!count || count === '0') && !dot
+    }
+    if (status) {
+      prefixCls = prefixCls + `-${status}`;
+    }
     const scrollNumberCls = prefixCls + (dot ? '-dot' : '-count');
     const badgeCls = classNames({
       [className]: !!className,
@@ -57,6 +65,8 @@ export default class Badge extends React.Component {
               className={scrollNumberCls}
               count={count}
               style={style}
+              title={this.props.title || count}
+              offset={offset}
             />
           }
         </Animate>
