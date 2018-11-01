@@ -25,6 +25,6 @@ export default function Group(props) {
 
 Group.propTypes = {
   children: PropTypes.any,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'default', 'large']),
   className: PropTypes.string
 };

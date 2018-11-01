@@ -1672,148 +1672,79 @@ samp {
     transform: scaleX(0.8);
   }
 }
-.dbox-switch {
+.dbox-avatar {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
-  position: relative;
   display: inline-block;
-  box-sizing: border-box;
-  height: 22px;
-  min-width: 42px;
-  line-height: 20px;
-  vertical-align: middle;
-  border-radius: 100px;
-  border: 1px solid transparent;
-  background-color: rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.36s;
-  user-select: none;
-}
-.dbox-switch-inner {
-  color: #fff;
-  font-size: 12px;
-  margin-left: 24px;
-  margin-right: 6px;
-  display: block;
-}
-.dbox-switch:before,
-.dbox-switch:after {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  left: 1px;
-  top: 1px;
-  border-radius: 18px;
-  background-color: #fff;
-  content: " ";
-  cursor: pointer;
-  transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-}
-.dbox-switch:after {
-  box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
-}
-.dbox-switch:active:before,
-.dbox-switch:active:after {
-  width: 24px;
-}
-.dbox-switch:before {
-  content: "C";
-  font-family: dboxicon;
-  animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
   text-align: center;
-  background: transprent;
-  z-index: 1;
-  display: none;
-  font-size: 12px;
+  background: #ccc;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
 }
-.dbox-switch-loading:before {
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.65);
+.dbox-avatar-image {
+  background: transparent;
 }
-.dbox-switch-checked.dbox-switch-loading:before {
-  color: #13B886;
+.dbox-avatar > * {
+  line-height: 40px;
 }
-.dbox-switch:focus {
-  box-shadow: 0 0 0 2px rgba(19, 184, 134, 0.2);
-  outline: 0;
+.dbox-avatar.dbox-avatar-icon {
+  font-size: 18px;
 }
-.dbox-switch:focus:hover {
-  box-shadow: none;
+.dbox-avatar-lg {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 32px;
 }
-.dbox-switch-small {
-  height: 16px;
-  min-width: 30px;
-  line-height: 14px;
+.dbox-avatar-lg > * {
+  line-height: 64px;
 }
-.dbox-switch-small .dbox-switch-inner {
-  margin-left: 18px;
-  margin-right: 3px;
-  font-size: 12px;
+.dbox-avatar-lg.dbox-avatar-icon {
+  font-size: 24px;
 }
-.dbox-switch-small:before,
-.dbox-switch-small:after {
-  width: 12px;
-  height: 12px;
+.dbox-avatar-sm {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
 }
-.dbox-switch-small:active:before,
-.dbox-switch-small:active:after {
-  width: 16px;
+.dbox-avatar-sm > * {
+  line-height: 32px;
 }
-.dbox-switch-small.dbox-switch-checked:before,
-.dbox-switch-small.dbox-switch-checked:after {
-  left: 100%;
-  margin-left: -12.5px;
+.dbox-avatar-sm.dbox-avatar-icon {
+  font-size: 14px;
 }
-.dbox-switch-small.dbox-switch-checked .dbox-switch-inner {
-  margin-left: 3px;
-  margin-right: 18px;
+.dbox-avatar-ti {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
 }
-.dbox-switch-small:active.dbox-switch-checked:before,
-.dbox-switch-small:active.dbox-switch-checked:after {
-  margin-left: -16.5px;
+.dbox-avatar-ti > * {
+  line-height: 24px;
 }
-.dbox-switch-small.dbox-switch-loading:before {
-  animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
-  font-weight: bold;
+.dbox-avatar-ti.dbox-avatar-icon {
+  font-size: 14px;
 }
-.dbox-switch-checked {
-  background-color: #13B886;
+.dbox-avatar-square {
+  border-radius: 3px;
 }
-.dbox-switch-checked .dbox-switch-inner {
-  margin-left: 6px;
-  margin-right: 24px;
-}
-.dbox-switch-checked:before,
-.dbox-switch-checked:after {
-  left: 100%;
-  margin-left: -19px;
-}
-.dbox-switch-checked:active:before,
-.dbox-switch-checked:active:after {
-  margin-left: -25px;
-}
-.dbox-switch-loading,
-.dbox-switch-disabled {
-  pointer-events: none;
-  opacity: 0.4;
-}
-.idoll-btn {
-  border-color: #13B886;
-  color: #13B886;
-}
-@keyframes dboxSwitchSmallLoadingCircle {
-  0% {
-    transform-origin: 50% 50%;
-    transform: rotate(0deg) scale(0.66667);
-  }
-  100% {
-    transform-origin: 50% 50%;
-    transform: rotate(360deg) scale(0.66667);
-  }
+.dbox-avatar > img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
