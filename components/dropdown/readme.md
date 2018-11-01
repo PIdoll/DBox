@@ -1,15 +1,5 @@
-# [dropdown](http://naotu.baidu.com/file/ea86052eb4973fbcbcba342ede08908d?token=0a0ecbb7fa3140a1)
 
----
-category: Components
-chinese: 下拉菜单
-type: Views
-english: Dropdown
----
-
-向下弹出的列表。
-
-## 何时使用
+#### **何时使用**
 
 当页面上的操作命令过多时，用此组件可以收纳操作元素。点击或移入触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。
 

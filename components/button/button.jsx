@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import { findDOMNode } from 'react-dom'
 
-import Icon from 'components/icon'
+// import Icon from 'components/icon'
 
 import './style/index.js'
 
@@ -16,6 +16,7 @@ export default class Button extends React.Component {
 	    text: false
   	}
 	static propTypes = {
+    /** 组件类型有'normal','danger','dashed','primary'组件类型有'normal','danger','dashed','primary' */
 	    type: PropTypes.string,
 	    shape: PropTypes.oneOf(['circle', 'circle-outline']),
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
@@ -59,8 +60,7 @@ export default class Button extends React.Component {
 			[`${prefixCls}-background-ghost`]: ghost,
 			[`${prefixCls}-text`]: text,
 			[className]: className
-
-		})
+		});
     const iconType = icon;
     const kids = React.Children.map(children, insertSpace);
     const iconNode = iconType ? <Icon type={icon} /> : null;

@@ -6,7 +6,6 @@ import { Row } from '../grid';
 import {Spin} from '../spin';
 import Pagination from '../pagination';
 
-
 import './style';
 
 export default class List extends React.Component {
