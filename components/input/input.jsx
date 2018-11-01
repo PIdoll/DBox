@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { PropTypes } from 'prop-types';
-import omit from 'object.omit'
+import omit from 'object.omit';
 
 import './style'
 
@@ -81,6 +81,9 @@ export default class Input extends Component {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
       [`${prefixCls}-disabled`]: disabled
+    }, {
+      [`${prefixCls}-enter-button`]: true,
+      [`${prefixCls}-${size}`]: true
     });
   }
 
@@ -143,23 +146,23 @@ export default class Input extends Component {
     );
   }
 
-  renderLaybeldIcon(children) {
+  renderLaybeldIcon = (children) => {
     const { props } = this;
+
     if (!('prefix' in props || 'suffix' in props)) {
       return children;
     }
-
     const prefix = props.prefix ? (
       <span className={`${props.prefixCls}-prefix`}>
         {props.prefix}
       </span>
     ) : null;
 
-    const suffix = props.suffix ? (
-      <span className={`${props.prefixCls}-suffix`}>
+    const suffix =
+      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {props.suffix}
       </span>
-    ) : null;
+
 
     return (
       <span
@@ -185,6 +188,13 @@ export default class Input extends Component {
       'prefix',
       'suffix'
     ]);
+
+
+    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
+    // const clearSuffix = React.cloneElement(node, {
+    //   onClick: this.onClear,
+    //   className: 'icon-hover',
+    // });
 
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);

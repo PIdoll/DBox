@@ -34,7 +34,7 @@ export default () => (
     <Input type='text' placeholder='请输入姓名' />
 
     <h1 className='h1'>前置／后置</h1>
-    <Input type='text' addonBefore='姓名' placeholder='黄晓明' addonAfter='你好' />
+    <Input type='text' addonBefore='姓名' placeholder='黄晓明' addonAfter='你好' /><br />
     <Input type='text' addonBefore={selectBefore} placeholder='请输入网址' addonAfter={selectAfter} />
 
     <h1 className='h1'>搜索</h1>
@@ -54,7 +54,7 @@ export default () => (
     <Search style={{ width: 200 }} size='large' enterButton='搜索' onSearch={(value => console.log(value))} />
 
     <h1 className='h1'>前缀／后缀</h1>
-    <Input placeholder='请输入姓名' prefix={<Icon type='user' />} suffix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} />
+    <Input placeholder='请输入姓名' prefix={<Icon type='user' />} suffix={<Icon type='close' />} onChange={(e) => console.log(e.target.value)} />
 
     <h1 className='h1'>三种大小</h1>
     <Input size='large' placeholder='large size' /><br /><br />
