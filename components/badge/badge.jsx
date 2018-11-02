@@ -20,11 +20,13 @@ export default class Badge extends React.Component {
     ]),
     showZero: PropTypes.bool,
     dot: PropTypes.bool,
+    text: PropTypes.any,
+    status: PropTypes.string,
     overflowCount: PropTypes.number
   }
 
   render() {
-    let { count, offset, status, prefixCls, showZero, overflowCount, className, style, children, dot, ...restProps } = this.props;
+    let { count, offset, text, status, prefixCls, showZero, overflowCount, className, style, children, dot, ...restProps } = this.props;
     count = count > overflowCount ? `${overflowCount}+` : count;
     // offset = Array.from(offset);
     // dot mode don't need count
@@ -48,6 +50,8 @@ export default class Badge extends React.Component {
       [prefixCls]: true,
       [`${prefixCls}-not-a-wrapper`]: !children
     });
+    if (offset) {
+    }
 
     return (
       <span className={badgeCls} title={count} style={null} {...restProps}>
@@ -64,12 +68,12 @@ export default class Badge extends React.Component {
               data-show={!hidden}
               className={scrollNumberCls}
               count={count}
-              style={style}
+              style={offset || style}
               title={this.props.title || count}
-              offset={offset}
             />
           }
         </Animate>
+        {text}
       </span>
     )
   }

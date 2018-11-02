@@ -34,4 +34,6 @@ english: Badge
 | dot            | 不展示数字，只有一个小红点       | boolean    |false  |
 | status            | 和dot搭配使用，在设置dot的前提下有效，设置Badge的状态点       | `string{'success','processing','default','error','warning'}`   |''  |
 | title            | 设置鼠标放在状态点上时显示的文字，若放在a标签上只设置放在图标或头像上时显示的文字      | string    | `count`  |
+| text            | 需和dot,status搭配使用，在已设置dot,status前提下设置状态点的文本      | any    |   |
+
 

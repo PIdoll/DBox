@@ -12,7 +12,6 @@
 .idoll-badge-count {
   position: absolute;
   transform: translateX(-50%);
-  top: -10px;
   height: 20px;
   border-radius: 10px;
   min-width: 20px;
@@ -38,9 +37,9 @@
   position: absolute;
   transform: translateX(-50%);
   transform-origin: 0px center;
-  top: -4px;
-  height: 8px;
-  width: 8px;
+  top: -3px;
+  height: 6px;
+  width: 6px;
   border-radius: 100%;
   background: #F44336;
   z-index: 10;
@@ -87,6 +86,52 @@ span.example {
 .idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p.current {
   display: block;
 }
+.idoll-scroll-number.idoll-badge-success-dot {
+  background-color: #3CCB69;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-error-dot {
+  background-color: #F44336;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-default-dot {
+  background-color: #E2E2E2;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-processing-dot {
+  background-color: #13B886;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+  animation: antRadioEffect 1s infinite;
+}
+.idoll-scroll-number.idoll-badge-warning-dot {
+  background-color: #F9AA29;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
 @keyframes idollZoomBadgeIn {
   0% {
     opacity: 0;
@@ -103,5 +148,19 @@ span.example {
   100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
+  }
+}
+@keyframes antRadioEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
