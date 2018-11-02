@@ -17,12 +17,12 @@ export default class Tag extends Component {
         this.close = this.close.bind(this);
       }
     static PropTypes = {
-        className: PropTypes.string,
+        // className: PropTypes.string,
         prefixCls: PropTypes.string,
         checked: PropTypes.bool,
         hover: PropTypes.bool,
-        close: PropTypes.func,
-        handleClick: PropTypes.func,
+        // close: PropTypes.func,
+        // handleClick: PropTypes.func,
         closable: PropTypes.bool
     }
     static defaultProps = {
