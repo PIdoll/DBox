@@ -38,7 +38,7 @@ export default class BadgeView extends React.Component {
           简单的徽标展示
         </h1>
         <p style={{ marginBottom: '10px' }}>当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。</p>
-        <Badge count={5} offset={[50, 70]}>
+        <Badge count={5}>
           <a href='#' style={content} />
         </Badge>
         <Badge showZero count={0}>

@@ -68,7 +68,7 @@ export default class Badge extends React.Component {
               data-show={!hidden}
               className={scrollNumberCls}
               count={count}
-              style={{ left: offset ? offset[0] : null, top: offset ? offset[1] : null, style }}
+              style={offset ? ({left: offset[0], top: offset[1]}) : style}
               title={this.props.title || count}
             />
           }
