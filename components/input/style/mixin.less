@@ -5,12 +5,14 @@
 .input-lg() {
   padding: @input-padding-vertical-lg @input-padding-horizontal;
   height: @input-height-lg;
+  font-size: @font-size-lg;
 }
 
 .input-sm() {
-  padding: @input-padding-vertical-sm @input-padding-horizontal;
+  padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
   height: @input-height-sm;
   border-radius: @border-radius-sm;
+  font-size: @font-size-sm;
 }
 
 // input status
@@ -238,6 +240,7 @@
   display: inline-block;
   width: 100%;
 
+
   .@{inputClass} {
     z-index: 1;
   }
@@ -269,7 +272,7 @@
   }
 
   .@{inputClass}:not(:last-child) {
-    padding-right: @input-padding-horizontal-base + @input-affix-width;
+    padding-right: @input-padding-horizontal-base + @input-affix-width + 2px;
   }
 }
 
