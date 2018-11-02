@@ -1,7 +1,7 @@
-# Dbox Pro组件jsx文件注意点和md文件编辑指南
+## Dbox Pro组件jsx文件注意点和md文件编辑指南
 
 
-## Basic Syntax
+### Basic Syntax
 
 |      Syntax       |       Description      |     中文描绘     |
 
@@ -37,11 +37,12 @@
 |    term           |
 |  : defination     |
 
-##Task List（任务列表）
+### Task List（任务列表）
 |  - [x] Write the press release|
 |  - []  Update the website     |
 |  - []  Contact the media      |
 
+### Comments and propTypes(注释和组件类型)
 ```jsx
 export default class Button extends React.Component {
   static propTypes = {
@@ -51,5 +52,23 @@ export default class Button extends React.Component {
     baz: PropTypes.oneOfTypes([PropTypes.number, PropTypes.string)
   }
 }
-
 ```
+
+### 显示静态代码
+```jsx static
+import React from 'react';
+```
+
+### Ignoreing props(隐藏属性)
+```jsx
+myComponents.propTypes = {
+  /**
+   * @ignore
+  */
+ hiddenProp: React.PropTypes.string
+}
+```
+
+
+
+

@@ -16,13 +16,14 @@ export default class Button extends React.Component {
 	    text: false
   	}
 	static propTypes = {
-    /** 组件类型有'normal','danger','dashed','primary'组件类型有'normal','danger','dashed','primary' */
-	    type: PropTypes.string,
+    /** 组件类型有'normal','danger','dashed','primary' */
+      type: PropTypes.string,
+
 	    shape: PropTypes.oneOf(['circle', 'circle-outline']),
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
-	    loading: PropTypes.bool,
+      loading: PropTypes.bool,
 	    className: PropTypes.string,
 	    icon: PropTypes.string
 	}
