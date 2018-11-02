@@ -1,0 +1,166 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+.idoll-badge {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  margin-right: 58px;
+}
+.idoll-badge-count {
+  position: absolute;
+  transform: translateX(-50%);
+  height: 20px;
+  border-radius: 10px;
+  min-width: 20px;
+  background: #F44336;
+  border: 1px solid transparent;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform-origin: -10% center;
+  z-index: 10;
+  font-family: tahoma;
+  box-shadow: 0 0 0 1px #fff;
+  cursor: pointer;
+}
+.idoll-badge-count a,
+.idoll-badge-count a:hover {
+  color: #fff;
+}
+.idoll-badge-dot {
+  position: absolute;
+  transform: translateX(-50%);
+  transform-origin: 0px center;
+  top: -3px;
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  background: #F44336;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #fff;
+}
+.idoll-badge-zoom-appear,
+.idoll-badge-zoom-enter {
+  animation: idollZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  animation-fill-mode: both;
+}
+.idoll-badge-zoom-leave {
+  animation: idollZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+  animation-fill-mode: both;
+}
+.idoll-badge-not-a-wrapper .idoll-badge-count {
+  top: auto;
+  display: block;
+  position: relative;
+  transform: translateX(0);
+}
+a -count:hover {
+  background: timt(#F44336, 20%);
+}
+a -count:active {
+  background: #e84033;
+}
+span.example {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  background: #eeeeee;
+  display: inline-block;
+}
+.idoll-scroll-number {
+  overflow: hidden;
+}
+.idoll-scroll-number-only {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p {
+  display: none;
+}
+.idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p.current {
+  display: block;
+}
+.idoll-scroll-number.idoll-badge-success-dot {
+  background-color: #3CCB69;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-error-dot {
+  background-color: #F44336;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-default-dot {
+  background-color: #E2E2E2;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-processing-dot {
+  background-color: #13B886;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+  animation: antRadioEffect 1s infinite;
+}
+.idoll-scroll-number.idoll-badge-warning-dot {
+  background-color: #F9AA29;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+@keyframes idollZoomBadgeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX(-50%);
+  }
+  100% {
+    transform: scale(1) translateX(-50%);
+  }
+}
+@keyframes idollZoomBadgeOut {
+  0% {
+    transform: scale(1) translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateX(-50%);
+  }
+}
+@keyframes antRadioEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
