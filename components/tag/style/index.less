@@ -4,26 +4,26 @@
 @tag-prefix-cls: idoll-tag;
 
 .@{tag-prefix-cls} {
+    position: relative;
     display: inline-block;
     border-color: @primary-color;
     color: @primary-color;
     border-style: @border-style-base;
     border-width: @border-width-base;
-    border-radius:  @padding-xs + @font-size-base;
+    border-radius:  @border-radius-base;
     font-size: @font-size-base;
     padding: @padding-xs @padding-sm + 2px;
     line-height: @line-height-base; 
     box-sizing: border-box;
     text-align: center;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
 
    //color
     &-primary {
         border-color: @primary-color;
         color: @primary-color;
-    }
-    &-highlight {
-        border-color: @highlight-color; 
-        color: @highlight-color;
     }
     &-success {
         border-color: @success-color;
@@ -42,7 +42,6 @@
     &-checkable {
         cursor: pointer;
         &:hover,
-        &:focus,
         &:active, {
             transition: all .5s;  
             background-color: @primary-color;
@@ -58,5 +57,39 @@
         font-size: @font-size-sm;
         padding: @padding-xs - 4px @padding-xs;
     }
+    &-clicked:after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        bottom: -1px;
+        right: -1px;
+        border-radius: inherit;
+        border: 0 solid @primary-color;
+        opacity: 0.4;
+        animation: buttonEffect .4s;
+        display: block;
+      }
 
+      //hot
+      &-hot {
+        border:none;
+        border-radius: none;
+        &-checked {
+            border-radius: @border-radius-base ;
+        }
+      }
 }
+
+
+
+@keyframes buttonEffect {
+    to {
+      opacity: 0;
+      top: -6px;
+      left: -6px;
+      bottom: -6px;
+      right: -6px;
+      border-width: 6px;
+    }
+  }

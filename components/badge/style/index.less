@@ -8,11 +8,11 @@
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
+  margin-right: 58px;
 
   &-count {
     position: absolute;
     transform: translateX(-50%);
-    top: -10px;
     height: 20px;
     border-radius: 10px;
     min-width: 20px;
@@ -28,6 +28,7 @@
     z-index: 10;
     font-family: tahoma;
     box-shadow: 0 0 0 1px #fff;
+    cursor: pointer;
     a,
     a:hover {
       color: #fff;
@@ -38,9 +39,9 @@
     position: absolute;
     transform: translateX(-50%);
     transform-origin: 0px center;
-    top: -4px;
-    height: 8px;
-    width: 8px;
+    top: -3px;
+    height: 6px;
+    width: 6px;
     border-radius: 100%;
     background: @error-color;
     z-index: 10;
@@ -75,6 +76,14 @@ a & {
   }
 }
 
+span.example {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  background: rgb(238, 238, 238);
+  display: inline-block;
+}
+
 .@{number-prefix-cls} {
   overflow: hidden;
   &-only {
@@ -89,6 +98,53 @@ a & {
         display: block;
       }
     }
+  }
+  
+  &.@{badge-prefix-cls}-success-dot {
+    background-color: @success-color;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: -10px;
+    position: absolute;
+    border-radius: 100%;
+  }
+  &.@{badge-prefix-cls}-error-dot {
+    background-color: @error-color;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: -10px;
+    position: absolute;
+    border-radius: 100%;
+  }
+  &.@{badge-prefix-cls}-default-dot {
+    background-color: @default-color;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: -10px;
+    position: absolute;
+    border-radius: 100%;
+  }
+  &.@{badge-prefix-cls}-processing-dot {
+    background-color: @processing-color;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: -10px;
+    position: absolute;
+    border-radius: 100%;
+    animation: antRadioEffect 1s infinite;
+  }
+  &.@{badge-prefix-cls}-warning-dot {
+    background-color: @warning-color;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: -10px;
+    position: absolute;
+    border-radius: 100%;
   }
 }
 
@@ -109,5 +165,21 @@ a & {
   100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
+  }
+}
+
+@keyframes antRadioEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
