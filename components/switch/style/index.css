@@ -1723,7 +1723,7 @@ samp {
   width: 24px;
 }
 .dbox-switch:before {
-  content: "C";
+  content: "";
   font-family: dboxicon;
   animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
   text-align: center;
@@ -1731,6 +1731,10 @@ samp {
   z-index: 1;
   display: none;
   font-size: 12px;
+  border: 1px solid;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-radius: 50%;
 }
 .dbox-switch-loading:before {
   display: inline-block;
