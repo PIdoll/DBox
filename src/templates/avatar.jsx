@@ -52,7 +52,7 @@ const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView e
         <br />
         <div>
           <span style={{ marginRight: 47 }}>
-            <Badge count={1}><Avatar shape='square' icon='user' /></Badge>
+            <Badge count={2}><Avatar shape='square' icon='user' /></Badge>
           </span>
           <span>
             <Badge dot><Avatar shape='square' icon='user' /></Badge>
