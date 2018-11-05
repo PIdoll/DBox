@@ -11,12 +11,12 @@
 <Button type='dashed'>虚线</Button>
 <Button type='danger'>危险</Button>
 ```
-主按钮和次按钮可独立使用，幽灵按钮用于和主按钮组合。需要强引导用主按钮，切记主按钮在同一个操作区域最多出现一次。
 
 #### **图标按钮(icon)**
 
 ```jsx
-    <Button>次要</Button>
+  <Button icon='tag'>图标</Button>
+  <Button icon='plus-circle-o' text>文字按钮</Button>
 ```
 
 #### **按钮尺寸(size)**
@@ -40,6 +40,14 @@
     <Button disabled>不可用</Button>
     <Button type='dashed'>虚线</Button>
 ```
+### API
 
+| Property | Description | Type | Default |
+| -------- | ----------- | ---- | ------- |
+| avatar | 头像/图标 | ReactNode |  这里是图标的描述性文字部分这里是图标的描述性文字部分 |
+| className | 容器类名 | string | - |
+| description | 描述内容 | ReactNode | - |
+| style | 定义容器类名的样式 | object | - |
+| title | 标题内容 | ReactNode | - |
 
 

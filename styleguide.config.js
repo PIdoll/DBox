@@ -1,11 +1,11 @@
-const path = require('path')
+const path = require('path');
+
 const { version } = require('./package.json')
 const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox Pro ${version}`,
   serverPort: 8000,
-  showSidebar: true,
   exampleMode: 'collapse',
   usageMode: 'expand',
   ribbon: {
@@ -35,7 +35,18 @@ module.exports = {
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
-        backgroundColor: '#e1e1e1'
+        backgroundColor: '#e1e1e1',
+        '& > div:nth-child(1)': {
+          flexGrow: '2',
+        },
+        '& button ': {
+          display: 'block',
+          width: '100%',
+          color: '#455a64',
+          height: '40px',
+          paddingLeft: '10px',
+          cursor: 'pointer',
+        },
       },
       logo: {
         fontSize: '18px'
@@ -43,7 +54,21 @@ module.exports = {
       mq: {
         small: '@media(max-width:600px)'
       }
-		},
+    },
+    ReactComponent: {
+      tabs: {
+        backgroundColor: '#ebf1f3',
+        overflow: 'auto',
+        padding: '10px 20px'
+      },
+    },
+    ComponentsList: {
+      heading: {
+        fontWeight: '700 !important',
+        fontSize: '16px',
+        color: '#455a64 !important'
+      }
+    },
 		Markdown: {
 			pre: {
         border: 0,
@@ -59,7 +84,7 @@ module.exports = {
     const dirname = path.dirname(componentPath, '.jsx')
     const name = dirname.split('/').slice(-1)[0]
     const componentName = upperFirst(camelCase(name))
-    return `import {${componentName}} from Dbox/${name}`
+    return `import {${componentName}} from Dbox`
   },
   sections: [
     {
@@ -91,6 +116,7 @@ module.exports = {
           name: 'Basic',
           components: () => ([
             path.resolve(__dirname, './components/grid/col.jsx'),
+            path.resolve(__dirname, './components/grid/row.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
         },
@@ -98,6 +124,7 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/button.jsx'),
+            path.resolve(__dirname, './components/button/button-group.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },

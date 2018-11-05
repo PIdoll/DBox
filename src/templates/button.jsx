@@ -7,8 +7,10 @@ const ButtonGroup = Button.Group;
 
 export default () => (
   <div id='main-container'>
+
     <h1 className='h1'>通用按钮</h1>
     <Button type='normal'>通用</Button>
+
     <h1 className='h1'>特殊场景按钮</h1>
     <Button type='primary'>重要</Button>
     <Button>次要</Button>
@@ -17,9 +19,11 @@ export default () => (
     <Button type='danger'>危险</Button>
     <Button icon='tag'>图标</Button>
     <Button icon='plus-circle-o' text>文字按钮</Button>
+
     <h1 className='h1'>特定按钮</h1>
     <Button type='create' icon='plus' />
     <Button type='quit' icon='logout' />
+    
     <h1 className='h1'>幽灵按钮</h1>
     <div className='youling'>
       <Button ghost>默认</Button>
