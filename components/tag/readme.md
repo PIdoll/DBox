@@ -25,9 +25,7 @@ title: Tag
 | --- | --- | --- | --- |
 | closable | 标签是否可以关闭 | boolean | false |
 | color | 标签色 | string | - |
-| size | 标签尺寸 | string | -/small |
-| hover | 标签hover状态 | boolean | false |
-| checked | 设置标签的选中状态 | boolean | false |
+| size | 标签尺寸 | string | small |
 | hot | 设置为热门标签状态 | boolean | false |
 ###TagGroup
 | 参数 | 说明 | 类型 | 默认值 |

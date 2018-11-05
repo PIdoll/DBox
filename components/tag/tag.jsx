@@ -20,7 +20,6 @@ export default class Tag extends Component {
     static propTypes = {
         prefixCls: PropTypes.string,
         checked: PropTypes.bool,
-        hover: PropTypes.bool,
         closable: PropTypes.bool
     }
     static defaultProps = {
@@ -65,7 +64,7 @@ export default class Tag extends Component {
     }
 
      render () {
-        const {children, prefixCls, color, hot, closable, size, hover} = this.props;
+        const {children, prefixCls, color, hot, closable, size} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
             marginLeft: 8
@@ -75,7 +74,7 @@ export default class Tag extends Component {
             [`${prefixCls}-${color}`]: color,
             [`${prefixCls}-hot`]: hot,
             [`${prefixCls}-hot-checked`]: isChecked && hot,
-            [`${prefixCls}-checkable`]: isChecked || hover,
+            [`${prefixCls}-checkable`]: isChecked,
             [`${prefixCls}-checkable-checked`]: isChecked,
             [`${prefixCls}-close`]: size ? 'small' : ''
         })
