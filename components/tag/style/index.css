@@ -1680,14 +1680,21 @@ samp {
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
-  font-size: 14px;
-  padding: 8px 14px;
-  line-height: 1.5;
+  font-size: 12px;
+  padding: 0 8px;
+  line-height: 22px;
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
   margin-right: 5px;
   margin-bottom: 5px;
+  min-width: 40px;
+  max-height: 22px;
+}
+.idoll-tag span {
+  min-width: 24px;
+  max-height: 20px;
+  line-height: 20px;
 }
 .idoll-tag-primary {
   border-color: #13B886;
@@ -1707,8 +1714,6 @@ samp {
 }
 .idoll-tag-close {
   cursor: pointer;
-  font-size: 12px;
-  padding: 4px 8px;
 }
 .idoll-tag-hot {
   border: none;
@@ -1720,4 +1725,7 @@ samp {
 .idoll-tag-hot-checked {
   background-color: #13B886;
   color: #f5f5f5;
+}
+.tagGroup .idoll-tag:last-child {
+  border-style: dashed;
 }

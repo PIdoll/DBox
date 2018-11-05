@@ -11,14 +11,21 @@
     border-style: @border-style-base;
     border-width: @border-width-base;
     border-radius:  @border-radius-base;
-    font-size: @font-size-base;
-    padding: @padding-xs @padding-sm + 2px;
-    line-height: @line-height-base; 
+    font-size: @tag-font-size;
+    padding: @tag-padding-xs @tag-padding-sm;
+    line-height: 22px; 
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
     margin-right: 5px;
     margin-bottom: 5px;
+    min-width: 40px;
+    max-height: 22px;
+    span {
+        min-width: 24px;
+        max-height: 20px;
+        line-height: 20px;
+    }
 
    //color
     &-primary {
@@ -40,8 +47,8 @@
 
     &-close{
         cursor: pointer;
-        font-size: @font-size-sm;
-        padding: @padding-xs - 4px @padding-xs;
+        // font-size: @font-size-sm;
+        // padding: @padding-xs - 4px @padding-xs;
     }
 
       //hot
@@ -55,5 +62,11 @@
     &-hot-checked {
         background-color: @primary-color;
         color: @background-color-base;
+    }
+}
+
+.tagGroup {
+    .@{tag-prefix-cls}:last-child {
+        border-style: dashed;
     }
 }
