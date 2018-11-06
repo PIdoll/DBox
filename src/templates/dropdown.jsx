@@ -93,6 +93,7 @@ export default class DropView extends React.Component {
         <br />
         <br />
         <br />
+        <br />
         <h1 className='h1'>鼠标点击，显示图标菜单</h1>
         <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
           <Button type='normal'>
@@ -103,10 +104,12 @@ export default class DropView extends React.Component {
         <br />
         <br />
         <br />
+        <br />
         <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>
         <DropdownButton ref={this.refCb} overlay={menu1} trigger={['hover']}>
           功能按钮
         </DropdownButton>
+        <br />
         <br />
         <br />
         <br />
@@ -121,6 +124,7 @@ export default class DropView extends React.Component {
         <br />
         <br />
         <br />
+        <br />
         <h1 className='h1'>在下拉列表中点击内容关闭菜单</h1>
         <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
           下拉菜单
@@ -128,10 +132,13 @@ export default class DropView extends React.Component {
         <br />
         <br />
         <br />
-        <br /><h1 className='h1'>下拉菜单中不可用菜单项</h1>
+        <br />
+        <br />
+        <h1 className='h1'>下拉菜单中不可用菜单项</h1>
         <DropdownNormal overlay={menu3} type='caret-down' trigger={['click']} >
           下拉菜单
         </DropdownNormal>
+        <br />
         <br />
         <br />
         <br />
