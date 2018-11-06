@@ -4,9 +4,8 @@ import classNames from 'classnames';
 
 import './style';
 
-function noop(e) {
+function noop() {
   // console.log('change')
-  console.log(e)
   // 组件change && click 挂载到noop上
 }
 
