@@ -21,7 +21,7 @@ const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView e
     return (
       <div id='main-container'>
         <h1 className='h1'>基本</h1>
-        <span>头像有三种尺寸，两种形状可选</span>
+        <span>头像有三种尺寸，两种形状可以选择</span>
         <div>
           <div>
             <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
