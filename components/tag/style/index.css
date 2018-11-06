@@ -1680,61 +1680,24 @@ samp {
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
-  font-size: 14px;
-  padding: 8px 14px;
-  line-height: 1.5;
+  font-size: 12px;
+  padding: 0 8px;
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
   margin-right: 5px;
   margin-bottom: 5px;
 }
-.idoll-tag-primary {
-  border-color: #13B886;
-  color: #13B886;
-}
-.idoll-tag-success {
-  border-color: #3CCB69;
-  color: #3CCB69;
-}
-.idoll-tag-error {
-  border-color: #F44336;
-  color: #F44336;
-}
-.idoll-tag-warning {
-  border-color: #F9AA29;
-  color: #F9AA29;
-}
-.idoll-tag-checkable {
-  cursor: pointer;
-}
-.idoll-tag-checkable:hover,
-.idoll-tag-checkable:active {
-  transition: all .5s;
-  background-color: #13B886;
-  color: #f5f5f5;
-}
-.idoll-tag-checkable-checked {
-  background-color: #13B886;
-  color: #f5f5f5;
+.idoll-tag span {
+  transform: translate(-50%, -50%);
+  min-width: 24px;
+  max-height: 20px;
+  line-height: 20px;
 }
 .idoll-tag-close {
   cursor: pointer;
+  padding: 0 8px;
   font-size: 12px;
-  padding: 4px 8px;
-}
-.idoll-tag-clicked:after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  bottom: -1px;
-  right: -1px;
-  border-radius: inherit;
-  border: 0 solid #13B886;
-  opacity: 0.4;
-  animation: buttonEffect .4s;
-  display: block;
 }
 .idoll-tag-hot {
   border: none;
@@ -1742,14 +1705,10 @@ samp {
 }
 .idoll-tag-hot-checked {
   border-radius: 3px;
+  background-color: #13B886;
+  color: #f5f5f5;
+  border: 1px solid #13B886;
 }
-@keyframes buttonEffect {
-  to {
-    opacity: 0;
-    top: -6px;
-    left: -6px;
-    bottom: -6px;
-    right: -6px;
-    border-width: 6px;
-  }
+.group .idoll-tag:last-child {
+  border-style: dashed;
 }
