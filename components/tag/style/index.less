@@ -11,97 +11,41 @@
     border-style: @border-style-base;
     border-width: @border-width-base;
     border-radius:  @border-radius-base;
-    font-size: @tag-font-size;
-    padding: @tag-padding-xs @tag-padding-sm;
-    line-height: 22px; 
+    font-size: 12px;
+    padding: 0 8px;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
     margin-right: 5px;
     margin-bottom: 5px;
-    min-width: 40px;
-    max-height: 22px;
+
     span {
+        transform: translate(-50%,-50%);
         min-width: 24px;
         max-height: 20px;
         line-height: 20px;
     }
-   //color
-    &-primary {
-        border-color: @primary-color;
-        color: @primary-color;
-    }
-    &-success {
-        border-color: @success-color;
-        color: @success-color;
-    }
-    &-error {
-        border-color: @error-color;
-        color: @error-color;
-    }
-    &-warning {
-        border-color: @warning-color;
-        color: @warning-color;
-    }
-    //hover && click  
-    &-checkable {
-        cursor: pointer;
-        &:hover,
-        &:active, {
-            transition: all .5s;  
-            background-color: @primary-color;
-            color:@background-color-base;
-        }
-        &-checked{
-            background-color: @primary-color;
-            color: @background-color-base;
-        }
-    }
     &-close{
         cursor: pointer;
-        // font-size: @font-size-sm;
-        // padding: @padding-xs - 4px @padding-xs;
+        font-size: 12px;
+        padding: 0 8px;
+        font-size: 12px;
     }
-    &-clicked:after {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        bottom: -1px;
-        right: -1px;
-        border-radius: inherit;
-        border: 0 solid @primary-color;
-        opacity: 0.4;
-        animation: buttonEffect .4s;
-        display: block;
-      }
-
       //hot
       &-hot {
         border:none;
         border-radius: none;
         &-checked {
             border-radius: @border-radius-base ;
+            background-color: @primary-color;
+            color: @background-color-base;
+            border:1px solid @primary-color;
         }
       }
 }
 
-      //hot
-    &-hot {
-    border:none;
-    border-radius: none;
-    &-checked {
-        border-radius: @border-radius-base ;
-     }
-    }
-    &-hot-checked {
-        background-color: @primary-color;
-        color: @background-color-base;
-    }
-}
-
-.tagGroup {
+.group {
     .@{tag-prefix-cls}:last-child {
-        border-style: dashed;
+        border-style: dashed
     }
 }

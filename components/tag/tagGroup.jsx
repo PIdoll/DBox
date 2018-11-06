@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Tag from '../tag/tag';
 import Input from '../input/input';
@@ -52,9 +53,9 @@ export default class TagGroup extends React.Component {
   render() {
     const { tags, inputVisible, inputValue } = this.state;
     return (
-      <div>
+      <div className='group'>
         {tags.map((tag, index) => {
-           return <Tag key={tag} closable={index !== this.state.id} checked={index === this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
+           return <Tag key={tag} closable={index !== this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
         })}
         {inputVisible && (
           <Input
@@ -70,8 +71,9 @@ export default class TagGroup extends React.Component {
         )}
         {!inputVisible && (
           <Tag
+            className='sdfsf'
+            style={{borderStyle: 'dashed'}}
             onClick={this.showInput}
-            style={{ background: '#fff', borderStyle: 'dashed' }}
           >
             <Icon type={this.state.iconType} /> {this.state.text}
           </Tag>

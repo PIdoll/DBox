@@ -62,21 +62,17 @@ export default class Tag extends Component {
             closable: false
         })
     }
-
      render () {
-        const {children, prefixCls, color, hot, closable, size} = this.props;
+        const {children, prefixCls, color, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
             marginLeft: 8
         }
         const closeIcon = closable ? <Icon style={iconStyle} type='close' onClick={this.close} /> : null;
         const cls = classNames(prefixCls, {
-            [`${prefixCls}-${color}`]: color,
             [`${prefixCls}-hot`]: hot,
             [`${prefixCls}-hot-checked`]: isChecked && hot,
-            [`${prefixCls}-checkable`]: isChecked,
-            [`${prefixCls}-checkable-checked`]: isChecked,
-            [`${prefixCls}-close`]: size ? 'small' : ''
+            [`${prefixCls}-checkable-checked`]: isChecked
         })
 
         const deletableTag = <div
@@ -106,4 +102,3 @@ export default class Tag extends Component {
         )
     }
 }
-
