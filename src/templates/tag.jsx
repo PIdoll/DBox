@@ -15,7 +15,7 @@ export default class TagView extends React.Component {
     return (
       <div id='main-container'>
         <h1>色彩功能标签</h1>
-        <p style={{marginBottom: '10px'}}>基础色彩展示，同时支持16进制／rgb／英文颜色自定义设置</p>
+        <p style={{marginBottom: '10px'}}>基础色彩展示，同时支持16进制／rgb／英文颜色等自定义设置</p>
         <Tag color='primary'>primary</Tag>
         <Tag >pink</Tag>
         <Tag >#7FFF00</Tag>
