@@ -13,6 +13,9 @@
     position: relative;
     overflow: hidden;
     vertical-align: middle;
+    .idoll-icon {
+        transform: translateY(-15%);
+    }
     
     &-image {
         background: transparent;
@@ -26,10 +29,6 @@
 
     &-sm {
         .avatar-size(@avatar-size-sm, @avatar-font-size-sm);
-    }
-
-    &-ti {
-        .avatar-size(@avatar-size-ti, @avatar-font-size-ti);
     }
 
     &-square {
