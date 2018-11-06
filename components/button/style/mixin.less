@@ -159,7 +159,7 @@
   position: relative;
 
   > .@{iconfont-css-prefix} {
-    line-height: 1;
+    line-height: 1.1;
   }
 
   &,
@@ -185,12 +185,15 @@
     }
   }
 
+
+
   &-lg {
     .button-size(@btn-height-lg; @btn-padding-lg; @btn-font-size-lg; @btn-border-radius-base);
   }
 
   &-sm {
     .button-size(@btn-height-sm; @btn-padding-sm; @btn-font-size-sm; @btn-border-radius-sm);
+    padding-top: 2px !important;
   }
 }
 // 重要按钮
@@ -271,7 +274,7 @@
 
   &.@{btnClassName}-sm {
     .square(@btn-circle-size-sm);
-    .button-size(@btn-circle-size-sm; 0; @font-size-base; 50%);
+    .button-size(@btn-circle-size-sm; 0; @font-size-base - 2px; 50%);
   }
 }
 

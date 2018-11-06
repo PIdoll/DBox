@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
-import { findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom';
 
 import Icon from 'components/icon'
 
@@ -86,14 +86,29 @@ export default class Button extends React.Component {
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
     {kids}{iconNode}
   </button>
+
 		);
 		} else {
 			return (
+
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
-    {iconNode} {kids}
+    {iconNode}{kids}
   </button>
+
 			);
 		}
+// return (
+//   <Wave>
+//     <button
+//       {...others}
+//       type={htmlType || 'button'}
+//       className={classes}
+//       onClick={this.handleClick}
+// 						>
+//       {iconNode}{kids}
+//     </button>
+//   </Wave>
+// )
 	}
 	}
 }
