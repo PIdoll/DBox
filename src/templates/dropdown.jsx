@@ -30,11 +30,12 @@ const menu4 = (
   </Menu>
 )
 
+let sizee = 'defalut';
 
 export default class DropView extends React.Component {
   state = {
     visible: false,
-    size: ''
+    size: 'default'
   };
   handleMenuClick = (e) => {
     if (e.key === '2.3') {
@@ -52,16 +53,14 @@ export default class DropView extends React.Component {
     console.info('aaaaaaaaaaaaaa', flag);
   }
   refCb = (value) => {
-    this.setState({
-      size: value.props.size
-    })
+    sizee = value.props.size;
   }
   render() {
     const menu1 = (
       <Menu onClick={handleMenu1Click}>
         <MenuItem key='1.1'>第一个选项</MenuItem>
         <MenuItem key='1.2'>第二个选项</MenuItem>
-        <SubMenu popupClassName={this.state.size} title='子菜单'>
+        <SubMenu popupClassName={sizee} title='子菜单'>
           <MenuItem key='1.3'>第三个选项</MenuItem>
           <MenuItem key='1.4'>第四个选项</MenuItem>
         </SubMenu>
