@@ -8,12 +8,12 @@ const ButtonGroup = Button.Group;
 export default () => (
   <div id='main-container'>
     <h1 className='h1'>基本按钮类型</h1>
-    <Button type='default'>default</Button>&nbsp;&nbsp;
-    <Button type='primary'>primary</Button>&nbsp;&nbsp;
-    <Button type='secondary'>secondary</Button>&nbsp;&nbsp;
-    <Button disabled>disabled</Button>&nbsp;&nbsp;
-    <Button type='dashed'>dashed</Button>&nbsp;&nbsp;
-    <Button type='danger'>danger</Button>&nbsp;&nbsp;
+    <Button type='default'>默认</Button>&nbsp;&nbsp;
+    <Button type='primary'>主要</Button>&nbsp;&nbsp;
+    <Button type='secondary'>次要</Button>&nbsp;&nbsp;
+    <Button disabled>禁止</Button>&nbsp;&nbsp;
+    <Button type='dashed'>虚线</Button>&nbsp;&nbsp;
+    <Button type='danger'>危险</Button>&nbsp;&nbsp;
     <br />
     <h1 className='h1'>按钮尺寸</h1>
     <Button type='primary' size='small'>按钮</Button>&nbsp;&nbsp;
@@ -56,16 +56,16 @@ export default () => (
     <br />
     <br />
     <ButtonGroup>
-      <Button type='primary'>Option1</Button>
-      <Button type='primary'>Option2</Button>
-      <Button type='primary'>Option3</Button>
+      <Button type='primary'>选择1</Button>
+      <Button type='primary'>选择2</Button>
+      <Button type='primary'>选择3</Button>
     </ButtonGroup>
     <br />
     <br />
     <ButtonGroup>
-      <Button type='secondary'>Option1</Button>
-      <Button type='secondary'>Option2</Button>
-      <Button type='secondary'>Option3</Button>
+      <Button type='secondary'>选择1</Button>
+      <Button type='secondary'>选择2</Button>
+      <Button type='secondary'>选择3</Button>
     </ButtonGroup>
     <br />
     <br />
