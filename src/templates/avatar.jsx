@@ -4,41 +4,35 @@ import Badge from 'components/badge';
 import Button from 'components/button';
 
 
-const UserList = ['U', 'Lucy', 'Tom', 'DBox'];
-const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
-export default class AvatarView extends React.Component {
+const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: UserList[0],
-      color: colorList[0],
+      user: UserList[0]
     };
   }
   changeUser = () => {
     const index = UserList.indexOf(this.state.user);
     this.setState({
-      user: index < UserList.length - 1 ? UserList[index + 1] : UserList[0],
-      color: index < colorList.length - 1 ? colorList[index + 1] : colorList[0],
+      user: index < UserList.length - 1 ? UserList[index + 1] : UserList[0]
     });
   }
   render () {
     return (
       <div id='main-container'>
         <h1 className='h1'>基本</h1>
-        <span>头像有四种尺寸，两种形状可选</span>
+        <span>头像有三种尺寸，两种形状可以选择</span>
         <div>
           <div>
             <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
             <Avatar style={{ marginRight: 47 }} icon='user' />
             <Avatar style={{ marginRight: 47 }} size='small' icon='user' />
-            <Avatar style={{ marginRight: 47 }} size='tiny' icon='user' />
           </div>
           <br />
           <div>
             <Avatar style={{ marginRight: 47 }} shape='square' size='large' icon='user' />
             <Avatar style={{ marginRight: 47 }} shape='square' icon='user' />
             <Avatar style={{ marginRight: 47 }} shape='square' size='small' icon='user' />
-            <Avatar style={{ marginRight: 47 }} shape='square' size='tiny' icon='user' />
           </div>
         </div>
         <br />
@@ -58,7 +52,7 @@ export default class AvatarView extends React.Component {
         <br />
         <div>
           <span style={{ marginRight: 47 }}>
-            <Badge count={1}><Avatar shape='square' icon='user' /></Badge>
+            <Badge count={2}><Avatar shape='square' icon='user' /></Badge>
           </span>
           <span>
             <Badge dot><Avatar shape='square' icon='user' /></Badge>
