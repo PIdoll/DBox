@@ -19,7 +19,6 @@ export default class Search extends Component {
   }
 
   onSearch = () => {
-    console.log('onSearch...')
     const { onSearch } = this.props;
     if (onSearch) {
       onSearch(this.input.input.value);

@@ -1,5 +1,6 @@
 import React from 'react';
 import Tag from '../../components/tag';
+import Button from '../../components/button/button';
 import TagGroup from '../../components/tag/tagGroup';
 
 
@@ -10,7 +11,6 @@ export default class TagView extends React.Component {
   getValue = () => {
     this.setState({visible: !this.state.visible})
   }
-
   render () {
     return (
       <div id='main-container'>

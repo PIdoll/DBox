@@ -1688,9 +1688,6 @@ samp {
   cursor: pointer;
   margin-right: 5px;
   margin-bottom: 5px;
-  min-width: 40px;
-  max-height: 22px;
-}
 .idoll-tag span {
   min-width: 24px;
   max-height: 20px;
@@ -1712,8 +1709,36 @@ samp {
   border-color: #F9AA29;
   color: #F9AA29;
 }
+.idoll-tag-checkable {
+  cursor: pointer;
+}
+.idoll-tag-checkable:hover,
+.idoll-tag-checkable:active {
+  transition: all .5s;
+  background-color: #13B886;
+  color: #f5f5f5;
+}
+.idoll-tag-checkable-checked {
+  background-color: #13B886;
+  color: #f5f5f5;
+}
 .idoll-tag-close {
   cursor: pointer;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+.idoll-tag-clicked:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: -1px;
+  right: -1px;
+  border-radius: inherit;
+  border: 0 solid #13B886;
+  opacity: 0.4;
+  animation: buttonEffect .4s;
+  display: block;
 }
 .idoll-tag-hot {
   border: none;
@@ -1728,4 +1753,5 @@ samp {
 }
 .tagGroup .idoll-tag:last-child {
   border-style: dashed;
+
 }

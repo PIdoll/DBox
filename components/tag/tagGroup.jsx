@@ -52,9 +52,9 @@ export default class TagGroup extends React.Component {
   render() {
     const { tags, inputVisible, inputValue } = this.state;
     return (
-      <div className='tagGroup'>
+      <div>
         {tags.map((tag, index) => {
-           return <Tag key={index} closable={index !== this.state.id} checked={index === this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
+           return <Tag key={tag} closable={index !== this.state.id} checked={index === this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
         })}
         {inputVisible && (
           <Input
