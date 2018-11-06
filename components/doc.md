@@ -1,4 +1,4 @@
-## Dbox Pro组件jsx文件注意点和md文件编辑指南
+### Dbox Pro组件jsx文件注意点和md文件编辑指南
 
 
 ### Basic Syntax
@@ -25,6 +25,7 @@
 |    ------------   |     --------------     |
 |      Header       |       Title            |
 
+
 ### Code Block(代码块)
 |        ```        |
     {
@@ -33,14 +34,17 @@
     }
 |        ```        |
 
+
 ### Defiantion List(定义列表)
 |    term           |
 |  : defination     |
+
 
 ### Task List（任务列表）
 |  - [x] Write the press release|
 |  - []  Update the website     |
 |  - []  Contact the media      |
+
 
 ### Comments and propTypes(注释和组件类型)
 ```jsx
@@ -68,6 +72,28 @@ myComponents.propTypes = {
  hiddenProp: React.PropTypes.string
 }
 ```
+
+
+#### 以上就是使用markdown可能用到的语法，下面就直接以“button”组件作为实例demo展示
+PROPS & METHOD这里是自动生成的部分，需要在各组件的propTypes和defaultProp自定义好各个API所需的名称，默认值，类型和描述值。
+标题就用一下的这种格式，标题下面的描述可直接书写
+
+
+#### **按钮类型(type)**
+然后就是添加demo展示了，可按照如下语法
+```jsx
+<Button>按钮</Button>
+<Button type="danger">危险</Button>
+```
+
+对于API是否需要重新定义这个就遵从大家的建议
+
+
+### API
+|   参数   |   说明   |  类型  |   默认值  |
+| ------- | -------- | ----- | -------- |
+|  style  | 自定义样式 | object |   {}    |
+
 
 
 

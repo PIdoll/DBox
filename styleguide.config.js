@@ -55,6 +55,26 @@ module.exports = {
         small: '@media(max-width:600px)'
       }
     },
+    Table: {
+      table: {
+        border: '0',
+        borderCollapse: 'collapse',
+        fontSize: '14px',
+        marginBottom: '45px',
+        color: '#333',
+        width: '100%',
+        '&  th': {
+          backgroundColor: '#f5f7fa',
+          border: '1px solid #eaeefb',
+          padding: '10px',
+          fontWeight: '600',
+        },
+        '&  td': {
+          border: '1px solid #eaeefb',
+          padding: '10px',
+        }
+      }
+    },
     ReactComponent: {
       tabs: {
         backgroundColor: '#ebf1f3',
@@ -95,7 +115,7 @@ module.exports = {
         {
           name: 'Document rule',
           description: 'this is a markdown rule sections',
-          content: ''
+          content: './components/doc.md'
         },
         {
           name: 'Colors',
