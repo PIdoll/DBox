@@ -9,6 +9,8 @@
   .reset-component;
   position: relative;
   padding: 8px 15px 8px 37px;
+  font-size: @font-size-base;
+  color: @text-color;
   border-radius: @border-radius-base;
 
   &&-no-icon {
@@ -71,6 +73,9 @@
     .@{iconfont-css-prefix}-close {
       color: @text-color-secondary;
       transition: color .3s;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
       &:hover {
         color: #404040;
       }
@@ -113,7 +118,7 @@
     font-size: @font-size-lg;
     color: @alert-message-color;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
 
   &-with-description &-description {
