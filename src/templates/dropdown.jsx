@@ -81,18 +81,21 @@ export default class DropView extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>鼠标点击，显示菜单</h1>
+        <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本</p>
         <Dropdown overlay={menu} trigger={['click']} onClick={handleButtonClick}>
           <Button type='normal'>
             按钮
           </Button>
         </Dropdown>
         <h1 className='h1'>鼠标点击，显示图标菜单</h1>
+        <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本;可在文本前直接加入组件Icon即可</p>
         <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
           <Button type='normal'>
             按钮
           </Button>
         </Dropdown>
         <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>
+        <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；为DropdownButton组件添加size同时添加ref属性即可</p>
         <DropdownButton size='large' ref={this.refCb} overlay={menu1} trigger={['hover']}>
           功能按钮
         </DropdownButton>
@@ -107,10 +110,12 @@ export default class DropView extends React.Component {
           下拉菜单
         </DropdownNormal>
         <h1 className='h1'>下拉菜单中不可用菜单项</h1>
+        <p>直接在菜单项加入disabled即可</p>
         <DropdownNormal overlay={menu3} type='caret-down' trigger={['click']} >
           下拉菜单
         </DropdownNormal>
         <h1 className='h1'>下拉菜单展示位置</h1>
+        <p>菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh</p>
         <Dropdown overlay={menu} placement='bottomLeft'>
           <Button>下左</Button>
         </Dropdown>
