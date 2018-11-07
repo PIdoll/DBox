@@ -33,7 +33,7 @@ export default () => (
     <h1 className='h1'>基本使用输入框</h1>
     <Input type='text' placeholder='请输入姓名' /><br /><br />
     <Input type='text' disabled placeholder='禁用状态' /><br /><br />
-    <Input type='text' readonly value='只读状态' />
+    <Input type='text' readOnly value='只读状态' />
 
     <h1 className='h1'>前置／后置</h1>
     <Input type='text' addonBefore='姓名' placeholder='黄晓明' addonAfter='你好' /><br />
