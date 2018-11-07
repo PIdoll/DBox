@@ -17,6 +17,7 @@
   top: -9999px;
   z-index: 1050;
   display: block;
+  transition-delay: 0.5s;
 }
 .idoll-dropdown-wrap {
   position: relative;
@@ -31,7 +32,7 @@
   font-size: 12px;
 }
 .idoll-dropdown-wrap .idoll-icon-down:before {
-  transition: transform 0.2s;
+  transition: transform 3s;
 }
 .idoll-dropdown-wrap-open .idoll-icon-down:before {
   transform: rotate(180deg);
@@ -55,7 +56,7 @@
 .idoll-dropdown-menu-item-group-title {
   color: rgba(0, 0, 0, 0.45);
   padding: 5px 12px;
-  transition: all 0.3s;
+  transition: all 3s;
 }
 .idoll-dropdown-menu-submenu-popup {
   position: absolute;
@@ -70,16 +71,16 @@
   color: rgba(0, 0, 0, 0.65);
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.3s;
   line-height: 22px;
 }
 .idoll-dropdown-menu-item > a,
 .idoll-dropdown-menu-submenu-title > a {
   color: rgba(0, 0, 0, 0.45);
   display: block;
+  transition: all 1s;
   padding: 5px 12px;
   margin: -5px -12px;
-  transition: all 0.3s;
+  transition: all 3s;
 }
 .idoll-dropdown-menu-item > a:focus,
 .idoll-dropdown-menu-submenu-title > a:focus {
@@ -180,32 +181,6 @@
 .idoll-dropdown-menu-submenu:last-child .idoll-dropdown-menu-submenu-title {
   border-radius: 0 0 3px 3px;
 }
-.idoll-dropdown.slide-down-enter.slide-down-enter-active.idoll-dropdown-placement-bottomLeft,
-.idoll-dropdown.slide-down-appear.slide-down-appear-active.idoll-dropdown-placement-bottomLeft,
-.idoll-dropdown.slide-down-enter.slide-down-enter-active.idoll-dropdown-placement-bottomCenter,
-.idoll-dropdown.slide-down-appear.slide-down-appear-active.idoll-dropdown-placement-bottomCenter,
-.idoll-dropdown.slide-down-enter.slide-down-enter-active.idoll-dropdown-placement-bottomRight,
-.idoll-dropdown.slide-down-appear.slide-down-appear-active.idoll-dropdown-placement-bottomRight {
-  animation-name: idollSlideUpIn;
-}
-.idoll-dropdown.slide-up-enter.slide-up-enter-active.idoll-dropdown-placement-topLeft,
-.idoll-dropdown.slide-up-appear.slide-up-appear-active.idoll-dropdown-placement-topLeft,
-.idoll-dropdown.slide-up-enter.slide-up-enter-active.idoll-dropdown-placement-topCenter,
-.idoll-dropdown.slide-up-appear.slide-up-appear-active.idoll-dropdown-placement-topCenter,
-.idoll-dropdown.slide-up-enter.slide-up-enter-active.idoll-dropdown-placement-topRight,
-.idoll-dropdown.slide-up-appear.slide-up-appear-active.idoll-dropdown-placement-topRight {
-  animation-name: idollSlideDownIn;
-}
-.idoll-dropdown.slide-down-leave.slide-down-leave-active.idoll-dropdown-placement-bottomLeft,
-.idoll-dropdown.slide-down-leave.slide-down-leave-active.idoll-dropdown-placement-bottomCenter,
-.idoll-dropdown.slide-down-leave.slide-down-leave-active.idoll-dropdown-placement-bottomRight {
-  animation-name: idollSlideUpOut;
-}
-.idoll-dropdown.slide-up-leave.slide-up-leave-active.idoll-dropdown-placement-topLeft,
-.idoll-dropdown.slide-up-leave.slide-up-leave-active.idoll-dropdown-placement-topCenter,
-.idoll-dropdown.slide-up-leave.slide-up-leave-active.idoll-dropdown-placement-topRight {
-  animation-name: idollSlideDownOut;
-}
 .idoll-dropdown-trigger .idoll-icon-down,
 .idoll-dropdown-link .idoll-icon-down {
   display: compact;
@@ -286,6 +261,7 @@
 }
 .idoll-size-small .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   display: block;
+  transition-delay: 3s;
   height: 24px;
   line-height: 24px;
   font-size: 12px;

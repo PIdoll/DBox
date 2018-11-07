@@ -44,6 +44,7 @@ import Anchor from 'templates/anchor';
 import Cascader from 'templates/cascader';
 import Tree from 'templates/tree';
 import Popconfirm from 'templates/popconfirm';
+import Notification from 'templates/notification';
 
 
 import './App.css';
@@ -94,6 +95,7 @@ const App = () => (
       <Route exact path='/anchor' component={Anchor} />
       <Route exact path='/tree' component={Tree} />
       <Route exact path='/popconfirm' component={Popconfirm} />
+      <Route exact path='/notification' component={Notification} />
     </div>
   </Router>
 )
