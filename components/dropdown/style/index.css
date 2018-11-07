@@ -259,10 +259,10 @@
   background: #13B886;
   color: #fff;
 }
-.idoll-icon-a,
-.idoll-icon-a:hover,
-.idoll-icon-a:focus,
-.idoll-icon-a:active {
+.idoll-icon,
+.idoll-icon:hover,
+.idoll-icon:focus,
+.idoll-icon:active {
   color: rgba(0, 0, 0, 0.45);
   text-decoration: none;
 }
@@ -302,4 +302,13 @@
   line-height: 40px;
   font-size: 16px;
   padding: 0 15px;
+}
+#main-container .h1 {
+  margin-top: 95px;
+}
+#main-container .h1:first-child {
+  margin-top: 0;
+}
+#main-container p {
+  margin-bottom: 10px;
 }
