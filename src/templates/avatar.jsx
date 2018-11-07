@@ -4,7 +4,7 @@ import Badge from 'components/badge';
 import Button from 'components/button';
 
 
-const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView extends React.Component {
+const UserList = ['Z', 'Alvin', 'Tom', 'DBox']; export default class AvatarView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,11 +40,10 @@ const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView e
         <span>支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。</span>
         <div>
           <Avatar style={{ marginRight: 47 }} icon='user' />
-          <Avatar style={{ marginRight: 47 }}>U</Avatar>
           <Avatar style={{ marginRight: 47 }}>USER</Avatar>
-          <Avatar style={{ marginRight: 47 }} src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' alt='DBox' />
-          <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf', marginRight: 47 }}>U</Avatar>
-          <Avatar style={{ backgroundColor: '#87d068', marginRight: 47 }} icon='user' />
+          <Avatar style={{ marginRight: 47 }} src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541605173839&di=c96021edb0e80ed07a292ea657f700bb&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F02%2F04%2F6d5d44485d6875786063ffb8760ee990.jpg' alt='DBox' />
+          <Avatar style={{ color: '#f56a00', backgroundColor: '#F9AA29', marginRight: 47 }}>Z</Avatar>
+          <Avatar style={{ backgroundColor: '#13B886', marginRight: 47 }} icon='user' />
         </div>
         <br />
         <h1 className='h1'>带徽标的头像</h1>
@@ -61,10 +60,9 @@ const UserList = ['U', 'Lucy', 'Tom', 'DBox']; export default class AvatarView e
         <h1 className='h1'>自动调整字符大小</h1>
         <span>对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整</span>
         <br />
-        <Avatar style={{ marginRight: 47 }}>U</Avatar>
-        <Avatar style={{ marginRight: 47 }}>Tom</Avatar>
-        <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf', marginRight: 47 }}>hello</Avatar>
-        <Avatar style={{ marginRight: 47 }}>lucy</Avatar>
+        <Avatar style={{ marginRight: 47 }}>DBox</Avatar>
+        <Avatar style={{ marginRight: 47 }}>Alvin</Avatar>
+        <Avatar style={{ color: '#f56a00', backgroundColor: '#F9AA29', marginRight: 47 }}>张三</Avatar>
         <Avatar style={{ marginRight: 47 }}>react</Avatar>
         <h1 className='h1'>按钮调整字符大小</h1>
         <span>对于字符型的头像，点击按钮顺序切换字符，当字符串较长时，字体大小可以根据头像宽度自动调整。</span>
