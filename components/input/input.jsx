@@ -113,9 +113,12 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const className = classNames({
-      [`${props.prefixCls}-wrap`]: true,
-      [wrapperClassName]: (addonBefore || addonAfter)
+    // const className = classNames({
+    //   [`${props.prefixCls}-wrap`]: true,
+    //   [wrapperClassName]: (addonBefore || addonAfter)
+    // });
+    const className = classNames(`${props.prefixCls}-wrapper`, {
+      [wrapperClassName]: (addonBefore || addonAfter),
     });
 
     const groupClassName = classNames({
@@ -163,11 +166,15 @@ export default class Input extends Component {
       <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {props.suffix}
       </span>
-
+    const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
+      [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
+      [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
+    });
 
     return (
       <span
-        className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        className={affixWrapperCls}
         style={props.style}
       >
         {prefix}
