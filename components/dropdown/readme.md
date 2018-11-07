@@ -40,7 +40,6 @@ english: Dropdown
 | trigger     | 触发下拉的行为   | ['click'] or ['hover'] | ['hover']        |
 | overlay     | 菜单         | [Menu](/components/menu/) | -     |
 | disabled     | 菜单是否禁用         | `boolean` | -    |
-| onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | placement     | 菜单弹出位置   | string`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRight` | `bottomLeft`        |
 | size     | 按钮菜单大小和Button一致 | string`large``small`默认   | 默认           |

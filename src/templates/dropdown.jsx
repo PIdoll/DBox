@@ -47,10 +47,11 @@ export default class DropView extends React.Component {
     });
   }
   refCb = (e) => {
-    console.log(e.props.size)
+    if (e !== null) {
       this.setState({
         size: e.props.size
-      });
+      })
+    }
     }
   render() {
     const menu1 = (
