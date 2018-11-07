@@ -19,7 +19,7 @@ export default () => (
     <Button type='primary' size='small'>按钮</Button>&nbsp;&nbsp;
     <Button type='primary'>按钮</Button>&nbsp;&nbsp;
     <Button type='primary' size='large'>按钮</Button>
-    <br />
+    <br /><br />
     <h1 className='h1'>特殊场景按钮</h1>
     <Button type='normal' href='www.baidu.com'>跳转</Button>&nbsp;&nbsp;
     <Button type='create' icon='plus' />&nbsp;&nbsp;
