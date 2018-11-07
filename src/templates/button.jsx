@@ -33,10 +33,6 @@ export default () => (
     <Button icon='down' >图标</Button>&nbsp;&nbsp;
     <Button icon='down' size='large'>图标</Button>&nbsp;&nbsp;
     <br /><br />
-    <Button icon='delete' size='small' shape='square' />&nbsp;&nbsp;
-    <Button icon='delete' shape='square' />&nbsp;&nbsp;
-    <Button icon='delete' size='large' shape='square' />&nbsp;&nbsp;
-    <br /><br />
     <Button icon='delete' size='small' shape='circle' />&nbsp;&nbsp;
     <Button icon='delete' shape='circle' />&nbsp;&nbsp;
     <Button icon='delete' size='large' shape='circle' />&nbsp;&nbsp;
