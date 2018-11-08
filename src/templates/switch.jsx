@@ -17,10 +17,6 @@ export default class SwitchView extends React.Component {
       <div id='main-container'>
         <h1 className='h1'>基本用法</h1>
         <Switch defaultChecked />
-        <h1 className='h1'>指定当前是否被选中</h1>
-        <Switch checked />
-        <h1 className='h1'>失效状态</h1>
-        <Switch disabled />
         <h1 className='h1'>按钮操作</h1>
         <Switch disabled={this.state.disabled} />
         <br />
@@ -29,12 +25,9 @@ export default class SwitchView extends React.Component {
         <Switch />
         <br />
         <Switch size='small' />
-        <h1 className='h1'>带有文字和图标</h1>
-        <Switch checkedChildren={'开'} unCheckedChildren={'关'} defaultChecked />
-        <br />
+        <h1 className='h1'>带有文字的按钮</h1>
         <Switch checkedChildren={'1'} unCheckedChildren={'0'} />
         <br />
-        <Switch checkedChildren={'✔'} unCheckedChildren={'X'} />
         <h1 className='h1'>加载中</h1>
         <Switch loading defaultChecked />
         <br />

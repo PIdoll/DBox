@@ -1744,7 +1744,6 @@ samp {
   color: #13B886;
 }
 .dbox-switch:focus {
-  box-shadow: 0 0 0 2px rgba(19, 184, 134, 0.2);
   outline: 0;
 }
 .dbox-switch:focus:hover {
