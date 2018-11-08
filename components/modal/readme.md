@@ -1,21 +1,97 @@
-# [Modal](http://naotu.baidu.com/file/c99e642e30c4d8d5ddac22824253f02c?token=5034e8c457c40ccb)
 
----
-
-type: Views
-category: Components
-chinese: 对话框
-english: Modal
----
-
-模态对话框
-
-## 何时使用
+#### **何时使用**
 
 需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 `Modal` 在当前页面正中打开一个浮层，承载相应的操作。
 另外当需要一个简洁的确认框询问用户时，可以使用精心封装好的 `ant.Modal.confirm()` 等方法。
 
-## API
+#### **普通弹出框(可用于展示和提交)**
+```jsx
+class basicModal extends React.component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
+  }
+  showModal() {
+    this.setState({
+      visible: true
+    });
+  }
+  handleOk(e) {
+    this.setState({
+      visible: false
+    });
+  }
+  handleCancel(e) {
+    this.setState({
+      visible: false
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Button type='primary' onClick={this.showModal.bind(this)}>显示对话框</Button>
+        <Modal title='第一个 Modal' visible = {this.state.visible}
+          onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)} width={800}>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+        </Modal>
+      </div>
+    )
+  }
+}
+<basicModal />
+
+```
+
+#### **异步关闭弹出框**
+```jsx
+  initialState = {
+    asyncvisible: false,
+    ModalText: '对话框的内容',
+  }
+const  asyncshowModal = () => {
+    this.setState({
+      asyncvisible: true
+    });
+  }
+const  asynchandleOk = (e) => {
+    this.setState({
+      ModalText: '对话框将在两秒后关闭',
+      confirmLoading: true
+    });
+    setTimeout(() => {
+      this.setState({
+        asyncvisible: false,
+        confirmLoading: false
+      });
+    }, 2000);
+  }
+const  asynchandleCancel = (e) => {
+    console.log('点击了取消');
+    this.setState({
+      asyncvisible: false
+    });
+  }
+<div>
+  <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
+  {
+    state.asyncvisible ? (
+      <Modal title='第一个 Modal'
+        onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
+        <p>{this.ModalText}</p>
+      </Modal>
+    ) : null
+  }
+</div>
+
+```
+
+#### **API**
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|

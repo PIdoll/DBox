@@ -95,6 +95,3 @@ PROPS & METHOD这里是自动生成的部分，需要在各组件的propTypes和
 |  style  | 自定义样式 | object |   {}    |
 
 
-
-
-

@@ -5,9 +5,9 @@ const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox Pro ${version}`,
-  serverPort: 8000,
+  serverPort: 9001,
   exampleMode: 'collapse',
-  usageMode: 'expand',
+  usageMode: 'hidden',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
@@ -31,7 +31,6 @@ module.exports = {
         backgroundColor: '#333'
       },
       controls: {
-        padding: '0 10px',
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
@@ -41,12 +40,15 @@ module.exports = {
         },
         '& button ': {
           display: 'block',
-          width: '100%',
+          padding: '10px 20px ',
           color: '#455a64',
-          height: '40px',
-          paddingLeft: '10px',
           cursor: 'pointer',
+          float: 'right',
+          backgroundColor: '#e1e1e1',
         },
+         '& > div:nth-child(2)': {
+          display: 'none',
+        }
       },
       logo: {
         fontSize: '18px'
@@ -63,24 +65,17 @@ module.exports = {
         marginBottom: '45px',
         color: '#333',
         width: '100%',
-        '&  th': {
+        '& th': {
           backgroundColor: '#f5f7fa',
           border: '1px solid #eaeefb',
           padding: '10px',
           fontWeight: '600',
         },
-        '&  td': {
+        '& td': {
           border: '1px solid #eaeefb',
           padding: '10px',
         }
       }
-    },
-    ReactComponent: {
-      tabs: {
-        backgroundColor: '#ebf1f3',
-        overflow: 'auto',
-        padding: '10px 20px'
-      },
     },
     ComponentsList: {
       heading: {
@@ -110,12 +105,12 @@ module.exports = {
     {
       sections: [
         {
-          content: './components/getStart.md'
+          content: ''
         },
         {
           name: 'Document rule',
           description: 'this is a markdown rule sections',
-          content: './components/doc.md'
+          content: ''
         },
         {
           name: 'Colors',
@@ -203,7 +198,7 @@ module.exports = {
           name: 'Feedback',
           components: () => ([
             path.resolve(__dirname, './components/alert/alert.jsx'),
-            path.resolve(__dirname, './components/modal/Modal.jsx'),
+            path.resolve(__dirname, './components/modal/index.jsx'),
             path.resolve(__dirname, './components/message/message.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),

@@ -50,4 +50,4 @@
 | style | 定义容器类名的样式 | object | - |
 | title | 标题内容 | ReactNode | - |
 
-
+<style>.idoll-btn{margin:0 10px 0 0} </style>
