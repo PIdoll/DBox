@@ -18,6 +18,7 @@
   cursor: pointer;
   transition: all @switch-duration;
   user-select: none;
+  margin-bottom: 5px;
 
   &-inner {
     color: #fff;
@@ -68,6 +69,7 @@
   &-loading:before {
     display: inline-block;
     color: @text-color;
+    cursor: not-allowed
   }
 
   &-checked&-loading:before {
@@ -128,6 +130,7 @@
   &-small&-loading:before {
     animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
     font-weight: bold;
+    cursor: not-allowed
   }
 
   &-checked {
@@ -152,8 +155,11 @@
 
   &-loading,
   &-disabled {
-    pointer-events: none;
+    cursor: not-allowed;
     opacity: @switch-disabled-opacity;
+  }
+  &-disabled:after {
+    cursor: not-allowed
   }
 }
 
