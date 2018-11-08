@@ -41,7 +41,7 @@ const UserList = ['Z', 'Alvin', 'Tom', 'DBox']; export default class AvatarView 
         <div>
           <Avatar style={{ marginRight: 47 }} icon='user' />
           <Avatar style={{ marginRight: 47 }}>USER</Avatar>
-          <Avatar style={{ marginRight: 47 }} src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541605173839&di=c96021edb0e80ed07a292ea657f700bb&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F02%2F04%2F6d5d44485d6875786063ffb8760ee990.jpg' alt='DBox' />
+          <Avatar style={{ marginRight: 47 }} src='https://thumbnail0.baidupcs.com/thumbnail/6561ad589a8117a4019aa480cfbf2727?fid=2014780205-250528-1079432591547950&time=1541671200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-05PBOkya4A6297W5mbSL435DJNU%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7230675216001197849&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video' alt='DBox' />
           <Avatar style={{ color: '#f56a00', backgroundColor: '#F9AA29', marginRight: 47 }}>Z</Avatar>
           <Avatar style={{ backgroundColor: '#13B886', marginRight: 47 }} icon='user' />
         </div>
