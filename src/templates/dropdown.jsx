@@ -99,12 +99,6 @@ export default class DropView extends React.Component {
         <DropdownButton size='large' ref={this.refCb} overlay={menu1} trigger={['hover']}>
           功能按钮
         </DropdownButton>
-        <h1 className='h1'>在下拉列表中点击内容不关闭菜单</h1>
-        <Dropdown trigger={['click']} overlay={menu2} onVisibleChange={this.handleVisibleChange} visible={this.state.visible} >
-          <a href='#' className='idoll-icon-a'>
-            下拉菜单{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
-          </a>
-        </Dropdown>
         <h1 className='h1'>在下拉列表中点击内容关闭菜单</h1>
         <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
           下拉菜单

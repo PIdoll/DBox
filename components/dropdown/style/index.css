@@ -6,7 +6,6 @@
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-variant: tabular-nums;
-  line-height: 1.5;
   color: rgba(0, 0, 0, 0.65);
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +16,9 @@
   top: -9999px;
   z-index: 1050;
   display: block;
-  transition-delay: 0.5s;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
 }
 .idoll-dropdown-wrap {
   position: relative;
@@ -32,7 +33,7 @@
   font-size: 12px;
 }
 .idoll-dropdown-wrap .idoll-icon-down:before {
-  transition: transform 3s;
+  transition: transform 0.2s ease;
 }
 .idoll-dropdown-wrap-open .idoll-icon-down:before {
   transform: rotate(180deg);
@@ -56,7 +57,7 @@
 .idoll-dropdown-menu-item-group-title {
   color: rgba(0, 0, 0, 0.45);
   padding: 5px 12px;
-  transition: all 3s;
+  transition: all 0.3s;
 }
 .idoll-dropdown-menu-submenu-popup {
   position: absolute;
@@ -72,15 +73,15 @@
   white-space: nowrap;
   cursor: pointer;
   line-height: 22px;
+  transition: background 0.3s ease;
 }
 .idoll-dropdown-menu-item > a,
 .idoll-dropdown-menu-submenu-title > a {
   color: rgba(0, 0, 0, 0.45);
   display: block;
-  transition: all 1s;
+  transition: all 1s 1 0;
   padding: 5px 12px;
   margin: -5px -12px;
-  transition: all 3s;
 }
 .idoll-dropdown-menu-item > a:focus,
 .idoll-dropdown-menu-submenu-title > a:focus {
@@ -101,6 +102,7 @@
 .idoll-dropdown-menu-submenu-title-disabled {
   color: rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
+  pointer-events: none;
 }
 .idoll-dropdown-menu-item-disabled:hover,
 .idoll-dropdown-menu-submenu-title-disabled:hover {
@@ -241,11 +243,15 @@
   color: rgba(0, 0, 0, 0.45);
   text-decoration: none;
 }
+.idoll-size-large {
+  transition: fade 3s;
+}
 .idoll-size-large .idoll-dropdown-menu-item {
   height: 40px;
   line-height: 40px;
   font-size: 16px;
   padding: 0 15px;
+  transition: fade 3s;
 }
 .idoll-size-large .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   height: 40px;
@@ -261,7 +267,7 @@
 }
 .idoll-size-small .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   display: block;
-  transition-delay: 3s;
+  transition-delay: 0.3s;
   height: 24px;
   line-height: 24px;
   font-size: 12px;
@@ -284,4 +290,100 @@
 }
 #main-container .h1:first-child {
   margin-top: 0;
+}
+@keyframes antSlideUpIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+}
+@keyframes antSlideUpOut {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0.8);
+  }
+}
+@keyframes antSlideDownIn {
+  0% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
+  }
+}
+@keyframes antSlideDownOut {
+  0% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(0.8);
+  }
+}
+@keyframes antSlideLeftIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleX(1);
+  }
+}
+@keyframes antSlideLeftOut {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleX(0.8);
+  }
+}
+@keyframes antSlideRightIn {
+  0% {
+    opacity: 0;
+    transform-origin: 100% 0%;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 0%;
+    transform: scaleX(1);
+  }
+}
+@keyframes antSlideRightOut {
+  0% {
+    opacity: 1;
+    transform-origin: 100% 0%;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 0%;
+    transform: scaleX(0.8);
+  }
 }
