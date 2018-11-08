@@ -29,8 +29,8 @@ export default class BadgeView extends React.Component {
     const content = {
       width: 64,
       height: 64,
-      borderRadius: 4,
-      background: '#eee',
+      borderRadius: 3,
+      background: '#E2E2E2',
       display: 'inline-block',
     }
     return (
@@ -85,11 +85,6 @@ export default class BadgeView extends React.Component {
             <span className='example' />
           </Badge>
         </a>
-        <h1>自定义标题</h1>
-        <p style={{ marginBottom: '10px' }}>设置鼠标放在状态点上时显示的</p>
-        <Badge title='DBox hover text' count={5}>
-          <a href='#' style={content} />
-        </Badge>
         <h1>状态点</h1>
         <span>用于表示状态的小圆点。</span>
         <div style={{ position: 'relative', marginLeft: '10px' }}>
@@ -102,9 +97,9 @@ export default class BadgeView extends React.Component {
         <div style={{ position: 'relative', marginTop: '20px', marginLeft: '10px' }}>
           <Badge dot status='success' text='成功' /><br />
           <Badge dot status='error' text='错误' style={{ top: '28px' }} /><br />
-          <Badge dot status='default' text='未开始' style={{ top: '48px' }} /><br />
+          <Badge dot status='default' text='默认' style={{ top: '48px' }} /><br />
           <Badge dot status='processing' text='进行中' style={{ top: '68px' }} /><br />
-          <Badge dot status='warning' text='异常' style={{ top: '88px' }} /><br />
+          <Badge dot status='warning' text='警告' style={{ top: '88px' }} /><br />
         </div>
         <h1>动态</h1>
         <p style={{ marginBottom: '10px' }}>展示动态变化</p>

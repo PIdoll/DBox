@@ -29,11 +29,8 @@
     z-index: 10;
     font-family: @font-family;
     box-shadow: 0 0 0 1px #fff;
-    cursor: pointer;
-    a,
-    a:hover {
-      color: #fff;
-    }
+    pointer-events: none;//阻止hover事件
+    // cursor: not-allowed
   }
 
   &-dot {
@@ -49,17 +46,6 @@
     box-shadow: 0 0 0 1px #fff;
   }
 
-  &-zoom-appear,
-  &-zoom-enter {
-    animation: idollZoomBadgeIn .3s @ease-out-back;
-    animation-fill-mode: both;
-  }
-
-  &-zoom-leave {
-    animation: idollZoomBadgeOut .3s @ease-in-back;
-    animation-fill-mode: both;
-  }
-
   &-not-a-wrapper &-count {
     top: auto;
     display: block;
@@ -68,20 +54,11 @@
   }
 }
 
-a & {
-  &-count:hover {
-    background: timt(@error-color, 20%);
-  }
-  &-count:active {
-    background: shade(@error-color, 5%);
-  }
-}
-
 span.example {
   width: 64px;
   height: 64px;
-  border-radius: 4px;
-  background: rgb(238, 238, 238);
+  border-radius: @border-radius-base;
+  background: rgb(226, 226, 226);
   display: inline-block;
 }
 
@@ -148,7 +125,7 @@ span.example {
       position: absolute;
       border: 1px solid @processing-color;
       border-radius: 100%;
-      animation: antRadioEffect 1.2s infinite;
+      animation: idollRadioEffect 1.2s infinite;
     }
   }
   &.@{badge-prefix-cls}-warning-dot {
@@ -162,27 +139,7 @@ span.example {
   }
 }
 
-@keyframes idollZoomBadgeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
-  }
-  100% {
-    transform: scale(1) translateX(-50%);
-  }
-}
-
-@keyframes idollZoomBadgeOut {
-  0% {
-    transform: scale(1) translateX(-50%);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
-  }
-}
-
-@keyframes antRadioEffect {
+@keyframes idollRadioEffect {
   0% {
     transform: scale(0);
     opacity: 1;

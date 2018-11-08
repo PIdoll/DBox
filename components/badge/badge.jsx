@@ -69,7 +69,6 @@ export default class Badge extends React.Component {
               className={scrollNumberCls}
               count={count}
               style={offset ? ({left: offset[0], top: offset[1]}) : style}
-              title={this.props.title || count}
             />
           }
         </Animate>
