@@ -1697,6 +1697,7 @@ samp {
 }
 .dbox-avatar .idoll-icon {
   transform: translateY(-15%);
+  color: #fff;
 }
 .dbox-avatar-image {
   background: transparent;
