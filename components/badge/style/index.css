@@ -7,7 +7,6 @@
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
-}
 .idoll-badge-count {
   position: absolute;
   transform: translateX(-50%);
@@ -27,6 +26,7 @@
   z-index: 10;
   font-family: tahoma;
   box-shadow: 0 0 0 1px #fff;
+  cursor: pointer;
 }
 .idoll-badge-count a,
 .idoll-badge-count a:hover {
@@ -36,9 +36,9 @@
   position: absolute;
   transform: translateX(-50%);
   transform-origin: 0px center;
-  top: -4px;
-  height: 8px;
-  width: 8px;
+  top: -3px;
+  height: 6px;
+  width: 6px;
   border-radius: 100%;
   background: #F44336;
   z-index: 10;
@@ -65,6 +65,13 @@ a -count:hover {
 a -count:active {
   background: #e84033;
 }
+span.example {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  background: #eeeeee;
+  display: inline-block;
+}
 .idoll-scroll-number {
   overflow: hidden;
 }
@@ -77,6 +84,52 @@ a -count:active {
 }
 .idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p.current {
   display: block;
+}
+.idoll-scroll-number.idoll-badge-success-dot {
+  background-color: #3CCB69;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-error-dot {
+  background-color: #F44336;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-default-dot {
+  background-color: #E2E2E2;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+}
+.idoll-scroll-number.idoll-badge-processing-dot {
+  background-color: #13B886;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
+  animation: antRadioEffect 1s infinite;
+}
+.idoll-scroll-number.idoll-badge-warning-dot {
+  background-color: #F9AA29;
+  width: 6px;
+  height: 6px;
+  top: 8px;
+  left: -10px;
+  position: absolute;
+  border-radius: 100%;
 }
 @keyframes idollZoomBadgeIn {
   0% {
@@ -94,5 +147,19 @@ a -count:active {
   100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
+  }
+}
+@keyframes antRadioEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(0);
+    opacity: 1;
   }
 }

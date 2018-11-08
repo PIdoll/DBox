@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { PropTypes } from 'prop-types';
-import omit from 'object.omit'
+import omit from 'object.omit';
 
 import './style'
 
@@ -82,6 +82,9 @@ export default class Input extends Component {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
       [`${prefixCls}-disabled`]: disabled
+    }, {
+      [`${prefixCls}-enter-button`]: true,
+      [`${prefixCls}-${size}`]: true
     });
   }
 
@@ -110,9 +113,12 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const className = classNames({
-      [`${props.prefixCls}-wrap`]: true,
-      [wrapperClassName]: (addonBefore || addonAfter)
+    // const className = classNames({
+    //   [`${props.prefixCls}-wrap`]: true,
+    //   [wrapperClassName]: (addonBefore || addonAfter)
+    // });
+    const className = classNames(`${props.prefixCls}-wrapper`, {
+      [wrapperClassName]: (addonBefore || addonAfter),
     });
 
     const groupClassName = classNames({
@@ -144,26 +150,31 @@ export default class Input extends Component {
     );
   }
 
-  renderLaybeldIcon(children) {
+  renderLaybeldIcon = (children) => {
     const { props } = this;
+
     if (!('prefix' in props || 'suffix' in props)) {
       return children;
     }
-
     const prefix = props.prefix ? (
       <span className={`${props.prefixCls}-prefix`}>
         {props.prefix}
       </span>
     ) : null;
 
-    const suffix = props.suffix ? (
-      <span className={`${props.prefixCls}-suffix`}>
+    const suffix =
+      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {props.suffix}
       </span>
-    ) : null;
+    const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
+      [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
+      [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
+    });
+
     return (
       <span
-        className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        className={affixWrapperCls}
         style={props.style}
       >
         {prefix}
@@ -185,6 +196,13 @@ export default class Input extends Component {
       'prefix',
       'suffix'
     ]);
+
+
+    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
+    // const clearSuffix = React.cloneElement(node, {
+    //   onClick: this.onClear,
+    //   className: 'icon-hover',
+    // });
 
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);

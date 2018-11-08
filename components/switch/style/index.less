@@ -51,7 +51,7 @@
   }
 
   &:before {
-    content: "C";//加载icon
+    content: "";//加载icon
     font-family: dboxicon;
     animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
     text-align: center;
@@ -59,6 +59,10 @@
     z-index: 1;
     display: none;
     font-size: 12px;
+    border:1px solid;
+    border-left:1px solid transparent;
+    border-bottom:1px solid transparent;
+    border-radius: 50%;
   }
 
   &-loading:before {
@@ -153,7 +157,7 @@
 }
 
 .idoll-btn {
-  border-color:@primary-color;
+  // border-color:@primary-color;
   //color:@primary-color;
 }
 

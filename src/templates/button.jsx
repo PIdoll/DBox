@@ -8,18 +8,18 @@ const ButtonGroup = Button.Group;
 export default () => (
   <div id='main-container'>
     <h1 className='h1'>基本按钮类型</h1>
-    <Button type='default'>default</Button>&nbsp;&nbsp;
-    <Button type='primary'>primary</Button>&nbsp;&nbsp;
-    <Button type='secondary'>secondary</Button>&nbsp;&nbsp;
-    <Button disabled>disabled</Button>&nbsp;&nbsp;
-    <Button type='dashed'>dashed</Button>&nbsp;&nbsp;
-    <Button type='danger'>danger</Button>&nbsp;&nbsp;
+    <Button type='default'>默认</Button>&nbsp;&nbsp;
+    <Button type='primary'>主要</Button>&nbsp;&nbsp;
+    <Button type='secondary'>次要</Button>&nbsp;&nbsp;
+    <Button disabled>禁止</Button>&nbsp;&nbsp;
+    <Button type='dashed'>虚线</Button>&nbsp;&nbsp;
+    <Button type='danger'>危险</Button>&nbsp;&nbsp;
     <br />
     <h1 className='h1'>按钮尺寸</h1>
     <Button type='primary' size='small'>按钮</Button>&nbsp;&nbsp;
     <Button type='primary'>按钮</Button>&nbsp;&nbsp;
     <Button type='primary' size='large'>按钮</Button>
-    <br />
+    <br /><br />
     <h1 className='h1'>特殊场景按钮</h1>
     <Button type='normal' href='www.baidu.com'>跳转</Button>&nbsp;&nbsp;
     <Button type='create' icon='plus' />&nbsp;&nbsp;
@@ -32,10 +32,6 @@ export default () => (
     <Button icon='down' size='small'>图标</Button>&nbsp;&nbsp;
     <Button icon='down' >图标</Button>&nbsp;&nbsp;
     <Button icon='down' size='large'>图标</Button>&nbsp;&nbsp;
-    <br /><br />
-    <Button icon='delete' size='small' shape='square' />&nbsp;&nbsp;
-    <Button icon='delete' shape='square' />&nbsp;&nbsp;
-    <Button icon='delete' size='large' shape='square' />&nbsp;&nbsp;
     <br /><br />
     <Button icon='delete' size='small' shape='circle' />&nbsp;&nbsp;
     <Button icon='delete' shape='circle' />&nbsp;&nbsp;
@@ -56,16 +52,16 @@ export default () => (
     <br />
     <br />
     <ButtonGroup>
-      <Button type='primary'>Option1</Button>
-      <Button type='primary'>Option2</Button>
-      <Button type='primary'>Option3</Button>
+      <Button type='primary'>选择1</Button>
+      <Button type='primary'>选择2</Button>
+      <Button type='primary'>选择3</Button>
     </ButtonGroup>
     <br />
     <br />
     <ButtonGroup>
-      <Button type='secondary'>Option1</Button>
-      <Button type='secondary'>Option2</Button>
-      <Button type='secondary'>Option3</Button>
+      <Button type='secondary'>选择1</Button>
+      <Button type='secondary'>选择2</Button>
+      <Button type='secondary'>选择3</Button>
     </ButtonGroup>
     <br />
     <br />

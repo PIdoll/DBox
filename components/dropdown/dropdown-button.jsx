@@ -15,18 +15,17 @@ export default class DropdownButton extends React.Component {
     });
   };
   static defaultProps = {
-    placement: 'bottomRight',
+    placement: 'bottomLeft',
     type: 'normal',
     prefixCls: 'idoll-dropdown-button'
   };
   render() {
     const {
       type, disabled, children,
-      prefixCls, className, overlay, trigger, align,
+      prefixCls, className, overlay, trigger, size, align,
       visible, placement, getPopupContainer,
       ...restProps
     } = this.props;
-
     const dropdownProps = {
       align,
       overlay,
@@ -37,14 +36,13 @@ export default class DropdownButton extends React.Component {
     if ('visible' in this.props) {
       dropdownProps.visible = visible;
     }
-
     return (
       <ButtonGroup
         {...restProps}
         className={classNames(prefixCls, className)}
       >
-        <Dropdown {...dropdownProps} onVisibleChange={this.onChange}>
-          <Button type={type} disabled={disabled}>
+        <Dropdown overlayClassName={`idoll-size-${size}`} {...dropdownProps} onVisibleChange={this.onChange}>
+          <Button type={type} size={size} disabled={disabled}>
             {children}{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
           </Button>
         </Dropdown>
@@ -52,3 +50,4 @@ export default class DropdownButton extends React.Component {
     );
   }
 }
+

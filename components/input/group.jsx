@@ -9,7 +9,7 @@ export default function Group(props) {
   //   'idoll-input-group-sm': props.size === 'small',
   //   [props.className]: !!props.className
   // });
-  const { prefixCls = 'idoll-input-group', className = '' } = props;
+  const { prefixCls = 'ant-input-group', className = '' } = props;
   const cls = classNames(prefixCls, {
     [`${prefixCls}-lg`]: props.size === 'large',
     [`${prefixCls}-sm`]: props.size === 'small',
