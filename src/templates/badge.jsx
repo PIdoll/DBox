@@ -3,6 +3,7 @@ import Badge from 'components/badge/index';
 import Icon from '../../components/icon/index';
 import Button from '../../components/button/button';
 import Switch from '../../components/switch/switch';
+const ButtonGroup = Button.Group;
 
 export default class BadgeView extends React.Component {
   state = {
@@ -111,12 +112,14 @@ export default class BadgeView extends React.Component {
           <Badge count={this.state.count}>
             <a href='#' style={content} />
           </Badge>
-          <Button onClick={this.decline}>
-            <Icon type='remove' />
-          </Button>
-          <Button onClick={this.increase}>
-            <Icon type='plus' />
-          </Button>
+          <ButtonGroup>
+            <Button onClick={this.decline}>
+              <Icon type='remove' />
+            </Button>
+            <Button onClick={this.increase}>
+              <Icon type='plus' />
+            </Button>
+          </ButtonGroup>
           <br />
         </div>
         <div>
