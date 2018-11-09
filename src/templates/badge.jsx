@@ -38,25 +38,22 @@ export default class BadgeView extends React.Component {
         <h1>
           基本徽标展示
         </h1>
-        <p style={{ marginBottom: '10px' }}>当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。</p>
-        <Badge count={5}>
-          <a href='#' style={content} />
-        </Badge>
-        <Badge showZero count={0}>
+        <p style={{ marginBottom: '10px' }}>基本功能展示</p>
+        <Badge count={8}>
           <a href='#' style={content} />
         </Badge>
         <h1>
           独立使用
         </h1>
         <p style={{ marginBottom: '10px' }}>不包裹任何元素即是独立使用，可自定样式展现。</p>
-        <Badge count={25} style={{ marginRight: '10px' }} />
-        <Badge count={4} style={{ backgroundColor: '#fff', color: '#999', borderColor: '#d9d9d9', marginLeft: '30px' }} />
-        <Badge count={109} style={{ backgroundColor: '#87d068', marginLeft: '30px' }} />
+        <Badge count={55} style={{ marginRight: '10px' }} />
+        <Badge count={8} style={{ backgroundColor: '#fff', color: '#999', borderColor: '#d9d9d9', marginLeft: '30px' }} />
+        <Badge count={999} style={{ backgroundColor: '#87d068', marginLeft: '30px' }} />
         <h1>
           封顶数字
         </h1>
         <p style={{ marginBottom: '10px' }}>超过 overflowCount 的会显示为overflowCount+，默认的 overflowCount 为 99。</p>
-        <Badge count={99} overflowCount='10'>
+        <Badge count={9} overflowCount='10'>
           <a href='#' style={content} />
         </Badge>
         <Badge count={200}>
@@ -81,7 +78,7 @@ export default class BadgeView extends React.Component {
         <h1>可点击</h1>
         <p style={{ marginBottom: '10px' }}>用a标签包裹即可</p>
         <a href='#'>
-          <Badge count={5}>
+          <Badge count={8}>
             <span className='example' />
           </Badge>
         </a>

@@ -28,12 +28,10 @@ english: Badge
 
 | 参数           | 说明                             | 类型 |默认值 |
 |----------------|--------------------------------|---------|--------|
-| count          | 展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏 | Number     |         |        |
 | overflowCount  | 展示封顶的数字值                 | Number | 99     |
 | showZero            | 当数值为0时，是否展示Badge       | boolean    |false  |
 | dot            | 不展示数字，只有一个小红点       | boolean    |false  |
 | status            | 和dot搭配使用，在设置dot的前提下有效，设置Badge的状态点       | `string{'success','processing','default','error','warning'}`   |''  |
-| text            | 需和dot,status搭配使用，在已设置dot,status前提下设置状态点的文本      | any    |   |
 | offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   |   |
 
 

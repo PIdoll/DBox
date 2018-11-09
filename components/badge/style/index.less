@@ -9,7 +9,9 @@
   line-height: 1;
   vertical-align: middle;
   margin-right: 58px;
-
+  cursor: pointer;
+  // pointer-events: none;
+  
   &-count {
     top: -10px;
     position: absolute;
@@ -30,7 +32,9 @@
     font-family: @font-family;
     box-shadow: 0 0 0 1px #fff;
     pointer-events: none;//阻止hover事件
-    // cursor: not-allowed
+  }
+  &:hover {
+    cursor: pointer;
   }
 
   &-dot {
