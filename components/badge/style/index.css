@@ -7,11 +7,10 @@
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
-  margin-right: 58px;
-}
 .idoll-badge-count {
   position: absolute;
   transform: translateX(-50%);
+  top: -10px;
   height: 20px;
   border-radius: 10px;
   min-width: 20px;
