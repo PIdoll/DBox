@@ -95,7 +95,7 @@ export default class RadioView extends React.Component {
           <RadioButton value='d'>成都</RadioButton>
         </RadioGroup>
         <br />
-        <RadioGroup defaultValue='a' disabled>
+        <RadioGroup defaultValue='c' disabled>
           <RadioButton value='a'>杭州</RadioButton>
           <RadioButton value='b'>上海</RadioButton>
           <RadioButton value='c'>北京</RadioButton>
@@ -103,7 +103,7 @@ export default class RadioView extends React.Component {
         </RadioGroup>
         <h1 className='h1'>大小按钮</h1>
         <p>通过设置size的值达到不同按钮单选大小的目的</p>
-        <RadioGroup defaultValue='a' size='large'>
+        <RadioGroup disabled defaultValue='a' size='large'>
           <RadioButton value='a'>杭州</RadioButton>
           <RadioButton value='b'>上海</RadioButton>
           <RadioButton value='c'>北京</RadioButton>
@@ -125,13 +125,26 @@ export default class RadioView extends React.Component {
         </RadioGroup>
         <h1 className='h1'>按钮底纹</h1>
         <p>通过设置buttonStyle='solid'来达到按钮底纹样式，不传默认无底纹</p>
-        <RadioGroup defaultValue='a' buttonStyle='solid'>
+        <RadioGroup disabled defaultValue='b' buttonStyle='solid'>
           <RadioButton value='a'>杭州</RadioButton>
-          <RadioButton disabled value='b'>上海</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
           <RadioButton value='c'>北京</RadioButton>
           <RadioButton value='d'>成都</RadioButton>
         </RadioGroup>
         <br />
+        <RadioGroup size='large' defaultValue='c' buttonStyle='solid'>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
+        <br />
+        <RadioGroup size='small' defaultValue='d' buttonStyle='solid'>
+          <RadioButton value='a'>杭州</RadioButton>
+          <RadioButton value='b'>上海</RadioButton>
+          <RadioButton disabled value='c'>北京</RadioButton>
+          <RadioButton value='d'>成都</RadioButton>
+        </RadioGroup>
       </div>
     )
   }
