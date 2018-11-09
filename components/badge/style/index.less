@@ -9,8 +9,11 @@
   line-height: 1;
   vertical-align: middle;
   margin-right: 58px;
-
+  cursor: pointer;
+  // pointer-events: none;
+  
   &-count {
+    top: -10px;
     position: absolute;
     transform: translateX(-50%);
     height: 20px;
@@ -21,18 +24,17 @@
     color: #fff;
     line-height: 18px;
     text-align: center;
-    padding: 0 6px;
+    padding: 0 5px;
     font-size: 12px;
     white-space: nowrap;
     transform-origin: -10% center;
     z-index: 10;
-    font-family: tahoma;
+    font-family: @font-family;
     box-shadow: 0 0 0 1px #fff;
+    pointer-events: none;//阻止hover事件
+  }
+  &:hover {
     cursor: pointer;
-    a,
-    a:hover {
-      color: #fff;
-    }
   }
 
   &-dot {
@@ -48,17 +50,6 @@
     box-shadow: 0 0 0 1px #fff;
   }
 
-  &-zoom-appear,
-  &-zoom-enter {
-    animation: idollZoomBadgeIn .3s @ease-out-back;
-    animation-fill-mode: both;
-  }
-
-  &-zoom-leave {
-    animation: idollZoomBadgeOut .3s @ease-in-back;
-    animation-fill-mode: both;
-  }
-
   &-not-a-wrapper &-count {
     top: auto;
     display: block;
@@ -67,20 +58,11 @@
   }
 }
 
-a & {
-  &-count:hover {
-    background: timt(@error-color, 20%);
-  }
-  &-count:active {
-    background: shade(@error-color, 5%);
-  }
-}
-
 span.example {
   width: 64px;
   height: 64px;
-  border-radius: 4px;
-  background: rgb(238, 238, 238);
+  border-radius: @border-radius-base;
+  background: rgb(226, 226, 226);
   display: inline-block;
 }
 
@@ -99,7 +81,7 @@ span.example {
       }
     }
   }
-  
+
   &.@{badge-prefix-cls}-success-dot {
     background-color: @success-color;
     width: 6px;
@@ -109,6 +91,8 @@ span.example {
     position: absolute;
     border-radius: 100%;
   }
+
+  
   &.@{badge-prefix-cls}-error-dot {
     background-color: @error-color;
     width: 6px;
@@ -135,7 +119,18 @@ span.example {
     left: -10px;
     position: absolute;
     border-radius: 100%;
-    animation: antRadioEffect 1s infinite;
+    overflow: visible;
+    &:after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      left: 0;
+      top: 0;
+      position: absolute;
+      border: 1px solid @processing-color;
+      border-radius: 100%;
+      animation: idollRadioEffect 1.2s infinite;
+    }
   }
   &.@{badge-prefix-cls}-warning-dot {
     background-color: @warning-color;
@@ -148,34 +143,14 @@ span.example {
   }
 }
 
-@keyframes idollZoomBadgeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
-  }
-  100% {
-    transform: scale(1) translateX(-50%);
-  }
-}
-
-@keyframes idollZoomBadgeOut {
-  0% {
-    transform: scale(1) translateX(-50%);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
-  }
-}
-
-@keyframes antRadioEffect {
+@keyframes idollRadioEffect {
   0% {
     transform: scale(0);
     opacity: 1;
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(2);
     opacity: 0;
   }
   0% {
