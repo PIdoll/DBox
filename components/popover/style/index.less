@@ -29,22 +29,24 @@
     background-color: @popover-bg;
     background-clip: padding-box;
     border-radius: @border-radius-base;
-    box-shadow: @box-shadow-base;
+    box-shadow: @shadow-large;
   }
   // 标题
   &-title {
     min-width: @popover-min-width;
     margin: 0; // reset heading margin
-    padding: 5px @padding-md 4px;
+    padding: 12px @padding-md 0px;
     min-height: 32px;
-    border-bottom: 1px solid @border-color-split;
     color: @heading-color;
     font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 22px;
   }
   // 内容
   &-inner-content {
-    padding: 12px @padding-md;
+    padding: 0 @padding-md 12px @padding-md;
     color: @popover-color;
+    line-height: 22px;
   }
   // popover箭头与popover的偏移
   &-placement-top,
@@ -82,74 +84,71 @@
   display: block;
   border-color: transparent;
   border-style: solid;
+  box-shadow: @shadow-large;
   }
 
   &-placement-top > &-content > &-arrow,
   &-placement-topLeft > &-content >  &-arrow,
   &-placement-topRight > &-content >  &-arrow {
     bottom: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-top > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
   }
   &-placement-topLeft > &-content >  &-arrow {
-    left: 16px;
+    left: 24px;
   }
   &-placement-topRight > &-content >  &-arrow {
-    right: 16px;
+    right: 24px;
   }
 
   &-placement-right > &-content >  &-arrow,
   &-placement-rightTop > &-content >  &-arrow,
   &-placement-rightBottom > &-content >  &-arrow {
     left: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-right > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
   &-placement-rightTop > &-content >  &-arrow {
-    top: 12px;
+    top: 24px;
   }
   &-placement-rightBottom > &-content >  &-arrow {
-    bottom: 12px;
+    bottom: 24px;
   }
 
   &-placement-bottom > &-content >  &-arrow,
   &-placement-bottomLeft > &-content >  &-arrow,
   &-placement-bottomRight > &-content >  &-arrow {
     top: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.06);
   }
   &-placement-bottom > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
   }
   &-placement-bottomLeft > &-content >  &-arrow {
-    left: 16px;
+    left: 24px;
   }
   &-placement-bottomRight > &-content >  &-arrow {
-    right: 16px;
+    right: 24px;
   }
 
   &-placement-left > &-content >  &-arrow,
   &-placement-leftTop > &-content >  &-arrow,
   &-placement-leftBottom > &-content >  &-arrow {
     right: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-left > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
   &-placement-leftTop > &-content >  &-arrow {
-    top: 12px;
+    top: 24px;
   }
   &-placement-leftBottom > &-content >  &-arrow {
-    bottom: 12px;
+    bottom: 24px;
   }
 
   &-message {
@@ -174,3 +173,10 @@
     }
   }
 }
+
+.demo-popover:first-child {
+  .h1 {
+    margin-top: 50px;
+  }
+}
+

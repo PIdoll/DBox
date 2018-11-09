@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
-import { findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom';
 
 import Icon from 'components/icon'
 
@@ -46,6 +46,12 @@ export default class Button extends React.Component {
 
 		this.props.onClick(...args);
 	}
+
+	isNeedInserted() {
+		const { icon, children, size } = this.props;
+		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
+		return React.Children.count(children) === 1 && !icon && sizeCls !== 'sm';
+	  }
 	render() {
 		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, ...others } = this.props;
 		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
@@ -62,14 +68,14 @@ export default class Button extends React.Component {
 
 		})
 	const iconType = loading ? 'loading' : icon;
-	const kids = sizeCls === 'sm' ? <span>{children}</span> : React.Children.map(children, insertSpace);
+	const kids = (children || children === 0)
+      ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
 	const iconNode = iconType ? <Icon type={iconType} /> : null;
 	if ('href' in others) {
 		return (
   <a {...others}
     className={classes}
-    onClick={this.handleClick}
-					>
+    onClick={this.handleClick}>
     {iconNode}{kids}
   </a>
 			);
@@ -80,25 +86,44 @@ export default class Button extends React.Component {
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
     {kids}{iconNode}
   </button>
+
 		);
 		} else {
 			return (
+
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
-    {iconNode} {kids}
+    {iconNode}{kids}
   </button>
+
 			);
 		}
+// return (
+//   <Wave>
+//     <button
+//       {...others}
+//       type={htmlType || 'button'}
+//       className={classes}
+//       onClick={this.handleClick}
+// 						>
+//       {iconNode}{kids}
+//     </button>
+//   </Wave>
+// )
 	}
 	}
 }
 
 // ----------------如果是两个中文字符，则在两个中文字符中自动插入一个空格--------------------------------
-function insertSpace(child) {
+function insertSpace(child, needInserted) {
+	if (child == null) {
+		return;
+	  }
+	const SPACE = needInserted ? ' ' : '';
 	if (isString(child.type && isTwoCNChar(child.props.children))) {
-		return React.cloneElement(child, {}, child.props.split('').join(' '));
+		return React.cloneElement(child, {}, child.props.split('').join(SPACE));
 	}
 	if (isString(child)) {
-		 if (isTwoCNChar(child)) { child = child.split('').join(' ') }
+		 if (isTwoCNChar(child)) { child = child.split('').join(SPACE) }
 		 return <span>{child}</span>
   }
   return child;

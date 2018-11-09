@@ -81,12 +81,12 @@
 
       &-selected,
       &-selected > a {
-        color: @primary-color;
-        background-color: @section-background-dark;
+        color: @text-color;
+        background-color: @primary-LightBg;
       }
 
       &:hover {
-        background-color: @section-background-dark;
+        background-color: @primary-LightBg;
       }
 
       &-disabled {
@@ -128,7 +128,7 @@
         &:after {
           font-family: 'idollicon' !important;
           font-style: normal;
-          content: "\e61f";
+          content: "\E928";
           color: @text-color-secondary;
           .iconfont-size-under-12px(10px);
         }
@@ -252,12 +252,75 @@
   }
 }
 
-.idoll-icon-a,
-.idoll-icon-a:hover,
-.idoll-icon-a:focus,
-.idoll-icon-a:active {
+.idoll-icon,
+.idoll-icon:hover,
+.idoll-icon:focus,
+.idoll-icon:active {
   color: @text-color-secondary;
   text-decoration: none;
+}
+
+.idoll-size-large {
+  .idoll-dropdown-menu-item {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding:0 15px;
+    
+  }
+  .idoll-dropdown-menu-submenu {
+    .idoll-dropdown-menu-submenu-title{
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      padding:0 15px;
+    }
+  }
+}
+
+.idoll-size-small {
+  .idoll-dropdown-menu-item {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    padding:0 7px; 
+  }
+  .idoll-dropdown-menu-submenu {
+    .idoll-dropdown-menu-submenu-title{
+      display: block;
+      height: 24px;
+      line-height: 24px;
+      font-size: 12px;
+      padding:0 7px;
+    }
+  }
+}
+
+.small {
+  li {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    padding:0 7px;
+  }
+}
+
+.large {
+  li {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding:0 15px;
+  }
+}
+
+#main-container{
+  .h1 {
+    margin-top: 95px;
+  }
+  .h1:first-child {
+    margin-top: 0;
+  }
 }
 
 

@@ -4,9 +4,8 @@ import classNames from 'classnames';
 
 import './style';
 
-function noop(e) {
+function noop() {
   // console.log('change')
-  console.log(e)
   // 组件change && click 挂载到noop上
 }
 
@@ -79,26 +78,6 @@ export default class Switch extends Component {
     this.setChecked(checked);
     onClick(checked);
   }
-
-  // handleKeyDown = (e) => {
-  //   if (e.keyCode === 37) { // Left
-  //     this.setChecked(false);
-  //   } else if (e.keyCode === 39) { // Right
-  //     this.setChecked(true);
-  //   } else if (e.keyCode === 32 || e.keyCode === 13) { // Space, Enter
-  //     this.toggle();
-  //   }
-  // }
-
-  // Handle auto focus when click switch in Chrome
-  // handleMouseUp = (e) => {
-  //   if (this.node) {
-  //     this.node.blur();
-  //   }
-  //   if (this.props.onMouseUp) {
-  //     this.props.onMouseUp(e);
-  //   }
-  // }
 
   focus() {
     this.node.focus();
