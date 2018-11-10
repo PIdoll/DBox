@@ -1673,26 +1673,27 @@ samp {
   }
 }
 .idoll-tag {
-  position: relative;
   display: inline-block;
   border-color: #13B886;
-  color: #13B886;
-  border-style: solid;
-  border-width: 1px;
+  color: #E2E2E2;
+  border: 1px solid #E2E2E2;
   border-radius: 3px;
   font-size: 12px;
-  padding: 0 8px;
+  padding: 0 7px;
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
-.idoll-tag span {
-  transform: translate(-50%, -50%);
+.idoll-tag div {
+  display: inline-block;
   min-width: 24px;
   max-height: 20px;
   line-height: 20px;
+}
+.idoll-tag i {
+  transform: translateY(-5%);
 }
 .idoll-tag-close {
   cursor: pointer;

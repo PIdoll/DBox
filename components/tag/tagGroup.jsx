@@ -75,7 +75,7 @@ export default class TagGroup extends React.Component {
             style={{borderStyle: 'dashed'}}
             onClick={this.showInput}
           >
-            <Icon type={this.state.iconType} /> {this.state.text}
+            <Icon type={this.state.iconType} /><div style={{ marginLeft: '4px' }}>{this.state.text}</div>
           </Tag>
         )}
       </div>

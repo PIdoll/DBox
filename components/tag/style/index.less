@@ -4,27 +4,30 @@
 @tag-prefix-cls: idoll-tag;
 
 .@{tag-prefix-cls} {
-    position: relative;
     display: inline-block;
     border-color: @primary-color;
-    color: @primary-color;
-    border-style: @border-style-base;
-    border-width: @border-width-base;
+    color: @border;
+    border: @border-width-base @border-style-base @border;
     border-radius:  @border-radius-base;
     font-size: 12px;
-    padding: 0 8px;
+    padding: 0 7px;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 
-    span {
-        transform: translate(-50%,-50%);
+    div {
+        display: inline-block;
         min-width: 24px;
         max-height: 20px;
         line-height: 20px;
     }
+    
+    i {
+        transform: translateY(-5%)
+    }
+
     &-close{
         cursor: pointer;
         font-size: 12px;

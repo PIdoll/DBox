@@ -66,7 +66,7 @@ export default class Tag extends Component {
         const {children, prefixCls, color, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
-            marginLeft: 8
+            marginLeft: 6
         }
         const closeIcon = closable ? <Icon style={iconStyle} type='close' onClick={this.close} /> : null;
         const cls = classNames(prefixCls, {
@@ -80,7 +80,7 @@ export default class Tag extends Component {
           key={children}
           className={cls}
           onClick={this.handleClick}>
-          <span>{children}</span>
+          <div>{children}</div>
           {closeIcon}
         </div>
         const tag = !this.state.closable ? null : (deletableTag);
@@ -92,11 +92,11 @@ export default class Tag extends Component {
             >
             {closable ? tag : (<div
               data-show={this.state.closable}
-              style={{ backgroundColor: /blue|red|green|yellow/.test(color) ? null : color }}
+              style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
               key={children}
               className={cls}
               onClick={this.handleClick}>
-              <span>{children}</span>
+              <div>{children}</div>
             </div>)}
           </Animate>
         )
