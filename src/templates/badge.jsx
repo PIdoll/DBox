@@ -46,9 +46,9 @@ export default class BadgeView extends React.Component {
           独立使用
         </h1>
         <p style={{ marginBottom: '10px' }}>不包裹任何元素即是独立使用，可自定样式展现。</p>
-        <Badge count={55} style={{ marginRight: '10px' }} />
-        <Badge count={8} style={{ backgroundColor: '#fff', color: '#999', borderColor: '#d9d9d9', marginLeft: '30px' }} />
-        <Badge count={999} style={{ backgroundColor: '#87d068', marginLeft: '30px' }} />
+        <Badge count={55} />
+        <Badge count={8} style={{ backgroundColor: '#13B886' }} />
+        <Badge count={999} style={{ backgroundColor: '#87d068' }} />
         <h1>
           封顶数字
         </h1>
