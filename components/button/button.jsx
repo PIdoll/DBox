@@ -97,18 +97,6 @@ export default class Button extends React.Component {
 
 			);
 		}
-// return (
-//   <Wave>
-//     <button
-//       {...others}
-//       type={htmlType || 'button'}
-//       className={classes}
-//       onClick={this.handleClick}
-// 						>
-//       {iconNode}{kids}
-//     </button>
-//   </Wave>
-// )
 	}
 	}
 }

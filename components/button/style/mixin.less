@@ -47,12 +47,14 @@
   .button-color(@color; @background; @background);
   &:hover,
   &:focus {
-    .button-color(@color; @primary-spread-color; @primary-spread-color);
+    // .button-color(@color; @primary-spread-color; @primary-spread-color);
+    .button-color(@color; @primary-Hover; @primary-Hover);
   }
 
   &:active,
   &.active {
-    .button-color(@color; @primary-spread-color; @primary-spread-color);
+    .button-color(@color; @primary-Pressed; @primary-Pressed);
+    // .button-color(@color; @primary-spread-color; @primary-spread-color);
   }
 
   .button-disabled();
@@ -63,6 +65,10 @@
 
   &:hover,
   &:focus {
+    // 图标颜色
+    > .@{iconfont-css-prefix} {
+      color: @primary-color;
+    }
     .button-color(@primary-color; @background; @primary-color);
   }
 
@@ -160,7 +166,7 @@
   position: relative;
 
   > .@{iconfont-css-prefix} {
-    line-height: 1.1;
+    line-height: 1;
   }
 
   &,
