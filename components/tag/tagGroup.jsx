@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 
 export default class TagGroup extends React.Component {
   state = {
-    tags: this.props.tags || ['Movies', 'Books', 'Music'],
+    tags: this.props.tags || ['电影', '书籍', '音乐'],
     inputVisible: false,
     inputValue: '',
     id: this.props.id || 0,
-    text: this.props.text || 'New Tag',
+    text: this.props.text || '添加',
     iconType: this.props.iconType || 'plus'
   };
   static propTypes = {

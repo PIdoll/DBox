@@ -18,7 +18,7 @@ export default class TagView extends React.Component {
         <p>基本标签展示</p>
         <Tag>标签</Tag>
         <h1>多彩标签</h1>
-        <p style={{marginBottom: '10px'}}>基础色彩展示，同时支持16进制／rgb／英文颜色自定义设置</p>
+        <p style={{marginBottom: '10px'}}>同时支持16进制／rgb／英文颜色通过color属性自定义设置</p>
         <Tag color='peru'>peru</Tag>
         <Tag color='coral'>coral</Tag>
         <Tag color='hotpink'>hotpink</Tag>
@@ -28,11 +28,11 @@ export default class TagView extends React.Component {
         <Tag color='mediumslateblue'>mediumslateblue</Tag>
         <Tag color='turquoise'>turquoise</Tag>
         <h1>可移除标签</h1>
-        <p style={{marginBottom: '10px'}}>标签可移除</p>
+        <p style={{marginBottom: '10px'}}>标签添加closable属性可移除</p>
         <Tag closable>性别:男</Tag>
         <Tag closable>性别:女</Tag>
         <h1>热门标签</h1>
-        <p style={{marginBottom: '10px'}}>选择你感兴趣的话题</p>
+        <p style={{marginBottom: '10px'}}>通过添加属性hot选择你感兴趣的话题</p>
         <span>热门话题:</span>
         <Tag hot>电影</Tag>
         <Tag hot checked>书籍</Tag>

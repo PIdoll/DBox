@@ -1675,7 +1675,7 @@ samp {
 .idoll-tag {
   display: inline-block;
   border-color: #13B886;
-  color: #E2E2E2;
+  color: rgba(0, 0, 0, 0.65);
   border: 1px solid #E2E2E2;
   border-radius: 3px;
   font-size: 12px;
