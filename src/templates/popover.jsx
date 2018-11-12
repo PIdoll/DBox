@@ -4,8 +4,7 @@ import Button from 'components/button';
 
 const content = (
   <div>
-    <p>内容1</p>
-    <p>内容2</p>
+    <p>内容文本</p>
   </div>
 );
 const buttonWidth = 70;
