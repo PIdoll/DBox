@@ -1709,6 +1709,39 @@ samp {
   color: #f5f5f5;
   border: 1px solid #13B886;
 }
+.idoll-tag-peru {
+  border: 1px solid rgba(205, 133, 63, 0.3) !important;
+}
+.idoll-tag-coral {
+  border: 1px solid rgba(255, 127, 80, 0.3) !important;
+}
+.idoll-tag-hotpink {
+  border: 1px solid rgba(255, 105, 180, 0.3) !important;
+}
+.idoll-tag-orange {
+  border: 1px solid rgba(255, 165, 0, 0.3) !important;
+}
+.idoll-tag-limegreen {
+  border: 1px solid rgba(50, 205, 50, 0.3) !important;
+}
+.idoll-tag-deepskyblue {
+  border: 1px solid rgba(0, 191, 255, 0.3) !important;
+}
+.idoll-tag-mediumslateblue {
+  border: 1px solid rgba(123, 104, 238, 0.3) !important;
+}
+.idoll-tag-turquoise {
+  border: 1px solid rgba(64, 224, 208, 0.3) !important;
+}
+a.idoll-tag {
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.65);
+}
+a.idoll-tag:hover {
+  border-color: #13B886;
+  color: #13B886;
+  transition: none;
+}
 .group .idoll-tag:last-child {
   border-style: dashed;
 }

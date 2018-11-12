@@ -72,6 +72,7 @@ export default class Tag extends Component {
         const cls = classNames(prefixCls, {
             [`${prefixCls}-hot`]: hot,
             [`${prefixCls}-hot-checked`]: isChecked && hot,
+            [`${prefixCls}-${color}`]: color,
             [`${prefixCls}-checkable-checked`]: isChecked
         })
 
@@ -92,11 +93,11 @@ export default class Tag extends Component {
             >
             {closable ? tag : (href ? <a style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }} className={cls} href={href}>链接</a> : <div
               data-show={this.state.closable}
-              style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
+              style={{ borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
               key={children}
               className={cls}
               onClick={this.handleClick}>
-              <div>{children}</div>
+              <div style={{ color: /blue|red|green|yellow/.test(color) ? color : color }}>{children}</div>
             </div>)}
           </Animate>
         )
