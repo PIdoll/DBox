@@ -5,14 +5,13 @@ import classNames from 'classnames';
 import './style';
 
 function noop() {
-    // console.log('change')
-    // 组件change && click 挂载到noop上
+  // console.log('change')
+  // 组件change && click 挂载到noop上
 }
 
 export default class Switch extends Component {
   constructor(props) {
     super(props);
-
     let checked = false;
     if ('checked' in props) {
       checked = !!props.checked;
@@ -21,7 +20,7 @@ export default class Switch extends Component {
     }
     this.state = { checked };
   }
-  static PropTypes = {
+  static propTypes = {
     className: PropTypes.string,
     prefixCls: PropTypes.string,
     disabled: PropTypes.bool,
@@ -80,26 +79,6 @@ export default class Switch extends Component {
     onClick(checked);
   }
 
-  // handleKeyDown = (e) => {
-  //   if (e.keyCode === 37) { // Left
-  //     this.setChecked(false);
-  //   } else if (e.keyCode === 39) { // Right
-  //     this.setChecked(true);
-  //   } else if (e.keyCode === 32 || e.keyCode === 13) { // Space, Enter
-  //     this.toggle();
-  //   }
-  // }
-
-  // Handle auto focus when click switch in Chrome
-  // handleMouseUp = (e) => {
-  //   if (this.node) {
-  //     this.node.blur();
-  //   }
-  //   if (this.props.onMouseUp) {
-  //     this.props.onMouseUp(e);
-  //   }
-  // }
-
   focus() {
     this.node.focus();
   }
@@ -117,13 +96,13 @@ export default class Switch extends Component {
       checkedChildren, tabIndex, unCheckedChildren, size, ...restProps } = this.props;
     const checked = this.state.checked;
     const switchTabIndex = disabled ? -1 : (tabIndex || 0);
-    const switchClassName = classNames('dbox-switch', {
+    const switchClassName = classNames({
       [className]: !!className,
       [prefixCls]: true,
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-small`]: size === 'small',
-      [`${prefixCls}-loading`]: loading
+      [`${prefixCls}-loading`]: loading,
     });
     return (
       <span
@@ -140,4 +119,3 @@ export default class Switch extends Component {
     );
   }
 }
-

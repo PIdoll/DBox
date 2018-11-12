@@ -59,3 +59,10 @@ title: Switch
 | onClick | 点击时回调函数 | Function |  |
 | loading | 加载中的开关 | boolean | false |
 | disabled | 失效状态 | boolean | false |
+
+##方法
+
+| 名称 | 描述 |
+| --- | --- |
+| blur() | 移除焦点 |
+| focus() | 获取焦点 |
