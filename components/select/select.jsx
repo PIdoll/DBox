@@ -52,6 +52,7 @@ export default class Select extends React.Component {
     return (
       <RcSelect {...this.props}
         {...modeConfig}
+        dropdownClassName={size}
         className={classs}
         optionLabelProp={optionLabelProp || 'children'}
         notFoundContent={notFoundContent}
