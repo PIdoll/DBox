@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { PropTypes } from 'prop-types';
-import omit from 'object.omit'
+import omit from 'object.omit';
 
 import './style'
 
@@ -26,21 +26,22 @@ export default class Input extends Component {
 
   static propTypes = {
     type: PropTypes.string,
-    placeholder: PropTypes.string,
-    name: PropTypes.string,
+    // placeholder: PropTypes.string,
+    // name: PropTypes.string,
     id: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
     ]),
-    autosize: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.object
-    ]),
+    // autosize: PropTypes.oneOfType([
+    //   PropTypes.bool,
+    //   PropTypes.object
+    // ]),
     size: PropTypes.oneOf(['small', 'default', 'large']),
-    maxLength: PropTypes.string,
-    readOnly: PropTypes.bool,
+    // maxLength: PropTypes.string,
+    // readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     value: PropTypes.any,
+    defaultValue: PropTypes.any,
     // intialValue: PropTypes.any,
     className: PropTypes.string,
     addonBefore: PropTypes.node,
@@ -48,13 +49,13 @@ export default class Input extends Component {
     prefixCls: PropTypes.string,
     prefix: PropTypes.node,
     suffix: PropTypes.node,
-    autoFocus: PropTypes.bool,
+    // autoFocus: PropTypes.bool,
     onPressEnter: PropTypes.func,
     onKeyDown: PropTypes.func,
     onChange: PropTypes.func,
-    onClick: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    // onClick: PropTypes.func,
+    // onFocus: PropTypes.func,
+    // onBlur: PropTypes.func
   };
 
   handleKeyDown = (e) => {
@@ -81,6 +82,9 @@ export default class Input extends Component {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
       [`${prefixCls}-disabled`]: disabled
+    }, {
+      [`${prefixCls}-enter-button`]: true,
+      [`${prefixCls}-${size}`]: true
     });
   }
 
@@ -109,9 +113,12 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const className = classNames({
-      [`${props.prefixCls}-wrap`]: true,
-      [wrapperClassName]: (addonBefore || addonAfter)
+    // const className = classNames({
+    //   [`${props.prefixCls}-wrap`]: true,
+    //   [wrapperClassName]: (addonBefore || addonAfter)
+    // });
+    const className = classNames(`${props.prefixCls}-wrapper`, {
+      [wrapperClassName]: (addonBefore || addonAfter),
     });
 
     const groupClassName = classNames({
@@ -143,27 +150,31 @@ export default class Input extends Component {
     );
   }
 
-  renderLaybeldIcon(children) {
+  renderLaybeldIcon = (children) => {
     const { props } = this;
+
     if (!('prefix' in props || 'suffix' in props)) {
       return children;
     }
-
     const prefix = props.prefix ? (
       <span className={`${props.prefixCls}-prefix`}>
         {props.prefix}
       </span>
     ) : null;
 
-    const suffix = props.suffix ? (
-      <span className={`${props.prefixCls}-suffix`}>
+    const suffix =
+      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {props.suffix}
       </span>
-    ) : null;
+    const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
+      [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
+      [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
+    });
 
     return (
       <span
-        className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        className={affixWrapperCls}
         style={props.style}
       >
         {prefix}
@@ -186,11 +197,18 @@ export default class Input extends Component {
       'suffix'
     ]);
 
+
+    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
+    // const clearSuffix = React.cloneElement(node, {
+    //   onClick: this.onClear,
+    //   className: 'icon-hover',
+    // });
+
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);
       // Input elements must be either controlled or uncontrolled,
-      // specify either the value prop, or the intialValue props, but no both
-      // delete otherProps.intialValue;
+      // specify either the value prop, or the defaultValue props, but no both
+      delete otherProps.defaultValue;
     }
     return this.renderLaybeldIcon(
       <input

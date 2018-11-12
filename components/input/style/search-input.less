@@ -12,7 +12,10 @@
     color: @text-color-secondary;
   }
 
-  &:not(&-small) > .@{idoll-prefix}-input-suffix {
+  // &:not(&-small) > .@{idoll-prefix}-input-suffix {
+  //   right: @control-padding-horizontal;
+  // }
+  & > .@{idoll-prefix}-input-suffix {
     right: @control-padding-horizontal;
   }
 
@@ -33,4 +36,7 @@
   &.@{search-prefix}-enter-button > .@{idoll-prefix}-input-suffix {
     right: 0;
   }
+}
+.icon-hover:hover {
+  cursor: pointer;
 }

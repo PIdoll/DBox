@@ -48,6 +48,12 @@
       }
     }
   }
+
+  &-secondary{
+    .btn-secondary
+  }
+
+
   &-normal {
     .btn-normal;
   }
@@ -95,6 +101,7 @@
 
   .@{iconfont-css-prefix} {
     transition: margin-left .3s @ease-in-out;
+    transform: translateY(-5%);
   }
 
   &&-loading:before {
@@ -136,7 +143,12 @@
   // 确保在两个字符的中间及Icon中间插入一个空格
   > .@{iconfont-css-prefix} + span,
   > span + .@{iconfont-css-prefix} {
-    margin-left: @btn-icon-margin-left-base;
+    margin-left: @btn-icon-margin-left-base + 2px;
+  }
+
+  &-sm > .idoll-icon + span,
+  &-sm > span + .idoll-icon {
+    margin-left: @btn-icon-margin-left-base - 2px !important;
   }
 
   &-clicked:after {
