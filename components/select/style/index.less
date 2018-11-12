@@ -55,7 +55,8 @@
       right: 8px;
       line-height: 1;
       margin-top: -6px;
-      .iconfont-size-under-12px(12px);
+      font-size: 14px;
+      // .iconfont-size-under-12px(12px);
 
       * {
           display: none;
@@ -129,7 +130,7 @@
   }
 
   &-selection--single {
-    height: @select-height-base;
+    height: @select-height-base;  // 32px
     position: relative;
     cursor: pointer;
 
@@ -139,9 +140,8 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-left: @select-padding-vertical;
-      padding-right: @select-padding-vertical + 14px;
-      line-height: @select-height-base - 2px;
+      padding: 4px 11px ;
+      line-height: @select-height-base - 10px;
     }
   }
 
@@ -200,7 +200,13 @@
     .@{select-prefix-cls}-selection--single {
       height: @select-height-lg;
       .@{select-prefix-cls}-selection__rendered {
-        line-height: @select-height-lg - 2px;
+        height: @select-height-lg - 2px;
+        line-height: @select-height-lg - 16px;
+        padding: 7px 11px;
+        font-size: 16px;
+      }
+      .@{select-prefix-cls}-arrow {
+        font-size: 16px;
       }
     }
 
@@ -216,7 +222,7 @@
   }
 
   &-sm {
-    height: @select-height-sm;
+    height: @select-height-sm;  // 24px
     overflow: hidden;
 
     .@{select-prefix-cls}-selection {
@@ -227,8 +233,13 @@
     .@{select-prefix-cls}-selection--single {
       height: @select-height-sm;
       .@{select-prefix-cls}-selection__rendered {
-        height: @select-height-sm;
-        line-height: @select-height-sm;
+        height: @select-height-sm - 2px;
+        line-height: @select-height-sm - 4px;
+        padding: 1px 7px;
+        font-size: 12px;
+      }
+      .@{select-prefix-cls}-arrow {
+        font-size: 12px;
       }
     }
     .@{select-prefix-cls}-selection--multiple {
@@ -334,6 +345,7 @@
       margin-top: 4px;
       height: 20px;
       line-height: 20px;
+
     }
 
     .@{select-prefix-cls}-selection__choice {
@@ -462,7 +474,8 @@
 
         &:hover,
         &-active {
-          background-color: @option-hover-bg;
+          //background-color: @option-hover-bg;
+          background-color: @primary-LightBg;
           color: @select-hover-color;
         }
 
@@ -480,8 +493,11 @@
         &-selected {
           &,
           &:hover {
-            background-color: @option-selected-bg;
-            color: @select-selected-color;
+            // background-color: @option-selected-bg;
+            // color: @select-selected-color;
+
+            background-color: #fff;
+            color: @primary-color;
           }
         }
 
@@ -551,4 +567,3 @@
       }
     }
   }
-
