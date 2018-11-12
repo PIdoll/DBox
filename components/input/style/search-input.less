@@ -7,6 +7,20 @@
 
 
 .@{search-prefix} {
+  &-large {
+    // 图标大小
+    > .@{idoll-prefix}-input-suffix {
+      font-size: @font-size-base + 2px;
+    }
+  }
+
+  &-small {
+    // 图标大小
+    > .@{idoll-prefix}-input-suffix {
+      font-size: @font-size-base - 2px;
+    }
+  }
+
   &-icon {
     pointer-events: none;
     color: @text-color-secondary;

@@ -17,8 +17,9 @@
 
 // input status
 // == when focus or actived
-.active(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+.active(@color: @primary-color) {
+  // border-color: tint(@color, 20%);
+  border-color: @color;
   outline: 0;
   box-shadow: 0 0 0 2px fade(@color, 20%);
   border-right-width: 1px !important;
@@ -26,7 +27,8 @@
 
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+  // border-color: tint(@color, 20%);
+  border-color: @color;
   border-right-width: 1px !important;
 }
 
@@ -34,7 +36,7 @@
   background-color: @input-disabled-bg;
   opacity: 1;
   cursor: @cursor-disabled;
-  color: #ccc;
+  color: @text-color-disable;
   &:hover {
     .hover(@input-border-color);
   }
@@ -53,7 +55,8 @@
   color: @input-color;
   background-color: @input-bg;
   background-image: none;
-  border: 1px solid @input-border-color;
+  border: 1px solid @border;
+  // border: 1px solid @input-border-color;
   border-radius: @border-radius-base;
   .placeholder(); // Reset placeholder
   // transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
