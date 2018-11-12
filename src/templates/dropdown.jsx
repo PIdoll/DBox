@@ -55,10 +55,10 @@ export default class DropView extends React.Component {
     }
   render() {
     const menu1 = (
-      <Menu onClick={handleMenu1Click}>
+      <Menu subMenuOpenDelay={0.4} openAnimation='slide-up' openTransition='slide-up' onClick={handleMenu1Click}>
         <MenuItem key='1.1'>第一个选项</MenuItem>
         <MenuItem key='1.2'>第二个选项</MenuItem>
-        <SubMenu popupClassName={this.state.size} title='子菜单'>
+        <SubMenu openAnimation='slide-up' openTransition='slide-up' popupClassName={this.state.size} title='子菜单'>
           <MenuItem key='2.3'>第三个选项</MenuItem>
           <MenuItem key='2.4'>第四个选项</MenuItem>
         </SubMenu>

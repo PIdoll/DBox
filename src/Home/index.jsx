@@ -253,6 +253,12 @@ function Home() {
           <div className='info'>Popconfirm</div>
         </NavLink>
       </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/notification'>
+          <div className='name'>通州提醒框</div>
+          <div className='info'>Notification</div>
+        </NavLink>
+      </div>
     </div>
   );
 }

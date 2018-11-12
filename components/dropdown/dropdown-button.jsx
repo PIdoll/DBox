@@ -41,7 +41,7 @@ export default class DropdownButton extends React.Component {
         {...restProps}
         className={classNames(prefixCls, className)}
       >
-        <Dropdown overlayClassName={`idoll-size-${size}`} {...dropdownProps} onVisibleChange={this.onChange}>
+        <Dropdown transitionName='slide-up' overlayClassName={`idoll-size-${size}`} {...dropdownProps} onVisibleChange={this.onChange}>
           <Button type={type} size={size} disabled={disabled}>
             {children}{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
           </Button>
