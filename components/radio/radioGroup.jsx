@@ -85,7 +85,8 @@ export default class RadioGroup extends React.Component {
     const props = this.props;
     const { prefixCls = props.buttonStyle === 'solid' ? 'idoll-radio-group-solid' : 'idoll-radio-group', className = '', options } = props;
     const classString = classNames(prefixCls, {
-      [`${prefixCls}-${props.size}`]: props.size
+      [`${prefixCls}-${props.size}`]: props.size,
+      [`${prefixCls}-vertical`]: props.direction
     }, className);
     let children = props.children;
     if (options && options.length > 0) {

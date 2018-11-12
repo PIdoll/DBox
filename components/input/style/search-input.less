@@ -7,6 +7,20 @@
 
 
 .@{search-prefix} {
+  &-large {
+    // 图标大小
+    > .@{idoll-prefix}-input-suffix {
+      font-size: @font-size-base + 2px;
+    }
+  }
+
+  &-small {
+    // 图标大小
+    > .@{idoll-prefix}-input-suffix {
+      font-size: @font-size-base - 2px;
+    }
+  }
+
   &-icon {
     pointer-events: none;
     color: @text-color-secondary;
@@ -26,6 +40,17 @@
     padding: @input-padding-vertical-base @input-padding-horizontal; 
     > .@{iconfont-css-prefix}-search {
       font-size: @font-size-base;
+    }
+  }
+
+  
+  > .@{idoll-prefix}-input-suffix > .@{idoll-prefix}-btn {
+    // 搜索按钮左边为直角
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    > .@{idoll-prefix}-icon-search {
+      color: #fff;  // 图标颜色
     }
   }
 

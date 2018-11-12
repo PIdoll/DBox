@@ -8,30 +8,30 @@
   line-height: 1;
   vertical-align: middle;
   margin-right: 58px;
+  cursor: pointer;
 }
 .idoll-badge-count {
+  top: -10px;
   position: absolute;
   transform: translateX(-50%);
   height: 20px;
   border-radius: 10px;
   min-width: 20px;
   background: #F44336;
-  border: 1px solid transparent;
   color: #fff;
-  line-height: 18px;
+  line-height: 20px;
   text-align: center;
-  padding: 0 6px;
+  padding: 0 5px;
   font-size: 12px;
   white-space: nowrap;
   transform-origin: -10% center;
   z-index: 10;
-  font-family: tahoma;
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-shadow: 0 0 0 1px #fff;
-  cursor: pointer;
+  pointer-events: none;
 }
-.idoll-badge-count a,
-.idoll-badge-count a:hover {
-  color: #fff;
+.idoll-badge:hover {
+  cursor: pointer;
 }
 .idoll-badge-dot {
   position: absolute;
@@ -44,41 +44,45 @@
   background: #F44336;
   z-index: 10;
   box-shadow: 0 0 0 1px #fff;
+  pointer-events: none;
 }
 .idoll-badge-zoom-appear,
 .idoll-badge-zoom-enter {
-  animation: idollZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
   animation-fill-mode: both;
 }
 .idoll-badge-zoom-leave {
-  animation: idollZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+  animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
   animation-fill-mode: both;
+}
+.idoll-badge-not-a-wrapper {
+  pointer-events: none;
 }
 .idoll-badge-not-a-wrapper .idoll-badge-count {
   top: auto;
   display: block;
   position: relative;
   transform: translateX(0);
-}
-a -count:hover {
-  background: timt(#F44336, 20%);
-}
-a -count:active {
-  background: #e84033;
+  pointer-events: none;
 }
 span.example {
   width: 64px;
   height: 64px;
-  border-radius: 4px;
-  background: #eeeeee;
+  border-radius: 3px;
+  background: #e2e2e2;
   display: inline-block;
 }
 .idoll-scroll-number {
   overflow: hidden;
+  pointer-events: none;
 }
 .idoll-scroll-number-only {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  pointer-events: none;
+}
+.idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only {
+  pointer-events: none;
 }
 .idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p {
   display: none;
@@ -121,7 +125,18 @@ span.example {
   left: -10px;
   position: absolute;
   border-radius: 100%;
-  animation: antRadioEffect 1s infinite;
+  overflow: visible;
+}
+.idoll-scroll-number.idoll-badge-processing-dot:after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  border: 1px solid #13B886;
+  border-radius: 100%;
+  animation: idollRadioEffect 1.2s infinite;
 }
 .idoll-scroll-number.idoll-badge-warning-dot {
   background-color: #F9AA29;
@@ -132,7 +147,21 @@ span.example {
   position: absolute;
   border-radius: 100%;
 }
-@keyframes idollZoomBadgeIn {
+@keyframes idollRadioEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes antZoomBadgeIn {
   0% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
@@ -141,26 +170,12 @@ span.example {
     transform: scale(1) translateX(-50%);
   }
 }
-@keyframes idollZoomBadgeOut {
+@keyframes antZoomBadgeOut {
   0% {
     transform: scale(1) translateX(-50%);
   }
   100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
-  }
-}
-@keyframes antRadioEffect {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  0% {
-    transform: scale(0);
-    opacity: 1;
   }
 }
