@@ -29,7 +29,7 @@
     background-color: @popover-bg;
     background-clip: padding-box;
     border-radius: @border-radius-base;
-    box-shadow: @box-shadow-base;//临时使用
+    box-shadow: @shadow-large;
   }
   // 标题
   &-title {
@@ -84,64 +84,70 @@
   display: block;
   border-color: transparent;
   border-style: solid;
+  box-shadow: 3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-top > &-content > &-arrow,
   &-placement-topLeft > &-content >  &-arrow,
   &-placement-topRight > &-content >  &-arrow {
     bottom: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-top > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-topLeft > &-content >  &-arrow {
     left: 24px;
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-topRight > &-content >  &-arrow {
     right: 24px;
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-right > &-content >  &-arrow,
   &-placement-rightTop > &-content >  &-arrow,
   &-placement-rightBottom > &-content >  &-arrow {
     left: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-right > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightTop > &-content >  &-arrow {
     top: 24px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightBottom > &-content >  &-arrow {
     bottom: 24px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-bottom > &-content >  &-arrow,
   &-placement-bottomLeft > &-content >  &-arrow,
   &-placement-bottomRight > &-content >  &-arrow {
     top: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.06);
   }
   &-placement-bottom > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomLeft > &-content >  &-arrow {
     left: 24px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomRight > &-content >  &-arrow {
     right: 24px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
 
   &-placement-left > &-content >  &-arrow,
   &-placement-leftTop > &-content >  &-arrow,
   &-placement-leftBottom > &-content >  &-arrow {
     right: @popover-distance - @popover-arrow-width + 2px;
-    box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
   }
   &-placement-left > &-content >  &-arrow {
     top: 50%;
@@ -174,6 +180,13 @@
     button {
       margin-left: 8px;
     }
+  }
+}
+
+
+#main-container {
+  #demo-popover.h1 {
+    margin-top: 50px;
   }
 }
 

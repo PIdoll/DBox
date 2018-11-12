@@ -1684,7 +1684,7 @@ samp {
   list-style: none;
   display: inline-block;
   text-align: center;
-  background: #ccc;
+  background: #E2E2E2;
   color: #fff;
   white-space: nowrap;
   position: relative;
@@ -1697,6 +1697,7 @@ samp {
 }
 .dbox-avatar .idoll-icon {
   transform: translateY(-15%);
+  color: #fff;
 }
 .dbox-avatar-image {
   background: transparent;
@@ -1717,7 +1718,7 @@ samp {
   line-height: 40px;
 }
 .dbox-avatar-lg.dbox-avatar-icon {
-  font-size: 20px;
+  font-size: 24px;
 }
 .dbox-avatar-sm {
   width: 24px;
@@ -1729,10 +1730,10 @@ samp {
   line-height: 24px;
 }
 .dbox-avatar-sm.dbox-avatar-icon {
-  font-size: 12px;
+  font-size: 14px;
 }
 .dbox-avatar-square {
-  border-radius: 4px;
+  border-radius: 3px;
 }
 .dbox-avatar > img {
   width: 100%;

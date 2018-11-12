@@ -79,26 +79,6 @@ export default class Switch extends Component {
     onClick(checked);
   }
 
-  // handleKeyDown = (e) => {
-  //   if (e.keyCode === 37) { // Left
-  //     this.setChecked(false);
-  //   } else if (e.keyCode === 39) { // Right
-  //     this.setChecked(true);
-  //   } else if (e.keyCode === 32 || e.keyCode === 13) { // Space, Enter
-  //     this.toggle();
-  //   }
-  // }
-
-  // Handle auto focus when click switch in Chrome
-  // handleMouseUp = (e) => {
-  //   if (this.node) {
-  //     this.node.blur();
-  //   }
-  //   if (this.props.onMouseUp) {
-  //     this.props.onMouseUp(e);
-  //   }
-  // }
-
   focus() {
     this.node.focus();
   }

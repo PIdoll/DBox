@@ -19,9 +19,6 @@ title: Popover
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | content | 卡片内容 | string\|ReactNode | 无 |
-| title | 卡片标题 | string\|ReactNode | 无 |
-| trigger | 激活方式 | string`click``hover``focus` | `hover` |
-| placement | 卡片弹出位置 | string`topLeft`,`top`,`topRight`,`leftTop`,`left`,  `leftBottom`,`rightTop`,`right`,`rightBottom`,  `bottomLeft`,`bottom`,`bottomRight` | `top` |
 
 更多属性请参考 [Tooltip]
 
