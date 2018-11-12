@@ -44,6 +44,15 @@ export default () => (
       <Button type='danger' ghost>危险</Button>&nbsp;&nbsp;
       <Button type='disabled' ghost>disabled</Button>
     </div>
+    <br />
+    <br />
+    <h1 className='h1'>block按钮</h1>
+    <div style={{ width: 160 }}>
+      <Button type='primary' block>主要</Button>
+      <br />
+      <br />
+      <Button block>默认</Button>
+    </div>
 
     <br />
     <br />
