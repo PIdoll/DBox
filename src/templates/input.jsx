@@ -36,35 +36,45 @@ export default () => (
     <Input type='text' readOnly value='请输入' style={{width: '160px'}} />
 
     <h1 className='h1'>前置／后置</h1>
-    <Input type='text' addonBefore='姓名' placeholder='请输入' addonAfter='你好' style={{width: '160px'}} /><br />
-    <Input type='text' addonBefore={selectBefore} placeholder='请输入' addonAfter={selectAfter} style={{width: '160px'}} />
+    <div style={{width: '400px'}} >
+      <Input type='text' addonBefore='邮政编码' placeholder='请输入' beforelength='100px' />
+    </div>
+    <br />
+    <div style={{width: '400px'}} >
+      <Input type='text' placeholder='请输入' addonAfter='.com' afterlength='80px' />
+    </div>
+    <br />
+    <div style={{width: '400px'}} >
+      <Input type='text' addonBefore={selectBefore} placeholder='请输入' addonAfter={selectAfter} beforelength='100px' afterlength='80px' />
+    </div>
+
 
     <h1 className='h1'>搜索</h1>
     <Search
       placeholder='请输入'
       onSearch={value => console.log(value)}
-      style={{ width: 200 }}
+      style={{ width: 250 }}
     /><br /><br />
     <Search
       placeholder='请输入'
       onSearch={value => console.log(value)}
-      style={{ width: 200 }}
+      style={{ width: 250 }}
       enterButton
     /><br /><br />
-    <Search style={{ width: 200 }} enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} />
+    <Search style={{ width: 250 }} enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} />
     <br /><br />
-    <Search style={{ width: 200 }} size='large' enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} />
+    <Search style={{ width: 250 }} size='large' enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} />
 
     <h1 className='h1'>前缀／后缀</h1>
     <Input placeholder='请输入' prefix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} />
 
     <h1 className='h1'>三种大小</h1>
-    <Input size='large' placeholder='大尺寸' style={{width: '200px'}} /><br /><br />
-    <Input placeholder='默认尺寸' style={{width: '200px'}} /><br /><br />
-    <Input size='small' placeholder='小尺寸' style={{width: '200px'}} /><br /><br />
-    <Search style={{ width: 200 }} size='large' onSearch={(value => console.log(value))} placeholder='大尺寸' /><br /><br />
-    <Search style={{ width: 200 }} onSearch={(value => console.log(value))} placeholder='默认尺寸' /><br /><br />
-    <Search style={{ width: 200 }} size='small' onSearch={(value => console.log(value))} placeholder='小尺寸' /><br /><br />
+    <Input size='large' placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input size='small' placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Search style={{ width: 200 }} size='large' onSearch={(value => console.log(value))} placeholder='请输入' /><br /><br />
+    <Search style={{ width: 200 }} onSearch={(value => console.log(value))} placeholder='请输入' /><br /><br />
+    <Search style={{ width: 200 }} size='small' onSearch={(value => console.log(value))} placeholder='请输入' /><br /><br />
 
     <h1 className='h1'>输入框组合</h1>
     <InputGroup size='large'>
@@ -83,7 +93,7 @@ export default () => (
     <br /><br />
 
     <InputGroup compact>
-      <Select defaultValue='Shanghai'>
+      <Select defaultValue='Shanghai' style={{width: '160px'}}>
         <Option value='Shanghai'>上海</Option>
         <Option value='Jiangsu'>江苏</Option>
       </Select>
@@ -97,8 +107,8 @@ export default () => (
     <br />
 
     <h1 className='h1'>文本框</h1>
-    <Textarea style={{width: '200px'}} />
+    <Textarea style={{width: '400px'}} />
     <h1 className='h1'>高度可变文本框(设置高度范围为2-6)</h1>
-    <Textarea style={{width: '200px'}} autosize={{minRows: 2, maxRows: 6}} />
+    <Textarea style={{width: '400px'}} autosize={{minRows: 2, maxRows: 6}} />
   </div>
 	)

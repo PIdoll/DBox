@@ -42,6 +42,7 @@
   }
 }
 
+
 // Basic style for input
 .input() { 
   position: relative;
@@ -90,6 +91,16 @@
 
   &-sm {
     .input-sm();
+  }
+}
+
+// 只读状态
+.readOnly() {
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid @border;
+    box-shadow: none;
   }
 }
 
@@ -204,6 +215,7 @@
   &-addon:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    text-align: left;
 
     // Reset Select's style in addon
     .idoll-select .idoll-select-selection {
@@ -217,6 +229,7 @@
   }
   &-addon:last-child {
     border-left: 0;
+    text-align: left;
   }
 
   > .@{inputClass}:last-child,
