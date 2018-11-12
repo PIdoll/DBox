@@ -63,7 +63,7 @@ export default class Tag extends Component {
         })
     }
      render () {
-        const {children, prefixCls, color, hot, closable} = this.props;
+        const {children, prefixCls, color, href, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
             marginLeft: 4
@@ -90,7 +90,7 @@ export default class Tag extends Component {
             component=''
             showProp='data-show'
             >
-            {closable ? tag : (<div
+            {closable ? tag : (href ? <a style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }} className={cls} href={href}>链接</a> : <div
               data-show={this.state.closable}
               style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
               key={children}
