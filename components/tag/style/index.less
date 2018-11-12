@@ -27,6 +27,13 @@
         transform: translateY(-5%)
     }
 
+    &-color {
+        cursor: pointer;
+    }
+    &-closable {
+        cursor: pointer;
+    }
+
     &-close{
         cursor: pointer;
         font-size: 12px;
@@ -34,16 +41,25 @@
         font-size: 12px;
     }
       //hot
-      &-hot {
-        border:none;
-        border-radius: none;
-        &-checked {
-            border-radius: @border-radius-base ;
-            background-color: @primary-color;
-            color: @background-color-base;
-            border:1px solid @primary-color;
-        }
-      }
+    &-hot {
+    border:none;
+    border-radius: none;
+    cursor: pointer;
+    &-checked {
+        border-radius: @border-radius-base ;
+        background-color: @primary-color;
+        color: @background-color-base;
+        border:1px solid @primary-color;
+    }
+    &-checked:hover {
+        background-color: @primary-Hover;
+        border-color: @primary-Hover;
+        color: #fff !important;
+    }
+    }
+    &-hot:hover {
+        color: @primary-color;
+    }
     &-peru {
         border:1px solid RGBA(205, 133, 63, 0.3) !important
     }
@@ -67,14 +83,34 @@ a.@{tag-prefix-cls} {
     line-height: 20px;
     color: @text-color;
 }
+a.@{tag-prefix-cls}:active {
+    border-color: @primary-color;
+    color: @primary-color;
+    transition: none;
+    text-decoration: none;
+}
 a.@{tag-prefix-cls}:hover {
     border-color: @primary-color;
     color: @primary-color;
     transition: none;
+    text-decoration: none;
+}
+a.@{tag-prefix-cls}:visited {
+    border-color: @primary-color;
+    color: @primary-color;
+    transition: none;
+    text-decoration: none;
+}
+a.@{tag-prefix-cls}:focus {
+    border-color: @primary-color;
+    color: @primary-color;
+    transition: none;
+    text-decoration: none;
 }
 
 .group {
     .@{tag-prefix-cls}:last-child {
-        border-style: dashed
+        border-style: dashed;
+        cursor: pointer;
     }
 }

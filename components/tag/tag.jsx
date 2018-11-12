@@ -63,7 +63,7 @@ export default class Tag extends Component {
         })
     }
      render () {
-        const {children, prefixCls, color, href, hot, closable} = this.props;
+        const {children, prefixCls, target, color, href, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
             marginLeft: 4
@@ -72,6 +72,8 @@ export default class Tag extends Component {
         const cls = classNames(prefixCls, {
             [`${prefixCls}-hot`]: hot,
             [`${prefixCls}-hot-checked`]: isChecked && hot,
+            [`${prefixCls}-color`]: color,
+            [`${prefixCls}-closable`]: closable,
             [`${prefixCls}-${color}`]: color,
             [`${prefixCls}-checkable-checked`]: isChecked
         })
@@ -91,7 +93,7 @@ export default class Tag extends Component {
             component=''
             showProp='data-show'
             >
-            {closable ? tag : (href ? <a style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }} className={cls} href={href}>链接</a> : <div
+            {closable ? tag : (href ? <a target={target} style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }} className={cls} href={href}>链接</a> : <div
               data-show={this.state.closable}
               style={{ borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
               key={children}
