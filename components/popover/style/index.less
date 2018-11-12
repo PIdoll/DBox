@@ -84,7 +84,7 @@
   display: block;
   border-color: transparent;
   border-style: solid;
-  box-shadow: @shadow-large;
+  box-shadow: 3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-top > &-content > &-arrow,
@@ -95,12 +95,15 @@
   &-placement-top > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-topLeft > &-content >  &-arrow {
     left: 24px;
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-topRight > &-content >  &-arrow {
     right: 24px;
+    // box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-right > &-content >  &-arrow,
@@ -111,12 +114,15 @@
   &-placement-right > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightTop > &-content >  &-arrow {
     top: 24px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightBottom > &-content >  &-arrow {
     bottom: 24px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-bottom > &-content >  &-arrow,
@@ -127,12 +133,15 @@
   &-placement-bottom > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomLeft > &-content >  &-arrow {
     left: 24px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomRight > &-content >  &-arrow {
     right: 24px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
 
   &-placement-left > &-content >  &-arrow,
