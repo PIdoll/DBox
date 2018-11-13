@@ -17,7 +17,7 @@ export default class TagView extends React.Component {
         <h1>基本使用</h1>
         <p>基本标签展示</p>
         <Tag>标签</Tag>
-        <Tag href='www.google.com'>链接</Tag>
+        <Tag href='www.badiu.com'>链接</Tag>
         <h1>多彩标签</h1>
         <p style={{marginBottom: '10px'}}>同时支持16进制／rgb／英文颜色通过color属性自定义设置</p>
         <Tag color='peru'>peru</Tag>
