@@ -226,22 +226,42 @@
     padding-right: @padding-xs;
   }
   .@{iconfont-css-prefix}-down {
-    .iconfont-size-under-12px(10px);
+    font-size: 14px;
+    color: @text-color;
   }
-  .idoll-btn {
-    .idoll-icon-down:before,.idoll-icon-up:before {
-      font-size: 14px;
+  .idoll-btn-sm {
+    font-size: 12px;
+    .idoll-icon.idoll-icon-down,.idoll-icon.idoll-icon-up {
+      margin-left: 4px;
+      &:before {
+        font-size: 12px;
+        color: @text-color;
+      }
     }
   }
   .idoll-btn-lg {
-    .idoll-icon-down:before,.idoll-icon-up:before {
+    font-size: 16px;
+    i:before {
       font-size: 16px;
+      color: @text-color;
     }
   }
-  .idoll-btn-sm {
-    .idoll-icon-down:before,.idoll-icon-up:before {
-      font-size: 12px;
-    }
+}
+
+.@{dropdown-prefix-cls}-button:hover {
+  .idoll-icon.idoll-icon-down:before {
+    color:#fff;
+  }
+  .idoll-icon.idoll-icon-up:before {
+    color:#fff;
+  }
+}
+.@{dropdown-prefix-cls}-button:active {
+  .idoll-icon.idoll-icon-down:before {
+    color:#fff;
+  }
+  .idoll-icon.idoll-icon-up:before {
+    color:#fff;
   }
 }
 
