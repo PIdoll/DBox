@@ -1673,26 +1673,32 @@ samp {
   }
 }
 .idoll-tag {
-  position: relative;
   display: inline-block;
   border-color: #13B886;
-  color: #13B886;
-  border-style: solid;
-  border-width: 1px;
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid #E2E2E2;
   border-radius: 3px;
   font-size: 12px;
-  padding: 0 8px;
+  padding: 0 7px;
   box-sizing: border-box;
   text-align: center;
-  cursor: pointer;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
-.idoll-tag span {
-  transform: translate(-50%, -50%);
+.idoll-tag div {
+  display: inline-block;
   min-width: 24px;
   max-height: 20px;
   line-height: 20px;
+}
+.idoll-tag i {
+  transform: translateY(-5%);
+}
+.idoll-tag-color {
+  cursor: pointer;
+}
+.idoll-tag-closable {
+  cursor: pointer;
 }
 .idoll-tag-close {
   cursor: pointer;
@@ -1702,6 +1708,7 @@ samp {
 .idoll-tag-hot {
   border: none;
   border-radius: none;
+  cursor: pointer;
 }
 .idoll-tag-hot-checked {
   border-radius: 3px;
@@ -1709,6 +1716,67 @@ samp {
   color: #f5f5f5;
   border: 1px solid #13B886;
 }
+.idoll-tag-hot-checked:hover {
+  background-color: #42C69E;
+  border-color: #42C69E;
+  color: #fff !important;
+}
+.idoll-tag-hot:hover {
+  color: #13B886;
+}
+.idoll-tag-peru {
+  border: 1px solid rgba(205, 133, 63, 0.3) !important;
+}
+.idoll-tag-coral {
+  border: 1px solid rgba(255, 127, 80, 0.3) !important;
+}
+.idoll-tag-hotpink {
+  border: 1px solid rgba(255, 105, 180, 0.3) !important;
+}
+.idoll-tag-orange {
+  border: 1px solid rgba(255, 165, 0, 0.3) !important;
+}
+.idoll-tag-limegreen {
+  border: 1px solid rgba(50, 205, 50, 0.3) !important;
+}
+.idoll-tag-deepskyblue {
+  border: 1px solid rgba(0, 191, 255, 0.3) !important;
+}
+.idoll-tag-mediumslateblue {
+  border: 1px solid rgba(123, 104, 238, 0.3) !important;
+}
+.idoll-tag-turquoise {
+  border: 1px solid rgba(64, 224, 208, 0.3) !important;
+}
+a.idoll-tag {
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.65);
+}
+a.idoll-tag:active {
+  border-color: #13B886;
+  color: #13B886;
+  transition: none;
+  text-decoration: none;
+}
+a.idoll-tag:hover {
+  border-color: #13B886;
+  color: #13B886;
+  transition: none;
+  text-decoration: none;
+}
+a.idoll-tag:visited {
+  border-color: #13B886;
+  color: #13B886;
+  transition: none;
+  text-decoration: none;
+}
+a.idoll-tag:focus {
+  border-color: #13B886;
+  color: #13B886;
+  transition: none;
+  text-decoration: none;
+}
 .group .idoll-tag:last-child {
   border-style: dashed;
+  cursor: pointer;
 }
