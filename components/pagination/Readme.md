@@ -25,12 +25,11 @@ cols: 1
 
 | 参数 | 说明 | 类型 | 默认值|
 | --- | --- | --- | --- |
-| current | 当前页数 | number | - |
+| current | 当前页数与defaultCurrent同时存在会覆盖defaultCurrent | number | - |
 | defaultCurrent | ---默认的当前页数 | number | 1|
 | defaultPageSize | 默认的每页条数 | number | 20 |
 | itemRender | 用于自定义页码的结构，可用于优化SEO | (page，type:'page' \| 'prev' \| 'next', originalElement) => React.ReactNode | - |
-| pageSize | 每页条数 | number | - |
-| pageSizeOptions | 指定每页可以显示多少条 | string\[] | ['10', '20', '30', '40'] |
+| pageSize | 每页条数与defaultPageSize同时存在会覆盖defaultPageSize | number | - |
 | showQuickJumper | 是否可以快速跳转至某页 | boolean | false |
 | showSizeChanger | 是否可以改变pageSize | boolean | false|
 | showTotal | 用于显示数据总量和当前数据顺序 | Function(total, range) | - |

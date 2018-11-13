@@ -1,0 +1,381 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+.idoll-pagination {
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.idoll-pagination ul,
+.idoll-pagination ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.idoll-pagination:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.idoll-pagination-total-text {
+  display: inline-block;
+  vertical-align: middle;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 8px;
+}
+.idoll-pagination-item {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #E2E2E2;
+  border-radius: 3px;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 8px;
+  background: #fff;
+  font-family: Arial;
+  outline: 0;
+}
+.idoll-pagination-item a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.65);
+  transition: none;
+  margin: 0 6px;
+}
+.idoll-pagination-item:focus,
+.idoll-pagination-item:hover {
+  transition: all .3s;
+  border-color: #13B886;
+}
+.idoll-pagination-item:focus a,
+.idoll-pagination-item:hover a {
+  color: #13B886;
+}
+.idoll-pagination-item-active {
+  border-color: #13B886;
+}
+.idoll-pagination-item-active:focus,
+.idoll-pagination-item-active:hover {
+  border-color: #42C69E;
+  color: #42C69E;
+}
+.idoll-pagination-item-active a,
+.idoll-pagination-item-active:focus a {
+  color: #13B886;
+}
+.idoll-pagination-item-active:hover a {
+  color: #42C69E;
+}
+.idoll-pagination-prev,
+.idoll-pagination-next,
+.idoll-pagination-jump-prev,
+.idoll-pagination-jump-next {
+  display: inline-block;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 3px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Arial;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.65);
+  list-style: none;
+  transition: all .3s;
+}
+.idoll-pagination-prev,
+.idoll-pagination-jump-prev,
+.idoll-pagination-jump-next {
+  margin-right: 8px;
+}
+.idoll-pagination-jump-prev,
+.idoll-pagination-jump-next {
+  outline: 0;
+}
+.idoll-pagination-jump-prev:after,
+.idoll-pagination-jump-next:after {
+  content: "...";
+  display: block;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.idoll-pagination-jump-prev:focus:after,
+.idoll-pagination-jump-next:focus:after,
+.idoll-pagination-jump-prev:hover:after,
+.idoll-pagination-jump-next:hover:after {
+  color: #13B886;
+  display: compact;
+  font-size: 12px;
+  font-size: 8px \ 9;
+  transform: scale(0.66666667) rotate(0deg);
+  letter-spacing: -1px;
+  font-family: "idollicon";
+}
+:root .idoll-pagination-jump-prev:focus:after,
+:root .idoll-pagination-jump-next:focus:after,
+:root .idoll-pagination-jump-prev:hover:after,
+:root .idoll-pagination-jump-next:hover:after {
+  font-size: 12px;
+}
+.idoll-pagination-jump-prev:focus:after,
+.idoll-pagination-jump-prev:hover:after {
+  content: "\E925";
+}
+.idoll-pagination-jump-next:focus:after,
+.idoll-pagination-jump-next:hover:after {
+  content: "\E92D";
+}
+.idoll-pagination-prev,
+.idoll-pagination-next {
+  outline: 0;
+}
+.idoll-pagination-prev a,
+.idoll-pagination-next a {
+  color: rgba(0, 0, 0, 0.65);
+  user-select: none;
+}
+.idoll-pagination-prev:hover a,
+.idoll-pagination-next:hover a {
+  color: #13B886;
+}
+.idoll-pagination-prev .idoll-pagination-item-link,
+.idoll-pagination-next .idoll-pagination-item-link {
+  border: 1px solid #E2E2E2;
+  background-color: #fff;
+  border-radius: 3px;
+  outline: none;
+  display: block;
+  transition: all .3s;
+}
+.idoll-pagination-prev .idoll-pagination-item-link:after,
+.idoll-pagination-next .idoll-pagination-item-link:after {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "idollicon";
+}
+.idoll-pagination-prev:focus .idoll-pagination-item-link,
+.idoll-pagination-next:focus .idoll-pagination-item-link,
+.idoll-pagination-prev:hover .idoll-pagination-item-link,
+.idoll-pagination-next:hover .idoll-pagination-item-link {
+  border-color: #13B886;
+  color: #13B886;
+}
+.idoll-pagination-prev .idoll-pagination-item-link:after {
+  content: "\E927";
+  display: block;
+}
+.idoll-pagination-next .idoll-pagination-item-link:after {
+  content: "\E928";
+  display: block;
+}
+.idoll-pagination-disabled,
+.idoll-pagination-disabled:hover,
+.idoll-pagination-disabled:focus {
+  cursor: not-allowed;
+}
+.idoll-pagination-disabled a,
+.idoll-pagination-disabled:hover a,
+.idoll-pagination-disabled:focus a,
+.idoll-pagination-disabled .idoll-pagination-item-link,
+.idoll-pagination-disabled:hover .idoll-pagination-item-link,
+.idoll-pagination-disabled:focus .idoll-pagination-item-link {
+  border-color: #E2E2E2;
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+.idoll-pagination-slash {
+  margin: 0 10px 0 5px;
+}
+.idoll-pagination-options {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 16px;
+}
+.idoll-pagination-options-size-changer {
+  display: inline-block;
+  margin-right: 8px;
+}
+.idoll-pagination-options-quick-jumper {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+}
+.idoll-pagination-options-quick-jumper input {
+  position: relative;
+  display: inline-block;
+  padding: 4px 11px;
+  width: 100%;
+  height: 32px;
+  cursor: text;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #E2E2E2;
+  border-radius: 3px;
+  transition: all .3s;
+  margin: 0 8px;
+  width: 50px;
+}
+.idoll-pagination-options-quick-jumper input::-moz-placeholder {
+  color: #bfbfbf;
+  opacity: 1;
+}
+.idoll-pagination-options-quick-jumper input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+.idoll-pagination-options-quick-jumper input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+.idoll-pagination-options-quick-jumper input:hover {
+  border-color: #42c69e;
+  border-right-width: 1px !important;
+}
+.idoll-pagination-options-quick-jumper input:focus {
+  border-color: #42c69e;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(19, 184, 134, 0.2);
+  border-right-width: 1px !important;
+}
+.idoll-pagination-options-quick-jumper input[disabled],
+fieldset[disabled] .idoll-pagination-options-quick-jumper input {
+  background-color: #F8F9FC;
+  opacity: 1;
+  cursor: not-allowed;
+  color: #ccc;
+}
+.idoll-pagination-options-quick-jumper input[disabled]:hover,
+fieldset[disabled] .idoll-pagination-options-quick-jumper input:hover {
+  border-color: #e8e8e8;
+  border-right-width: 1px !important;
+}
+textarea.idoll-pagination-options-quick-jumper input {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  min-height: 32px;
+}
+.idoll-pagination-options-quick-jumper input-lg {
+  padding: 7px 11px;
+  height: 40px;
+  font-size: 16px;
+}
+.idoll-pagination-options-quick-jumper input-sm {
+  padding: 1px 7px;
+  height: 24px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+.idoll-pagination-simple .idoll-pagination-prev,
+.idoll-pagination-simple .idoll-pagination-next {
+  height: 24px;
+  line-height: 24px;
+  vertical-align: top;
+}
+.idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link,
+.idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link {
+  border: 0;
+  height: 28px;
+}
+.idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link:after,
+.idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link:after {
+  line-height: 24px;
+}
+.idoll-pagination-simple .idoll-pagination-simple-pager {
+  display: inline-block;
+  margin-right: 8px;
+  height: 28px;
+}
+.idoll-pagination-simple .idoll-pagination-simple-pager input {
+  margin-right: 8px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #E2E2E2;
+  outline: none;
+  padding: 0 6px;
+  height: 100%;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.idoll-pagination-simple .idoll-pagination-simple-pager input:hover {
+  border-color: #13B886;
+}
+.idoll-pagination.mini .idoll-pagination-total-text,
+.idoll-pagination.mini .idoll-pagination-simple-pager {
+  height: 28px;
+  line-height: 28px;
+}
+.idoll-pagination.mini .idoll-pagination-item {
+  border: 0;
+  margin: 0;
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.idoll-pagination.mini .idoll-pagination-prev,
+.idoll-pagination.mini .idoll-pagination-next {
+  margin: 0;
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.idoll-pagination.mini .idoll-pagination-prev .idoll-pagination-item-link,
+.idoll-pagination.mini .idoll-pagination-next .idoll-pagination-item-link {
+  border: 0;
+}
+.idoll-pagination.mini .idoll-pagination-prev .idoll-pagination-item-link::after,
+.idoll-pagination.mini .idoll-pagination-next .idoll-pagination-item-link::after {
+  height: 24px;
+  line-height: 24px;
+}
+.idoll-pagination.mini .idoll-pagination-jump-prev,
+.idoll-pagination.mini .idoll-pagination-jump-next {
+  height: 24px;
+  line-height: 24px;
+  margin-right: 0;
+}
+.idoll-pagination.mini .idoll-pagination-options {
+  margin-left: 8px;
+}
+.idoll-pagination.mini .idoll-pagination-options-quick-jumper {
+  height: 24px;
+  line-height: 24px;
+}
+.idoll-pagination.mini .idoll-pagination-options-quick-jumper input {
+  padding: 1px 7px;
+  height: 24px;
+  border-radius: 2px;
+  font-size: 12px;
+  width: 44px;
+}
+@media only screen and (max-width: 992px) {
+  .idoll-pagination-item-after-jump-prev,
+  .idoll-pagination-item-before-jump-next {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .idoll-pagination-options {
+    display: none;
+  }
+}
