@@ -32,7 +32,7 @@ module.exports = merge(common, {
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true
-		}),
+    }),
 		// 热加载插件
 		// 配置NamedModulesPlugin以便更容易查看要修补(patch)的依赖
 	    new webpack.NamedModulesPlugin(),
