@@ -64,7 +64,7 @@
 }
 .idoll-dropdown-menu-item,
 .idoll-dropdown-menu-submenu-title {
-  padding: 5px 12px;
+  padding: 5px 16px;
   margin: 0;
   clear: both;
   font-size: 14px;
@@ -102,7 +102,6 @@
 .idoll-dropdown-menu-submenu-title-disabled {
   color: rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
-  pointer-events: none;
 }
 .idoll-dropdown-menu-item-disabled:hover,
 .idoll-dropdown-menu-submenu-title-disabled:hover {
@@ -142,9 +141,9 @@
 }
 .idoll-dropdown-menu-item .idoll-dropdown-menu-submenu-arrow:after,
 .idoll-dropdown-menu-submenu-title .idoll-dropdown-menu-submenu-arrow:after {
-  font-family: 'idollicon' !important;
+  font-family: 'idoll-icon-pro' !important;
   font-style: normal;
-  content: "\E928";
+  content: '\E915';
   color: rgba(0, 0, 0, 0.45);
   display: compact;
   font-size: 12px;
@@ -257,19 +256,19 @@
   height: 40px;
   line-height: 40px;
   font-size: 16px;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 .idoll-size-large .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   height: 40px;
   line-height: 40px;
   font-size: 16px;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 .idoll-size-small .idoll-dropdown-menu-item {
   height: 24px;
   line-height: 24px;
   font-size: 12px;
-  padding: 0 7px;
+  padding: 0 8px;
 }
 .idoll-size-small .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   display: block;
@@ -277,19 +276,19 @@
   height: 24px;
   line-height: 24px;
   font-size: 12px;
-  padding: 0 7px;
+  padding: 0 8px;
 }
 .small li {
   height: 24px;
   line-height: 24px;
   font-size: 12px;
-  padding: 0 7px;
+  padding: 0 8px;
 }
 .large li {
   height: 40px;
   line-height: 40px;
   font-size: 16px;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 h1.h1 {
   margin-top: 95px;
