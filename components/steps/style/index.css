@@ -41,6 +41,7 @@
   height: 32px;
   line-height: 32px;
   text-align: center;
+  color: #13B886;
   border-radius: 32px;
   font-size: 16px;
   margin-right: 8px;
@@ -48,9 +49,8 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .idoll-steps-item-icon > .idoll-steps-icon {
-  line-height: 1;
+  line-height: 1.2;
   top: -1px;
-  color: #13B886;
   position: relative;
 }
 .idoll-steps-item-tail {
@@ -206,6 +206,12 @@
 }
 .idoll-steps-horizontal:not(.idoll-steps-label-vertical) .idoll-steps-item-description {
   max-width: 140px;
+}
+.idoll-icon-check {
+  color: #13B886;
+}
+.idoll-icon-close {
+  color: #F44336;
 }
 .idoll-steps-dot .idoll-steps-item-title {
   line-height: 1.5;
