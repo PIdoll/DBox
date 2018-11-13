@@ -23,7 +23,7 @@ export default class DropdownButton extends React.Component {
   }
   static defaultProps = {
     placement: 'bottomLeft',
-    type: 'normal',
+    type: '',
     prefixCls: 'idoll-dropdown-button'
   };
   render() {

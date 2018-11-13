@@ -254,16 +254,16 @@
   color: rgba(0, 0, 0, 0.65);
 }
 .idoll-dropdown-button:hover .idoll-icon.idoll-icon-down:before {
-  color: #fff;
+  color: #13B886;
 }
 .idoll-dropdown-button:hover .idoll-icon.idoll-icon-up:before {
-  color: #fff;
+  color: #13B886;
 }
-.idoll-dropdown-button:focus .idoll-icon.idoll-icon-down:before {
-  color: #fff !important;
+.idoll-btn:focus .idoll-icon.idoll-icon-down:before {
+  color: #13B886;
 }
-.idoll-dropdown-button:focus .idoll-icon.idoll-icon-up:before {
-  color: #fff !important;
+.idoll-btn:focus .idoll-icon.idoll-icon-up:before {
+  color: #13B886;
 }
 .idoll-dropdown-menu-dark,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu {
