@@ -55,10 +55,10 @@ export default class DropView extends React.Component {
     }
   render() {
     const menu1 = (
-      <Menu subMenuOpenDelay={0.4} openAnimation='slide-up' openTransition='slide-up' onClick={handleMenu1Click}>
+      <Menu onClick={handleMenu1Click}>
         <MenuItem key='1.1'>第一个选项</MenuItem>
         <MenuItem key='1.2'>第二个选项</MenuItem>
-        <SubMenu openAnimation='slide-up' openTransition='slide-up' popupClassName={this.state.size} title='子菜单'>
+        <SubMenu popupClassName={this.state.size} title='子菜单'>
           <MenuItem key='2.3'>第三个选项</MenuItem>
           <MenuItem key='2.4'>第四个选项</MenuItem>
         </SubMenu>
@@ -96,7 +96,7 @@ export default class DropView extends React.Component {
         </Dropdown>
         <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>
         <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；为DropdownButton组件添加size同时添加ref属性即可</p>
-        <DropdownButton size='large' ref={this.refCb} overlay={menu1} trigger={['hover']}>
+        <DropdownButton ref={this.refCb} overlay={menu1} trigger={['hover']}>
           功能按钮
         </DropdownButton>
         <h1 className='h1'>在下拉列表中点击内容关闭菜单</h1>

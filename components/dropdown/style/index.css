@@ -183,19 +183,15 @@
 .idoll-dropdown-menu-submenu:last-child .idoll-dropdown-menu-submenu-title {
   border-radius: 0 0 3px 3px;
 }
-.idoll-dropdown .idoll-size-large,
-.idoll-dropdown-placement-bottomLeft {
+.idoll-dropdown,
+.idoll-dropdown-menu-submenu {
   animation-name: antSlideUpIn;
+  animation-duration: 0.3s;
 }
-.idoll-dropdown.slide-up-enter.slide-up-enter-active.idoll-dropdown-placement-topLeft,
-.idoll-dropdown.slide-up-appear.slide-up-appear-active.idoll-dropdown-placement-topLeft {
-  animation-name: antSlideDownIn;
-}
-.idoll-dropdown.slide-up-leave.slide-up-leave-active.idoll-dropdown-placement-bottomLeft {
-  animation-name: antSlideUpOut;
-}
-.idoll-dropdown.slide-up-leave.slide-up-leave-active.idoll-dropdown-placement-topLeft {
+.idoll-dropdown.idoll-dropdown-hidden,
+.idoll-dropdown-menu-submenu.idoll-dropdown-menu-submen-hidden {
   animation-name: antSlideDownOut;
+  animation-duration: 3s;
 }
 .idoll-dropdown-trigger .idoll-icon-down,
 .idoll-dropdown-link .idoll-icon-down {
@@ -257,15 +253,11 @@
   color: rgba(0, 0, 0, 0.45);
   text-decoration: none;
 }
-.idoll-size-large {
-  transition: antSlideUpIn 3s;
-}
 .idoll-size-large .idoll-dropdown-menu-item {
   height: 40px;
   line-height: 40px;
   font-size: 16px;
   padding: 0 15px;
-  transition: antSlideUpIn 3s;
 }
 .idoll-size-large .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title {
   height: 40px;
@@ -326,31 +318,7 @@ h1.h1:first-child {
   100% {
     opacity: 0;
     transform-origin: 0% 0%;
-    transform: scaleY(0.8);
-  }
-}
-@keyframes antSlideDownIn {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 100%;
-    transform: scaleY(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 100%;
-    transform: scaleY(1);
-  }
-}
-@keyframes scale {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 100%;
-    transform: scaleY(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 100%;
-    transform: scaleY(2);
+    transform: scaleY(0.1);
   }
 }
 @keyframes antSlideDownOut {
@@ -363,53 +331,5 @@ h1.h1:first-child {
     opacity: 0;
     transform-origin: 100% 100%;
     transform: scaleY(0.8);
-  }
-}
-@keyframes antSlideLeftIn {
-  0% {
-    opacity: 0;
-    transform-origin: 0% 0%;
-    transform: scaleX(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 0% 0%;
-    transform: scaleX(1);
-  }
-}
-@keyframes antSlideLeftOut {
-  0% {
-    opacity: 1;
-    transform-origin: 0% 0%;
-    transform: scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform-origin: 0% 0%;
-    transform: scaleX(0.8);
-  }
-}
-@keyframes antSlideRightIn {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 0%;
-    transform: scaleX(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 0%;
-    transform: scaleX(1);
-  }
-}
-@keyframes antSlideRightOut {
-  0% {
-    opacity: 1;
-    transform-origin: 100% 0%;
-    transform: scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform-origin: 100% 0%;
-    transform: scaleX(0.8);
   }
 }

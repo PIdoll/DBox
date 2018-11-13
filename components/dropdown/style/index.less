@@ -176,21 +176,14 @@
       border-radius: 0 0 @border-radius-base @border-radius-base;
     }
   }
-  .idoll-size-large,&-placement-bottomLeft {
+  &,&-menu-submenu {
     animation-name: antSlideUpIn;
+    animation-duration: 0.3s;
   } 
 
-  &.slide-up-enter.slide-up-enter-active&-placement-topLeft,
-  &.slide-up-appear.slide-up-appear-active&-placement-topLeft {
-    animation-name: antSlideDownIn;
-  }
-
-  &.slide-up-leave.slide-up-leave-active&-placement-bottomLeft {
-    animation-name: antSlideUpOut;
-  }
-
-  &.slide-up-leave.slide-up-leave-active&-placement-topLeft {
+  &&-hidden,&-menu-submenu&-menu-submen-hidden {
     animation-name: antSlideDownOut;
+    animation-duration: 3s;
   }
 
 }
@@ -253,13 +246,11 @@
 }
 
 .idoll-size-large {
-  transition: antSlideUpIn 3s;
   .idoll-dropdown-menu-item {
     height: 40px;
     line-height: 40px;
     font-size: 16px;
     padding:0 15px;
-    transition: antSlideUpIn 3s;
   }
   .idoll-dropdown-menu-submenu {
     .idoll-dropdown-menu-submenu-title{
@@ -337,32 +328,7 @@ h1.h1:first-child {
   100% {
     opacity: 0;
     transform-origin: 0% 0%;
-    transform: scaleY(.8);
-  }
-}
-
-@keyframes antSlideDownIn {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 100%;
-    transform: scaleY(.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 100%;
-    transform: scaleY(1);
-  }
-}
-@keyframes scale {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 100%;
-    transform: scaleY(.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 100%;
-    transform: scaleY(2);
+    transform: scaleY(.1);
   }
 }
 
@@ -378,59 +344,6 @@ h1.h1:first-child {
     transform: scaleY(.8);
   }
 }
-
-@keyframes antSlideLeftIn {
-  0% {
-    opacity: 0;
-    transform-origin: 0% 0%;
-    transform: scaleX(.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 0% 0%;
-    transform: scaleX(1);
-  }
-}
-
-@keyframes antSlideLeftOut {
-  0% {
-    opacity: 1;
-    transform-origin: 0% 0%;
-    transform: scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform-origin: 0% 0%;
-    transform: scaleX(.8);
-  }
-}
-
-@keyframes antSlideRightIn {
-  0% {
-    opacity: 0;
-    transform-origin: 100% 0%;
-    transform: scaleX(.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 100% 0%;
-    transform: scaleX(1);
-  }
-}
-
-@keyframes antSlideRightOut {
-  0% {
-    opacity: 1;
-    transform-origin: 100% 0%;
-    transform: scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform-origin: 100% 0%;
-    transform: scaleX(.8);
-  }
-}
-
 
 
 
