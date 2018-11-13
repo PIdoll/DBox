@@ -112,7 +112,7 @@
   border-color: #13B886;
 }
 .idoll-radio-checked .idoll-radio-inner:after {
-  transform: scale(0.875);
+  transform: scale(1);
   opacity: 1;
   transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
 }

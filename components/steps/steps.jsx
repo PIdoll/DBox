@@ -18,12 +18,12 @@ export default class Steps extends React.Component {
   };
   render() {
     const {prefixCls} = this.props;
-    const icons = {
-      finish: <Icon type='check-circle' className={`${prefixCls}-finish-icon`} />,
-      error: <Icon type='check-circle' className={`${prefixCls}-error-icon`} />
+    const iconType = {
+      finish: <Icon type='check' className={`${prefixCls}-finish-icon`} />,
+      error: <Icon type='close' className={`${prefixCls}-error-icon`} />
     }
     return (
-      <RcSteps icons={icons} {...this.props} />
+      <RcSteps icons={iconType} {...this.props} />
     )
   }
 }
