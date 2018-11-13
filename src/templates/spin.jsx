@@ -12,7 +12,7 @@ const container = (
   />
 );
 
-const antIcon = <Icon type='down' style={{ fontSize: 24 }} spin='' />
+const antIcon = <Icon type='down' style={{ fontSize: 24 }} spin />
 
 export default class SpinView extends React.Component {
   state = {
