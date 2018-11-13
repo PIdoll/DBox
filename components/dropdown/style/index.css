@@ -259,11 +259,11 @@
 .idoll-dropdown-button:hover .idoll-icon.idoll-icon-up:before {
   color: #fff;
 }
-.idoll-dropdown-button:active .idoll-icon.idoll-icon-down:before {
-  color: #fff;
+.idoll-dropdown-button:focus .idoll-icon.idoll-icon-down:before {
+  color: #fff !important;
 }
-.idoll-dropdown-button:active .idoll-icon.idoll-icon-up:before {
-  color: #fff;
+.idoll-dropdown-button:focus .idoll-icon.idoll-icon-up:before {
+  color: #fff !important;
 }
 .idoll-dropdown-menu-dark,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu {

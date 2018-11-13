@@ -14,6 +14,8 @@ export default class DropdownButton extends React.Component {
       visible: flag
     });
   };
+  changeValue = () => {
+  }
   onClickChange = (e) => {
     this.setState({
       visible: e.item.props.isSelected
@@ -47,7 +49,7 @@ export default class DropdownButton extends React.Component {
         className={classNames(prefixCls, className)}
       >
         <Dropdown onOverlayClick={this.onClickChange} overlayClassName={`idoll-size-${size}`} {...dropdownProps} onVisibleChange={this.onChange}>
-          <Button type={type} size={size} disabled={disabled}>
+          <Button onClick={this.changeValue} type={type} size={size} disabled={disabled}>
             {children}{this.state.visible === true ? <Icon type='up' /> : <Icon type='down' />}
           </Button>
         </Dropdown>
