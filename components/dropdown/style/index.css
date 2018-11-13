@@ -20,6 +20,33 @@
   font-weight: normal;
   line-height: 1.5;
 }
+.idoll-dropdown-normal.idoll-icon-false {
+  color: rgba(0, 0, 0, 0.65);
+}
+.idoll-dropdown-normal.idoll-icon-false i {
+  color: rgba(0, 0, 0, 0.65);
+}
+.idoll-dropdown-normal.idoll-icon-false:hover {
+  cursor: pointer;
+  color: #13B886;
+}
+.idoll-dropdown-normal.idoll-icon-false:hover i {
+  color: #13B886;
+}
+.idoll-dropdown-normal.idoll-icon-true:hover,
+.idoll-dropdown-normal.idoll-icon-true {
+  cursor: pointer;
+  color: #13B886;
+  text-decoration: none;
+}
+.idoll-dropdown-normal.idoll-icon-true:hover i,
+.idoll-dropdown-normal.idoll-icon-true i {
+  color: #13B886;
+}
+.idoll-dropdown-normal.idoll-icon-true:active,
+.idoll-dropdown-normal.idoll-icon-true:visited {
+  text-decoration: none;
+}
 .idoll-dropdown-wrap {
   position: relative;
 }
@@ -145,14 +172,7 @@
   font-style: normal;
   content: '\E915';
   color: rgba(0, 0, 0, 0.45);
-  display: compact;
-  font-size: 12px;
-  font-size: 10px \ 9;
-  transform: scale(0.83333333) rotate(0deg);
-}
-:root .idoll-dropdown-menu-item .idoll-dropdown-menu-submenu-arrow:after,
-:root .idoll-dropdown-menu-submenu-title .idoll-dropdown-menu-submenu-arrow:after {
-  font-size: 12px;
+  font-size: 14px;
 }
 .idoll-dropdown-menu-submenu-title {
   padding-right: 26px;
@@ -219,6 +239,18 @@
 :root .idoll-dropdown-button .idoll-icon-down {
   font-size: 12px;
 }
+.idoll-dropdown-button .idoll-btn .idoll-icon-down:before,
+.idoll-dropdown-button .idoll-btn .idoll-icon-up:before {
+  font-size: 14px;
+}
+.idoll-dropdown-button .idoll-btn-lg .idoll-icon-down:before,
+.idoll-dropdown-button .idoll-btn-lg .idoll-icon-up:before {
+  font-size: 16px;
+}
+.idoll-dropdown-button .idoll-btn-sm .idoll-icon-down:before,
+.idoll-dropdown-button .idoll-btn-sm .idoll-icon-up:before {
+  font-size: 12px;
+}
 .idoll-dropdown-menu-dark,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu {
   background: #13B886;
@@ -264,6 +296,9 @@
   font-size: 16px;
   padding: 0 16px;
 }
+.idoll-size-large .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title i:after {
+  font-size: 16px;
+}
 .idoll-size-small .idoll-dropdown-menu-item {
   height: 24px;
   line-height: 24px;
@@ -277,6 +312,9 @@
   line-height: 24px;
   font-size: 12px;
   padding: 0 8px;
+}
+.idoll-size-small .idoll-dropdown-menu-submenu .idoll-dropdown-menu-submenu-title i:after {
+  font-size: 12px;
 }
 .small li {
   height: 24px;

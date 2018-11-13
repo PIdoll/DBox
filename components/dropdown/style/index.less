@@ -14,21 +14,30 @@
   font-weight: normal;
   line-height: 1.5;
 
-  // &-normal.idoll-icon {
-  //   color: @text-color;
-  // }
-  // &-normal.idoll-icon:hover {
-  //   color: @primary-color;
-  //   i {
-  //     color: @primary-color;
-  //   }
-  // }
-  // &-normal.idoll-icon:visited{
-  //   color: @primary-color;
-  //   i {
-  //     color: @primary-color;
-  //   }
-  // }
+  &-normal.idoll-icon-false {
+    color: @text-color;
+    i {
+      color: @text-color; 
+    }
+  }
+  &-normal.idoll-icon-false:hover {
+    cursor: pointer;
+    color: @primary-color;
+    i {
+      color: @primary-color;
+    }
+  }
+  &-normal.idoll-icon-true:hover,&-normal.idoll-icon-true{
+    cursor: pointer;
+    color: @primary-color;
+    text-decoration: none;
+    i {
+      color: @primary-color;
+    }
+  }
+  &-normal.idoll-icon-true:active,&-normal.idoll-icon-true:visited {
+    text-decoration: none;
+  }
 
   &-wrap {
     position: relative;
@@ -149,7 +158,7 @@
           font-style: normal;
           content: '\E915';
           color: @text-color-secondary;
-          .iconfont-size-under-12px(10px);
+          font-size: 14px;
         }
       }
     }
@@ -219,6 +228,21 @@
   .@{iconfont-css-prefix}-down {
     .iconfont-size-under-12px(10px);
   }
+  .idoll-btn {
+    .idoll-icon-down:before,.idoll-icon-up:before {
+      font-size: 14px;
+    }
+  }
+  .idoll-btn-lg {
+    .idoll-icon-down:before,.idoll-icon-up:before {
+      font-size: 16px;
+    }
+  }
+  .idoll-btn-sm {
+    .idoll-icon-down:before,.idoll-icon-up:before {
+      font-size: 12px;
+    }
+  }
 }
 
 .@{dropdown-prefix-cls}-menu-dark {
@@ -272,6 +296,9 @@
       line-height: 40px;
       font-size: 16px;
       padding:0 16px;
+      i:after {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -291,6 +318,9 @@
       line-height: 24px;
       font-size: 12px;
       padding:0 8px;
+      i:after {
+        font-size: 12px;
+      }
     }
   }
 }
