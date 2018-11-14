@@ -41,7 +41,8 @@ export default class Radio extends React.Component {
     const wrapperClassString = classNames(className, {
       [`${prefixCls}-wrapper`]: true,
       [`${prefixCls}-wrapper-checked`]: radioProps.checked,
-      [`${prefixCls}-wrapper-disabled`]: radioProps.disabled
+      [`${prefixCls}-wrapper-disabled`]: radioProps.disabled,
+      [`${prefixCls}-wrapper-disabled-checked`]: radioProps.disabled && radioProps.checked,
     })
     return (
       <label className={wrapperClassString} style={style} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>

@@ -11,6 +11,7 @@
   margin-right: 60px;
   
   &-count {
+    top: -10px;
     position: absolute;
     transform: translateX(-50%);
     top: -10px;
@@ -45,18 +46,22 @@
     background: @error-color;
     z-index: 10;
     box-shadow: 0 0 0 1px #fff;
+    pointer-events: none;
   }
   &-zoom-appear,
   &-zoom-enter {
-    animation: idollZoomBadgeIn .3s @ease-out-back;
+    animation: antZoomBadgeIn .3s @ease-out-back;
     animation-fill-mode: both;
   }
 
   &-zoom-leave {
-    animation: idollZoomBadgeOut .3s @ease-in-back;
+    animation: antZoomBadgeOut .3s @ease-in-back;
     animation-fill-mode: both;
   }
 
+  &-not-a-wrapper {
+    pointer-events: none;
+  }
   &-not-a-wrapper &-count {
     top: auto;
     display: block;
@@ -84,12 +89,15 @@ span.example {
 
 .@{number-prefix-cls} {
   overflow: hidden;
+  pointer-events: none;
   &-only {
     display: inline-block;
     transition: transform .3s @ease-in-out;
+    pointer-events: none;
   }
   // for IE8/9 display
   &.not-support-css-animation &-only {
+    pointer-events: none;
     > p {
       display: none;
       &.current {
@@ -177,19 +185,22 @@ span.example {
 
 @keyframes idollZoomBadgeIn {
   0% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
+    transform: scale(0);
+    opacity: 1;
   }
+
   100% {
-    transform: scale(1) translateX(-50%);
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(0);
+    opacity: 1;
   }
 }
 
-@keyframes idollZoomBadgeOut {
+@keyframes antZoomBadgeIn {
   0% {
-    transform: scale(1) translateX(-50%);
-  }
-  100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
   }

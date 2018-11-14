@@ -59,8 +59,8 @@ export default () => (
         </Tooltip>
       </div>
     </div>
+    <h1 className='h1'>箭头指向</h1>
     <div className='arrow'>
-      <h1 className='h1'>箭头指向</h1>
       <Tooltip placement='topLeft' title={text} >
         <Button>边缘对齐</Button>
       </Tooltip>

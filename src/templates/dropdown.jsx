@@ -83,28 +83,22 @@ export default class DropView extends React.Component {
         <h1 className='h1'>鼠标点击，显示菜单</h1>
         <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本</p>
         <Dropdown overlay={menu} trigger={['click']} onClick={handleButtonClick}>
-          <Button type='normal'>
+          <Button>
             按钮
           </Button>
         </Dropdown>
         <h1 className='h1'>鼠标点击，显示图标菜单</h1>
         <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本;可在文本前直接加入组件Icon即可</p>
         <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
-          <Button type='normal'>
+          <Button>
             按钮
           </Button>
         </Dropdown>
         <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>
         <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；为DropdownButton组件添加size同时添加ref属性即可</p>
-        <DropdownButton size='large' ref={this.refCb} overlay={menu1} trigger={['hover']}>
+        <DropdownButton size='small' ref={this.refCb} overlay={menu1} trigger={['hover']}>
           功能按钮
         </DropdownButton>
-        <h1 className='h1'>在下拉列表中点击内容不关闭菜单</h1>
-        <Dropdown trigger={['click']} overlay={menu2} onVisibleChange={this.handleVisibleChange} visible={this.state.visible} >
-          <a href='#' className='idoll-icon-a'>
-            下拉菜单{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
-          </a>
-        </Dropdown>
         <h1 className='h1'>在下拉列表中点击内容关闭菜单</h1>
         <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
           下拉菜单
