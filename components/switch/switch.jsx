@@ -102,7 +102,7 @@ export default class Switch extends Component {
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-small`]: size === 'small',
-      [`${prefixCls}-loading`]: loading
+      [`${prefixCls}-loading`]: loading,
     });
     return (
       <span
