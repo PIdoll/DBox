@@ -16,9 +16,15 @@
 
   &-normal {
     margin-right: 50px;
+    text-decoration: none;
+  }
+  &-normal:visited {
+    margin-right: 50px;
+    text-decoration: none;
   }
   &-normal.idoll-icon-false {
     color: @text-color;
+    text-decoration: none;
     i {
       color: @text-color; 
     }
@@ -38,7 +44,10 @@
       color: @primary-color;
     }
   }
-  &-normal.idoll-icon-true:active,&-normal.idoll-icon-true:visited {
+  &-normal.idoll-icon-true:visited {
+    text-decoration: none;
+  }
+  &-normal.idoll-icon-true:active {
     text-decoration: none;
   }
 
@@ -372,6 +381,20 @@ h1.h1 {
 h1.h1:first-child {
   margin-top: 0;
 }
+
+.dropdown {
+  button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .buttonGroup {
+    button {
+      margin-right: 0;
+      float: left;
+    }
+  }
+}
+
 
 @keyframes idollSlideUpIn {
   0% {
