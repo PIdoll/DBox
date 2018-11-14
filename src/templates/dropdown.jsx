@@ -80,18 +80,34 @@ export default class DropView extends React.Component {
     );
     return (
       <div id='main-container'>
-        <h1 className='h1'>鼠标点击，显示菜单</h1>
-        <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本</p>
+        <h1 className='h1'>基本用法</h1>
+        <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
+          下拉菜单
+        </DropdownNormal>
         <Dropdown overlay={menu} trigger={['click']} onClick={handleButtonClick}>
           <Button>
             按钮
           </Button>
         </Dropdown>
-        <h1 className='h1'>鼠标点击，显示图标菜单</h1>
-        <p>点击按钮弹出菜单，菜单展出方式可通过placement改变`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRigh；亦可通过trigger值为click改变激活方式；通过overlay值为menu改变预设菜单文本;可在文本前直接加入组件Icon即可</p>
+        <h1 className='h1'>常用类型</h1>
         <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
           <Button>
-            按钮
+            默认菜单
+          </Button>
+        </Dropdown>
+        <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
+          <Button type='primary'>
+            主要菜单
+          </Button>
+        </Dropdown>
+        <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
+          <Button type='secondary'>
+            次要菜单
+          </Button>
+        </Dropdown>
+        <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
+          <Button disabled>
+            文本菜单
           </Button>
         </Dropdown>
         <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>

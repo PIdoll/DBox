@@ -20,6 +20,9 @@
   font-weight: normal;
   line-height: 1.5;
 }
+.idoll-dropdown-normal {
+  margin-right: 50px;
+}
 .idoll-dropdown-normal.idoll-icon-false {
   color: rgba(0, 0, 0, 0.65);
 }
