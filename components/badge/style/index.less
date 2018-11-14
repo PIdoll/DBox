@@ -11,7 +11,6 @@
   margin-right: 60px;
   
   &-count {
-    top: -10px;
     position: absolute;
     transform: translateX(-50%);
     top: -10px;
@@ -46,22 +45,18 @@
     background: @error-color;
     z-index: 10;
     box-shadow: 0 0 0 1px #fff;
-    pointer-events: none;
   }
   &-zoom-appear,
   &-zoom-enter {
-    animation: antZoomBadgeIn .3s @ease-out-back;
+    animation: idollZoomBadgeIn .3s @ease-out-back;
     animation-fill-mode: both;
   }
 
   &-zoom-leave {
-    animation: antZoomBadgeOut .3s @ease-in-back;
+    animation: idollZoomBadgeOut .3s @ease-in-back;
     animation-fill-mode: both;
   }
 
-  &-not-a-wrapper {
-    pointer-events: none;
-  }
   &-not-a-wrapper &-count {
     top: auto;
     display: block;
@@ -89,15 +84,12 @@ span.example {
 
 .@{number-prefix-cls} {
   overflow: hidden;
-  pointer-events: none;
   &-only {
     display: inline-block;
     transition: transform .3s @ease-in-out;
-    pointer-events: none;
   }
   // for IE8/9 display
   &.not-support-css-animation &-only {
-    pointer-events: none;
     > p {
       display: none;
       &.current {
