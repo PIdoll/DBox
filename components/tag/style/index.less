@@ -24,14 +24,17 @@
     }
     
     i {
-        transform: translateY(-5%)
+        transform: translateY(-5%);
+        color: @text-color-disable;
     }
 
     &-color {
         cursor: pointer;
     }
-    &-closable {
+    i:hover {
+        color: @text-color-secondary;
         cursor: pointer;
+        transition: all .5s;
     }
 
     &-close{
@@ -42,7 +45,7 @@
     }
       //hot
     &-hot {
-    border:none;
+    border:1px solid transparent;
     border-radius: none;
     cursor: pointer;
     &-checked {
@@ -54,6 +57,7 @@
     &-checked:hover {
         background-color: @primary-Hover;
         border-color: @primary-Hover;
+        border:1px solid @primary-Hover;
         color: #fff !important;
     }
     }
@@ -61,22 +65,30 @@
         color: @primary-color;
     }
     &-peru {
-        border:1px solid RGBA(205, 133, 63, 0.3) !important
+        border:1px solid RGBA(205, 133, 63, 0.3) !important;
+        pointer-events: none;
     }
     &-coral {
-        border:1px solid RGBA(255, 127, 80, 0.3) !important
+        border:1px solid RGBA(255, 127, 80, 0.3) !important;
+        pointer-events: none;
     }&-hotpink {
-        border:1px solid RGBA(255, 105, 180, 0.3) !important
+        border:1px solid RGBA(255, 105, 180, 0.3) !important;
+        pointer-events: none;
     }&-orange {
-        border:1px solid RGBA(255, 165, 0, 0.3) !important
+        border:1px solid RGBA(255, 165, 0, 0.3) !important;
+        pointer-events: none;
     }&-limegreen {
-        border:1px solid RGBA(50, 205, 50, 0.3) !important
+        border:1px solid RGBA(50, 205, 50, 0.3) !important;
+        pointer-events: none;
     }&-deepskyblue {
-        border:1px solid RGBA(0, 191, 255, 0.3) !important
+        border:1px solid RGBA(0, 191, 255, 0.3) !important;
+        pointer-events: none;
     }&-mediumslateblue {
-        border:1px solid RGBA(123, 104, 238, 0.3) !important
+        border:1px solid RGBA(123, 104, 238, 0.3) !important;
+        pointer-events: none;
     }&-turquoise {
-        border:1px solid RGBA(64, 224, 208, 0.3) !important
+        border:1px solid RGBA(64, 224, 208, 0.3) !important;
+        pointer-events: none;
     }
 }
 a.@{tag-prefix-cls} {
