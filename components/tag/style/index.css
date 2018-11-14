@@ -1693,11 +1693,13 @@ samp {
 }
 .idoll-tag i {
   transform: translateY(-5%);
+  color: rgba(0, 0, 0, 0.85);
 }
 .idoll-tag-color {
   cursor: pointer;
 }
-.idoll-tag-closable {
+.idoll-tag i:hover {
+  color: rgba(0, 0, 0, 0.45);
   cursor: pointer;
 }
 .idoll-tag-close {
@@ -1706,7 +1708,7 @@ samp {
   font-size: 12px;
 }
 .idoll-tag-hot {
-  border: none;
+  border: 1px solid transparent;
   border-radius: none;
   cursor: pointer;
 }
@@ -1719,6 +1721,7 @@ samp {
 .idoll-tag-hot-checked:hover {
   background-color: #42C69E;
   border-color: #42C69E;
+  border: 1px solid #42C69E;
   color: #fff !important;
 }
 .idoll-tag-hot:hover {
@@ -1726,27 +1729,35 @@ samp {
 }
 .idoll-tag-peru {
   border: 1px solid rgba(205, 133, 63, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-coral {
   border: 1px solid rgba(255, 127, 80, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-hotpink {
   border: 1px solid rgba(255, 105, 180, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-orange {
   border: 1px solid rgba(255, 165, 0, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-limegreen {
   border: 1px solid rgba(50, 205, 50, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-deepskyblue {
   border: 1px solid rgba(0, 191, 255, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-mediumslateblue {
   border: 1px solid rgba(123, 104, 238, 0.3) !important;
+  pointer-events: none;
 }
 .idoll-tag-turquoise {
   border: 1px solid rgba(64, 224, 208, 0.3) !important;
+  pointer-events: none;
 }
 a.idoll-tag {
   line-height: 20px;
