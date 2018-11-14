@@ -1693,7 +1693,7 @@ samp {
 }
 .idoll-tag i {
   transform: translateY(-5%);
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.25);
 }
 .idoll-tag-color {
   cursor: pointer;
@@ -1701,6 +1701,7 @@ samp {
 .idoll-tag i:hover {
   color: rgba(0, 0, 0, 0.45);
   cursor: pointer;
+  transition: all .5s;
 }
 .idoll-tag-close {
   cursor: pointer;
