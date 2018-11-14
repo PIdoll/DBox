@@ -21,7 +21,7 @@
   // border-color: tint(@color, 20%);
   border-color: @color;
   outline: 0;
-  box-shadow: 0 0 0 2px fade(@color, 20%);
+  // box-shadow: 0 0 0 2px fade(@color, 20%);
   border-right-width: 1px !important;
 }
 
@@ -174,14 +174,14 @@
     width: 100%;
     margin-bottom: 0;
     border: 1px solid @input-border-color;
-    &:focus {
-      z-index: 1; // Fix https://gw.alipayobjects.com/zos/rmsportal/DHNpoqfMXSfrSnlZvhsJ.png
-      border-right-width: 1px;
-    }
     &:hover {
       z-index: 1;
-      border-right-width: 1px;
-      border: 1px solid tint(@input-hover-border-color, 20%);
+      .hover();
+    }
+    &:active,
+    &:focus {
+      z-index: 1; // Fix https://gw.alipayobjects.com/zos/rmsportal/DHNpoqfMXSfrSnlZvhsJ.png
+      .active(); 
     }
   }
 
