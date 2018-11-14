@@ -24,7 +24,7 @@ export default class PaginationView extends React.Component {
         <Pagination defaultCurrent={6} total={500} />
         <h1 className='h1'>3.改变每页显示条数目</h1>
         <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型showSizeChanger为布尔值可控制显示改变每页显示条数目</p>
-        <Pagination defaultCurrent={1} total={50} showSizeChanger />
+        <Pagination pageSizeOptions={['15', '25', '35', '45']} defaultCurrent={1} total={50} showSizeChanger />
         <h1 className='h1'>4.跳转分页</h1>
         <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，showQuickJumper为布尔值可控制跳转分页显示</p>
         <Pagination defaultCurrent={2} total={500} showQuickJumper />
