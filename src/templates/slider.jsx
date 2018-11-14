@@ -1,23 +1,14 @@
 import React from 'react'
-import Slider from 'components/slider';
+import Slider from '../../components/slider';
 
 class SliderView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      disabled: false,
-    };
-  }
-  handleDisabledChange = (disabled) => {
-    this.setState({disabled});
-  }
   render() {
-    const { disabled } = this.state;
     return (
-      <div>
-        <Slider defaultValue={30} disabled={disabled} />
+      <div className='main-container'>
+        <h1>1.基本用法</h1>
+        <Slider defaultValue={30} />
       </div>
     )
   }
 }
-export default SliderView
+export default SliderView;

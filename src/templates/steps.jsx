@@ -17,7 +17,7 @@ const customDot = (dot, {status, index}) => (
 );
 
 const stepsContent = {
-  margintop: '16px',
+  marginTop: '16px',
   border: '1px dashed #e9e9e9',
   borderRadius: '6px',
   backgroundColor: '#fafafa',
