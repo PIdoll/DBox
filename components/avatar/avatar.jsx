@@ -94,6 +94,7 @@ class Avatar extends React.Component {
                     transform: `scale(${this.state.scale})`,
                     position: 'absolute',
                     display: 'inline-block',
+                    top: `calc(50% - ${Math.round(childrenNode.offsetHeight / 2)}px)`,
                     left: `calc(50% - ${Math.round(childrenNode.offsetWidth / 2)}px)`
                 };
             children = (

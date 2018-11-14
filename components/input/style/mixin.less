@@ -17,26 +17,31 @@
 
 // input status
 // == when focus or actived
-.active(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+.active(@color: @primary-color) {
+  // border-color: tint(@color, 20%);
+  border-color: @color;
   outline: 0;
   box-shadow: 0 0 0 2px fade(@color, 20%);
+  border-right-width: 1px !important;
 }
 
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+  // border-color: tint(@color, 20%);
+  border-color: @color;
+  border-right-width: 1px !important;
 }
 
 .disabled() {
   background-color: @input-disabled-bg;
   opacity: 1;
   cursor: @cursor-disabled;
-  color: #ccc;
+  color: @text-color-disable;
   &:hover {
     .hover(@input-border-color);
   }
 }
+
 
 // Basic style for input
 .input() { 
@@ -51,10 +56,12 @@
   color: @input-color;
   background-color: @input-bg;
   background-image: none;
-  border: 1px solid @input-border-color;
+  border: 1px solid @border;
+  // border: 1px solid @input-border-color;
   border-radius: @border-radius-base;
   .placeholder(); // Reset placeholder
-  transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
+  // transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
+  transition: all .3s;
 
   &:hover {
     .hover();
@@ -74,6 +81,7 @@
     max-width: 100%; // prevent textearea resize from coming out of its container
     height: auto;
     vertical-align: bottom;
+    min-height: 32px;
   }
 
   // Size
@@ -83,6 +91,16 @@
 
   &-sm {
     .input-sm();
+  }
+}
+
+// 只读状态
+.readOnly() {
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid @border;
+    box-shadow: none;
   }
 }
 
@@ -108,8 +126,9 @@
   position: relative;
   display: table;
   border-collapse: separate;
-  border: 1px solid @input-border-color;
-  border-radius: @border-radius-base;
+  // border: 1px solid @input-border-color;
+  // border-radius: @border-radius-base;
+  border-spacing: 0;
   width: 100%;
 
   // Undo padding and float of grid classes
@@ -151,12 +170,19 @@
   }
 
   .@{inputClass} {
-    position: relative;
-    z-index: 2;
     float: left;
     width: 100%;
     margin-bottom: 0;
-    padding: @input-padding-vertical-base+1 @input-padding-horizontal;
+    border: 1px solid @input-border-color;
+    &:focus {
+      z-index: 1; // Fix https://gw.alipayobjects.com/zos/rmsportal/DHNpoqfMXSfrSnlZvhsJ.png
+      border-right-width: 1px;
+    }
+    &:hover {
+      z-index: 1;
+      border-right-width: 1px;
+      border: 1px solid tint(@input-hover-border-color, 20%);
+    }
   }
 
   &-addon {
@@ -167,7 +193,7 @@
     color: @input-color;
     text-align: center;
     background-color: @input-addon-bg;
-    // border: 1px solid @input-border-color;
+    border: 1px solid @input-border-color;
     border-radius: @border-radius-base;
 
     // Reset Select's style in addon
@@ -176,16 +202,9 @@
 
       .idoll-select-selection {
         background-color: inherit;
-        border: 0;
         margin: -1px;
         border: 1px solid transparent;
-      }
-
-      &-open,
-      &-focused {
-        .idoll-select-selection {
-          border-color: tint(@primary-color, 20%);
-        }
+        box-shadow: none;
       }
     }
   }
@@ -196,6 +215,7 @@
   &-addon:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    text-align: left;
 
     // Reset Select's style in addon
     .idoll-select .idoll-select-selection {
@@ -209,6 +229,7 @@
   }
   &-addon:last-child {
     border-left: 0;
+    text-align: left;
   }
 
   > .@{inputClass}:last-child,
@@ -247,6 +268,9 @@
 
   &:hover .@{inputClass}:not(.@{inputClass}-disabled) {
     .hover();
+  }
+  .@{inputClass} {
+    position: static;
   }
 
   .@{inputClass}-prefix,
