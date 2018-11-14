@@ -28,9 +28,9 @@ export default () => (
     <br /><br />
 
     <h1 className='h1'>跳转按钮</h1>
-    <Button type='secondary' href='www.baidu.com' text target='_blank'>跳转新页面</Button>
-    <br /><br />
-    <Button type='secondary' href='www.baidu.com' text target='_self'>跳转本页面</Button>&nbsp;&nbsp;
+    <Button type='secondary' href='www.baidu.com' target='_blank'>新页面</Button>
+    &nbsp;&nbsp;
+    <Button type='secondary' href='www.baidu.com' target='_self'>本页面</Button>&nbsp;&nbsp;
 
     <h1 className='h1'>图标按钮</h1>
     <Button icon='delete' size='small'>图标</Button>&nbsp;&nbsp;
