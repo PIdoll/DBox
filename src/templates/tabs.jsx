@@ -59,56 +59,24 @@ export default class TabsView extends React.Component {
     const { mode } = this.state;
     return (
       <div id='main-container'>
-        <h1 className='h1'>通用标签页</h1>
-        <Tabs defaultActiveKey='2' onChange={this.callBack}>
+        <h1 className='h1'>1.基本用法和禁用</h1>
+        <Tabs defaultActiveKey='1' onChange={this.callBack}>
           <TabPane tab='分页 1' key='1'>Content of Tab Pane 1</TabPane>
-          <TabPane tab='分页 2' key='2'>Content of Tab Pane 2</TabPane>
+          <TabPane disabled tab='分页 2' key='2'>Content of Tab Pane 2</TabPane>
           <TabPane tab='分页 3' key='3'>Content of Tab Pane 3</TabPane>
         </Tabs>
         <br />
         <br />
-        <h1 className='h1'>卡片式标签页</h1>
-        <Tabs type='card' onChange={this.callBack}>
-          <TabPane tab='分页 1' key='1'>内容 1</TabPane>
-          <TabPane tab='分页 2' key='2'>内容 2</TabPane>
-          <TabPane tab='分页 3' key='3'>内容 3</TabPane>
-        </Tabs>
-        <br />
-        <br />
-        <h1 className='h1'>卡片式标签页容器</h1>
-        <Tabs type='card'>
-          <TabPane tab='分页 1' key='1'>
-            <p>内容 1</p>
-            <p>内容 1</p>
-            <p>内容 1</p>
-          </TabPane>
-          <TabPane tab='分页 2' key='2'>
-            <p>内容 2</p>
-            <p>内容 2</p>
-            <p>内容 2</p>
-          </TabPane>
-          <TabPane tab='分页 3' key='3'>
-            <p>内容 3</p>
-            <p>内容 3</p>
-            <p>内容 3</p>
-          </TabPane>
-        </Tabs>
-        <h1 className='h1'>有图标的标签</h1>
+        <h1 className='h1'>2.有图标的标签</h1>
         <Tabs defaultActiveKey='2'>
-          <TabPane tab={<span><Icon type='apple' />分页 1</span>} key='1'>
+          <TabPane tab={<span><Icon type='bars' />分页 1</span>} key='1'>
             内容 1
           </TabPane>
-          <TabPane tab={<span><Icon type='android' />分页 2</span>} key='2'>
+          <TabPane tab={<span><Icon type='appstore-o' />分页 2</span>} key='2'>
             内容 2
           </TabPane>
         </Tabs>
-        <h1 className='h1'>tab页位置</h1>
-        <Tabs tabPosition='left'>
-          <TabPane tab='分页 1' key='1'>分页 1</TabPane>
-          <TabPane tab='分页 2' key='2'>分页 2</TabPane>
-          <TabPane tab='分页 3' key='3'>分页 3</TabPane>
-        </Tabs>
-        <h1 className='h1'>tab页上下，左右滑动</h1>
+        <h1 className='h1'>3.tab页上下，左右滑动</h1>
         <RadioGroup onChange={this.handleModeChange} value={mode} style={{marginBottom: 8}}>
           <RadioButton value='top'>水平</RadioButton>
           <RadioButton value='left'>垂直</RadioButton>
@@ -129,7 +97,25 @@ export default class TabsView extends React.Component {
           <TabPane tab='分页 13' key='13'>分页 13</TabPane>
           <TabPane tab='分页 14' key='14'>分页 14</TabPane>
         </Tabs>
-        <h1 className='h1'>自定义新增也签触发器</h1>
+        <h1 className='h1'>4.卡片式标签页容器</h1>
+        <Tabs type='card'>
+          <TabPane tab='分页 1' key='1'>
+            <p>内容 1</p>
+            <p>内容 1</p>
+            <p>内容 1</p>
+          </TabPane>
+          <TabPane tab='分页 2' key='2'>
+            <p>内容 2</p>
+            <p>内容 2</p>
+            <p>内容 2</p>
+          </TabPane>
+          <TabPane tab='分页 3' key='3'>
+            <p>内容 3</p>
+            <p>内容 3</p>
+            <p>内容 3</p>
+          </TabPane>
+        </Tabs>
+        <h1 className='h1'>5.自定义新增也签触发器</h1>
         <div>
           <div style={{ marginBottom: 15 }}>
             <Button onClick={this.add}>添加</Button>
@@ -138,6 +124,8 @@ export default class TabsView extends React.Component {
             {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
           </Tabs>
         </div>
+        <h1 className='h1'>6.卡片式容器</h1>
+        <h1 className='h1'>7.吸附效果</h1>
       </div>
     )
   }

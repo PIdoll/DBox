@@ -115,14 +115,16 @@
   &-tab-next {
     right: 2px;
     &-icon:before {
-      content: "\E938";
+      content: "\E915";
+      font-family: 'idoll-icon-pro' !important;
     }
   }
 
   &-tab-prev {
     left: 0;
     &-icon:before {
-      content: "\E92C";
+      content: "\E913";
+      font-family: 'idoll-icon-pro' !important;
     }
     :root & {
       filter: none;
@@ -159,8 +161,12 @@
     }
 
     .@{tab-prefix-cls}-tab-disabled {
-      pointer-events: none;
       cursor: default;
+      color: @disabled-color;
+    }
+
+    .@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-disabled:hover {
+      cursor: not-allowed;
       color: @disabled-color;
     }
 
@@ -309,6 +315,7 @@
         height: @tab-scrolling-size;
         &-icon:before {
           content: "\E92C";
+          font-family: 'idollicon' !important;
         }
       }
 
@@ -318,6 +325,7 @@
         height: @tab-scrolling-size;
         &-icon:before {
           content: "\E938";
+          font-family: 'idollicon' !important;
         }
       }
     }
