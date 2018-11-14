@@ -1694,6 +1694,7 @@ samp {
   cursor: pointer;
   transition: all 0.36s;
   user-select: none;
+  margin-bottom: 5px;
 }
 .dbox-switch-inner {
   color: #fff;
@@ -1739,12 +1740,12 @@ samp {
 .dbox-switch-loading:before {
   display: inline-block;
   color: rgba(0, 0, 0, 0.65);
+  cursor: not-allowed;
 }
 .dbox-switch-checked.dbox-switch-loading:before {
   color: #13B886;
 }
 .dbox-switch:focus {
-  box-shadow: 0 0 0 2px rgba(19, 184, 134, 0.2);
   outline: 0;
 }
 .dbox-switch:focus:hover {
@@ -1785,6 +1786,7 @@ samp {
 .dbox-switch-small.dbox-switch-loading:before {
   animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
   font-weight: bold;
+  cursor: not-allowed;
 }
 .dbox-switch-checked {
   background-color: #13B886;
@@ -1804,12 +1806,11 @@ samp {
 }
 .dbox-switch-loading,
 .dbox-switch-disabled {
-  pointer-events: none;
+  cursor: not-allowed;
   opacity: 0.4;
 }
-.idoll-btn {
-  border-color: #13B886;
-  color: #13B886;
+.dbox-switch-disabled:after {
+  cursor: not-allowed;
 }
 @keyframes dboxSwitchSmallLoadingCircle {
   0% {
