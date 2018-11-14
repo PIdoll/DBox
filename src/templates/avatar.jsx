@@ -26,7 +26,7 @@ const UserList = ['Z', 'Alvin', 'Idoll', 'DBox']; export default class AvatarVie
           <div>
             <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
             <Avatar style={{ marginRight: 47 }} icon='user' />
-            <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
+            <Avatar style={{ marginRight: 47 }} size='small' icon='user' />
           </div>
           <br />
           <div>
