@@ -4,7 +4,7 @@ import Badge from 'components/badge';
 import Button from 'components/button';
 
 
-const UserList = ['Z', 'Alvin', 'Tom', 'DBox']; export default class AvatarView extends React.Component {
+const UserList = ['Z', 'Alvin', 'Idoll', 'DBox']; export default class AvatarView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
