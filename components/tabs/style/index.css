@@ -470,6 +470,26 @@
   margin-bottom: 0;
   margin-top: 16px;
 }
+div.cardTabs {
+  background-color: #ccc;
+  padding: 15px;
+}
+div.cardTabs .idoll-tabs-bar {
+  border: none;
+  margin: 0;
+}
+div.cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab {
+  margin-right: 0;
+  border: none;
+  background-color: #ccc;
+}
+div.cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab-active {
+  background-color: #fff;
+}
+div.cardTabs .idoll-tabs-content {
+  background-color: #fff;
+  padding: 15px;
+}
 .idoll-tabs-top .idoll-tabs-ink-bar-animated,
 .idoll-tabs-bottom .idoll-tabs-ink-bar-animated {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);

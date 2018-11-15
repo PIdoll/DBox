@@ -1,13 +1,20 @@
 import React from 'react';
-
+// import { StickyContainer, Sticky } from 'react-sticky';
 import Tabs from 'components/tabs';
 import Icon from 'components/icon';
 import Radio from 'components/radio';
-import Button from 'components/button';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 
+
+// const renderTabBar = (props, DefaultTabBar) => (
+//   <Sticky bottomOffset={80}>
+//     {({ style }) => (
+//       <Tabs {...props} style={{ ...style, zIndex: 1, background: '#fff' }} />
+//     )}
+//   </Sticky>
+// )
 export default class TabsView extends React.Component {
   constructor(props) {
     super(props);
@@ -65,8 +72,6 @@ export default class TabsView extends React.Component {
           <TabPane disabled tab='分页 2' key='2'>Content of Tab Pane 2</TabPane>
           <TabPane tab='分页 3' key='3'>Content of Tab Pane 3</TabPane>
         </Tabs>
-        <br />
-        <br />
         <h1 className='h1'>2.有图标的标签</h1>
         <Tabs defaultActiveKey='2'>
           <TabPane tab={<span><Icon type='bars' />分页 1</span>} key='1'>
@@ -115,17 +120,35 @@ export default class TabsView extends React.Component {
             <p>内容 3</p>
           </TabPane>
         </Tabs>
-        <h1 className='h1'>5.自定义新增也签触发器</h1>
-        <div>
-          <div style={{ marginBottom: 15 }}>
-            <Button onClick={this.add}>添加</Button>
-          </div>
-          <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
-            {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
-          </Tabs>
-        </div>
+        <h1 className='h1'>5.新增和关闭</h1>
+        <Tabs onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
+          {this.state.panes.map(pane => <TabPane closable={pane.key === '1' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+        </Tabs>
         <h1 className='h1'>6.卡片式容器</h1>
+        <Tabs type='card' className='cardTabs'>
+          <TabPane tab='分页 1' key='1'>
+            <p>内容 1</p>
+            <p>内容 1</p>
+            <p>内容 1</p>
+          </TabPane>
+          <TabPane tab='分页 2' key='2'>
+            <p>内容 2</p>
+            <p>内容 2</p>
+            <p>内容 2</p>
+          </TabPane>
+          <TabPane tab='分页 3' key='3'>
+            <p>内容 3</p>
+            <p>内容 3</p>
+            <p>内容 3</p></TabPane>
+        </Tabs>
         <h1 className='h1'>7.吸附效果</h1>
+        {/* <StickyContainer>
+          <Tabs defaultActiveKey='1' renderTabBar={renderTabBar}>
+            <TabPane tab='分页 1' key='1'>内容 1</TabPane>
+            <TabPane tab='分页 2' key='2'>内容 2</TabPane>
+            <TabPane tab='分页 3' key='3'>内容 3</TabPane>
+          </Tabs>
+        </StickyContainer> */}
       </div>
     )
   }

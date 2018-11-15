@@ -390,6 +390,31 @@
   }
 }
 
+div.cardTabs {
+  background-color: #ccc;
+  padding: 15px;
+  .@{tab-prefix-cls}-bar {
+    border: none;
+    margin: 0;
+    .@{tab-prefix-cls}-nav-container {
+      .@{tab-prefix-cls}-nav {
+        div.@{tab-prefix-cls}-tab {
+          margin-right: 0;
+          border: none;
+          background-color: #ccc;
+        }
+        div.@{tab-prefix-cls}-tab-active {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .@{tab-prefix-cls}-content {
+    background-color: #fff;
+    padding: 15px;
+  } 
+}
+
 .@{tab-prefix-cls}-top .@{tab-prefix-cls}-ink-bar-animated,
 .@{tab-prefix-cls}-bottom .@{tab-prefix-cls}-ink-bar-animated {
   transition: transform .3s @ease-in-out, width .3s @ease-in-out;
