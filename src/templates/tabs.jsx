@@ -35,12 +35,13 @@ export default class TabsView extends React.Component {
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   };
-  add = () => {
-    const panes = this.state.panes;
-    const activeKey = `newTab${this.newTabIndex++}`;
-    panes.push({ title: '新分页', content: '新分页内容', key: activeKey });
-    this.setState({panes, activeKey});
-  };
+  // 点击按钮增加分页
+  // add = () => {
+  //   const panes = this.state.panes;
+  //   const activeKey = `newTab${this.newTabIndex++}`;
+  //   panes.push({ title: '新分页', content: '新分页内容', key: activeKey });
+  //   this.setState({panes, activeKey});
+  // };
   remove = (targetKey) => {
     let activeKey = this.state.activeKey;
     let lastIndex;
@@ -68,9 +69,9 @@ export default class TabsView extends React.Component {
       <div id='main-container'>
         <h1 className='h1'>1.基本用法和禁用</h1>
         <Tabs defaultActiveKey='1' onChange={this.callBack}>
-          <TabPane tab='分页 1' key='1'>Content of Tab Pane 1</TabPane>
-          <TabPane disabled tab='分页 2' key='2'>Content of Tab Pane 2</TabPane>
-          <TabPane tab='分页 3' key='3'>Content of Tab Pane 3</TabPane>
+          <TabPane tab='分页 1' key='1'>内容 1</TabPane>
+          <TabPane disabled tab='分页 2' key='2'>内容 2</TabPane>
+          <TabPane tab='分页 3' key='3'>内容 3</TabPane>
         </Tabs>
         <h1 className='h1'>2.有图标的标签</h1>
         <Tabs defaultActiveKey='2'>
@@ -125,7 +126,7 @@ export default class TabsView extends React.Component {
           {this.state.panes.map(pane => <TabPane closable={pane.key === '1' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
         </Tabs>
         <h1 className='h1'>6.卡片式容器</h1>
-        <Tabs type='card' className='cardTabs'>
+        <Tabs type='cardTabs'>
           <TabPane tab='分页 1' key='1'>
             <p>内容 1</p>
             <p>内容 1</p>

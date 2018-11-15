@@ -188,6 +188,9 @@
 
       &:hover {
         color: @primary-color;
+        i:before {
+          color: @primary-color;
+        }
       }
 
       &:active {
@@ -202,6 +205,15 @@
     .@{tab-prefix-cls}-tab-active {
       color: @primary-color;
       font-weight: 500;
+      i:before {
+        color: @primary-color;
+      }
+    }
+    .@{tab-prefix-cls}-tab-active:hover {
+      color: @primary-Hover;
+      i:before {
+        color: @primary-Hover;
+      }
     }
   }
 
@@ -390,7 +402,7 @@
   }
 }
 
-div.cardTabs {
+.@{tab-prefix-cls}-cardTabs {
   background-color: #ccc;
   padding: 15px;
   .@{tab-prefix-cls}-bar {
@@ -413,6 +425,14 @@ div.cardTabs {
     background-color: #fff;
     padding: 15px;
   } 
+}
+
+.@{tab-prefix-cls}-card {
+  .@{tab-prefix-cls}-nav {
+    .@{tab-prefix-cls}-tab-active:hover {
+      color: @primary-Hover;
+    }
+  }
 }
 
 .@{tab-prefix-cls}-top .@{tab-prefix-cls}-ink-bar-animated,

@@ -307,6 +307,9 @@
 .idoll-tabs-nav .idoll-tabs-tab:hover {
   color: #13B886;
 }
+.idoll-tabs-nav .idoll-tabs-tab:hover i:before {
+  color: #13B886;
+}
 .idoll-tabs-nav .idoll-tabs-tab:active {
   color: #13B886;
 }
@@ -316,6 +319,15 @@
 .idoll-tabs-nav .idoll-tabs-tab-active {
   color: #13B886;
   font-weight: 500;
+}
+.idoll-tabs-nav .idoll-tabs-tab-active i:before {
+  color: #13B886;
+}
+.idoll-tabs-nav .idoll-tabs-tab-active:hover {
+  color: #42C69E;
+}
+.idoll-tabs-nav .idoll-tabs-tab-active:hover i:before {
+  color: #42C69E;
 }
 .idoll-tabs-large .idoll-tabs-nav-container {
   font-size: 16px;
@@ -470,25 +482,28 @@
   margin-bottom: 0;
   margin-top: 16px;
 }
-div.cardTabs {
+.idoll-tabs-cardTabs {
   background-color: #ccc;
   padding: 15px;
 }
-div.cardTabs .idoll-tabs-bar {
+.idoll-tabs-cardTabs .idoll-tabs-bar {
   border: none;
   margin: 0;
 }
-div.cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab {
+.idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab {
   margin-right: 0;
   border: none;
   background-color: #ccc;
 }
-div.cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab-active {
+.idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab-active {
   background-color: #fff;
 }
-div.cardTabs .idoll-tabs-content {
+.idoll-tabs-cardTabs .idoll-tabs-content {
   background-color: #fff;
   padding: 15px;
+}
+.idoll-tabs-card .idoll-tabs-nav .idoll-tabs-tab-active:hover {
+  color: #42C69E;
 }
 .idoll-tabs-top .idoll-tabs-ink-bar-animated,
 .idoll-tabs-bottom .idoll-tabs-ink-bar-animated {
