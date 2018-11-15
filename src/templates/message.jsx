@@ -26,21 +26,13 @@ export default class messageView extends React.Component {
       message.error('这是错误信息提示', normal);
     }
 
-    const warning = () => {
-      message.warning('这是警告信息提示', normal);
-    };
-
     const warn = () => {
       message.warn('这是警告信息提示', 3, normal);
     };
 
     const info = () => {
-      message.info('这是基本的信息提示', 10, () => console.log('关闭回调'), normal);
+      message.info('这是基本的信息提示', 3, () => console.log('关闭回调'), normal);
     };
-
-    const backgroundInfo = () => {
-      message.info('这是基本的信息提示', 30, () => console.log('关闭回调'), normal);
-    }
 
     const DelayInfo = () => {
       message.info('这是基本的信息提示，并且在10s之后会自动关闭', 10, normal);
@@ -66,17 +58,13 @@ export default class messageView extends React.Component {
       <div id='main-container'>
         <div>
           <div>
-            <h1>切换message是否以背景颜色来展示</h1>
+            <h1 style={{ marginTop: 40 }}>切换message是否以背景颜色来展示</h1>
             <Switch defaultChecked onChange={this.onChange} />
-            <h1 className='h1'>其他类型的提示</h1>
-            <Button style={{ marginRight: 10 }} onClick={success}>Success</Button>
-            <Button type='danger' style={{ marginRight: 10 }} onClick={error}>Error</Button>
-            <Button style={{ marginRight: 10 }} onClick={warning}>Warning</Button>
-            <Button onClick={warn}>Warn</Button>
-            <h1 className='h1'>普通信息提示</h1>
-            <Button type='primary' onClick={info}>Info</Button>
-            <h1 className='h1'>通过背景色展示提示信息</h1>
-            <Button type='primary' onClick={backgroundInfo}>backgroundShow</Button>
+            <h1 className='h1'>基本类型信息提示</h1>
+            <Button style={{ marginRight: 10 }} onClick={success}>成功</Button>
+            <Button type='danger' style={{ marginRight: 10 }} onClick={error}>失败</Button>
+            <Button onClick={warn} style={{ marginRight: 10 }}>警告</Button>
+            <Button onClick={info}>信息</Button>
             <h1 className='h1'>修改延时</h1>
             <Button onClick={DelayInfo}>10s后关闭</Button>
             <h1 className='h1'>加载中...</h1>
