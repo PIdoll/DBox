@@ -2,7 +2,6 @@
 
 @badge-prefix-cls: idoll-badge;
 @number-prefix-cls: idoll-scroll-number;
-
 .@{badge-prefix-cls} {
   position: relative;
   display: inline-block;
@@ -34,6 +33,10 @@
     }
   }
 
+  a,a:link,a:visited,a:hover,a:active {
+    text-decoration: none;
+  }
+
   &-dot {
     position: absolute;
     transform: translateX(-50%);
@@ -48,12 +51,12 @@
   }
   &-zoom-appear,
   &-zoom-enter {
-    animation: idollZoomBadgeIn .3s @ease-out-back;
+    animation: enterIn .3s @ease-out-back;
     animation-fill-mode: both;
   }
 
   &-zoom-leave {
-    animation: idollZoomBadgeOut .3s @ease-in-back;
+    animation: enterOut .3s @ease-in-back;
     animation-fill-mode: both;
   }
 
@@ -175,7 +178,7 @@ span.example {
   }
 }
 
-@keyframes idollZoomBadgeIn {
+@keyframes enterIn {
   0% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
@@ -185,7 +188,7 @@ span.example {
   }
 }
 
-@keyframes idollZoomBadgeOut {
+@keyframes enterOut {
   0% {
     transform: scale(1) translateX(-50%);
   }
