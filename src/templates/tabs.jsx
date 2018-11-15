@@ -35,13 +35,13 @@ export default class TabsView extends React.Component {
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   };
-  // 点击按钮增加分页
-  // add = () => {
-  //   const panes = this.state.panes;
-  //   const activeKey = `newTab${this.newTabIndex++}`;
-  //   panes.push({ title: '新分页', content: '新分页内容', key: activeKey });
-  //   this.setState({panes, activeKey});
-  // };
+  点击按钮增加分页
+  add = () => {
+    const panes = this.state.panes;
+    const activeKey = `newTab${this.newTabIndex++}`;
+    panes.push({ title: '新分页', content: '新分页内容', key: activeKey });
+    this.setState({panes, activeKey});
+  };
   remove = (targetKey) => {
     let activeKey = this.state.activeKey;
     let lastIndex;
