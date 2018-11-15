@@ -80,6 +80,9 @@
   &-circle-outline {
     .btn-circle(@btn-prefix-cls);
   }
+  &-square {
+    .btn-square(@btn-prefix-cls);
+  }
   &-text {
     .btn-text()
   }
@@ -156,7 +159,7 @@
   }
 
   // 点击后的效果
-  &-clicked:after {
+  // &-clicked:after {
     // content: '';
     // position: absolute;
     // top: -1px;
@@ -170,17 +173,18 @@
     // display: block;
     // background-color:@primary-Pressed;
     // color: #fff;
-  }
+  // }
 
-  &-danger&-clicked:after {
+  // &-danger&-clicked:after {
     // border-color: @btn-danger-color;
-  }
+  // }
 
   // 幽灵按钮
   &-background-ghost {
     background: transparent !important;
     border-color: #fff;
     color: #fff;
+    .button-variant-ghost(#fff);
   }
 
   &-background-ghost&-primary {
@@ -211,4 +215,9 @@ a.@{btn-prefix-cls} {
   &-sm {
     line-height: @btn-height-sm - 2px;
   }
+}
+
+// 解决chrome浏览器打开新链接返回原页面会有下划线
+a {
+  text-decoration: none !important;
 }

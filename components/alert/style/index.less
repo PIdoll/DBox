@@ -33,15 +33,21 @@
     // border: @border-width-base @border-style-base ~`colorPalette("@{success-color}", 3)`;
     background-color: ~`colorPalette("@{success-color}", 1)`;
     color: #3CCB69;
+    // height: 40px;
     .@{alert-prefix-cls}-icon {
       color: @success-color;
     }
+  }
+
+  &-no-description {
+    height: 40px;
   }
 
   &-info {
     // border: @border-width-base @border-style-base ~`colorPalette("@{info-color}", 3)`;
     background-color: ~`colorPalette("@{info-color}", 1)`;
     color: #13B886;
+    // height: 40px;
     .@{alert-prefix-cls}-icon {
       color: @info-color;
     }
@@ -51,6 +57,7 @@
     // border: @border-width-base @border-style-base ~`colorPalette("@{warning-color}", 3)`;
     background-color: ~`colorPalette("@{warning-color}", 1)`;
     color: #F9AA29;
+    // height: 40px;
     .@{alert-prefix-cls}-icon {
       color: @warning-color;
     }
@@ -60,6 +67,7 @@
     // border: @border-width-base @border-style-base ~`colorPalette("@{error-color}", 3)`;
     background-color: ~`colorPalette("@{error-color}", 1)`;
     color: #F44336;
+    // height: 40px;
     .@{alert-prefix-cls}-icon {
       color: @error-color;
     }
@@ -92,7 +100,8 @@
   }
 
   &-with-description {
-    padding: 15px 15px 15px 64px;
+    // padding: 15px 15px 15px 64px;
+    padding: 8px 15px 8px 64px;
     position: relative;
     border-radius: @border-radius-base;
     color: @text-color;
@@ -105,7 +114,7 @@
 
   &-with-description &-icon {
     position: absolute;
-    top: 16px;
+    top: 10px;
     left: 24px;
     font-size: 24px;
   }
@@ -123,6 +132,11 @@
     color: @alert-message-color;
     display: block;
     margin-bottom: 8px;
+  }
+
+  &-message {
+    position: relative;
+    top: 1px;
   }
 
   &-with-description &-description {

@@ -28,9 +28,9 @@ export default () => (
     <br /><br />
 
     <h1 className='h1'>跳转按钮</h1>
-    <Button type='secondary' href='www.baidu.com' text target='_blank'>跳转新页面</Button>
-    <br /><br />
-    <Button type='secondary' href='www.baidu.com' text target='_self'>跳转本页面</Button>&nbsp;&nbsp;
+    <Button type='secondary' href='http://www.baidu.com' target='_blank'>新页面</Button>
+    &nbsp;&nbsp;
+    <Button type='secondary' href='http://www.baidu.com' target='_self'>本页面</Button>&nbsp;&nbsp;
 
     <h1 className='h1'>图标按钮</h1>
     <Button icon='delete' size='small'>图标</Button>&nbsp;&nbsp;
@@ -48,9 +48,9 @@ export default () => (
     <Button icon='delete' size='large' shape='circle' />&nbsp;&nbsp;
     <br /><br />
 
-    <Button icon='delete' size='small' />&nbsp;&nbsp;
-    <Button icon='delete' />&nbsp;&nbsp;
-    <Button icon='delete' size='large' />&nbsp;&nbsp;
+    <Button icon='delete' shape='square' size='small' />&nbsp;&nbsp;
+    <Button icon='delete' shape='square' />&nbsp;&nbsp;
+    <Button icon='delete' shape='square' size='large' />&nbsp;&nbsp;
 
     <h1 className='h1'>幽灵按钮</h1>
     <div className='youling'>
@@ -58,7 +58,7 @@ export default () => (
       <Button type='primary' ghost>重要</Button>&nbsp;&nbsp;
       <Button type='dashed' ghost>虚线</Button>&nbsp;&nbsp;
       <Button type='danger' ghost>危险</Button>&nbsp;&nbsp;
-      <Button type='disabled' ghost>disabled</Button>
+      <Button disabled ghost>禁止</Button>
     </div>
     <br />
     <br />
