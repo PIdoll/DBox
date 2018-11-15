@@ -32,8 +32,8 @@ export default class SwitchView extends React.Component {
         <Switch />
         <h1 className='h1'>带有文字的按钮</h1>
         <p>可通过checkedChildren和unCheckedChildren来设置开关内的文字，图标等</p>
-        <Switch checkedChildren={'3'} unCheckedChildren={'1'} />
-        <h1 className='h1'>加载中</h1>
+        <Switch checkedChildren={'1'} unCheckedChildren={'0'} />
+        <h1 className='h1'>执行中</h1>
         <p>通过添加loading属性来改变开关样式</p>
         <Switch loading defaultChecked />
         <br />
