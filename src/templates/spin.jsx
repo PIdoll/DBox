@@ -12,7 +12,7 @@ const container = (
   />
 );
 
-const antIcon = <Icon type='down' style={{ fontSize: 24 }} spin />
+const antIcon = <Icon type='down' style={{ fontSize: 24 }} />
 
 export default class SpinView extends React.Component {
   state = {
@@ -40,13 +40,15 @@ export default class SpinView extends React.Component {
         <h1 className='h1'>
           简单的加载中
         </h1>
-        <Spin />
+        <div style={{ marginTop: 51, marginLeft: 100 }}><Spin /></div>
         <h1 className='h1'>
           三种不同大小的加载中
         </h1>
-        <Spin size='small' />
-        <Spin />
-        <Spin size='large' />
+        <div style={{ width: 300, display: 'flex', justifyContent: 'space-between', marginTop: 50 }}>
+          <Spin size='small' />
+          <Spin />
+          <Spin size='large' />
+        </div>
         <h1 className='h1'>
           放在容器中
         </h1>
