@@ -27,24 +27,20 @@
   // 包裹层
   &-inner {
     background-color: @popover-bg;
-    background-clip: padding-box;
+    // background-clip: padding-box;
     border-radius: @border-radius-base;
-    box-shadow: @shadow-large;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 12px 16px;
   }
   // 标题
   &-title {
-    min-width: @popover-min-width;
-    margin: 0; // reset heading margin
-    padding: 12px @padding-md 0px;
-    min-height: 32px;
     color: @heading-color;
     font-weight: 500;
-    margin-bottom: 8px;
     line-height: 22px;
+    margin-bottom: 8px;
   }
   // 内容
   &-inner-content {
-    padding: 0 @padding-md 12px @padding-md;
     color: @popover-color;
     line-height: 22px;
   }
@@ -84,7 +80,7 @@
   display: block;
   border-color: transparent;
   border-style: solid;
-  box-shadow: @shadow-large;
+  box-shadow: 3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-top > &-content > &-arrow,
@@ -97,10 +93,10 @@
     transform: translateX(-50%) rotate(45deg);
   }
   &-placement-topLeft > &-content >  &-arrow {
-    left: 24px;
+    left: 12px;
   }
   &-placement-topRight > &-content >  &-arrow {
-    right: 24px;
+    right: 12px;
   }
 
   &-placement-right > &-content >  &-arrow,
@@ -111,12 +107,15 @@
   &-placement-right > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightTop > &-content >  &-arrow {
-    top: 24px;
+    top: 12px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
   &-placement-rightBottom > &-content >  &-arrow {
-    bottom: 24px;
+    bottom: 12px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   }
 
   &-placement-bottom > &-content >  &-arrow,
@@ -127,12 +126,15 @@
   &-placement-bottom > &-content >  &-arrow {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomLeft > &-content >  &-arrow {
-    left: 24px;
+    left: 12px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
   &-placement-bottomRight > &-content >  &-arrow {
-    right: 24px;
+    right: 12px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   }
 
   &-placement-left > &-content >  &-arrow,
@@ -143,16 +145,19 @@
   &-placement-left > &-content >  &-arrow {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
   }
   &-placement-leftTop > &-content >  &-arrow {
-    top: 24px;
+    top: 12px;
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
   }
   &-placement-leftBottom > &-content >  &-arrow {
-    bottom: 24px;
+    bottom: 12px;
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
   }
 
   &-message {
-    padding: 4px 0 12px;
+    padding: 12px 0 16px;
     font-size: @font-size-base;
     color: @popover-color;
     > .@{iconfont-css-prefix} {
@@ -174,8 +179,9 @@
   }
 }
 
-.demo-popover:first-child {
-  .h1 {
+
+#main-container {
+  #demoPopover.h1 {
     margin-top: 50px;
   }
 }

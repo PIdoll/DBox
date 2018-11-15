@@ -165,18 +165,12 @@ span.example {
 }
 @keyframes enterIn {
   0% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
+    transform: scale(0);
   }
   100% {
     transform: scale(1) translateX(-50%);
   }
-}
-@keyframes enterOut {
   0% {
-    transform: scale(1) translateX(-50%);
-  }
-  100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
   }

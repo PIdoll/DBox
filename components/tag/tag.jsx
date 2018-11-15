@@ -63,15 +63,18 @@ export default class Tag extends Component {
         })
     }
      render () {
-        const {children, prefixCls, color, hot, closable} = this.props;
+        const {children, prefixCls, target, color, href, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
-            marginLeft: 8
+            marginLeft: 4
         }
         const closeIcon = closable ? <Icon style={iconStyle} type='close' onClick={this.close} /> : null;
         const cls = classNames(prefixCls, {
             [`${prefixCls}-hot`]: hot,
             [`${prefixCls}-hot-checked`]: isChecked && hot,
+            [`${prefixCls}-color`]: color,
+            [`${prefixCls}-closable`]: closable,
+            [`${prefixCls}-${color}`]: color,
             [`${prefixCls}-checkable-checked`]: isChecked
         })
 
@@ -80,7 +83,7 @@ export default class Tag extends Component {
           key={children}
           className={cls}
           onClick={this.handleClick}>
-          <span>{children}</span>
+          <div>{children}</div>
           {closeIcon}
         </div>
         const tag = !this.state.closable ? null : (deletableTag);
@@ -90,13 +93,13 @@ export default class Tag extends Component {
             component=''
             showProp='data-show'
             >
-            {closable ? tag : (<div
+            {closable ? tag : (href ? <a target={target} style={{ color: /blue|red|green|yellow/.test(color) ? color : color, borderColor: /blue|red|green|yellow/.test(color) ? color : color }} className={cls} href={href}>链接</a> : <div
               data-show={this.state.closable}
-              style={{ backgroundColor: /blue|red|green|yellow/.test(color) ? null : color }}
+              style={{ borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
               key={children}
               className={cls}
               onClick={this.handleClick}>
-              <span>{children}</span>
+              <div style={{ color: /blue|red|green|yellow/.test(color) ? color : color }}>{children}</div>
             </div>)}
           </Animate>
         )

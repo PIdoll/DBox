@@ -71,7 +71,7 @@ export default class BadgeView extends React.Component {
           <Icon type='phone' />
         </Badge>
         <Badge dot>
-          <a href='javascript:;'>一些通知</a>
+          <a href='www.baidu.com' target='_blank'>一些通知</a>
         </Badge>
         <h1>可点击</h1>
         <p style={{ marginBottom: '10px' }}>用a标签包裹即可</p>
