@@ -114,7 +114,7 @@ export default class BadgeView extends React.Component {
         </div>
         <div>
           <Badge dot={this.state.show}>
-            <a href='#' style={content} />
+            <a href='javascript:;' style={content} />
           </Badge>
           <Switch checked={this.state.show} onChange={this.onChange} />
         </div>

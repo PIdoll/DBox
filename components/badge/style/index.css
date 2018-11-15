@@ -138,7 +138,7 @@ span.example {
   position: absolute;
   border: 1px solid #13B886;
   border-radius: 100%;
-  animation: idollRadioEffect 1.2s infinite;
+  animation: enterEffect 1.2s infinite;
 }
 .idoll-scroll-number.idoll-badge-warning-dot {
   background-color: #F9AA29;
@@ -149,7 +149,7 @@ span.example {
   position: absolute;
   border-radius: 100%;
 }
-@keyframes idollRadioEffect {
+@keyframes enterEffect {
   0% {
     transform: scale(0);
     opacity: 1;
