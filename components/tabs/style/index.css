@@ -25,6 +25,9 @@
   color: #13B886;
   padding-bottom: 1px;
 }
+.idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active:hover {
+  color: #42C69E;
+}
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-inactive {
   padding: 0;
 }
@@ -501,9 +504,6 @@
 .idoll-tabs-cardTabs .idoll-tabs-content {
   background-color: #fff;
   padding: 15px;
-}
-.idoll-tabs-card .idoll-tabs-nav .idoll-tabs-tab-active:hover {
-  color: #42C69E;
 }
 .idoll-tabs-top .idoll-tabs-ink-bar-animated,
 .idoll-tabs-bottom .idoll-tabs-ink-bar-animated {

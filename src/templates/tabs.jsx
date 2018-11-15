@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StickyContainer, Sticky } from 'react-sticky';
+import ReactDOM from 'react-dom';
 import Tabs from 'components/tabs';
 import Icon from 'components/icon';
 import Radio from 'components/radio';
@@ -8,14 +8,13 @@ const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 
 
-// const renderTabBar = (props, DefaultTabBar) => (
-//   <Sticky bottomOffset={80}>
-//     {({ style }) => (
-//       <Tabs {...props} style={{ ...style, zIndex: 1, background: '#fff' }} />
-//     )}
-//   </Sticky>
-// )
 export default class TabsView extends React.Component {
+  static defaultProps = {
+    target() {
+      return window;
+    },
+    onChange() {},
+  }
   constructor(props) {
     super(props);
     this.newTabIndex = 0;
@@ -26,7 +25,8 @@ export default class TabsView extends React.Component {
     this.state = {
       mode: 'top',
       panes,
-      activeKey: panes[0].key
+      activeKey: panes[0].key,
+      scrollY: 0
     }
   }
   onChange = (activeKey) => {
@@ -35,7 +35,7 @@ export default class TabsView extends React.Component {
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   };
-  点击按钮增加分页
+  // 点击按钮增加分页
   add = () => {
     const panes = this.state.panes;
     const activeKey = `newTab${this.newTabIndex++}`;
@@ -63,6 +63,19 @@ export default class TabsView extends React.Component {
     const mode = e.target.value;
     this.setState({ mode });
   };
+  componentDidMount () {
+    window.addEventListener('scroll', this.setState({scrollY: window.scrollY}));
+  }
+  componentDidUpdate () {
+    // if (this.state.scrollY === 1600) {
+      const element = ReactDOM.findDOMNode(this.refs.box_table);
+      console.log(element)
+      element.style.position = 'fixed';
+      element.style.top = '0';
+      element.style.left = '0'
+    // }
+  }
+
   render() {
     const { mode } = this.state;
     return (
@@ -143,13 +156,11 @@ export default class TabsView extends React.Component {
             <p>内容 3</p></TabPane>
         </Tabs>
         <h1 className='h1'>7.吸附效果</h1>
-        {/* <StickyContainer>
-          <Tabs defaultActiveKey='1' renderTabBar={renderTabBar}>
-            <TabPane tab='分页 1' key='1'>内容 1</TabPane>
-            <TabPane tab='分页 2' key='2'>内容 2</TabPane>
-            <TabPane tab='分页 3' key='3'>内容 3</TabPane>
-          </Tabs>
-        </StickyContainer> */}
+        <Tabs ref='box_table'>
+          <TabPane tab='分页 1' key='1'>内容 1</TabPane>
+          <TabPane tab='分页 2' key='2'>内容 2</TabPane>
+          <TabPane tab='分页 3' key='3'>内容 3</TabPane>
+        </Tabs>
       </div>
     )
   }
