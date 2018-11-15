@@ -32,6 +32,13 @@
 .idoll-badge-count a:hover {
   color: #fff;
 }
+.idoll-badge a,
+.idoll-badge a:link,
+.idoll-badge a:visited,
+.idoll-badge a:hover,
+.idoll-badge a:active {
+  text-decoration: none;
+}
 .idoll-badge-dot {
   position: absolute;
   transform: translateX(-50%);
@@ -46,11 +53,11 @@
 }
 .idoll-badge-zoom-appear,
 .idoll-badge-zoom-enter {
-  animation: idollZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  animation: enterIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
   animation-fill-mode: both;
 }
 .idoll-badge-zoom-leave {
-  animation: idollZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+  animation: enterOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
   animation-fill-mode: both;
 }
 .idoll-badge-not-a-wrapper .idoll-badge-count {
@@ -131,7 +138,7 @@ span.example {
   position: absolute;
   border: 1px solid #13B886;
   border-radius: 100%;
-  animation: idollRadioEffect 1.2s infinite;
+  animation: enterEffect 1.2s infinite;
 }
 .idoll-scroll-number.idoll-badge-warning-dot {
   background-color: #F9AA29;
@@ -142,7 +149,7 @@ span.example {
   position: absolute;
   border-radius: 100%;
 }
-@keyframes idollRadioEffect {
+@keyframes enterEffect {
   0% {
     transform: scale(0);
     opacity: 1;
@@ -156,21 +163,13 @@ span.example {
     opacity: 1;
   }
 }
-@keyframes idollZoomBadgeIn {
+@keyframes enterIn {
   0% {
     transform: scale(0);
-    opacity: 1;
   }
   100% {
-    transform: scale(2);
-    opacity: 0;
+    transform: scale(1) translateX(-50%);
   }
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-}
-@keyframes antZoomBadgeIn {
   0% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
