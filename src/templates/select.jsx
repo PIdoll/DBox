@@ -47,19 +47,19 @@ class select extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>基本使用</h1>
-        <Select size='small' defaultValue='select1' style={{ width: 200 }}>
+        <Select size='small' placeholder='请选择' style={{ width: 200 }}>
           <Option value='select1'>请选择1</Option>
           <Option value='select2'>请选择2</Option>
         </Select>
         <br /><br />
 
-        <Select defaultValue='select1' style={{ width: 200 }}>
+        <Select placeholder='请选择' style={{ width: 200 }}>
           <Option value='select1'>请选择1</Option>
           <Option value='select2'>请选择2</Option>
         </Select>
         <br /><br />
 
-        <Select size='large' defaultValue='select1' style={{ width: 200 }}>
+        <Select size='large' placeholder='请选择' style={{ width: 200 }}>
           <Option value='select1'>请选择1</Option>
           <Option value='select2'>请选择2</Option>
         </Select>
