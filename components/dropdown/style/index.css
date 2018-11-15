@@ -20,8 +20,17 @@
   font-weight: normal;
   line-height: 1.5;
 }
+.idoll-dropdown-normal {
+  margin-right: 50px;
+  text-decoration: none;
+}
+.idoll-dropdown-normal:visited {
+  margin-right: 50px;
+  text-decoration: none;
+}
 .idoll-dropdown-normal.idoll-icon-false {
   color: rgba(0, 0, 0, 0.65);
+  text-decoration: none;
 }
 .idoll-dropdown-normal.idoll-icon-false i {
   color: rgba(0, 0, 0, 0.65);
@@ -43,8 +52,10 @@
 .idoll-dropdown-normal.idoll-icon-true i {
   color: #13B886;
 }
-.idoll-dropdown-normal.idoll-icon-true:active,
 .idoll-dropdown-normal.idoll-icon-true:visited {
+  text-decoration: none;
+}
+.idoll-dropdown-normal.idoll-icon-true:active {
   text-decoration: none;
 }
 .idoll-dropdown-wrap {
@@ -347,6 +358,14 @@ h1.h1 {
 }
 h1.h1:first-child {
   margin-top: 0;
+}
+.dropdown button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.dropdown .buttonGroup button {
+  margin-right: 0;
+  float: left;
 }
 @keyframes idollSlideUpIn {
   0% {
