@@ -100,7 +100,7 @@
 .idoll-dropdown-menu-submenu-popup {
   position: absolute;
 }
-.idoll-dropdown-menu-submenu-placement-rightTop.idoll-dropdown-menu-submenu-hidden.idoll-dropdown-menu-submenu-popup {
+.idoll-dropdown-menu-submenu.idoll-dropdown-menu-submenu-popup.idoll-dropdown-menu-submenu-placement-rightTop.idoll-dropdown-menu-submenu-hidden .idoll-dropdown-menu.idoll-dropdown-menu-sub.idoll-dropdown-menu-vertical.idoll-dropdown-menu-hidden {
   animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
@@ -324,31 +324,31 @@ h1.h1:first-child {
   float: left;
 }
 .idoll-dropdown-placement-bottomLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-bottomCenter.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-bottomRight.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-topLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-topCenter.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-topRight.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 .idoll-dropdown-placement-bottomLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-  animation-name: antSlideUpOut;
+  animation-name: idollSlideUpOut;
   animation-duration: .4s;
 }
 @keyframes idollSlideUpIn {

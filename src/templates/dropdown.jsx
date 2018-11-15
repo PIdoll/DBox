@@ -125,13 +125,13 @@ export default class DropView extends React.Component {
           默认菜单
         </DropdownButton>
         <h1 className='h1'>5.弹出位置</h1>
-        <Dropdown overlay={menu} placement='topLeft'>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topLeft'>
           <Button>上左</Button>
         </Dropdown>
-        <Dropdown overlay={menu} placement='topCenter'>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topCenter'>
           <Button>上中</Button>
         </Dropdown>
-        <Dropdown overlay={menu} placement='topRight'>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topRight'>
           <Button>上右</Button>
         </Dropdown>
         <br />
@@ -160,7 +160,7 @@ export default class DropView extends React.Component {
           </Button>
         </Dropdown>
         <h1 className='h1'>8.多级菜单</h1>
-        <DropdownButton overlay={menu1} trigger={['click']}>
+        <DropdownButton placement='bottomLeft' overlay={menu1} trigger={['click']}>
           默认菜单
         </DropdownButton>
       </div>

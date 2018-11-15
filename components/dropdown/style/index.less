@@ -92,17 +92,18 @@
       transition: all 0.3s;
     }
 
-    //idoll-dropdown-menu-submenu-placement-rightTop  idoll-dropdown-menu-submenu-hidden
+    //idoll-dropdown-menu-sub idoll-dropdown-menu-vertical idoll-dropdown-menu-hidden
     &-submenu-popup {
       position: absolute;
     }
-
-    &-submenu {
-      &-placement-rightTop&-hidden&-popup {
+    //idoll-dropdown-menu-submenu-placement-rightTop  idoll-dropdown-menu-submenu-hidden
+    &-submenu&-submenu-popup&-submenu-placement-rightTop&-submenu-hidden{
+      .@{dropdown-prefix-cls}-menu.@{dropdown-prefix-cls}-menu-sub.@{dropdown-prefix-cls}-menu-vertical.@{dropdown-prefix-cls}-menu-hidden {
         animation-name: idollSlideUpOut;
         animation-duration: .4s;
       }
     }
+    
 
     &-item,
     &-submenu-title {
@@ -223,7 +224,7 @@
   &,&-menu-submenu {
     animation-name: idollSlideUpIn;
     animation-duration: 0.4s;
-  } 
+  }
 }
 
 .@{dropdown-prefix-cls}-trigger,
@@ -340,31 +341,31 @@ h1.h1:first-child {
 
 .@{dropdown-prefix-cls} {
   &-placement-bottomLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-bottomCenter.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-bottomRight.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-topLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-topCenter.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-topRight.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
   &-placement-bottomLeft.idollSlideUpIn-leave.idollSlideUpIn-leave-active {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
     animation-duration: .4s;
   }
 }
