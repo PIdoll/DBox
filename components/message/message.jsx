@@ -55,7 +55,7 @@ function notice (content, duration = defaultDuration, type, onClose, icon, norma
     success: 'check-circle',
     error: 'close-circle',
     warning: 'warning-circle',
-    loading: 'warning-circle' // 加载中....loading图标
+    // loading: 'warning-circle' // 加载中....loading图标
   })[type];
 
   const target = key++;
@@ -67,7 +67,7 @@ function notice (content, duration = defaultDuration, type, onClose, icon, norma
       return resolve(true);
     };
     getMessageInstance((instance) => {
-      const iconNode = <Icon type={iconType} />;
+      const iconNode = <Icon style={{color: normal ? '#fff' : ''}} type={iconType} />;
       instance.notice({
         key: target,
         duration,
@@ -160,7 +160,7 @@ export default {
     return notice(content, duration, 'warning', onClose, icon, normal);
   },
   loading(content, duration, onClose, icon, normal) {
-    return notice(content, duration, 'loading', onClose, icon, normal);
+    return notice(content, duration, 'load', onClose, icon, normal);
   },
   open({content, duration, onClose, icon, normal}) {
     return notice(content, duration, 'info', onClose, icon, normal);

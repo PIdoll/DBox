@@ -40,9 +40,12 @@ export default class PopconfirmDemo extends React.Component {
     return (
       <div id='main-container' className='demo-popover'>
         <h1 className='h1'>基本用法</h1>
-        <Popconfirm title='确定要删除吗?' onConfirm={this.confirm} onCancel={cancel} okText='确认' cancelText='取消'>
-          <a href='#'>删除</a>
-        </Popconfirm>
+        <h1 className='h1' />
+        <div style={{marginLeft: '100px'}}>
+          <Popconfirm title='确定要删除吗?' onConfirm={this.confirm} onCancel={cancel} okText='确认' cancelText='取消'>
+            <a href='#'>删除</a>
+          </Popconfirm>
+        </div>
         <h1 className='h1'>12个方向</h1>
         <div className='placement'>
           <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>

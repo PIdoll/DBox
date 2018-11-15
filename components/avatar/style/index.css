@@ -1708,6 +1708,10 @@ samp {
 .dbox-avatar.dbox-avatar-icon {
   font-size: 16px;
 }
+.dbox-avatar i:before {
+  width: 16px;
+  height: 16px;
+}
 .dbox-avatar-lg {
   width: 40px;
   height: 40px;
@@ -1720,6 +1724,10 @@ samp {
 .dbox-avatar-lg.dbox-avatar-icon {
   font-size: 24px;
 }
+.dbox-avatar-lg i:before {
+  width: 24px;
+  height: 24px;
+}
 .dbox-avatar-sm {
   width: 24px;
   height: 24px;
@@ -1731,6 +1739,10 @@ samp {
 }
 .dbox-avatar-sm.dbox-avatar-icon {
   font-size: 14px;
+}
+.dbox-avatar-sm i:before {
+  width: 14px;
+  height: 14px;
 }
 .dbox-avatar-square {
   border-radius: 3px;

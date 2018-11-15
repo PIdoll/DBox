@@ -7,13 +7,12 @@
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
-  margin-right: 58px;
-  cursor: pointer;
+  margin-right: 60px;
 }
 .idoll-badge-count {
-  top: -10px;
   position: absolute;
   transform: translateX(-50%);
+  top: -10px;
   height: 20px;
   border-radius: 10px;
   min-width: 20px;
@@ -28,10 +27,10 @@
   z-index: 10;
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-shadow: 0 0 0 1px #fff;
-  pointer-events: none;
 }
-.idoll-badge:hover {
-  cursor: pointer;
+.idoll-badge-count a,
+.idoll-badge-count a:hover {
+  color: #fff;
 }
 .idoll-badge-dot {
   position: absolute;
@@ -44,26 +43,27 @@
   background: #F44336;
   z-index: 10;
   box-shadow: 0 0 0 1px #fff;
-  pointer-events: none;
 }
 .idoll-badge-zoom-appear,
 .idoll-badge-zoom-enter {
-  animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  animation: idollZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);
   animation-fill-mode: both;
 }
 .idoll-badge-zoom-leave {
-  animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+  animation: idollZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);
   animation-fill-mode: both;
-}
-.idoll-badge-not-a-wrapper {
-  pointer-events: none;
 }
 .idoll-badge-not-a-wrapper .idoll-badge-count {
   top: auto;
   display: block;
   position: relative;
   transform: translateX(0);
-  pointer-events: none;
+}
+a -count:hover {
+  background: #f6695e;
+}
+a -count:active {
+  background: #e84033;
 }
 span.example {
   width: 64px;
@@ -74,15 +74,10 @@ span.example {
 }
 .idoll-scroll-number {
   overflow: hidden;
-  pointer-events: none;
 }
 .idoll-scroll-number-only {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  pointer-events: none;
-}
-.idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only {
-  pointer-events: none;
 }
 .idoll-scroll-number.not-support-css-animation .idoll-scroll-number-only > p {
   display: none;
@@ -161,20 +156,22 @@ span.example {
     opacity: 1;
   }
 }
-@keyframes antZoomBadgeIn {
+@keyframes idollZoomBadgeIn {
   0% {
-    opacity: 0;
-    transform: scale(0) translateX(-50%);
+    transform: scale(0);
+    opacity: 1;
   }
   100% {
-    transform: scale(1) translateX(-50%);
+    transform: scale(2);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(0);
+    opacity: 1;
   }
 }
-@keyframes antZoomBadgeOut {
+@keyframes antZoomBadgeIn {
   0% {
-    transform: scale(1) translateX(-50%);
-  }
-  100% {
     opacity: 0;
     transform: scale(0) translateX(-50%);
   }

@@ -1,10 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const glob = require('glob-all');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -18,7 +20,7 @@ const common = require('./webpack.common.js');
 			{
 				test: /\.(less|css)$/,
 				use: ExtractTextPlugin.extract({
-			        fallback: 'style-loader',
+			        fallbackLoader: 'style-loader',
 			        // 如果需要，可以在 less-loader 之前将 resolve-url-loader 链接进来
 				use: [
 					'css-loader', {
@@ -81,6 +83,13 @@ const common = require('./webpack.common.js');
     new ExtractTextPlugin({
         filename: 'main.[contenthash].css',
         allChunks: true
+    }),
+    new PurifyCSSPlugin({
+      //  去除无用的css样式
+      paths: glob.sync([
+        path.join(__dirname, './*.html'),
+        path.join(__dirname, './index.html')
+      ])
     }),
     // Dll user的配置
     // 单独编译更改不频繁的代码
