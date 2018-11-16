@@ -30,8 +30,8 @@
 .idoll-pagination-total-text {
   display: inline-block;
   vertical-align: middle;
-  height: 28px;
-  line-height: 28px;
+  height: 32px;
+  line-height: 32px;
   margin-right: 8px;
 }
 .idoll-pagination-item {
@@ -39,21 +39,25 @@
   cursor: pointer;
   border: 1px solid #E2E2E2;
   border-radius: 3px;
-  min-width: 28px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
   vertical-align: middle;
   margin-right: 8px;
   background: #fff;
   font-family: Arial;
   outline: 0;
+  text-align: center;
 }
 .idoll-pagination-item a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.65);
   transition: none;
   margin: 0 6px;
+  width: 8px;
+  height: 22px;
+  display: block;
+  margin: auto;
 }
 .idoll-pagination-item:focus,
 .idoll-pagination-item:hover {
@@ -84,9 +88,9 @@
 .idoll-pagination-jump-prev,
 .idoll-pagination-jump-next {
   display: inline-block;
-  min-width: 28px;
-  height: 28px;
-  line-height: 28px;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
   border-radius: 3px;
   text-align: center;
   vertical-align: middle;
@@ -164,8 +168,8 @@
 .idoll-pagination-prev .idoll-pagination-item-link:after,
 .idoll-pagination-next .idoll-pagination-item-link:after {
   display: block;
-  height: 26px;
-  line-height: 26px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -294,7 +298,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link,
 .idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link {
   border: 0;
-  height: 28px;
+  height: 32px;
 }
 .idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link:after,
 .idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link:after {
@@ -303,7 +307,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination-simple .idoll-pagination-simple-pager {
   display: inline-block;
   margin-right: 8px;
-  height: 28px;
+  height: 32px;
 }
 .idoll-pagination-simple .idoll-pagination-simple-pager input {
   margin-right: 8px;
@@ -322,8 +326,8 @@ textarea.idoll-pagination-options-quick-jumper input {
 }
 .idoll-pagination.mini .idoll-pagination-total-text,
 .idoll-pagination.mini .idoll-pagination-simple-pager {
-  height: 28px;
-  line-height: 28px;
+  height: 32px;
+  line-height: 32px;
 }
 .idoll-pagination.mini .idoll-pagination-item {
   border: 0;
