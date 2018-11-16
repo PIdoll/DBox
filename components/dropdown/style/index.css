@@ -77,10 +77,10 @@
   transform: rotate(180deg);
 }
 .idoll-dropdown-hidden,
-.idoll-dropdown-menu-hidden {
+.idoll-dropdown-menu-submenu-hidden {
   opacity: 0;
-  animation-name: idollSlideUpOut;
-  animation-duration: .4s;
+  animation-name: idollSlideUpOut !important;
+  animation-duration: 0.2s !important;
 }
 .idoll-dropdown-menu {
   outline: none;
@@ -219,7 +219,7 @@
 .idoll-dropdown,
 .idoll-dropdown-menu-submenu {
   animation-name: idollSlideUpIn;
-  animation-duration: 0.4s;
+  animation-duration: 0.2s;
 }
 .idoll-dropdown-trigger .idoll-icon-down,
 .idoll-dropdown-link .idoll-icon-down {
