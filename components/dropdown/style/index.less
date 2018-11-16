@@ -230,6 +230,12 @@
 .@{dropdown-prefix-cls}-button {
   white-space: nowrap;
 
+  &.@{idoll-prefix}-btn-group {
+    .@{idoll-prefix}-btn {
+      border-radius: @border-radius-base;
+    } 
+  }
+
   &.@{idoll-prefix}-btn-group > .@{idoll-prefix}-btn:last-child:not(:first-child) {
     padding-left: @padding-xs;
     padding-right: @padding-xs;

@@ -235,6 +235,9 @@
 .idoll-dropdown-button {
   white-space: nowrap;
 }
+.idoll-dropdown-button.idoll-btn-group .idoll-btn {
+  border-radius: 3px;
+}
 .idoll-dropdown-button.idoll-btn-group > .idoll-btn:last-child:not(:first-child) {
   padding-left: 8px;
   padding-right: 8px;
