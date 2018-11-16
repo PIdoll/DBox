@@ -1,8 +1,6 @@
 import React from 'react';
 import Divider from 'components/divider';
 
-const text = ``;
-
 export default () => (
   <div id='main-container'>
     <h1 className='h1'>水平分割线</h1>
