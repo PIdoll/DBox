@@ -48,20 +48,26 @@ class select extends React.Component {
       <div id='main-container'>
         <h1 className='h1'>基本使用</h1>
         <Select size='small' placeholder='请选择' style={{ width: 200 }}>
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
         <br /><br />
 
         <Select placeholder='请选择' style={{ width: 200 }}>
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
         <br /><br />
 
         <Select size='large' placeholder='请选择' style={{ width: 200 }}>
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
         <br /><br />
 
@@ -72,30 +78,36 @@ class select extends React.Component {
 
         <h1 className='h1'>搜索下拉框</h1>
         <Select showSearch style={{ width: 200 }} placeholder='请选择' >
-          <Option value='请选择1'>请选择1</Option>
-          <Option value='请选择2' >请选择2</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
         <br /><br />
 
         <h1 className='h1'>多选下拉框</h1>
         <Select mode='multiple' style={{ width: 200 }} placeholder='多选' >
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
-          <Option value='select3' >请选择3</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
 
         <br /><br />
         <Select mode='tags' style={{ width: 200 }} placeholder='可随意输入内容' >
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
-          <Option value='select3' >请选择3</Option>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
 
         <br /><br />
         <h1 className='h1'>获得选项文本</h1>
-        <Select labelInValue defaultValue={{ key: 'select2' }} style={{ width: 200 }} onChange={this.handleChange}>
-          <Option value='select1'>请选择1</Option>
-          <Option value='select2'>请选择2</Option>
+        <Select labelInValue defaultValue={{ key: 'beijing' }} style={{ width: 200 }} onChange={this.handleChange}>
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
         </Select>
 
         <br /><br />
