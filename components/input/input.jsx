@@ -53,6 +53,8 @@ export default class Input extends Component {
     onPressEnter: PropTypes.func,
     onKeyDown: PropTypes.func,
     onChange: PropTypes.func,
+    beforelength: PropTypes.string, // 前置的宽度
+    afterlength: PropTypes.string, // 后置的宽度
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
@@ -77,11 +79,12 @@ export default class Input extends Component {
   }
 
   getInputClassName() {
-    const { prefixCls, size, disabled } = this.props;
+    const { prefixCls, size, disabled, readOnly } = this.props;
     return classNames(prefixCls, {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
-      [`${prefixCls}-disabled`]: disabled
+      [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-readOnly`]: readOnly
     }, {
       [`${prefixCls}-enter-button`]: true,
       [`${prefixCls}-${size}`]: true
@@ -101,21 +104,39 @@ export default class Input extends Component {
 
     const wrapperClassName = `${props.prefixCls}-group`;
     const addonClassName = `${wrapperClassName}-addon`;
+
     const addonBefore = props.addonBefore ? (
-      <span className={addonClassName}>
-        {props.addonBefore}
-      </span>
+      props.beforelength ? (
+        <span className={addonClassName} style={{width: props.beforelength}}>
+          {props.addonBefore}
+        </span>
+      )
+      : (
+        <span className={addonClassName}>
+          {props.addonBefore}
+        </span>
+        )
     ) : null;
 
     const addonAfter = props.addonAfter ? (
-      <span className={addonClassName}>
-        {props.addonAfter}
-      </span>
+      props.afterlength ? (
+        <span className={addonClassName} style={{width: props.afterlength}}>
+          {props.addonAfter}
+        </span>
+      )
+      : (
+        <span className={addonClassName}>
+          {props.addonAfter}
+        </span>
+        )
     ) : null;
 
-    const className = classNames({
-      [`${props.prefixCls}-wrap`]: true,
-      [wrapperClassName]: (addonBefore || addonAfter)
+    // const className = classNames({
+    //   [`${props.prefixCls}-wrap`]: true,
+    //   [wrapperClassName]: (addonBefore || addonAfter)
+    // });
+    const className = classNames(`${props.prefixCls}-wrapper`, {
+      [wrapperClassName]: (addonBefore || addonAfter),
     });
 
     const groupClassName = classNames({
@@ -163,11 +184,15 @@ export default class Input extends Component {
       <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {props.suffix}
       </span>
-
+    const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
+      [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
+      [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
+    });
 
     return (
       <span
-        className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
+        className={affixWrapperCls}
         style={props.style}
       >
         {prefix}

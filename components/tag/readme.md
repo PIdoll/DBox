@@ -23,20 +23,21 @@ title: Tag
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| afterClose | 关闭动画完成后的回调 | `() => void` | - |
 | closable | 标签是否可以关闭 | boolean | false |
 | color | 标签色 | string | - |
-| size | 标签尺寸 | string | -/small |
-| hover | 标签hover状态 | boolean | false |
-| checked | 设置标签的选中状态 | boolean | false |
-| hot | 设置为热门标签状态 | boolean | false |
-###TagGroup
+| target | 链接跳转方式必须和href同时设置 | string可参照a链接的跳转方式 | - 默认本页面跳转 |
+| href | 链接跳转路径 | string | -  |
+| checked | 设置标签的选中状态仅适用于hot和基本状态下 | boolean | false |
+
+### tagGroup
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| id | 选择不可移除的下标值 | number | `0` |
-| text | 添加标签的内容 | string | `'New Tag'` |
-| tags | 默认初始数组标签内容 | array | `['Movies', 'Books', 'Music']` |
-| iconType | 更改标签内的icon类型 | string | `plus` |
-
+| tags | 热门话题的默认文本 | array | `['Movies', 'Books', 'Music']` |
+| id | 默认不可移除的标签的下标值 | number | `0` |
+| text | 动态增加标签的文本内容 | string | `New Tag` |
+| iconType | 动态增加标签的Icon | string | `plus` |
 
 
 ### Tag 方法

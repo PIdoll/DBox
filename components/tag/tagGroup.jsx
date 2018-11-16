@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Tag from '../tag/tag';
 import Input from '../input/input';
@@ -6,11 +7,11 @@ import PropTypes from 'prop-types';
 
 export default class TagGroup extends React.Component {
   state = {
-    tags: this.props.tags || ['Movies', 'Books', 'Music'],
+    tags: this.props.tags || ['电影', '书籍', '音乐'],
     inputVisible: false,
     inputValue: '',
     id: this.props.id || 0,
-    text: this.props.text || 'New Tag',
+    text: this.props.text || '添加',
     iconType: this.props.iconType || 'plus'
   };
   static propTypes = {
@@ -52,9 +53,9 @@ export default class TagGroup extends React.Component {
   render() {
     const { tags, inputVisible, inputValue } = this.state;
     return (
-      <div>
+      <div className='group'>
         {tags.map((tag, index) => {
-           return <Tag key={tag} closable={index !== this.state.id} checked={index === this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
+           return <Tag key={tag} closable={index !== this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
         })}
         {inputVisible && (
           <Input
@@ -70,10 +71,11 @@ export default class TagGroup extends React.Component {
         )}
         {!inputVisible && (
           <Tag
+            className='sdfsf'
+            style={{borderStyle: 'dashed'}}
             onClick={this.showInput}
-            style={{ background: '#fff', borderStyle: 'dashed' }}
           >
-            <Icon type={this.state.iconType} /> {this.state.text}
+            <Icon type={this.state.iconType} /><div style={{ marginLeft: '4px' }}>{this.state.text}</div>
           </Tag>
         )}
       </div>

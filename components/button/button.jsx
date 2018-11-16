@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
-import { findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom';
 
 import Icon from 'components/icon'
 
@@ -13,17 +13,19 @@ export default class Button extends React.Component {
 	    onClick() {},
 	    ghost: false,
 	    loading: false,
-	    text: false
+		text: false,
+		block: false
   	}
 	static propTypes = {
 	    type: PropTypes.string,
-	    shape: PropTypes.oneOf(['circle', 'circle-outline']),
+	    shape: PropTypes.oneOf(['circle', 'circle-outline', 'square']),
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
 	    loading: PropTypes.bool,
 	    className: PropTypes.string,
-	    icon: PropTypes.string
+		icon: PropTypes.string,
+		block: PropTypes.bool
 	}
 	componentWillUnmount() {
 		if (this.clickedTimeout) {
@@ -53,7 +55,7 @@ export default class Button extends React.Component {
 		return React.Children.count(children) === 1 && !icon && sizeCls !== 'sm';
 	  }
 	render() {
-		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, ...others } = this.props;
+		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, block, ...others } = this.props;
 		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
 		const classes = classNames({
 			[prefixCls]: true,
@@ -64,8 +66,8 @@ export default class Button extends React.Component {
 			[`${prefixCls}-loading`]: loading,
 			[`${prefixCls}-background-ghost`]: ghost,
 			[`${prefixCls}-text`]: text,
+			[`${prefixCls}-block`]: block,
 			[className]: className
-
 		})
 	const iconType = loading ? 'loading' : icon;
 	const kids = (children || children === 0)
@@ -86,12 +88,15 @@ export default class Button extends React.Component {
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
     {kids}{iconNode}
   </button>
+
 		);
 		} else {
 			return (
+
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
-    {iconNode} {kids}
+    {iconNode}{kids}
   </button>
+
 			);
 		}
 	}
