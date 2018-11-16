@@ -33,8 +33,8 @@
         border-radius: @border-radius-base;
         min-width: @pagination-item-size;
         height: @pagination-item-size;
-        line-height: @pagination-item-size;
         text-align: center;
+        padding: (@pagination-item-size - 22)/2 0;
         vertical-align: middle;
         margin-right: 8px;
         background: @component-background;
@@ -46,7 +46,7 @@
             color: @text-color;
             transition: none;
             margin: 0 6px;
-            width: 8px;
+            min-width: 8px;
             height: 22px;
             display: block;
             margin: auto;
@@ -126,7 +126,7 @@
       &:focus,
       &:hover {
         &:after {
-          content: "\E925";
+          content: "\E938";
         }
       }
     }
@@ -134,7 +134,7 @@
       &:focus,
       &:hover {
         &:after {
-          content: "\E92D";
+          content: "\E92C";
         }
       }
     }
@@ -157,9 +157,17 @@
             border-radius: @border-radius-base;
             outline: none;
             display: block;
+            width: 32px;
+            height: 32px;
+            padding: 15px;
+            position: relative;
             transition: all .3s;
             &:after {
                 display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
                 height: @pagination-item-size - 2px;
                 line-height: @pagination-item-size - 2px;
                 text-align: center;
@@ -176,14 +184,22 @@
     }
     &-prev {
         .@{pagination-prefix-cls}-item-link:after {
-            content: "\E927";
+            content: "\E913";
             display: block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-family: 'idoll-icon-pro' !important;
         }
     }
     &-next {
         .@{pagination-prefix-cls}-item-link:after {
-            content: "\E928";
+            content: "\E915";
             display: block;
+            width: 16px;
+            line-height: 16px;
+            height: 16px;
+            font-family: 'idoll-icon-pro' !important;
         }
     }
     &-disabled {
@@ -210,6 +226,25 @@
         &-size-changer {
             display: inline-block;
             margin-right: 8px;
+            .idoll-select-selection {
+                height: 32px;
+                padding: 5px 8px;
+                &__rendered {
+                   height: 20px;
+                   line-height: 20px;
+                   padding-left: 0; 
+                   padding-right: 20px;
+                   font-weight: 400;
+                }
+                &-selected-value {
+                    min-width: 55px;
+                }
+                .idoll-select-arrow {
+                    font-size: 16px;
+                    top: 50%;
+                    transform: translateY(-10%)
+                }
+            }
         }
         &-quick-jumper {
             display: inline-block;
@@ -219,7 +254,7 @@
             input {
                 .input;
                 margin: 0 8px;
-                width: 50px;
+                width: 60px;
             }
         }
     }
@@ -258,6 +293,35 @@
             }
         }
     }
+
+    &.mini {
+        // .@{pagination-prefix-cls} {
+        //     &-prev {
+        //         width: 24px;
+        //     }
+        // }
+        li.@{pagination-prefix-cls}-item {
+            border: 1px solid transparent;
+            padding: 0;
+            a {
+                line-height: @pagination-item-size-sm;
+            }
+        }
+        li.@{pagination-prefix-cls}-item:hover {
+            border: 1px solid @primary-color;
+        }
+        li.@{pagination-prefix-cls}-item-active {
+            border: 1px solid @primary-color;
+            padding: 0;
+            a {
+                line-height: @pagination-item-size-sm;
+            }
+        }
+        li.@{pagination-prefix-cls}-item-active:hover {
+            border-color: @primary-Hover;
+        }
+    }
+
     &.mini &-total-text,
     &.mini &-simple-pager {
         height: @pagination-item-size;
