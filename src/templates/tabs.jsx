@@ -25,8 +25,7 @@ export default class TabsView extends React.Component {
     this.state = {
       mode: 'top',
       panes,
-      activeKey: panes[0].key,
-      scrollY: 0
+      activeKey: panes[0].key
     }
   }
   onChange = (activeKey) => {
@@ -64,16 +63,25 @@ export default class TabsView extends React.Component {
     this.setState({ mode });
   };
   componentDidMount () {
-    window.addEventListener('scroll', this.setState({scrollY: window.scrollY}));
+    window.addEventListener('scroll', this.onScroll = () => {
+      if (window.scrollY >= 1750 && window.scrollY < 1950) {
+        const element = ReactDOM.findDOMNode(this.refs.box_table);
+        element.style.position = 'fixed';
+        element.style.top = '0';
+        element.style.left = '0';
+        element.style.width = '100%';
+        element.style.padding = '0 170px 144px 64px';
+        element.style.backgroundColor = '#fff';
+      } else if (window.scrollY >= 1950 || window.scrollY < 1750) {
+        const element = ReactDOM.findDOMNode(this.refs.box_table);
+        element.style.position = 'relative';
+        element.style.padding = '0';
+      }
+    });
   }
-  componentDidUpdate () {
-    // if (this.state.scrollY === 1600) {
-      const element = ReactDOM.findDOMNode(this.refs.box_table);
-      console.log(element)
-      element.style.position = 'fixed';
-      element.style.top = '0';
-      element.style.left = '0'
-    // }
+
+  componentWillUnmount () {
+      window.removeEventListener('scroll', this.onScroll);
   }
 
   render() {
@@ -155,7 +163,7 @@ export default class TabsView extends React.Component {
             <p>内容 3</p>
             <p>内容 3</p></TabPane>
         </Tabs>
-        <h1 className='h1'>7.吸附效果</h1>
+        <h1 className='h1'>7.吸顶效果</h1>
         <Tabs ref='box_table'>
           <TabPane tab='分页 1' key='1'>内容 1</TabPane>
           <TabPane tab='分页 2' key='2'>内容 2</TabPane>
