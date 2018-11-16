@@ -102,9 +102,6 @@ export default class Popconfirm extends React.Component {
         </div>
       </div>
     );
-
-    console.log('placement...');
-    console.log(placement);
     return (<Tooltip
       {...restProps}
       prefixCls={prefixCls}
