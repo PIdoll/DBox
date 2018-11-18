@@ -47,7 +47,7 @@ export default class DropdownButton extends React.Component {
       >
         <Dropdown onOverlayClick={this.onClickChange} {...dropdownProps} onVisibleChange={this.onChange}>
           <Button type={type} size={size} disabled={disabled}>
-            {children}{this.state.visible === true ? <Icon type='up' /> : <Icon type='down' />}
+            {children}{<Icon type='down' />}
           </Button>
         </Dropdown>
       </ButtonGroup>
