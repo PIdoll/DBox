@@ -252,15 +252,10 @@ function Home() {
           <div className='name'>气泡确认框</div>
           <div className='info'>Popconfirm</div>
         </NavLink>
-      </div><div className='widget-item'>
-        <NavLink className='widget-wrap' to='/notification'>
-          <div className='name'>通知确认框</div>
-          <div className='info'>Notification</div>
-        </NavLink>
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/notification'>
-          <div className='name'>通州提醒框</div>
+          <div className='name'>通知确认框</div>
           <div className='info'>Notification</div>
         </NavLink>
       </div>
