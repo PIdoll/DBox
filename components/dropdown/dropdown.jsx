@@ -6,7 +6,7 @@ export default class Dropdown extends React.Component {
   static defaultProps = {
     transitionName: 'idollSlideUpIn',
     prefixCls: 'idoll-dropdown',
-    mouseEnterDelay: 0.2,
+    mouseEnterDelay: 0.1,
     mouseLeaveDelay: 0.1,
   }
 

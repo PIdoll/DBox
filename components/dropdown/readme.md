@@ -20,9 +20,9 @@ english: Dropdown
 | 成员        | 说明             | 类型               | 默认值       |
 |-------------|------------------|--------------------|--------------|
 | trigger     | 触发下拉的行为   | ['click'] or ['hover'] | ['hover']        |
-| disabled     | 菜单使用禁用在单个菜单内使用可禁用单个菜单   | boolean | -        |
 | placement     | 菜单弹出位置   | string`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRight` | `bottomLeft`        |
 | overlay     | 菜单         | [Menu](/components/menu) | -     |
+| disabled     | 菜单是否禁用搭配按钮一起使用并放置于按钮身上         | `boolean` | false    |
 | getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。[示例](http://codepen.io/anon/pen/xVBOVQ?editors=001) | Function(triggerNode) | () => document.body |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
@@ -39,7 +39,7 @@ english: Dropdown
 | onClick     | 点击左侧按钮的回调，和 [Button](/components/button/) 一致 | Function   | - |
 | trigger     | 触发下拉的行为   | ['click'] or ['hover'] | ['hover']        |
 | overlay     | 菜单         | [Menu](/components/menu/) | -     |
-| disabled     | 菜单是否禁用         | `boolean` | -    |
+| disabled     | 菜单是否禁用         | `boolean` | false    |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | placement     | 菜单弹出位置   | string`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRight` | `bottomLeft`        |
 | size     | 按钮菜单大小和Button一致 | string`large``small`默认   | 默认           |

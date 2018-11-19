@@ -57,10 +57,6 @@
     .@{idoll-prefix}-btn > .@{iconfont-css-prefix}-down {
       .iconfont-size-under-12px(10px;)
     }
-
-    .@{iconfont-css-prefix}-down:before {
-      transition: transform 0.2s ease;
-    }
   }
 
   &-wrap-open {
@@ -70,8 +66,10 @@
   }
 
   &-hidden,
-  &-menu-hidden {
-    display: none;
+  &-menu-submenu-hidden {
+    opacity: 0;
+    animation-name: idollSlideUpOut !important;
+    animation-duration: 0.3s !important;
   }
 
   &-menu {
@@ -110,7 +108,7 @@
       transition: background 0.3s ease;
 
       > a {
-        color: @text-color-secondary;
+        color: @text-color;
         display: block;
         transition: all 1s 1 0;
         padding: 5px @control-padding-horizontal;
@@ -120,14 +118,15 @@
         }
       }
 
-      &-selected,
-      &-selected > a {
+      &-selected {
         color: @text-color;
-        background-color: @primary-LightBg;
       }
 
       &:hover {
         background-color: @primary-LightBg;
+        a {
+          color: @text-color;
+        }
       }
 
       &-disabled {
@@ -214,13 +213,7 @@
   &,&-menu-submenu {
     animation-name: idollSlideUpIn;
     animation-duration: 0.3s;
-  } 
-
-  &&-hidden,&-menu-submenu&-menu-submen-hidden {
-    animation-name: antSlideDownOut;
-    animation-duration: 3s;
   }
-
 }
 
 .@{dropdown-prefix-cls}-trigger,
@@ -232,6 +225,22 @@
 
 .@{dropdown-prefix-cls}-button {
   white-space: nowrap;
+  &-disabled {
+    i:before {
+      color:@disabled-color
+    }
+  }
+  &-disabled:hover {
+    i:before {
+      color: @disabled-color;
+    }
+  }
+
+  &.@{idoll-prefix}-btn-group {
+    .@{idoll-prefix}-btn {
+      border-radius: @border-radius-base;
+    } 
+  }
 
   &.@{idoll-prefix}-btn-group > .@{idoll-prefix}-btn:last-child:not(:first-child) {
     padding-left: @padding-xs;
@@ -243,7 +252,7 @@
   }
   .idoll-btn-sm {
     font-size: 12px;
-    .idoll-icon.idoll-icon-down,.idoll-icon.idoll-icon-up {
+    .idoll-icon.idoll-icon-down {
       margin-left: 4px;
       &:before {
         font-size: 12px;
@@ -260,19 +269,8 @@
   }
 }
 
-.@{dropdown-prefix-cls}-button:hover {
-  .idoll-icon.idoll-icon-down:before {
-    color:@primary-color;
-  }
-  .idoll-icon.idoll-icon-up:before {
-    color:@primary-color;
-  }
-}
 .idoll-btn:focus {
   .idoll-icon.idoll-icon-down:before {
-    color:@primary-color;
-  }
-  .idoll-icon.idoll-icon-up:before {
     color:@primary-color;
   }
 }
@@ -315,66 +313,6 @@
   text-decoration: none;
 }
 
-.idoll-size-large {
-  .idoll-dropdown-menu-item {
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    padding:0 16px;
-  }
-  .idoll-dropdown-menu-submenu {
-    .idoll-dropdown-menu-submenu-title{
-      height: 40px;
-      line-height: 40px;
-      font-size: 16px;
-      padding:0 16px;
-      i:after {
-        font-size: 16px;
-      }
-    }
-  }
-}
-
-.idoll-size-small {
-  .idoll-dropdown-menu-item {
-    height: 24px;
-    line-height: 24px;
-    font-size: 12px;
-    padding:0 8px; 
-  }
-  .idoll-dropdown-menu-submenu {
-    .idoll-dropdown-menu-submenu-title{
-      display: block;
-      transition-delay: 0.3s;
-      height: 24px;
-      line-height: 24px;
-      font-size: 12px;
-      padding:0 8px;
-      i:after {
-        font-size: 12px;
-      }
-    }
-  }
-}
-
-.small {
-  li {
-    height: 24px;
-    line-height: 24px;
-    font-size: 12px;
-    padding:0 8px;
-  }
-}
-
-.large {
-  li {
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    padding:0 16px;
-  }
-}
-
 h1.h1 {
   margin-top: 95px;
 }
@@ -383,6 +321,9 @@ h1.h1:first-child {
 }
 
 .dropdown {
+  .idoll-btn.disabled, .idoll-btn[disabled] {
+    pointer-events: none;
+  }
   button {
     margin-right: 10px;
     margin-bottom: 10px;
@@ -395,30 +336,29 @@ h1.h1:first-child {
   }
 }
 
-
 @keyframes idollSlideUpIn {
   0% {
     opacity: 0;
     transform-origin: 0% 0%;
-    transform: scaleY(.8);
+    transform: scaleX(.8);
   }
   100% {
     opacity: 1;
     transform-origin: 0% 0%;
-    transform: scaleY(1);
+    transform: scaleX(1);
   }
 }
 
-@keyframes antSlideUpOut {
+@keyframes idollSlideUpOut {
   0% {
     opacity: 1;
     transform-origin: 0% 0%;
-    transform: scaleY(1);
+    transform: scaleX(1);
   }
   100% {
     opacity: 0;
     transform-origin: 0% 0%;
-    transform: scaleY(.1);
+    transform: scaleX(.8);
   }
 }
 

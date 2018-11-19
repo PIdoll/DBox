@@ -7,7 +7,7 @@ import addEventListener from 'rc-util/lib/Dom/addEventListener'
 import getScroll from '../_util/getScroll'
 import getRequestAnimationFrame from '../_util/getRequestAnimationFrame'
 import AnchorLink from './anchorLink'
-import Affix from 'components/affix'
+import Affix from '../../components/affix'
 
 import './style/index.jsx'
 
