@@ -11,7 +11,6 @@ const DropdownNormal = Dropdown.Normal;
 function handleButtonClick(e) {
   console.info('click left button', e);
 }
-
 function handleMenu1Click(e) {
   console.info('click', e);
 }
@@ -123,13 +122,13 @@ export default class DropView extends React.Component {
           默认菜单
         </DropdownButton>
         <h1 className='h1'>5.弹出位置</h1>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topLeft'>
+        <Dropdown overlay={menu} placement='topLeft'>
           <Button>上左</Button>
         </Dropdown>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topCenter'>
+        <Dropdown overlay={menu} placement='topCenter'>
           <Button>上中</Button>
         </Dropdown>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topRight'>
+        <Dropdown overlay={menu} placement='topRight'>
           <Button>上右</Button>
         </Dropdown>
         <br />
