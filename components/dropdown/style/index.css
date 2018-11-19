@@ -70,9 +70,6 @@
 :root .idoll-dropdown-wrap .idoll-btn > .idoll-icon-down {
   font-size: 12px;
 }
-.idoll-dropdown-wrap .idoll-icon-down:before {
-  transition: transform 0.2s ease;
-}
 .idoll-dropdown-wrap-open .idoll-icon-down:before {
   transform: rotate(180deg);
 }
@@ -80,7 +77,7 @@
 .idoll-dropdown-menu-submenu-hidden {
   opacity: 0;
   animation-name: idollSlideUpOut !important;
-  animation-duration: 0.2s !important;
+  animation-duration: 1s !important;
 }
 .idoll-dropdown-menu {
   outline: none;
@@ -219,7 +216,7 @@
 .idoll-dropdown,
 .idoll-dropdown-menu-submenu {
   animation-name: idollSlideUpIn;
-  animation-duration: 0.2s;
+  animation-duration: 1s;
 }
 .idoll-dropdown-trigger .idoll-icon-down,
 .idoll-dropdown-link .idoll-icon-down {
@@ -235,6 +232,9 @@
 .idoll-dropdown-button {
   white-space: nowrap;
 }
+.idoll-dropdown-button.idoll-btn-group .idoll-btn {
+  border-radius: 3px;
+}
 .idoll-dropdown-button.idoll-btn-group > .idoll-btn:last-child:not(:first-child) {
   padding-left: 8px;
   padding-right: 8px;
@@ -246,12 +246,10 @@
 .idoll-dropdown-button .idoll-btn-sm {
   font-size: 12px;
 }
-.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down,
-.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-up {
+.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down {
   margin-left: 4px;
 }
-.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down:before,
-.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-up:before {
+.idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down:before {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.65);
 }
@@ -262,16 +260,7 @@
   font-size: 16px;
   color: rgba(0, 0, 0, 0.65);
 }
-.idoll-dropdown-button:hover .idoll-icon.idoll-icon-down:before {
-  color: #13B886;
-}
-.idoll-dropdown-button:hover .idoll-icon.idoll-icon-up:before {
-  color: #13B886;
-}
 .idoll-btn:focus .idoll-icon.idoll-icon-down:before {
-  color: #13B886;
-}
-.idoll-btn:focus .idoll-icon.idoll-icon-up:before {
   color: #13B886;
 }
 .idoll-dropdown-menu-dark,
