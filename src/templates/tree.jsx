@@ -117,7 +117,6 @@ export default class TreeDemo extends React.Component {
     this.setState({ checkedKeys });
   }
   onExpand = (expandedKeys) => {
-    console.log('onExpand', arguments);
     // 如果没有将autoExpandParent设为false，则children展开，parent不能折叠
     // 或者你可以移除所有的展开的children keys
     this.setState({

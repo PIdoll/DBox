@@ -21,7 +21,7 @@ export default class PopconfirmDemo extends React.Component {
   }
   cancel = () => {
     this.setState({ visible: false });
-    message.error('点击了取消');
+    // message.error('点击了取消');
   }
   handleVisibleChange = (visible) => {
     if (!visible) {
@@ -29,7 +29,7 @@ export default class PopconfirmDemo extends React.Component {
       return;
     }
     // 在显示popconfirm之前确认状态
-    console.log(this.state.condition);
+    // console.log(this.state.condition);
     if (this.state.condition) {
       this.confirm(); // next step
     } else {
@@ -38,11 +38,14 @@ export default class PopconfirmDemo extends React.Component {
   }
   render() {
     return (
-      <div id='main-container' className='demo-popover'>
+      <div id='main-container' className='demo-popover' style={{paddingLeft: '200px'}}>
         <h1 className='h1'>基本用法</h1>
-        <Popconfirm title='确定要删除吗?' onConfirm={this.confirm} onCancel={cancel} okText='确认' cancelText='取消'>
-          <a href='#'>删除</a>
-        </Popconfirm>
+        <h1 className='h1' />
+        <div style={{marginLeft: '100px'}}>
+          <Popconfirm title='确定要删除吗?' onConfirm={this.confirm} onCancel={cancel} okText='确认' cancelText='取消'>
+            <a href='#'>删除</a>
+          </Popconfirm>
+        </div>
         <h1 className='h1'>12个方向</h1>
         <div className='placement'>
           <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>
@@ -118,5 +121,5 @@ const confirm = (e) => {
 
 const cancel = (e) => {
   console.log(e);
-  message.error('Click on No');
+  // message.error('Click on No');
 }

@@ -20,7 +20,7 @@ english: Dropdown
 | 成员        | 说明             | 类型               | 默认值       |
 |-------------|------------------|--------------------|--------------|
 | trigger     | 触发下拉的行为   | ['click'] or ['hover'] | ['hover']        |
-| disabled     | 菜单使用禁用   | boolean | -        |
+| disabled     | 菜单使用禁用在单个菜单内使用可禁用单个菜单   | boolean | -        |
 | placement     | 菜单弹出位置   | string`bottomLeft``bottomCenter``bottomRight``topLeft``topCenter``topRight` | `bottomLeft`        |
 | overlay     | 菜单         | [Menu](/components/menu) | -     |
 | getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。[示例](http://codepen.io/anon/pen/xVBOVQ?editors=001) | Function(triggerNode) | () => document.body |
