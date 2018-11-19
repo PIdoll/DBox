@@ -126,7 +126,7 @@
       &:focus,
       &:hover {
         &:after {
-          content: "\E938";
+          content: "\E925";
         }
       }
     }
@@ -134,7 +134,7 @@
       &:focus,
       &:hover {
         &:after {
-          content: "\E92C";
+          content: "\E92D";
         }
       }
     }
@@ -258,32 +258,37 @@
             }
         }
     }
+    &-simple &-prev {
+        margin-right: 0;
+    }
     &-simple &-prev,
     &-simple &-next {
         height: @pagination-item-size-sm;
+        min-width: @pagination-item-size-sm;
         line-height: @pagination-item-size-sm;
-        vertical-align: top;
         .@{pagination-prefix-cls}-item-link {
+            display: inline-block;
             border: 0;
-            height: @pagination-item-size;
+            padding: 0;
+            height: @pagination-item-size-sm;
+            width: @pagination-item-size-sm;
             &:after {
-                line-height: @pagination-item-size-sm;
+                line-height: @pagination-item-size-sm - 8px;
             }
         }
     }
     &-simple &-simple-pager {
         display: inline-block;
-        margin-right: 8px;
-        height: @pagination-item-size;
+        min-width: 72px;
+        height: @pagination-item-size-sm;
 
         input {
-            margin-right: 8px;
             box-sizing: border-box;
             background-color: @component-background;
             border-radius: @border-radius-base;
             border: @border-width-base @border-style-base @border-color-base;
             outline: none;
-            padding: 0 6px;
+            width: 24px;
             height: 100%;
             text-align: center;
             transition: border-color .3s;
@@ -292,33 +297,57 @@
                 border-color: @primary-color;
             }
         }
+        .@{pagination-prefix-cls}-slash {
+            margin: 0 8px 0 8px;
+        }
     }
 
     &.mini {
-        // .@{pagination-prefix-cls} {
-        //     &-prev {
-        //         width: 24px;
-        //     }
-        // }
+        li.@{pagination-prefix-cls}-options {
+            div.@{pagination-prefix-cls}-options-size-changer,.idoll-select-sm {
+                .idoll-select-selection {
+                    height:  @pagination-item-size-sm;
+                    padding: 2px 8px;
+                        .idoll-select-selection__rendered {
+                            padding-right: 16px;
+                            height: 18px;
+                            line-height: 18px;
+                            font-weight: 400;
+                        }
+                        .idoll-select-arrow {
+                            top: 50%;
+                            transform: translateY(10%);
+                            font-size: 12px;
+                        }
+                }
+            }
+        }
         li.@{pagination-prefix-cls}-item {
             border: 1px solid transparent;
-            padding: 0;
+            padding: 3px 0;
             a {
-                line-height: @pagination-item-size-sm;
+                line-height: @pagination-item-size-sm - 8px;
+                display: block;
+                margin: auto;
+                min-width: 8px;
+                height: @pagination-item-size-sm - 8px;
             }
         }
         li.@{pagination-prefix-cls}-item:hover {
-            border: 1px solid @primary-color;
+            color: @primary-color;
+            padding: 3px 0;
         }
         li.@{pagination-prefix-cls}-item-active {
             border: 1px solid @primary-color;
             padding: 0;
+            padding: 3px 0;
             a {
-                line-height: @pagination-item-size-sm;
+                line-height: @pagination-item-size-sm - 8px;
             }
         }
         li.@{pagination-prefix-cls}-item-active:hover {
             border-color: @primary-Hover;
+            padding: 3px 0;
         }
     }
 
@@ -345,9 +374,13 @@
     &.mini &-prev &-item-link,
     &.mini &-next &-item-link {
         border: 0;
+        padding: 0;
+        width: @pagination-item-size-sm;
+        height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm;
         &::after {
-            height: @pagination-item-size-sm;
-            line-height: @pagination-item-size-sm;
+            height: @pagination-item-size-sm - 8px;
+            line-height: @pagination-item-size-sm - 8px;
         }
     }
     &.mini &-jump-prev,

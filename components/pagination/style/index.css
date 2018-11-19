@@ -137,11 +137,11 @@
 }
 .idoll-pagination-jump-prev:focus:after,
 .idoll-pagination-jump-prev:hover:after {
-  content: "\E938";
+  content: "\E925";
 }
 .idoll-pagination-jump-next:focus:after,
 .idoll-pagination-jump-next:hover:after {
-  content: "\E92C";
+  content: "\E92D";
 }
 .idoll-pagination-prev,
 .idoll-pagination-next {
@@ -324,34 +324,39 @@ textarea.idoll-pagination-options-quick-jumper input {
   border-radius: 2px;
   font-size: 12px;
 }
+.idoll-pagination-simple .idoll-pagination-prev {
+  margin-right: 0;
+}
 .idoll-pagination-simple .idoll-pagination-prev,
 .idoll-pagination-simple .idoll-pagination-next {
   height: 24px;
+  min-width: 24px;
   line-height: 24px;
-  vertical-align: top;
 }
 .idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link,
 .idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link {
+  display: inline-block;
   border: 0;
-  height: 32px;
+  padding: 0;
+  height: 24px;
+  width: 24px;
 }
 .idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link:after,
 .idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link:after {
-  line-height: 24px;
+  line-height: 16px;
 }
 .idoll-pagination-simple .idoll-pagination-simple-pager {
   display: inline-block;
-  margin-right: 8px;
-  height: 32px;
+  min-width: 72px;
+  height: 24px;
 }
 .idoll-pagination-simple .idoll-pagination-simple-pager input {
-  margin-right: 8px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 3px;
   border: 1px solid #E2E2E2;
   outline: none;
-  padding: 0 6px;
+  width: 24px;
   height: 100%;
   text-align: center;
   transition: border-color 0.3s;
@@ -359,25 +364,53 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination-simple .idoll-pagination-simple-pager input:hover {
   border-color: #13B886;
 }
+.idoll-pagination-simple .idoll-pagination-simple-pager .idoll-pagination-slash {
+  margin: 0 8px 0 8px;
+}
+.idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection,
+.idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection {
+  height: 24px;
+  padding: 2px 8px;
+}
+.idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-selection__rendered,
+.idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-selection__rendered {
+  padding-right: 16px;
+  height: 18px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-arrow,
+.idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-arrow {
+  top: 50%;
+  transform: translateY(10%);
+  font-size: 12px;
+}
 .idoll-pagination.mini li.idoll-pagination-item {
   border: 1px solid transparent;
-  padding: 0;
+  padding: 3px 0;
 }
 .idoll-pagination.mini li.idoll-pagination-item a {
-  line-height: 24px;
+  line-height: 16px;
+  display: block;
+  margin: auto;
+  min-width: 8px;
+  height: 16px;
 }
 .idoll-pagination.mini li.idoll-pagination-item:hover {
-  border: 1px solid #13B886;
+  color: #13B886;
+  padding: 3px 0;
 }
 .idoll-pagination.mini li.idoll-pagination-item-active {
   border: 1px solid #13B886;
   padding: 0;
+  padding: 3px 0;
 }
 .idoll-pagination.mini li.idoll-pagination-item-active a {
-  line-height: 24px;
+  line-height: 16px;
 }
 .idoll-pagination.mini li.idoll-pagination-item-active:hover {
   border-color: #42C69E;
+  padding: 3px 0;
 }
 .idoll-pagination.mini .idoll-pagination-total-text,
 .idoll-pagination.mini .idoll-pagination-simple-pager {
@@ -401,11 +434,15 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination.mini .idoll-pagination-prev .idoll-pagination-item-link,
 .idoll-pagination.mini .idoll-pagination-next .idoll-pagination-item-link {
   border: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
 }
 .idoll-pagination.mini .idoll-pagination-prev .idoll-pagination-item-link::after,
 .idoll-pagination.mini .idoll-pagination-next .idoll-pagination-item-link::after {
-  height: 24px;
-  line-height: 24px;
+  height: 16px;
+  line-height: 16px;
 }
 .idoll-pagination.mini .idoll-pagination-jump-prev,
 .idoll-pagination.mini .idoll-pagination-jump-next {
