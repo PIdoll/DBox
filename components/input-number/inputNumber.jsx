@@ -1,8 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import classNames from 'classNames';
+// import classNames from 'classNames';
 import RcInputNumber from 'rc-input-number';
-import Icon from '../icon';
+// import Icon from '../icon';
 
 export default class InputNumber extends React.Component {
   /* static propTypes = {
