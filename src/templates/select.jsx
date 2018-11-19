@@ -1,10 +1,9 @@
 import React from 'react'
 
 import Select from 'components/select'
-// import Spin from 'components/spin'
+import Spin from 'components/spin'
 
-// const {Option, OptGroup} = Select;
-const {Option} = Select;
+const {Option, OptGroup} = Select;
 class select extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +42,7 @@ class select extends React.Component {
   }
 
   render() {
-    // const { fetching, data, value } = this.state;
+    const { fetching, data, value } = this.state;
     return (
       <div id='main-container'>
         <h1 className='h1'>基本使用</h1>
@@ -53,7 +52,7 @@ class select extends React.Component {
           <Option value='guangzhou'>广州</Option>
           <Option value='shenzhen'>深圳</Option>
         </Select>
-        {/* <br /><br />
+        <br /><br />
 
         <Select placeholder='请选择' style={{ width: 200 }}>
           <Option value='beijing'>北京</Option>
@@ -142,7 +141,7 @@ class select extends React.Component {
             <Option value='nanjing'>南京</Option>
             <Option value='suzhou'>苏州</Option>
           </OptGroup>
-        </Select> */}
+        </Select>
       </div>
     )
   }
