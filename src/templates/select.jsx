@@ -83,6 +83,7 @@ class select extends React.Component {
           <Option value='guangzhou'>广州</Option>
           <Option value='shenzhen'>深圳</Option>
         </Select>
+
         <br /><br />
 
         <h1 className='h1'>多选下拉框</h1>
@@ -116,7 +117,7 @@ class select extends React.Component {
           mode='multiple'
           labelInValue
           value={value}
-          placeholder='Select users'
+          placeholder='请搜索'
           notFoundContent={fetching ? <Spin size='small' /> : null}
           filterOption={false}
           onSearch={this.getUserInfo}

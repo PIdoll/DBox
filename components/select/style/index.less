@@ -27,7 +27,7 @@
     transition: color 0.3s ease, opacity 0.15s ease;
     &:before {
       display: block;
-      .iconfont-font("\e91c");
+      .iconfont-font("\e92c");
     }
     &:hover {
       color: #999;
@@ -63,7 +63,7 @@
       }
 
       &:before {
-        content: '\e926';
+        content: '\e92c';
         transition: transform 0.2s ease;
       }
   }
@@ -97,6 +97,7 @@
     &:hover &__clear {
       opacity: 1;
     }
+    
   }
 
   &-disabled {
@@ -146,15 +147,34 @@
     }
   }
 
-  &-open&-show-search &-selection--single &-selection-selected-value {
-    position: absolute;
-    left: @select-padding-vertical;
-    top: 0;
+  &-sm {
+    // 搜索下拉框点击后的显示
+    .@{select-prefix-cls}-selection-selected-value {
+      position: absolute;
+      left: 7px !important;
+      top: 2px !important;
+    }
+  }
+
+  &-lg {
+    .@{select-prefix-cls}-selection-selected-value {
+      position: absolute;
+      left: 11px !important;
+      top: 7px !important;
+    }
+  }
+
+  &-show-search {
+    .@{select-prefix-cls}-selection-selected-value {
+      position: absolute;
+      left: 11px;
+      top: 4px;
+    }
   }
 
   &-open {
     .@{select-prefix-cls}-arrow:before {
-      content: '\e929';
+      content: '\e938';
       transition: transform 0.2s ease;
     }
   }
@@ -362,8 +382,8 @@
     }
 
     .@{select-prefix-cls}-selection__choice {
-      background-color: #f3f3f3;
-      border-radius: 4px;
+      border: 1px solid @border;
+      border-radius: 3px;
       cursor: default;
       float: left;
       padding: 0 @select-option-padding-horizontal;
@@ -372,13 +392,14 @@
       position: relative;
       overflow: hidden;
       transition: padding .3s @ease-in-out;
-      padding: 0 28px 0 8px;
+      padding: 0 23px 0 7px;
       &__disabled {
         padding: 0 10px;
       }
     }
 
     .@{select-prefix-cls}-selection__choice__content {
+      font-size: 12px;
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
@@ -389,7 +410,7 @@
 
     .@{select-prefix-cls}-selection__choice__remove {
       .iconfont-mixin();
-      color: #999;
+      color: @text-color-disable;
       line-height: inherit;
       cursor: pointer;
       display: inline-block;
@@ -397,12 +418,12 @@
       transition: all 0.3s @ease-in-out;
       .iconfont-size-under-12px(10px);
       position: absolute;
-      font-size: 18px !important;
+      font-size: 12px !important;
       top: -2px;
-      right: 4px;
-      padding: 0 0 0 8px;
+      // right: 4px;
+      padding: 0 0 0 4px;
       &:hover {
-        color: #404040;
+        color: @text-color-secondary;
       }
       &:before {
         content: "\e91c";
