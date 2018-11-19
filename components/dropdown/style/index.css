@@ -23,40 +23,20 @@
 .idoll-dropdown-normal {
   margin-right: 50px;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.65);
 }
-.idoll-dropdown-normal:visited {
+.idoll-dropdown-normal i:before {
+  margin-left: 4px;
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-dropdown-normal:hover {
+  color: #13B886;
   margin-right: 50px;
   text-decoration: none;
 }
-.idoll-dropdown-normal.idoll-icon-false {
-  color: rgba(0, 0, 0, 0.65);
-  text-decoration: none;
-}
-.idoll-dropdown-normal.idoll-icon-false i {
-  color: rgba(0, 0, 0, 0.65);
-}
-.idoll-dropdown-normal.idoll-icon-false:hover {
-  cursor: pointer;
+.idoll-dropdown-normal:hover i:before {
+  margin-left: 4px;
   color: #13B886;
-}
-.idoll-dropdown-normal.idoll-icon-false:hover i {
-  color: #13B886;
-}
-.idoll-dropdown-normal.idoll-icon-true:hover,
-.idoll-dropdown-normal.idoll-icon-true {
-  cursor: pointer;
-  color: #13B886;
-  text-decoration: none;
-}
-.idoll-dropdown-normal.idoll-icon-true:hover i,
-.idoll-dropdown-normal.idoll-icon-true i {
-  color: #13B886;
-}
-.idoll-dropdown-normal.idoll-icon-true:visited {
-  text-decoration: none;
-}
-.idoll-dropdown-normal.idoll-icon-true:active {
-  text-decoration: none;
 }
 .idoll-dropdown-wrap {
   position: relative;
@@ -77,7 +57,7 @@
 .idoll-dropdown-menu-submenu-hidden {
   opacity: 0;
   animation-name: idollSlideUpOut !important;
-  animation-duration: 0.3s !important;
+  animation-duration: 0.05s !important;
 }
 .idoll-dropdown-menu {
   outline: none;
@@ -110,13 +90,11 @@
   white-space: nowrap;
   cursor: pointer;
   line-height: 22px;
-  transition: background 0.3s ease;
 }
 .idoll-dropdown-menu-item > a,
 .idoll-dropdown-menu-submenu-title > a {
   color: rgba(0, 0, 0, 0.65);
   display: block;
-  transition: all 1s 1 0;
   padding: 5px 12px;
   margin: -5px -12px;
 }
@@ -216,7 +194,7 @@
 .idoll-dropdown,
 .idoll-dropdown-menu-submenu {
   animation-name: idollSlideUpIn;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
 }
 .idoll-dropdown-trigger .idoll-icon-down,
 .idoll-dropdown-link .idoll-icon-down {
@@ -247,7 +225,7 @@
 }
 .idoll-dropdown-button .idoll-icon-down {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.25);
 }
 .idoll-dropdown-button .idoll-btn-sm {
   font-size: 12px;
@@ -257,14 +235,20 @@
 }
 .idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down:before {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-dropdown-button .idoll-btn-sm:hover .idoll-icon.idoll-icon-down:before {
+  color: #13B886;
 }
 .idoll-dropdown-button .idoll-btn-lg {
   font-size: 16px;
 }
 .idoll-dropdown-button .idoll-btn-lg i:before {
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-dropdown-button .idoll-btn-lg:hover .idoll-icon.idoll-icon-down:before {
+  color: #13B886;
 }
 .idoll-btn:focus .idoll-icon.idoll-icon-down:before {
   color: #13B886;
