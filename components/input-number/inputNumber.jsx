@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classNames';
 import RcInputNumber from 'rc-input-number';
@@ -40,4 +40,5 @@ export default class InputNumber extends React.Component {
       />
     )
   }
-}
+} */
+
