@@ -90,9 +90,9 @@ export default class TabsView extends React.Component {
       <div id='main-container'>
         <h1 className='h1'>1.基本用法和禁用</h1>
         <Tabs defaultActiveKey='1' onChange={this.callBack}>
-          <TabPane tab='分页 1' key='1'>内容 1</TabPane>
-          <TabPane disabled tab='分页 2' key='2'>内容 2</TabPane>
-          <TabPane tab='分页 3' key='3'>内容 3</TabPane>
+          <TabPane tab='当前选项' key='1'>当前选项</TabPane>
+          <TabPane disabled tab='禁用选项' key='2'>禁用选项</TabPane>
+          <TabPane tab='其他选项' key='3'>其他选项</TabPane>
         </Tabs>
         <h1 className='h1'>2.有图标的标签</h1>
         <Tabs defaultActiveKey='2'>

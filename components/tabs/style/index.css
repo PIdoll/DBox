@@ -150,6 +150,9 @@
   background-color: #13B886;
   transform-origin: 0 0;
 }
+.idoll-tabs-ink-bar-animated {
+  width: 88px;
+}
 .idoll-tabs-bar {
   border-bottom: 1px solid #E2E2E2;
   margin: 0 0 16px 0;
@@ -296,7 +299,9 @@
 .idoll-tabs-nav .idoll-tabs-tab {
   display: inline-block;
   height: 100%;
-  margin: 0 0 0 32px;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0 0 0 16px;
   padding: 12px 16px;
   box-sizing: border-box;
   position: relative;
