@@ -292,8 +292,14 @@
   cursor: default;
   color: rgba(0, 0, 0, 0.25);
 }
+.idoll-tabs-nav .idoll-tabs-tab-disabled span i:before {
+  color: rgba(0, 0, 0, 0.25);
+}
 .idoll-tabs-nav .idoll-tabs-tab.idoll-tabs-tab-disabled:hover {
   cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-tabs-nav .idoll-tabs-tab.idoll-tabs-tab-disabled:hover span i:before {
   color: rgba(0, 0, 0, 0.25);
 }
 .idoll-tabs-nav .idoll-tabs-tab {

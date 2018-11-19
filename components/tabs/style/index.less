@@ -165,11 +165,21 @@
     .@{tab-prefix-cls}-tab-disabled {
       cursor: default;
       color: @disabled-color;
+      span {
+        i:before {
+          color: @disabled-color
+        }
+      }
     }
 
     .@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-disabled:hover {
       cursor: not-allowed;
       color: @disabled-color;
+      span {
+        i:before {
+          color: @disabled-color
+        }
+      }
     }
 
     .@{tab-prefix-cls}-tab {

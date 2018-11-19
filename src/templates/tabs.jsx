@@ -92,15 +92,18 @@ export default class TabsView extends React.Component {
         <Tabs defaultActiveKey='1' onChange={this.callBack}>
           <TabPane tab='当前选项' key='1'>当前选项</TabPane>
           <TabPane disabled tab='禁用选项' key='2'>禁用选项</TabPane>
-          <TabPane tab='其他选项' key='3'>其他选项</TabPane>
+          <TabPane tab='当前选项' key='3'>其他选项</TabPane>
         </Tabs>
         <h1 className='h1'>2.有图标的标签</h1>
-        <Tabs defaultActiveKey='2'>
-          <TabPane tab={<span><Icon type='bars' />分页 1</span>} key='1'>
+        <Tabs defaultActiveKey='1'>
+          <TabPane tab={<span><Icon type='bars' />当前选项</span>} key='1'>
             内容 1
           </TabPane>
-          <TabPane tab={<span><Icon type='appstore-o' />分页 2</span>} key='2'>
+          <TabPane disabled tab={<span><Icon type='appstore-o' />禁用选项</span>} key='2'>
             内容 2
+          </TabPane>
+          <TabPane tab={<span><Icon type='appstore-o' />当前选项</span>} key='2'>
+            内容 3
           </TabPane>
         </Tabs>
         <h1 className='h1'>3.tab页上下，左右滑动</h1>
