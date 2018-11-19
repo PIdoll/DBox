@@ -18,22 +18,21 @@ function handleMenu1Click(e) {
 
 const menu = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'>第一个选项111111</MenuItem>
-    <MenuItem key='2'>第二个选项222222</MenuItem>
-    <MenuItem key='3'>第三个选项333333</MenuItem>
+    <MenuItem key='1'><a href='www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
+    <MenuItem key='2'><a href='www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
+    <MenuItem key='3'><a href='www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
   </Menu>
 )
 const menu4 = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'><Icon type='bars' />  第一个选项111111</MenuItem>
-    <MenuItem key='2'><Icon type='bars' />  第二个选项222222</MenuItem>
-    <MenuItem key='3'><Icon type='bars' />  第三个选项333333</MenuItem>
+    <MenuItem key='1'><a href='www.baidu.com' target='_blank'><Icon type='bars' />第一个选项111111</a></MenuItem>
+    <MenuItem key='2'><a href='www.baidu.com' target='_blank'><Icon type='bars' />第一个选项222222</a></MenuItem>
+    <MenuItem key='3'><a href='www.baidu.com' target='_blank'><Icon type='bars' />第一个选项333333</a></MenuItem>
   </Menu>
 )
 export default class DropView extends React.Component {
   state = {
     visible: false,
-    size: 'default'
   };
   handleMenuClick = (e) => {
     if (e.key === '2.3') {
@@ -45,37 +44,27 @@ export default class DropView extends React.Component {
   onVisibleChangeBtn = (visible) => {
     console.log(`按钮菜单发生了变化====>${visible}`)
   };
-  onVisibleChange = (visible) => {
-    console.log(`nor菜单发生了变化====>${visible}`)
-  };
   handleVisibleChange = (flag) => {
     this.setState({
       visible: flag
     });
   };
-  refCb = (e) => {
-    if (e !== null) {
-      this.setState({
-        size: e.props.size
-      })
-    }
-    }
   render() {
     const menu1 = (
       <Menu onClick={handleMenu1Click}>
-        <MenuItem key='1.1'>第一个选项</MenuItem>
-        <MenuItem key='1.2'>第二个选项</MenuItem>
-        <SubMenu popupClassName={this.state.size} title='子菜单'>
-          <MenuItem key='2.3'>第三个选项</MenuItem>
-          <MenuItem key='2.4'>第四个选项</MenuItem>
+        <MenuItem key='1.1'><a href='www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
+        <MenuItem key='1.2'><a href='www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
+        <SubMenu title='子菜单'>
+          <MenuItem key='2.3'><a href='www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
+          <MenuItem key='2.4'><a href='www.baidu.com' target='_blank'>第一个选项444444</a></MenuItem>
         </SubMenu>
       </Menu>
     )
     const menu2 = (
-      <Menu onClick={this.handleMenuClick}>
-        <MenuItem key='2.1'>点我会展现菜单2.1.</MenuItem>
-        <MenuItem key='2.2'>点我会展现菜单2.2.</MenuItem>
-        <MenuItem key='2.3'>点我会展现菜单2.3.</MenuItem>
+      <Menu onClick={handleMenu1Click}>
+        <MenuItem key='2.1'><a href='www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
+        <MenuItem key='2.2'><a href='www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
+        <MenuItem key='2.3'><a href='www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
       </Menu>
     );
     return (
@@ -107,23 +96,22 @@ export default class DropView extends React.Component {
         </Dropdown>
         <Dropdown overlay={menu1} trigger={['click']} onClick={handleButtonClick}>
           <Button disabled>
-            文本菜单
+            禁用菜单
           </Button>
         </Dropdown>
+        <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
+          文本菜单
+        </DropdownNormal>
         <h1 className='h1'>3.组合使用</h1>
         <ButtonGroup className='buttonGroup'>
-          <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
-            <Button>
-            默认菜单
-            </Button>
-          </Dropdown>
-          <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
-            <Button>
-            默认菜单
-            </Button>
-          </Dropdown>
-          <DropdownButton ref={this.refCb} overlay={menu1} trigger={['click']}>
-          默认菜单
+          <Button>
+            操作一
+          </Button>
+          <Button>
+            操作二
+          </Button>
+          <DropdownButton overlay={menu1} trigger={['click']}>
+          操作三
           </DropdownButton>
         </ButtonGroup>
         <h1 className='h1'>4.三种尺寸</h1>
@@ -137,6 +125,16 @@ export default class DropView extends React.Component {
           默认菜单
         </DropdownButton>
         <h1 className='h1'>5.弹出位置</h1>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topLeft'>
+          <Button>上左</Button>
+        </Dropdown>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topCenter'>
+          <Button>上中</Button>
+        </Dropdown>
+        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topRight'>
+          <Button>上右</Button>
+        </Dropdown>
+        <br />
         <Dropdown overlay={menu} placement='bottomLeft'>
           <Button>下左</Button>
         </Dropdown>
@@ -145,16 +143,6 @@ export default class DropView extends React.Component {
         </Dropdown>
         <Dropdown overlay={menu} placement='bottomRight'>
           <Button>下右</Button>
-        </Dropdown>
-        <br />
-        <Dropdown overlay={menu} placement='topLeft'>
-          <Button>上左</Button>
-        </Dropdown>
-        <Dropdown overlay={menu} placement='topCenter'>
-          <Button>上中</Button>
-        </Dropdown>
-        <Dropdown overlay={menu} placement='topRight'>
-          <Button>上右</Button>
         </Dropdown>
         <h1 className='h1'>6.触发方式</h1>
         <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
@@ -172,7 +160,7 @@ export default class DropView extends React.Component {
           </Button>
         </Dropdown>
         <h1 className='h1'>8.多级菜单</h1>
-        <DropdownButton ref={this.refCb} overlay={menu1} trigger={['click']}>
+        <DropdownButton placement='bottomLeft' overlay={menu1} trigger={['click']}>
           默认菜单
         </DropdownButton>
       </div>

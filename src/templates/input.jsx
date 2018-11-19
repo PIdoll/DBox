@@ -67,7 +67,7 @@ export default () => (
 
     <h1 className='h1'>前缀／后缀</h1>
     <Input placeholder='请输入' style={{ width: 250 }} prefix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} /><br /><br />
-    <Input placeholder='请输入' style={{ width: 250 }} suffix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} />
+    <Input placeholder='请输入' style={{ width: 250 }} suffix={<Icon type='edit' />} onChange={(e) => console.log(e.target.value)} />
 
     <h1 className='h1'>三种大小</h1>
     <Input size='large' placeholder='请输入' style={{width: '200px'}} /><br /><br />

@@ -31,6 +31,7 @@
     border-radius: @border-radius-base;
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
     padding: 12px 16px;
+    min-width: 200px;
   }
   // 标题
   &-title {
@@ -44,6 +45,7 @@
     color: @popover-color;
     line-height: 22px;
   }
+
   // popover箭头与popover的偏移
   &-placement-top,
   &-placement-topLeft,
@@ -177,6 +179,10 @@
       margin-left: 8px;
     }
   }
+}
+
+.demo-popover div.placement {
+  margin-left: 150px;
 }
 
 
