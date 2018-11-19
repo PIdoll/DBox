@@ -5,15 +5,52 @@
 @idoll-prefix             : idoll;
 
 // -------- Colors -----------
-@primary-color          : @blue-6;
-@primary-spread-color   : #2384BD;
-@info-color             : @blue-6;
-@success-color          : @green-6;
+// default colors
+@primary-color          : @green-6;
+@success-color          : #3CCB69;
+@warning-color          : #F9AA29;
+@error-color            : #F44336;
+@default-color          : #E2E2E2;
+@processing-color       : #13B886;
+
+// hover colors
+@primary-Hover          : #42C69E;
+@success-Hover          : #63D587;
+@warning-Hover          : #F9AA29;
+@error-Hover            : #F44336;
+
+// Pressed colors
+@primary-Pressed          : #42C69E;
+@success-Pressed          : #3CCB69;
+@warning-Pressed          : #FABB53;
+@error-Pressed            : #F6685E;
+
+// LightBg
+@primary-LightBg          : #E7F8F3;
+@success-LightBg          : #EBF9F0;
+@warning-LightBg          : #FEF6EA;
+@error-LightBg            : #FDECEB;
+
+// 中性色
+@Sider-Menu        : #2F323B;
+@Black             : #000000;
+@background        : #F5F5F5;
+@disabled          : #F8F9FC;
+@white             : #FFFFFF;
+@shadow            : rgba(18,34,29,0.10);
+@border            : #E2E2E2;
+
+// 后期可能需要删除的颜色
+@primary-spread-color   : @primary-Pressed;
+@info-color             : @primary-color;
+@highlight-color        : @primary-Hover;
 @processing-color       : @primary-color;
-@error-color            : @red-6;
-@highlight-color        : #fdb441;
-@warning-color          : @gold-6;
 @normal-color           : #d9d9d9;
+
+// 链接颜色
+@link-color             : @primary-color;
+@link-hover-color       : @primary-spread-color;
+@link-active-color      : @primary-color;
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
@@ -44,21 +81,26 @@
 @font-family            : "Helvetica Neue For Number", @font-family-no-number;
 @code-family            : Consolas, Menlo, Courier, monospace;
 
-@heading-color          : fade(#000, 80%);
-@text-color             : fade(#000, 60%);
-@text-color-secondary   : fade(#000, 40%);
-@text-color-disable     : fade(#000, 20%);
+// 白色背景字体颜色
+@heading-color          : fade(#000, 85%);
+@text-color             : fade(#000, 65%);
+@text-color-secondary   : fade(#000, 45%);
+@text-color-disable     : fade(#000, 25%);
+
+// 深色背景字体颜色
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff,85%);
 @text-color-secondary-dark: fade(#fff, 65%);
+@text-color-disable-dark: fade(#fff, 45%);
+
 
 @font-size-base         : 14px;
 @font-size-lg           : @font-size-base + 2px;
 @font-size-sm           : @font-size-base - 2px;
 
 @line-height-base       : 1.5;
-@footer-height: 60px;//Modal footer height
-@title-height: 52px;//Modal title height
+@footer-height: 60px; //Modal footer height
+@title-height: 52px; //Modal title height
 
 
 
@@ -67,6 +109,7 @@
 @padding-md    : 16px; // small containers and buttons
 @padding-sm    : 12px; // Form controls and items
 @padding-xs    : 8px;  // small items、文字
+@message-notice-content-padding: 10px 16px; // message
 
 // inline margins
 @margin-xs    : 8px;  // 图标文字间距
@@ -85,9 +128,6 @@
 @icon-url               : "/assets/fonts";
 
 // LINK
-@link-color             : @primary-color;
-@link-hover-color       : @primary-spread-color;
-@link-active-color      : @primary-7;
 @link-decoration        : none;
 @link-hover-decoration  : none;
 
@@ -111,12 +151,13 @@
 @animation-duration-fast: .1s; // Tooltip
 
 // Border
-@border-radius-base     : 4px;
+@border-radius-base     : 3px;
 @border-radius-sm       : 2px;
-@border-color-base      : hsv(0, 0, 89%);  // base border outline a component
-@border-color-split     : hsv(0, 0, 95%);  // split border inside a component
+@border-color-base      : @border;  // base border outline a component
+@border-color-split     : @border;  // split border inside a component
 @border-width-base      : 1px;            // width of the border for a component
 @border-style-base      : solid;          // style of a components border
+@border-style-split     : dash;          // style of a components border
 
 // Outline
 @outline-blur-size      : 0;
@@ -127,18 +168,20 @@
 @background-color-base  : hsv(0, 0, 96%);  // Default grey background color
 
 // Disabled states
-@disabled-color         : fade(#000, 25%);
-@disabled-bg            : @background-color-base;
-@disabled-color-dark    : fade(#fff, 35%);
+@disabled-color         : @text-color-disable;
+@disabled-bg            : @disabled;
+@disabled-color-dark    : text-color-disable-dark;
 
 // Shadow
-@shadow-color           : rgba(0, 0, 0, .15);
+@shadow-color           : @shadow;
 @box-shadow-base        : @shadow-1-down;
+// @todo
 @shadow-1-up            : 0 2px 8px @shadow-color;
 @shadow-1-down          : 0 2px 8px @shadow-color;
 @shadow-1-left          : -2px 0 8px @shadow-color;
 @shadow-1-right         : 2px 0 8px @shadow-color;
-@shadow-2               : 0 4px 12px @shadow-color;
+// @shadow-2               : 0 4px 12px @shadow-color;
+@Shadow-large               : 0 8px 16px 0 @shadow-color;
 
 // z-index list
 @zindex-affix           : 10;

@@ -1,9 +1,9 @@
 
 #### **按钮类型(type)**
 
-按钮有四种类型：主按钮、次按钮、幽灵按钮、虚线按钮。
+按钮有以下几种类型：默认按钮、主按钮、次按钮、失效按钮、虚线按钮、危险按钮、
 
-通过设置 `type` 为 `normal` `primary` `dashed` `danger`  `create` `quit`可分别创建主按钮、幽灵按钮、虚线按钮、特定按钮，若不设置 `type` 值则为次要按钮。不同的样式可以用来区别其重要程度。
+通过设置 `type` 为 `default` `primary` `secondary` `disabled` `dashed` `danger`可分别创建默认按钮、主按钮、次按钮、失效按钮、虚线按钮、危险按钮。
 
 ```jsx
 <Button type='mormal'>默认</Button>

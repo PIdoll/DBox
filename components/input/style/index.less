@@ -6,12 +6,24 @@
 
 //Input styles
 .@{idoll-prefix}-input {
+  .reset-component;
   .input;
+}
+
+//readOnly
+.@{idoll-prefix}-input-readOnly {
+  .readOnly;
 }
 
 // style for input-group: input with label, with button or dropdown...
 .@{idoll-prefix}-input-group {
+  .reset-component;
   .input-group(~"@{idoll-prefix}-input");
+  &-wrapper {
+    display: inline-block;
+    vertical-align: top; 
+    width: 100%;
+  }
 }
 
 // Input with affix: prefix or suffix

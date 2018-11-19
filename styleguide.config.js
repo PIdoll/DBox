@@ -5,7 +5,11 @@ const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox Pro ${version}`,
+<<<<<<< HEAD
   serverPort: 9001,
+=======
+  serverPort: 9000,
+>>>>>>> develop
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {

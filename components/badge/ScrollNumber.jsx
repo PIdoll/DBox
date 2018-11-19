@@ -17,14 +17,14 @@ export default class ScrollNumber extends React.Component {
     prefixCls: 'idoll-scroll-number',
     count: null,
     component: 'sup',
-    height: 18,
+    height: 20,
     onAnimated() {}
   }
 
     static propTypes = {
-        count: React.PropTypes.oneOfType([
-          React.PropTypes.string,
-          React.PropTypes.number,
+        count: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
       ]),
       component: PropTypes.string,
       onAnimated: PropTypes.func,

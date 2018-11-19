@@ -20,39 +20,108 @@
     }
   }
 
-  &-notice-content {
+  &-notice-content &-custom-content {
+    padding: 9px 16px;
     background: @component-background;
+    box-shadow: @Shadow-large;
+    border-radius: 4px;
     display: inline-block;
     pointer-events: all;
-    font-size: @font-size-base;
-    border-radius: @border-radius-base;
+    font-size: 14px;
+    height: 40px;
+    box-sizing: border-box;
   }
 
-  &-notice-content &-custom-content {
-    .size(360px; 30px);
-    padding: @padding-xs @padding-sm+2;
-    border-radius: @border-radius-base;
-    box-sizing: border-box;
-    line-height: 14px;
+  .content-success {
+    background-color: @success-color;
     color: #fff;
   }
 
-  &-success {
-    background-color: @success-color;
-  }
-
-  &-error {
+  .content-error {
     background-color: @error-color;
+    color: #fff;
   }
 
-  &-warning {
+  .content-info {
+    background-color: @primary-color;
+    color: #fff;
+  }
+
+  .content-loading {
     background-color: @warning-color;
+    color: #fff;
+  }
+
+  .content-load::before {
+    position: relative;
+    left: 0;
+    top: 2px;
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 1px solid;
+    margin-right: 8px;
+    border-color: #13B886 transparent transparent transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    /*动画时间1s，线性变化，无限循环*/
+    animation: loading 1s linear infinite;
+    animation-name: rotate;
+  }
+
+
+  .content-warning, .content-warning {
+    background-color: @warning-color;
+    color: #fff;
+  }
+
+  &-success .@{iconfont-css-prefix} {
+    color: @success-color;
+  }
+
+  &-error .@{iconfont-css-prefix} {
+    color: @error-color;
+  }
+
+  &-warning .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-warn .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-loading .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-load::before {
+    position: relative;
+    left: 0;
+    top: 2px;
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 1px solid;
+    margin-right: 8px;
+    border-color: #13B886 transparent transparent transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    /*动画时间1s，线性变化，无限循环*/
+    animation: loading 1s linear infinite;
+    animation-name: rotate;
+  }
+
+  &-info .@{iconfont-css-prefix} {
+    color: @warning-color;
   }
 
   .@{iconfont-css-prefix} {
     margin-right: 8px;
     font-size: @font-size-lg;
-    top: 1px;
+    top: -1px;
     position: relative;
   }
 
@@ -73,5 +142,15 @@
     opacity: 0;
     max-height: 0;
     padding: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
