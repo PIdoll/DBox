@@ -29,9 +29,9 @@
 }
 /*button 样式*/
 .youling {
-    background: rgba(190, 193, 200, 1);
+    /*  background: rgba(190, 193, 200, 1); */
+    background: #2F323B;
     height: 50px;
-    width: 400px;
     padding-top: 10px;
     padding-left: 10px;
 }

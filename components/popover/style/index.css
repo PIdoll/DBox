@@ -32,22 +32,18 @@
 }
 .idoll-popover-inner {
   background-color: #fff;
-  background-clip: padding-box;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+  min-width: 200px;
 }
 .idoll-popover-title {
-  min-width: 177px;
-  margin: 0;
-  padding: 12px 16px 0px;
-  min-height: 32px;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
-  margin-bottom: 8px;
   line-height: 22px;
+  margin-bottom: 8px;
 }
 .idoll-popover-inner-content {
-  padding: 0 16px 12px 16px;
   color: rgba(0, 0, 0, 0.65);
   line-height: 22px;
 }
@@ -80,73 +76,79 @@
   display: block;
   border-color: transparent;
   border-style: solid;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-top > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-topLeft > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-topRight > .idoll-popover-content > .idoll-popover-arrow {
   bottom: 6px;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-top > .idoll-popover-content > .idoll-popover-arrow {
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
 }
 .idoll-popover-placement-topLeft > .idoll-popover-content > .idoll-popover-arrow {
-  left: 24px;
+  left: 12px;
 }
 .idoll-popover-placement-topRight > .idoll-popover-content > .idoll-popover-arrow {
-  right: 24px;
+  right: 12px;
 }
 .idoll-popover-placement-right > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-rightTop > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-rightBottom > .idoll-popover-content > .idoll-popover-arrow {
   left: 6px;
-  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-right > .idoll-popover-content > .idoll-popover-arrow {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
+  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-rightTop > .idoll-popover-content > .idoll-popover-arrow {
-  top: 24px;
+  top: 12px;
+  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-rightBottom > .idoll-popover-content > .idoll-popover-arrow {
-  bottom: 24px;
+  bottom: 12px;
+  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-bottom > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-bottomLeft > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-bottomRight > .idoll-popover-content > .idoll-popover-arrow {
   top: 6px;
-  box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.06);
 }
 .idoll-popover-placement-bottom > .idoll-popover-content > .idoll-popover-arrow {
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
 }
 .idoll-popover-placement-bottomLeft > .idoll-popover-content > .idoll-popover-arrow {
-  left: 24px;
+  left: 12px;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
 }
 .idoll-popover-placement-bottomRight > .idoll-popover-content > .idoll-popover-arrow {
-  right: 24px;
+  right: 12px;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
 }
 .idoll-popover-placement-left > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-leftTop > .idoll-popover-content > .idoll-popover-arrow,
 .idoll-popover-placement-leftBottom > .idoll-popover-content > .idoll-popover-arrow {
   right: 6px;
-  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-left > .idoll-popover-content > .idoll-popover-arrow {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
+  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-leftTop > .idoll-popover-content > .idoll-popover-arrow {
-  top: 24px;
+  top: 12px;
+  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-placement-leftBottom > .idoll-popover-content > .idoll-popover-arrow {
-  bottom: 24px;
+  bottom: 12px;
+  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
 }
 .idoll-popover-message {
-  padding: 4px 0 12px;
+  padding: 12px 0 16px;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.65);
 }
@@ -164,4 +166,10 @@
 }
 .idoll-popover-buttons button {
   margin-left: 8px;
+}
+.demo-popover div.placement {
+  margin-left: 150px;
+}
+#main-container #demoPopover.h1 {
+  margin-top: 50px;
 }

@@ -26,7 +26,9 @@ title: Tag
 | afterClose | 关闭动画完成后的回调 | `() => void` | - |
 | closable | 标签是否可以关闭 | boolean | false |
 | color | 标签色 | string | - |
-| checked | 设置标签的选中状态 | boolean | false |
+| target | 链接跳转方式必须和href同时设置 | string可参照a链接的跳转方式 | - 默认本页面跳转 |
+| href | 链接跳转路径 | string | -  |
+| checked | 设置标签的选中状态仅适用于hot和基本状态下 | boolean | false |
 
 ### tagGroup
 

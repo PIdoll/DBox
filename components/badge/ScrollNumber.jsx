@@ -17,7 +17,7 @@ export default class ScrollNumber extends React.Component {
     prefixCls: 'idoll-scroll-number',
     count: null,
     component: 'sup',
-    height: 18,
+    height: 20,
     onAnimated() {}
   }
 
