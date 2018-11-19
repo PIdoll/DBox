@@ -27,7 +27,7 @@ export default class DropdownNormal extends React.Component {
     })
     return (
       <Dropdown onOverlayClick={this.onClickChange} {...restProps} className={cls} align={align} overlay={overlay} trigger={trigger} onVisibleChange={this.onChange} >
-        <a href='javascript:;' className={`idoll-icon-${this.state.visible}`}>
+        <a href='#' className={`idoll-icon-${this.state.visible}`}>
           {children}{<Icon type='down' />}
         </a>
       </Dropdown>
