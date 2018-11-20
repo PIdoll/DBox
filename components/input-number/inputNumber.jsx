@@ -4,7 +4,6 @@ import classNames from 'classNames';
 import RcInputNumber from 'rc-input-number';
 import Icon from '../icon';
 
-
 export default class InputNumber extends React.Component {
   static propTypes = {
     defaultValue: PropTypes.number,
@@ -22,23 +21,29 @@ export default class InputNumber extends React.Component {
   };
 
   render() {
-    const { className, size, ...others} = this.props;
+    const { className, size, ...others } = this.props;
     const inputNumberClass = classNames({
       [`${this.props.prefixCls}-lg`]: size === 'large',
       [`${this.props.prefixCls}-sm`]: size === 'small',
     }, className);
-
     const upIcon = <Icon type='up' className={`${this.props.prefixCls}-handle-up-inner`} />
     const downIcon = <Icon type='down' className={`${this.props.prefixCls}-handle-down-inner`} />
 
     return (
       <RcInputNumber
+        ref={(i) => { this.inputNumberRef = i }}
         className={inputNumberClass}
         upHandler={upIcon}
         downHandler={downIcon}
         {...others}
       />
-    )
+    );
+  }
+  focus = () => {
+    this.inputNumberRef.focus();
+  }
+  blur = () => {
+    this.inputNumberRef.blur();
   }
 } */
 

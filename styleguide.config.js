@@ -5,7 +5,7 @@ const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  serverPort: 9001,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {

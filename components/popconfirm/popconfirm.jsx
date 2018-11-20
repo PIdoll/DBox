@@ -96,8 +96,8 @@ export default class Popconfirm extends React.Component {
             <div className={`${prefixCls}-message-title`}>{title}</div>
           </div>
           <div className={`${prefixCls}-buttons`}>
+            <Button onClick={this.onConfirm} type='danger' size='small'>{okText || '确定'}</Button>
             <Button onClick={this.onCancel} type='ghost' size='small'>{cancelText || '取消'}</Button>
-            <Button onClick={this.onConfirm} type='primary' size='small'>{okText || '确定'}</Button>
           </div>
         </div>
       </div>

@@ -11,23 +11,22 @@ const DropdownNormal = Dropdown.Normal;
 function handleButtonClick(e) {
   console.info('click left button', e);
 }
-
 function handleMenu1Click(e) {
   console.info('click', e);
 }
 
 const menu = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
-    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
+    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 )
 const menu4 = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />第一个选项111111</a></MenuItem>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />第一个选项222222</a></MenuItem>
-    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />第一个选项333333</a></MenuItem>
+    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
   </Menu>
 )
 export default class DropView extends React.Component {
@@ -52,19 +51,19 @@ export default class DropView extends React.Component {
   render() {
     const menu1 = (
       <Menu onClick={handleMenu1Click}>
-        <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
-        <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
+        <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <SubMenu title='子菜单'>
-          <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
-          <MenuItem key='2.4'><a href='https://www.baidu.com' target='_blank'>第一个选项444444</a></MenuItem>
+          <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+          <MenuItem key='2.4'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         </SubMenu>
       </Menu>
     )
     const menu2 = (
       <Menu onClick={handleMenu1Click}>
-        <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>第一个选项111111</a></MenuItem>
-        <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>第一个选项222222</a></MenuItem>
-        <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>第一个选项333333</a></MenuItem>
+        <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
       </Menu>
     );
     return (
@@ -123,13 +122,13 @@ export default class DropView extends React.Component {
           默认菜单
         </DropdownButton>
         <h1 className='h1'>5.弹出位置</h1>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topLeft'>
+        <Dropdown overlay={menu} placement='topLeft'>
           <Button>上左</Button>
         </Dropdown>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topCenter'>
+        <Dropdown overlay={menu} placement='topCenter'>
           <Button>上中</Button>
         </Dropdown>
-        <Dropdown align={{offset: [0, -24]}} overlay={menu} placement='topRight'>
+        <Dropdown overlay={menu} placement='topRight'>
           <Button>上右</Button>
         </Dropdown>
         <br />
