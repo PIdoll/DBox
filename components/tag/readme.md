@@ -45,7 +45,7 @@
 
 ##### **动态添加和删除标签**
 ```jsx
-const TagGroup = Tag.TagGroup;
+const { TagGroup } = require('./index');
 <TagGroup></TagGroup>
 ```
 
