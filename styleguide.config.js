@@ -147,7 +147,7 @@ module.exports = {
           name: 'Navigation',
           components: () => ([
             path.resolve(__dirname, './components/affix/affix.jsx'),
-            path.resolve(__dirname, './components/dropdown/dropdown.jsx'),
+            path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
             path.resolve(__dirname, './components/steps/steps.jsx'),
             path.resolve(__dirname, './components/pagination/pagination.jsx'),
