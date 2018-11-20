@@ -6,8 +6,7 @@
 
 ##### **基本用法**
 ```jsx
-const Menu = Dropdown. Menu;
-const MenuItem = Dropdown. MenuItem;const menu2 = (
+const { Menu, MenuItem, DropdownNormal } = require('./index');const menu2 = (
       <Menu onClick={handleMenu1Click}>
         <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -27,7 +26,6 @@ function handleButtonClick(e) {
 function handleMenu1Click(e) {
   console.info('click', e);
 };
-const DropdownNormal = Dropdown.DropdownNormal;
 <div>
 	<DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
 	  下拉菜单
@@ -42,8 +40,7 @@ const DropdownNormal = Dropdown.DropdownNormal;
 
 ##### **常用类型**
 ```jsx
-const Menu = Dropdown. Menu;
-const MenuItem = Dropdown. MenuItem;
+const { Menu, MenuItem, DropdownButton, DropdownNormal } = require('./index');
 const menu4 = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
@@ -71,8 +68,6 @@ function handleButtonClick(e) {
 function handleMenu1Click(e) {
   console.info('click', e);
 };
-const DropdownNormal = Dropdown.DropdownNormal;
-const DropdownButton = Dropdown.DropdownButton;
 <div>
     <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
       <Button>
@@ -100,8 +95,8 @@ const DropdownButton = Dropdown.DropdownButton;
 
 ##### **组合使用**
 ```jsx
-const Menu = Dropdown.Menu;
-const MenuItem = Dropdown.MenuItem;
+const ButtonGroup = Button.Group;
+const { Menu, MenuItem, DropdownButton } = require('./index');
 const menu1 = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -112,8 +107,7 @@ const menu1 = (
 function handleMenu1Click(e) {
   console.info('click', e);
 };
-const ButtonGroup = Button.Group;
-const DropdownButton = Dropdown.DropdownButton;
+
 <ButtonGroup className='buttonGroup'>  <DropdownButton overlay={menu1} trigger={['hover']}>
   操作三
   </DropdownButton>
@@ -128,8 +122,7 @@ const DropdownButton = Dropdown.DropdownButton;
 
 ##### **三种尺寸**
 ```jsx
-const Menu = Dropdown.Menu;
-const MenuItem = Dropdown.MenuItem;
+const { Menu, MenuItem, DropdownButton } = require('./index');
 const menu2 = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -140,7 +133,6 @@ const menu2 = (
 function handleMenu1Click(e) {
   console.info('click', e);
 };
-const DropdownButton = Dropdown.DropdownButton;
 <div>
 	<DropdownButton size='small' overlay={menu2} trigger={['hover']}>
       默认菜单
@@ -156,8 +148,7 @@ const DropdownButton = Dropdown.DropdownButton;
 
 ##### **弹出位置**
 ```jsx
-const Menu = Dropdown.Menu;
-const MenuItem = Dropdown.MenuItem;
+const { Menu, MenuItem } = require('./index');
 const menu = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -192,8 +183,7 @@ function handleMenu1Click(e) {
 
 ##### **触发方式**
 ```jsx
-const Menu = Dropdown.Menu;
-const MenuItem = Dropdown.MenuItem;
+const { Menu, MenuItem, DropdownNormal } = require('./index');
 const menu = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -214,8 +204,6 @@ function handleMenu1Click(e) {
 function handleButtonClick(e) {
   console.info('click left button', e);
 };
-
-const DropdownNormal = Dropdown.DropdownNormal;
 <div>
 	<DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
       点击下拉菜单
@@ -230,8 +218,7 @@ const DropdownNormal = Dropdown.DropdownNormal;
 
 ##### **触发事件**
 ```jsx
-const Menu = Dropdown. Menu;
-const MenuItem = Dropdown. MenuItem;
+const { Menu, MenuItem } = require('./index');
 const menu = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -257,9 +244,7 @@ function handleButtonClick(e) {
 
 ##### **多级菜单**
 ```jsx
-const Menu = Dropdown. Menu;
-const MenuItem = Dropdown. MenuItem;
-const SubMenu = Dropdown.SubMenu;
+const { Menu, MenuItem, SubMenu  } = require('./index');
 const menu1 = (
   <Menu onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
