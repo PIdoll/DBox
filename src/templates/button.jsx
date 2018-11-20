@@ -58,7 +58,7 @@ export default () => (
       <Button type='primary' ghost>重要</Button>&nbsp;&nbsp;
       <Button type='dashed' ghost>虚线</Button>&nbsp;&nbsp;
       <Button type='danger' ghost>危险</Button>&nbsp;&nbsp;
-      <Button disabled ghost>禁止</Button>
+      <Button disabled ghost>禁用</Button>
     </div>
     <br />
     <br />

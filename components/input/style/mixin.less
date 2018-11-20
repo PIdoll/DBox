@@ -254,6 +254,103 @@
   &-sm > &-addon {
     .input-sm();
   }
+
+  &&-compact {
+    display: block;
+    .clearfix;
+
+    &-addon,
+    &-wrap,
+    > .@{inputClass} {
+      &:not(:first-child):not(:last-child) {
+        border-right-width: 1px;
+        border-right-color: transparent;
+        &:hover {
+          .hover();
+        }
+        &:focus {
+          .active();
+        }
+      }
+    }
+
+    & > * {
+      border-radius: 0;
+      border-right-width: 0;
+      vertical-align: top; // https://github.com/ant-design/ant-design-pro/issues/139
+      float: none;
+      display: inline-block;
+    }
+
+    // https://github.com/ant-design/ant-design/issues/11863
+    & > span:not(:last-child) > .@{inputClass} {
+      border-right-width: 0;
+    }
+
+    // Undo float for .ant-input-group .ant-input
+    .@{inputClass} {
+      float: none;
+    }
+
+    // reset border for Select, DatePicker, AutoComplete, Cascader, Mention, TimePicker
+    & > .@{idoll-prefix}-select > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker .@{idoll-prefix}-time-picker-input {
+      border-radius: 0;
+      border-right-width: 1px;
+      border-right-color: transparent;
+      &:hover {
+        .hover();
+      }
+      &:focus {
+        .active();
+      }
+    }
+
+    & > *:first-child,
+    & > .@{idoll-prefix}-select:first-child > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper:first-child .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker:first-child .@{idoll-prefix}-time-picker-input {
+      border-top-left-radius: @border-radius-base;
+      border-bottom-left-radius: @border-radius-base;
+    }
+
+    & > *:last-child,
+    & > .@{idoll-prefix}-select:last-child > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker-focused:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper:last-child .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker:last-child .@{idoll-prefix}-time-picker-input {
+      border-top-right-radius: @border-radius-base;
+      border-bottom-right-radius: @border-radius-base;
+      border-right-width: 1px;
+      border-right-color: @input-border-color;
+      &:hover {
+        .hover();
+      }
+      &:focus {
+        .active();
+        .@{idoll-prefix}-cascader-input {
+          .active();
+        }
+      }
+    }
+
+    // https://github.com/ant-design/ant-design/issues/12493
+    & > .@{idoll-prefix}-select-auto-complete .@{idoll-prefix}-input {
+      vertical-align: top;
+    }
+  }
+
+
 }
 
 .input-affix-wrapper(@inputClass) {
