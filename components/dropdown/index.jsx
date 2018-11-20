@@ -4,4 +4,5 @@ import DropdownNormal from './dropdown-normal';
 
 Dropdown.Button = DropdownButton;
 Dropdown.Normal = DropdownNormal;
+export { DropdownButton, DropdownNormal };
 export default Dropdown;
