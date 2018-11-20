@@ -22,7 +22,7 @@ export default class InputNumberView extends React.Component {
         <inputNumber min={1} max={1000} defaultValue={3} onChange={this.onChange} />
         <inputNumber size='small' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
         <h1>不可用切换</h1>
-        <input />
+        <InputNumber min={10} disabled={this.state.disabled} defaultValue={3} />
       </div>
     )
   }
