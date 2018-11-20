@@ -1,17 +1,3 @@
-# [Pagination](http://naotu.baidu.com/file/35bc6b0ed7f83f2a7442a5a592a57740?token=46d94e3422058655)
-
----
-
-category: Components
-subtitle: 分页
-type: Navigation
-title: Pagination
-cols: 1
-
----
-
-采用分页的形式分隔长列表，每次只加载一个页面。
-
 ## 何时使用
 
 - 当加载/渲染所有数据将花费很多时间时；
@@ -19,9 +5,49 @@ cols: 1
 
 ## 如何使用
 
-```html
-<Pagination onChange={onChange} total={50} />
+##### **基础分页**
+```jsx
+<Pagination defaultCurrent={1} total={50}></Pagination>
 ```
+
+##### **更多分页**
+```jsx
+<Pagination defaultCurrent={6} total={500}></Pagination>
+```
+
+##### **改变每页显示条数目**
+```jsx
+<Pagination defaultCurrent={1} total={50} showSizeChanger></Pagination>
+```
+##### **跳转分页**
+```jsx
+<Pagination defaultCurrent={2} total={500} showQuickJumper></Pagination>
+```
+##### **迷你分页**
+```jsx
+function showTotal(total) {
+  return `总共 ${total} 条数据`;
+}
+<div>
+	<Pagination size='small' total={50}></Pagination>
+	<br />
+   <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
+   <br />
+   <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
+</div>
+```
+
+##### **简洁翻页**
+```jsx
+<Pagination simple defaultCurrent={2} total={500}></Pagination>
+```
+
+##### **包含总数**
+```jsx
+<Pagination showTotal={(total) => (`总共${total}条数据`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
+```
+
+## API
 
 | 参数 | 说明 | 类型 | 默认值|
 | --- | --- | --- | --- |

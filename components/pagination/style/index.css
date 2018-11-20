@@ -376,6 +376,7 @@ textarea.idoll-pagination-options-quick-jumper input {
   height: 20px;
   line-height: 20px;
   font-weight: 400;
+  min-width: 64px;
 }
 .idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-arrow,
 .idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-arrow {
