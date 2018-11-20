@@ -7,11 +7,16 @@ export default class DropdownNormal extends React.Component {
   state = {
     visible: false
   };
-  onVisibleChange = (flag) => {
+  onChange = (flag) => {
     this.setState({
       visible: flag
     });
   };
+  onClickChange = (e) => {
+    this.setState({
+      visible: e.item.props.isSelected
+    });
+  }
   render() {
     const {
       children, className, overlay, trigger, align, ...restProps
@@ -21,9 +26,9 @@ export default class DropdownNormal extends React.Component {
       [className]: !!className
     })
     return (
-      <Dropdown {...restProps} className={cls} align={align} overlay={overlay} trigger={trigger} onVisibleChange={this.onVisibleChange} >
-        <a href='#' className='idoll-icon-a'>
-          {children}{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
+      <Dropdown onOverlayClick={this.onClickChange} {...restProps} className={cls} align={align} overlay={overlay} trigger={trigger} onVisibleChange={this.onChange} >
+        <a href='#'>
+          {children}{<Icon type='down' />}
         </a>
       </Dropdown>
     )

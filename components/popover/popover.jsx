@@ -1,12 +1,12 @@
 import React from 'react';
-import Tooltip from 'components/tooltip';
+import Tooltip from '../../components/tooltip';
 
 import warning from '../_util/warning';
 
 export default class Popover extends React.Component {
   static defaultProps = {
     prefixCls: 'idoll-popover',
-    placement: 'top',
+    placement: 'topLeft',
     trigger: 'hover',
     mouseEnterDelay: 0.1,
     mouseLeaveDelay: 0.1,

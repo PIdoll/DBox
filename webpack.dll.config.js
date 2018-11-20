@@ -8,7 +8,6 @@ for (x in dependencies) {
 	vendors.push(x)
 }
 const library = '[name]_[chunkhash]'
-console.log(vendors);
 module.exports = {
 	entry: {
 		vendors: vendors

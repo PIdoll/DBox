@@ -7,10 +7,12 @@ export default class Dropdown extends React.Component {
     transitionName: 'slide-up',
     prefixCls: 'idoll-dropdown',
     mouseEnterDelay: 0.15,
-    mouseLeaveDelay: 0.1
+    mouseLeaveDelay: 0.1,
   }
 
   render() {
-    return <RcDropdown {...this.props} />;
+    return (
+      <RcDropdown {...this.props} />
+    )
   }
 }

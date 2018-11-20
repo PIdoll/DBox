@@ -80,6 +80,9 @@
   &-circle-outline {
     .btn-circle(@btn-prefix-cls);
   }
+  &-square {
+    .btn-square(@btn-prefix-cls);
+  }
   &-text {
     .btn-text()
   }
@@ -101,6 +104,7 @@
 
   .@{iconfont-css-prefix} {
     transition: margin-left .3s @ease-in-out;
+    transform: translateY(-5%);
   }
 
   &&-loading:before {
@@ -127,6 +131,10 @@
     .btn-group(@btn-prefix-cls);
   }
 
+  &-block {
+    width: 100%;
+  }
+
   // &:not(&-circle):not(&-circle-outline)&-icon-only {
   //   padding-left: 8px;
   //   padding-right: 8px;
@@ -145,28 +153,38 @@
     margin-left: @btn-icon-margin-left-base + 2px;
   }
 
-  &-clicked:after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    bottom: -1px;
-    right: -1px;
-    border-radius: inherit;
-    border: 0 solid @primary-color;
-    opacity: 0.4;
-    animation: buttonEffect .4s;
-    display: block;
+  &-sm > .idoll-icon + span,
+  &-sm > span + .idoll-icon {
+    margin-left: @btn-icon-margin-left-base - 2px !important;
   }
 
-  &-danger&-clicked:after {
-    border-color: @btn-danger-color;
-  }
+  // 点击后的效果
+  // &-clicked:after {
+    // content: '';
+    // position: absolute;
+    // top: -1px;
+    // left: -1px;
+    // bottom: -1px;
+    // right: -1px;
+    // border-radius: inherit;
+    // border: 0 solid @primary-color;
+    // opacity: 0.4;
+    // animation: buttonEffect .4s;
+    // display: block;
+    // background-color:@primary-Pressed;
+    // color: #fff;
+  // }
 
+  // &-danger&-clicked:after {
+    // border-color: @btn-danger-color;
+  // }
+
+  // 幽灵按钮
   &-background-ghost {
     background: transparent !important;
     border-color: #fff;
     color: #fff;
+    .button-variant-ghost(#fff);
   }
 
   &-background-ghost&-primary {
@@ -197,4 +215,9 @@ a.@{btn-prefix-cls} {
   &-sm {
     line-height: @btn-height-sm - 2px;
   }
+}
+
+// 解决chrome浏览器打开新链接返回原页面会有下划线
+a {
+  text-decoration: none !important;
 }

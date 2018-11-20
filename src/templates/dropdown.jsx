@@ -4,37 +4,34 @@ import Menu, { MenuItem, SubMenu } from 'rc-menu';
 import Button from 'components/button'
 import Icon from 'components/icon'
 import './dropdown.less'
+const ButtonGroup = Button.Group;
 const DropdownButton = Dropdown.Button;
 const DropdownNormal = Dropdown.Normal;
 
 function handleButtonClick(e) {
   console.info('click left button', e);
 }
-
 function handleMenu1Click(e) {
   console.info('click', e);
 }
 
 const menu = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'>第一个选项111111</MenuItem>
-    <MenuItem key='2'>第二个选项222222</MenuItem>
-    <MenuItem key='3'>第三个选项333333</MenuItem>
+    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 )
 const menu4 = (
   <Menu onClick={handleMenu1Click}>
-    <MenuItem key='1'><Icon type='bars' />  第一个选项111111</MenuItem>
-    <MenuItem key='2'><Icon type='bars' />  第二个选项222222</MenuItem>
-    <MenuItem key='3'><Icon type='bars' />  第三个选项333333</MenuItem>
+    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
   </Menu>
 )
-
-
 export default class DropView extends React.Component {
   state = {
     visible: false,
-    size: ''
   };
   handleMenuClick = (e) => {
     if (e.key === '2.3') {
@@ -42,118 +39,89 @@ export default class DropView extends React.Component {
         visible: false
       });
     }
-  }
+  };
+  onVisibleChangeBtn = (visible) => {
+    console.log(`按钮菜单发生了变化====>${visible}`)
+  };
   handleVisibleChange = (flag) => {
     this.setState({
       visible: flag
     });
-  }
-  handleChange = (flag) => {
-    console.info('aaaaaaaaaaaaaa', flag);
-  }
-  refCb = (value) => {
-    this.setState({
-      size: value.props.size
-    })
-  }
+  };
   render() {
     const menu1 = (
       <Menu onClick={handleMenu1Click}>
-        <MenuItem key='1.1'>第一个选项</MenuItem>
-        <MenuItem key='1.2'>第二个选项</MenuItem>
-        <SubMenu popupClassName={this.state.size} title='子菜单'>
-          <MenuItem key='1.3'>第三个选项</MenuItem>
-          <MenuItem key='1.4'>第四个选项</MenuItem>
+        <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <SubMenu title='子菜单'>
+          <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+          <MenuItem key='2.4'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         </SubMenu>
       </Menu>
     )
     const menu2 = (
-      <Menu onClick={this.handleMenuClick}>
-        <MenuItem key='2.1'>点我会展现菜单2.1.</MenuItem>
-        <MenuItem key='2.2'>点我会展现菜单2.2.</MenuItem>
-        <MenuItem key='2.3'>点我会展现菜单2.3.</MenuItem>
-      </Menu>
-    );
-    const menu3 = (
-      <Menu onClick={this.handleMenuClick}>
-        <MenuItem key='2.1'>点我会展现菜单2.1.</MenuItem>
-        <MenuItem key='2.2'>点我会展现菜单2.2.</MenuItem>
-        <MenuItem key='2.3' disabled>点我会展现菜单2.3.</MenuItem>
+      <Menu onClick={handleMenu1Click}>
+        <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
       </Menu>
     );
     return (
-      <div id='main-container'>
-        <h1 className='h1'>鼠标点击，显示菜单</h1>
-        <Dropdown overlay={menu} trigger={['click']} onClick={handleButtonClick}>
-          <Button type='normal'>
-            按钮
+      <div id='main-container' className='dropdown'>
+        <h1 className='h1'>1.基本用法</h1>
+        <DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
+          下拉菜单
+        </DropdownNormal>
+        <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
+          <Button>
+          默认菜单
           </Button>
         </Dropdown>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>鼠标点击，显示图标菜单</h1>
-        <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
-          <Button type='normal'>
-            按钮
+        <h1 className='h1'>2.常用类型</h1>
+        <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+          <Button>
+            默认菜单
           </Button>
         </Dropdown>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>鼠标移入,显示菜单,含有二级菜单</h1>
-        <DropdownButton ref={this.refCb} overlay={menu1} trigger={['hover']}>
-          功能按钮
+        <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+          <Button type='primary'>
+            主要菜单
+          </Button>
+        </Dropdown>
+        <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+          <Button type='secondary'>
+            次要菜单
+          </Button>
+        </Dropdown>
+        <DropdownButton disabled overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+          禁用菜单
         </DropdownButton>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>在下拉列表中点击内容不关闭菜单</h1>
-        <Dropdown trigger={['click']} overlay={menu2} onVisibleChange={this.handleVisibleChange} visible={this.state.visible} >
-          <a href='#' className='idoll-icon-a'>
-            下拉菜单{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
-          </a>
-        </Dropdown>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>在下拉列表中点击内容关闭菜单</h1>
-        <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
-          下拉菜单
+        <DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
+          文本菜单
         </DropdownNormal>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>下拉菜单中不可用菜单项</h1>
-        <DropdownNormal overlay={menu3} type='caret-down' trigger={['click']} >
-          下拉菜单
-        </DropdownNormal>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1 className='h1'>下拉菜单展示位置</h1>
-        <Dropdown overlay={menu} placement='bottomLeft'>
-          <Button>下左</Button>
-        </Dropdown>
-        <Dropdown overlay={menu} placement='bottomCenter'>
-          <Button>下中</Button>
-        </Dropdown>
-        <Dropdown overlay={menu} placement='bottomRight'>
-          <Button>下右</Button>
-        </Dropdown>
-        <br />
+        <h1 className='h1'>3.组合使用</h1>
+        <ButtonGroup className='buttonGroup'>
+          <Button>
+            操作一
+          </Button>
+          <Button>
+            操作二
+          </Button>
+          <DropdownButton overlay={menu1} trigger={['hover']}>
+          操作三
+          </DropdownButton>
+        </ButtonGroup>
+        <h1 className='h1'>4.三种尺寸</h1>
+        <DropdownButton size='small' overlay={menu2} trigger={['hover']}>
+          默认菜单
+        </DropdownButton>
+        <DropdownButton overlay={menu2} trigger={['hover']}>
+          默认菜单
+        </DropdownButton>
+        <DropdownButton size='large' overlay={menu2} trigger={['hover']}>
+          默认菜单
+        </DropdownButton>
+        <h1 className='h1'>5.弹出位置</h1>
         <Dropdown overlay={menu} placement='topLeft'>
           <Button>上左</Button>
         </Dropdown>
@@ -163,6 +131,35 @@ export default class DropView extends React.Component {
         <Dropdown overlay={menu} placement='topRight'>
           <Button>上右</Button>
         </Dropdown>
+        <br />
+        <Dropdown overlay={menu} placement='bottomLeft'>
+          <Button>下左</Button>
+        </Dropdown>
+        <Dropdown overlay={menu} placement='bottomCenter'>
+          <Button>下中</Button>
+        </Dropdown>
+        <Dropdown overlay={menu} placement='bottomRight'>
+          <Button>下右</Button>
+        </Dropdown>
+        <h1 className='h1'>6.触发方式</h1>
+        <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
+          点击下拉菜单
+        </DropdownNormal>
+        <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
+          <Button>
+          hover默认菜单
+          </Button>
+        </Dropdown>
+        <h1 className='h1'>7.触发事件</h1>
+        <Dropdown overlay={menu} trigger={['hover']} onVisibleChange={this.onVisibleChangeBtn} onClick={handleButtonClick}>
+          <Button>
+          hover默认菜单
+          </Button>
+        </Dropdown>
+        <h1 className='h1'>8.多级菜单</h1>
+        <DropdownButton placement='bottomLeft' overlay={menu1} trigger={['hover']}>
+          默认菜单
+        </DropdownButton>
       </div>
     )
   }
