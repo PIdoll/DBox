@@ -1,20 +1,84 @@
-# [input](http://naotu.baidu.com/file/16cb7711732e8567b985a181505e2bfe?token=4cb434845c75e538)
+<!-- # [input](http://naotu.baidu.com/file/16cb7711732e8567b985a181505e2bfe?token=4cb434845c75e538) -->
 
----
-
-category: Components
-subtitle: 输入框
-type： Date Entry
-title： Input
-
----
-
-输入框
-
-## 何时使用
+### 何时使用
 
 - 需要用户输入表单域内容时。
 - 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
+
+### 代码演示
+##### **基本使用**
+可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态
+```jsx
+
+<Input type='text' placeholder='请输入' style={{width: '160px'}} /><br /><br />
+<Input type='text' disabled placeholder='请输入' style={{width: '160px'}} /><br /><br />
+<Input type='text' readOnly value='请输入' style={{width: '160px'}} />
+
+```
+##### **前置／后置**
+用于一些固定组合。`addonBefore` 设置前置内容，`beforelength` 设置前置内容长度。`addonAfter` 和`afterlength` 
+则用来设置后置属性。
+```jsx
+
+const selectBefore = (
+  <Select defaultValue='Http://' style={{ width: 90 }}>
+    <Option value='Http://'>Http://</Option>
+    <Option value='Https://'>Https://</Option>
+  </Select>
+);
+const selectAfter = (
+  <Select defaultValue='.com' style={{ width: 80 }}>
+    <Option value='.com'>.com</Option>
+    <Option value='.jp'>.jp</Option>
+    <Option value='.cn'>.cn</Option>
+    <Option value='.org'>.org</Option>
+  </Select>
+);
+
+<div>
+    <div style={{width:'400px'}} >
+        <Input type='text' addonBefore='邮政编码' placeholder='请输入' beforelength='100px' />
+    </div>
+    <br />
+    <div style={{width: '400px'}} >
+        <Input type='text' placeholder='请输入' addonAfter='.com' afterlength='80px' />
+    </div>
+    <br />
+    <div style={{width: '400px'}} >
+        <Input type='text' addonBefore={selectBefore} placeholder='请输入' addonAfter={selectAfter} beforelength='100px' afterlength='80px' />
+    </div>
+</div>
+```
+
+```jsx
+const Search = Input.Search;
+<div>
+<Search
+    placeholder='请输入'
+    onSearch={value => console.log(value)}
+    style={{ width: 250 }}
+></Search>
+<br /><br />
+<Search
+    placeholder='请输入'
+    onSearch={value => console.log(value)}
+    style={{ width: 250 }}
+    enterButton
+></Search>
+<br /><br />
+<Search style={{ width: 250 }} enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} ></Search>
+<br /><br />
+<Search style={{ width: 250 }} size='large' enterButton='搜索' placeholder='请输入' onSearch={(value => console.log(value))} ></Search>
+</div>
+```
+
+```jsx
+
+```
+
+```jsx
+
+```
 
 ## API
 

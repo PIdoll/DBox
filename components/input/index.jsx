@@ -7,4 +7,5 @@ Input.Group = Group;
 Input.Textarea = Textarea;
 Input.Search = Search;
 
+export {Group, Textarea, Search};
 export default Input;
