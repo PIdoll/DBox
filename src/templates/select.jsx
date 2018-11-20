@@ -4,7 +4,6 @@ import Select from 'components/select'
 import Spin from 'components/spin'
 
 const {Option, OptGroup} = Select;
-
 class select extends React.Component {
   constructor(props) {
     super(props);
