@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
-import Icon from 'components/icon'
+import Icon from '../../components/icon'
 
 import './style/index.js'
 
@@ -18,7 +18,7 @@ export default class Button extends React.Component {
   	}
 	static propTypes = {
 	    type: PropTypes.string,
-	    shape: PropTypes.oneOf(['circle', 'circle-outline']),
+	    shape: PropTypes.oneOf(['circle', 'circle-outline', 'square']),
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
@@ -68,7 +68,6 @@ export default class Button extends React.Component {
 			[`${prefixCls}-text`]: text,
 			[`${prefixCls}-block`]: block,
 			[className]: className
-
 		})
 	const iconType = loading ? 'loading' : icon;
 	const kids = (children || children === 0)

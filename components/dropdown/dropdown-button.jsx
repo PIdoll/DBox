@@ -14,8 +14,6 @@ export default class DropdownButton extends React.Component {
       visible: flag
     });
   };
-  changeValue = () => {
-  }
   onClickChange = (e) => {
     this.setState({
       visible: e.item.props.isSelected
@@ -23,7 +21,6 @@ export default class DropdownButton extends React.Component {
   }
   static defaultProps = {
     placement: 'bottomLeft',
-    type: '',
     prefixCls: 'idoll-dropdown-button'
   };
   render() {
@@ -40,17 +37,23 @@ export default class DropdownButton extends React.Component {
       placement,
       getPopupContainer,
     };
+    const dropdownClassName = classNames({
+      className,
+      placement: 'bottomLeft',
+      [prefixCls]: true,
+      [`${prefixCls}-disabled`]: disabled
+  });
     if ('visible' in this.props) {
       dropdownProps.visible = visible;
     }
     return (
       <ButtonGroup
         {...restProps}
-        className={classNames(prefixCls, className)}
+        className={dropdownClassName}
       >
-        <Dropdown onOverlayClick={this.onClickChange} overlayClassName={`idoll-size-${size}`} {...dropdownProps} onVisibleChange={this.onChange}>
-          <Button onClick={this.changeValue} type={type} size={size} disabled={disabled}>
-            {children}{this.state.visible === true ? <Icon type='up' /> : <Icon type='down' />}
+        <Dropdown onOverlayClick={this.onClickChange} disabled={disabled} {...dropdownProps} onVisibleChange={this.onChange}>
+          <Button type={type} size={size} disabled={disabled}>
+            {children}{<Icon type='down' />}
           </Button>
         </Dropdown>
       </ButtonGroup>

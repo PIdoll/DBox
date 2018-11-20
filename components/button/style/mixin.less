@@ -85,7 +85,7 @@
   .button-color(@color; @background; @border);
 
   &:hover {
-    .button-color(@background; @color; @border);
+    .button-color(@background; @color;  @color);
   }
   &:focus {
     .button-color(@color; @background; @error-Pressed);
@@ -112,7 +112,17 @@
     .button-color(~`colorPalette("@{color}", 7)`; transparent; ~`colorPalette("@{color}", 7)`);
   }
 
-  .button-disabled();
+  // 幽灵按钮禁用状态设置
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      .button-color(@text-color-disable-dark; @btn-disable-bg; @text-color-disable-dark);
+    }
+  }
 }
 
 // 按钮组
@@ -291,7 +301,7 @@
 
   &.@{btnClassName}-lg {
     .square(@btn-circle-size-lg);
-    .button-size(@btn-circle-size-lg; 0; @btn-font-size-lg + 2px; 50%);
+    .button-size(@btn-circle-size-lg; 0; @btn-font-size-lg + 4px; 50%);
   }
 
   &.@{btnClassName}-sm {
@@ -300,6 +310,21 @@
   }
 }
 
+// 正方形
+.btn-square(@btnClassName: btn){
+  .square(@btn-circle-size);
+  .button-size(@btn-circle-size; 0; @font-size-base + 2px;  @btn-border-radius-base);
+
+  &.@{btnClassName}-lg {
+    .square(@btn-circle-size-lg);
+    .button-size(@btn-circle-size-lg; 0; @btn-font-size-lg + 4px; @btn-border-radius-base);
+  }
+
+  &.@{btnClassName}-sm {
+    .square(@btn-circle-size-sm);
+    .button-size(@btn-circle-size-sm; 0; @font-size-base - 2px; @btn-border-radius-base);
+  }
+}
 // 垂直排列的 button groups styl
 // --------------------------------------------------
 .btn-group(@btnClassName: btn) {

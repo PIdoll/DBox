@@ -31,6 +31,7 @@
     border-radius: @border-radius-base;
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
     padding: 12px 16px;
+    min-width: 200px;
   }
   // 标题
   &-title {
@@ -44,6 +45,7 @@
     color: @popover-color;
     line-height: 22px;
   }
+
   // popover箭头与popover的偏移
   &-placement-top,
   &-placement-topLeft,
@@ -157,7 +159,7 @@
   }
 
   &-message {
-    padding: 12px 0 16px;
+    padding: 0px 0 16px;
     font-size: @font-size-base;
     color: @popover-color;
     > .@{iconfont-css-prefix} {
@@ -172,17 +174,38 @@
 
   &-buttons {
     text-align: right;
-    margin-bottom: 4px;
     button {
       margin-left: 8px;
     }
   }
 }
 
+.demo-popover div.placement {
+  margin-left: 150px;
+}
+
 
 #main-container {
   #demoPopover.h1 {
     margin-top: 50px;
+  }
+}
+
+
+#main-container {
+  #popconfirm a{
+    color: @error-color  
+  }
+
+  #popconfirm a:hover{
+    color: @error-Hover  
+  }
+
+  #popconfirm a:focus{
+    color: @error-Pressed  
+  }
+  #popconfirm a:active{
+    color: @error-Pressed   
   }
 }
 
