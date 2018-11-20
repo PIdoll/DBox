@@ -235,23 +235,20 @@
 }
 .idoll-pagination-options-size-changer .idoll-select-selection {
   height: 32px;
-  padding: 5px 8px;
+  padding: 4px 7px;
 }
 .idoll-pagination-options-size-changer .idoll-select-selection__rendered {
-  height: 20px;
-  line-height: 20px;
+  height: 21px;
+  line-height: 21px;
   padding: 0;
   padding-left: 0;
   padding-right: 20px;
   font-weight: 400;
 }
-.idoll-pagination-options-size-changer .idoll-select-selection-selected-value {
-  min-width: 55px;
-}
 .idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-arrow {
   font-size: 16px;
   top: 50%;
-  transform: translateY(-10%);
+  transform: translateY(-5%);
 }
 .idoll-pagination-options-quick-jumper {
   display: inline-block;
@@ -383,7 +380,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-arrow,
 .idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-arrow {
   top: 50%;
-  transform: translateY(-10%);
+  transform: translateY(5%);
   font-size: 12px;
 }
 .idoll-pagination.mini li.idoll-pagination-item {
