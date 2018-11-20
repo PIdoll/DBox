@@ -232,6 +232,7 @@
                 &__rendered {
                    height: 20px;
                    line-height: 20px;
+                   padding: 0;
                    padding-left: 0; 
                    padding-right: 20px;
                    font-weight: 400;
@@ -307,16 +308,17 @@
             div.@{pagination-prefix-cls}-options-size-changer,.idoll-select-sm {
                 .idoll-select-selection {
                     height:  @pagination-item-size-sm;
-                    padding: 2px 8px;
+                    padding: 1px 7px;
                         .idoll-select-selection__rendered {
+                            padding: 0;
                             padding-right: 16px;
-                            height: 18px;
-                            line-height: 18px;
+                            height: 20px;
+                            line-height: 20px;
                             font-weight: 400;
                         }
                         .idoll-select-arrow {
                             top: 50%;
-                            transform: translateY(10%);
+                            transform: translateY(-10%);
                             font-size: 12px;
                         }
                 }

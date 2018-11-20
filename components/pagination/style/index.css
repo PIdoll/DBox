@@ -240,6 +240,7 @@
 .idoll-pagination-options-size-changer .idoll-select-selection__rendered {
   height: 20px;
   line-height: 20px;
+  padding: 0;
   padding-left: 0;
   padding-right: 20px;
   font-weight: 400;
@@ -276,23 +277,22 @@
   width: 60px;
 }
 .idoll-pagination-options-quick-jumper input::-moz-placeholder {
-  color: #bfbfbf;
+  color: rgba(0, 0, 0, 0.25);
   opacity: 1;
 }
 .idoll-pagination-options-quick-jumper input:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: rgba(0, 0, 0, 0.25);
 }
 .idoll-pagination-options-quick-jumper input::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: rgba(0, 0, 0, 0.25);
 }
 .idoll-pagination-options-quick-jumper input:hover {
-  border-color: #42c69e;
+  border-color: #42C69E;
   border-right-width: 1px !important;
 }
 .idoll-pagination-options-quick-jumper input:focus {
-  border-color: #42c69e;
+  border-color: #13B886;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(19, 184, 134, 0.2);
   border-right-width: 1px !important;
 }
 .idoll-pagination-options-quick-jumper input[disabled],
@@ -300,11 +300,11 @@ fieldset[disabled] .idoll-pagination-options-quick-jumper input {
   background-color: #F8F9FC;
   opacity: 1;
   cursor: not-allowed;
-  color: #ccc;
+  color: rgba(0, 0, 0, 0.25);
 }
 .idoll-pagination-options-quick-jumper input[disabled]:hover,
 fieldset[disabled] .idoll-pagination-options-quick-jumper input:hover {
-  border-color: #e8e8e8;
+  border-color: #E2E2E2;
   border-right-width: 1px !important;
 }
 textarea.idoll-pagination-options-quick-jumper input {
@@ -370,19 +370,20 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection,
 .idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection {
   height: 24px;
-  padding: 2px 8px;
+  padding: 1px 7px;
 }
 .idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-selection__rendered,
 .idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-selection__rendered {
+  padding: 0;
   padding-right: 16px;
-  height: 18px;
-  line-height: 18px;
+  height: 20px;
+  line-height: 20px;
   font-weight: 400;
 }
 .idoll-pagination.mini li.idoll-pagination-options div.idoll-pagination-options-size-changer .idoll-select-selection .idoll-select-arrow,
 .idoll-pagination.mini li.idoll-pagination-options .idoll-select-sm .idoll-select-selection .idoll-select-arrow {
   top: 50%;
-  transform: translateY(10%);
+  transform: translateY(-10%);
   font-size: 12px;
 }
 .idoll-pagination.mini li.idoll-pagination-item {
