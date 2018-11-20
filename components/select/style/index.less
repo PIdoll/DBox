@@ -28,6 +28,7 @@
     &:before {
       display: block;
       .iconfont-font("\e92c");
+      color: @text-color-disable;
     }
     &:hover {
       color: #999;
@@ -65,6 +66,7 @@
       &:before {
         content: '\e92c';
         transition: transform 0.2s ease;
+        color: @text-color-disable;
       }
   }
 
@@ -176,6 +178,7 @@
     .@{select-prefix-cls}-arrow:before {
       content: '\e938';
       transition: transform 0.2s ease;
+      color: @text-color-disable;
     }
   }
 
@@ -457,7 +460,6 @@
     }
 
     background-color: white;
-    border: 1px solid @border-color-base;
     box-shadow: @box-shadow-base;
     border-radius: @border-radius-base;
     box-sizing: border-box;
@@ -600,3 +602,12 @@
       }
     }
   }
+
+.@{select-prefix-cls}-dropdown.small {
+  .@{select-prefix-cls}-dropdown-menu-item {
+    font-size: @font-size-sm;
+    height: @select-height-sm ;
+    padding: 1px 7px;
+    line-height:  @select-height-sm ;
+  }
+}
