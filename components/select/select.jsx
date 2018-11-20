@@ -49,6 +49,7 @@ export default class Select extends React.Component {
       combobox: isCombobox,
     };
 
+    size = size === 'small' ? 'small' : null;
     return (
       <RcSelect {...this.props}
         {...modeConfig}

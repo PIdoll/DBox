@@ -37,15 +37,21 @@ export default class DropdownButton extends React.Component {
       placement,
       getPopupContainer,
     };
+    const dropdownClassName = classNames({
+      className,
+      placement: 'bottomLeft',
+      [prefixCls]: true,
+      [`${prefixCls}-disabled`]: disabled
+  });
     if ('visible' in this.props) {
       dropdownProps.visible = visible;
     }
     return (
       <ButtonGroup
         {...restProps}
-        className={classNames(prefixCls, className)}
+        className={dropdownClassName}
       >
-        <Dropdown onOverlayClick={this.onClickChange} {...dropdownProps} onVisibleChange={this.onChange}>
+        <Dropdown onOverlayClick={this.onClickChange} disabled={disabled} {...dropdownProps} onVisibleChange={this.onChange}>
           <Button type={type} size={size} disabled={disabled}>
             {children}{<Icon type='down' />}
           </Button>
