@@ -48,7 +48,7 @@ const text = <span>标题</span>;
 <div className='placement'>
   <div style={{ marginLeft: buttonWidth, whiteSpace: 'nowrap' }}>
     <Popover placement='topLeft' title={text} content={content} trigger='click'>
-      <Button>T L</Button>
+      <Button> T L </Button>
     </Popover>
     <Popover placement='top' title={text} content={content} trigger='click'>
       <Button>Top</Button>
@@ -209,7 +209,7 @@ handleClickChange = (visible) => {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| content | 卡片内容 | string\|ReactNode | 无 |
+| content | 卡片内容 | string\ReactNode | 无 |
 
 更多属性请参考 [Tooltip]
 
