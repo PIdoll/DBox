@@ -15,15 +15,17 @@ English： Select
 
 需要应用到下拉选项时，用于替换原生的选择器。
 
-```html
+```jsx
 
-import Select from './Components/select';
 
 const Option = Select.Option;
 
-<Select>
+<Select >
     <Option value='apple'>Apple</Option>
-<Select>
+    <Option value='apple'>Apple</Option>
+    <Option value='apple'>Apple</Option>
+    <Option value='apple'>Apple</Option>
+</Select>
 
 ```
 

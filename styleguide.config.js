@@ -21,6 +21,11 @@ module.exports = {
     sidebarWidth: 240
   },
   styles: {
+    StyleGuide: {
+      '@global body': {
+        border: '2px solid red'
+      }
+    },
 		Playground: {
 			preview: {
 				padding: '40px 20px',
@@ -94,13 +99,14 @@ module.exports = {
 				fontSize: 14,
 			},
 		},
-	},
+  },
   getComponentPathLine: (componentPath) => {
     const dirname = path.dirname(componentPath, '.jsx')
     const name = dirname.split('/').slice(-1)[0]
     const componentName = upperFirst(camelCase(name))
     return `import {${componentName}} from Dbox`
   },
+  pagePerSection: true,
   sections: [
     {
       sections: [
@@ -226,6 +232,11 @@ module.exports = {
           loaders: 'babel-loader'
         }
       ]
+    },
+    resolve: {
+      alias: {
+        'react-styleguidist': path.join(__dirname, '../../')
+      }
     }
   }
 }

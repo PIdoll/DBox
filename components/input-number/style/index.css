@@ -23,7 +23,7 @@
   display: inline-block;
   border: 1px solid #E2E2E2;
   border-radius: 3px;
-  width: 90px;
+  width: 120px;
 }
 .idoll-input-number::-moz-placeholder {
   color: rgba(0, 0, 0, 0.25);
@@ -105,11 +105,11 @@ textarea.idoll-input-number {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 12px;
+  line-height: 10px;
   user-select: none;
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   transition: all 0.1s linear;
   display: compact;
   font-size: 12px;

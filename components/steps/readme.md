@@ -4,54 +4,42 @@
 
 ##### **通用步骤条**
 ```jsx
-const Step = Steps.Step;
 <Steps current={1} >
-  <Step title='提交完成' description='这里是一段描述文字，最多不超过两行' />
-  <Step title='正在处理' description='这里是一段描述文字，最多不超过两行' />
-  <Step title='等待处理' description='这里是一段描述文字，最多不超过两行' />
-  <Step title='完成' description='这里是一段描述文字，最多不超过两行' />
+  <Steps.Step title='提交完成' description='这里是一段描述文字，最多不超过两行' />
+  <Steps.Step title='正在处理' description='这里是一段描述文字，最多不超过两行' />
+  <Steps.Step title='等待处理' description='这里是一段描述文字，最多不超过两行' />
+  <Steps.Step title='完成' description='这里是一段描述文字，最多不超过两行' />
 </Steps>
 ```
 
 ##### **小尺寸步骤条**
 ```jsx
-const Step = Steps.Step;
-<Steps current={2} size="small">
-  <Step title='Finished' description='this is a description' />
-  <Step title='In Progress' description='this is a description' />
-  <Step title='Waiting' description='this is a description' />
+<Steps size='small' current={2}>
+  <Steps.Step title='示例文字' />
+  <Steps.Step title='示例文字' />
+  <Steps.Step title='等待处理' />
+  <Steps.Step title='完成' />
 </Steps>
 ```
 
 ##### **点状步骤条**
 ```jsx
-const Step = Steps.Step;
-<Steps size='small' current={2}>
-  <Step title='示例文字' />
-  <Step title='示例文字' />
-  <Step title='等待处理' />
-  <Step title='完成' />
+<Steps progressDot current={1}>
+  <Steps.Step title='步骤一' description='这是一段描述文字' />
+  <Steps.Step title='步骤二' description='这是一段描述文字' />
+  <Steps.Step title='步骤三' description='这是一段描述文字' />
+  <Steps.Step title='步骤四' description='这是一段描述文字' />
 </Steps>
 ```
 
 ##### **自定义点状步骤条**
 ```jsx
-const Step = Steps.Step;
-<Steps progressDot current={1}>
-  <Step title='步骤一' description='这里是一段描述性文字' />
-  <Step title='步骤二' description='这里是一段描述性文字' />
-  <Step title='步骤三' description='这里是一段描述性文字' />
-  <Step title='步骤四' description='这里是一段描述性文字' />
-</Steps>
-```
 
-##### **步骤切换**
-```jsx
-const Step = Steps.Step;
-<Steps current={2}>
-  <Step title='Finished' description='this is a description' />
-  <Step title='In Progress' description='this is a description' />
-  <Step title='Waiting' description='this is a description' />
+<Steps progressDot current={1}>
+  <Steps.Step title='步骤一' description='这里是一段描述性文字' />
+  <Steps.Step title='步骤二' description='这里是一段描述性文字' />
+  <Steps.Step title='步骤三' description='这里是一段描述性文字' />
+  <Steps.Step title='步骤四' description='这里是一段描述性文字' />
 </Steps>
 ```
 

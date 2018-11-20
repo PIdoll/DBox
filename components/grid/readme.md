@@ -20,7 +20,7 @@ english: Grid
 
 ## 概述
 
-```html
+```jsx
 <Row gutter='12' type='flex' align='top' justify='start'>
    <Col span='12' push='2' offset='3' />
 </Row>
