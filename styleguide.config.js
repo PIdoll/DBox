@@ -182,11 +182,11 @@ module.exports = {
           name: 'Data Display',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
-         path.resolve(__dirname, './components/badge/badge.jsx'),
+         path.resolve(__dirname, './components/badge/index.jsx'),
             path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
             path.resolve(__dirname, './components/list/list.jsx'),
-         path.resolve(__dirname, './components/popover/popover.jsx'),
+         path.resolve(__dirname, './components/popover/index.jsx'),
         //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/tabs.jsx'),
