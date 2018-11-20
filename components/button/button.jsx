@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
-import Icon from 'components/icon'
+import Icon from '../../components/icon'
 
 import './style/index.js'
 

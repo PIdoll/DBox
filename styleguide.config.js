@@ -4,8 +4,8 @@ const { version } = require('./package.json')
 const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
-  title: `Dbox Pro ${version}`,
-  serverPort: 9000,
+  title: `Dbox UI ${version}`,
+  serverPort: 9001,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
