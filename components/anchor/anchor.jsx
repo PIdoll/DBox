@@ -5,7 +5,8 @@ import classNames from 'classnames'
 import addEventListener from 'rc-util/lib/Dom/addEventListener'
 
 import getScroll from '../_util/getScroll'
-import getRequestAnimationFrame from '../_util/getRequestAnimationFrame'
+// import getRequestAnimationFrame from '../_util/getRequestAnimationFrame'
+import raf from 'raf';
 import AnchorLink from './anchorLink'
 import Affix from 'components/affix'
 
