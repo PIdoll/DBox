@@ -161,7 +161,7 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
             path.resolve(__dirname, './components/cascader/cascader.jsx'),
-        //  path.resolve(__dirname, './components/input/input.jsx'),
+            path.resolve(__dirname, './components/input/index.jsx'),
         //  path.resolve(__dirname, './components/inputNumber/inputNumber.jsx'),
             path.resolve(__dirname, './components/select/select.jsx'),
         //  path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
