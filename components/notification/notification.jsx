@@ -1,99 +1,198 @@
+
 import React from 'react';
 import Notification from 'rc-notification';
-import Icon from '../icon';
+import Icon from '../icon/index';
+import './style/index';
 
-let defaultTop = 24;
-let notificationInstance;
-let defaultDuration = 4.5;
+let defaultDuration = 3; // 默认自动关闭延时 3s
+let defaultTop; // 默认提示框的高度
+let messageInstance;
+let key = 1;
+let prefixCls = 'idoll-notification';
+let transitionName = 'move-up'; // 提示框关闭动画名称
+let getContainer; // 接收一个函数，该函数的返回的HTML节点将作为消息通知的容器
+let maxCount; // 最大显示数, 超过限制时，最早的消息会被自动关闭
 
-function getNotificationInstance() {
-  if (notificationInstance) {
-    return notificationInstance;
+function getMessageInstance (callback) {
+  if (messageInstance) {
+    callback(messageInstance);
+    return;
   }
-  notificationInstance = Notification.newInstance({
-    prefixCls: 'ant-notification',
-    style: {
-      top: defaultTop,
-      right: 0,
-    },
-  });
-  return notificationInstance;
+  Notification.newInstance({
+    prefixCls,
+    transitionName,
+    style: { top: defaultTop },
+    getContainer,
+    maxCount
+  }, (instance) => {
+    if (messageInstance) {
+      callback(messageInstance);
+      return;
+    }
+    messageInstance = instance;
+    callback(instance);
+  })
 }
 
-function notice(args) {
-  const prefixCls = args.prefixCls || 'ant-notification-notice';
-
-  let duration;
-  if (args.duration === undefined) {
+function notice (content, duration = defaultDuration, type, onClose, icon, normal) {
+  if (typeof onClose === 'boolean') {
+    normal = onClose;
+  }
+  if (typeof duration === 'function') {
+    onClose = duration;
     duration = defaultDuration;
-  } else {
-    duration = args.duration;
   }
-
-  let iconType = '';
-  switch (args.icon) {
-    case 'success':
-      iconType = 'check-circle-o';
-      break;
-    case 'info':
-      iconType = 'info-circle-o';
-      break;
-    case 'error':
-      iconType = 'cross-circle-o';
-      break;
-    case 'warning':
-      iconType = 'exclamation-circle-o';
-      break;
-    default:
-      iconType = 'info-circle';
+  if (typeof duration === 'boolean') {
+    normal = duration;
+    duration = defaultDuration;
   }
+  if (typeof icon === 'boolean') {
+    normal = icon;
+    icon = '';
+  }
+  const iconType = ({
+    info: 'warning-circle',
+    success: 'check-circle',
+    error: 'close-circle',
+    warning: 'warning-circle',
+    loading: 'warning-circle' // 加载中....loading图标
+  })[type];
 
-  getNotificationInstance().notice({
-    content: (
-      <div className={`${prefixCls}-content ${args.icon ? `${prefixCls}-with-icon` : ''}`}>
-        {args.icon ? <Icon className={`${prefixCls}-icon ${prefixCls}-icon-${args.icon}`} type={iconType} /> : null}
-        <div className={`${prefixCls}-message`}>{args.message}</div>
-        <div className={`${prefixCls}-description`}>{args.description}</div>
-        {args.btn ? <span className={`${prefixCls}-btn`}>{args.btn}</span> : null}
-      </div>
-    ),
-    duration,
-    closable: true,
-    onClose: args.onClose,
-    key: args.key,
-    style: {},
+  const target = key++;
+  const closePromise = new Promise((resolve) => {
+    const callback = () => {
+      if (typeof onClose === 'function') {
+        onClose();
+      }
+      return resolve(true);
+    };
+    getMessageInstance((instance) => {
+      const iconNode = <Icon type={iconType} />;
+      instance.notice({
+        key: target,
+        duration,
+        style: {},
+        content: (
+          <div className={`${prefixCls}-custom-content ${type && !normal ? `${prefixCls}-${type}` : `content-${type}`}`}>
+            {icon || (iconType ? iconNode : '')}
+            <p className='title'>我是标题<Icon type='close' onClick={callback} /></p>
+            <p>{content}</p>
+          </div>
+        ),
+        onClose: callback,
+      });
+    });
   });
+  const result = () => {
+    if (messageInstance) {
+      messageInstance.removeNotice(target);
+    }
+  };
+  result.then = (filled, rejected) => closePromise.then(filled, rejected);
+  result.promise = closePromise;
+  return result;
 }
 
-const notification = {
-  open(args) {
-    notice(args);
-  },
-  close(key) {
-    if (notificationInstance) {
-      notificationInstance.removeNotice(key);
-    }
-  },
+const api = {
+  open: notice,
   config(options) {
-    if ('top' in options) {
+    if (options.top !== undefined) {
       defaultTop = options.top;
+      messageInstance = null;
     }
-    if ('duration' in options) {
+    if (options.duration !== undefined) {
       defaultDuration = options.duration;
+    }
+    if (options.prefixCls !== undefined) {
+      prefixCls = options.prefixCls;
+    }
+    if (options.getContainer !== undefined) {
+      getContainer = options.getContainer;
+    }
+    if (options.transitionName !== undefined) {
+      transitionName = options.transitionName;
+      messageInstance = null;
+    }
+    if (options.maxCount !== undefined) {
+      maxCount = options.maxCount;
+      messageInstance = null;
     }
   },
   destroy() {
-    if (notificationInstance) {
-      notificationInstance.destroy();
-      notificationInstance = null;
+    if (messageInstance) {
+      messageInstance.destroy();
+      messageInstance = null;
     }
-  },
+  }
 };
 
-['success', 'info', 'warning', 'error'].forEach((type) => {
-  notification[type] = (args) => notification.open({ ...args, icon: type });
+const messageType = ['success', 'info', 'warning', 'error', 'loading'];
+messageType.forEach((type) => {
+  api[type] = (content, duration, onClose, normal) => {
+    if (typeof onClose === 'boolean') {
+      normal = onClose;
+    }
+    if (typeof duration === 'function') {
+      onClose = duration;
+      duration = undefined;
+    }
+    if (typeof duration === 'boolean') {
+      normal = duration;
+      duration = undefined;
+    }
+    return api.open({ content, duration: duration, type, onClose, normal });
+  }
 });
 
-notification.warn = notification.warning;
-
-export default notification;
+export default {
+  success(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'success', onClose, icon, normal)
+  },
+  error(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'error', onClose, icon, normal);
+  },
+  info(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'info', onClose, icon, normal)
+  },
+  warning(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'warning', onClose, icon, normal);
+  },
+  warn(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'warning', onClose, icon, normal);
+  },
+  loading(content, duration, onClose, icon, normal) {
+    return notice(content, duration, 'loading', onClose, icon, normal);
+  },
+  open({content, duration, onClose, icon, normal}) {
+    return notice(content, duration, 'info', onClose, icon, normal);
+  },
+  config(options) {
+    if (options.top !== undefined) {
+      defaultTop = options.top;
+      messageInstance = null;
+    }
+    if (options.duration !== undefined) {
+      defaultDuration = options.duration;
+    }
+    if (options.prefixCls !== undefined) {
+      prefixCls = options.prefixCls;
+    }
+    if (options.getContainer !== undefined) {
+      getContainer = options.getContainer;
+    }
+    if (options.transitionName !== undefined) {
+      transitionName = options.transitionName;
+      messageInstance = null;
+    }
+    if (options.maxCount !== undefined) {
+      maxCount = options.maxCount;
+      messageInstance = null;
+    }
+  },
+  destroy() {
+    if (messageInstance) {
+      messageInstance.destroy();
+      messageInstance = null;
+    }
+  }
+};
