@@ -182,7 +182,7 @@ module.exports = {
           name: 'Data Display',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
-        //  path.resolve(__dirname, './components/badge/badge.jsx'),
+            path.resolve(__dirname, './components/badge/badge.jsx'),
             path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
             path.resolve(__dirname, './components/list/list.jsx'),
