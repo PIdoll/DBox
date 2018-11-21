@@ -255,7 +255,7 @@ function Home() {
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/notification'>
-          <div className='name'>通州提醒框</div>
+          <div className='name'>通知确认框</div>
           <div className='info'>Notification</div>
         </NavLink>
       </div>

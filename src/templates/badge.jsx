@@ -71,17 +71,17 @@ export default class BadgeView extends React.Component {
           <Icon type='phone' />
         </Badge>
         <Badge dot>
-          <a href='www.baidu.com' target='_blank'>一些通知</a>
+          <a href='https://www.baidu.com' target='_blank'>一些通知</a>
         </Badge>
         <h1>可点击</h1>
         <p style={{ marginBottom: '10px' }}>用a标签包裹即可</p>
-        <a href='javascript:;'>
+        <a href='https://www.baidu.com'>
           <Badge count={8}>
             <span className='example' />
           </Badge>
         </a>
         <h1>状态点</h1>
-        <span>用于表示状态的小圆点。</span>
+        <span>用于表示状态的小圆点</span>
         <div style={{ position: 'relative', marginLeft: '10px' }}>
           <Badge dot status='success' />
           <Badge dot status='error' style={{ marginLeft: '20px' }} />

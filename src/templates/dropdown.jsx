@@ -5,8 +5,8 @@ import Button from 'components/button'
 import Icon from 'components/icon'
 import './dropdown.less'
 const ButtonGroup = Button.Group;
-const DropdownButton = Dropdown.Button;
-const DropdownNormal = Dropdown.Normal;
+const DropdownButton = Dropdown.DropdownButton;
+const DropdownNormal = Dropdown.DropdownNormal;
 
 function handleButtonClick(e) {
   console.info('click left button', e);
