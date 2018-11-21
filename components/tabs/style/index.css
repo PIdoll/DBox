@@ -11,19 +11,17 @@
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab {
   margin: 0;
   border: 1px solid #E2E2E2;
-  border-bottom: 0;
   border-radius: 3px 3px 0 0;
   background: #fafafa;
   margin-right: 4px;
-  padding: 0 16px;
+  padding: 11px 15px 11px 15px;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  line-height: 44px;
+  line-height: 22px;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active {
   background: #fff;
   border-color: #E2E2E2;
   color: #13B886;
-  padding-bottom: 1px;
   border-bottom-color: #fff;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active:hover {
@@ -63,14 +61,14 @@
   line-height: 46px;
 }
 .idoll-tabs-extra-content .idoll-tabs-new-tab {
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
+  width: 24px;
+  height: 24px;
+  line-height: 22px;
   text-align: center;
   cursor: pointer;
   border-radius: 2px;
   border: 1px solid #E2E2E2;
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.65);
   transition: all 0.3s;
 }
