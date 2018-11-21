@@ -66,10 +66,10 @@ export default class StepsView extends React.Component {
 
         <h1 className='h1'>3.点状步骤条</h1>
         <Steps progressDot current={1}>
-          <Step title='步骤一' description='这里是一段描述性文字' />
-          <Step title='步骤二' description='这里是一段描述性文字' />
-          <Step title='步骤三' description='这里是一段描述性文字' />
-          <Step title='步骤四' description='这里是一段描述性文字' />
+          <Step title='步骤一' description='这是一段描述文字' />
+          <Step title='步骤二' description='这是一段描述文字' />
+          <Step title='步骤三' description='这是一段描述文字' />
+          <Step title='步骤四' description='这是一段描述文字' />
         </Steps>
 
         <h1 className='h1'>4.自定义点状步骤条</h1>

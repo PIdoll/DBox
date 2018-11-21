@@ -8,7 +8,7 @@ import getScroll from '../_util/getScroll'
 // import getRequestAnimationFrame from '../_util/getRequestAnimationFrame'
 import raf from 'raf';
 import AnchorLink from './anchorLink'
-import Affix from 'components/affix'
+import Affix from '../../components/affix'
 
 import './style/index.jsx'
 
