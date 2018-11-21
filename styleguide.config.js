@@ -148,6 +148,7 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/affix/affix.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
+            path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
             path.resolve(__dirname, './components/steps/steps.jsx'),
             path.resolve(__dirname, './components/pagination/pagination.jsx'),
@@ -182,15 +183,15 @@ module.exports = {
           name: 'Data Display',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
-         path.resolve(__dirname, './components/badge/index.jsx'),
+            path.resolve(__dirname, './components/badge/index.jsx'),
             path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
             path.resolve(__dirname, './components/list/list.jsx'),
-         path.resolve(__dirname, './components/popover/index.jsx'),
+            path.resolve(__dirname, './components/popover/index.jsx'),
         //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/tabs.jsx'),
-            path.resolve(__dirname, './components/tag/tag.jsx'),
+            path.resolve(__dirname, './components/tag/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
