@@ -76,6 +76,7 @@ const onClose = () => setState({onClose: true});
 #### **平滑的卸载**
 
 ```jsx
+<<<<<<< HEAD
 initialState = {
   visible: true
 }
@@ -87,6 +88,20 @@ const handleClose = () => setState({visible: false});
       closable
       afterClose={this.handleClose}/>
 </div>
+=======
+
+  initialState = {
+    visible: true,
+  }
+  handleClose = () => {
+    this.setState({ visible: false });
+  }
+<Alert
+  message='Alert Message Text'
+  type='success'
+  closable
+  afterClose={this.handleClose}/>
+>>>>>>> f-inputNumber-zb
 
 ```
 
@@ -97,6 +112,7 @@ const handleClose = () => setState({visible: false});
  <Alert message='非常长的警告文本非常长的警告文本' banner closable />
  <Alert showIcon={false} message='没有图标的警告文本' banner />
  <Alert type='error' message='错误文本' banner />
+<<<<<<< HEAD
 
 ```
 
@@ -104,3 +120,6 @@ const handleClose = () => setState({visible: false});
 
 
 
+=======
+```
+>>>>>>> f-inputNumber-zb

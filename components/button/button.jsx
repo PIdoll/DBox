@@ -7,8 +7,12 @@ import { findDOMNode } from 'react-dom'
 =======
 import { findDOMNode } from 'react-dom';
 
+<<<<<<< HEAD
 import Icon from 'components/icon'
 >>>>>>> develop
+=======
+import Icon from '../../components/icon'
+>>>>>>> f-inputNumber-zb
 
 import './style/index.js'
 

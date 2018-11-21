@@ -1,17 +1,21 @@
 const path = require('path');
-
 const { version } = require('./package.json')
 const {camelCase, upperFirst} = require('lodash');
 
+
+
 module.exports = {
-  title: `Dbox Pro ${version}`,
-  serverPort: 9000,
+  title: `Dbox UI ${version}`,
+  serverPort: 9002,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
   },
+  template: {
+    index: path.resolve(__dirname, 'styleguide/index.html')
+},
   theme: {
     baseBackground: '#fdfdfc',
 		link: '#274e75',
@@ -72,16 +76,62 @@ module.exports = {
           fontWeight: '600',
         },
         '& td': {
-          border: '1px solid #eaeefb',
-          padding: '10px',
-        }
+          border: '1px solid #eaeefb !important',
+          padding: '10px !important',
+        },
+        '& td:nth-child(1)': {
+          width: '15%',
+        },
+        '& td:nth-child(2)': {
+          width: '40%',
+        },
+        '& td:nth-child(3)': {
+          width: '30%',
+        },
+        '& td:nth-child(4)': {
+          width: '15%',
+        },
+      }
+    },
+    ReactComponent: {
+      tabButtons: {
+        display: 'none'
+      }
+    },
+    SectionHeading: {
+      sectionName: {
+        paddingBottom: '8px',
+        borderBottom: '4px solid red',
       }
     },
     ComponentsList: {
       heading: {
         fontWeight: '700 !important',
         fontSize: '16px',
-        color: '#455a64 !important'
+        color: '#455a64 !important',
+      }
+    },
+    Heading: {
+      heading1: {
+        display: 'block',
+        position: 'relative',
+        fontWeight: 600,
+        fontSize: '36px',
+        '& > a': {
+          fontWeight: '700 !important'
+        }
+      },
+      heading2: {
+        display: 'none'
+      },
+      heading3: {
+        fontSize: '30px',
+        width: '100%',
+        lineHeight: '80px',
+        fontWeight: '600 !important',
+      },
+      toolbar: {
+        'display': 'none'
       }
     },
 		Markdown: {
@@ -94,13 +144,14 @@ module.exports = {
 				fontSize: 14,
 			},
 		},
-	},
+  },
   getComponentPathLine: (componentPath) => {
     const dirname = path.dirname(componentPath, '.jsx')
     const name = dirname.split('/').slice(-1)[0]
     const componentName = upperFirst(camelCase(name))
     return `import {${componentName}} from Dbox`
   },
+  pagePerSection: true,
   sections: [
     {
       sections: [
@@ -138,16 +189,19 @@ module.exports = {
         {
           name: 'General',
           components: () => ([
-            path.resolve(__dirname, './components/button/button.jsx'),
-            path.resolve(__dirname, './components/button/button-group.jsx'),
+            path.resolve(__dirname, './components/button/index.jsx'),
+            // path.resolve(__dirname, './components/button/button-group.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
           name: 'Navigation',
+          codeSamples: 'hide',
+          propsMethods: 'hide',
           components: () => ([
             path.resolve(__dirname, './components/affix/affix.jsx'),
-            path.resolve(__dirname, './components/dropdown/dropdown.jsx'),
+            path.resolve(__dirname, './components/dropdown/index.jsx'),
+            path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
             path.resolve(__dirname, './components/steps/steps.jsx'),
             path.resolve(__dirname, './components/pagination/pagination.jsx'),
@@ -160,10 +214,10 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
             path.resolve(__dirname, './components/cascader/cascader.jsx'),
-        //  path.resolve(__dirname, './components/input/input.jsx'),
-        //  path.resolve(__dirname, './components/inputNumber/inputNumber.jsx'),
-            path.resolve(__dirname, './components/select/select.jsx'),
-        //  path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
+            path.resolve(__dirname, './components/input/index.jsx'),
+            // path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
+            path.resolve(__dirname, './components/select/index.jsx'),
+           // path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
             path.resolve(__dirname, './components/date-picker/index.jsx'),
             path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
@@ -182,15 +236,15 @@ module.exports = {
           name: 'Data Display',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
-        //  path.resolve(__dirname, './components/badge/badge.jsx'),
+            path.resolve(__dirname, './components/badge/index.jsx'),
             path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
             path.resolve(__dirname, './components/list/list.jsx'),
-        //  path.resolve(__dirname, './components/popover/popover.jsx'),
+            path.resolve(__dirname, './components/popover/index.jsx'),
         //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/tabs.jsx'),
-            path.resolve(__dirname, './components/tag/tag.jsx'),
+            path.resolve(__dirname, './components/tag/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
@@ -224,8 +278,13 @@ module.exports = {
         {
           test: /\.jsx$/,
           loaders: 'babel-loader'
-        }
+        },
       ]
+    },
+    resolve: {
+      alias: {
+        'react-styleguidist': path.join(__dirname, '../../')
+      }
     }
   }
 }

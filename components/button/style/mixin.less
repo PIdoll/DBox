@@ -171,14 +171,14 @@
   background-image: none;
   border: @border-width-base @border-style-base transparent;
   white-space: nowrap;
-  line-height: 1.2;
+  line-height: @btn-height-base - 2 ;
   .button-size(@btn-height-base; @btn-padding-base; @font-size-base; @btn-border-radius-base);
   user-select: none;
   transition: all .3s @ease-in-out;
   position: relative;
 
   > .@{iconfont-css-prefix} {
-    line-height: 1;
+    line-height: @btn-height-base - 2 ;
   }
 
   &,
@@ -207,10 +207,18 @@
 
 
   &-lg {
+    line-height: @btn-height-lg - 2;
+    > .@{iconfont-css-prefix} {
+      line-height: @btn-height-lg - 2;
+    }
     .button-size(@btn-height-lg; @btn-padding-lg; @btn-font-size-lg; @btn-border-radius-base);
   }
 
   &-sm {
+    line-height: @btn-height-sm - 2;
+    > .@{iconfont-css-prefix} {
+      line-height: @btn-height-sm - 2;
+    }
     .button-size(@btn-height-sm; @btn-padding-sm; @btn-font-size-sm; @btn-border-radius-sm);
   }
 }

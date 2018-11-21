@@ -4,6 +4,7 @@
   "description": "react components",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "webpack-dev-server --open --config webpack.dev.js",
 <<<<<<< HEAD
     "styleguide": "styleguidist server",
@@ -11,6 +12,10 @@
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js"
 =======
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js",
+=======
+    "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
+    "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode development",
+>>>>>>> f-inputNumber-zb
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
 >>>>>>> develop
@@ -33,6 +38,7 @@
     "gregorian-calendar-format": "^4.1.0",
     "lodash": "^4.17.11",
     "moment": "^2.20.1",
+    "object.omit": "^3.0.0",
     "omit": "^1.0.1",
     "prop-types": "^15.6.0",
     "rc-animate": "^2.4.4",
@@ -42,6 +48,7 @@
     "rc-collapse": "^1.10.0",
     "rc-dialog": "^7.2.0",
     "rc-dropdown": "^2.2.0",
+    "rc-input-number": "^4.3.4",
     "rc-menu": "^7.4.16",
     "rc-notification": "^3.3.0",
     "rc-progress": "^2.2.5",
@@ -78,11 +85,11 @@
     "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
-    "eslint": "^4.12.1",
+    "eslint": "^5.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
@@ -92,7 +99,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.2.0",
     "jquery": "^1.12.3",
     "jsonml.js": "^0.1.0",
     "less": "^2.7.3",
@@ -112,7 +119,11 @@
     "style-loader": "^0.19.1",
     "transform-runtime": "0.0.0",
     "url-loader": "^0.6.2",
+<<<<<<< HEAD
     "webpack": "^4.23.1",
+=======
+    "webpack": "^4.25.1",
+>>>>>>> f-inputNumber-zb
     "webpack-bundle-analyzer": "^2.9.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
