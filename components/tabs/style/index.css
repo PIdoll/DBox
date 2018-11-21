@@ -3,7 +3,7 @@
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-nav-container {
-  height: 40px;
+  height: 46px;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-ink-bar {
   visibility: hidden;
@@ -14,16 +14,17 @@
   border-bottom: 0;
   border-radius: 3px 3px 0 0;
   background: #fafafa;
-  margin-right: 2px;
+  margin-right: 4px;
   padding: 0 16px;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  line-height: 38px;
+  line-height: 44px;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active {
   background: #fff;
   border-color: #E2E2E2;
   color: #13B886;
   padding-bottom: 1px;
+  border-bottom-color: #fff;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active:hover {
   color: #42C69E;
@@ -38,8 +39,7 @@
   color: rgba(0, 0, 0, 0.45);
   transition: all 0.3s;
   font-size: 12px;
-  margin-left: 3px;
-  margin-right: -5px;
+  margin: 0 0 0 8px;
   overflow: hidden;
   vertical-align: middle;
   width: 16px;
@@ -60,7 +60,7 @@
   opacity: 1;
 }
 .idoll-tabs-extra-content {
-  line-height: 40px;
+  line-height: 46px;
 }
 .idoll-tabs-extra-content .idoll-tabs-new-tab {
   width: 20px;
@@ -140,6 +140,9 @@
   font-size: 0;
   height: 0;
 }
+.idoll-tabs div.idoll-tabs-tab:first-child {
+  margin-left: 0;
+}
 .idoll-tabs-ink-bar {
   z-index: 1;
   position: absolute;
@@ -196,7 +199,7 @@
   background-color: transparent;
   position: absolute;
   text-align: center;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.25);
   transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0;
   pointer-events: none;
@@ -208,9 +211,13 @@
   height: 100%;
   pointer-events: auto;
 }
+.idoll-tabs-tab-prev.idoll-tabs-tab-arrow-show span:before,
+.idoll-tabs-tab-next.idoll-tabs-tab-arrow-show span:before {
+  font-size: 16px;
+}
 .idoll-tabs-tab-prev:hover,
 .idoll-tabs-tab-next:hover {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.45);
 }
 .idoll-tabs-tab-prev-icon,
 .idoll-tabs-tab-next-icon {
@@ -225,6 +232,8 @@
   transform: translate(-50%, -50%);
   text-align: center;
   text-transform: none;
+  height: 16px;
+  line-height: 16px;
 }
 .idoll-tabs-tab-prev-icon:before,
 .idoll-tabs-tab-next-icon:before {
@@ -234,6 +243,7 @@
   font-size: 12px;
   font-size: 10px \ 9;
   transform: scale(0.83333333) rotate(0deg);
+  transform: none;
 }
 :root .idoll-tabs-tab-prev-icon:before,
 :root .idoll-tabs-tab-next-icon:before {
@@ -394,7 +404,7 @@
 .idoll-tabs-vertical > .idoll-tabs-bar .idoll-tabs-tab {
   float: none;
   margin: 0 0 16px 0;
-  padding: 8px 24px;
+  padding: 12px 24px;
   display: block;
 }
 .idoll-tabs-vertical > .idoll-tabs-bar .idoll-tabs-tab:last-child {
@@ -497,17 +507,23 @@
   margin-top: 16px;
 }
 .idoll-tabs-cardTabs {
-  background-color: #ccc;
-  padding: 15px;
+  background-color: #f5f5f5;
+  padding: 24px;
+  border: none;
 }
 .idoll-tabs-cardTabs .idoll-tabs-bar {
-  border: none;
   margin: 0;
+}
+.idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container {
+  background-color: #f5f5f5;
 }
 .idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab {
   margin-right: 0;
+  background-color: #f5f5f5;
+  line-height: 22px;
+  padding: 12px 16px;
   border: none;
-  background-color: #ccc;
+  margin-right: 4px;
 }
 .idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab-active {
   background-color: #fff;

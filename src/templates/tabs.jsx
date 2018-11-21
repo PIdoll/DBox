@@ -19,8 +19,8 @@ export default class TabsView extends React.Component {
     super(props);
     this.newTabIndex = 0;
     const panes = [
-      { title: '分页 1', content: '内容 1', key: '1' },
-      { title: '分页 2', content: '内容 2', key: '2' }
+      { title: '当前分页', content: '当前分页', key: '1' },
+      { title: '可关闭分页', content: '可关闭分页', key: '2' }
     ];
     this.state = {
       mode: 'top',
@@ -38,7 +38,7 @@ export default class TabsView extends React.Component {
   add = () => {
     const panes = this.state.panes;
     const activeKey = `newTab${this.newTabIndex++}`;
-    panes.push({ title: '新分页', content: '新分页内容', key: activeKey });
+    panes.push({ title: '新增分页', content: '新增分页内容', key: activeKey });
     this.setState({panes, activeKey});
   };
   remove = (targetKey) => {
@@ -111,7 +111,7 @@ export default class TabsView extends React.Component {
           <RadioButton value='top'>水平</RadioButton>
           <RadioButton value='left'>垂直</RadioButton>
         </RadioGroup>
-        <Tabs defaultActiveKey='1' tabPosition={mode} style={{height: 220}}>
+        <Tabs defaultActiveKey='11' tabPosition={mode} style={{height: 220}}>
           <TabPane tab='分页 1' key='11'>分页 1</TabPane>
           <TabPane tab='分页 2' key='12'>分页 2</TabPane>
           <TabPane tab='分页 3' key='13'>分页 3</TabPane>
@@ -129,20 +129,20 @@ export default class TabsView extends React.Component {
         </Tabs>
         <h1 className='h1'>4.卡片式标签页容器</h1>
         <Tabs type='card'>
-          <TabPane tab='分页 1' key='25'>
-            <p>内容 1</p>
-            <p>内容 1</p>
-            <p>内容 1</p>
+          <TabPane tab='当前分页' key='25'>
+            <p>分页内容 1</p>
+            <p>分页内容 1</p>
+            <p>分页内容 1</p>
           </TabPane>
-          <TabPane tab='分页 2' key='26'>
-            <p>内容 2</p>
-            <p>内容 2</p>
-            <p>内容 2</p>
+          <TabPane tab='其他分页' key='26'>
+            <p>分页内容 2</p>
+            <p>分页内容 2</p>
+            <p>分页内容 2</p>
           </TabPane>
-          <TabPane tab='分页 3' key='27'>
-            <p>内容 3</p>
-            <p>内容 3</p>
-            <p>内容 3</p>
+          <TabPane tab='其他分页' key='27'>
+            <p>分页内容 3</p>
+            <p>分页内容 3</p>
+            <p>分页内容 3</p>
           </TabPane>
         </Tabs>
         <h1 className='h1'>5.新增和关闭</h1>
@@ -151,26 +151,26 @@ export default class TabsView extends React.Component {
         </Tabs>
         <h1 className='h1'>6.卡片式容器</h1>
         <Tabs type='cardTabs'>
-          <TabPane tab='分页 1' key='28'>
-            <p>内容 1</p>
-            <p>内容 1</p>
-            <p>内容 1</p>
+          <TabPane tab='当前分页' key='28'>
+            <p>当前分页内容 1</p>
+            <p>当前分页内容 2</p>
+            <p>当前分页内容 3</p>
           </TabPane>
-          <TabPane tab='分页 2' key='29'>
-            <p>内容 2</p>
-            <p>内容 2</p>
-            <p>内容 2</p>
+          <TabPane tab='其他分页' key='29'>
+            <p>其他分页内容 1</p>
+            <p>其他分页内容 2</p>
+            <p>其他分页内容 3</p>
           </TabPane>
-          <TabPane tab='分页 3' key='30'>
-            <p>内容 3</p>
-            <p>内容 3</p>
-            <p>内容 3</p></TabPane>
+          <TabPane tab='其他分页' key='30'>
+            <p>其他分页内容 1</p>
+            <p>其他分页内容 2</p>
+            <p>其他分页内容 3</p></TabPane>
         </Tabs>
         <h1 className='h1'>7.吸顶效果</h1>
         <Tabs ref='box_table'>
-          <TabPane tab='分页 1' key='31'>内容 1</TabPane>
-          <TabPane tab='分页 2' key='32'>内容 2</TabPane>
-          <TabPane tab='分页 3' key='33'>内容 3</TabPane>
+          <TabPane tab='当前分页' key='31'>当前分页内容</TabPane>
+          <TabPane tab='其他分页内容' key='32'>其他分页内容内容</TabPane>
+          <TabPane tab='其他分页内容' key='33'>其他分页内容内容</TabPane>
         </Tabs>
       </div>
     )

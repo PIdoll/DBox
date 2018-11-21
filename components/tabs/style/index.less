@@ -10,7 +10,7 @@
 @tab-vertical-margin: 0 0 16px 0;
 
 @tab-horizontal-padding: 12px 16px;
-@tab-vertical-padding: 8px 24px;
+@tab-vertical-padding: 12px 24px;
 
 // The width (or height for vertical) of the scrolling arrow
 @tab-scrolling-size: 32px;
@@ -20,6 +20,10 @@
   position: relative;
   overflow: hidden;
   .clearfix;
+
+  div.@{tab-prefix-cls}-tab:first-child {
+    margin-left: 0;
+  }
 
   &-ink-bar {
     z-index: 1;
@@ -69,7 +73,7 @@
     background-color: transparent;
     position: absolute;
     text-align: center;
-    color: @text-color-secondary;
+    color: @text-color-disable;
     transition: width .3s @ease-in-out, opacity .3s @ease-in-out, color .3s @ease-in-out;
     opacity: 0;
     pointer-events: none;
@@ -79,10 +83,13 @@
       width: @tab-scrolling-size;
       height: 100%;
       pointer-events: auto;
+      span:before {
+        font-size:16px;
+      }
     }
 
     &:hover {
-      color: @text-color;
+      color: @text-color-secondary;
     }
 
     &-icon {
@@ -97,11 +104,14 @@
       transform: translate(-50%, -50%);
       text-align: center;
       text-transform: none;
+      height: 16px;
+      line-height: 16px;
 
       &:before {
         display: block;
         font-family: "idollicon" !important;
         .iconfont-size-under-12px(10px);
+        transform: none;
       }
     }
   }
@@ -417,17 +427,21 @@
 }
 
 .@{tab-prefix-cls}-cardTabs {
-  background-color: #ccc;
-  padding: 15px;
+  background-color: #f5f5f5;
+  padding:24px;
+  border: none;
   .@{tab-prefix-cls}-bar {
-    border: none;
     margin: 0;
     .@{tab-prefix-cls}-nav-container {
+      background-color: #f5f5f5;
       .@{tab-prefix-cls}-nav {
         div.@{tab-prefix-cls}-tab {
           margin-right: 0;
+          background-color: #f5f5f5;
+          line-height: 22px;
+          padding: 12px 16px;
           border: none;
-          background-color: #ccc;
+          margin-right: 4px;
         }
         div.@{tab-prefix-cls}-tab-active {
           background-color: #fff;
