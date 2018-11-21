@@ -7,33 +7,91 @@ const ButtonGroup = Button.Group;
 
 export default () => (
   <div id='main-container'>
-    <h1 className='h1'>通用按钮</h1>
-    <Button type='normal'>通用</Button>
-    <h1 className='h1'>特殊场景按钮</h1>
-    <Button type='primary'>重要</Button>
-    <Button>次要</Button>
-    <Button disabled>不可用</Button>
-    <Button type='dashed'>虚线</Button>
-    <Button type='danger'>危险</Button>
-    <Button icon='tag'>图标</Button>
-    <Button icon='plus-circle-o' text>文字按钮</Button>
-    <h1 className='h1'>特定按钮</h1>
-    <Button type='create' icon='plus' />
-    <Button type='quit' icon='logout' />
+    <h1 className='h1'>基本按钮类型</h1>
+    <Button type='default'>默认</Button>&nbsp;&nbsp;
+    <Button type='primary'>主要</Button>&nbsp;&nbsp;
+    <Button type='secondary'>次要</Button>&nbsp;&nbsp;
+    <Button disabled>禁止</Button>&nbsp;&nbsp;
+    <Button type='dashed'>虚线</Button>&nbsp;&nbsp;
+    <Button type='danger'>危险</Button>&nbsp;&nbsp;
+    <br />
+
+    <h1 className='h1'>文字按钮</h1>
+    <Button type='default' text>默认</Button>&nbsp;&nbsp;
+    <Button type='secondary' text>主要</Button>&nbsp;&nbsp;
+    <br />
+
+    <h1 className='h1'>按钮尺寸</h1>
+    <Button type='primary' size='small'>按钮</Button>&nbsp;&nbsp;
+    <Button type='primary'>按钮</Button>&nbsp;&nbsp;
+    <Button type='primary' size='large'>按钮</Button>
+    <br /><br />
+
+    <h1 className='h1'>跳转按钮</h1>
+    <Button type='secondary' href='http://www.baidu.com' target='_blank'>新页面</Button>
+    &nbsp;&nbsp;
+    <Button type='secondary' href='http://www.baidu.com' target='_self'>本页面</Button>&nbsp;&nbsp;
+
+    <h1 className='h1'>图标按钮</h1>
+    <Button icon='delete' size='small'>图标</Button>&nbsp;&nbsp;
+    <Button icon='delete'>图标</Button>&nbsp;&nbsp;
+    <Button icon='delete' size='large'>图标</Button>&nbsp;&nbsp;
+    <br /><br />
+
+    <Button icon='down' size='small'>图标</Button>&nbsp;&nbsp;
+    <Button icon='down' >图标</Button>&nbsp;&nbsp;
+    <Button icon='down' size='large'>图标</Button>&nbsp;&nbsp;
+    <br /><br />
+
+    <Button icon='delete' size='small' shape='circle' />&nbsp;&nbsp;
+    <Button icon='delete' shape='circle' />&nbsp;&nbsp;
+    <Button icon='delete' size='large' shape='circle' />&nbsp;&nbsp;
+    <br /><br />
+
+    <Button icon='delete' shape='square' size='small' />&nbsp;&nbsp;
+    <Button icon='delete' shape='square' />&nbsp;&nbsp;
+    <Button icon='delete' shape='square' size='large' />&nbsp;&nbsp;
+
     <h1 className='h1'>幽灵按钮</h1>
     <div className='youling'>
-      <Button ghost>默认</Button>
-      <Button type='primary' ghost>重要</Button>
-      <Button type='dashed' ghost>虚线</Button>
-      <Button type='danger' ghost>危险</Button>
+      <Button ghost>默认</Button>&nbsp;&nbsp;
+      <Button type='primary' ghost>重要</Button>&nbsp;&nbsp;
+      <Button type='dashed' ghost>虚线</Button>&nbsp;&nbsp;
+      <Button type='danger' ghost>危险</Button>&nbsp;&nbsp;
+      <Button disabled ghost>禁用</Button>
     </div>
+    <br />
+    <br />
+
+    <h1 className='h1'>block按钮</h1>
+    <div style={{ width: 600 }}>
+      <Button type='primary' block>主要</Button>
+      <br />
+      <br />
+      <Button block>默认</Button>
+    </div>
+
+    <br />
+    <br />
+    <h1 className='h1'>加载中按钮</h1>
+    <Button shape='circle' loading />
+
     <h1 className='h1'>组合按钮</h1>
     <ButtonGroup>
       <Button>取消</Button>
-      <Button type='primary'>确定</Button>
+      <Button>确定</Button>
     </ButtonGroup>
     <br />
     <br />
+
+    <ButtonGroup>
+      <Button >选择1</Button>
+      <Button >选择2</Button>
+      <Button >选择3</Button>
+    </ButtonGroup>
+    <br />
+    <br />
+
     <ButtonGroup>
       <Button>
         <Icon type='left-circle-o' />向后

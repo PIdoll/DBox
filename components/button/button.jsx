@@ -1,9 +1,9 @@
 import React from 'react'
 import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
-import { findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom';
 
-import Icon from 'components/icon'
+import Icon from '../../components/icon'
 
 import './style/index.js'
 
@@ -13,17 +13,19 @@ export default class Button extends React.Component {
 	    onClick() {},
 	    ghost: false,
 	    loading: false,
-	    text: false
+		text: false,
+		block: false
   	}
 	static propTypes = {
 	    type: PropTypes.string,
-	    shape: PropTypes.oneOf(['circle', 'circle-outline']),
+	    shape: PropTypes.oneOf(['circle', 'circle-outline', 'square']),
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
 	    loading: PropTypes.bool,
 	    className: PropTypes.string,
-	    icon: PropTypes.string
+		icon: PropTypes.string,
+		block: PropTypes.bool
 	}
 	componentWillUnmount() {
 		if (this.clickedTimeout) {
@@ -46,8 +48,14 @@ export default class Button extends React.Component {
 
 		this.props.onClick(...args);
 	}
+
+	isNeedInserted() {
+		const { icon, children, size } = this.props;
+		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
+		return React.Children.count(children) === 1 && !icon && sizeCls !== 'sm';
+	  }
 	render() {
-		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, ...others } = this.props;
+		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, block, ...others } = this.props;
 		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
 		const classes = classNames({
 			[prefixCls]: true,
@@ -58,28 +66,55 @@ export default class Button extends React.Component {
 			[`${prefixCls}-loading`]: loading,
 			[`${prefixCls}-background-ghost`]: ghost,
 			[`${prefixCls}-text`]: text,
+			[`${prefixCls}-block`]: block,
 			[className]: className
-
 		})
-    const iconType = icon;
-    const kids = React.Children.map(children, insertSpace);
-    const iconNode = iconType ? <Icon type={icon} /> : null;
+	const iconType = loading ? 'loading' : icon;
+	const kids = (children || children === 0)
+      ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
+	const iconNode = iconType ? <Icon type={iconType} /> : null;
+	if ('href' in others) {
 		return (
+  <a {...others}
+    className={classes}
+    onClick={this.handleClick}>
+    {iconNode}{kids}
+  </a>
+			);
+	} else {
+		//	如果是下拉框图标，则icon放右边
+		if (icon === 'down') {
+			return (
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
-    {iconNode}{ kids }
+    {kids}{iconNode}
   </button>
-			)
+
+		);
+		} else {
+			return (
+
+  <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
+    {iconNode}{kids}
+  </button>
+
+			);
+		}
+	}
 	}
 }
 
 // ----------------如果是两个中文字符，则在两个中文字符中自动插入一个空格--------------------------------
-function insertSpace(child) {
+function insertSpace(child, needInserted) {
+	if (child == null) {
+		return;
+	  }
+	const SPACE = needInserted ? ' ' : '';
 	if (isString(child.type && isTwoCNChar(child.props.children))) {
-		return React.cloneElement(child, {}, child.props.split('').join(' '));
+		return React.cloneElement(child, {}, child.props.split('').join(SPACE));
 	}
 	if (isString(child)) {
-		if (isTwoCNChar(child)) { child = child.split('').join(' ') }
-		return <span>{child}</span>
+		 if (isTwoCNChar(child)) { child = child.split('').join(SPACE) }
+		 return <span>{child}</span>
   }
   return child;
 }

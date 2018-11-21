@@ -9,7 +9,7 @@ export default class Popconfirm extends React.Component {
   static defaultProps = {
     prefixCls: 'idoll-popover',
     transitionName: 'zoom-big',
-    placement: 'top',
+    placement: 'topRight',
     trigger: 'click',
     okType: 'primary'
   };
@@ -92,17 +92,16 @@ export default class Popconfirm extends React.Component {
       <div>
         <div className={`${prefixCls}-inner-content`}>
           <div className={`${prefixCls}-message`}>
-            <Icon type='exclamation-circle' />
+            <Icon type='warning-circle' />
             <div className={`${prefixCls}-message-title`}>{title}</div>
           </div>
           <div className={`${prefixCls}-buttons`}>
+            <Button onClick={this.onConfirm} type='danger' size='small'>{okText || '确定'}</Button>
             <Button onClick={this.onCancel} type='ghost' size='small'>{cancelText || '取消'}</Button>
-            <Button onClick={this.onConfirm} type='primary' size='small'>{okText || '确定'}</Button>
           </div>
         </div>
       </div>
     );
-
     return (<Tooltip
       {...restProps}
       prefixCls={prefixCls}

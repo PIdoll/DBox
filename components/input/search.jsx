@@ -33,17 +33,20 @@ export default class Search extends Component {
   render() {
     const { className, prefixCls, inputPrefixCls, size, enterButton, suffix, ...others } = this.props;
     delete others.onSearch;
-    const buttonOrIcon = enterButton ? (
+    let node = enterButton ? (
       <Button
         className={`${prefixCls}-button`}
         type='primary'
         size={size}
-        onClick={this.onSearch}
         key='enterButton'
         >
         { enterButton === true ? <Icon type='search' /> : enterButton }
       </Button>
     ) : <Icon className={`${prefixCls}-icon`} type='search' key='searchIcon' />;
+    const buttonOrIcon = React.cloneElement(node, {
+      onClick: this.onSearch,
+      className: 'icon-hover',
+    });
     const searchSuffix = suffix ? [suffix, buttonOrIcon] : buttonOrIcon;
     const inputClassName = classNames(prefixCls, className, {
       [`${prefixCls}-enter-button`]: !!enterButton,

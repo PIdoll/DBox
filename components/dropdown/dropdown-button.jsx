@@ -14,19 +14,22 @@ export default class DropdownButton extends React.Component {
       visible: flag
     });
   };
+  onClickChange = (e) => {
+    this.setState({
+      visible: e.item.props.isSelected
+    });
+  }
   static defaultProps = {
-    placement: 'bottomRight',
-    type: 'normal',
+    placement: 'bottomLeft',
     prefixCls: 'idoll-dropdown-button'
   };
   render() {
     const {
       type, disabled, children,
-      prefixCls, className, overlay, trigger, align,
+      prefixCls, className, overlay, trigger, size, align,
       visible, placement, getPopupContainer,
       ...restProps
     } = this.props;
-
     const dropdownProps = {
       align,
       overlay,
@@ -34,21 +37,27 @@ export default class DropdownButton extends React.Component {
       placement,
       getPopupContainer,
     };
+    const dropdownClassName = classNames({
+      className,
+      placement: 'bottomLeft',
+      [prefixCls]: true,
+      [`${prefixCls}-disabled`]: disabled
+  });
     if ('visible' in this.props) {
       dropdownProps.visible = visible;
     }
-
     return (
       <ButtonGroup
         {...restProps}
-        className={classNames(prefixCls, className)}
+        className={dropdownClassName}
       >
-        <Dropdown {...dropdownProps} onVisibleChange={this.onChange}>
-          <Button type={type} disabled={disabled}>
-            {children}{this.state.visible === true ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
+        <Dropdown onOverlayClick={this.onClickChange} disabled={disabled} {...dropdownProps} onVisibleChange={this.onChange}>
+          <Button type={type} size={size} disabled={disabled}>
+            {children}{<Icon type='down' />}
           </Button>
         </Dropdown>
       </ButtonGroup>
     );
   }
 }
+

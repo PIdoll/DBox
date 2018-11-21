@@ -18,7 +18,7 @@ const common = require('./webpack.common.js');
 			{
 				test: /\.(less|css)$/,
 				use: ExtractTextPlugin.extract({
-			        fallback: 'style-loader',
+			        fallbackLoader: 'style-loader',
 			        // 如果需要，可以在 less-loader 之前将 resolve-url-loader 链接进来
 				use: [
 					'css-loader', {
@@ -82,6 +82,7 @@ const common = require('./webpack.common.js');
         filename: 'main.[contenthash].css',
         allChunks: true
     }),
+
     // Dll user的配置
     // 单独编译更改不频繁的代码
     // node_modules中的任何所需模块都提取到vendor

@@ -5,36 +5,43 @@
 .input-lg() {
   padding: @input-padding-vertical-lg @input-padding-horizontal;
   height: @input-height-lg;
+  font-size: @font-size-lg;
 }
 
 .input-sm() {
-  padding: @input-padding-vertical-sm @input-padding-horizontal;
+  padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
   height: @input-height-sm;
   border-radius: @border-radius-sm;
+  font-size: @font-size-sm;
 }
 
 // input status
 // == when focus or actived
-.active(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+.active(@color: @primary-color) {
+  // border-color: tint(@color, 20%);
+  border-color: @color;
   outline: 0;
-  box-shadow: 0 0 0 2px fade(@color, 20%);
+  // box-shadow: 0 0 0 2px fade(@color, 20%);
+  border-right-width: 1px !important;
 }
 
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
-  border-color: tint(@color, 20%);
+  // border-color: tint(@color, 20%);
+  border-color: @color;
+  border-right-width: 1px !important;
 }
 
 .disabled() {
   background-color: @input-disabled-bg;
   opacity: 1;
   cursor: @cursor-disabled;
-  color: #ccc;
+  color: @text-color-disable;
   &:hover {
     .hover(@input-border-color);
   }
 }
+
 
 // Basic style for input
 .input() { 
@@ -49,10 +56,12 @@
   color: @input-color;
   background-color: @input-bg;
   background-image: none;
-  border: 1px solid @input-border-color;
+  border: 1px solid @border;
+  // border: 1px solid @input-border-color;
   border-radius: @border-radius-base;
   .placeholder(); // Reset placeholder
-  transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
+  // transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
+  transition: all .3s;
 
   &:hover {
     .hover();
@@ -72,6 +81,7 @@
     max-width: 100%; // prevent textearea resize from coming out of its container
     height: auto;
     vertical-align: bottom;
+    min-height: 32px;
   }
 
   // Size
@@ -81,6 +91,16 @@
 
   &-sm {
     .input-sm();
+  }
+}
+
+// 只读状态
+.readOnly() {
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid @border;
+    box-shadow: none;
   }
 }
 
@@ -106,8 +126,9 @@
   position: relative;
   display: table;
   border-collapse: separate;
-  border: 1px solid @input-border-color;
-  border-radius: @border-radius-base;
+  // border: 1px solid @input-border-color;
+  // border-radius: @border-radius-base;
+  border-spacing: 0;
   width: 100%;
 
   // Undo padding and float of grid classes
@@ -149,12 +170,19 @@
   }
 
   .@{inputClass} {
-    position: relative;
-    z-index: 2;
     float: left;
     width: 100%;
     margin-bottom: 0;
-    padding: @input-padding-vertical-base+1 @input-padding-horizontal;
+    border: 1px solid @input-border-color;
+    &:hover {
+      z-index: 1;
+      .hover();
+    }
+    &:active,
+    &:focus {
+      z-index: 1; // Fix https://gw.alipayobjects.com/zos/rmsportal/DHNpoqfMXSfrSnlZvhsJ.png
+      .active(); 
+    }
   }
 
   &-addon {
@@ -165,7 +193,7 @@
     color: @input-color;
     text-align: center;
     background-color: @input-addon-bg;
-    // border: 1px solid @input-border-color;
+    border: 1px solid @input-border-color;
     border-radius: @border-radius-base;
 
     // Reset Select's style in addon
@@ -174,16 +202,9 @@
 
       .idoll-select-selection {
         background-color: inherit;
-        border: 0;
         margin: -1px;
         border: 1px solid transparent;
-      }
-
-      &-open,
-      &-focused {
-        .idoll-select-selection {
-          border-color: tint(@primary-color, 20%);
-        }
+        box-shadow: none;
       }
     }
   }
@@ -194,6 +215,7 @@
   &-addon:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    text-align: left;
 
     // Reset Select's style in addon
     .idoll-select .idoll-select-selection {
@@ -207,6 +229,7 @@
   }
   &-addon:last-child {
     border-left: 0;
+    text-align: left;
   }
 
   > .@{inputClass}:last-child,
@@ -231,6 +254,103 @@
   &-sm > &-addon {
     .input-sm();
   }
+
+  &&-compact {
+    display: block;
+    .clearfix;
+
+    &-addon,
+    &-wrap,
+    > .@{inputClass} {
+      &:not(:first-child):not(:last-child) {
+        border-right-width: 1px;
+        border-right-color: transparent;
+        &:hover {
+          .hover();
+        }
+        &:focus {
+          .active();
+        }
+      }
+    }
+
+    & > * {
+      border-radius: 0;
+      border-right-width: 0;
+      vertical-align: top; // https://github.com/ant-design/ant-design-pro/issues/139
+      float: none;
+      display: inline-block;
+    }
+
+    // https://github.com/ant-design/ant-design/issues/11863
+    & > span:not(:last-child) > .@{inputClass} {
+      border-right-width: 0;
+    }
+
+    // Undo float for .ant-input-group .ant-input
+    .@{inputClass} {
+      float: none;
+    }
+
+    // reset border for Select, DatePicker, AutoComplete, Cascader, Mention, TimePicker
+    & > .@{idoll-prefix}-select > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker .@{idoll-prefix}-time-picker-input {
+      border-radius: 0;
+      border-right-width: 1px;
+      border-right-color: transparent;
+      &:hover {
+        .hover();
+      }
+      &:focus {
+        .active();
+      }
+    }
+
+    & > *:first-child,
+    & > .@{idoll-prefix}-select:first-child > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker:first-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper:first-child .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker:first-child .@{idoll-prefix}-time-picker-input {
+      border-top-left-radius: @border-radius-base;
+      border-bottom-left-radius: @border-radius-base;
+    }
+
+    & > *:last-child,
+    & > .@{idoll-prefix}-select:last-child > .@{idoll-prefix}-select-selection,
+    & > .@{idoll-prefix}-calendar-picker:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-select-auto-complete:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-cascader-picker-focused:last-child .@{idoll-prefix}-input,
+    & > .@{idoll-prefix}-mention-wrapper:last-child .@{idoll-prefix}-mention-editor,
+    & > .@{idoll-prefix}-time-picker:last-child .@{idoll-prefix}-time-picker-input {
+      border-top-right-radius: @border-radius-base;
+      border-bottom-right-radius: @border-radius-base;
+      border-right-width: 1px;
+      border-right-color: @input-border-color;
+      &:hover {
+        .hover();
+      }
+      &:focus {
+        .active();
+        .@{idoll-prefix}-cascader-input {
+          .active();
+        }
+      }
+    }
+
+    // https://github.com/ant-design/ant-design/issues/12493
+    & > .@{idoll-prefix}-select-auto-complete .@{idoll-prefix}-input {
+      vertical-align: top;
+    }
+  }
+
+
 }
 
 .input-affix-wrapper(@inputClass) {
@@ -238,12 +358,16 @@
   display: inline-block;
   width: 100%;
 
+
   .@{inputClass} {
     z-index: 1;
   }
 
   &:hover .@{inputClass}:not(.@{inputClass}-disabled) {
     .hover();
+  }
+  .@{inputClass} {
+    position: static;
   }
 
   .@{inputClass}-prefix,
@@ -269,7 +393,7 @@
   }
 
   .@{inputClass}:not(:last-child) {
-    padding-right: @input-padding-horizontal-base + @input-affix-width;
+    padding-right: @input-padding-horizontal-base + @input-affix-width + 2px;
   }
 }
 

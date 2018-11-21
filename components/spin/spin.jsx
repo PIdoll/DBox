@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -133,7 +134,7 @@ export default class Spin extends React.Component {
           className={animateClassName}
           style={null}
           transitionName='fade'
-          >
+        >
           {spinning && <div key='loading'>{spinElement}</div>}
           <div className={containerClassName} key='container'>
             {this.props.children}

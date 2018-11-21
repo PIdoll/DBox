@@ -1,7 +1,27 @@
 import React from 'react';
 import Spin from 'components/spin/index';
+import Alert from 'components/alert/index';
+import Switch from 'components/switch/index';
+import Icon from 'components/icon/index';
+
+const container = (
+  <Alert
+    message='Alert message title'
+    description='Further details about the context of this alert.'
+    type='info'
+  />
+);
+
+const antIcon = <Icon type='down' style={{ fontSize: 24 }} />
 
 export default class SpinView extends React.Component {
+  state = {
+    loading: false
+  }
+
+  toggle = (value) => {
+    this.setState({ loading: value });
+  }
   render() {
     const style = {
       textAlign: 'center',
@@ -20,19 +40,42 @@ export default class SpinView extends React.Component {
         <h1 className='h1'>
           简单的加载中
         </h1>
-        <Spin />
+        <div style={{ marginTop: 51, marginLeft: 100 }}><Spin /></div>
         <h1 className='h1'>
           三种不同大小的加载中
         </h1>
-        <Spin size='small' />
-        <Spin />
-        <Spin size='large' />
+        <div style={{ width: 300, display: 'flex', justifyContent: 'space-between', marginTop: 50 }}>
+          <Spin size='small' />
+          <Spin />
+          <Spin size='large' />
+        </div>
         <h1 className='h1'>
           放在容器中
         </h1>
         <div style={style}>
-          <Spin size='large' />
+          <Spin />
         </div>
+        <h1 className='h1'>
+          自定义描述文案
+        </h1>
+        <Spin tip='Loading...'>
+          <Alert
+            message='Alert信息标题'
+            description='关于此警报上下文的详细信息.'
+            type='info'
+          />
+        </Spin>
+        <h1 className='h1'>
+          卡片加载中
+        </h1>
+        <Spin spinning={this.state.loading} delay={500}>{container}</Spin>
+        <div style={{ marginTop: 16 }}>
+          Loading state：<Switch onChange={this.toggle} />
+        </div>
+        <h1 className='h1'>
+          自定义指示符
+        </h1>
+        <Spin indicator={antIcon} />
       </div>
     )
   }
