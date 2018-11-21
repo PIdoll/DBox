@@ -31,7 +31,7 @@
   display: inline-block;
   vertical-align: middle;
   height: 32px;
-  line-height: 32px;
+  line-height: 32px -2px;
   margin-right: 8px;
 }
 .idoll-pagination-item {
@@ -90,7 +90,7 @@
   display: inline-block;
   min-width: 32px;
   height: 32px;
-  line-height: 32px;
+  line-height: 30px;
   border-radius: 3px;
   text-align: center;
   vertical-align: middle;
@@ -108,6 +108,7 @@
 .idoll-pagination-jump-prev,
 .idoll-pagination-jump-next {
   outline: 0;
+  position: relative;
 }
 .idoll-pagination-jump-prev:after,
 .idoll-pagination-jump-next:after {
@@ -116,6 +117,10 @@
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.25);
   text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -65%);
 }
 .idoll-pagination-jump-prev:focus:after,
 .idoll-pagination-jump-next:focus:after,
@@ -135,13 +140,24 @@
 :root .idoll-pagination-jump-next:hover:after {
   font-size: 12px;
 }
+.idoll-pagination-jump-prev {
+  position: relative;
+}
 .idoll-pagination-jump-prev:focus:after,
 .idoll-pagination-jump-prev:hover:after {
   content: "\E925";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .idoll-pagination-jump-next:focus:after,
 .idoll-pagination-jump-next:hover:after {
   content: "\E92D";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .idoll-pagination-prev,
 .idoll-pagination-next {
@@ -176,8 +192,6 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 30px;
-  line-height: 30px;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -239,7 +253,7 @@
 }
 .idoll-pagination-options-size-changer .idoll-select-selection__rendered {
   height: 21px;
-  line-height: 21px;
+  line-height: 20px;
   padding: 0;
   padding-left: 0;
   padding-right: 20px;
@@ -253,7 +267,7 @@
 .idoll-pagination-options-quick-jumper {
   display: inline-block;
   height: 32px;
-  line-height: 32px;
+  line-height: 32px -2px;
 }
 .idoll-pagination-options-quick-jumper input {
   position: relative;
@@ -328,7 +342,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination-simple .idoll-pagination-next {
   height: 24px;
   min-width: 24px;
-  line-height: 24px;
+  line-height: 22px;
 }
 .idoll-pagination-simple .idoll-pagination-prev .idoll-pagination-item-link,
 .idoll-pagination-simple .idoll-pagination-next .idoll-pagination-item-link {
@@ -374,7 +388,7 @@ textarea.idoll-pagination-options-quick-jumper input {
   padding: 0;
   padding-right: 16px;
   height: 20px;
-  line-height: 20px;
+  line-height: 18px;
   font-weight: 400;
   min-width: 64px;
 }
@@ -414,21 +428,21 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination.mini .idoll-pagination-total-text,
 .idoll-pagination.mini .idoll-pagination-simple-pager {
   height: 32px;
-  line-height: 32px;
+  line-height: 30px;
 }
 .idoll-pagination.mini .idoll-pagination-item {
   border: 0;
   margin: 0;
   min-width: 24px;
   height: 24px;
-  line-height: 24px;
+  line-height: 22px;
 }
 .idoll-pagination.mini .idoll-pagination-prev,
 .idoll-pagination.mini .idoll-pagination-next {
   margin: 0;
   min-width: 24px;
   height: 24px;
-  line-height: 24px;
+  line-height: 22px;
 }
 .idoll-pagination.mini .idoll-pagination-prev .idoll-pagination-item-link,
 .idoll-pagination.mini .idoll-pagination-next .idoll-pagination-item-link {
@@ -446,7 +460,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 .idoll-pagination.mini .idoll-pagination-jump-prev,
 .idoll-pagination.mini .idoll-pagination-jump-next {
   height: 24px;
-  line-height: 24px;
+  line-height: 22px;
   margin-right: 0;
 }
 .idoll-pagination.mini .idoll-pagination-options {
@@ -454,7 +468,7 @@ textarea.idoll-pagination-options-quick-jumper input {
 }
 .idoll-pagination.mini .idoll-pagination-options-quick-jumper {
   height: 24px;
-  line-height: 24px;
+  line-height: 22px;
 }
 .idoll-pagination.mini .idoll-pagination-options-quick-jumper input {
   padding: 1px 7px;

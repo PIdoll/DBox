@@ -23,7 +23,7 @@
         display: inline-block;
         vertical-align: middle;
         height: @pagination-item-size;
-        line-height: @pagination-item-size;
+        line-height: @pagination-item-size -2px;
         margin-right: 8px;
     }
     &-item {
@@ -85,7 +85,7 @@
         display: inline-block;
         min-width: @pagination-item-size;
         height: @pagination-item-size;
-        line-height: @pagination-item-size;
+        line-height: @pagination-item-size - 2px;
         border-radius: @border-radius-base;
         text-align: center;
         vertical-align: middle;
@@ -104,13 +104,17 @@
     &-jump-prev,
     &-jump-next {
         outline: 0;
-
+        position: relative;
         &:after {
             content: "...";
             display: block;
             letter-spacing: 2px;
             color: @disabled-color;
             text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-65%);
         }
         &:focus,
         &:hover {
@@ -123,10 +127,15 @@
         }
     }
     &-jump-prev {
+      position: relative;
       &:focus,
       &:hover {
         &:after {
           content: "\E925";
+          position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
         }
       }
     }
@@ -135,6 +144,10 @@
       &:hover {
         &:after {
           content: "\E92D";
+          position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
         }
       }
     }
@@ -168,8 +181,6 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%,-50%);
-                height: @pagination-item-size - 2px;
-                line-height: @pagination-item-size - 2px;
                 text-align: center;
                 font-size: 12px;
                 font-weight: 500;
@@ -231,7 +242,7 @@
                 padding: 4px 7px;
                 &__rendered {
                    height: 21px;
-                   line-height: 21px;
+                   line-height: 20px;
                    padding: 0;
                    padding-left: 0; 
                    padding-right: 20px;
@@ -247,7 +258,7 @@
         &-quick-jumper {
             display: inline-block;
             height: @input-height-base;
-            line-height: @input-height-base;
+            line-height: @input-height-base -2px;
 
             input {
                 .input;
@@ -263,7 +274,7 @@
     &-simple &-next {
         height: @pagination-item-size-sm;
         min-width: @pagination-item-size-sm;
-        line-height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm - 2px;
         .@{pagination-prefix-cls}-item-link {
             display: inline-block;
             border: 0;
@@ -310,7 +321,7 @@
                             padding: 0;
                             padding-right: 16px;
                             height: 20px;
-                            line-height: 20px;
+                            line-height: 18px;
                             font-weight: 400;
                             min-width: 64px;
                         }
@@ -354,7 +365,7 @@
     &.mini &-total-text,
     &.mini &-simple-pager {
         height: @pagination-item-size;
-        line-height: @pagination-item-size;
+        line-height: @pagination-item-size - 2px;
     }
 
     &.mini &-item {
@@ -362,14 +373,14 @@
         margin: 0;
         min-width: @pagination-item-size-sm;
         height: @pagination-item-size-sm;
-        line-height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm - 2px;
     }
     &.mini &-prev,
     &.mini &-next {
         margin: 0;
         min-width: @pagination-item-size-sm;
         height: @pagination-item-size-sm;
-        line-height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm - 2px;
     }
     &.mini &-prev &-item-link,
     &.mini &-next &-item-link {
@@ -386,14 +397,14 @@
     &.mini &-jump-prev,
     &.mini &-jump-next {
         height: @pagination-item-size-sm;
-        line-height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm - 2px;
         margin-right: 0;
     }
     &.mini &-options {
         margin-left: 8px;
         &-quick-jumper {
             height: @pagination-item-size-sm;
-            line-height: @pagination-item-size-sm;
+            line-height: @pagination-item-size-sm - 2px;
 
             input {
                 .input-sm;
