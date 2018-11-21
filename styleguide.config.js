@@ -1,17 +1,21 @@
 const path = require('path');
-
 const { version } = require('./package.json')
 const {camelCase, upperFirst} = require('lodash');
 
+
+
 module.exports = {
   title: `Dbox UI ${version}`,
-  serverPort: 9001,
+  serverPort: 9002,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
   },
+  template: {
+    index: path.resolve(__dirname, 'styleguide/index.html')
+},
   theme: {
     baseBackground: '#fdfdfc',
 		link: '#274e75',
@@ -21,11 +25,7 @@ module.exports = {
     sidebarWidth: 240
   },
   styles: {
-    StyleGuide: {
-      '@global body': {
-        border: '2px solid red'
-      }
-    },
+
 		Playground: {
 			preview: {
 				padding: '40px 20px',
@@ -34,6 +34,9 @@ module.exports = {
       },
       table: {
         backgroundColor: '#333'
+      },
+      wrapper: {
+        border: '1px solid red'
       },
       controls: {
         borderRadius: 2,
@@ -144,8 +147,7 @@ module.exports = {
         {
           name: 'General',
           components: () => ([
-            path.resolve(__dirname, './components/button/button.jsx'),
-            path.resolve(__dirname, './components/button/button-group.jsx'),
+            path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
