@@ -25,7 +25,7 @@
 @steps-small-icon-size: 24px;
 @steps-dot-size: 8px;
 @steps-current-dot-size: 10px;
-@steps-description-max-width: 90px;
+@steps-description-max-width: 160px;
 
 .@{steps-prefix-cls} {
   .reset-component;
@@ -39,6 +39,7 @@
   display: inline-block;
   vertical-align: top;
   flex: 1;
+  min-height: 70px;
   overflow: hidden;
 
   &:last-child {
@@ -60,7 +61,7 @@
     border: @border-width-base @border-style-base @wait-icon-color;
     width: @steps-icon-size;
     height: @steps-icon-size;
-    line-height: @steps-icon-size;
+    line-height: 30px;
     text-align: center;
     color: @primary-color;
     border-radius: @steps-icon-size;
@@ -71,7 +72,7 @@
 
     > .@{steps-prefix-cls}-icon {
       line-height: 1.2;
-      top: -1px;
+      top:-1px;
       position: relative;
     }
   }
@@ -174,6 +175,7 @@
 
     &-description {
       max-width: @steps-description-max-width;
+      white-space: normal;
     }
   }
 }
@@ -215,9 +217,15 @@
 }
 .idoll-icon-check{
   color: @primary-color;
+  &:hover{
+    color: @primary-color;
+  }
 }
 .idoll-icon-close{
   color: @error-icon-color;
+  &:hover{
+    color: @error-icon-color;
+  }
 }
 @import 'progress-dot';
 @import 'small';
