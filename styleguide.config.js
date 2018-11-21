@@ -191,7 +191,7 @@ module.exports = {
         //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/tabs.jsx'),
-            path.resolve(__dirname, './components/tag/tag.jsx'),
+            path.resolve(__dirname, './components/tag/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
