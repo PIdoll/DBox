@@ -63,17 +63,17 @@ export default class TabsView extends React.Component {
     this.setState({ mode });
   };
   componentDidMount () {
+    const element = ReactDOM.findDOMNode(this.refs.box_table);
+    const currentHeight = element.offsetTop - element.offsetHeight;
     window.addEventListener('scroll', this.onScroll = () => {
-      if (window.scrollY >= 1750 && window.scrollY < 1950) {
-        const element = ReactDOM.findDOMNode(this.refs.box_table);
+      if (window.scrollY >= currentHeight && window.scrollY < element.offsetTop) {
         element.style.position = 'fixed';
         element.style.top = '0';
         element.style.left = '0';
         element.style.width = '100%';
         element.style.padding = '0 170px 144px 64px';
         element.style.backgroundColor = '#fff';
-      } else if (window.scrollY >= 1950 || window.scrollY < 1750) {
-        const element = ReactDOM.findDOMNode(this.refs.box_table);
+      } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';
         element.style.padding = '0';
       }
