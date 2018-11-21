@@ -4,12 +4,17 @@
 
 ##### **通用步骤条**
 ```jsx
-<Steps current={1} >
-  <Steps.Step title='提交完成' description='这里是一段描述文字，最多不超过两行' />
-  <Steps.Step title='正在处理' description='这里是一段描述文字，最多不超过两行' />
-  <Steps.Step title='等待处理' description='这里是一段描述文字，最多不超过两行' />
-  <Steps.Step title='完成' description='这里是一段描述文字，最多不超过两行' />
-</Steps>
+import {Steps} from './steps';
+ReactDOM.render(
+  <Steps current={1} >
+    <Steps.Step title='提交完成' description='这里是一段描述文字，最多不超过两行' />
+    <Steps.Step title='正在处理' description='这里是一段描述文字，最多不超过两行' />
+    <Steps.Step title='等待处理' description='这里是一段描述文字，最多不超过两行' />
+    <Steps.Step title='完成' description='这里是一段描述文字，最多不超过两行' />
+    </Steps>
+,mountNode)
+
+
 ```
 
 ##### **小尺寸步骤条**

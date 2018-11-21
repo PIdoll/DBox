@@ -4,7 +4,8 @@ import Badge from 'components/badge';
 import Button from 'components/button';
 
 
-const UserList = ['Z', 'Alvin', 'Idoll', 'DBox']; export default class AvatarView extends React.Component {
+const UserList = ['Z', 'Alvin', 'Idoll', 'DBox'];
+export default class AvatarView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +21,7 @@ const UserList = ['Z', 'Alvin', 'Idoll', 'DBox']; export default class AvatarVie
   render () {
     return (
       <div id='main-container'>
-        <h1 className='h1'>基本</h1>
+        <h1 className='h1'>基本用法</h1>
         <span>头像有三种尺寸，两种形状可以选择</span>
         <div>
           <div>
@@ -41,7 +42,7 @@ const UserList = ['Z', 'Alvin', 'Idoll', 'DBox']; export default class AvatarVie
         <div>
           <Avatar style={{ marginRight: 47 }} icon='user' />
           <Avatar style={{ marginRight: 47 }}>USER</Avatar>
-          <Avatar style={{ marginRight: 47 }} src='https://thumbnail0.baidupcs.com/thumbnail/6561ad589a8117a4019aa480cfbf2727?fid=2014780205-250528-1079432591547950&time=1541671200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-05PBOkya4A6297W5mbSL435DJNU%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7230675216001197849&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video' alt='DBox' />
+          <Avatar style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
           <Avatar style={{ backgroundColor: '#13B886', marginRight: 47 }} icon='user' />
         </div>
         <br />
