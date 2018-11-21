@@ -76,9 +76,32 @@ module.exports = {
           fontWeight: '600',
         },
         '& td': {
-          border: '1px solid #eaeefb',
-          padding: '10px',
-        }
+          border: '1px solid #eaeefb !important',
+          padding: '10px !important',
+        },
+        '& td:nth-child(1)': {
+          width: '15%',
+        },
+        '& td:nth-child(2)': {
+          width: '40%',
+        },
+        '& td:nth-child(3)': {
+          width: '30%',
+        },
+        '& td:nth-child(4)': {
+          width: '15%',
+        },
+      }
+    },
+    ReactComponent: {
+      tabButtons: {
+        display: 'none'
+      }
+    },
+    SectionHeading: {
+      sectionName: {
+        paddingBottom: '8px',
+        borderBottom: '4px solid red',
       }
     },
     ComponentsList: {
@@ -99,14 +122,16 @@ module.exports = {
         }
       },
       heading2: {
-        'display': 'none'
+        display: 'none'
       },
       heading3: {
-        'fontSize': '30px',
-        'color': '#333',
-        'width': '100%',
-        'fontWeight': '700 !important',
-        'borderBottom': '1px solid  #333'
+        fontSize: '30px',
+        width: '100%',
+        lineHeight: '80px',
+        fontWeight: '600 !important',
+      },
+      toolbar: {
+        'display': 'none'
       }
     },
 		Markdown: {
@@ -253,7 +278,7 @@ module.exports = {
         {
           test: /\.jsx$/,
           loaders: 'babel-loader'
-        }
+        },
       ]
     },
     resolve: {
