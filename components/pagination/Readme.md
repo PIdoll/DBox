@@ -59,7 +59,7 @@ function showTotal(total) {
 | pageSizeOptions | 改变showSizeChanger的默认值 | Array | `['10', '20', '30', '40']`|
 | showTotal | 用于显示数据总量和当前数据顺序 | Function(total, range) | - |
 | simple | 当添加该属性时，显示为简单分页 | boolean | - |
-| size | 当为「small」时，是小尺寸分页 | string | "" |
+| size | 当为「small」时，是小尺寸分页 | string | - |
 | total | 数据总数 | number | 0 |
 | showTitle | 展示页码hover时显示的title值 | boolean | true |
 | showLessItems | 显示较少的页码项 | boolean | false |
