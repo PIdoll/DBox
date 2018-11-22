@@ -101,7 +101,7 @@ module.exports = {
     SectionHeading: {
       sectionName: {
         paddingBottom: '8px',
-        borderBottom: '4px solid red',
+        fontSize: '40px'
       }
     },
     ComponentsList: {
@@ -116,7 +116,7 @@ module.exports = {
         display: 'block',
         position: 'relative',
         fontWeight: 600,
-        fontSize: '36px',
+        fontSize: '40px',
         '& > a': {
           fontWeight: '700 !important'
         }
@@ -130,9 +130,6 @@ module.exports = {
         lineHeight: '80px',
         fontWeight: '600 !important',
       },
-      toolbar: {
-        'display': 'none'
-      }
     },
 		Markdown: {
 			pre: {
@@ -166,8 +163,8 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-            path.resolve(__dirname, './components/grid/index.jsx'),
-            // path.resolve(__dirname, './components/grid/row.jsx'),
+         //  path.resolve(__dirname, './components/grid/index.jsx'),
+        //    path.resolve(__dirname, './components/grid/row.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
         },
@@ -175,8 +172,8 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-            // path.resolve(__dirname, './components/button/button-group.jsx'),
-            path.resolve(__dirname, './components/icon/index.jsx'),
+          //  path.resolve(__dirname, './components/button/button-group.jsx'),
+          //  path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
@@ -184,36 +181,36 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-            path.resolve(__dirname, './components/affix/affix.jsx'),
+         //   path.resolve(__dirname, './components/affix/affix.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
-            path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
-            path.resolve(__dirname, './components/steps/steps.jsx'),
-            path.resolve(__dirname, './components/pagination/pagination.jsx'),
-        //  path.resolve(__dirname, './components/anchor/index.jsx'),
-        //  path.resolve(__dirname, './components/menu/index.jsx'),
+        //    path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
+          path.resolve(__dirname, './components/steps/steps.jsx'),
+        //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
+        //    path.resolve(__dirname, './components/anchor/index.jsx'),
+        //    path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
           name: 'Data Entry',
           components: () => ([
-            path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
-            path.resolve(__dirname, './components/cascader/cascader.jsx'),
-            path.resolve(__dirname, './components/input/index.jsx'),
-            // path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
-            path.resolve(__dirname, './components/select/index.jsx'),
-           // path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
-            path.resolve(__dirname, './components/date-picker/index.jsx'),
-            path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+        //    path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
+        //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
+        //    path.resolve(__dirname, './components/input/index.jsx'),
+        //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
+        //    path.resolve(__dirname, './components/select/index.jsx'),
+        //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
+        //    path.resolve(__dirname, './components/date-picker/index.jsx'),
+        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-            path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
-            path.resolve(__dirname, './components/form/Form.jsx'),
+        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+         //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
-        //  path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
-        //  path.resolve(__dirname, './components/slider/slider.jsx'),
-        //  path.resolve(__dirname, './components/rate/rate.jsx'),
-        //  path.resolve(__dirname, './components/transfer/transfer.jsx'),
+        //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
+        //    path.resolve(__dirname, './components/slider/slider.jsx'),
+        //    path.resolve(__dirname, './components/rate/rate.jsx'),
+        //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
@@ -222,28 +219,28 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
-            path.resolve(__dirname, './components/card/card.jsx'),
-            path.resolve(__dirname, './components/collapse/index.jsx'),
-            path.resolve(__dirname, './components/list/list.jsx'),
+         //   path.resolve(__dirname, './components/card/card.jsx'),
+         //   path.resolve(__dirname, './components/collapse/index.jsx'),
+         //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-        //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
-            path.resolve(__dirname, './components/table/table.jsx'),
-            path.resolve(__dirname, './components/tabs/tabs.jsx'),
-            path.resolve(__dirname, './components/tag/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
+        //    path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
+         //   path.resolve(__dirname, './components/table/table.jsx'),
+        //    path.resolve(__dirname, './components/tabs/tabs.jsx'),
+         //   path.resolve(__dirname, './components/tag/index.jsx'),
+         //   path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {
           name: 'Feedback',
           components: () => ([
-            path.resolve(__dirname, './components/alert/alert.jsx'),
-            path.resolve(__dirname, './components/modal/index.jsx'),
-            path.resolve(__dirname, './components/message/message.jsx'),
+         path.resolve(__dirname, './components/alert/alert.jsx'),
+       //   path.resolve(__dirname, './components/modal/index.jsx'),
+       //   path.resolve(__dirname, './components/message/message.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
-            path.resolve(__dirname, './components/progress/progress.jsx'),
-            path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
-            path.resolve(__dirname, './components/spin/spin.jsx'),
+        //  path.resolve(__dirname, './components/progress/progress.jsx'),
+        //  path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
+        //  path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },
       ]

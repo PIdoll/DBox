@@ -1,16 +1,23 @@
 
 import React from 'react';
-import InputNumber from '../../components/input-number/index';
+import InputNumber from '../../components/input-number';
+import Button from '../../components/button';
 
 export default class InputNumberView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      disabled: true
     }
+    this.handleToggle = this.handleToggle.bind(this);
   }
   onChange = (value) => {
     console.log('changed', value)
+  }
+  handleToggle() {
+    this.setState({
+      disabled: !this.state.disabled
+    })
   }
   render() {
     return (
@@ -25,10 +32,17 @@ export default class InputNumberView extends React.Component {
         <InputNumber size='small' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
         <br />
         <br />
-        <h1>不可用切换</h1>
-        <InputNumber min={10} defaultValue={100} formatter={value => `${value}%`} />
+        <h1>小数</h1>
+        <InputNumber min={0} max={10} defaultValue={1} step={0.1} />
         <br />
         <br />
+        <h1>不可用状态切换</h1>
+        <div>
+          <InputNumber min={1} max={100} defaultValue={5} disabled={this.state.disabled} />
+          <div style={{marginTop: '20px'}} >
+            <Button type='primary' onClick={this.handleToggle}>Toggle disabled</Button>
+          </div>
+        </div>
       </div>
     )
   }
