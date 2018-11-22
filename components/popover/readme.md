@@ -1,10 +1,10 @@
-## 何时使用
+#### **何时使用**
 
 当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。
 
 和 `Tooltip` 的区别是，用户可以对浮层上的元素进行操作，因此它可以承载更复杂的内容，比如链接或按钮等。
 
-##### **基本用法**
+#### **基本用法**
 ```jsx
 const content = (
   <div>
@@ -16,7 +16,7 @@ const content = (
 </Popover>
 ```
 
-##### **三种触发方式**
+#### **三种触发方式**
 ```jsx
 const content = (
   <div>
@@ -36,7 +36,7 @@ const content = (
 </div>
 ```
 
-##### **12个方向**
+#### **12个方向**
 ```jsx
 const content = (
   <div>
@@ -93,7 +93,7 @@ const text = <span>标题</span>;
 </div>
 ```
 
-##### **箭头指向**
+#### **箭头指向**
 ```jsx
 const content = (
   <div>
@@ -111,7 +111,7 @@ const text = <span>标题</span>;
 </div>
 ```
 
-##### **从浮层内关闭**
+#### **从浮层内关闭**
 ```jsx
 initialState = {
 	visible: false
@@ -141,7 +141,7 @@ handleVisibleChange = (visible) => {
 ```
 
 
-##### **悬停点击弹出层**
+#### **悬停点击弹出层**
 ```jsx
 initialState = {
 	visible: false
@@ -205,7 +205,7 @@ handleClickChange = (visible) => {
 ```
 
 
-## API
+#### **Popover**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
