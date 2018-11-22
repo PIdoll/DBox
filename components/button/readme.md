@@ -1,6 +1,8 @@
 <!-- # [Button](http://naotu.baidu.com/file/111809d1ee65fd61593e3afc13e79839?token=6b90e3ea029b1c7d) -->
-### 代码演示
-##### **按钮类型(type)**
+#### **何时使用**
+标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+
+#### **按钮类型**
 
 按钮有以下几种类型：默认按钮、主按钮、次按钮、失效按钮、虚线按钮、危险按钮。
 
@@ -15,14 +17,14 @@
 <Button type='danger'>危险</Button>
 ```
 
-##### **文字按钮(icon)**
+#### **文字按钮**
 添加 `text` 属性即可让按钮变成文字按钮，同时按钮样式也会改变。
 ```jsx
 <Button type='default' text>默认</Button>
 <Button type='secondary' text>主要</Button>
 ```
 
-##### **按钮尺寸(size)**
+#### **按钮尺寸**
 按钮有大、中、小三种尺寸。
 通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
 
@@ -32,14 +34,14 @@
 <Button type='primary' size='large'>按钮</Button>
 ```
 
-##### **跳转按钮(size)**
+#### **跳转按钮**
 通过设置 `href` 属性可把按钮设为跳转按钮，同 `a` 标签类似。
 ```jsx
 <Button type='secondary' href='http://www.baidu.com' target='_blank'>新页面</Button>
 <Button type='secondary' href='http://www.baidu.com' target='_self'>本页面</Button>
 ```
 
-##### **图标按钮(icon)**
+#### **图标按钮**
 当需要在 `Button` 内嵌入 `Icon` 时，可以设置 `icon` 属性，或者直接在 `Button` 内使用 `Icon` 组件。
 如果想控制 `Icon` 具体的位置，只能直接使用 `Icon` 组件，而非 `icon` 属性。
 ```jsx
@@ -62,7 +64,7 @@
 <Button icon='delete' shape='square' size='large' />
 ```
 
-##### **幽灵按钮(ghost)**
+#### **幽灵按钮**
 通过设置 `ghost` 可将按钮设置为幽灵按钮，幽灵按钮将按钮的内容反色，背景透明。
 ```jsx
 <div style={{ background: '#2F323B',height: '50px',paddingTop: '10px',paddingLeft: '10px'}}>
@@ -73,7 +75,7 @@
   <Button disabled ghost>禁用</Button>
 </div>
 ```
-##### **block按钮(block)**
+#### **block按钮**
 `block` 按钮会使按钮适合其父宽度。
 ```jsx
 <div style={{ width: '600px' }}>
@@ -83,8 +85,8 @@
   <Button block>默认</Button>
 </div>
 ```
-##### **组合按钮(ButtonGroup)**
-可使用 `Button.Group` 将个按钮组合在一起。演示代码中的 `ButtonGroup=Button.Group`
+#### **组合按钮**
+可使用 `Button.Group` 将个按钮组合在一起。
 ```jsx
 const ButtonGroup = Button.Group;
 <div>
@@ -96,9 +98,9 @@ const ButtonGroup = Button.Group;
   <br />
 
   <ButtonGroup>
-    <Button >选择1</Button>
-    <Button >选择2</Button>
-    <Button >选择3</Button>
+    <Button>选择1</Button>
+    <Button>选择2</Button>
+    <Button>选择3</Button>
   </ButtonGroup>
   <br />
   <br />
@@ -114,8 +116,8 @@ const ButtonGroup = Button.Group;
 </div>
 ```
 
-### Api
-| 属性 | 说明 | 类型 | 默认值 |
+### Button
+| 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | block | 将按钮宽度调整为其父宽度的选项 | boolean | `false` |
 | disabled | 按钮失效状态 | boolean | `false` |

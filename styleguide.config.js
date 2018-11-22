@@ -172,8 +172,7 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-          //  path.resolve(__dirname, './components/button/button-group.jsx'),
-          //  path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
