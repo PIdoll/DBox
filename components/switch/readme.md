@@ -4,28 +4,39 @@
 - 和 `checkbox`的区别是，切换 `switch` 会直接触发状态改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合。
 
 
-##### **基本用法**
+#### **基本用法**
 ```jsx
 <Switch defaultChecked></Switch>
 ```
 
-##### **按钮操作**
+#### **按钮操作**
 ```jsx
-initialState = {
+class SwitchView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
     disabled: true,
     defaultChecked: true
-  }
-  toggle = () => {
-    setState({
-      disabled: !state.disabled
-    });
-  }
-<div>
-	<Switch disabled={state.disabled}></Switch><Button onClick={this.toggle} >改变禁用状态</Button>
-</div>
+    }
+    this.toggle = this.toggle.bind(this)
+  };
+  toggle () {
+    this.setState({
+      disabled: !this.state.disabled
+    })
+  };
+  render() {
+  return (
+	<div>
+		<Switch disabled={this.state.disabled}></Switch>		<Button onClick={this.toggle} >改变禁用状态</Button>
+	</div>
+  )
+}
+}
+<SwitchView />
 ```
 
-##### **两种大小**
+#### **两种大小**
 ```jsx
 <div>
 	<Switch defaultChecked />
@@ -35,12 +46,12 @@ initialState = {
 ```
 
 
-##### **带有文字的按钮**
+#### **带有文字的按钮**
 ```jsx
 <Switch checkedChildren={'1'} unCheckedChildren={'0'} />
 ```
 
-##### **执行中**
+#### **执行中**
 ```jsx
 <div>
 	<Switch disabled loading defaultChecked />
@@ -50,7 +61,7 @@ initialState = {
 ```
 
 
-## API
+#### **Switch**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -64,7 +75,7 @@ initialState = {
 | loading | 加载中的开关 | boolean | false |
 | disabled | 失效状态 | boolean | false |
 
-##方法
+#### **method**
 
 | 名称 | 描述 |
 | --- | --- |
