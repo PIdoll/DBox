@@ -4,7 +4,7 @@ import Pagination from '../../components/pagination'
 export default class PaginationView extends React.Component {
   render () {
     function showTotal(total) {
-      return `共 ${total} 条`;
+      return `总 ${total} 条`;
     }
     // function itemRender(current, type, originalElement) {
     //     if (type === 'prev') {
