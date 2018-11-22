@@ -1,8 +1,10 @@
-/* import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classNames';
 import RcInputNumber from 'rc-input-number';
 import Icon from '../icon';
+
+import './style';
 
 export default class InputNumber extends React.Component {
   static propTypes = {
@@ -12,7 +14,7 @@ export default class InputNumber extends React.Component {
     max: PropTypes.number,
     parser: PropTypes.func,
     precision: PropTypes.number,
-    size: PropTypes.string,
+    size: PropTypes.oneOf(['small', 'default', 'large']),
     step: PropTypes.number,
   }
   static defaultProps = {
@@ -45,5 +47,5 @@ export default class InputNumber extends React.Component {
   blur = () => {
     this.inputNumberRef.blur();
   }
-} */
+}
 

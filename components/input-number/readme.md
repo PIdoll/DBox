@@ -33,11 +33,12 @@
 | --- | --- | --- | --- |
 | defaultValue |  初始值 | number |  |
 | disabled | 禁用 | boolean | false |
-| formatter | 指定输入框展示值的格式 | function(value: number | string):string | - |
+| formatter | 指定输入框展示值的格式 | function(value: number \| string):string | - |
 | max | 最大值 | number | infinity |
 | min | 最小值 | number | infinity|
 | parser | 指定从formatter里转换会数字的方式，和formatter搭配使用 | function | - |
 | precision  | 数值精度 | number  | - |
+| decimalSeparator | 小数点 | string | - |
 | size | 输入框大小 | string | - |
 | step | 每次改变步数，可以为小数 | number | 1 |
 | value | 当前值 | number |  |
