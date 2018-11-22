@@ -86,29 +86,32 @@
 ##### **组合按钮(ButtonGroup)**
 可使用 `Button.Group` 将个按钮组合在一起。演示代码中的 `ButtonGroup=Button.Group`
 ```jsx
-<ButtonGroup>
-  <Button>取消</Button>
-  <Button>确定</Button>
-</ButtonGroup>
-<br />
-<br />
+const ButtonGroup = Button.Group;
+<div>
+  <ButtonGroup>
+    <Button>取消</Button>
+    <Button>确定</Button>
+  </ButtonGroup>
+  <br />
+  <br />
 
-<ButtonGroup>
-  <Button >选择1</Button>
-  <Button >选择2</Button>
-  <Button >选择3</Button>
-</ButtonGroup>
-<br />
-<br />
+  <ButtonGroup>
+    <Button >选择1</Button>
+    <Button >选择2</Button>
+    <Button >选择3</Button>
+  </ButtonGroup>
+  <br />
+  <br />
 
-<ButtonGroup>
-  <Button>
-    <Icon type='left-circle-o' />向后
-  </Button>
-  <Button>
-    向前<Icon type='right-circle-o' />
-  </Button>
-</ButtonGroup>
+  <ButtonGroup>
+    <Button>
+      <Icon type='left-circle-o' />向后
+    </Button>
+    <Button>
+      向前<Icon type='right-circle-o' />
+    </Button>
+  </ButtonGroup>
+</div>
 ```
 
 ### Api
