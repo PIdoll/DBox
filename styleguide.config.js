@@ -197,7 +197,7 @@ module.exports = {
         //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
         //    path.resolve(__dirname, './components/input/index.jsx'),
         //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
-        //    path.resolve(__dirname, './components/select/index.jsx'),
+           path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
         //    path.resolve(__dirname, './components/date-picker/index.jsx'),
         //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
@@ -232,14 +232,14 @@ module.exports = {
         {
           name: 'Feedback',
           components: () => ([
-         path.resolve(__dirname, './components/alert/alert.jsx'),
+          path.resolve(__dirname, './components/alert/alert.jsx'),
        //   path.resolve(__dirname, './components/modal/index.jsx'),
        //   path.resolve(__dirname, './components/message/message.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
         //  path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
-        //  path.resolve(__dirname, './components/spin/spin.jsx'),
+          path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },
       ]
