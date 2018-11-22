@@ -38,7 +38,7 @@ export default class PaginationView extends React.Component {
         <Pagination simple defaultCurrent={2} total={500} />
         <h1 className='h1'>7.包含总数</h1>
         <p>依据默认选中页defaultCurrent，总条数total和每页数pageSize来控制,其值均为number类型；通过设置函数showTotal传参total来显示总条数</p>
-        <Pagination showTotal={(total) => (`总${total}条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
+        <Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
 
 
 
