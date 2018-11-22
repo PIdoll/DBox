@@ -8,12 +8,43 @@
   .reset-component;
   position: relative;
   padding-left: @anchor-border-width;
+  box-sizing:border-box
 
   &-wrapper {
     background-color: @component-background;
     overflow: auto;
     padding-left: 4px;
     margin-left: -4px;
+  }
+
+  &-anchor-line-link {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    &:before {
+      content: ' ';
+      position: relative;
+      height: 2px;
+      display: block;
+      background-color: @border-color-split;
+      margin: 0 auto;
+    }
+    &-ball {
+      display: none;
+      position: absolute;
+      width: 80px;
+      border-bottom: 2px solid @primary-color;
+      background-color: @primary-color;
+      // top: 50%;
+      top: 0.8px;
+      left: 0;
+      transform: translate(-50%, -50%);
+      transition: left .3s ease-in-out;
+      &.visible {
+        display: inline-block;
+      }
+    }
   }
 
   &-ink {
@@ -33,14 +64,14 @@
     &-ball {
       display: none;
       position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 8px;
-      border: 2px solid @primary-color;
-      background-color: @component-background;
+      height: 38px;
+      // border-radius: 8px;
+      border-left: 2px solid @primary-color;
+      background-color: @primary-color;
+      top: 50%;
       left: 50%;
       transition: top .3s ease-in-out;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       &.visible {
         display: inline-block;
       }
@@ -52,8 +83,8 @@
   }
 
   &-link {
-    padding: 8px 0 8px 16px;
-    line-height: 1;
+    padding: 7px 0 7px 16px;
+    line-height: 1.143;
 
     &-title {
       display: block;
@@ -63,7 +94,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
 
       &:only-child {
         margin-bottom: 0;
@@ -75,8 +106,13 @@
     }
   }
 
+  &-line-link {
+    display: inline-block;
+    padding: 12px 23px;
+  }
+
   &-link &-link {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
