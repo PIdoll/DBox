@@ -43,6 +43,10 @@ export default class InputNumberView extends React.Component {
             <Button type='primary' onClick={this.handleToggle}>Toggle disabled</Button>
           </div>
         </div>
+        <h1>自定义展示</h1>
+        <div>
+          <InputNumber min={0} max={100} defaultValue={100} formatter={value => `${value}%`} parser={value => value.repalce('%', '')} />
+        </div>
       </div>
     )
   }

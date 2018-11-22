@@ -6,6 +6,7 @@ import Icon from '../icon';
 
 import './style';
 
+
 export default class InputNumber extends React.Component {
   static propTypes = {
     defaultValue: PropTypes.number,
