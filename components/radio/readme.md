@@ -13,119 +13,165 @@
 
 ##### **禁用单选框**
 ```jsx
-initialState = {
-	disabled: true
-}
-toggleDisabled = (disabled) => {
-    setState({
-      disabled: !state.disabled
+class RadioView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      disabled: true
+    }
+    this.toggleDisabled = this.toggleDisabled.bind(this)
+  };
+  toggleDisabled () {
+    this.setState({
+      disabled: !this.state.disabled
     });
 	}
-<div>
-	<Radio defaultChecked={false} disabled >不能操作</Radio>
-	<Radio disabled={state.disabled}>不允许操作</Radio>
-	<Button type='primary' onClick={this.toggleDisabled}>
-		控制能否操作
-	</Button>
-</div>
+  render() {
+  return (
+	<div>
+		<Radio defaultChecked={false} disabled >不能操作</Radio>
+		<Radio disabled={this.state.disabled}>不允许操作</Radio>
+		<Button type='primary' onClick={this.toggleDisabled}>
+			控制能否操作
+		</Button>
+	</div>
+  )
+}
+}
+<RadioView />
 ```
 
 ##### **互斥单选框**
 ```jsx
-initialState = {
-	value: '1'
-}
-const onChange = (e) => {
-	this.setState({
-		value: e.target.value
-	})
-}
 const RadioGroup = Radio.RadioGroup;
-<RadioGroup onChange={this.onChange} defaultValue={state.value}>
-	<Radio value='1'>A</Radio>
-	<Radio value='2'>B</Radio>
-	<Radio value='3'>C</Radio>
-	<Radio value='4'>D</Radio>
-</RadioGroup>
+class RadioView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '1'
+    }
+    this.onChange = this.onChange.bind(this)
+  };
+	onChange (e) {
+		this.setState({
+			value: e.target.value
+		})
+	}
+  render() {
+  return (
+	<RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
+		<Radio value='1'>A</Radio>
+		<Radio value='2'>B</Radio>
+		<Radio value='3'>C</Radio>
+		<Radio value='4'>D</Radio>
+	</RadioGroup>
+  )
+}
+}
+<RadioView />
 ```
 
 ##### **垂直组合单选框**
 ```jsx
-initialState = {
-	value: '1'
-}
-const onChange = (e) => {
-    this.setState({
-      value: e.target.value
-    })
-	}
 const RadioGroup = Radio.RadioGroup;
-<RadioGroup direction='vertical' onChange={this.onChange} defaultValue='3'>
-	<Radio value='1'>A</Radio>
-	<Radio value='2'>B</Radio>
-	<Radio value='3'>C</Radio>
-	<Radio value='4'>D</Radio>
-</RadioGroup>
+class RadioView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '1'
+    }
+    this.onChange = this.onChange.bind(this)
+  };
+	onChange (e) {
+		this.setState({
+			value: e.target.value
+		})
+	}
+  render() {
+  return (
+	<RadioGroup direction='vertical' onChange={this.onChange} defaultValue='3'>
+		<Radio value='1'>A</Radio>
+		<Radio value='2'>B</Radio>
+		<Radio value='3'>C</Radio>
+		<Radio value='4'>D</Radio>
+	</RadioGroup>
+  )
+}
+}
+<RadioView />
 ```
 
 ##### **分组单选框**
 ```jsx
-initialState = {
-	value: '1'
-}
-const onChange = (e) => {
-    this.setState({
-      value: e.target.value
-    })
-	}
 const RadioGroup = Radio.RadioGroup;
-<div>
-	<RadioGroup onChange={this.onChange} defaultValue='6'>
-		<Radio value='5'>A</Radio>
-		<Radio value='6'>B</Radio>
-		<Radio value='7'>C</Radio>
-		<Radio value='8'>D</Radio>
-	</RadioGroup>
-	<br />
-	<RadioGroup onChange={this.onChange} defaultValue='11'>
-		<Radio value='10'>A</Radio>
-		<Radio value='9'>B</Radio>
-		<Radio value='11'>C</Radio>
-		<Radio value='12'>D</Radio>
-	</RadioGroup>
-</div>
+class RadioView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '1'
+    }
+    this.onChange = this.onChange.bind(this)
+  };
+	onChange (e) {
+		this.setState({
+			value: e.target.value
+		})
+	}
+  render() {
+  return (
+	<div>
+		<RadioGroup onChange={this.onChange} defaultValue='6'>
+			<Radio value='5'>A</Radio>
+			<Radio value='6'>B</Radio>
+			<Radio value='7'>C</Radio>
+			<Radio value='8'>D</Radio>
+		</RadioGroup>
+		<br />
+		<RadioGroup onChange={this.onChange} defaultValue='11'>
+			<Radio value='10'>A</Radio>
+			<Radio value='9'>B</Radio>
+			<Radio value='11'>C</Radio>
+			<Radio value='12'>D</Radio>
+		</RadioGroup>
+	</div>
+  )
+}
+}
+<RadioView />
 ```
-
 
 ##### **name单选框**
 ```jsx
-initialState = {
-	value: '1'
-}
-const onChange = (e) => {
-    this.setState({
-      value: e.target.value
-    })
-	}
 const RadioGroup = Radio.RadioGroup;
-<RadioGroup onChange={this.onChange} name='radioGroup' defaultValue='5'>
-	<Radio value='5'>A</Radio>
-	<Radio value='6'>B</Radio>
-	<Radio value='7'>C</Radio>
-	<Radio value='8'>D</Radio>
-</RadioGroup>
+class RadioView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '1'
+    }
+    this.onChange = this.onChange.bind(this)
+  };
+	onChange (e) {
+		this.setState({
+			value: e.target.value
+		})
+	}
+  render() {
+  return (
+	<RadioGroup name='radioGroup' onChange={this.onChange} defaultValue={this.state.value}>
+		<Radio value='1'>A</Radio>
+		<Radio value='2'>B</Radio>
+		<Radio value='3'>C</Radio>
+		<Radio value='4'>D</Radio>
+	</RadioGroup>
+  )
+}
+}
+<RadioView />
 ```
 
 ##### **按钮样式**
 ```jsx
-initialState = {
-	value: '1'
-}
-const onChange = (e) => {
-    this.setState({
-      value: e.target.value
-    })
-	}
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
