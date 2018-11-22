@@ -19,8 +19,8 @@ export default class TabsView extends React.Component {
     super(props);
     this.newTabIndex = 0;
     const panes = [
-      { title: '分页一', content: '分页内容一', key: '1' },
-      { title: '分页二', content: '分页内容二', key: '2' }
+      { title: '当前分页', content: '当前分页', key: '1' },
+      { title: '可关闭分页', content: '可关闭分页', key: '2' }
     ];
     this.state = {
       mode: 'top',
@@ -106,12 +106,12 @@ export default class TabsView extends React.Component {
           选项三
           </TabPane>
         </Tabs>
-        <h1 className='h1'>3.tab页水平，垂直滑动</h1>
+        <h1 className='h1'>3.tab页上下，左右滑动</h1>
         <RadioGroup onChange={this.handleModeChange} value={mode} style={{marginBottom: 8}}>
           <RadioButton value='top'>水平</RadioButton>
           <RadioButton value='left'>垂直</RadioButton>
         </RadioGroup>
-        <Tabs defaultActiveKey='11' tabPosition={mode} style={{height: 247}}>
+        <Tabs defaultActiveKey='11' tabPosition={mode} style={{height: 220}}>
           <TabPane tab='选项一' key='11'>选项一</TabPane>
           <TabPane tab='选项二' key='12'>选项二</TabPane>
           <TabPane tab='选项三' key='13'>选项三</TabPane>

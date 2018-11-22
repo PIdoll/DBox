@@ -4,6 +4,10 @@
 
 需要应用到下拉选项时，用于替换原生的选择器。
 
+<<<<<<< HEAD
+```jsx
+
+=======
 ### 代码演示
 ##### **基本使用**
 通过设置 `size`属性控制大小, `disabled` 设置为禁用。
@@ -50,6 +54,7 @@ const {Option} = Select;
     <Option value='shenzhen'>深圳</Option>
 </Select>
 ```
+>>>>>>> 45095725230b9d83f874a225f65d046947234344
 
 ##### **多选下拉框**
 多选，从已有条目中选择。设置 `mode` 属性为 `tags` 可随意输入内容。
@@ -72,6 +77,14 @@ const {Option} = Select;
 </div>
 ```
 
+<<<<<<< HEAD
+<Select >
+    <Option value='apple'>Apple</Option>
+    <Option value='apple'>Apple</Option>
+    <Option value='apple'>Apple</Option>
+    <Option value='apple'>Apple</Option>
+</Select>
+=======
 ##### **获得选项文本**
 ```jsx
 const {Option} = Select;
@@ -85,6 +98,7 @@ handleChange = (value) => {
     <Option value='shenzhen'>深圳</Option>
 </Select>
 ```
+>>>>>>> 45095725230b9d83f874a225f65d046947234344
 
 ##### **搜索用户**
 ```jsx
