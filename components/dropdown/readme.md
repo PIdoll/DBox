@@ -6,7 +6,8 @@
 
 ##### **基本用法**
 ```jsx
-const { Menu, MenuItem, DropdownNormal } = require('./index');const menu2 = (
+const { Menu, MenuItem, DropdownNormal } = require('./index');
+const menu2 = (
       <Menu onClick={handleMenu1Click}>
         <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
