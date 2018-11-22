@@ -42,7 +42,7 @@ function showTotal(total) {
 
 ##### **包含总数**
 ```jsx
-<Pagination showTotal={(total) => (`共 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
+<Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
 ```
 
 ##### **Pagination**
