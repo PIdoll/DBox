@@ -1,50 +1,54 @@
-# Switch
-
----
-
-category: Components
-subtitle: 开关
-type: Data Entry
-title: Switch
-
----
-
-开关选择器。
-
-## 何时使用
+#### **何时使用**
 
 - 需要表示开关状态/两种状态之间的切换时；
 - 和 `checkbox`的区别是，切换 `switch` 会直接触发状态改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合。
 
----
 
-## html
-
+##### **基本用法**
 ```jsx
-    //初始是否选中:defaultChecked
-    <Switch defaultChecked />
-
-    //两种尺寸的switch
-    <Switch />
-    <Switch size='small' />
-
-    //指定当前是否被选中
-    <Switch checked />
-
-    //选中时的内容和非选中时的内容
-    <Switch checkedChildren={'开'} unCheckedChildren={'关'} />
-
-    <Switch checkedChildren={<Icon type='check' />} unCheckedChildren={<Icon type='cross' />} />
-
-    //失效状态:disabled
-    <Switch disabled />
-
-    //加载中的状态
-    <Switch size='small' loading />
-
-    //点击时的回调
-    <Switch onClick={onClick} />
+<Switch defaultChecked></Switch>
 ```
+
+##### **按钮操作**
+```jsx
+initialState = {
+    disabled: true,
+    defaultChecked: true
+  }
+  toggle = () => {
+    setState({
+      disabled: !state.disabled
+    });
+  }
+<div>
+	<Switch disabled={state.disabled}></Switch><Button onClick={this.toggle} >改变禁用状态</Button>
+</div>
+```
+
+##### **两种大小**
+```jsx
+<div>
+	<Switch defaultChecked />
+	<br />
+	<Switch size='small' />
+</div>
+```
+
+
+##### **带有文字的按钮**
+```jsx
+<Switch checkedChildren={'1'} unCheckedChildren={'0'} />
+```
+
+##### **执行中**
+```jsx
+<div>
+	<Switch disabled loading defaultChecked />
+    <br />
+    <Switch disabled size='small' loading />
+</div>
+```
+
 
 ## API
 

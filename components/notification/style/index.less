@@ -1,149 +1,144 @@
-@import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "../../../style/theme/default/default.less";
+@import "../../../style/mixins/index.less";
 
-@notification-prefix-cls: ant-notification;
-@notification-width: 335px;
-@notification-padding: 16px;
-@notification-margin-bottom: 10px;
+@message-prefix-cls: ~"@{idoll-prefix}-notification";
 
-.@{notification-prefix-cls} {
+.@{message-prefix-cls} {
+  .reset-component;
   position: fixed;
-  z-index: @zindex-notification;
-  width: @notification-width;
-  margin-right: 24px;
+  z-index: @zindex-message;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  pointer-events: none;
 
   &-notice {
-    padding: @notification-padding;
-    border-radius: @border-radius-base;
-    box-shadow: @shadow-2;
-    border: 1px solid @border-color-base;
-    background: @body-background;
-    line-height: 1.5;
+    padding: 8px;
+    text-align: center;
+    &:first-child {
+      margin-top: -8px;
+    }
+  }
+
+  // &-notice-content {
+  //   padding:  @padding-xs @padding-sm+2;
+  //   background: @component-background;
+  //   box-shadow: @shadow-2;
+  //   border-radius: @border-radius-base;
+  //   display: inline-block;
+  //   pointer-events: all;
+  //   // background-color: @success-color;
+  //   // color: #fff;
+  // }
+
+  &-notice-content &-custom-content {
+    // padding:  @padding-xs @padding-sm+2;
+    width: 384px;
+    // height: 108px;
+    background: @component-background;
+    box-shadow: @Shadow-large;
+    // border-radius: @border-radius-base;
+    border-radius: 4px;
+    display: inline-block;
+    pointer-events: all;
+    text-align: left;
+    padding: 16px 24px;
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: rgba(0,0,0,0.65);
+      font-weight: 400;
+    }
+    .title {
+      font-size: 16px;
+      position: relative;
+      line-height: 24px;
+      color:rgba(0,0,0,0.85);
+      font-weight: 500;
+      margin-bottom: 8px;
+      i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: @text-color;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  .content-success {
+    background-color: @success-color;
+    color: #fff;
+  }
+
+  .content-error {
+    background-color: @error-color;
+    color: #fff;
+  }
+
+  .content-info {
+    background-color: @warning-color;
+    color: #fff;
+  }
+
+  .content-loading {
+    background-color: @warning-color;
+    color: #fff;
+  }
+
+  .content-warning, .content-warning {
+    background-color: @warning-color;
+    color: #fff;
+  }
+
+  &-success .@{iconfont-css-prefix} {
+    color: @success-color;
+  }
+
+  &-error .@{iconfont-css-prefix} {
+    color: @error-color;
+  }
+
+  &-warning .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-warn .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-loading .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-info .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  .@{iconfont-css-prefix} {
+    margin-right: 8px;
+    font-size: @font-size-lg;
+    top: -1px;
     position: relative;
-    margin-bottom: @notification-margin-bottom;
+  }
+
+  &-notice.move-up-leave.move-up-leave-active {
+    animation-name: notificationMoveOut;
     overflow: hidden;
-
-    &-message {
-      font-size: 14px;
-      color: @text-color;
-      margin-bottom: 4px;
-    }
-
-    &-description {
-      font-size: @font-size-base;
-      color: @legend-color;
-    }
-
-    &-with-icon  &-message {
-      font-size: 14px;
-      color: @text-color;
-      margin-left: 51px;
-      margin-bottom: 4px;
-    }
-
-    &-with-icon  &-description {
-      margin-left: 51px;
-      font-size: @font-size-base;
-      color: @legend-color;
-    }
-
-    &-icon {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      margin-top: -17px;
-      font-size: 34px;
-
-      &-success {
-        color: @success-color;
-      }
-      &-info {
-        color: @primary-color;
-      }
-      &-warning {
-        color: @warning-color;
-      }
-      &-error {
-        color: @error-color;
-      }
-    }
-
-    &-close-x:after {
-      font-size: 12px;
-      content: "\e62d";
-      font-family: "anticon";
-      cursor: pointer;
-    }
-
-    &-close {
-      position: absolute;
-      right: 16px;
-      top: 10px;
-      color: #999;
-      outline: none;
-    }
-
-    &-btn {
-      float: right;
-      margin-top: 16px;
-    }
-  }
-
-  .notification-fade-effect {
-    animation-duration: 0.24s;
-    animation-fill-mode: both;
-    animation-timing-function: @ease-in-out;
-  }
-
-  &-fade-enter,
-  &-fade-appear {
-    opacity: 0;
-    .notification-fade-effect();
-    animation-play-state: paused;
-  }
-
-  &-fade-leave {
-    .notification-fade-effect();
-    animation-duration: 0.2s;
-    animation-play-state: paused;
-  }
-
-  &-fade-enter&-fade-enter-active,
-  &-fade-appear&-fade-appear-active {
-    animation-name: NotificationFadeIn;
-    animation-play-state: running;
-  }
-
-  &-fade-leave&-fade-leave-active {
-    animation-name: NotificationFadeOut;
-    animation-play-state: running;
+    animation-duration: .3s; 
   }
 }
 
-@keyframes NotificationFadeIn {
-  0% {
-    opacity: 0;
-    left: @notification-width;
-  }
-  100% {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes NotificationFadeOut {
+@keyframes notificationMoveOut {
   0% {
     opacity: 1;
-    margin-bottom: @notification-margin-bottom;
-    padding-top: @notification-padding;
-    padding-bottom: @notification-padding;
     max-height: 150px;
+    padding: 8px;
   }
   100% {
     opacity: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
     max-height: 0;
+    padding: 0;
   }
 }

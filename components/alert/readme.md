@@ -39,7 +39,7 @@
   message='信息提示'
   description='关于文案写作的额外描述和信息.'
   type='info'
-  showIcon/>    
+  showIcon/>
 <Alert
   message='警告'
   description='这是一个关于文案写作的警告通知.'
@@ -91,28 +91,19 @@
 #### **平滑的卸载**
 
 ```jsx
-export default class AlertView extends React.Component {
-  state = {
+
+  initialState = {
     visible: true,
   }
   handleClose = () => {
-    console.log(1)
     this.setState({ visible: false });
   }
-  render () {
-    return (
-      {
-        this.state.visible ? (
-          <Alert
-            message='Alert Message Text'
-            type='success'
-            closable
-            afterClose={this.handleClose}/>
-          ) : null
-      }
-    )
-  }
-}
+<Alert
+  message='Alert Message Text'
+  type='success'
+  closable
+  afterClose={this.handleClose}/>
+
 ```
 
 #### **顶部公告**
