@@ -27,7 +27,7 @@ export default class TabsView extends React.Component {
       panes,
       activeKey: panes[0].key
     }
-  }
+  };
   onChange = (activeKey) => {
     this.setState({activeKey});
   };
