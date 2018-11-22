@@ -23,6 +23,7 @@
   border-color: #E2E2E2;
   color: #13B886;
   border-bottom-color: #fff;
+  user-select: none;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active:hover {
   color: #42C69E;
@@ -334,6 +335,7 @@
 }
 .idoll-tabs-nav .idoll-tabs-tab:active {
   color: #13B886;
+  user-select: none;
 }
 .idoll-tabs-nav .idoll-tabs-tab .idoll-icon {
   margin-right: 8px;
@@ -341,6 +343,7 @@
 .idoll-tabs-nav .idoll-tabs-tab-active {
   color: #13B886;
   font-weight: 500;
+  user-select: none;
 }
 .idoll-tabs-nav .idoll-tabs-tab-active i:before {
   color: #13B886;
@@ -350,6 +353,20 @@
 }
 .idoll-tabs-nav .idoll-tabs-tab-active:hover i:before {
   color: #42C69E;
+}
+.idoll-tabs-left.idoll-tabs-vertical.idoll-tabs-line div.idoll-tabs-tab.idoll-tabs-tab-active {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-tabs-left.idoll-tabs-vertical.idoll-tabs-line div.idoll-tabs-tab.idoll-tabs-tab-active:after {
+  content: '';
+  position: absolute;
+  left: 97%;
+  top: 0;
+  display: block;
+  background: #13B886;
+  width: 2px;
+  height: 46px;
 }
 .idoll-tabs-large .idoll-tabs-nav-container {
   font-size: 16px;
@@ -377,6 +394,7 @@
   height: 0;
   padding: 0 !important;
   pointer-events: none;
+  user-select: none;
 }
 .idoll-tabs:not(.idoll-tabs-vertical) > .idoll-tabs-content-animated {
   display: flex;
@@ -525,18 +543,11 @@
 }
 .idoll-tabs-cardTabs .idoll-tabs-bar .idoll-tabs-nav-container .idoll-tabs-nav div.idoll-tabs-tab-active {
   background-color: #fff;
+  user-select: none;
 }
 .idoll-tabs-cardTabs .idoll-tabs-content {
   background-color: #fff;
   padding: 15px;
-}
-.idoll-tabs-top .idoll-tabs-ink-bar-animated,
-.idoll-tabs-bottom .idoll-tabs-ink-bar-animated {
-  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.idoll-tabs-left .idoll-tabs-ink-bar-animated,
-.idoll-tabs-right .idoll-tabs-ink-bar-animated {
-  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .no-flex > .idoll-tabs-content-animated,
 .idoll-tabs-no-animation > .idoll-tabs-content-animated,
@@ -548,4 +559,5 @@
 .idoll-tabs-no-animation > .idoll-tabs-content > .idoll-tabs-tabpane-inactive,
 .idoll-tabs-vertical > .idoll-tabs-content > .idoll-tabs-tabpane-inactive {
   display: none;
+  user-select: none;
 }
