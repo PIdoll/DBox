@@ -266,7 +266,7 @@ class TabsView extends React.Component {
 | tabBarExtraContent | tab bar 上额外的元素 | React.ReactNode | 无 |
 | tabBarStyle | tab bar 的样式对象 | object | - |
 | tabPosition | 页签位置，可选值有 `top` `right` `bottom` `left` | string | `top` |
-| type | 页签的基本样式，可选 `line`、`card` `editable-card``cardTabs` 类型 | string | `line` |
+| type | 页签的基本样式，可选 `line`、`card`、`editable-card`、`cardTabs` 类型 | string | `line` |
 | onChange | 切换面板的回调 | Function | 无 |
 | onEdit | 新增和删除页签的回调，在 `type="editable-card"` 时有效 | (targetKey, action): void | 无 |
 | onNextClick | next 按钮被点击的回调 | Function | 无 |
