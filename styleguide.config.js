@@ -163,7 +163,7 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-         //  path.resolve(__dirname, './components/grid/index.jsx'),
+          path.resolve(__dirname, './components/grid/index.jsx'),
         //    path.resolve(__dirname, './components/grid/row.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
@@ -195,11 +195,11 @@ module.exports = {
           components: () => ([
         //    path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
         //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
-        //    path.resolve(__dirname, './components/input/index.jsx'),
+           path.resolve(__dirname, './components/input/index.jsx'),
         //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
-        //    path.resolve(__dirname, './components/date-picker/index.jsx'),
+           path.resolve(__dirname, './components/date-picker/index.jsx'),
         //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
