@@ -172,7 +172,8 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-            path.resolve(__dirname, './components/icon/index.jsx'),
+          //  path.resolve(__dirname, './components/button/button-group.jsx'),
+           path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
@@ -222,11 +223,11 @@ module.exports = {
          //   path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-        //    path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
-         //   path.resolve(__dirname, './components/table/table.jsx'),
-        //    path.resolve(__dirname, './components/tabs/tabs.jsx'),
-         //   path.resolve(__dirname, './components/tag/index.jsx'),
-         //   path.resolve(__dirname, './components/upload/upload.jsx'),
+        //  path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
+            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/tabs/index.jsx'),
+            path.resolve(__dirname, './components/tag/index.jsx'),
+            path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {

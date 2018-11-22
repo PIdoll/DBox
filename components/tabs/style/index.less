@@ -219,6 +219,7 @@
 
       &:active {
         color: @primary-color;
+        user-select: none;
       }
 
       .@{iconfont-css-prefix} {
@@ -229,6 +230,7 @@
     .@{tab-prefix-cls}-tab-active {
       color: @primary-color;
       font-weight: 500;
+      user-select: none;
       i:before {
         color: @primary-color;
       }
@@ -238,6 +240,23 @@
       i:before {
         color: @primary-Hover;
       }
+    }
+  }
+
+  &-left&-vertical&-line {
+    div.@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-active {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    div.@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-active:after {
+        content: '';
+        position: absolute;
+        left: 97%;
+        top: 0;
+        display: block;
+        background: @primary-color;
+        width: 2px;
+        height: 46px;
     }
   }
 
@@ -273,6 +292,7 @@
         height: 0;
         padding: 0 !important;
         pointer-events: none;
+        user-select: none;
       }
     }
     > .@{tab-prefix-cls}-content-animated {
@@ -445,6 +465,7 @@
         }
         div.@{tab-prefix-cls}-tab-active {
           background-color: #fff;
+          user-select: none;
         }
       }
     }
@@ -453,17 +474,6 @@
     background-color: #fff;
     padding: 15px;
   } 
-}
-
-
-.@{tab-prefix-cls}-top .@{tab-prefix-cls}-ink-bar-animated,
-.@{tab-prefix-cls}-bottom .@{tab-prefix-cls}-ink-bar-animated {
-  transition: transform .3s @ease-in-out, width .3s @ease-in-out;
-}
-
-.@{tab-prefix-cls}-left .@{tab-prefix-cls}-ink-bar-animated,
-.@{tab-prefix-cls}-right .@{tab-prefix-cls}-ink-bar-animated {
-  transition: transform .3s @ease-in-out, height .3s @ease-in-out;
 }
 
 .no-flex,
@@ -476,6 +486,8 @@
     }
     > .@{tab-prefix-cls}-tabpane-inactive {
       display: none;
+      user-select: none;
     }
   }
 }
+
