@@ -83,10 +83,10 @@ module.exports = {
           width: '15%',
         },
         '& td:nth-child(2)': {
-          width: '40%',
+          width: '50%',
         },
         '& td:nth-child(3)': {
-          width: '30%',
+          width: '20%',
         },
         '& td:nth-child(4)': {
           width: '15%',
