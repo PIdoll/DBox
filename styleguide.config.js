@@ -158,21 +158,6 @@ module.exports = {
         {
           content: ''
         },
-        {
-          name: 'Document rule',
-          description: 'this is a markdown rule sections',
-          content: ''
-        },
-        {
-          name: 'Colors',
-          description: 'this is a Colors sections',
-          content: ''
-        },
-        {
-          name: 'Typograghy',
-          description: 'this is a Typography sections',
-          content: ''
-        },
       ]
     },
     {
@@ -181,8 +166,8 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-            path.resolve(__dirname, './components/grid/col.jsx'),
-            path.resolve(__dirname, './components/grid/row.jsx'),
+            path.resolve(__dirname, './components/grid/index.jsx'),
+            // path.resolve(__dirname, './components/grid/row.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
         },

@@ -2,7 +2,7 @@
 #### **何时使用**
 当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。
 
-##### **通用步骤条**
+#### **通用步骤条**
 ```jsx
 class StepsView extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-##### **小尺寸步骤条**
+#### **小尺寸步骤条**
 ```jsx
 class StepsView extends React.Component {
   render() {
@@ -40,13 +40,20 @@ class StepsView extends React.Component {
 
 #### **点状步骤条**
 ```jsx
+class StepsView extends React.Component {
+  render() {
+    return (
+      <Steps progressDot current={1}>
+        <Steps.Step title='步骤一' description='这里是一段描述性文字' />
+        <Steps.Step title='步骤二' description='这里是一段描述性文字' />
+        <Steps.Step title='步骤三' description='这里是一段描述性文字' />
+        <Steps.Step title='步骤四' description='这里是一段描述性文字' />
+      </Steps>
+    )
+  }
+}
+<StepsView />
 
-<Steps progressDot current={1}>
-  <Steps.Step title='步骤一' description='这里是一段描述性文字' />
-  <Steps.Step title='步骤二' description='这里是一段描述性文字' />
-  <Steps.Step title='步骤三' description='这里是一段描述性文字' />
-  <Steps.Step title='步骤四' description='这里是一段描述性文字' />
-</Steps>
 ```
 
 #### **自定义点状步骤条**
@@ -71,7 +78,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-##### **步骤切换**
+#### **步骤切换**
 ```jsx
 const Step = Steps.Step;
 const steps = [
@@ -98,11 +105,11 @@ class StepsView extends React.Component {
       current: 0
     }
   }
-  next() {
+   next() {
     const current = this.state.current + 1;
     this.setState({current});
   }
-  prev() {
+   prev() {
     const current = this.state.current - 1;
     this.setState({current});
   }
@@ -133,7 +140,7 @@ class StepsView extends React.Component {
 
 ```
 
-##### **步骤运行错误**
+#### **步骤运行错误**
 ```jsx
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -151,7 +158,7 @@ class StepsView extends React.Component {
 
 ```
 
-##### **竖直方向步骤条**
+#### **竖直方向步骤条**
 ```jsx
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -168,7 +175,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-##### **竖直方向小尺寸步骤条**
+#### **竖直方向小尺寸步骤条**
 ```jsx
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -185,7 +192,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-##### **Steps**
+#### **Steps**
 
 整体步骤条
 
@@ -199,7 +206,7 @@ class StepsView extends React.Component {
 | status | 指定当前步骤的状态 | string | process |
 | initial | 起始序号，从0开始计数 | number| 0 |
 
-##### **Steps.Step**
+#### **Steps.Step**
 
 步骤条内的每一个步骤
 
@@ -209,4 +216,4 @@ class StepsView extends React.Component {
 | icon | 步骤图标的类型，可选 | string | ReactNode |
 | title | 标题 | string | ReactNode |
 
-<style>.idoll-steps{margin-bottom: 10px}</style>
+<style>.idoll-steps{margin-right: 10px}</style>
