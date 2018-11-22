@@ -60,7 +60,7 @@ export default class TabsView extends React.Component {
   };
   handleModeChange = (e) => {
     const mode = e.target.value;
-    this.setState({ mode });
+    this.setState({ mode })
   };
   componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
