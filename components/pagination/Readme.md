@@ -24,7 +24,7 @@
 ##### **迷你分页**
 ```jsx
 function showTotal(total) {
-  return `共 ${total} 条`;
+  return `总 ${total} 条`;
 }
 <div>
 	<Pagination size='small' total={50}></Pagination>
