@@ -10,6 +10,7 @@ import zhCN from './locale/zh_CN';
 
 import './style/index.jsx';
 
+
 export default class Pagination extends React.Component {
     static defaultProps = {
         locale: zhCN,
