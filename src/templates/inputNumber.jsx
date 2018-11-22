@@ -21,7 +21,7 @@ export default class InputNumberView extends React.Component {
   }
   render() {
     return (
-      <div className='main-container' style={{margin: '10px 50px'}}>
+      <div id='main-container' >
         <h1>基本用法</h1>
         <InputNumber min={1} defaultValue={3} onChange={this.onChange} max={10} />
         <br />
