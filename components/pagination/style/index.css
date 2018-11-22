@@ -70,6 +70,7 @@
 }
 .idoll-pagination-item-active {
   border-color: #13B886;
+  user-select: none;
 }
 .idoll-pagination-item-active:focus,
 .idoll-pagination-item-active:hover {
