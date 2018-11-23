@@ -235,7 +235,7 @@ module.exports = {
           components: () => ([
           path.resolve(__dirname, './components/alert/alert.jsx'),
        //   path.resolve(__dirname, './components/modal/index.jsx'),
-       //   path.resolve(__dirname, './components/message/message.jsx'),
+         path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),

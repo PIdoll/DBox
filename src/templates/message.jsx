@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'components/button';
-import message from 'components/message/index';
+import Message from 'components/message/index';
 import Icon from 'components/icon/index';
 import Switch from '../../components/switch';
 
@@ -13,46 +13,45 @@ export default class messageView extends React.Component {
   }
   render() {
     const { normal } = this.state;
-    // message.config({
+    // Message.config({
     //   top: 100,
     //   duration: 10,
     //   maxCount: 3,
     // });
     const success = () => {
-      message.success('这是成功信息提示', 30, () => console.log(1111), normal);
+      Message.success('这是成功信息提示', 30, () => console.log(1111), normal);
     };
 
     const error = () => {
-      message.error('这是错误信息提示', normal);
+      Message.error('这是错误信息提示', normal);
     }
 
     const warn = () => {
-      message.warn('这是警告信息提示', 3, normal);
+      Message.warn('这是警告信息提示', 3, normal);
     };
 
     const info = () => {
-      message.info('这是基本的信息提示', 3, () => console.log('关闭回调'), normal);
+      Message.info('这是基本的信息提示', 3, () => console.log('关闭回调'), normal);
     };
 
     const DelayInfo = () => {
-      message.info('这是基本的信息提示，并且在10s之后会自动关闭', 10, normal);
+      Message.info('这是基本的信息提示，并且在10s之后会自动关闭', 10, normal);
     };
 
     const LoadingSuccess = () => {
-      const hide = message.loading('活动加载中..', 0, normal);
+      const hide = Message.loading('活动加载中..', 0, normal);
       // Dismiss manually and asynchronously
       setTimeout(hide, 250000);
     };
 
     const PromiseSuccess = () => {
-      message.loading('活动加载中..', 2.5)
-      message.open({
+      Message.loading('活动加载中..', 2.5)
+      Message.open({
         content: 'open触发了',
-        normal: false,
         icon: <Icon type='down-circle' />,
       })
-        .then(() => message.success('加载结束', 2.5))
-        .then(() => message.info('加载中的加载结束', 2.5));
+        .then(() => Message.success('加载结束', 2.5))
+        .then(() => Message.info('加载中的加载结束', 2.5));
     };
     return (
       <div id='main-container'>
