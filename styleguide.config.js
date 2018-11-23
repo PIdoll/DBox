@@ -194,7 +194,7 @@ module.exports = {
         {
           name: 'Data Entry',
           components: () => ([
-        //    path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
+           path.resolve(__dirname, './components/auto-complete/index.jsx'),
         //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
            path.resolve(__dirname, './components/input/index.jsx'),
         //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
