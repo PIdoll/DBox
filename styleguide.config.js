@@ -264,9 +264,14 @@ module.exports = {
       ]
     },
     resolve: {
+      // 自动补全的拓展名
+      extensions: ['.js', '.jsx', '.json', '.less'],
+      // 路径别名
       alias: {
-        'react-styleguidist': path.join(__dirname, '../../')
+        'assets': path.resolve(__dirname, 'assets'),
+        'templates': path.resolve(__dirname, 'src/templates'),
+        'components': path.resolve(__dirname, 'components')
       }
-    }
+    },
   }
 }
