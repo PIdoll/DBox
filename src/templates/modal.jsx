@@ -105,7 +105,7 @@ export default class ModalView extends React.Component {
     confirm({
       iconType: 'close-circle',
       title: '我是一个确认对话模态框',
-      content: '这里是描述文字…',
+      content: <div><p>这里是描述文字…</p><p>这里是描述文字…</p></div>,
       onOk: function() {
         console.log('确定');
       },
@@ -133,9 +133,7 @@ export default class ModalView extends React.Component {
   render() {
     return (
       <div id='main-container'>
-        <h1 className='h1'>
-        普通弹出框(可用于展示和提交)
-        </h1>
+        <h1 className='h1'>普通弹出框(可用于展示和提交)</h1>
         <Button type='primary' onClick={this.showModal}>显示对话框</Button>
         <Modal title='我是标题' visible={this.state.visible}
           onOk={this.handleOk} onCancel={this.handleCancel}>
@@ -147,28 +145,20 @@ export default class ModalView extends React.Component {
           <p>最后一行</p>
         </Modal>
 
-        <h1 className='h1'>
-        异步关闭弹出框
-        </h1>
+        <h1 className='h1'>异步关闭弹出框</h1>
         <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
         <Modal title='我是标题' visible={this.state.asyncvisible}
           onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
           <p>{this.state.ModalText}</p>
         </Modal>
 
-        <h1 className='h1'>
-        信息提示
-        </h1>
+        <h1 className='h1'>信息提示</h1>
         <Button onClick={this.info}>信息提示</Button>
         <Button onClick={this.success}>成功提示</Button>
         <Button onClick={this.error}>失败提示</Button>
 
-        <div className='h1'>
-        确认对话框
-        </div>
-        <Button onClick={this.showConfirm}>
-        确认对话框
-        </Button>
+        <h1 className='h1'>确认对话框</h1>
+        <Button onClick={this.showConfirm}>确认对话框</Button>
 
         {/* 自定义页脚 */}
         {/* <div className='h1'>

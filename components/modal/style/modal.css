@@ -4,10 +4,8 @@
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 .idoll-modal {
   position: relative;
-  width: 560px !important;
   margin: 0 auto;
   top: 100px;
-  padding-bottom: 24px;
 }
 .idoll-modal-wrap {
   position: fixed;
@@ -123,9 +121,6 @@
 }
 .idoll-modal-open {
   overflow: hidden;
-}
-div.idoll-modal {
-  width: 560px;
 }
 @media (max-width: 768px) {
   .idoll-modal {

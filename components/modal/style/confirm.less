@@ -19,11 +19,12 @@
     }
 
     .@{confirm-prefix-cls}-content {
-      margin-left: 40px;
-      font-size: @font-size-base;
       color: @text-color;
-      margin-right: 8px;
-      margin-top: 16px;
+      padding: 16px 8px 16px 40px;
+      p {
+      font-size: @font-size-base;
+      line-height: 22px;
+      }
     }
 
     > .idoll-icon {
@@ -34,7 +35,7 @@
   }
 
   .@{confirm-prefix-cls}-btns {
-    margin-top: 53px;
+    margin-top: 32px;
     float: right;
 
     button + button {
