@@ -116,7 +116,7 @@ const ButtonGroup = Button.Group;
 </div>
 ```
 
-### Button
+#### **Button**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | block | 将按钮宽度调整为其父宽度的选项 | boolean | `false` |

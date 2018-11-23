@@ -226,6 +226,7 @@ module.exports = {
          path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
+            path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
@@ -239,7 +240,7 @@ module.exports = {
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
-        //  path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
+         path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
           path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },
