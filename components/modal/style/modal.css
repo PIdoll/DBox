@@ -1,0 +1,138 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+.idoll-modal {
+  position: relative;
+  width: 560px !important;
+  margin: 0 auto;
+  top: 100px;
+  padding-bottom: 24px;
+}
+.idoll-modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.idoll-modal-title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.idoll-modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 0;
+  border-radius: 3px;
+  background-clip: padding-box;
+}
+.idoll-modal-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  position: absolute;
+  right: 24px;
+  top: 20px;
+  z-index: 10;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: color .3s ease;
+  color: #999;
+  outline: 0;
+}
+.idoll-modal-close-x {
+  display: block;
+  font-style: normal;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+  font-size: 16px;
+  line-height: 1;
+}
+.idoll-modal-close-x:before {
+  content: "\e91c";
+  display: block;
+  font-family: "idollicon";
+}
+.idoll-modal-close:focus,
+.idoll-modal-close-hover {
+  color: #444;
+  text-decoration: none;
+}
+.idoll-modal-header {
+  position: relative;
+  padding: 16px 24px;
+  border-radius: 3px 3px 0 0;
+  background: #fff;
+  color: #666;
+}
+.idoll-modal-header:after {
+  position: absolute;
+  top: 100%;
+  left: 24px;
+  content: '';
+  width: 512px;
+  height: 1px;
+  background-color: #E2E2E2;
+}
+.idoll-modal-body {
+  min-height: 180px;
+  max-height: 488px;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  overflow: auto;
+}
+.idoll-modal-footer {
+  height: 48px ;
+  padding: 0 24px 16px 24px;
+  text-align: right;
+  border-radius: 0 0 3px 3px;
+}
+.idoll-modal-footer button {
+  margin-left: 8px;
+}
+.idoll-modal.zoom-enter,
+.idoll-modal.zoom-appear {
+  animation-duration: .3s;
+  transform: none;
+  opacity: 0;
+}
+.idoll-modal-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #373737;
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  z-index: 1000;
+  filter: alpha(opacity=50);
+}
+.idoll-modal-mask-hidden {
+  display: none;
+}
+.idoll-modal-open {
+  overflow: hidden;
+}
+div.idoll-modal {
+  width: 560px;
+}
+@media (max-width: 768px) {
+  .idoll-modal {
+    width: auto !important;
+    margin: 10px;
+  }
+  .vertical-center-modal .idoll-modal {
+    flex: 1;
+  }
+}

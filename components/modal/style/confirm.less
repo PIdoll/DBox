@@ -1,34 +1,35 @@
 @confirm-prefix-cls: idoll-confirm;
 
 .@{confirm-prefix-cls} {
+  width: 408px !important; 
   .idoll-modal-header {
     display: none;
   }
 
   .idoll-modal-body {
-    padding: 30px 40px;
+    padding: 24px;
   }
 
   &-body {
     .@{confirm-prefix-cls}-title {
       color: @text-color;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     .@{confirm-prefix-cls}-content {
-      margin-left: 37px;
+      margin-left: 40px;
       font-size: @font-size-base;
       color: @text-color;
-      margin-top: 8px;
+      margin-right: 8px;
+      margin-top: 16px;
     }
 
     > .idoll-icon {
       font-size: 24px;
-      margin-right: 10px;
-      padding: 0 1px;
+      margin-right: 16px;
       position: relative;
-      top: 5px;
     }
   }
 
@@ -46,9 +47,16 @@
     color: @error-color;
   }
 
-  &-warning &-body >.idoll-icon,
-  &-confirm &-body > .idoll-icon {
+  &-warning &-body >.idoll-icon {
     color: @warning-color;
+  }
+
+  &-confirm &-body > .idoll-icon {
+    color: @primary-color;
+    &:before {
+      content: "\E912";
+      font-family: 'idoll-icon-pro' !important;
+    }
   }
 
   &-info &-body > .idoll-icon {

@@ -17,7 +17,7 @@ export default class Modal extends React.Component {
     prefixCls: 'idoll-modal',
     onOk: noop,
     onCancel: noop,
-    width: 480,
+    width: 560,
     transitionName: 'zoom',
     maskTransitionName: 'fade',
     confirmLoading: false,
@@ -81,7 +81,6 @@ export default class Modal extends React.Component {
       <Button
         key='cancel'
         type='ghost'
-        size='small'
         onClick={this.handleCancel}
         >
         {cancelText || '取消'}
@@ -89,7 +88,6 @@ export default class Modal extends React.Component {
       <Button
         key='confirm'
         type='primary'
-        size='small'
         loading={confirmLoading}
         onClick={this.handleOk}
       >

@@ -12,9 +12,9 @@ export default function confirm(config) {
   let div = document.createElement('div');
   document.body.appendChild(div);
 
-  props.iconType = props.iconType || 'warning-circle';
+  props.iconType = props.iconType || 'pro-info';
 
-  let width = props.width || 416;
+  let width = props.width || 408;
   let style = props.style || {};
 
   // 默认为true，保持向下兼容
