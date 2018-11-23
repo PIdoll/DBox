@@ -6,7 +6,7 @@ const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  serverPort: 9001,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
@@ -163,7 +163,7 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-         //  path.resolve(__dirname, './components/grid/index.jsx'),
+          path.resolve(__dirname, './components/grid/index.jsx'),
         //    path.resolve(__dirname, './components/grid/row.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
@@ -173,7 +173,7 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
           //  path.resolve(__dirname, './components/button/button-group.jsx'),
-          //  path.resolve(__dirname, './components/icon/index.jsx'),
+           path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
@@ -196,11 +196,11 @@ module.exports = {
           components: () => ([
         //    path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
         //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
-        //    path.resolve(__dirname, './components/input/index.jsx'),
+           path.resolve(__dirname, './components/input/index.jsx'),
         //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
-        //    path.resolve(__dirname, './components/select/index.jsx'),
+           path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
-        //    path.resolve(__dirname, './components/date-picker/index.jsx'),
+           path.resolve(__dirname, './components/date-picker/index.jsx'),
         //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
@@ -223,24 +223,25 @@ module.exports = {
          //   path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-        //    path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
-         //   path.resolve(__dirname, './components/table/table.jsx'),
-        //    path.resolve(__dirname, './components/tabs/tabs.jsx'),
-         //   path.resolve(__dirname, './components/tag/index.jsx'),
-         //   path.resolve(__dirname, './components/upload/upload.jsx'),
+         path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
+            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/tabs/index.jsx'),
+            path.resolve(__dirname, './components/timeline/index.jsx'),
+            path.resolve(__dirname, './components/tag/index.jsx'),
+            path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {
           name: 'Feedback',
           components: () => ([
-         path.resolve(__dirname, './components/alert/alert.jsx'),
+          path.resolve(__dirname, './components/alert/alert.jsx'),
        //   path.resolve(__dirname, './components/modal/index.jsx'),
-       //   path.resolve(__dirname, './components/message/message.jsx'),
+         path.resolve(__dirname, './components/message/message.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
-        //  path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
-        //  path.resolve(__dirname, './components/spin/spin.jsx'),
+         path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
+          path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },
       ]

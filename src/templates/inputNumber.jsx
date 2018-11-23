@@ -26,12 +26,6 @@ export default class InputNumberView extends React.Component {
         <InputNumber min={1} defaultValue={3} onChange={this.onChange} max={10} />
         <br />
         <br />
-        <h1>三种尺寸</h1>
-        <InputNumber size='large' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <InputNumber min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <InputNumber size='small' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <br />
-        <br />
         <h1>小数</h1>
         <InputNumber min={0} max={10} defaultValue={1} step={0.1} />
         <br />

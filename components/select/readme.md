@@ -1,14 +1,8 @@
 <!-- # [Select](http://naotu.baidu.com/file/8d654ac25a8b27c4e3ece259370aae2e?token=f63e1566705c1ce6) -->
 
-### 何时使用
-
+#### **何时使用**
 需要应用到下拉选项时，用于替换原生的选择器。
 
-<<<<<<< HEAD
-```jsx
-
-=======
-### 代码演示
 ##### **基本使用**
 通过设置 `size`属性控制大小, `disabled` 设置为禁用。
 ```jsx
@@ -43,7 +37,7 @@ const {Option} = Select;
     </Select>
 </div>
 ```
-##### **搜索下拉框**
+#### **搜索下拉框**
 展开后可对选项进行搜索。
 ```jsx
 const {Option} = Select;
@@ -54,9 +48,8 @@ const {Option} = Select;
     <Option value='shenzhen'>深圳</Option>
 </Select>
 ```
->>>>>>> 45095725230b9d83f874a225f65d046947234344
 
-##### **多选下拉框**
+#### **多选下拉框**
 多选，从已有条目中选择。设置 `mode` 属性为 `tags` 可随意输入内容。
 ```jsx
 const {Option} = Select;
@@ -77,15 +70,8 @@ const {Option} = Select;
 </div>
 ```
 
-<<<<<<< HEAD
-<Select >
-    <Option value='apple'>Apple</Option>
-    <Option value='apple'>Apple</Option>
-    <Option value='apple'>Apple</Option>
-    <Option value='apple'>Apple</Option>
-</Select>
-=======
-##### **获得选项文本**
+#### **获得选项文本**
+
 ```jsx
 const {Option} = Select;
 handleChange = (value) => {
@@ -98,54 +84,68 @@ handleChange = (value) => {
     <Option value='shenzhen'>深圳</Option>
 </Select>
 ```
->>>>>>> 45095725230b9d83f874a225f65d046947234344
 
-##### **搜索用户**
+#### **搜索用户**
 ```jsx
 const {Option} = Select;
- initialState = {
-    data: [],
-    value: [],
-    fetching: false,
-  }
+class SearchExample extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            data: [],
+            value: [],
+            fetching: false
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.getUserInfo = this.getUserInfo.bind(this);
+    }
 
-  handleChange = (value) => {
-    setState({
-      value,
-      data: [],
-      fetching: false,
-    });
-  }
-getUserInfo = (value) => {
-    console.log('getUserInfo ', value);
-    setState({ data: [], fetching: true });
-    // 这里直接调用后端api
-    setTimeout(() => {
-      const data = [
-        {value: '1', text: 'aa'},
-        {value: '2', text: 'bb'},
-        {value: '3', text: 'cc'},
-      ]
-      setState({ data, fetching: false });
-    }, 1000);
-  }
-<Select
-    mode='multiple'
-    labelInValue
-    value={state.value}
-    placeholder='请搜索'
-    notFoundContent={state.fetching ? <Spin size='small' /> : null}
-    filterOption={false}
-    onSearch={this.getUserInfo}
-    onChange={this.handleChange}
-    style={{ width: '20%' }}
->
-    {state.data.map(d => <Option key={d.value}>{d.text}</Option>)}
-</Select>
+    handleChange(value) {
+        this.setState({
+            value,
+            data: [],
+            fetching: false,
+        });
+    }
+
+    getUserInfo(value) {
+        console.log('getUserInfo ', value);
+        this.setState({ data: [], fetching: true });
+        // 这里直接调用后端api
+        setTimeout(() => {
+        const data = [
+            {value: '1', text: 'aa'},
+            {value: '2', text: 'bb'},
+            {value: '3', text: 'cc'},
+        ]
+        this.setState({ data, fetching: false });
+        }, 1000);
+    }
+    render(){
+        return (
+            <Select
+                mode='multiple'
+                labelInValue
+                value={this.state.value}
+                placeholder='请搜索'
+                notFoundContent={this.state.fetching ? <Spin size='small' /> : null}
+                filterOption={false}
+                onSearch={this.getUserInfo}
+                onChange={this.handleChange}
+                style={{ width: '20%' }}
+            >
+                {this.state.data.map(d => <Option key={d.value}>{d.text}</Option>)}
+            </Select>
+        )
+    }
+
+}
+
+<SearchExample />
 ```
 
 
-##### **分组**
+#### **分组**
 使用用 `OptGroup` 进行选项分组。
 ```jsx
 const {Option, OptGroup} = Select;
@@ -164,10 +164,7 @@ const {Option, OptGroup} = Select;
     </OptGroup>
 </Select>
 ```
-### API
-
-### Select props
-
+#### **Select**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | allowClear | 支持清除 | boolean | false |
@@ -180,12 +177,12 @@ const {Option, OptGroup} = Select;
 | dropdownMatchSelectWidth | 下拉菜单和选择器同宽 | boolean | true |
 | dropdownStyle | 下拉菜单的 style 属性 | object | - |
 | filterOption | 是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。 | boolean or function(inputValue, option) | true |
-| firstActiveValue | 默认高亮的选项 | string|string\[] | - |
+| firstActiveValue | 默认高亮的选项 | string\string\[] | - |
 | getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位 | Function(triggerNode) | () => document.body |
 | labelInValue | 是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 `string` 变为 `{key: string, label: ReactNode}` 的格式 | boolean | false |
 | maxTagCount | 最多显示多少个 tag | number | - |
-| maxTagPlaceholder | 隐藏 tag 时显示的内容 | ReactNode/function(omittedValues) | - |
-| mode | 设置 Select 的模式为多选或标签 | 'multiple' | 'tags' | - |
+| maxTagPlaceholder | 隐藏 tag 时显示的内容 | ReactNode\function(omittedValues) | - |
+| mode | 设置 Select 的模式为多选或标签 | 'multiple'\'tags' | - |
 | notFoundContent | 当下拉列表为空时显示的内容 | string | 'Not Found' |
 | optionFilterProp | 搜索时过滤对应的 option 属性，如设置为 children 表示对内嵌内容进行搜索 | string | value |
 | optionLabelProp | 回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 `value`。 | string | `children` （combobox 模式下为 `value`） |
@@ -209,26 +206,26 @@ const {Option, OptGroup} = Select;
 | open | 是否展开下拉菜单 | boolean | - |
 | onDropdownVisibleChange | 展开下拉菜单的回调 | function(open) | - |
 
-### Select Methods
+#### **Select Methods**
 
 | 名称 | 说明 |
 | --- | --- |
 | blur() | 取消焦点 |
 | focus() | 获取焦点 |
 
-### Option props
+#### **Option props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | disabled | 是否禁用 | boolean | false |
 | key | 和 value 含义一致。如果 React 需要你设置此项，此项值与 value 的值相同，然后可以省略 value 设置 | string |  |
 | title | 选中该 Option 后，Select 的 title | string | - |
-| value | 默认根据此属性值进行筛选 | string|number | - |
+| value | 默认根据此属性值进行筛选 | string\number | - |
 | className | Option 器类名 | string | - |
 
-### OptGroup props
+#### **OptGroup props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | key |  | string | - |
-| label | 组名 | string\|React.Element | 无 |
+| label | 组名 | string\React.Element | 无 |

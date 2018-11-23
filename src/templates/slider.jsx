@@ -52,6 +52,10 @@ export default class SliderView extends React.Component {
             />
           </Col>
         </Row>
+        <br />
+        <br />
+        <br />
+        <br />
         <h1>自定义提示</h1>
         <Slider tipFormatter={(value) => `${value}%`} defaultValue={10} />
         <Slider tipFormatter={null} defaultValue={20} />
