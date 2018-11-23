@@ -1,9 +1,9 @@
 
-import React, {Component} from 'react';
+import React from 'react';
 import Slider from '../../components/slider';
 import Switch from '../../components/switch';
 
-export default class SliderView extends Component {
+export default class SliderView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,7 @@ export default class SliderView extends Component {
     }
   }
   handleDisabledChange = (disabled) => {
-    this.setState({disabled})
+    this.setState({disabled});
   }
   render() {
     return (
@@ -21,7 +21,6 @@ export default class SliderView extends Component {
         Disabled: <Switch size='small' checked={this.state.disabled} onClick={this.handleDisabledChange} />
         <h1>交互样式说明</h1>
       </div>
-
     )
   }
 }
