@@ -194,7 +194,7 @@ module.exports = {
         {
           name: 'Data Entry',
           components: () => ([
-        //    path.resolve(__dirname, './components/auto-complete/autoComplete.jsx'),
+           path.resolve(__dirname, './components/auto-complete/index.jsx'),
         //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
            path.resolve(__dirname, './components/input/index.jsx'),
         //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
@@ -223,7 +223,7 @@ module.exports = {
          //   path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-         path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
+         path.resolve(__dirname, './components/tooltip/index.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
@@ -236,11 +236,11 @@ module.exports = {
           components: () => ([
           path.resolve(__dirname, './components/alert/alert.jsx'),
        //   path.resolve(__dirname, './components/modal/index.jsx'),
-         path.resolve(__dirname, './components/message/message.jsx'),
+         path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
-         path.resolve(__dirname, './components/popconfirm/popconfirm.jsx'),
+         path.resolve(__dirname, './components/popconfirm/index.jsx'),
           path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },

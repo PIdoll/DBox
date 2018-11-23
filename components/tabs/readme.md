@@ -16,11 +16,13 @@ const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
+    <div>
       <Tabs defaultActiveKey='5' onChange={this.callBack}>
-		  <TabPane tab='选项一' key='5'>选项一</TabPane>
-		  <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
-		  <TabPane tab='选项三' key='3'>选项三</TabPane>
-		</Tabs>
+        <TabPane tab='选项一' key='5'>选项一</TabPane>
+        <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
+        <TabPane tab='选项三' key='3'>选项三</TabPane>
+      </Tabs>
+    </div>		
     )
   }
 }
@@ -29,7 +31,7 @@ class TabsView extends React.Component {
 ```
 #### **有图标的标签**
 ```jsx
-const {Icon} = require('./index');
+const Icon = require('../icon/index.jsx').default;
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -220,14 +222,16 @@ const TabPane = Tabs.TabPane;
 const {ReactDOM} = require('./index');
 class TabsView extends React.Component {
 	componentDidMount () {
-    const element = ReactDOM.findDOMNode(this.refs.box_table);    const currentHeight = element.offsetTop - element.offsetHeight;
+    const element = ReactDOM.findDOMNode(this.refs.box_table);
+    const currentHeight = element.offsetTop - element.offsetHeight;
+    const left = `${element.offsetLeft-21}px`;
     window.addEventListener('scroll', this.onScroll = () => {
       if (window.scrollY >= currentHeight && window.scrollY < element.offsetTop) {
         element.style.position = 'fixed';
         element.style.top = '0';
-        element.style.left = '366px';
+        element.style.left = left;
         element.style.width = '100%';
-        element.style.padding = '40px 20px';
+        element.style.padding = '20px 20px';
         element.style.backgroundColor = '#fff';
       } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';

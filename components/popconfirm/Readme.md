@@ -7,6 +7,7 @@
 #### **基本用法**
 最简单用法
 ```jsx
+const message = require('../message/index').default;
 class PopconfirmExample extends React.Component {
     constructor() {
         super();
@@ -19,7 +20,7 @@ class PopconfirmExample extends React.Component {
 
     confirm(){
         this.setState({ visible: false });
-        // message.success('删除成功');
+        message.success('删除成功');
     }
     cancel(){
         this.setState({ visible: false });
@@ -36,11 +37,12 @@ class PopconfirmExample extends React.Component {
 }
 
 <PopconfirmExample />
-
 ```
+
 #### **12个方向**
 位置有十二个方向。
 ```jsx
+const message = require('../message/index').default;
 const buttonWidth = '70px';
 const text = '确定要删除吗';
 class PopconfirmExample extends React.Component {
@@ -55,7 +57,7 @@ class PopconfirmExample extends React.Component {
 
     confirm(){
         this.setState({ visible: false });
-        console.log('click confirm');
+        message.success('删除成功');
     }
     cancel(){
         this.setState({ visible: false });
@@ -119,6 +121,7 @@ class PopconfirmExample extends React.Component {
 #### **条件触发**
 可以判断是否需要弹出。
 ```jsx
+const message = require('../message/index').default;
 class PopconfirmExample extends React.Component {
     constructor() {
         super();
@@ -132,7 +135,7 @@ class PopconfirmExample extends React.Component {
 
     confirm(){
         this.setState({ visible: false });
-        console.log('click confirm');
+        message.success('删除成功');
     }
 
     changeCondition(value){
