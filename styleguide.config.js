@@ -226,6 +226,7 @@ module.exports = {
          path.resolve(__dirname, './components/tooltip/tooltip.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
+            path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
