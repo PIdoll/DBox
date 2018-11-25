@@ -9,6 +9,7 @@ for (x in dependencies) {
 }
 const library = '[name]_[chunkhash]'
 module.exports = {
+  mode: 'production',
 	entry: {
 		vendors: vendors
 	},
@@ -30,12 +31,6 @@ module.exports = {
 			// 解析包路径的上下文，这个要跟配置的dll user一致
 			context: __dirname
 		}),
-		// 压缩打包的文件
-	    new webpack.optimize.UglifyJsPlugin({
-	      compress: {
-	        warnings: false
-	      }
-	    }),
 	    // definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
 		// 此处，插入适当的环境
 		// https://webpack.js.org/plugins/define-plugin/
@@ -44,5 +39,6 @@ module.exports = {
 			 'NODE_ENV': JSON.stringify('production')
 			}
 		})
-	]
+  ],
+
 }

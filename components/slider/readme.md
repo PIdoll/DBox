@@ -3,8 +3,29 @@
 
 #### **基本使用**
 ```jsx
-
+class SliderView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      disabled: false,
+    }
+    this.handleDisabledChange = this.handleDisabledChange.bind(this);
+  }
+  handleDisabledChange(disabled) {
+    this.setState({disabled});
+  }
+  render() {
+    const {disabled} = this.state;
+    return (
+      <div>
+        <Slider defaultValue={30} disabled={disabled} />
+        Disabled: <Switch size='small' checked={disabled} onClick={this.handleDisabledChange} />
+      </div>
+    )
+  }
+}
 ```
+
 
 #### **带输入框的滑块**
 ```jsx
@@ -29,5 +50,4 @@ class sliderView extends React.Component {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | description | 步骤的详情描述，可选 | string | ReactNode |
-| icon | 步骤图标的类型，可选 | string | ReactNode |
 

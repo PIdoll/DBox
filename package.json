@@ -4,8 +4,8 @@
   "description": "react components",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
-    "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode development",
+    "start": "webpack-dev-server --open --config webpack.dev.js ",
+    "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js ",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
@@ -22,7 +22,6 @@
     "create-react-class": "^15.6.3",
     "css-animation": "^1.4.1",
     "enquire-js": "^0.1.1",
-    "glob-all": "^3.1.0",
     "gregorian-calendar": "^4.1.0",
     "gregorian-calendar-format": "^4.1.0",
     "moment": "^2.20.1",

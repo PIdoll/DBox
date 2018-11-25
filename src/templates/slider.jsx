@@ -32,7 +32,6 @@ export default class SliderView extends React.Component {
         <br />
         <br />
         <br />
-        <br />
         <h1>带输入框的滑块</h1>
         <Row>
           <Col span={12}>
@@ -52,7 +51,6 @@ export default class SliderView extends React.Component {
             />
           </Col>
         </Row>
-        <br />
         <br />
         <br />
         <br />

@@ -6,7 +6,7 @@ const {camelCase, upperFirst} = require('lodash');
 
 module.exports = {
   title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  serverPort: 9001,
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
@@ -208,7 +208,7 @@ module.exports = {
          //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
-        //    path.resolve(__dirname, './components/slider/slider.jsx'),
+            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
         //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
