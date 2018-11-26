@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const dependencies = require('./package.json').dependencies
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 let x;
 const vendors = [];
@@ -40,5 +41,13 @@ module.exports = {
 			}
 		})
   ],
-
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        compress: {
+          warnings: false
+        },
+       })
+    ]
+  }
 }
