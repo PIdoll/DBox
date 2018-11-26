@@ -12,7 +12,6 @@ const cssnano = require('cssnano');
 const common = require('./webpack.common.js');
 
  let webpackConfig = merge(common, {
-  mode: 'none',
 	devtool: '#source-map',
 	module: {
 		rules: [
@@ -65,8 +64,19 @@ const common = require('./webpack.common.js');
 			from: path.resolve(__dirname, 'favicon.ico'),
 			to: path.resolve(__dirname, 'dist/')
 		}
-  ]),
-
+	]),
+	// 压缩混淆js文件
+	new webpack.optimize.UglifyJsPlugin({
+		compress: {
+			warnings: false
+		},
+		comments: false,
+		sourceMap: true
+	}),
+	// 删除掉未引用的export代码
+	new UglifyJSPlugin({
+		sourceMap: true
+	}),
 	// 提取 css
     new ExtractTextPlugin({
         filename: 'main.[contenthash].css',
@@ -93,20 +103,7 @@ const common = require('./webpack.common.js');
 		 'NODE_ENV': JSON.stringify('production')
 		}
 	})
-  ],
-
-	// 压缩混淆js文件
-  optimization: {
-    minimizer: [
-      new UglifyJSPlugin({
-        compress: {
-          warnings: false
-        },
-        comments: false,
-        sourceMap: true
-       })
-    ]
-  }
+	]
 })
 
 // 开启包分析的情况时， 给 webpack plugins添加 webpack-bundle-analyzer 插件
