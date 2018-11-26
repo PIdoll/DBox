@@ -244,6 +244,12 @@ module.exports = {
           path.resolve(__dirname, './components/spin/spin.jsx'),
           ])
         },
+        {
+          name: 'Other',
+          components: () => ([
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+          ])
+        }
       ]
     },
   ],

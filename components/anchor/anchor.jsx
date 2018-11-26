@@ -11,7 +11,7 @@ import Affix from '../../components/affix'
 
 import './style/index.jsx'
 
-function getDefaultTarget() {
+function getDefaultContainer() {
   return window;
 }
 
@@ -26,7 +26,7 @@ function getOffsetTop(element, container) {
   const rect = element.getBoundingClientRect();
   if (rect.width || rect.height) {
     if (container === window) {
-      container = element.ownerDocument.documentElement;
+      container = element.ownerDocument && element.ownerDocument.documentElement && element.ownerDocument.documentElement;
       return rect.top - container.clientTop;
     }
     return rect.top - (container).getBoundingClientRect().top;
@@ -39,7 +39,7 @@ function easeInOutCubic(t, b, c, d) {
   if (t < 1) {
     return cc / 2 * t * t * t + b;
   }
-  return cc / 2 * ((t -= 2) * t * t * t) + b;
+  return cc / 2 * ((t -= 2) * t * t + 2) + b;
 }
 // 匹配以#开头，后面不含#的字符串
 const sharpMatcherRegx = /#([^#]+)$/;
@@ -48,7 +48,7 @@ function scrollTo (href, offsetTop = 0, getContainer, callback) {
   const scrollTop = getScroll(container, true);
   const sharpLinkMatch = sharpMatcherRegx.exec(href);
   if (!sharpLinkMatch) { return false };
-  const targetElement = document.getElementById(sharpMatcherRegx[1]);
+  const targetElement = document.getElementById(sharpLinkMatch[1]);
   if (!targetElement) {
     return false;
   }
@@ -78,7 +78,7 @@ export default class Anchor extends React.Component {
     prefixCls: 'idoll-anchor',
     affix: true,
     showInkInFixed: false,
-    getContainer: getDefaultTarget
+    getContainer: getDefaultContainer
   };
   static childContextTypes = {
     idollAnchor: PropTypes.object,
@@ -94,7 +94,7 @@ export default class Anchor extends React.Component {
   getChildContext () {
     const idollAnchor = {
       registerLink: (link) => {
-        if (this.links.includes(link)) {
+        if (!this.links.includes(link)) {
           this.links.push(link);
         }
       },
