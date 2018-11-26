@@ -1,21 +1,23 @@
-# [Modal](http://naotu.baidu.com/file/c99e642e30c4d8d5ddac22824253f02c?token=5034e8c457c40ccb)
-
----
-
-type: Views
-category: Components
-chinese: 对话框
-english: Modal
----
-
-模态对话框
-
-## 何时使用
+#### **何时使用**
 
 需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 `Modal` 在当前页面正中打开一个浮层，承载相应的操作。
-另外当需要一个简洁的确认框询问用户时，可以使用精心封装好的 `ant.Modal.confirm()` 等方法。
+另外当需要一个简洁的确认框询问用户时，可以使用精心封装好的 `Modal.confirm()` 等方法。
 
-## API
+#### **普通弹出框(可用于展示和提交)**
+```jsx
+<Button type='primary' onClick={this.showModal}>显示对话框</Button>
+<Modal title='我是标题' visible={this.state.visible}
+  onOk={this.handleOk} onCancel={this.handleCancel}>
+  <p>这里是一句话</p>
+  <p>或者一段文字</p>
+  <p>或者表格</p>
+  <p>或者其他嵌套组件</p>
+  <p>…………</p>
+  <p>最后一行</p>
+</Modal>
+```
+
+#### **Modal**
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
@@ -33,7 +35,7 @@ english: Modal
 | style | 可用于设置浮层的样式，调整浮层位置等 | Object   | - |
 | wrapClassName | 对话框外层容器的类名 | String   | - |
 
-### Modal.xxx()
+#### **Modal.xxx()**
 
 包括：
 
