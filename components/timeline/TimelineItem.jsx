@@ -21,7 +21,8 @@ export default class TimelineItem extends React.Component {
 
   render() {
       const { prefixCls, color, last, children, pending, className, dot, ...restProps } = this.props;
-
+      console.log('children: ')
+      console.log(children);
       const itemClassName = classNames({
         [`${prefixCls}-item`]: true,
         [`${prefixCls}-item-last`]: last,

@@ -1,8 +1,8 @@
-## 何时使用
+#### **何时使用**
 
 一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。
 
-##### **基本徽标展示**
+#### **基本徽标展示**
 ```jsx
 const content = {
   width: 64,
@@ -16,7 +16,7 @@ const content = {
 </Badge>
 ```
 
-##### **独立使用**
+#### **独立使用**
 ```jsx
 const content = {
   width: 64,
@@ -32,7 +32,7 @@ const content = {
 </div>
 ```
 
-##### **封顶数字**
+#### **封顶数字**
 ```jsx
 const content = {
   width: 64,
@@ -55,7 +55,7 @@ const content = {
 ```
 
 
-##### **讨嫌的小红点**
+#### **讨嫌的小红点**
 ```jsx
 <div>
 	<Badge>
@@ -70,7 +70,7 @@ const content = {
 </div>
 ```
 
-##### **a标签包裹可点击**
+#### **a标签包裹可点击**
 ```jsx
 <a href='https://www.baidu.com'>
   <Badge count={8}>
@@ -79,7 +79,7 @@ const content = {
 </a>
 ```
 
-##### **用于表示状态的小圆点**
+#### **用于表示状态的小圆点**
 ```jsx
 <div>
 	<div style={{ position: 'relative', marginLeft: '10px' }}>
@@ -100,8 +100,9 @@ const content = {
 </div>
 ```
 
-##### **动态变化**
+#### **动态变化** 
 ```jsx
+const {ButtonGroup} = require('./index.jsx');
 const content = {
   width: 64,
   height: 64,
@@ -109,59 +110,70 @@ const content = {
   background: '#E2E2E2',
   display: 'inline-block',
 };
-initialState = {
+class BadgeView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
     show: true,
     count: 5,
-  }
-  decline = () => {
-    const count = state.count - 1;
-    if (count < 0) {
-      etState({ count: 0 })
-    } else {
-      setState({count})
     }
+    this.decline = this.decline.bind(this);
+    this.increase = this.increase.bind(this);
+    this.onChange = this.onChange.bind(this);
+  };
+  decline () {
+    const count =this.state.count - 1;
+    if (count < 0) {
+      this.setState({ count: 0 })
+    } else {
+      this.setState({count})
+    }
+  };
+  increase () {
+    const count = this.state.count + 1;
+    this.setState({count})
+  };
+  onChange (show) {
+    this.setState({show})
+  };
+  render() {
+  return (
+	<div>
+        <div style={{ marginBottom: '10px' }}>
+            <Badge count={this.state.count}>
+              <a href='javascript:;' style={content} />
+            </Badge>
+            <ButtonGroup>
+              <Button onClick={this.decline}>
+              <Icon type='remove' />
+              </Button>
+              <Button onClick={this.increase}>
+                <Icon type='plus' />
+              </Button>
+            </ButtonGroup>
+            </div>
+            <br />
+            <div>
+          <Badge dot={this.state.show}>
+              <a href='javascript:;' style={content} />
+          </Badge>
+          <Switch checked={this.state.show} onChange={this.onChange} />
+          </div>
+        </div>
+    )
   }
-  increase = () => {
-    const count = state.count + 1;
-    setState({count})
-  }
-  onChange = (show) => {
-    setState({show})
-  }
- <div>
-	<div style={{ marginBottom: '10px' }}>
-	  	<Badge count={state.count}>
-	  	 	 <a href='javascript:;' style={content} />
-	  	</Badge>
-	  	<ButtonGroup>
-	    	<Button onClick={this.decline}>
-	     	 <Icon type='remove' />
-	    	</Button>
-	    	<Button onClick={this.increase}>
-	     		 <Icon type='plus' />
-	   		 </Button>
-	  		</ButtonGroup>
-	  	</div>
-	  	<br />
-	  	<div>
-		 <Badge dot={state.show}>
-		  	<a href='javascript:;' style={content} />
-		 </Badge>
-		 <Switch checked={state.show} onChange={this.onChange} />
-		</div>
-	 </div>
+}
+<BadgeView />
 ```
 
-
-
-## API
+#### **Badge**
 
 | 参数           | 说明                             | 类型 |默认值 |
 |----------------|--------------------------------|---------|--------|
 | overflowCount  | 展示封顶的数字值                 | Number | 99     |
 | showZero            | 当数值为0时，是否展示Badge       | boolean    |false  |
 | dot            | 不展示数字，只有一个小红点       | boolean    |false  |
-| status            | 和dot搭配使用，在设置dot的前提下有效，设置Badge的状态点       | `string{'success','processing','default','error','warning'}`   |''  |
-| offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   |   |
+| status            | 和dot搭配使用，在设置dot的前提下有效，设置Badge的状态点       | string(`success`,`processing`,`default`,`error`,`warning`)   |''  |
+| offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   | - |
 
 

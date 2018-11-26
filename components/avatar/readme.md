@@ -52,23 +52,34 @@
 ##### **按钮调整字符大小**
 ```jsx
 const UserList = ['Z', 'Alvin', 'Idoll', 'DBox'];
-initialState = {
-  user: UserList[0]
-};
-changeUser = () => {
-const index = UserList.indexOf(state.user);
-setState({
-  user: index < UserList.length - 1 ? UserList[index + 1] : UserList[0]
-});
+class AvatarView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: UserList[0]
+    }
+    this.changeUser = this.changeUser.bind(this)
+  };
+  changeUser () {
+    const index = UserList.indexOf(this.state.user);
+    this.setState({
+      user: index < UserList.length - 1 ? UserList[index + 1] : UserList[0]
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Avatar style={{ verticalAlign: 'middle' }}>
+          {this.state.user}
+        </Avatar>
+        <Button type='primary' style={{ marginLeft: 16, verticalAlign: 'middle' }} onClick={this.changeUser}>
+        Change
+        </Button>
+      </div>
+    )
+  }
 }
-<div>
-   <Avatar style={{ verticalAlign: 'middle' }}>
-    {state.user}
-  </Avatar>
-  <Button type='primary' style={{ marginLeft: 16, verticalAlign: 'middle' }} onClick={this.changeUser}>
-  Change
-  </Button>
-</div>
+<AvatarView />
 ```
 
 ## API
