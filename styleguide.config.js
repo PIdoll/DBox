@@ -241,7 +241,7 @@ module.exports = {
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
          path.resolve(__dirname, './components/popconfirm/index.jsx'),
-          path.resolve(__dirname, './components/spin/spin.jsx'),
+          path.resolve(__dirname, './components/spin/index.jsx'),
           ])
         },
         {

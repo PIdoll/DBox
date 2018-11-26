@@ -26,10 +26,13 @@ function getOffsetTop(element, container) {
   const rect = element.getBoundingClientRect();
   if (rect.width || rect.height) {
     if (container === window) {
-      container = element.ownerDocument && element.ownerDocument.documentElement && element.ownerDocument.documentElement;
+      container = element.ownerDocument.documentElement;
       return rect.top - container.clientTop;
     }
-    return rect.top - (container).getBoundingClientRect().top;
+    // 判断 container 是否是HTMLElement
+    if (container && container.nodeType === 1) {
+      return rect.top - container.getBoundingClientRect().top;
+    }
   }
   return rect.top;
 }

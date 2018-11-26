@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-indent */
 import React from 'react';
 import Anchor from 'components/anchor';
 import AnchorDemo from './anchor-demo1';
 
 const { Link } = Anchor;
+
 const anchorStyle = {
   width: 500,
   padding: 20,
@@ -22,7 +24,7 @@ export default () =>
   (
     <div id='main-container'>
       <h1 className='h1'>基本使用</h1>
-      <span className='demo-anchor'>
+      <div className='demo-anchor'>
         <Anchor>
           <Link href='#components-anchor-demo-1' title='项目一' />
           <Link href='#components-anchor-demo-2' title='项目二' />
@@ -30,8 +32,8 @@ export default () =>
           <Link href='#components-anchor-demo-4' title='项目四' />
           <Link href='#components-anchor-demo-5' title='项目五' />
         </Anchor>
-      </span>
-      <AnchorDemo />
+        <AnchorDemo />
+      </div>
       <h1 className='h1'>Tab样式的锚点</h1>
       <div className='anchor' style={anchorStyle}>
         <Anchor type='inline'>
