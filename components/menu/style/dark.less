@@ -12,6 +12,13 @@
         background: @menu-dark-arrow-color;
       }
     }
+    .@{menu-prefix-cls}-submenu-title {
+      i{
+        // opacity: .45;
+        transition: all .3s;
+        color: @text-color-disable-dark;
+      }
+    }
   }
 
   &-dark&-submenu-popup {
@@ -19,7 +26,6 @@
   }
 
   &-dark &-inline&-sub {
-    background: @menu-dark-submenu-bg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .45) inset;
   }
 

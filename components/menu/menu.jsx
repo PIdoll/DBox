@@ -22,17 +22,17 @@ export default class Menu extends React.Component {
     static defaultProps = {
       prefixCls: 'idoll-menu',
       className: '',
-      theme: 'light', // or dark
+      theme: 'dark', // or dark
     }
     static childContextTypes = {
       inlineCollapsed: PropTypes.bool,
-      idollMenuTheme: PropTypes.string,
+      idollMenuTheme: PropTypes.string
     };
-    static contextTypes = {
-      siderCollapsed: PropTypes.bool,
-      collapsedWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    getChildContext () {
+      return {
+        idollMenuTheme: this.props.theme
+      }
     }
-
     constructor(props) {
       super(props);
       warning(!('onOpen' in props || 'onClose' in props), `'onOpen'和‘onClose'已经被移除，请用'onOpenChange'代替`);
@@ -112,7 +112,7 @@ export default class Menu extends React.Component {
 
       }
       return (
-        <RcMenu {...this.props} {...menuProps} />
+        <RcMenu {...this.props} style={{width: this.props.mode === 'inline' ? '256px' : ''}} {...menuProps} />
       )
     }
 }
