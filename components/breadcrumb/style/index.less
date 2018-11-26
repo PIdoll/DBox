@@ -14,8 +14,12 @@
   a {
     color: @text-color-secondary;
     transition: color .3s;
-    &:hover {
+    &:hover{
       color: @primary-color;
+    }
+    > i {
+      height: 18px;
+      line-height: 16px;
     }
   }
 
@@ -35,6 +39,7 @@
   &-link {
     > .@{iconfont-css-prefix} + span {
       margin-left: 4px;
+      margin-bottom: 2px;
     }
   }
 }
