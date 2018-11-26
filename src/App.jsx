@@ -47,6 +47,7 @@ import Popconfirm from 'templates/popconfirm';
 import Notification from 'templates/notification';
 import InputNumber from 'templates/inputNumber';
 import Slider from 'templates/slider';
+import BackTop from 'templates/back-top';
 
 
 import './App.css';
@@ -102,6 +103,7 @@ const App = () => (
       <Route exact path='/notification' component={Notification} />
       <Route exact path='/slider' component={Slider} />
       <Route exact path='/inputNumber' component={InputNumber} />
+      <Route exact path='/back-top' component={BackTop} />
     </div>
   </Router>
 )

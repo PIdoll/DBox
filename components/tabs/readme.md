@@ -31,7 +31,6 @@ class TabsView extends React.Component {
 ```
 #### **有图标的标签**
 ```jsx
-const Icon = require('../icon/index.jsx').default;
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
