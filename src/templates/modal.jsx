@@ -153,7 +153,7 @@ export default class ModalView extends React.Component {
 
         <h1 className='h1'>信息提示</h1>
         <Button onClick={this.info}>信息提示</Button>
-        <Button onClick={this.success}>成功提示</Button>
+        <Button style={{marginLeft: '20px', marginRight: '20px'}} onClick={this.success}>成功提示</Button>
         <Button onClick={this.error}>失败提示</Button>
 
         <h1 className='h1'>确认对话框</h1>
