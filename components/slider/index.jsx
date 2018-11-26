@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import PropTypes from 'prop-types';
 import RcSlider from 'rc-slider/lib/Slider';
@@ -77,8 +76,3 @@ export default class Slider extends React.Component {
   }
 }
 
-=======
-import Slider from './slider';
-
-export default Slider;
->>>>>>> 0f4f22a09dacf95a7cb395a6cff778788e45834a
