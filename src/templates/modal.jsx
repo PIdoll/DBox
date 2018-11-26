@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'components/modal/index';
 import Button from 'components/button/button';
-const confirm = Modal.confirm;
 
 export default class ModalView extends React.Component {
   state = {
@@ -81,7 +80,7 @@ export default class ModalView extends React.Component {
   info = () => {
     Modal.info({
       title: '这是一条通知信息',
-      content: '一些附加信息一些附加信息一些附加信息',
+      content: '一些附加信息......',
       onOk: function() {},
     });
   }
@@ -89,20 +88,20 @@ export default class ModalView extends React.Component {
   success = () => {
     Modal.success({
       title: '这是一条通知信息',
-      content: '一些附加信息一些附加信息一些附加信息'
+      content: '一些附加信息......'
     });
   }
 
   error = () => {
     Modal.error({
       title: '这是一条通知信息',
-      content: '一些附加信息一些附加信息一些附加信息'
+      content: '一些附加信息......'
     });
   }
 
   确认对话框
   showConfirm = () => {
-    confirm({
+    Modal.confirm({
       iconType: 'close-circle',
       title: '我是一个确认对话模态框',
       content: <div><p>这里是描述文字…</p><p>这里是描述文字…</p></div>,

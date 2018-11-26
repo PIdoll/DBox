@@ -12,7 +12,7 @@ export default function confirm(config) {
   let div = document.createElement('div');
   document.body.appendChild(div);
 
-  props.iconType = props.iconType || 'pro-info';
+  props.iconType = props.iconType || 'question-circle';
 
   let width = props.width || 408;
   let style = props.style || {};
