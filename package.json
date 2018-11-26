@@ -16,7 +16,7 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "antd": "^3.1.1",
+    "antd": "^3.10.7",
     "array-tree-filter": "^2.1.0",
     "classnames": "^2.2.5",
     "create-react-class": "^15.6.3",
@@ -41,6 +41,7 @@
     "rc-progress": "^2.2.5",
     "rc-scroll-anim": "^2.2.1",
     "rc-select": "^8.4.2",
+    "rc-slider": "^8.6.3",
     "rc-steps": "^3.3.0",
     "rc-switch": "^1.8.0",
     "rc-table": "^6.4.0",
