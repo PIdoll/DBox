@@ -8,7 +8,7 @@
   color: @text-color-secondary;
 
   .@{iconfont-css-prefix} {
-    font-size: @font-size-sm;
+    font-size: @font-size-base;
   }
 
   a {
@@ -17,9 +17,12 @@
     &:hover{
       color: @primary-color;
     }
-    > i {
+    > .idoll-icon {
       height: 18px;
       line-height: 16px;
+      &:hover {
+        color: @primary-color
+      }
     }
   }
 
