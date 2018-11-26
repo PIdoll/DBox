@@ -1,43 +1,45 @@
 @confirm-prefix-cls: idoll-confirm;
 
 .@{confirm-prefix-cls} {
+  width: 408px !important; 
   .idoll-modal-header {
     display: none;
   }
 
   .idoll-modal-body {
-    padding: 30px 40px;
+    padding: 24px 24px 16px 24px;
   }
 
   &-body {
     .@{confirm-prefix-cls}-title {
       color: @text-color;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     .@{confirm-prefix-cls}-content {
-      margin-left: 37px;
-      font-size: @font-size-base;
       color: @text-color;
-      margin-top: 8px;
+      padding: 16px 0px 16px 40px;
+      p {
+      font-size: @font-size-base;
+      line-height: 22px;
+      }
     }
 
     > .idoll-icon {
       font-size: 24px;
-      margin-right: 10px;
-      padding: 0 1px;
+      margin-right: 16px;
       position: relative;
-      top: 5px;
     }
   }
 
   .@{confirm-prefix-cls}-btns {
-    margin-top: 53px;
+    margin-top: 16px;
     float: right;
 
-    button + button {
-      margin-left: 10px;
+    button {
+      margin-left: 8px;
       margin-bottom: 0;
     }
   }
@@ -46,9 +48,16 @@
     color: @error-color;
   }
 
-  &-warning &-body >.idoll-icon,
-  &-confirm &-body > .idoll-icon {
+  &-warning &-body >.idoll-icon {
     color: @warning-color;
+  }
+
+  &-confirm &-body > .idoll-icon {
+    color: @primary-color;
+    &:before {
+      content: "\E912";
+      font-family: 'idoll-icon-pro' !important;
+    }
   }
 
   &-info &-body > .idoll-icon {
