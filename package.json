@@ -52,7 +52,7 @@
     "rc-tree": "^1.14.8",
     "rc-trigger": "^2.6.2",
     "rc-upload": "2.6.0",
-    "rc-util": "^4.6.0",
+    "rc-util": "^4.5.1",
     "react": "^16.5.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.0",
