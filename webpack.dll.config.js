@@ -22,7 +22,6 @@ module.exports = {
 		这里将会被定义为“window.vendors_[chunkhash] */
 		library
 	},
-
 	plugins: [
 		new webpack.DllPlugin({
 			// manifest文件的输出路径,[name]的部分由entry的名字替换
@@ -41,7 +40,7 @@ module.exports = {
 			}
 		})
   ],
-  optimization: {
+  /* optimization: {
     minimizer: [
       new UglifyJSPlugin({
         compress: {
@@ -49,5 +48,5 @@ module.exports = {
         },
        })
     ]
-  }
+  } */
 }
