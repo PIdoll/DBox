@@ -247,9 +247,10 @@ module.exports = {
         {
           name: 'Other',
           components: () => ([
-            path.resolve(__dirname, './components/anchor/index.jsx'),
+          path.resolve(__dirname, './components/back-top/index.jsx'),
+          path.resolve(__dirname, './components/anchor/index.jsx'),
           ])
-        }
+        },
       ]
     },
   ],
