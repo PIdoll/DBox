@@ -16,7 +16,7 @@
 
 ##### **改变每页显示条数目**
 ```jsx
-<Pagination defaultCurrent={1} total={50} showSizeChanger></Pagination>
+<Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
 ```
 ##### **跳转分页**
 ```jsx
@@ -57,7 +57,7 @@ function showTotal(total) {
 | pageSize | 每页条数与defaultPageSize同时存在会覆盖defaultPageSize | number | - |
 | showQuickJumper | 是否可以快速跳转至某页 | boolean | false |
 | showSizeChanger | 是否可以改变pageSize | boolean | false|
-| pageSizeOptions | 改变showSizeChanger的默认值 | Array | `['10', '20', '30', '40']`|
+| pageSizeOptions | 改变showSizeChanger的默认值搭配defaultPageSize使用 | Array | `['10', '20', '30', '40']`|
 | showTotal | 用于显示数据总量和当前数据顺序 | Function(total, range) | - |
 | simple | 当添加该属性时，显示为简单分页 | boolean | - |
 | size | 当为`small`时，是小尺寸分页 | string | - |
