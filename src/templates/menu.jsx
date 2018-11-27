@@ -6,7 +6,6 @@ import Switch from 'components/switch';
 
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 export default class MenuDemo extends React.Component {
   state = {
@@ -41,21 +40,13 @@ export default class MenuDemo extends React.Component {
           mode='horizontal'
           theme='light'
         >
-          <Menu.Item key='platform'>
-            <Icon type='platform' />导航一
-          </Menu.Item>
-          <Menu.Item key='app' disabled>
-            <Icon type='appstore-o' />导航二
-          </Menu.Item>
-          <SubMenu title={<span><Icon type='tool' />导航三 - 子菜单</span>}>
-            <MenuItemGroup title='条目一'>
-              <Menu.Item key='setting:1'>选项 1</Menu.Item>
-              <Menu.Item key='setting:2'>选项 2</Menu.Item>
-            </MenuItemGroup>
-            <MenuItemGroup title='条目二'>
-              <Menu.Item key='setting:3'>选项 3</Menu.Item>
-              <Menu.Item key='setting:4'>选项 4</Menu.Item>
-            </MenuItemGroup>
+          <Menu.Item key='platform'>导航一</Menu.Item>
+          <Menu.Item key='app' disabled>导航二</Menu.Item>
+          <SubMenu title={<span>导航三 - 子菜单</span>}>
+            <Menu.Item key='setting:1'>子菜单一</Menu.Item>
+            <Menu.Item key='setting:2'>子菜单二</Menu.Item>
+            <Menu.Item key='setting:3'>子菜单三</Menu.Item>
+            <Menu.Item key='setting:4'>子菜单四</Menu.Item>
           </SubMenu>
           <Menu.Item key='alipay'>
             <a href='#' target='_blank' rel='noopener noreferrer'>导航四 - 链接</a>
@@ -72,28 +63,22 @@ export default class MenuDemo extends React.Component {
           mode={this.state.mode}
         >
           <SubMenu key='sub1' title={<div><Icon type='tool' /><span>导航一</span></div>}>
-            <MenuItemGroup title='条目一'>
-              <Menu.Item key='setting:1'>选项 1</Menu.Item>
-              <Menu.Item key='setting:2'>选项 2</Menu.Item>
-            </MenuItemGroup>
-            <MenuItemGroup title='条目二'>
-              <Menu.Item key='setting:3'>选项 3</Menu.Item>
-              <Menu.Item key='setting:4'>选项 4</Menu.Item>
-            </MenuItemGroup>
+            <Menu.Item key='setting:1'>子菜单一</Menu.Item>
+            <Menu.Item key='setting:2'>子菜单二</Menu.Item>
+            <Menu.Item key='setting:3'>子菜单三</Menu.Item>
+            <Menu.Item key='setting:4'>子菜单四</Menu.Item>
           </SubMenu>
           <SubMenu title={<div><Icon type='platform' /><span>导航二</span></div>}>
-            <Menu.Item>选项 5</Menu.Item>
-            <Menu.Item>选项 6</Menu.Item>
-            <SubMenu title='子菜单'>
-              <Menu.Item>选项7</Menu.Item>
-              <Menu.Item>选项8</Menu.Item>
-            </SubMenu>
+            <Menu.Item>子菜单五</Menu.Item>
+            <Menu.Item>子菜单六</Menu.Item>
+            <Menu.Item>子菜单七</Menu.Item>
+            <Menu.Item>子菜单八</Menu.Item>
           </SubMenu>
           <SubMenu title={<div><Icon type='appstore-o' /><span>导航三</span></div>}>
-            <Menu.Item>选项9</Menu.Item>
-            <Menu.Item>选项10</Menu.Item>
-            <Menu.Item>选项11</Menu.Item>
-            <Menu.Item>选项12</Menu.Item>
+            <Menu.Item>子菜单九</Menu.Item>
+            <Menu.Item>子菜单十</Menu.Item>
+            <Menu.Item>子菜单十一</Menu.Item>
+            <Menu.Item>子菜单十二</Menu.Item>
           </SubMenu>
         </Menu>
         <h1 className='h1'>浅色背景</h1>
@@ -114,22 +99,22 @@ export default class MenuDemo extends React.Component {
             mode='inline'
           >
             <SubMenu key='sub1' title={<div><Icon type='tool' /><span>导航一</span></div>}>
-              <Menu.Item key='1'>选项1</Menu.Item>
-              <Menu.Item key='2'>选项2</Menu.Item>
-              <Menu.Item key='3'>选项3</Menu.Item>
-              <Menu.Item key='4'>选项4</Menu.Item>
+              <Menu.Item key='1'>子菜单一</Menu.Item>
+              <Menu.Item key='2'>子菜单二</Menu.Item>
+              <Menu.Item key='3'>子菜单三</Menu.Item>
+              <Menu.Item key='4'>子菜单四</Menu.Item>
             </SubMenu>
             <SubMenu title={<div><Icon type='platform' /><span>导航二</span></div>}>
-              <Menu.Item key='5'>选项5</Menu.Item>
-              <Menu.Item key='6'>选项6</Menu.Item>
-              <Menu.Item key='7'>选项7</Menu.Item>
-              <Menu.Item key='8'>选项8</Menu.Item>
+              <Menu.Item key='5'>子菜单五</Menu.Item>
+              <Menu.Item key='6'>子菜单六</Menu.Item>
+              <Menu.Item key='7'>子菜单七</Menu.Item>
+              <Menu.Item key='8'>子菜单八</Menu.Item>
             </SubMenu>
             <SubMenu title={<div><Icon type='appstore-o' /><span>导航三</span></div>}>
-              <Menu.Item key='9'>选项9</Menu.Item>
-              <Menu.Item key='10'>选项10</Menu.Item>
-              <Menu.Item key='11'>选项11</Menu.Item>
-              <Menu.Item key='12'>选项12</Menu.Item>
+              <Menu.Item key='9'>子菜单九</Menu.Item>
+              <Menu.Item key='10'>子菜单十</Menu.Item>
+              <Menu.Item key='11'>子菜单十一</Menu.Item>
+              <Menu.Item key='12'>子菜单十二</Menu.Item>
             </SubMenu>
           </Menu>
         </div>
