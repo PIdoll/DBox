@@ -215,7 +215,7 @@ export default class cascader extends React.Component {
             <span>默认值通过数组的方式指定</span>
             <br />
             <h1 className='h1'>大小 </h1>
-            <span>不同大小的级联选择期</span>
+            <span>不同大小的级联选择器</span>
             <br />
             <div>
               <Cascader size='large' options={basicDatas} onChange={onChange} /><br /><br />
