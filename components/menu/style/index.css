@@ -357,8 +357,8 @@
   font-size: 14px;
   line-height: 40px;
   height: 40px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -571,6 +571,10 @@
 .idoll-menu-dark .idoll-menu-item > a {
   color: rgba(255, 255, 255, 0.65);
 }
+.idoll-menu-dark .idoll-menu-item i {
+  color: rgba(255, 255, 255, 0.45);
+  transition: all .3s;
+}
 .idoll-menu-dark.idoll-menu-inline,
 .idoll-menu-dark.idoll-menu-vertical,
 .idoll-menu-dark.idoll-menu-vertical-left,
@@ -611,6 +615,15 @@
 .idoll-menu-dark .idoll-menu-submenu-selected > a,
 .idoll-menu-dark .idoll-menu-submenu-title:hover > a {
   color: #fff;
+}
+.idoll-menu-dark .idoll-menu-item:hover i,
+.idoll-menu-dark .idoll-menu-item-active i,
+.idoll-menu-dark .idoll-menu-submenu-active i,
+.idoll-menu-dark .idoll-menu-submenu-open i,
+.idoll-menu-dark .idoll-menu-submenu-selected i,
+.idoll-menu-dark .idoll-menu-submenu-title:hover i {
+  color: #ffffff;
+  transition: all .3s;
 }
 .idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
 .idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
@@ -666,6 +679,9 @@
 .idoll-menu.idoll-menu-dark .idoll-menu-item-selected,
 .idoll-menu-submenu-popup.idoll-menu-dark .idoll-menu-item-selected {
   background-color: #13B886;
+}
+.idoll-menu-dark.idoll-menu-horizontal .idoll-menu-item-selected {
+  background-color: #2F323B;
 }
 .idoll-menu-dark .idoll-menu-item-disabled,
 .idoll-menu-dark .idoll-menu-submenu-disabled,

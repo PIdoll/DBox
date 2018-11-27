@@ -45,6 +45,13 @@
     color: @menu-dark-color;
   }
 
+  &-dark &-item {
+    i {
+      color: @text-color-disable-dark;
+      transition: all .3s;
+    }
+  }
+
   &-dark&-inline,
   &-dark&-vertical,
   &-dark&-vertical-left,
@@ -80,6 +87,10 @@
     > a {
       color: @menu-dark-highlight-color;
     }
+    i {
+      color: @heading-color-dark ;
+      transition: all .3s;
+    }
     > .@{menu-prefix-cls}-submenu-title,
     > .@{menu-prefix-cls}-submenu-title:hover {
       > .@{menu-prefix-cls}-submenu-arrow {
@@ -97,6 +108,9 @@
     color: @menu-dark-highlight-color;
     &:after {
       border-right: 0;
+    }
+    i {
+      color: @heading-color-dark;
     }
     > a,
     > a:hover {

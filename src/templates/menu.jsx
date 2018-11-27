@@ -6,7 +6,7 @@ import Switch from 'components/switch';
 
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const MenuItemGroup = Menu.ItemGroup;
 
 export default class MenuDemo extends React.Component {
   state = {
@@ -44,14 +44,14 @@ export default class MenuDemo extends React.Component {
           <Menu.Item key='platform'>首页</Menu.Item>
           <Menu.Item key='app' disabled>工作台</Menu.Item>
           <SubMenu title={<span>订单中心</span>}>
-            <MenuItemGroup title='菜单组一'>
+            <SubMenu title='菜单组一'>
               <Menu.Item key='setting:1'>子菜单一</Menu.Item>
               <Menu.Item key='setting:2'>子菜单二</Menu.Item>
-            </MenuItemGroup>
-            <MenuItemGroup title='菜单组二'>
+            </SubMenu>
+            <SubMenu title='菜单组二'>
               <Menu.Item key='setting:3'>子菜单三</Menu.Item>
               <Menu.Item key='setting:4'>子菜单四</Menu.Item>
-            </MenuItemGroup>
+            </SubMenu>
           </SubMenu>
           <Menu.Item key='alipay'>
             <a href='#' target='_blank' rel='noopener noreferrer'>配置管理</a>
@@ -63,28 +63,28 @@ export default class MenuDemo extends React.Component {
         <Menu
           onClick={this.handleClick}
           defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={['sub3']}
           inlineCollapsed={this.state.collapsed}
           mode={this.state.mode}
         >
-          <SubMenu key='sub1' title={<div><Icon type='tool' /><span>首页</span></div>} />
+          <Menu.Item key='sub1' title='首页'><div><Icon type='tool' /><span>首页</span></div></Menu.Item>
           <SubMenu key='sub2' title={<div><Icon type='tool' /><span>工作台</span></div>}>
             <Menu.Item key='setting:1'>子菜单一</Menu.Item>
             <Menu.Item key='setting:2'>子菜单二</Menu.Item>
             <Menu.Item key='setting:3'>子菜单三</Menu.Item>
             <Menu.Item key='setting:4'>子菜单四</Menu.Item>
           </SubMenu>
-          <SubMenu title={<div><Icon type='platform' /><span>订单中心</span></div>}>
-            <MenuItemGroup title='菜单组一'>
+          <SubMenu key='sub3' title={<div><Icon type='platform' /><span>订单中心</span></div>}>
+            <SubMenu title='菜单组一'>
               <Menu.Item>子菜单五</Menu.Item>
               <Menu.Item>子菜单六</Menu.Item>
-            </MenuItemGroup>
-            <MenuItemGroup title='菜单组二'>
+            </SubMenu>
+            <SubMenu title='菜单组二'>
               <Menu.Item>子菜单七</Menu.Item>
               <Menu.Item>子菜单八</Menu.Item>
-            </MenuItemGroup>
+            </SubMenu>
           </SubMenu>
-          <SubMenu title={<div><Icon type='appstore-o' /><span>配置管理</span></div>}>
+          <SubMenu key='sub4' title={<div><Icon type='appstore-o' /><span>配置管理</span></div>}>
             <Menu.Item>子菜单九</Menu.Item>
             <Menu.Item>子菜单十</Menu.Item>
             <Menu.Item>子菜单十一</Menu.Item>
@@ -115,10 +115,14 @@ export default class MenuDemo extends React.Component {
               <Menu.Item key='4'>子菜单四</Menu.Item>
             </SubMenu>
             <SubMenu title={<div><Icon type='platform' /><span>导航二</span></div>}>
-              <Menu.Item key='5'>子菜单五</Menu.Item>
-              <Menu.Item key='6'>子菜单六</Menu.Item>
-              <Menu.Item key='7'>子菜单七</Menu.Item>
-              <Menu.Item key='8'>子菜单八</Menu.Item>
+              <SubMenu title='菜单组一'>
+                <Menu.Item key='5'>子菜单五</Menu.Item>
+                <Menu.Item key='6'>子菜单六</Menu.Item>
+              </SubMenu>
+              <SubMenu title='菜单组二'>
+                <Menu.Item key='7'>子菜单七</Menu.Item>
+                <Menu.Item key='8'>子菜单八</Menu.Item>
+              </SubMenu>
             </SubMenu>
             <SubMenu title={<div><Icon type='appstore-o' /><span>导航三</span></div>}>
               <Menu.Item key='9'>子菜单九</Menu.Item>
