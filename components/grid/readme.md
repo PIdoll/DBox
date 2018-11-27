@@ -3,21 +3,19 @@
 
 安全使用Flex布局，该组件有两个部分，一个是Row，一个是Col，采用Row包裹Col的方法来实现栅格布局，并且栅格布局遵从Boostrap3的标准。
 
-
 ####  **基本栅格布局**
 ```jsx
 
+
 ```
-
-
 
 #### **Row**
 | 参数       | 说明             | 类型               | 默认值       |
 |-----------|-----------------|--------------------|-------------|
 | gutter    | 栅格间隔   | number | 0        |
 | type      | 布局模式，可选 `flex`，现代浏览器下有效 | string |         |
-| align     | flex 布局下的垂直对齐方式：`top` `middle` `bottom`  | string | `top`      |
-| justify   | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between`   | string | `start`        |
+| align     | flex 布局下的垂直对齐方式：`top` `middle` `bottom`  | string | `top` |
+| justify   | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between`   | string | `start`  |
 
 #### **Col**
 

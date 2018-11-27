@@ -271,6 +271,12 @@ function Home() {
           <div className='info'>Input-Number</div>
         </NavLink>
       </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/grid'>
+          <div className='name'>栅格</div>
+          <div className='info'>Grid</div>
+        </NavLink>
+      </div>
     </div>
   );
 }
