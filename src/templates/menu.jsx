@@ -6,6 +6,7 @@ import Switch from 'components/switch';
 
 
 const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 export default class MenuDemo extends React.Component {
   state = {
@@ -38,18 +39,22 @@ export default class MenuDemo extends React.Component {
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           mode='horizontal'
-          theme='light'
+          theme='dark'
         >
-          <Menu.Item key='platform'>导航一</Menu.Item>
-          <Menu.Item key='app' disabled>导航二</Menu.Item>
-          <SubMenu title={<span>导航三 - 子菜单</span>}>
-            <Menu.Item key='setting:1'>子菜单一</Menu.Item>
-            <Menu.Item key='setting:2'>子菜单二</Menu.Item>
-            <Menu.Item key='setting:3'>子菜单三</Menu.Item>
-            <Menu.Item key='setting:4'>子菜单四</Menu.Item>
+          <Menu.Item key='platform'>首页</Menu.Item>
+          <Menu.Item key='app' disabled>工作台</Menu.Item>
+          <SubMenu title={<span>订单中心</span>}>
+            <MenuItemGroup title='菜单组一'>
+              <Menu.Item key='setting:1'>子菜单一</Menu.Item>
+              <Menu.Item key='setting:2'>子菜单二</Menu.Item>
+            </MenuItemGroup>
+            <MenuItemGroup title='菜单组二'>
+              <Menu.Item key='setting:3'>子菜单三</Menu.Item>
+              <Menu.Item key='setting:4'>子菜单四</Menu.Item>
+            </MenuItemGroup>
           </SubMenu>
           <Menu.Item key='alipay'>
-            <a href='#' target='_blank' rel='noopener noreferrer'>导航四 - 链接</a>
+            <a href='#' target='_blank' rel='noopener noreferrer'>配置管理</a>
           </Menu.Item>
         </Menu>
         <h1 className='h1'>内嵌菜单</h1>
@@ -62,19 +67,24 @@ export default class MenuDemo extends React.Component {
           inlineCollapsed={this.state.collapsed}
           mode={this.state.mode}
         >
-          <SubMenu key='sub1' title={<div><Icon type='tool' /><span>导航一</span></div>}>
+          <SubMenu key='sub1' title={<div><Icon type='tool' /><span>首页</span></div>} />
+          <SubMenu key='sub2' title={<div><Icon type='tool' /><span>工作台</span></div>}>
             <Menu.Item key='setting:1'>子菜单一</Menu.Item>
             <Menu.Item key='setting:2'>子菜单二</Menu.Item>
             <Menu.Item key='setting:3'>子菜单三</Menu.Item>
             <Menu.Item key='setting:4'>子菜单四</Menu.Item>
           </SubMenu>
-          <SubMenu title={<div><Icon type='platform' /><span>导航二</span></div>}>
-            <Menu.Item>子菜单五</Menu.Item>
-            <Menu.Item>子菜单六</Menu.Item>
-            <Menu.Item>子菜单七</Menu.Item>
-            <Menu.Item>子菜单八</Menu.Item>
+          <SubMenu title={<div><Icon type='platform' /><span>订单中心</span></div>}>
+            <MenuItemGroup title='菜单组一'>
+              <Menu.Item>子菜单五</Menu.Item>
+              <Menu.Item>子菜单六</Menu.Item>
+            </MenuItemGroup>
+            <MenuItemGroup title='菜单组二'>
+              <Menu.Item>子菜单七</Menu.Item>
+              <Menu.Item>子菜单八</Menu.Item>
+            </MenuItemGroup>
           </SubMenu>
-          <SubMenu title={<div><Icon type='appstore-o' /><span>导航三</span></div>}>
+          <SubMenu title={<div><Icon type='appstore-o' /><span>配置管理</span></div>}>
             <Menu.Item>子菜单九</Menu.Item>
             <Menu.Item>子菜单十</Menu.Item>
             <Menu.Item>子菜单十一</Menu.Item>

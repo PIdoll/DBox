@@ -145,12 +145,12 @@
     }
   }
 
-  &-horizontal&-sub,
-  &-vertical&-sub,
-  &-vertical-left&-sub,
-  &-vertical-right&-sub {
-    min-width: 160px;
-  }
+  // &-horizontal&-sub,
+  // &-vertical&-sub,
+  // &-vertical-left&-sub,
+  // &-vertical-right&-sub {
+  //   // min-width: 160px;
+  // }
 
   &-item,
   &-submenu-title {
@@ -302,6 +302,15 @@
       display: block;
       height: 0;
       clear: both;
+    }
+  }
+  &-horizontal&-dark {
+    border-bottom-color: @Sider-Menu !important;
+    li.@{menu-prefix-cls}-submenu-horizontal {
+      color:@heading-color-dark;
+    }
+    li.@{menu-prefix-cls}-item-disabled {
+      color:@text-color-disable-dark !important;
     }
   }
 
@@ -500,11 +509,12 @@
       }
     }
     .@{menu-prefix-cls}-vertical {
-      li.@{menu-prefix-cls}-item {
-        font-size: 14px;
-        line-height: 22px;
-        padding: 9px 7px 9px 12px;
-        min-width: 128px;;
+      .@{menu-prefix-cls}-item-group {
+        li.@{menu-prefix-cls}-item {
+          font-size: 14px;
+          line-height: 22px;
+          padding: 9px 7px 9px 40px;
+        }
       }
     }
   }

@@ -151,12 +151,6 @@
 .idoll-menu-vertical-right.idoll-menu-sub > .idoll-menu-submenu {
   transform-origin: 0 0;
 }
-.idoll-menu-horizontal.idoll-menu-sub,
-.idoll-menu-vertical.idoll-menu-sub,
-.idoll-menu-vertical-left.idoll-menu-sub,
-.idoll-menu-vertical-right.idoll-menu-sub {
-  min-width: 160px;
-}
 .idoll-menu-item,
 .idoll-menu-submenu-title {
   cursor: pointer;
@@ -321,6 +315,15 @@
   display: block;
   height: 0;
   clear: both;
+}
+.idoll-menu-horizontal.idoll-menu-dark {
+  border-bottom-color: #2F323B !important;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal {
+  color: #ffffff;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled {
+  color: rgba(255, 255, 255, 0.45) !important;
 }
 .idoll-menu-vertical .idoll-menu-item,
 .idoll-menu-vertical-left .idoll-menu-item,
@@ -517,11 +520,10 @@
   color: #13B886;
   transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.idoll-menu-light .idoll-menu-vertical li.idoll-menu-item {
+.idoll-menu-light .idoll-menu-vertical .idoll-menu-item-group li.idoll-menu-item {
   font-size: 14px;
   line-height: 22px;
-  padding: 9px 7px 9px 12px;
-  min-width: 128px;
+  padding: 9px 7px 9px 40px;
 }
 .idoll-menu-dark .idoll-menu-submenu-title:hover div i {
   color: #ffffff;
@@ -532,7 +534,7 @@
 .idoll-menu-dark,
 .idoll-menu-dark .idoll-menu-sub {
   color: rgba(255, 255, 255, 0.65);
-  background: #13B886;
+  background: #2F323B;
 }
 .idoll-menu-dark .idoll-menu-submenu-title .idoll-menu-submenu-arrow,
 .idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
@@ -663,7 +665,7 @@
 }
 .idoll-menu.idoll-menu-dark .idoll-menu-item-selected,
 .idoll-menu-submenu-popup.idoll-menu-dark .idoll-menu-item-selected {
-  background-color: #42C69E;
+  background-color: #13B886;
 }
 .idoll-menu-dark .idoll-menu-item-disabled,
 .idoll-menu-dark .idoll-menu-submenu-disabled,
