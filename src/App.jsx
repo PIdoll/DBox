@@ -97,6 +97,8 @@ const App = () => (
       <Route exact path='/cascader' component={Cascader} />
       <Route exact path='/anchor' component={Anchor} />
       <Route exact path='/tree' component={Tree} />
+      <Route exact path='/slider' component={Slider} />
+      <Route exact path='/inputNumner' component={InputNumber} />
       <Route exact path='/popconfirm' component={Popconfirm} />
       <Route exact path='/notification' component={Notification} />
       <Route exact path='/slider' component={Slider} />
