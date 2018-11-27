@@ -181,11 +181,11 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-         //   path.resolve(__dirname, './components/affix/affix.jsx'),
+            path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
-        //    path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
-          path.resolve(__dirname, './components/steps/steps.jsx'),
+            path.resolve(__dirname, './components/breadcrumb/index.jsx'),
+            path.resolve(__dirname, './components/steps/steps.jsx'),
         //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
         //    path.resolve(__dirname, './components/anchor/index.jsx'),
         //    path.resolve(__dirname, './components/menu/index.jsx'),
@@ -208,7 +208,7 @@ module.exports = {
          //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
-        //    path.resolve(__dirname, './components/slider/slider.jsx'),
+            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
         //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
@@ -265,9 +265,14 @@ module.exports = {
       ]
     },
     resolve: {
+      // 自动补全的拓展名
+      extensions: ['.js', '.jsx', '.json', '.less'],
+      // 路径别名
       alias: {
-        'react-styleguidist': path.join(__dirname, '../../')
+        'assets': path.resolve(__dirname, 'assets'),
+        'templates': path.resolve(__dirname, 'src/templates'),
+        'components': path.resolve(__dirname, 'components')
       }
-    }
+    },
   }
 }
