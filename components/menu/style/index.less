@@ -145,12 +145,12 @@
     }
   }
 
-  // &-horizontal&-sub,
-  // &-vertical&-sub,
-  // &-vertical-left&-sub,
-  // &-vertical-right&-sub {
-  //   // min-width: 160px;
-  // }
+  &-horizontal&-sub,
+  &-vertical&-sub,
+  &-vertical-left&-sub,
+  &-vertical-right&-sub {
+    min-width: 128px;
+  }
 
   &-item,
   &-submenu-title {
@@ -160,6 +160,7 @@
     position: relative;
     display: block;
     white-space: nowrap;
+    user-select: none;
     transition: color .3s @ease-in-out, border-color .3s @ease-in-out, background .3s @ease-in-out, padding .15s @ease-in-out;
     .@{iconfont-css-prefix} {
       min-width: 14px;
@@ -213,8 +214,8 @@
           vertical-align: baseline;
           background: #fff;
           background-image: linear-gradient(to right, @menu-item-color, @menu-item-color);
-          width: 6px;
-          height: 1.5px;
+          width: 5px;
+          height: 2px;
           border-radius: 2px;
           transition: background .3s @ease-in-out, transform .3s @ease-in-out, top .3s @ease-in-out;
         }
@@ -306,11 +307,17 @@
   }
   &-horizontal&-dark {
     border-bottom-color: @Sider-Menu !important;
-    li.@{menu-prefix-cls}-submenu-horizontal {
-      color:@heading-color-dark;
+    li.@{menu-prefix-cls}-submenu-active {
+      color: #fff;
+    }
+    li.@{menu-prefix-cls}-submenu-horizontal:hover {
+      color: @text-color-secondary-dark !important;
     }
     li.@{menu-prefix-cls}-item-disabled {
       color:@text-color-disable-dark !important;
+    }
+    .@{menu-prefix-cls}-submenu,.@{menu-prefix-cls}-item {
+      padding: 16px 24px;
     }
   }
 
@@ -377,9 +384,9 @@
       width: ~"calc(100% + 1px)";
     }
 
-    .@{menu-prefix-cls}-submenu-title {
-      padding-right: 34px;
-    }
+    // .@{menu-prefix-cls}-submenu-title {
+    //   padding-right: 34px;
+    // }
   }
 
   &-inline-collapsed {
@@ -452,9 +459,9 @@
       list-style-position: inside;
     }
 
-    & .@{menu-prefix-cls}-item-group-title {
-      padding-left: 32px;
-    }
+    // & .@{menu-prefix-cls}-item-group-title {
+    //   padding-left: 32px;
+    // }
   }
 
   // 设置不可用状态的字体颜色、边框颜色以及鼠标手势提醒，并且取消 hover/tab 的影响
@@ -482,13 +489,24 @@
     }
   }
   &-dark&-root&-vertical {
-    width: 80px !important;
+    width: 88px !important;
+    >.@{menu-prefix-cls}-item {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .@{menu-prefix-cls}-submenu-title {
+      padding: 8px 32px;
+      margin-bottom: 0;
+      margin-top: 0;
+      line-height: 1.2;
+    }
      div {
        text-align: center;
        span {
          display: none;
        }
        i {
+         font-size: 24px;
          margin-right: 0;
          color: @text-color-secondary-dark;
        }
@@ -537,6 +555,9 @@
         }
       }
     }
+  }
+  &-light&-vertical {
+    width: 168px;
   }
 }
 

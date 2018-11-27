@@ -112,7 +112,7 @@ export default class Menu extends React.Component {
 
       }
       return (
-        <RcMenu {...this.props} style={{width: this.props.mode === 'inline' ? '256px' : ''}} {...menuProps} />
+        <RcMenu {...this.props} style={{width: this.props.mode === 'inline' ? '168px' : ''}} {...menuProps} />
       )
     }
 }
