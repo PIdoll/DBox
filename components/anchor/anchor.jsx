@@ -47,7 +47,7 @@ function easeInOutCubic(t, b, c, d) {
 // 匹配以#开头，后面不含#的字符串
 const sharpMatcherRegx = /#([^#]+)$/;
 function scrollTo (href, offsetTop = 0, getContainer, callback) {
-  const container = getContainer;
+  const container = getContainer();
   const scrollTop = getScroll(container, true);
   const sharpLinkMatch = sharpMatcherRegx.exec(href);
   if (!sharpLinkMatch) { return false };
@@ -115,7 +115,7 @@ export default class Anchor extends React.Component {
         }
       },
       unregisterLink: (link) => {
-        const index = this.link.indexOf(link);
+        const index = this.links.indexOf(link);
         if (index !== -1) {
           this.links.splice(index, 1);
         }

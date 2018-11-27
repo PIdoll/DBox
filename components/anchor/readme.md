@@ -26,7 +26,7 @@ const { Link } = Anchor;
     <div>锚点定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
-    <div id='components-anchor-demo-4'>目标定位</div>
+    <div id='components-anchor-demo-1'>目标定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
@@ -35,7 +35,7 @@ const { Link } = Anchor;
     <div>锚点定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
-    <div id='components-anchor-demo-5'>目标定位</div>
+    <div id='components-anchor-demo-2'>目标定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
     <div>锚点定位</div>
@@ -69,19 +69,19 @@ const contentStyle = {
 
 <div className='anchor' style={anchorStyle}>
   <Anchor type='inline'>
-    <Link href='#components-anchor-demo-1_1' title='项目一' />
-    <Link href='#components-anchor-demo-2_2' title='项目二' />
-    <Link href='#components-anchor-demo-3_3' title='项目三' />
+    <Link href='#project-1' title='项目一' />
+    <Link href='#project-2' title='项目二' />
+    <Link href='#project-3' title='项目三' />
   </Anchor>
-  <div id='components-anchor-demo-1_1'>
+  <div id='project-1'>
     <div style={titleStyle}>项目一</div>
     <div style={contentStyle}>这里是内容...</div>
   </div>
-  <div id='components-anchor-demo-2_2'>
+  <div id='project-2'>
     <div style={titleStyle}>项目二</div>
     <div style={contentStyle}>这里是内容...</div>
   </div>
-  <div id='components-anchor-demo-3_3'>
+  <div id='project-3'>
     <div style={titleStyle}>项目三</div>
     <div style={contentStyle}>这里是内容...</div>
   </div>

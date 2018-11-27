@@ -6,6 +6,12 @@ export default class AnchorLink extends React.Component {
   state = {
     type: 'vertical'
   }
+  static propTypes = {
+    prefixCls: PropTypes.string,
+    href: PropTypes.string,
+    title: PropTypes.string,
+    children: PropTypes.node,
+  }
   static defaultProps = {
     prefixCls: 'idoll-anchor',
     href: '#',

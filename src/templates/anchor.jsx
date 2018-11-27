@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
 import Anchor from 'components/anchor';
-import AnchorDemo from './anchor-demo1';
 
 const { Link } = Anchor;
 
 const anchorStyle = {
   width: 500,
   padding: 20,
-  border: '1px solid #ccc'
+  border: '1px solid #ccc',
 }
 const titleStyle = {
   height: 40,
@@ -21,7 +20,7 @@ const contentStyle = {
 }
 
 const handleClick = (e, link) => {
-  e.preventDefault();
+  // e.preventDefault();
   console.log(link);
 };
 
@@ -37,7 +36,33 @@ export default () =>
           <Link href='#components-anchor-demo-4' title='项目四' />
           <Link href='#components-anchor-demo-5' title='项目五' />
         </Anchor>
-        <AnchorDemo />
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div id='components-anchor-demo-1'>目标定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div id='components-anchor-demo-2'>目标定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
+          <div>锚点定位</div>
       </div>
       <h1 className='h1'>Tab样式的锚点</h1>
       <div className='anchor' style={anchorStyle}>
