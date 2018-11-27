@@ -77,6 +77,19 @@ function scrollTo (href, offsetTop = 0, getContainer, callback) {
 }
 export default class Anchor extends React.Component {
   static Link = AnchorLink;
+
+  static propTypes = {
+    prefixCls: PropTypes.string,
+    getContainer: PropTypes.func,
+    type: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    children: PropTypes.node,
+    offsetTop: PropTypes.number,
+    onClick: PropTypes.func,
+    bounds: PropTypes.number,
+  }
+
   static defaultProps = {
     prefixCls: 'idoll-anchor',
     affix: true,

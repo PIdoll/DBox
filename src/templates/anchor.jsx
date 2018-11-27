@@ -20,12 +20,17 @@ const contentStyle = {
   paddingLeft: 30,
 }
 
+const handleClick = (e, link) => {
+  e.preventDefault();
+  console.log(link);
+};
+
 export default () =>
   (
     <div id='main-container'>
       <h1 className='h1'>基本使用</h1>
       <div className='demo-anchor'>
-        <Anchor>
+        <Anchor onClick={handleClick}>
           <Link href='#components-anchor-demo-1' title='项目一' />
           <Link href='#components-anchor-demo-2' title='项目二' />
           <Link href='#components-anchor-demo-3' title='项目三' />
