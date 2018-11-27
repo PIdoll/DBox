@@ -294,6 +294,16 @@
   border-bottom: 2px solid #13B886;
   color: #13B886;
 }
+.idoll-menu-horizontal > .idoll-menu-item:hover i,
+.idoll-menu-horizontal > .idoll-menu-submenu:hover i,
+.idoll-menu-horizontal > .idoll-menu-item-active i,
+.idoll-menu-horizontal > .idoll-menu-submenu-active i,
+.idoll-menu-horizontal > .idoll-menu-item-open i,
+.idoll-menu-horizontal > .idoll-menu-submenu-open i,
+.idoll-menu-horizontal > .idoll-menu-item-selected i,
+.idoll-menu-horizontal > .idoll-menu-submenu-selected i {
+  color: #13B886;
+}
 .idoll-menu-horizontal > .idoll-menu-item > a,
 .idoll-menu-horizontal > .idoll-menu-submenu > a {
   display: block;
@@ -460,6 +470,9 @@
 .idoll-menu-sub.idoll-menu-inline .idoll-menu-item-group-title {
   padding-left: 32px;
 }
+.idoll-menu-item-disabled:hover i {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
 .idoll-menu-item-disabled,
 .idoll-menu-submenu-disabled {
   color: rgba(0, 0, 0, 0.25) !important;
@@ -528,7 +541,6 @@
   background: transparent;
 }
 .idoll-menu-dark .idoll-menu-inline.idoll-menu-sub {
-  background: #000c17;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) inset;
 }
 .idoll-menu-dark.idoll-menu-horizontal {

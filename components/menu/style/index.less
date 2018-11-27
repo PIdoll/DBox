@@ -279,6 +279,9 @@
       &-selected {
         border-bottom: 2px solid @menu-highlight-color;
         color: @menu-highlight-color;
+        i {
+          color: @menu-highlight-color;
+        }
       }
 
       > a {
@@ -442,6 +445,11 @@
   }
 
   // 设置不可用状态的字体颜色、边框颜色以及鼠标手势提醒，并且取消 hover/tab 的影响
+  &-item-disabled:hover {
+    i {
+      color: @disabled-color !important;
+    }
+  }
   &-item-disabled,
   &-submenu-disabled {
     color: @disabled-color !important;

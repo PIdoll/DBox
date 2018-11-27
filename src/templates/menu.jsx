@@ -28,18 +28,18 @@ export default class MenuDemo extends React.Component {
   }
   changeMode = (value) => {
     this.setState({
-      // collapsed: value,
       mode: value ? 'vertical' : 'inline',
     });
   }
   render() {
     return (
       <div id='main-container'>
-        {/* <h1 className='h1'>顶部导航</h1>
+        <h1 className='h1'>顶部导航</h1>
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           mode='horizontal'
+          theme='light'
         >
           <Menu.Item key='platform'>
             <Icon type='platform' />导航一
@@ -60,7 +60,7 @@ export default class MenuDemo extends React.Component {
           <Menu.Item key='alipay'>
             <a href='#' target='_blank' rel='noopener noreferrer'>导航四 - 链接</a>
           </Menu.Item>
-        </Menu> */}
+        </Menu>
         <h1 className='h1'>内嵌菜单</h1>
         <Switch onChange={this.changeMode} type='primary'>缩起菜单</Switch>
         <br />
@@ -133,48 +133,6 @@ export default class MenuDemo extends React.Component {
             </SubMenu>
           </Menu>
         </div>
-        <h1 className='h1'>动态转换</h1>
-        <Switch onChange={this.changeMode} type='primary'>缩起菜单</Switch>
-        <Switch
-          checked={this.state.theme === 'light'}
-          onChange={this.changeTheme}
-          checkedChildren='浅色'
-          unCheckedChildren='深色'
-          />
-        <br />
-        <Menu
-          onClick={this.handleClick}
-          theme={this.state.theme}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          inlineCollapsed={this.state.collapsed}
-          mode={this.state.mode}
-        >
-          <SubMenu key='sub1' title={<div><Icon type='tool' /><span>导航一</span></div>}>
-            <MenuItemGroup title='条目一'>
-              <Menu.Item key='setting:1'>选项 1</Menu.Item>
-              <Menu.Item key='setting:2'>选项 2</Menu.Item>
-            </MenuItemGroup>
-            <MenuItemGroup title='条目二'>
-              <Menu.Item key='setting:3'>选项 3</Menu.Item>
-              <Menu.Item key='setting:4'>选项 4</Menu.Item>
-            </MenuItemGroup>
-          </SubMenu>
-          <SubMenu title={<div><Icon type='platform' /><span>导航二</span></div>}>
-            <Menu.Item>选项 5</Menu.Item>
-            <Menu.Item>选项 6</Menu.Item>
-            <SubMenu title='子菜单'>
-              <Menu.Item>选项7</Menu.Item>
-              <Menu.Item>选项8</Menu.Item>
-            </SubMenu>
-          </SubMenu>
-          <SubMenu title={<div><Icon type='appstore-o' /><span>导航三</span></div>}>
-            <Menu.Item>选项9</Menu.Item>
-            <Menu.Item>选项10</Menu.Item>
-            <Menu.Item>选项11</Menu.Item>
-            <Menu.Item>选项12</Menu.Item>
-          </SubMenu>
-        </Menu>
       </div>
     )
   };
