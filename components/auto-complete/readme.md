@@ -321,3 +321,5 @@ class AutoCompleteExample extends React.Component {
 | ---- | ----------- |
 | focus() | 获取焦点 |
 | blur() | 移除焦点 |
+
+<style> .idoll-select-dropdown-menu-item.show-all {text-align:center;cursor:default}</style> 
