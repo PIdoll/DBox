@@ -86,7 +86,10 @@
   &-submenu-active,
   &-submenu-title:hover {
     color: @menu-highlight-color;
-    
+    i {
+      color: @menu-highlight-color;
+      transition: all .3s;
+    }
   }
 
 
@@ -494,6 +497,11 @@
       margin-top: 4px;
       margin-bottom: 4px;
     }
+    >.@{menu-prefix-cls}-item:hover {
+      i {
+        color: #fff;
+      }
+    }
     .@{menu-prefix-cls}-submenu-title {
       padding: 8px 32px;
       margin-bottom: 0;
@@ -509,6 +517,7 @@
          font-size: 24px;
          margin-right: 0;
          color: @text-color-secondary-dark;
+         transition: none;
        }
      }
      .@{menu-prefix-cls}-submenu-arrow {
@@ -534,6 +543,7 @@
           padding: 9px 7px 9px 40px;
         }
       }
+
     }
   }
   &-dark {
@@ -557,7 +567,78 @@
     }
   }
   &-light&-vertical {
-    width: 168px;
+    width: 88px;
+    >.@{menu-prefix-cls}-item-selected {
+      i {
+        color: @menu-highlight-color;
+      }
+    }
+    >.@{menu-prefix-cls}-item {
+      padding: 0 32px; 
+      span {
+        display: block;
+      }
+      i {
+        font-size: 24px;
+        margin-right: 0;
+      }
+    }
+    >.@{menu-prefix-cls}-submenu-vertical {
+      .@{menu-prefix-cls}-submenu-title {
+        padding: 0 32px;
+        .@{menu-prefix-cls}-submenu-arrow {
+          display: none;
+        }
+        div {
+          span {
+            display: none;
+          }
+          i {
+            font-size: 24px;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &-light&-inline,&-dark&-inline {
+    >.@{menu-prefix-cls}-item-selected {
+      i {
+        color: @menu-highlight-color;
+      }
+    }
+    >.@{menu-prefix-cls}-item {
+      font-size: 16px;
+      padding: 0 0 0 16px !important;
+      margin: 4px 0;
+      span {
+        vertical-align: middle;
+      }
+    }
+    .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
+      div.@{menu-prefix-cls}-submenu-title {
+        padding-left: 16px !important;
+        font-size: 16px;
+        span {
+          vertical-align: middle;
+        }
+      }
+      .@{menu-prefix-cls}-sub.@{menu-prefix-cls}-inline {
+        box-shadow: none;
+        .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
+          div.@{menu-prefix-cls}-submenu-title {
+            padding-left: 40px !important;
+          }
+          .@{menu-prefix-cls}-item {
+            padding-left: 60px !important;
+          }
+        }
+        >.@{menu-prefix-cls}-item {
+          padding-left: 40px !important;
+          margin: 0;
+        }
+      }
+    }
   }
 }
 
