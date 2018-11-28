@@ -12,8 +12,8 @@ export default class MenuDemo extends React.Component {
   state = {
     current: 'platform',
     theme: 'light',
-    collapsed: false,
-    mode: 'inline'
+    mode: 'inline',
+    mode2: 'vertical'
   }
   handleClick = (e) => {
     console.log('click ', e);
@@ -31,6 +31,11 @@ export default class MenuDemo extends React.Component {
       mode: value ? 'vertical' : 'inline',
     });
   }
+  changeMode2 = (value) => {
+    this.setState({
+      mode2: value ? 'inline' : 'vertical',
+    });
+  }
   render() {
     return (
       <div id='main-container'>
@@ -39,7 +44,7 @@ export default class MenuDemo extends React.Component {
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           mode='horizontal'
-          theme='dark'
+          theme='light'
         >
           <Menu.Item key='platform'>首页</Menu.Item>
           <Menu.Item key='app' disabled>工作台</Menu.Item>
@@ -60,10 +65,9 @@ export default class MenuDemo extends React.Component {
           onClick={this.handleClick}
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
-          inlineCollapsed={this.state.collapsed}
           mode={this.state.mode}
         >
-          <Menu.Item key='sub1' title='首页'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
           <SubMenu key='sub2' title={<div><Icon type='platform' /><span>工作台</span></div>}>
             <Menu.Item>子菜单一</Menu.Item>
             <Menu.Item>子菜单二</Menu.Item>
@@ -97,16 +101,15 @@ export default class MenuDemo extends React.Component {
             checkedChildren='浅色'
             unCheckedChildren='深色'
           />
-          <Switch onChange={this.changeMode} type='primary'>缩起菜单</Switch>
+          <Switch onChange={this.changeMode2} type='primary'>缩起菜单</Switch>
           <Menu
             theme={this.state.theme}
             onClick={this.handleClick}
             defaultOpenKeys={['sub1']}
-            inlineCollapsed={this.state.collapsed}
-            mode={this.state.mode}
+            mode={this.state.mode2}
             selectedKeys={[this.state.current]}
           >
-            <Menu.Item key='sub1' title='首页'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+            <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
             <SubMenu title={<div><Icon type='platform' /><span>工作台</span></div>}>
               <SubMenu title='菜单组一'>
                 <Menu.Item key='5'>子菜单五</Menu.Item>

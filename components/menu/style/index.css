@@ -50,7 +50,7 @@
 }
 .idoll-menu-submenu,
 .idoll-menu-submenu-inline {
-  transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .idoll-menu-item:active,
 .idoll-menu-submenu-title:active {
@@ -58,7 +58,7 @@
 }
 .idoll-menu-submenu .idoll-menu-sub {
   cursor: initial;
-  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .idoll-menu-item > a {
   display: block;
@@ -107,7 +107,9 @@
   margin-top: -1px;
   font-size: 16px;
   vertical-align: middle;
-  padding: 15px 24px;
+  padding: 0 24px;
+  height: 56px;
+  line-height: 56px;
 }
 .idoll-menu-horizontal > .idoll-menu-item:hover,
 .idoll-menu-horizontal > .idoll-menu-item-active,
@@ -174,7 +176,7 @@
   display: block;
   white-space: nowrap;
   user-select: none;
-  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .idoll-menu-item .idoll-icon,
 .idoll-menu-submenu-title .idoll-icon {
@@ -186,6 +188,7 @@
 .idoll-menu-submenu-title .idoll-icon + span {
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
+  transition: none;
 }
 .idoll-menu > .idoll-menu-item-divider {
   height: 1px;
@@ -342,10 +345,6 @@
 }
 .idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled {
   color: rgba(255, 255, 255, 0.45) !important;
-}
-.idoll-menu-horizontal.idoll-menu-dark .idoll-menu-submenu,
-.idoll-menu-horizontal.idoll-menu-dark .idoll-menu-item {
-  padding: 16px 24px;
 }
 .idoll-menu-vertical .idoll-menu-item,
 .idoll-menu-vertical-left .idoll-menu-item,
@@ -519,33 +518,36 @@
 .idoll-menu-dark.idoll-menu-root.idoll-menu-vertical {
   width: 88px !important;
 }
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item-selected i {
+  color: #fff;
+}
 .idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  padding: 0 32px;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item span {
+  display: block;
+  transition: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item i {
+  font-size: 24px;
+  margin-right: 0;
+  transition: none;
 }
 .idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item:hover i {
   color: #fff;
 }
-.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical .idoll-menu-submenu-title {
-  padding: 8px 32px;
-  margin-bottom: 0;
-  margin-top: 0;
-  line-height: 1.2;
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title {
+  padding: 0 32px;
 }
-.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical div {
-  text-align: center;
-}
-.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical div span {
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
   display: none;
 }
-.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical div i {
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div span {
+  display: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div i {
   font-size: 24px;
   margin-right: 0;
-  color: rgba(255, 255, 255, 0.65);
-  transition: none;
-}
-.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical .idoll-menu-submenu-arrow {
-  display: none;
 }
 .idoll-menu-light .idoll-menu-submenu-title:hover div i {
   color: #13B886;
@@ -563,20 +565,32 @@
   color: #ffffff;
 }
 .idoll-menu-light.idoll-menu-vertical {
-  width: 88px;
+  width: 89px;
+  position: relative;
 }
 .idoll-menu-light.idoll-menu-vertical > .idoll-menu-item-selected i {
   color: #13B886;
 }
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item-selected:before {
+  content: '';
+  width: 3px;
+  height: 100%;
+  background-color: #13B886;
+  position: absolute;
+  right: 0;
+}
 .idoll-menu-light.idoll-menu-vertical > .idoll-menu-item {
+  transition: none;
   padding: 0 32px;
 }
 .idoll-menu-light.idoll-menu-vertical > .idoll-menu-item span {
   display: block;
+  transition: none;
 }
 .idoll-menu-light.idoll-menu-vertical > .idoll-menu-item i {
   font-size: 24px;
   margin-right: 0;
+  transition: none;
 }
 .idoll-menu-light.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title {
   padding: 0 32px;
@@ -604,6 +618,11 @@
 .idoll-menu-light.idoll-menu-inline > .idoll-menu-item span,
 .idoll-menu-dark.idoll-menu-inline > .idoll-menu-item span {
   vertical-align: middle;
+  transition: none;
+}
+.idoll-menu-light.idoll-menu-inline > .idoll-menu-item i,
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item i {
+  transition: none;
 }
 .idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title,
 .idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title {
@@ -630,6 +649,18 @@
 .idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline > .idoll-menu-item {
   padding-left: 40px !important;
   margin: 0;
+}
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item-selected i {
+  color: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-arrow {
+  border-right-color: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-inner {
+  background: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-inner span {
+  color: rgba(0, 0, 0, 0.45);
 }
 .idoll-menu-dark,
 .idoll-menu-dark .idoll-menu-sub {

@@ -38,7 +38,7 @@
 
   &-submenu,
   &-submenu-inline {
-    transition: border-color .3s @ease-in-out, background .3s @ease-in-out, padding .15s @ease-in-out;
+    transition: border-color .3s @ease-in-out, background .3s @ease-in-out;
   }
 
   &-item:active,
@@ -48,7 +48,7 @@
 
   &-submenu &-sub {
     cursor: initial;
-    transition: background .3s @ease-in-out, padding .3s @ease-in-out;
+    transition: background .3s @ease-in-out;
   }
   // 子项目是链接时的样式
   &-item > a {
@@ -79,7 +79,7 @@
     background-color: @border-color-split;
     line-height: 0;
   }
-
+// *****
   &-item:hover,
   &-item-active,
   &:not(&-inline) &-submenu-open,
@@ -98,7 +98,9 @@
     margin-top: -1px;
     font-size: 16px;
     vertical-align: middle;
-    padding: 15px 24px;
+    padding: 0 24px;
+    height: 56px;
+    line-height: 56px;
   }
 
   &-horizontal > &-item:hover,
@@ -164,7 +166,7 @@
     display: block;
     white-space: nowrap;
     user-select: none;
-    transition: color .3s @ease-in-out, border-color .3s @ease-in-out, background .3s @ease-in-out, padding .15s @ease-in-out;
+    transition: color .3s @ease-in-out, border-color .3s @ease-in-out, background .3s @ease-in-out;
     .@{iconfont-css-prefix} {
       min-width: 14px;
       margin-right: 8px;
@@ -172,6 +174,7 @@
       + span {
         transition: opacity .3s @ease-in-out, width .3s @ease-in-out;
         opacity: 1;
+        transition: none;
       }
     }
   }
@@ -318,9 +321,6 @@
     }
     li.@{menu-prefix-cls}-item-disabled {
       color:@text-color-disable-dark !important;
-    }
-    .@{menu-prefix-cls}-submenu,.@{menu-prefix-cls}-item {
-      padding: 16px 24px;
     }
   }
 
@@ -493,35 +493,44 @@
   }
   &-dark&-root&-vertical {
     width: 88px !important;
+    >.@{menu-prefix-cls}-item-selected {
+      i {
+        color: #fff;
+      }
+    }
     >.@{menu-prefix-cls}-item {
-      margin-top: 4px;
-      margin-bottom: 4px;
+      padding: 0 32px; 
+      span {
+        display: block;
+        transition: none;
+      }
+      i {
+        font-size: 24px;
+        margin-right: 0;
+        transition: none;
+      }
     }
     >.@{menu-prefix-cls}-item:hover {
       i {
         color: #fff;
       }
     }
-    .@{menu-prefix-cls}-submenu-title {
-      padding: 8px 32px;
-      margin-bottom: 0;
-      margin-top: 0;
-      line-height: 1.2;
-    }
-     div {
-       text-align: center;
-       span {
-         display: none;
-       }
-       i {
-         font-size: 24px;
-         margin-right: 0;
-         color: @text-color-secondary-dark;
-         transition: none;
-       }
-     }
-     .@{menu-prefix-cls}-submenu-arrow {
-      display: none;
+    >.@{menu-prefix-cls}-submenu-vertical {
+      .@{menu-prefix-cls}-submenu-title {
+        padding: 0 32px;
+        .@{menu-prefix-cls}-submenu-arrow {
+          display: none;
+        }
+        div {
+          span {
+            display: none;
+          }
+          i {
+            font-size: 24px;
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
   &-light {
@@ -567,20 +576,32 @@
     }
   }
   &-light&-vertical {
-    width: 88px;
+    width: 89px;
+    position: relative;
     >.@{menu-prefix-cls}-item-selected {
       i {
         color: @menu-highlight-color;
       }
     }
+    >.@{menu-prefix-cls}-item-selected:before {
+      content: '';
+      width: 3px;
+      height: 100%;
+      background-color: @menu-highlight-color;
+      position: absolute;
+      right: 0;
+    }
     >.@{menu-prefix-cls}-item {
+      transition: none;
       padding: 0 32px; 
       span {
         display: block;
+        transition: none;
       }
       i {
         font-size: 24px;
         margin-right: 0;
+        transition: none;
       }
     }
     >.@{menu-prefix-cls}-submenu-vertical {
@@ -613,6 +634,10 @@
       margin: 4px 0;
       span {
         vertical-align: middle;
+        transition: none;
+      }
+      i {
+        transition: none;
       }
     }
     .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
@@ -637,6 +662,24 @@
           padding-left: 40px !important;
           margin: 0;
         }
+      }
+    }
+  }
+  &-dark&-inline {
+    >.@{menu-prefix-cls}-item-selected {
+      i {
+        color: #fff;
+      }
+    }
+  }
+  &-theme-light {
+    .idoll-tooltip-arrow {
+      border-right-color: #fff;
+    }
+    .idoll-tooltip-inner {
+      background: #fff;
+      span {
+        color:@text-color-secondary;
       }
     }
   }

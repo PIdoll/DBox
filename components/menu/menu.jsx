@@ -22,15 +22,17 @@ export default class Menu extends React.Component {
     static defaultProps = {
       prefixCls: 'idoll-menu',
       className: '',
-      theme: 'dark', // or dark
+      theme: 'dark', // or light
     }
     static childContextTypes = {
       inlineCollapsed: PropTypes.bool,
-      idollMenuTheme: PropTypes.string
+      idollMenuTheme: PropTypes.string,
+      mode: PropTypes.string
     };
     getChildContext () {
       return {
-        idollMenuTheme: this.props.theme
+        idollMenuTheme: this.props.theme,
+        mode: this.props.mode
       }
     }
     constructor(props) {
