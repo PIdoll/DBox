@@ -220,7 +220,7 @@ module.exports = {
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
          //   path.resolve(__dirname, './components/card/card.jsx'),
-         //   path.resolve(__dirname, './components/collapse/index.jsx'),
+            path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
          path.resolve(__dirname, './components/tooltip/index.jsx'),
