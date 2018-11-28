@@ -232,7 +232,7 @@ class TabsView extends React.Component {
         element.style.width = '100%';
         element.style.padding = '20px 20px';
         element.style.backgroundColor = '#fff';
-      } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
+      } else if (window.scrollY < currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';
         element.style.padding = '0';
         element.style.left = '0';

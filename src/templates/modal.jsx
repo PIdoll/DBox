@@ -159,6 +159,9 @@ export default class ModalView extends React.Component {
         <h1 className='h1'>确认对话框</h1>
         <Button onClick={this.showConfirm}>确认对话框</Button>
 
+
+
+
         {/* 自定义页脚 */}
         {/* <div className='h1'>
           自定义页脚
