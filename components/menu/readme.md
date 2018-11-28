@@ -163,6 +163,7 @@ class MenuView extends React.Component {
     super(props);
 	  this.state = {
 	  	current: 'platform',
+      theme: 'light',
 	    mode2: 'inline',
 	  }
     this.changeMode2 = this.changeMode2.bind(this)
