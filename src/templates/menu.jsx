@@ -44,22 +44,27 @@ export default class MenuDemo extends React.Component {
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           mode='horizontal'
-          theme='light'
+          theme='dark'
         >
-          <Menu.Item key='platform'>首页</Menu.Item>
-          <Menu.Item key='app' disabled>工作台</Menu.Item>
-          <SubMenu title={<span>订单中心</span>}>
-            <Menu.Item key='setting:1'>子菜单一</Menu.Item>
-            <Menu.Item key='setting:2'>子菜单二</Menu.Item>
-            <Menu.Item key='setting:3'>子菜单三</Menu.Item>
-            <Menu.Item key='setting:4'>子菜单四</Menu.Item>
+          <Menu.Item key='home'>首页</Menu.Item>
+          <Menu.Item key='platform' disabled>工作台</Menu.Item>
+          <SubMenu key='bars' title={<span>订单中心</span>}>
+            <Menu.Item key='1'>子菜单一</Menu.Item>
+            <Menu.Item key='2'>子菜单二</Menu.Item>
+            <Menu.Item key='3'>子菜单三</Menu.Item>
+            <Menu.Item key='4'>子菜单四</Menu.Item>
           </SubMenu>
-          <Menu.Item key='alipay'>
+          <Menu.Item key='tool'>
             <a href='#' target='_blank' rel='noopener noreferrer'>配置管理</a>
           </Menu.Item>
         </Menu>
         <h1 className='h1'>内嵌菜单</h1>
-        <Switch onChange={this.changeMode} type='primary'>缩起菜单</Switch>
+        <Switch
+          onChange={this.changeMode}
+          type='primary'
+          checkedChildren='折叠'
+          unCheckedChildren='展开'
+        />
         <br />
         <Menu
           onClick={this.handleClick}
@@ -101,7 +106,12 @@ export default class MenuDemo extends React.Component {
             checkedChildren='浅色'
             unCheckedChildren='深色'
           />
-          <Switch onChange={this.changeMode2} type='primary'>缩起菜单</Switch>
+          <Switch
+            onChange={this.changeMode2}
+            type='primary'
+            checkedChildren='折叠'
+            unCheckedChildren='展开'
+          />
           <Menu
             theme={this.state.theme}
             onClick={this.handleClick}

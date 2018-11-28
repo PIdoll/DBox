@@ -7,7 +7,7 @@ import RcMenu, { Divider, ItemGroup } from 'rc-menu';
 
 // import { SliderContext } from 'components/layout/sider';
 import Item from './MenuItem';
-import SubMenu from './Submenu';
+import SubMenu from './SubMenu';
 
 // import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
