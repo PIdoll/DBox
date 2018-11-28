@@ -272,15 +272,15 @@ function Home() {
         </NavLink>
       </div>
       <div className='widget-item'>
-<<<<<<< HEAD
         <NavLink className='widget-wrap' to='/grid'>
           <div className='name'>栅格</div>
           <div className='info'>Grid</div>
-=======
+        </NavLink>
+      </div>
+      <div className='widget-item'>
         <NavLink className='widget-wrap' to='/back-top'>
           <div className='name'>返回顶部</div>
           <div className='info'>Back-Top</div>
->>>>>>> eb7167a29344b1050711209ed79f766dc0e5b77d
         </NavLink>
       </div>
     </div>
