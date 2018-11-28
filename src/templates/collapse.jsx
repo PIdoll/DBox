@@ -29,7 +29,7 @@ export default () => (
       <Panel header='标题一' key='1' >
         <p>{text1}</p>
       </Panel>
-      <Panel showArrow={false} header='标题二' key='2'>
+      <Panel header='标题二' key='2'>
         <p>{text1}</p>
       </Panel>
       <Panel header='标题三' key='3' disabled>
