@@ -2,19 +2,17 @@
 @import "../../../style/mixins/index.less";
 
 @collapse-prefix-cls: ~"@{idoll-prefix}-collapse";
-@collapse-header-bg: @background-color-light;
-@collapse-active-bg: @background-color-base;
+@collapse-header-bg: #FAFAFA;
 
 .collapse-close() {
   transform: rotate(0);
 }
 .collapse-open() {
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 
 .@{collapse-prefix-cls} {
 	.reset-component;
-	background-color: @collapse-header-bg;
 	border-radius: @border-radius-base;
 	border: @border-width-base @border-style-base @border-color-base;
 	border-bottom: 0;
@@ -31,7 +29,7 @@
 
 		> .@{collapse-prefix-cls}-header {
 			line-height: 22px;
-			padding: 12px 0 12px 40px;
+			padding: 12px 24px;
 			color: @heading-color;
 			cursor: pointer;
 			position: relative;
@@ -47,12 +45,15 @@
 				vertical-align: top;
 				transition: transform 0.24s;
 				top: 0;
-				left: @padding-md;
+				right: 24px;
 				&:before {
 					content: "\E92C";
 				}
 			}
 		}
+	}
+	& > &-item-active {
+		border-bottom: 0;
 	}
 
 	&-anim-active {
@@ -62,13 +63,15 @@
 	&-content {
 		overflow: hidden;
 		color: @text-color;
-		padding: 0 @padding-md;
+		padding: 0 24px;
 		background-color: @component-background;
 		border-top: @border-width-base @border-style-base @border-color-base;
+		border-width: 0;
+		border-bottom: 1px solid @border-color-base;
 
 		& > &-box {
-		padding-top: @padding-md;
-      	padding-bottom: @padding-md;
+			padding-top: @padding-md;
+			padding-bottom: @padding-md;
 		}
 
 		&-inactive {
@@ -79,11 +82,17 @@
 	&-item:last-child {
 		> .@{collapse-prefix-cls}-content {
 			border-radius: 0 0 @border-radius-base @border-radius-base;
+			border-bottom: 1px solid @border-color-base;
 		}
+	}
+
+	& > &-item > &-header {
+		background-color: @collapse-header-bg;
 	}
 
 	& > &-item > &-header[aria-expanded="true"] {
 		outline-width: 0;
+		border-top: 0;
 		.arrow {
 			.collapse-open();
 		}
@@ -98,22 +107,32 @@
 		border: 0;
 	}
 
-	&-borderless > &-item {
-		border-bottom: 1px solid @border-color-base;
-	}
+	// &-borderless > &-item {
+	// 	border-bottom: 1px solid @border-color-base;
+	// }
 
 	&-borderless > &-item:last-child,
 	&-borderless > &-item:last-child &-header {
 		border-radius: 0;
 	}
 
+	&-borderless > &-item >&-header {
+		padding: 12px 0;
+		background-color: #fff;
+		.arrow {
+			right: 0;
+		}
+	}
+
 	&-borderless > &-item > &-content {
 		background-color: transparent;
 		border-top: 0;
+		padding: 0; 
 	}
 
 	&-borderless > &-item > &-content > &-content-box {
 		padding-top: 4px;
+		border-bottom: 0;
 	}
 
 	& &-item-disabled > &-header {
@@ -123,5 +142,25 @@
 			color: @disabled-color;
 		}
 	}
-
+	&-bgColor {
+		border: none;
+		.@{collapse-prefix-cls}-item {
+			border-bottom: 0;
+			margin-bottom: 24px;
+			.@{collapse-prefix-cls}-content {
+				background-color: #FCFCFC;
+				border-bottom: 0;
+				&-box {
+					border-bottom: 0;
+				}	
+			}
+		}
+		.@{collapse-prefix-cls}-item:last-child {
+			.@{collapse-prefix-cls}-content {
+				border-bottom: 0;
+			}
+		}
+	}
 }
+
+

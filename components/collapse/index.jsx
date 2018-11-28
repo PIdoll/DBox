@@ -15,9 +15,10 @@ export default class Collapse extends React.Component {
 	};
 
 	render() {
-		const { prefixCls, className = '', bordered } = this.props;
+		const { prefixCls, className = '', bordered, bgColor } = this.props;
 		const collapseClassName = classNames({
-			[`${prefixCls}-borderless`]: !bordered
+			[`${prefixCls}-borderless`]: !bordered,
+			[`${prefixCls}-bgColor`]: bgColor
 		}, className);
 		return <RcCollapse {...this.props} className={collapseClassName} />;
 	}
