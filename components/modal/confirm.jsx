@@ -8,7 +8,6 @@ import { getConfirmLocale } from './locale';
 
 export default function confirm(config) {
   const props = { ...config };
-  console.log(props);
   let div = document.createElement('div');
   document.body.appendChild(div);
 
@@ -89,10 +88,10 @@ export default function confirm(config) {
   if (props.okCancel) {
     footer = (
       <div className='idoll-confirm-btns'>
-        <Button type='ghost' size='large' onClick={onCancel}>
+        <Button type='ghost' onClick={onCancel}>
           {props.cancelText}
         </Button>
-        <Button type='primary' size='large' onClick={onOk}>
+        <Button type='primary' onClick={onOk}>
           {props.okText}
         </Button>
       </div>
@@ -100,7 +99,7 @@ export default function confirm(config) {
   } else {
     footer = (
       <div className='idoll-confirm-btns'>
-        <Button type='primary' size='large' onClick={onOk}>
+        <Button type='primary' onClick={onOk}>
           {props.okText}
         </Button>
       </div>

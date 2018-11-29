@@ -19,11 +19,10 @@
 ```jsx
 <div>
 <BackTop>
-  <div style={{height: 40,width: 40, marginTop: 40, textAlign: 'center',borderRadius: 4,fontSize: 20,backgroundColor: '#13B886',color: '#fff',lineHeight: '40px'}}>UP</div>
+  <div style={{height: 40,width: 40, marginTop: 40, textAlign: 'center',borderRadius: 4,fontSize: 20,backgroundColor: '#13B886',color: '#fff',lineHeight: '40px', fontSize: 14}}>返回</div>
 </BackTop>
-  向下滚动以查看右下方的灰色
-  <strong style={{color: '#1088e9'}}> blue </strong>
-  按钮。
+  向下滚动以查看右下方的文字按钮。
+  
 </div>
 ```
 

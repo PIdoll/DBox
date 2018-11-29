@@ -188,7 +188,7 @@ module.exports = {
             path.resolve(__dirname, './components/steps/steps.jsx'),
         //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
         //    path.resolve(__dirname, './components/anchor/index.jsx'),
-        //    path.resolve(__dirname, './components/menu/index.jsx'),
+           path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
@@ -201,7 +201,7 @@ module.exports = {
            path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
-        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+           path.resolve(__dirname, './components/time-picker/index.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
         //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
