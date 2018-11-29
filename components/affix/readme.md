@@ -10,8 +10,8 @@ class AffixView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: 30,
-      bottom:30
+      top: 10,
+      bottom:10
     }
     this.handleOffset = this.handleOffset.bind(this);
   }
@@ -24,7 +24,7 @@ class AffixView extends React.Component {
     return (
       <div>
         <Affix offsetTop={this.state.top}>
-          <Button type='primary' onClick={this.handleOffset}>距离顶部30米触发</Button>
+          <Button  onClick={this.handleOffset}>距离顶部10px触发</Button>
         </Affix>
       </div>
     )
@@ -34,8 +34,8 @@ class AffixView extends React.Component {
 ```
 #### **固定到底部**
 ```jsx
-<Affix offsetTop={100} onChange={affixed => console.log(affixed)}>
-  <Button >距离顶部30米触发</Button>
+<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+  <Button >距离底部0px触发</Button>
 </Affix>
 ```
 
