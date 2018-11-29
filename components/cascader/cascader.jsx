@@ -63,7 +63,7 @@ export default class Cascader extends React.Component {
   static defaultProps = {
     prefixCls: 'idoll-cascader',
     inputPrefixCls: 'idoll-input',
-    placeholder: '请选择 select',
+    placeholder: '请选择',
     transitionName: 'slide-up',
     popupPlacement: 'bottomLeft',
     options: [],
@@ -238,17 +238,22 @@ export default class Cascader extends React.Component {
     const { props, state } = this;
     const {
       prefixCls, inputPrefixCls, children, placeholder, size, disabled,
-      className, style, allowClear, showSearch = false, ...otherProps
+      className, style, allowClear, autoFocus, showSearch = false, ...otherProps
     } = props;
+
     const value = state.value;
 
     const sizeCls = classNames({
       [`${inputPrefixCls}-lg`]: size === 'large',
       [`${inputPrefixCls}-sm`]: size === 'small',
     });
+
+    const autoFocusClass = classNames({
+      [`${prefixCls}-input-autoFocus`]: autoFocus,
+    });
     const clearIcon = (allowClear && !disabled && value.length > 0) || state.inputValue ? (
       <Icon
-        type='close'
+        type='close-circle'
         className={`${prefixCls}-picker-clear`}
         onClick={this.clearSelection}
       />
@@ -305,6 +310,10 @@ export default class Cascader extends React.Component {
       dropdownMenuColumnStyle.width = this.input.input.offsetWidth;
     }
 
+    const expandIcon = (
+      <Icon type='pro-right' />
+    );
+
     const input = children || (
       <span
         style={style}
@@ -318,7 +327,7 @@ export default class Cascader extends React.Component {
           ref={this.saveInput}
           prefixCls={inputPrefixCls}
           placeholder={value && value.length > 0 ? undefined : placeholder}
-          className={`${prefixCls}-input ${sizeCls}`}
+          className={`${prefixCls}-input ${sizeCls} ${autoFocusClass}`}
           value={state.inputValue}
           disabled={disabled}
           readOnly={!showSearch}
@@ -342,6 +351,7 @@ export default class Cascader extends React.Component {
         onPopupVisibleChange={this.handlePopupVisibleChange}
         onChange={this.handleChange}
         dropdownMenuColumnStyle={dropdownMenuColumnStyle}
+        expandIcon={expandIcon}
       >
         {input}
       </RcCascader>
