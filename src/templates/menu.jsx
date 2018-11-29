@@ -10,7 +10,7 @@ const SubMenu = Menu.SubMenu;
 
 export default class MenuDemo extends React.Component {
   state = {
-    current: 'platform',
+    current: 'home',
     theme: 'light',
     mode: 'inline',
     mode2: 'vertical'
@@ -42,20 +42,21 @@ export default class MenuDemo extends React.Component {
         <h1 className='h1'>顶部导航</h1>
         <Menu
           onClick={this.handleClick}
+          defaultOpenKeys={['sub1']}
           selectedKeys={[this.state.current]}
-          mode='horizontal'
-          theme='dark'
+          mode='vertical'
+          theme='light'
         >
-          <Menu.Item key='home'>首页</Menu.Item>
-          <Menu.Item key='platform' disabled>工作台</Menu.Item>
-          <SubMenu key='bars' title={<span>订单中心</span>}>
+          <Menu.Item key='home'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <Menu.Item key='platform' disabled><div><Icon type='platform' /><span>工作台</span></div></Menu.Item>
+          <SubMenu key='bars' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
             <Menu.Item key='1'>子菜单一</Menu.Item>
             <Menu.Item key='2'>子菜单二</Menu.Item>
             <Menu.Item key='3'>子菜单三</Menu.Item>
             <Menu.Item key='4'>子菜单四</Menu.Item>
           </SubMenu>
           <Menu.Item key='tool'>
-            <a href='#' target='_blank' rel='noopener noreferrer'>配置管理</a>
+            <a href='#' target='_blank' rel='noopener noreferrer'><div><Icon type='tool' /><span>配置管理</span></div></a>
           </Menu.Item>
         </Menu>
         <h1 className='h1'>内嵌菜单</h1>
@@ -96,7 +97,7 @@ export default class MenuDemo extends React.Component {
             <Menu.Item>子菜单十二</Menu.Item>
           </SubMenu>
         </Menu>
-        <h1 className='h1'>浅色背景</h1>
+        <h1 className='h1'>动态侧栏导航</h1>
         <div>
           <br />
           <br />

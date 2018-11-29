@@ -721,6 +721,27 @@
 .idoll-menu-theme-light .idoll-tooltip-inner span {
   color: rgba(0, 0, 0, 0.45);
 }
+.idoll-menu-light.idoll-menu-vertical-right {
+  widows: 89px;
+}
+.idoll-menu-dark.idoll-menu-vertical-right,
+.idoll-menu-light.idoll-menu-vertical-right {
+  width: 168px;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected {
+  position: relative;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected div i {
+  color: #13B886;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected:before {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 100%;
+  left: 0;
+  background-color: #13B886;
+}
 .idoll-menu-dark,
 .idoll-menu-dark .idoll-menu-sub {
   color: rgba(255, 255, 255, 0.65);

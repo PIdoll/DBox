@@ -700,6 +700,30 @@
       }
     }
   }
+  &-light&-vertical-right {
+    widows: 89px;;
+  }
+  &-dark&-vertical-right,&-light&-vertical-right {
+    width: 168px;;
+  }
+  &-light&-vertical-right {
+    > li.@{menu-prefix-cls}-item-selected {
+      position: relative;
+      div {
+        i {
+          color: @menu-highlight-color;
+        }
+      }
+    }
+    > li.@{menu-prefix-cls}-item-selected:before {
+      position: absolute;
+      content: '';
+      width: 3px;
+      height: 100%;
+      left: 0;
+      background-color: @menu-highlight-color;
+    }
+  }
 }
 
 @import './dark';

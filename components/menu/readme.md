@@ -12,7 +12,7 @@ class MenuView extends React.Component {
   constructor(props) {
     super(props);
 	  this.state = {
-	    current: 'platform'
+	    current: 'home'
 	  }
     this.handleClick = this.handleClick.bind(this)
   };
@@ -257,7 +257,7 @@ class MenuView extends React.Component {
 | style | 根节点样式 | object |  |
 | subMenuCloseDelay | 用户鼠标离开子菜单后关闭延时，单位：秒 | number | 0.1 |
 | subMenuOpenDelay | 用户鼠标进入子菜单后开启延时，单位：秒 | number | 0 |
-| theme | 主题颜色 | string: `light` `dark` | `light` |
+| theme | 主题颜色 | string: `light` `dark` | `dark` |
 | onClick | 点击 MenuItem 调用此函数 | function({ item, key, keyPath }) | - |
 | onDeselect | 取消选中时调用，仅在 multiple 生效 | function({ item, key, selectedKeys }) | - |
 | onOpenChange | SubMenu 展开/关闭的回调 | function(openKeys: string\[]) | noop |
