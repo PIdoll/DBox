@@ -231,3 +231,33 @@
 @screen-md-max          : (@screen-lg-min - 1px);
 @screen-lg-max          : (@screen-xl-min - 1px);
 @screen-xl-max          : (@screen-xxl-min - 1px);
+
+//loading
+.loading(@size:18px,@color:#13B886) {
+  &:before {
+    content: "";//加载icon
+    font-family: dboxicon;
+    animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
+    text-align: center;
+    display: inline-block;
+    color: @color;
+    z-index: 1;
+    font-size: 12px;
+    border:1px solid;
+    border-left:1px solid transparent;
+    border-radius: 50%;
+    width: @size;
+    height: @size;
+  }
+}
+
+  @keyframes dboxSwitchSmallLoadingCircle {
+    0% {
+      transform-origin: 50% 50%;
+      transform: rotate(0deg) scale(0.66667);
+    }
+    100% {
+      transform-origin: 50% 50%;
+      transform: rotate(360deg) scale(0.66667);
+    }
+  }

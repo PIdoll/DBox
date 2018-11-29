@@ -2,6 +2,16 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes dboxSwitchSmallLoadingCircle {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg) scale(0.66667);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg) scale(0.66667);
+  }
+}
 .idoll-menu {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -36,7 +46,6 @@
 .idoll-menu ol {
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 .idoll-menu-hidden {
   display: none;
