@@ -197,7 +197,7 @@ module.exports = {
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
            path.resolve(__dirname, './components/input/index.jsx'),
-        //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
+           path.resolve(__dirname, './components/input-number/index.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
