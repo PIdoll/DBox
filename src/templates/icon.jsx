@@ -467,19 +467,19 @@ export default () => (
         </span>
       </li>
       <li className=''>
-        <Icon type='info' />
+        <Icon type='loading' />
         <span className='icon-class'>
           <span className='icon-name' >pro-loading</span>
         </span>
       </li>
       <li className=''>
-        <Icon type='jiazia_dan' />
+        <Icon type='info-circle-o' />
         <span className='icon-class'>
           <span className='icon-name' >pro-info-circle-o</span>
         </span>
       </li>
       <li className=''>
-        <Icon type='info' />
+        <Icon type='info-circle' />
         <span className='icon-class'>
           <span className='icon-name' >pro-info-circle</span>
         </span>
