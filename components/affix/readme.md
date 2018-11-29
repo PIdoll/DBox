@@ -39,6 +39,26 @@ class AffixView extends React.Component {
 </Affix>
 ```
 
+
+#### **固定在容器当中**
+```jsx
+class AffixView extends React.Component{
+  render() {
+    return (
+      <div ref={(node) => { this.container = node; }}>
+        <div style={{backgroundColor: '#dedede', padding: '10px 0'}}>
+          <Affix target={() => this.container}>
+            <Button type="primary">
+                固定在容器的顶部
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    )
+  }
+}
+<AffixView />
+```
 #### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
