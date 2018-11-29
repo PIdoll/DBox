@@ -202,7 +202,6 @@ export default () => (
         </span>
       </li>
 
-
     </ul>
     <h2 className='h2'>网站通用性图标</h2>
     <ul className='iconlist clearfix'>
@@ -465,6 +464,24 @@ export default () => (
         <Icon type='help' />
         <span className='icon-class'>
           <span className='icon-name' >help</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='loading' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro-loading</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='info-circle-o' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro-info-circle-o</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='info-circle' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro-info-circle</span>
         </span>
       </li>
     </ul>

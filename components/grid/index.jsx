@@ -1,8 +1,8 @@
 import Col from './col'
 import Row from './row'
 let Grid = {
-  Col: Col,
-  Row: Row
+  Col,
+  Row
 };
 export {Col, Row};
 export default Grid;

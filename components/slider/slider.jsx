@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react';
 import RcSlider from 'rc-slider';
-// import Tooltip from '../tooltip';
 import './style/index';
 
 
