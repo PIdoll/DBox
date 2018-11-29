@@ -255,8 +255,26 @@ function Home() {
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/notification'>
-          <div className='name'>通州提醒框</div>
+          <div className='name'>通知确认框</div>
           <div className='info'>Notification</div>
+        </NavLink>
+      </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/slider'>
+          <div className='name'>滑动条</div>
+          <div className='info'>Slider</div>
+        </NavLink>
+      </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/inputNumber'>
+          <div className='name'>数字输入框</div>
+          <div className='info'>Input-Number</div>
+        </NavLink>
+      </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/back-top'>
+          <div className='name'>返回顶部</div>
+          <div className='info'>Back-Top</div>
         </NavLink>
       </div>
     </div>

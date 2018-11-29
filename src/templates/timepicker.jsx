@@ -13,13 +13,13 @@ export default class TimePickerView extends React.Component {
         <TimePicker onChange={this.onChange} />
         <h1>三种尺寸</h1>
         <div style={{ display: 'flex' }}>
-          <div style={{marginRight: 10}}>
+          <div style={{ marginRight: 10 }}>
             <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} size='large' />
           </div>
-          <div style={{marginRight: 10}}>
+          <div style={{ marginRight: 10 }}>
             <TimePicker />
           </div>
-          <div style={{marginRight: 10}}>
+          <div style={{ marginRight: 10 }}>
             <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} size='small' />
           </div>
         </div>

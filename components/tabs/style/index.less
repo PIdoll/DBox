@@ -6,11 +6,11 @@
 
 @tab-bar-margin: 0 0 16px 0;
 
-@tab-horizontal-margin: 0 0 0 32px;
+@tab-horizontal-margin: 0 0 0 16px;
 @tab-vertical-margin: 0 0 16px 0;
 
 @tab-horizontal-padding: 12px 16px;
-@tab-vertical-padding: 8px 24px;
+@tab-vertical-padding: 12px 24px;
 
 // The width (or height for vertical) of the scrolling arrow
 @tab-scrolling-size: 32px;
@@ -21,6 +21,10 @@
   overflow: hidden;
   .clearfix;
 
+  div.@{tab-prefix-cls}-tab:first-child {
+    margin-left: 0;
+  }
+
   &-ink-bar {
     z-index: 1;
     position: absolute;
@@ -30,6 +34,9 @@
     height: 2px;
     background-color: @primary-color;
     transform-origin: 0 0;
+    &-animated {
+      width: 88px;
+    }
   }
 
   &-bar {
@@ -55,7 +62,6 @@
       padding-right: @tab-scrolling-size;
     }
   }
-
   &-tab-prev,
   &-tab-next {
     user-select: none;
@@ -67,7 +73,7 @@
     background-color: transparent;
     position: absolute;
     text-align: center;
-    color: @text-color-secondary;
+    color: @text-color-disable;
     transition: width .3s @ease-in-out, opacity .3s @ease-in-out, color .3s @ease-in-out;
     opacity: 0;
     pointer-events: none;
@@ -77,10 +83,13 @@
       width: @tab-scrolling-size;
       height: 100%;
       pointer-events: auto;
+      span:before {
+        font-size:16px;
+      }
     }
 
     &:hover {
-      color: @text-color;
+      color: @text-color-secondary;
     }
 
     &-icon {
@@ -95,11 +104,14 @@
       transform: translate(-50%, -50%);
       text-align: center;
       text-transform: none;
+      height: 16px;
+      line-height: 16px;
 
       &:before {
         display: block;
         font-family: "idollicon" !important;
         .iconfont-size-under-12px(10px);
+        transform: none;
       }
     }
   }
@@ -115,14 +127,16 @@
   &-tab-next {
     right: 2px;
     &-icon:before {
-      content: "\E938";
+      content: "\E915";
+      font-family: 'idoll-icon-pro' !important;
     }
   }
 
   &-tab-prev {
     left: 0;
     &-icon:before {
-      content: "\E92C";
+      content: "\E913";
+      font-family: 'idoll-icon-pro' !important;
     }
     :root & {
       filter: none;
@@ -159,14 +173,30 @@
     }
 
     .@{tab-prefix-cls}-tab-disabled {
-      pointer-events: none;
       cursor: default;
       color: @disabled-color;
+      span {
+        i:before {
+          color: @disabled-color
+        }
+      }
+    }
+
+    .@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-disabled:hover {
+      cursor: not-allowed;
+      color: @disabled-color;
+      span {
+        i:before {
+          color: @disabled-color
+        }
+      }
     }
 
     .@{tab-prefix-cls}-tab {
       display: inline-block;
       height: 100%;
+      font-size: 14px;
+      line-height: 22px;
       margin: @tab-horizontal-margin;
       padding: @tab-horizontal-padding;
       box-sizing: border-box;
@@ -182,10 +212,14 @@
 
       &:hover {
         color: @primary-color;
+        i:before {
+          color: @primary-color;
+        }
       }
 
       &:active {
         color: @primary-color;
+        user-select: none;
       }
 
       .@{iconfont-css-prefix} {
@@ -196,6 +230,33 @@
     .@{tab-prefix-cls}-tab-active {
       color: @primary-color;
       font-weight: 500;
+      user-select: none;
+      i:before {
+        color: @primary-color;
+      }
+    }
+    .@{tab-prefix-cls}-tab-active:hover {
+      color: @primary-Hover;
+      i:before {
+        color: @primary-Hover;
+      }
+    }
+  }
+
+  &-left&-vertical&-line {
+    div.@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-active {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    div.@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-active:after {
+        content: '';
+        position: absolute;
+        left: 97%;
+        top: 0;
+        display: block;
+        background: @primary-color;
+        width: 2px;
+        height: 46px;
     }
   }
 
@@ -231,6 +292,7 @@
         height: 0;
         padding: 0 !important;
         pointer-events: none;
+        user-select: none;
       }
     }
     > .@{tab-prefix-cls}-content-animated {
@@ -309,6 +371,7 @@
         height: @tab-scrolling-size;
         &-icon:before {
           content: "\E92C";
+          font-family: 'idollicon' !important;
         }
       }
 
@@ -318,6 +381,7 @@
         height: @tab-scrolling-size;
         &-icon:before {
           content: "\E938";
+          font-family: 'idollicon' !important;
         }
       }
     }
@@ -382,14 +446,34 @@
   }
 }
 
-.@{tab-prefix-cls}-top .@{tab-prefix-cls}-ink-bar-animated,
-.@{tab-prefix-cls}-bottom .@{tab-prefix-cls}-ink-bar-animated {
-  transition: transform .3s @ease-in-out, width .3s @ease-in-out;
-}
-
-.@{tab-prefix-cls}-left .@{tab-prefix-cls}-ink-bar-animated,
-.@{tab-prefix-cls}-right .@{tab-prefix-cls}-ink-bar-animated {
-  transition: transform .3s @ease-in-out, height .3s @ease-in-out;
+.@{tab-prefix-cls}-cardTabs {
+  background-color: #f5f5f5;
+  padding:24px;
+  border: none;
+  .@{tab-prefix-cls}-bar {
+    margin: 0;
+    .@{tab-prefix-cls}-nav-container {
+      background-color: #f5f5f5;
+      .@{tab-prefix-cls}-nav {
+        div.@{tab-prefix-cls}-tab {
+          margin-right: 0;
+          background-color: #f5f5f5;
+          line-height: 22px;
+          padding: 12px 16px;
+          border: none;
+          margin-right: 4px;
+        }
+        div.@{tab-prefix-cls}-tab-active {
+          background-color: #fff;
+          user-select: none;
+        }
+      }
+    }
+  }
+  .@{tab-prefix-cls}-content {
+    background-color: #fff;
+    padding: 15px;
+  } 
 }
 
 .no-flex,
@@ -402,6 +486,8 @@
     }
     > .@{tab-prefix-cls}-tabpane-inactive {
       display: none;
+      user-select: none;
     }
   }
 }
+

@@ -152,6 +152,7 @@ class TimePicker extends React.Component {
   }
 
   renderTimePicker = (locale) => {
+    console.log(this.props)
     const props = {
       ...this.props
     };

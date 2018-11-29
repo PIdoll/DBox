@@ -248,7 +248,7 @@ export default class Cascader extends React.Component {
     });
     const clearIcon = (allowClear && !disabled && value.length > 0) || state.inputValue ? (
       <Icon
-        type='right'
+        type='close'
         className={`${prefixCls}-picker-clear`}
         onClick={this.clearSelection}
       />
