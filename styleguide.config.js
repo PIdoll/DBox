@@ -188,7 +188,7 @@ module.exports = {
             path.resolve(__dirname, './components/steps/steps.jsx'),
         //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
         //    path.resolve(__dirname, './components/anchor/index.jsx'),
-        //    path.resolve(__dirname, './components/menu/index.jsx'),
+           path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
