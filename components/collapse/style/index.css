@@ -1,0 +1,146 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+.idoll-collapse {
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 3px;
+  border: 1px solid #E2E2E2;
+  border-bottom: 0;
+}
+.idoll-collapse > .idoll-collapse-item {
+  border-bottom: 1px solid #E2E2E2;
+}
+.idoll-collapse > .idoll-collapse-item:last-child,
+.idoll-collapse > .idoll-collapse-item:last-child > .idoll-collapse-header {
+  border-radius: 0 0 3px 3px;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
+  line-height: 22px;
+  padding: 12px 24px;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  position: relative;
+  transition: all .3s;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: rotate(0);
+  font-size: 12px;
+  position: absolute;
+  display: inline-block;
+  line-height: 46px;
+  vertical-align: top;
+  transition: transform 0.24s;
+  top: 0;
+  right: 24px;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow:before {
+  display: block;
+  font-family: 'idollicon' !important;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow:before {
+  content: "\E92C";
+}
+.idoll-collapse > .idoll-collapse-item-active {
+  border-bottom: 0;
+}
+.idoll-collapse-anim-active {
+  transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.idoll-collapse-content {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0 24px;
+  background-color: #fff;
+  border-top: 1px solid #E2E2E2;
+  border-width: 0;
+  border-bottom: 1px solid #E2E2E2;
+}
+.idoll-collapse-content > .idoll-collapse-content-box {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.idoll-collapse-content-inactive {
+  display: none;
+}
+.idoll-collapse-item:last-child > .idoll-collapse-content {
+  border-radius: 0 0 3px 3px;
+  border-bottom: 1px solid #E2E2E2;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
+  background-color: #FAFAFA;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="true"] {
+  outline-width: 0;
+  border-top: 0;
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="true"] .arrow {
+  transform: rotate(180deg);
+}
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header:focus {
+  outline-width: 0;
+}
+.idoll-collapse-borderless {
+  background-color: #fff;
+  border: 0;
+}
+.idoll-collapse-borderless > .idoll-collapse-item:last-child,
+.idoll-collapse-borderless > .idoll-collapse-item:last-child .idoll-collapse-header {
+  border-radius: 0;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header {
+  padding: 12px 0;
+  background-color: #fff;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header .arrow {
+  right: 0;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content {
+  background-color: transparent;
+  border-top: 0;
+  padding: 0;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content > .idoll-collapse-content-box {
+  padding-top: 4px;
+  border-bottom: 0;
+}
+.idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header,
+.idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header > .arrow {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-collapse-bgColor {
+  border: none;
+}
+.idoll-collapse-bgColor .idoll-collapse-item {
+  border-bottom: 0;
+  margin-bottom: 24px;
+}
+.idoll-collapse-bgColor .idoll-collapse-item .idoll-collapse-content {
+  background-color: #FCFCFC;
+  border-bottom: 0;
+}
+.idoll-collapse-bgColor .idoll-collapse-item .idoll-collapse-content-box {
+  border-bottom: 0;
+}
+.idoll-collapse-bgColor .idoll-collapse-item:last-child .idoll-collapse-content {
+  border-bottom: 0;
+}

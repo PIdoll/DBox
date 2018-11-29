@@ -27,6 +27,15 @@
 	-moz-osx-font-smoothing: grayscale;
 	content: @content;
 }
+
+.iconfont-font-family(@content,@font-family) {
+	font-family: @font-family;
+	  /* Better Font Rendering =========== */
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: @content;
+}
 // @fixbug 修复chrome最小字体为12px的bug，支持IE
 .iconfont-size-under-12px(@size, @rotate:0deg) {
 	display: compact;

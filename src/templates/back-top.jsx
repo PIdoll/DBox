@@ -16,11 +16,9 @@ export default class BackTopView extends React.Component {
         <h1 className='h1'>自定义样式</h1>
         <div id='components-back-top-demo-custom'>
           <BackTop>
-            <div className='idoll-back-top-inner'>UP</div>
+            <div className='idoll-back-top-inner' style={{ fontSize: 14 }}>返回</div>
           </BackTop>
-          向下滚动以查看右下方的蓝色
-          <strong style={{ color: '#1088e9' }}> blue </strong>
-          按钮。
+          向下滚动以查看右下方的文字按钮
         </div>
       </div>
     )

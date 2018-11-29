@@ -7,7 +7,7 @@ import RcMenu, { Divider, ItemGroup } from 'rc-menu';
 
 // import { SliderContext } from 'components/layout/sider';
 import Item from './MenuItem';
-import SubMenu from './Submenu';
+import SubMenu from './SubMenu';
 
 // import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
@@ -22,17 +22,19 @@ export default class Menu extends React.Component {
     static defaultProps = {
       prefixCls: 'idoll-menu',
       className: '',
-      theme: 'light', // or dark
+      theme: 'dark', // or light
     }
     static childContextTypes = {
       inlineCollapsed: PropTypes.bool,
       idollMenuTheme: PropTypes.string,
+      mode: PropTypes.string
     };
-    static contextTypes = {
-      siderCollapsed: PropTypes.bool,
-      collapsedWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    getChildContext () {
+      return {
+        idollMenuTheme: this.props.theme,
+        mode: this.props.mode
+      }
     }
-
     constructor(props) {
       super(props);
       warning(!('onOpen' in props || 'onClose' in props), `'onOpen'和‘onClose'已经被移除，请用'onOpenChange'代替`);
@@ -112,7 +114,7 @@ export default class Menu extends React.Component {
 
       }
       return (
-        <RcMenu {...this.props} {...menuProps} />
+        <RcMenu {...this.props} style={{width: this.props.mode === 'inline' ? '168px' : ''}} {...menuProps} />
       )
     }
 }

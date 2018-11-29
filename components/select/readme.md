@@ -16,11 +16,11 @@ const {Option} = Select;
     </Select>
     <br /><br />
 
-    <Select placeholder='请选择' style={{ width: 200 }}>
-        <Option value='beijing'>北京</Option>
-        <Option value='shanghai'>上海</Option>
-        <Option value='guangzhou'>广州</Option>
-        <Option value='shenzhen'>深圳</Option>
+    <Select placeholder='请选择' style={{ width: 200 }} allowClear>
+        <Option value='beijing'>北京1</Option>
+        <Option value='shanghai'>上海1</Option>
+        <Option value='guangzhou'>广州1</Option>
+        <Option value='shenzhen'>深圳1</Option>
     </Select>
     <br /><br />
 
