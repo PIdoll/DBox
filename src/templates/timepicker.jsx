@@ -1,48 +1,30 @@
 import React from 'react';
 import TimePicker from 'components/time-picker/index';
+import moment from 'moment';
 
 export default class TimePickerView extends React.Component {
-  state = {
-    value: null
-  }
-
-  // 基本用法
   onChange = (time, timeString) => {
     console.log(time, timeString);
   }
-
-  // 受控组件 value和onChange配合使用
-  onControChange = (time) => {
-    console.log(time);
-    this.setState({ value: time });
-  }
-
   render() {
     return (
       <div id='main-container'>
-        <div className='h1'>
-          基本时间选择框
-        </div>
+        <h1>基本用法</h1>
         <TimePicker onChange={this.onChange} />
-
-        <div className='h1'>
-          受控组件
+        <h1>三种尺寸</h1>
+        <div style={{ display: 'flex' }}>
+          <div style={{marginRight: 10}}>
+            <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} size='large' />
+          </div>
+          <div style={{marginRight: 10}}>
+            <TimePicker />
+          </div>
+          <div style={{marginRight: 10}}>
+            <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} size='small' />
+          </div>
         </div>
-        <TimePicker value={this.state.value} onChange={this.onControChange} />
-        <div className='h1'>
-          不同尺寸的时间选择框
-        </div>
-        <TimePicker defaultValue='12:08:23' size='large' />&nbsp;&nbsp;&nbsp;
-        <TimePicker defaultValue='12:08:23' />&nbsp;&nbsp;&nbsp;
-        <TimePicker defaultValue='12:08:23' size='small' />
-        <div className='h1'>
-          禁用时间选择框
-        </div>
-        <TimePicker defaultValue={'12:08:23'} disabled />
-        <div className='h1'>
-          不展示秒
-        </div>
-        <TimePicker defaultValue='12:08:23' format='HH:mm' />
+        <h1>禁用</h1>
+        <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />
       </div>
     )
   }
