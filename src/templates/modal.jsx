@@ -43,7 +43,7 @@ export default class ModalView extends React.Component {
   }
   asynchandleOk = (e) => {
     this.setState({
-      ModalText: '对话框将在 2 秒后关闭',
+      ModalText: '选择确认后对话框将在 2 秒后关闭',
       confirmLoading: true
     });
     setTimeout(() => {
@@ -158,6 +158,9 @@ export default class ModalView extends React.Component {
 
         <h1 className='h1'>确认对话框</h1>
         <Button onClick={this.showConfirm}>确认对话框</Button>
+
+
+
 
         {/* 自定义页脚 */}
         {/* <div className='h1'>
