@@ -7,7 +7,7 @@ import './style'
 const stringOrNumber = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 const objectOrNumber = PropTypes.oneOfType([PropTypes.object, PropTypes.number]);
 
-function Col(props) {
+function Colum(props) {
   const { span, order, offset, push, pull, className, children, ...others } = props;
   let sizeClassObj = {};
   ['xs', 'sm', 'md', 'lg'].forEach(size => {
@@ -41,7 +41,7 @@ function Col(props) {
   return <div {...others} className={classes}>{children}</div>;
 }
 
-Col.propTypes = {
+Colum.propTypes = {
   span: stringOrNumber,
   order: stringOrNumber,
   offset: stringOrNumber,
@@ -55,4 +55,4 @@ Col.propTypes = {
   lg: objectOrNumber
 };
 
-export default Col;
+export default Colum;

@@ -255,10 +255,10 @@ class GridView extends React.Component {
         <br />
         <h1 style={{margin: '20px 0'}}>自适应栅格布局</h1>
         <Row style={alignDemo}>
-          <Col xs={6} sm={12} mb={22} lg={2}>
+          <Col xs={4} sm={12} md={14} lg={2} xl={12}>
             <div style={RowDemoStyle}>col-12 </div>
           </Col>
-          <Col xs={6} sm={12} mb={2} lg={22}>
+          <Col xs={20} sm={12} md={4} lg={22} xl={12}>
             <div style={evenColor} >col-12</div>
           </Col>
         </Row>
