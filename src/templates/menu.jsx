@@ -44,8 +44,8 @@ export default class MenuDemo extends React.Component {
           onClick={this.handleClick}
           defaultOpenKeys={['sub1']}
           selectedKeys={[this.state.current]}
-          mode='vertical'
-          theme='light'
+          mode='horizontal'
+          theme='dark'
         >
           <Menu.Item key='home'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
           <Menu.Item key='platform' disabled><div><Icon type='platform' /><span>工作台</span></div></Menu.Item>
@@ -56,7 +56,7 @@ export default class MenuDemo extends React.Component {
             <Menu.Item key='4'>子菜单四</Menu.Item>
           </SubMenu>
           <Menu.Item key='tool'>
-            <a href='#' target='_blank' rel='noopener noreferrer'><div><Icon type='tool' /><span>配置管理</span></div></a>
+            <a href='https://www.baidu.com' target='_blank' rel='noopener noreferrer'><div><Icon type='tool' /><span>配置管理</span></div></a>
           </Menu.Item>
         </Menu>
         <h1 className='h1'>内嵌菜单</h1>
