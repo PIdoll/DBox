@@ -113,10 +113,14 @@
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header .arrow {
   right: 0;
 }
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="false"] {
+  border-bottom: 0;
+}
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content {
   background-color: transparent;
   border-top: 0;
   padding: 0;
+  border-radius: 0;
 }
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content > .idoll-collapse-content-box {
   padding-top: 4px;
