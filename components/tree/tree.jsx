@@ -19,7 +19,7 @@ export default class Tree extends React.Component {
   <RcTree
     {...this.props}
     className={className}
-    checkable={checkable ? <span className={`${prefixCls}-checkable-inner`} /> : checkable}
+    checkable={checkable ? <span className={`${prefixCls}-checkbox-inner`} /> : checkable}
   >
     { children }
   </RcTree>

@@ -1,13 +1,134 @@
----
-category: Components
-type: Data Display
-title: Tree
-subtitle: 树形控件
----
 
-## 何时使用
-
+#### **何时使用**
 文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用`树控件`可以完整展现其中的层级关系，并具有展开收起选择等交互功能。
+
+
+##### **基本使用**
+最简单的用法，可选中，默认展开等功能。
+```jsx
+const TreeNode = Tree.TreeNode;
+onSelect = (selectedKeys, info) => {
+	console.log('selected', selectedKeys, info);
+}
+onCheck = (checkedKeys, info) => {
+  console.log('onCheck', checkedKeys, info);
+}
+<Tree
+  defaultExpandedKeys={['0-0-0-0-0', '0-0-1']}
+  defaultSelectedKeys={['0-0-0-0-1']}
+  onSelect={this.onSelect}
+  onCheck={this.onCheck}
+        >
+  <TreeNode title='上海分公司' key='0-0'>
+    <TreeNode title='开发部' key='0-0-0'>
+      <TreeNode title='测试一部' key='0-0-0-0'>
+        <TreeNode title='选项' key='0-0-0-0-0' />
+        <TreeNode title='选项' key='0-0-0-0-1' />
+      </TreeNode>
+      <TreeNode title='测试二部' key='0-0-0-1' />
+    </TreeNode>
+    <TreeNode title='产品规划部' key='0-0-1'>
+      <TreeNode title={<span>sss</span>} key='0-0-1-0' />
+    </TreeNode>
+    <TreeNode title='财务部' key='0-0-2'>
+      <TreeNode title={<span>sss</span>} key='0-0-1-0' />
+    </TreeNode>
+  </TreeNode>
+
+  <TreeNode title='深圳分公司' key='0-1'>
+    </TreeNode>
+</Tree>
+```
+
+##### **多选树**
+有多选框可选择，可禁用。
+```jsx
+const TreeNode = Tree.TreeNode;
+onSelect = (selectedKeys, info) => {
+	console.log('selected', selectedKeys, info);
+}
+onCheck = (checkedKeys, info) => {
+  console.log('onCheck', checkedKeys, info);
+}
+<Tree
+  checkable
+  defaultExpandedKeys={['0-0-0-0-0', '0-0-1']}
+  defaultCheckedKeys={['0-0-0', '0-0-1']}
+  onSelect={this.onSelect}
+  onCheck={this.onCheck}
+        >
+  <TreeNode title='上海分公司' key='0-0'>
+    <TreeNode title='开发部' key='0-0-0'>
+      <TreeNode title='测试一部' key='0-0-0-0'>
+        <TreeNode title='选项' key='0-0-0-0-0' />
+        <TreeNode title='选项' key='0-0-0-0-1' />
+      </TreeNode>
+      <TreeNode title='测试二部' key='0-0-0-1' />
+    </TreeNode>
+    <TreeNode title='产品规划部' key='0-0-1'>
+      <TreeNode title={'规划一部'} key='0-0-1-0' />
+    </TreeNode>
+    <TreeNode title='财务部' key='0-0-2'>
+      <TreeNode title={'财务办公室'} key='0-0-1-1' disableCheckbox/>
+    </TreeNode>
+  </TreeNode>
+
+  <TreeNode title='深圳分公司' key='0-1' disabled>
+  </TreeNode>
+</Tree>
+```
+
+##### **新增删除节点树**
+
+```jsx
+const treeData = [{
+  title: '0-0',
+  key: '0-0',
+  children: [{
+    title: '0-0-0',
+    key: '0-0-0',
+    children: [
+      { title: '0-0-0-0', key: '0-0-0-0' },
+      { title: '0-0-0-1', key: '0-0-0-1' },
+      { title: '0-0-0-2', key: '0-0-0-2' },
+    ],
+  }, {
+    title: '0-0-1',
+    key: '0-0-1',
+    children: [
+      { title: '0-0-1-0', key: '0-0-1-0' },
+      { title: '0-0-1-1', key: '0-0-1-1' },
+      { title: '0-0-1-2', key: '0-0-1-2' },
+    ],
+  }, {
+    title: '0-0-2',
+    key: '0-0-2',
+  }],
+	}, {
+	  title: '0-1',
+	  key: '0-1',
+	  children: [
+	    { title: '0-1-0-0', key: '0-1-0-0' },
+	    { title: '0-1-0-1', key: '0-1-0-1' },
+	    { title: '0-1-0-2', key: '0-1-0-2' },
+	  ],
+	}, {
+	  title: '0-2',
+	  key: '0-2',
+	}];
+const TreeNode = Tree.TreeNode;
+onSelect = (selectedKeys, info) => {
+	console.log('selected', selectedKeys, info);
+}
+
+<Tree
+  data={treeData}
+  defaultExpandedKeys={['0-0-0-0-0', '0-0-1']}
+  onSelect={this.onSelect}
+        >
+  
+</Tree>
+```
 
 ## API
 
