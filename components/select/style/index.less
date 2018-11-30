@@ -27,8 +27,9 @@
     transition: color 0.3s ease, opacity 0.15s ease;
     &:before {
       display: block;
-      .iconfont-font("\e92c");
-      color: @text-color-disable;
+      // .iconfont-font("\e92c");
+      // .iconfont-font("\e919");
+      // color: @text-color-disable;
     }
     &:hover {
       color: #999;
@@ -380,7 +381,7 @@
       margin-top: 5px;
       margin-bottom: 5px;
       height: 20px;
-      line-height: 20px;
+      line-height: 18px;
 
     }
 
@@ -402,6 +403,7 @@
     }
 
     .@{select-prefix-cls}-selection__choice__content {
+      height: 100%;
       font-size: 12px;
       display: inline-block;
       white-space: nowrap;
@@ -497,11 +499,10 @@
 
       &-item {
         height: @select-height-base;
-        // line-height: @font-size-base;
-        line-height: 1.5;
+        line-height:  @select-height-base;
         position: relative;
         display: block;
-        padding: @select-option-padding-horizontal @select-option-padding-vertical - 8px;
+        padding: 0px @select-option-padding-vertical - 8px;
         font-weight: normal;
         color: #666;
         white-space: nowrap;
@@ -607,7 +608,7 @@
   .@{select-prefix-cls}-dropdown-menu-item {
     font-size: @font-size-sm;
     height: @select-height-sm ;
-    padding: 1px 7px;
+    padding: 0px 7px;
     line-height:  @select-height-sm ;
   }
 }

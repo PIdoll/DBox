@@ -1,0 +1,952 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes dboxSwitchSmallLoadingCircle {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg) scale(0.66667);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg) scale(0.66667);
+  }
+}
+.idoll-menu {
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  color: rgba(0, 0, 0, 0.65);
+  background: #fff;
+  line-height: 0;
+  transition: background .3s, width .2s;
+  zoom: 1;
+}
+.idoll-menu:before,
+.idoll-menu:after {
+  content: " ";
+  display: table;
+}
+.idoll-menu:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.idoll-menu ul,
+.idoll-menu ol {
+  list-style: none;
+  margin: 0;
+}
+.idoll-menu-hidden {
+  display: none;
+}
+.idoll-menu-item span {
+  vertical-align: middle;
+}
+.idoll-menu-item-group-title {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px 16px;
+  transition: all .3s;
+}
+.idoll-menu-submenu,
+.idoll-menu-submenu-inline {
+  transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.idoll-menu-item:active,
+.idoll-menu-submenu-title:active {
+  background: #E6F7FF;
+}
+.idoll-menu-submenu .idoll-menu-sub {
+  cursor: initial;
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-menu-item > a {
+  display: block;
+  color: rgba(0, 0, 0, 0.65);
+}
+.idoll-menu-item > a:hover {
+  color: #13B886;
+}
+.idoll-menu-item > a:focus {
+  text-decoration: none;
+}
+.idoll-menu-item > a:before {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: '';
+}
+.idoll-menu-item-divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #E2E2E2;
+  line-height: 0;
+}
+.idoll-menu-light .idoll-menu-item:hover,
+.idoll-menu-light .idoll-menu-item-active,
+.idoll-menu-light .idoll-menu-submenu-active,
+.idoll-menu-light .idoll-menu-submenu-open,
+.idoll-menu-light .idoll-menu-submenu-selected,
+.idoll-menu-light .idoll-menu-submenu-title:hover {
+  background-color: transparent;
+  color: #13B886;
+}
+.idoll-menu-light .idoll-menu-item:hover > a,
+.idoll-menu-light .idoll-menu-item-active > a,
+.idoll-menu-light .idoll-menu-submenu-active > a,
+.idoll-menu-light .idoll-menu-submenu-open > a,
+.idoll-menu-light .idoll-menu-submenu-selected > a,
+.idoll-menu-light .idoll-menu-submenu-title:hover > a {
+  color: #13B886;
+}
+.idoll-menu-light .idoll-menu-item:hover i,
+.idoll-menu-light .idoll-menu-item-active i,
+.idoll-menu-light .idoll-menu-submenu-active i,
+.idoll-menu-light .idoll-menu-submenu-open i,
+.idoll-menu-light .idoll-menu-submenu-selected i,
+.idoll-menu-light .idoll-menu-submenu-title:hover i {
+  color: #13B886;
+  transition: all .3s;
+}
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title {
+  color: #13B886;
+}
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow {
+  opacity: 1;
+}
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before {
+  background: #13B886;
+}
+.idoll-menu-horizontal .idoll-menu-item,
+.idoll-menu-horizontal .idoll-menu-submenu {
+  margin-top: -1px;
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 24px;
+  height: 56px;
+  line-height: 56px;
+}
+.idoll-menu-horizontal > .idoll-menu-item:hover,
+.idoll-menu-horizontal > .idoll-menu-item-active,
+.idoll-menu-horizontal > .idoll-menu-submenu .idoll-menu-submenu-title[aria-expanded='true']:hover {
+  background-color: transparent;
+}
+.idoll-menu-horizontal > .idoll-menu-item:hover i,
+.idoll-menu-horizontal > .idoll-menu-item-active i,
+.idoll-menu-horizontal > .idoll-menu-submenu .idoll-menu-submenu-title[aria-expanded='true']:hover i {
+  color: #fff;
+}
+.idoll-menu-item-selected {
+  color: #13B886;
+}
+.idoll-menu-item-selected > a,
+.idoll-menu-item-selected > a:hover {
+  color: #13B886;
+}
+.idoll-menu:not(.idoll-menu-horizontal) .idoll-menu-item-selected {
+  background-color: #E7F8F3;
+}
+.idoll-menu-inline,
+.idoll-menu-vertical,
+.idoll-menu-vertical-left {
+  border-right: 1px solid #E2E2E2;
+}
+.idoll-menu-vertical-right {
+  border-left: 1px solid #E2E2E2;
+}
+.idoll-menu-vertical.idoll-menu-sub,
+.idoll-menu-vertical-left.idoll-menu-sub,
+.idoll-menu-vertical-right.idoll-menu-sub {
+  border-right: 0;
+  padding: 0;
+  transform-origin: 0 0;
+}
+.idoll-menu-vertical.idoll-menu-sub .idoll-menu-item,
+.idoll-menu-vertical-left.idoll-menu-sub .idoll-menu-item,
+.idoll-menu-vertical-right.idoll-menu-sub .idoll-menu-item {
+  border-right: 0;
+  margin-left: 0;
+  left: 0;
+}
+.idoll-menu-vertical.idoll-menu-sub .idoll-menu-item:after,
+.idoll-menu-vertical-left.idoll-menu-sub .idoll-menu-item:after,
+.idoll-menu-vertical-right.idoll-menu-sub .idoll-menu-item:after {
+  border-right: 0;
+}
+.idoll-menu-vertical.idoll-menu-sub > .idoll-menu-item,
+.idoll-menu-vertical-left.idoll-menu-sub > .idoll-menu-item,
+.idoll-menu-vertical-right.idoll-menu-sub > .idoll-menu-item,
+.idoll-menu-vertical.idoll-menu-sub > .idoll-menu-submenu,
+.idoll-menu-vertical-left.idoll-menu-sub > .idoll-menu-submenu,
+.idoll-menu-vertical-right.idoll-menu-sub > .idoll-menu-submenu {
+  transform-origin: 0 0;
+}
+.idoll-menu-horizontal.idoll-menu-sub,
+.idoll-menu-vertical.idoll-menu-sub,
+.idoll-menu-vertical-left.idoll-menu-sub,
+.idoll-menu-vertical-right.idoll-menu-sub {
+  min-width: 128px;
+}
+.idoll-menu-item,
+.idoll-menu-submenu-title {
+  cursor: pointer;
+  margin: 0;
+  padding: 0 20px;
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  user-select: none;
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-menu-item .idoll-icon,
+.idoll-menu-submenu-title .idoll-icon {
+  min-width: 14px;
+  margin-right: 8px;
+  transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-menu-item .idoll-icon + span,
+.idoll-menu-submenu-title .idoll-icon + span {
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+  transition: none;
+}
+.idoll-menu > .idoll-menu-item-divider {
+  height: 1px;
+  margin: 1px 0;
+  overflow: hidden;
+  padding: 0;
+  line-height: 0;
+  background-color: #E2E2E2;
+}
+.idoll-menu-submenu-popup {
+  position: absolute;
+  border-radius: 3px;
+  z-index: 1050;
+}
+.idoll-menu-submenu > .idoll-menu {
+  background-color: #fff;
+  border-radius: 3px;
+}
+.idoll-menu-submenu > .idoll-menu-submenu-title:after {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title .idoll-menu-submenu-arrow,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title .idoll-menu-submenu-arrow,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title .idoll-menu-submenu-arrow,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 10px;
+}
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after {
+  content: '';
+  position: absolute;
+  vertical-align: baseline;
+  background: #fff;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  width: 5px;
+  height: 2px;
+  border-radius: 2px;
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before {
+  transform: rotate(45deg) translateY(-2px);
+}
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after {
+  transform: rotate(-45deg) translateY(2px);
+}
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:after,
+.idoll-menu-submenu-vertical > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-left > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-vertical-right > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:before,
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title:hover .idoll-menu-submenu-arrow:before {
+  background: linear-gradient(to right, #13B886, #13B886);
+}
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before {
+  transform: rotate(-45deg) translateX(2px);
+}
+.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after {
+  transform: rotate(45deg) translateX(-2px);
+}
+.idoll-menu-submenu-open.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  transform: translateY(-2px);
+}
+.idoll-menu-submenu-open.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after {
+  transform: rotate(-45deg) translateX(-2px);
+}
+.idoll-menu-submenu-open.idoll-menu-submenu-inline > .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before {
+  transform: rotate(45deg) translateX(2px);
+}
+.idoll-menu-vertical .idoll-menu-submenu-selected,
+.idoll-menu-vertical-left .idoll-menu-submenu-selected,
+.idoll-menu-vertical-right .idoll-menu-submenu-selected {
+  color: #13B886;
+}
+.idoll-menu-vertical .idoll-menu-submenu-selected > a,
+.idoll-menu-vertical-left .idoll-menu-submenu-selected > a,
+.idoll-menu-vertical-right .idoll-menu-submenu-selected > a {
+  color: #13B886;
+}
+.idoll-menu-horizontal {
+  border: 0;
+  border-bottom: 1px solid #E2E2E2;
+  box-shadow: none;
+  line-height: 24px;
+}
+.idoll-menu-horizontal > .idoll-menu-item,
+.idoll-menu-horizontal > .idoll-menu-submenu {
+  position: relative;
+  top: 1px;
+  float: left;
+  border-bottom: 2px solid transparent;
+}
+.idoll-menu-horizontal > .idoll-menu-item:hover,
+.idoll-menu-horizontal > .idoll-menu-submenu:hover,
+.idoll-menu-horizontal > .idoll-menu-item-active,
+.idoll-menu-horizontal > .idoll-menu-submenu-active,
+.idoll-menu-horizontal > .idoll-menu-item-open,
+.idoll-menu-horizontal > .idoll-menu-submenu-open,
+.idoll-menu-horizontal > .idoll-menu-item-selected,
+.idoll-menu-horizontal > .idoll-menu-submenu-selected {
+  border-bottom: 2px solid #13B886;
+  color: #13B886;
+}
+.idoll-menu-horizontal > .idoll-menu-item:hover i,
+.idoll-menu-horizontal > .idoll-menu-submenu:hover i,
+.idoll-menu-horizontal > .idoll-menu-item-active i,
+.idoll-menu-horizontal > .idoll-menu-submenu-active i,
+.idoll-menu-horizontal > .idoll-menu-item-open i,
+.idoll-menu-horizontal > .idoll-menu-submenu-open i,
+.idoll-menu-horizontal > .idoll-menu-item-selected i,
+.idoll-menu-horizontal > .idoll-menu-submenu-selected i {
+  color: #13B886;
+}
+.idoll-menu-horizontal > .idoll-menu-item > a,
+.idoll-menu-horizontal > .idoll-menu-submenu > a {
+  display: block;
+  color: rgba(0, 0, 0, 0.65);
+}
+.idoll-menu-horizontal > .idoll-menu-item > a:hover,
+.idoll-menu-horizontal > .idoll-menu-submenu > a:hover {
+  color: #13B886;
+}
+.idoll-menu-horizontal:after {
+  content: "\20";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.idoll-menu-horizontal.idoll-menu-dark {
+  border-bottom-color: #2F323B !important;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-active {
+  color: #fff;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal:hover {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal:hover i {
+  color: rgba(255, 255, 255, 0.65);
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled div i {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.idoll-menu-vertical .idoll-menu-item,
+.idoll-menu-vertical-left .idoll-menu-item,
+.idoll-menu-vertical-right .idoll-menu-item,
+.idoll-menu-inline .idoll-menu-item {
+  position: relative;
+}
+.idoll-menu-vertical .idoll-menu-item:after,
+.idoll-menu-vertical-left .idoll-menu-item:after,
+.idoll-menu-vertical-right .idoll-menu-item:after,
+.idoll-menu-inline .idoll-menu-item:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-right: 3px solid #13B886;
+  transform: scaleY(0.0001);
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.idoll-menu-vertical .idoll-menu-item,
+.idoll-menu-vertical-left .idoll-menu-item,
+.idoll-menu-vertical-right .idoll-menu-item,
+.idoll-menu-inline .idoll-menu-item,
+.idoll-menu-vertical .idoll-menu-submenu-title,
+.idoll-menu-vertical-left .idoll-menu-submenu-title,
+.idoll-menu-vertical-right .idoll-menu-submenu-title,
+.idoll-menu-inline .idoll-menu-submenu-title {
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 40px;
+  height: 40px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.idoll-menu-vertical .idoll-menu-submenu,
+.idoll-menu-vertical-left .idoll-menu-submenu,
+.idoll-menu-vertical-right .idoll-menu-submenu,
+.idoll-menu-inline .idoll-menu-submenu {
+  padding-bottom: 0.01px;
+}
+.idoll-menu-vertical .idoll-menu-item:not(:last-child),
+.idoll-menu-vertical-left .idoll-menu-item:not(:last-child),
+.idoll-menu-vertical-right .idoll-menu-item:not(:last-child),
+.idoll-menu-inline .idoll-menu-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+.idoll-menu-vertical > .idoll-menu-item,
+.idoll-menu-vertical-left > .idoll-menu-item,
+.idoll-menu-vertical-right > .idoll-menu-item,
+.idoll-menu-inline > .idoll-menu-item,
+.idoll-menu-vertical > .idoll-menu-submenu > .idoll-menu-submenu-title,
+.idoll-menu-vertical-left > .idoll-menu-submenu > .idoll-menu-submenu-title,
+.idoll-menu-vertical-right > .idoll-menu-submenu > .idoll-menu-submenu-title,
+.idoll-menu-inline > .idoll-menu-submenu > .idoll-menu-submenu-title {
+  line-height: 40px;
+  height: 40px;
+}
+.idoll-menu-inline {
+  width: 100%;
+}
+.idoll-menu-inline .idoll-menu-selected:after,
+.idoll-menu-inline .idoll-menu-item-selected:after {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+  transform: scaleY(1);
+}
+.idoll-menu-inline .idoll-menu-item,
+.idoll-menu-inline .idoll-menu-submenu-title {
+  width: calc(100% + 1px);
+}
+.idoll-menu-inline-collapsed {
+  width: 80px;
+}
+.idoll-menu-inline-collapsed > .idoll-menu-item,
+.idoll-menu-inline-collapsed > .idoll-menu-item-group > .idoll-menu-item-group-list > .idoll-menu-item,
+.idoll-menu-inline-collapsed > .idoll-menu-submenu > .idoll-menu-submenu-title {
+  left: 0;
+  text-overflow: clip;
+  padding: 0 32px !important;
+}
+.idoll-menu-inline-collapsed > .idoll-menu-item .idoll-menu-submenu-arrow,
+.idoll-menu-inline-collapsed > .idoll-menu-item-group > .idoll-menu-item-group-list > .idoll-menu-item .idoll-menu-submenu-arrow,
+.idoll-menu-inline-collapsed > .idoll-menu-submenu > .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  display: none;
+}
+.idoll-menu-inline-collapsed > .idoll-menu-item .idoll-icon,
+.idoll-menu-inline-collapsed > .idoll-menu-item-group > .idoll-menu-item-group-list > .idoll-menu-item .idoll-icon,
+.idoll-menu-inline-collapsed > .idoll-menu-submenu > .idoll-menu-submenu-title .idoll-icon {
+  font-size: 16px;
+  line-height: 40px;
+  margin: 0;
+}
+.idoll-menu-inline-collapsed > .idoll-menu-item .idoll-icon + span,
+.idoll-menu-inline-collapsed > .idoll-menu-item-group > .idoll-menu-item-group-list > .idoll-menu-item .idoll-icon + span,
+.idoll-menu-inline-collapsed > .idoll-menu-submenu > .idoll-menu-submenu-title .idoll-icon + span {
+  max-width: 0;
+  display: inline-block;
+  opacity: 0;
+}
+.idoll-menu-inline-collapsed-tooltip {
+  pointer-events: none;
+}
+.idoll-menu-inline-collapsed-tooltip .idoll-icon {
+  display: none;
+}
+.idoll-menu-inline-collapsed-tooltip a {
+  color: rgba(255, 255, 255, 0.85);
+}
+.idoll-menu-inline-collapsed .idoll-menu-item-group-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.idoll-menu-item-group-list {
+  margin: 0;
+  padding: 0;
+}
+.idoll-menu-item-group-list .idoll-menu-item,
+.idoll-menu-item-group-list .idoll-menu-submenu-title {
+  padding: 0 16px 0 28px;
+}
+.idoll-menu-root.idoll-menu-vertical,
+.idoll-menu-root.idoll-menu-vertical-left,
+.idoll-menu-root.idoll-menu-vertical-right,
+.idoll-menu-root.idoll-menu-inline {
+  box-shadow: none;
+}
+.idoll-menu-sub.idoll-menu-inline {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+.idoll-menu-sub.idoll-menu-inline > .idoll-menu-item,
+.idoll-menu-sub.idoll-menu-inline > .idoll-menu-submenu > .idoll-menu-submenu-title {
+  line-height: 40px;
+  height: 40px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.idoll-menu-item-disabled:hover i {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+.idoll-menu-item-disabled,
+.idoll-menu-submenu-disabled {
+  color: rgba(0, 0, 0, 0.25) !important;
+  cursor: not-allowed;
+  background: none;
+  border-color: transparent !important;
+}
+.idoll-menu-item-disabled > a,
+.idoll-menu-submenu-disabled > a {
+  color: rgba(0, 0, 0, 0.25) !important;
+  pointer-events: none;
+}
+.idoll-menu-item-disabled > .idoll-menu-submenu-title,
+.idoll-menu-submenu-disabled > .idoll-menu-submenu-title {
+  color: rgba(0, 0, 0, 0.25) !important;
+  cursor: not-allowed;
+}
+.idoll-menu-item-disabled i,
+.idoll-menu-submenu-disabled i {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical {
+  width: 88px !important;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item-selected i {
+  color: #fff;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item {
+  padding: 0 32px;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item span {
+  display: block;
+  transition: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item i {
+  font-size: 24px;
+  margin-right: 0;
+  transition: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-item:hover i {
+  color: #fff;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title {
+  padding: 0 32px;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  display: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div span {
+  display: none;
+}
+.idoll-menu-dark.idoll-menu-root.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div i {
+  font-size: 24px;
+  margin-right: 0;
+}
+.idoll-menu-light .idoll-menu-submenu-title:hover div i {
+  color: #13B886;
+  transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.idoll-menu-light .idoll-menu-vertical .idoll-menu-item-group li.idoll-menu-item {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 9px 7px 9px 40px;
+}
+.idoll-menu-dark .idoll-menu-submenu-title:hover div i {
+  color: #ffffff;
+}
+.idoll-menu-dark .idoll-menu-submenu-open .idoll-menu-submenu-title div i {
+  color: #ffffff;
+}
+.idoll-menu-light.idoll-menu-vertical {
+  width: 89px;
+  position: relative;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item-selected i {
+  color: #13B886;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item-selected:before {
+  content: '';
+  width: 3px;
+  height: 100%;
+  background-color: #13B886;
+  position: absolute;
+  right: 0;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item {
+  transition: none;
+  padding: 0 32px;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item span {
+  display: block;
+  transition: none;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-item i {
+  font-size: 24px;
+  margin-right: 0;
+  transition: none;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title {
+  padding: 0 32px;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  display: none;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div span {
+  display: none;
+}
+.idoll-menu-light.idoll-menu-vertical > .idoll-menu-submenu-vertical .idoll-menu-submenu-title div i {
+  font-size: 24px;
+  margin-right: 0;
+}
+.idoll-menu-light.idoll-menu-inline > .idoll-menu-item-selected i,
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item-selected i {
+  color: #13B886;
+}
+.idoll-menu-light.idoll-menu-inline > .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item {
+  font-size: 16px;
+  padding: 0 0 0 16px !important;
+  margin: 4px 0;
+}
+.idoll-menu-light.idoll-menu-inline > .idoll-menu-item span,
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item span {
+  vertical-align: middle;
+  transition: none;
+}
+.idoll-menu-light.idoll-menu-inline > .idoll-menu-item i,
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item i {
+  transition: none;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title {
+  padding-left: 16px !important;
+  font-size: 16px;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title span,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title span {
+  vertical-align: middle;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline {
+  box-shadow: none;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline div.idoll-menu-submenu-title {
+  padding-left: 40px !important;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-item {
+  padding-left: 60px !important;
+}
+.idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline > .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline > .idoll-menu-item {
+  padding-left: 40px !important;
+  margin: 4px 0;
+}
+.idoll-menu-dark.idoll-menu-inline > .idoll-menu-item-selected i {
+  color: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-arrow {
+  border-right-color: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-inner {
+  background: #fff;
+}
+.idoll-menu-theme-light .idoll-tooltip-inner span {
+  color: rgba(0, 0, 0, 0.45);
+}
+.idoll-menu-light.idoll-menu-vertical-right {
+  widows: 89px;
+}
+.idoll-menu-dark.idoll-menu-vertical-right,
+.idoll-menu-light.idoll-menu-vertical-right {
+  width: 168px;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected {
+  position: relative;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected div i {
+  color: #13B886;
+}
+.idoll-menu-light.idoll-menu-vertical-right > li.idoll-menu-item-selected:before {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 100%;
+  left: 0;
+  background-color: #13B886;
+}
+.idoll-menu-dark,
+.idoll-menu-dark .idoll-menu-sub {
+  color: rgba(255, 255, 255, 0.65);
+  background: #2F323B;
+}
+.idoll-menu-dark .idoll-menu-submenu-title .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title .idoll-menu-submenu-arrow {
+  opacity: .45;
+  transition: all .3s;
+}
+.idoll-menu-dark .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before {
+  background: #fff;
+}
+.idoll-menu-dark .idoll-menu-submenu-title i,
+.idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title i {
+  transition: all .3s;
+  color: rgba(255, 255, 255, 0.45);
+}
+.idoll-menu-dark.idoll-menu-submenu-popup {
+  background: transparent;
+}
+.idoll-menu-dark.idoll-menu-submenu-popup .idoll-menu-vertical li.idoll-menu-item {
+  padding: 9px 7px 9px 12px;
+  font-size: 14px;
+  line-height: 22px;
+  min-width: 128px;
+}
+.idoll-menu-dark .idoll-menu-inline.idoll-menu-sub {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) inset;
+}
+.idoll-menu-dark.idoll-menu-horizontal {
+  border-bottom-color: #13B886;
+}
+.idoll-menu-dark.idoll-menu-horizontal > .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-horizontal > .idoll-menu-submenu {
+  border-color: #13B886;
+  border-bottom: 0;
+}
+.idoll-menu-dark .idoll-menu-item,
+.idoll-menu-dark .idoll-menu-item-group-title,
+.idoll-menu-dark .idoll-menu-item > a {
+  color: rgba(255, 255, 255, 0.65);
+}
+.idoll-menu-dark .idoll-menu-item i {
+  color: rgba(255, 255, 255, 0.45);
+  transition: all .3s;
+}
+.idoll-menu-dark.idoll-menu-inline,
+.idoll-menu-dark.idoll-menu-vertical,
+.idoll-menu-dark.idoll-menu-vertical-left,
+.idoll-menu-dark.idoll-menu-vertical-right {
+  border-right: 0;
+}
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-vertical .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-vertical-left .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-vertical-right .idoll-menu-item {
+  border-right: 0;
+  margin-left: 0;
+  left: 0;
+}
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-item:after,
+.idoll-menu-dark.idoll-menu-vertical .idoll-menu-item:after,
+.idoll-menu-dark.idoll-menu-vertical-left .idoll-menu-item:after,
+.idoll-menu-dark.idoll-menu-vertical-right .idoll-menu-item:after {
+  border-right: 0;
+}
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-item,
+.idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu-title {
+  width: 100%;
+}
+.idoll-menu-dark .idoll-menu-item:hover,
+.idoll-menu-dark .idoll-menu-item-active,
+.idoll-menu-dark .idoll-menu-submenu-active,
+.idoll-menu-dark .idoll-menu-submenu-open,
+.idoll-menu-dark .idoll-menu-submenu-selected,
+.idoll-menu-dark .idoll-menu-submenu-title:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.idoll-menu-dark .idoll-menu-item:hover > a,
+.idoll-menu-dark .idoll-menu-item-active > a,
+.idoll-menu-dark .idoll-menu-submenu-active > a,
+.idoll-menu-dark .idoll-menu-submenu-open > a,
+.idoll-menu-dark .idoll-menu-submenu-selected > a,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > a {
+  color: #fff;
+}
+.idoll-menu-dark .idoll-menu-item:hover i,
+.idoll-menu-dark .idoll-menu-item-active i,
+.idoll-menu-dark .idoll-menu-submenu-active i,
+.idoll-menu-dark .idoll-menu-submenu-open i,
+.idoll-menu-dark .idoll-menu-submenu-selected i,
+.idoll-menu-dark .idoll-menu-submenu-title:hover i {
+  color: #ffffff;
+  transition: all .3s;
+}
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title {
+  color: #fff;
+}
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow {
+  opacity: 1;
+}
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before {
+  background: #fff;
+}
+.idoll-menu-dark .idoll-menu-item-selected {
+  border-right: 0;
+  color: #fff;
+}
+.idoll-menu-dark .idoll-menu-item-selected:after {
+  border-right: 0;
+}
+.idoll-menu-dark .idoll-menu-item-selected i {
+  color: #ffffff;
+}
+.idoll-menu-dark .idoll-menu-item-selected > a,
+.idoll-menu-dark .idoll-menu-item-selected > a:hover {
+  color: #fff;
+}
+.idoll-menu.idoll-menu-dark .idoll-menu-item-selected,
+.idoll-menu-submenu-popup.idoll-menu-dark .idoll-menu-item-selected {
+  background-color: #13B886;
+}
+.idoll-menu-dark.idoll-menu-horizontal .idoll-menu-item-selected {
+  background-color: #2F323B;
+}
+.idoll-menu-dark .idoll-menu-item-disabled,
+.idoll-menu-dark .idoll-menu-submenu-disabled,
+.idoll-menu-dark .idoll-menu-item-disabled > a,
+.idoll-menu-dark .idoll-menu-submenu-disabled > a {
+  opacity: 0.8;
+  color: text-color-disable-dark !important;
+}
+.idoll-menu-dark .idoll-menu-item-disabled > .idoll-menu-submenu-title,
+.idoll-menu-dark .idoll-menu-submenu-disabled > .idoll-menu-submenu-title {
+  color: text-color-disable-dark !important;
+}
+.idoll-menu-dark.idoll-menu-hidden {
+  min-width: 128px;
+}

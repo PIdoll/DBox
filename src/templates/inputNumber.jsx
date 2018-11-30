@@ -1,28 +1,46 @@
 
 import React from 'react';
-import InputNumber from '../../components/input-number/index';
+import InputNumber from '../../components/input-number';
+import Button from '../../components/button';
 
 export default class InputNumberView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      disabled: true
     }
+    this.handleToggle = this.handleToggle.bind(this);
   }
   onChange = (value) => {
     console.log('changed', value)
   }
+  handleToggle() {
+    this.setState({
+      disabled: !this.state.disabled
+    })
+  }
   render() {
     return (
-      <div className='main-container'>
+      <div id='main-container' >
         <h1>基本用法</h1>
-        <InputNumber min={1} defaultValue={3} onChange={this.onChange} />
-        <h1>三种尺寸</h1>
-        <inputNumber size='large' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <inputNumber min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <inputNumber size='small' min={1} max={1000} defaultValue={3} onChange={this.onChange} />
-        <h1>不可用切换</h1>
-        <InputNumber min={10} disabled={this.state.disabled} defaultValue={3} />
+        <InputNumber min={1} defaultValue={3} onChange={this.onChange} max={10} />
+        <br />
+        <br />
+        <h1>小数</h1>
+        <InputNumber min={0} max={10} defaultValue={1} step={0.1} />
+        <br />
+        <br />
+        <h1>不可用状态切换</h1>
+        <div>
+          <InputNumber min={1} max={100} defaultValue={5} disabled={this.state.disabled} />
+          <div style={{marginTop: '20px'}} >
+            <Button type='primary' onClick={this.handleToggle}>Toggle disabled</Button>
+          </div>
+        </div>
+        <h1>自定义展示</h1>
+        <div>
+          <InputNumber min={0} max={100} defaultValue={100} formatter={value => `${value}%`} parser={value => value.repalce('%', '')} />
+        </div>
       </div>
     )
   }

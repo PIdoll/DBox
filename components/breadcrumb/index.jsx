@@ -4,3 +4,4 @@ export { BreadcrumbProps } from './breadcrumb';
 export { BreadcrumItemProps } from './breadcrumbItem';
 Breadcrumb.Item = BreadcrumItem;
 export default Breadcrumb;
+export { BreadcrumItem };

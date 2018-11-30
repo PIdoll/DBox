@@ -4,7 +4,7 @@ import Pagination from '../../components/pagination'
 export default class PaginationView extends React.Component {
   render () {
     function showTotal(total) {
-      return `总共 ${total} 条数据`;
+      return `总 ${total} 条`;
     }
     // function itemRender(current, type, originalElement) {
     //     if (type === 'prev') {
@@ -24,7 +24,7 @@ export default class PaginationView extends React.Component {
         <Pagination defaultCurrent={6} total={500} />
         <h1 className='h1'>3.改变每页显示条数目</h1>
         <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型showSizeChanger为布尔值可控制显示改变每页显示条数目</p>
-        <Pagination defaultCurrent={1} total={50} showSizeChanger />
+        <Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger />
         <h1 className='h1'>4.跳转分页</h1>
         <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，showQuickJumper为布尔值可控制跳转分页显示</p>
         <Pagination defaultCurrent={2} total={500} showQuickJumper />
@@ -38,7 +38,7 @@ export default class PaginationView extends React.Component {
         <Pagination simple defaultCurrent={2} total={500} />
         <h1 className='h1'>7.包含总数</h1>
         <p>依据默认选中页defaultCurrent，总条数total和每页数pageSize来控制,其值均为number类型；通过设置函数showTotal传参total来显示总条数</p>
-        <Pagination showTotal={(total) => (`总共${total}条数据`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
+        <Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
 
 
 

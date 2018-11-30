@@ -23,6 +23,7 @@
   border-color: #E2E2E2;
   color: #13B886;
   border-bottom-color: #fff;
+  user-select: none;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab-active:hover {
   color: #42C69E;

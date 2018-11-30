@@ -31,7 +31,7 @@
   display: inline-block;
   vertical-align: middle;
   height: 32px;
-  line-height: 32px -2px;
+  line-height: 30px;
   margin-right: 8px;
 }
 .idoll-pagination-item {
@@ -70,6 +70,7 @@
 }
 .idoll-pagination-item-active {
   border-color: #13B886;
+  user-select: none;
 }
 .idoll-pagination-item-active:focus,
 .idoll-pagination-item-active:hover {

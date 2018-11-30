@@ -27,7 +27,7 @@ export default class TabsView extends React.Component {
       panes,
       activeKey: panes[0].key
     }
-  }
+  };
   onChange = (activeKey) => {
     this.setState({activeKey});
   };
@@ -60,7 +60,7 @@ export default class TabsView extends React.Component {
   };
   handleModeChange = (e) => {
     const mode = e.target.value;
-    this.setState({ mode });
+    this.setState({ mode })
   };
   componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
@@ -73,7 +73,7 @@ export default class TabsView extends React.Component {
         element.style.width = '100%';
         element.style.padding = '0 170px 144px 64px';
         element.style.backgroundColor = '#fff';
-      } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
+      } else if (window.scrollY < currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';
         element.style.padding = '0';
       }
@@ -90,20 +90,20 @@ export default class TabsView extends React.Component {
       <div id='main-container'>
         <h1 className='h1'>1.基本用法和禁用</h1>
         <Tabs defaultActiveKey='5' onChange={this.callBack}>
-          <TabPane tab='当前选项' key='5'>当前选项</TabPane>
-          <TabPane disabled tab='禁用选项' key='4'>禁用选项</TabPane>
-          <TabPane tab='其他选项' key='3'>其他选项</TabPane>
+          <TabPane tab='选项一' key='5'>选项一</TabPane>
+          <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
+          <TabPane tab='选项三' key='3'>选项三</TabPane>
         </Tabs>
         <h1 className='h1'>2.有图标的标签</h1>
         <Tabs defaultActiveKey='7'>
-          <TabPane tab={<span><Icon type='bars' />当前选项</span>} key='7'>
-          当前选项
+          <TabPane tab={<span><Icon type='bars' />选项一</span>} key='7'>
+          选项一
           </TabPane>
-          <TabPane disabled tab={<span><Icon type='appstore-o' />禁用选项</span>} key='8'>
-          禁用选项
+          <TabPane disabled tab={<span><Icon type='appstore-o' />选项二</span>} key='8'>
+          选项二
           </TabPane>
-          <TabPane tab={<span><Icon type='detail' />其他选项</span>} key='9'>
-          其他选项
+          <TabPane tab={<span><Icon type='detail' />选项三</span>} key='9'>
+          选项三
           </TabPane>
         </Tabs>
         <h1 className='h1'>3.tab页上下，左右滑动</h1>
@@ -112,37 +112,37 @@ export default class TabsView extends React.Component {
           <RadioButton value='left'>垂直</RadioButton>
         </RadioGroup>
         <Tabs defaultActiveKey='11' tabPosition={mode} style={{height: 220}}>
-          <TabPane tab='分页 1' key='11'>分页 1</TabPane>
-          <TabPane tab='分页 2' key='12'>分页 2</TabPane>
-          <TabPane tab='分页 3' key='13'>分页 3</TabPane>
-          <TabPane tab='分页 4' key='14'>分页 4</TabPane>
-          <TabPane tab='分页 5' key='15'>分页 5</TabPane>
-          <TabPane tab='分页 6' key='16'>分页 6</TabPane>
-          <TabPane tab='分页 7' key='17'>分页 7</TabPane>
-          <TabPane tab='分页 8' key='18'>分页 8</TabPane>
-          <TabPane tab='分页 9' key='19'>分页 9</TabPane>
-          <TabPane tab='分页 10' key='20'>分页 10</TabPane>
-          <TabPane tab='分页 11' key='21'>分页 11</TabPane>
-          <TabPane tab='分页 12' key='22'>分页 12</TabPane>
-          <TabPane tab='分页 13' key='23'>分页 13</TabPane>
-          <TabPane tab='分页 14' key='24'>分页 14</TabPane>
+          <TabPane tab='选项一' key='11'>选项一</TabPane>
+          <TabPane tab='选项二' key='12'>选项二</TabPane>
+          <TabPane tab='选项三' key='13'>选项三</TabPane>
+          <TabPane tab='选项四' key='14'>选项四</TabPane>
+          <TabPane tab='选项五' key='15'>选项五</TabPane>
+          <TabPane tab='选项六' key='16'>选项六</TabPane>
+          <TabPane tab='选项七' key='17'>选项七</TabPane>
+          <TabPane tab='选项八' key='18'>选项八</TabPane>
+          <TabPane tab='选项九' key='19'>选项九</TabPane>
+          <TabPane tab='选项十' key='20'>选项十</TabPane>
+          <TabPane tab='选项十一' key='21'>选项十一</TabPane>
+          <TabPane tab='选项十二' key='22'>选项十二</TabPane>
+          <TabPane tab='选项十三' key='23'>选项十三</TabPane>
+          <TabPane tab='选项十四' key='24'>选项十四</TabPane>
         </Tabs>
         <h1 className='h1'>4.卡片式标签页容器</h1>
         <Tabs type='card'>
-          <TabPane tab='当前分页' key='25'>
-            <p>分页内容 1</p>
-            <p>分页内容 1</p>
-            <p>分页内容 1</p>
+          <TabPane tab='分页一' key='25'>
+            <p>分页内容一</p>
+            <p>分页内容一</p>
+            <p>分页内容一</p>
           </TabPane>
-          <TabPane tab='其他分页' key='26'>
-            <p>分页内容 2</p>
-            <p>分页内容 2</p>
-            <p>分页内容 2</p>
+          <TabPane tab='分页二' key='26'>
+            <p>分页内容二</p>
+            <p>分页内容二</p>
+            <p>分页内容二</p>
           </TabPane>
-          <TabPane tab='其他分页' key='27'>
-            <p>分页内容 3</p>
-            <p>分页内容 3</p>
-            <p>分页内容 3</p>
+          <TabPane tab='分页三' key='27'>
+            <p>分页内容三</p>
+            <p>分页内容三</p>
+            <p>分页内容三</p>
           </TabPane>
         </Tabs>
         <h1 className='h1'>5.新增和关闭</h1>
@@ -151,26 +151,26 @@ export default class TabsView extends React.Component {
         </Tabs>
         <h1 className='h1'>6.卡片式容器</h1>
         <Tabs type='cardTabs'>
-          <TabPane tab='当前分页' key='28'>
-            <p>当前分页内容 1</p>
-            <p>当前分页内容 2</p>
-            <p>当前分页内容 3</p>
+          <TabPane tab='分页一' key='28'>
+            <p>分页内容一</p>
+            <p>分页内容一</p>
+            <p>分页内容一</p>
           </TabPane>
-          <TabPane tab='其他分页' key='29'>
-            <p>其他分页内容 1</p>
-            <p>其他分页内容 2</p>
-            <p>其他分页内容 3</p>
+          <TabPane tab='分页二' key='29'>
+            <p>分页内容二</p>
+            <p>分页内容二</p>
+            <p>分页内容二</p>
           </TabPane>
-          <TabPane tab='其他分页' key='30'>
-            <p>其他分页内容 1</p>
-            <p>其他分页内容 2</p>
-            <p>其他分页内容 3</p></TabPane>
+          <TabPane tab='分页三' key='30'>
+            <p>分页内容三</p>
+            <p>分页内容三</p>
+            <p>分页内容三</p></TabPane>
         </Tabs>
         <h1 className='h1'>7.吸顶效果</h1>
         <Tabs ref='box_table'>
-          <TabPane tab='当前分页' key='31'>当前分页内容</TabPane>
-          <TabPane tab='其他分页内容' key='32'>其他分页内容内容</TabPane>
-          <TabPane tab='其他分页内容' key='33'>其他分页内容内容</TabPane>
+          <TabPane tab='分页一' key='31'>分页内容一</TabPane>
+          <TabPane tab='分页二' key='32'>分页内容二</TabPane>
+          <TabPane tab='分页三' key='33'>分页内容三</TabPane>
         </Tabs>
       </div>
     )
