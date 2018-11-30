@@ -59,9 +59,6 @@
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow:before {
   content: "\E92C";
 }
-.idoll-collapse > .idoll-collapse-item-active {
-  border-bottom: 0;
-}
 .idoll-collapse-anim-active {
   transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -70,9 +67,7 @@
   color: rgba(0, 0, 0, 0.65);
   padding: 0 24px;
   background-color: #fff;
-  border-top: 1px solid #E2E2E2;
   border-width: 0;
-  border-bottom: 1px solid #E2E2E2;
 }
 .idoll-collapse-content > .idoll-collapse-content-box {
   padding-top: 16px;
@@ -80,10 +75,10 @@
 }
 .idoll-collapse-content-inactive {
   display: none;
+  border-bottom: 0;
 }
 .idoll-collapse-item:last-child > .idoll-collapse-content {
   border-radius: 0 0 3px 3px;
-  border-bottom: 1px solid #E2E2E2;
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
   background-color: #FAFAFA;
@@ -113,10 +108,14 @@
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header .arrow {
   right: 0;
 }
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="false"] {
+  border-bottom: 0;
+}
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content {
   background-color: transparent;
   border-top: 0;
   padding: 0;
+  border-radius: 0;
 }
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content > .idoll-collapse-content-box {
   padding-top: 4px;
