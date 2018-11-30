@@ -108,8 +108,9 @@
   }
 
   &&-loading {
-    position: relative;
-    .loading();
+    .idoll-icon:before {
+      animation: loadingCircle 1s infinite linear;
+    }
   }
 
   // &&-loading:before {
@@ -162,6 +163,11 @@
   &-sm > span + .idoll-icon {
     margin-left: @btn-icon-margin-left-base - 2px !important;
   }
+
+  &-sm  &-loading {
+    .loading(@btn-font-size-sm);
+  }
+  
 
   // 点击后的效果
   // &-clicked:after {
