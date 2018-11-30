@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Layout, { Sider, Footer, Header, Content } from 'components/layout'
 import Button from 'components/button'
 
-import './layout.css'
 
 class MainLayout extends Component {
   constructor (props) {
