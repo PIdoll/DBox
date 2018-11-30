@@ -248,16 +248,21 @@
     border-radius: 50%;
     width: @size;
     height: @size;
+    opacity: 1;
+    position: absolute;
+    top: calc(50% + 0.5px);
+    left: calc(50% - 0.5px);
+    transform:translate(-50%,-50%); 
   }
 }
 
   @keyframes loadingCircle {
     0% {
-      transform-origin: 50% 50%;
-      transform: rotate(0deg) scale(0.66667);
+      transform-origin: -50% -50%;
+      transform: rotate(0deg) scale(1);
     }
     100% {
-      transform-origin: 50% 50%;
-      transform: rotate(360deg) scale(0.66667);
+      transform-origin: -50% -50%;
+      transform: rotate(360deg) scale(1);
     }
   }
