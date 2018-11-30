@@ -5,10 +5,8 @@
 
 .@{dialog-prefix-cls} {
   position: relative;
-  width: auto;
   margin: 0 auto;
   top: 100px;
-  padding-bottom: 24px;
 
   &-wrap {
     position: fixed;
@@ -25,7 +23,7 @@
   &-title {
     margin: 0;
     font-size: @font-size-base + 2;
-    line-height: 21px;
+    line-height: 24px;
     font-weight: bold;
   }
 
@@ -42,8 +40,8 @@
     border: 0;
     background: transparent;
     position: absolute;
-    right: 18px;
-    top: 16px;
+    right: 24px;
+    top: 20px;
     z-index: 10;
     font-weight: 700;
     line-height: 1;
@@ -55,13 +53,10 @@
     &-x {
       display: block;
       font-style: normal;
-      vertical-align: baseline;
       text-align: center;
       text-transform: none;
       text-rendering: auto;
-      width: 14px;
-      height: 14px;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1;
 
       &:before {
@@ -79,35 +74,40 @@
   }
 
   &-header {
-    height: @title-height;
-    // padding: 14px 16px;
-    padding: @padding-md+2 @padding-md+4;
+    position: relative;
+    padding: @padding-md @padding-md+8;
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: #fff;
     color: #666;
-    border-bottom: 1px solid @border-color-split;
+  }
+  &-header:after {
+    position: absolute;
+    top: 100%;
+    left: @padding-md+8;
+    content: '';
+    width: 560 - (@padding-md+8) - (@padding-md+8);
+    height: 1px;
+    background-color: @border-color-split;
   }
 
   &-body {
-    min-height: 218px;
+    min-height: 180px;
     max-height: 488px;
-    padding: 20px;
-    font-size: 12px;
-    line-height: 1.5;
+    padding: 24px;
+    font-size: 14px;
+    line-height: 22px;
     overflow:auto;
   }
 
   &-footer {
-    position: relative;
-    height:@footer-height ;
-    border-top: 1px solid @border-color-split;
-    padding:0 @padding-md+4;
+    // height: 48px ;
+    padding:@padding-md @padding-md+8;
     text-align: right;
     border-radius: 0 0 @border-radius-base @border-radius-base;
-    button + button {
-      margin-left: 8px;
-      margin-top: 19px;
+    button {
+      margin-left:8px; 
     }
+
   }
 
   &.zoom-enter,
@@ -150,12 +150,3 @@
     }
   }
 }
-
-// .vertical-center-modal {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   .@{dialog-prefix-cls} {
-//     top: 0;
-//   }
-// }

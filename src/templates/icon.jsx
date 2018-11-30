@@ -420,6 +420,12 @@ export default () => (
         </span>
       </li>
       <li className=''>
+        <Icon type='pro-loading' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro-loading</span>
+        </span>
+      </li>
+      <li className=''>
         <Icon type='pro-table' />
         <span className='icon-class'>
           <span className='icon-name' >pro-table</span>

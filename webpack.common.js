@@ -28,7 +28,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     inline: true,
-    progress: true
+    progress: true,
+    hot: true,
   },
   // css 处理
   module: {
@@ -42,7 +43,10 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         use: [{
-          loader: 'style-loader'
+          loader: 'style-loader',
+          options: {
+            singleton: true
+          }
         }, {
           loader: 'css-loader'
         }, {

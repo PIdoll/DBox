@@ -5,7 +5,7 @@ import Icon from 'components/icon/index';
 import Alert from 'components/alert/index';
 import 'components/breadcrumb/style/index'
 
-export default class BreadcrumBreadcrumView extends React.Component {
+export default class BreadcrumbView extends React.Component {
   render() {
     const Apps = () => (
       <ul className='app-list'>
@@ -63,14 +63,16 @@ export default class BreadcrumBreadcrumView extends React.Component {
     });
     return (
       <div id='main-container'>
-        <h1 className='h1'>基本的面包屑</h1>
+        <h1>基本的面包屑</h1>
         <Breadcrumb>
-          <Breadcrumb.Item>点击</Breadcrumb.Item>
-          <Breadcrumb.Item><a href='javascript:void(0);'>点击</a></Breadcrumb.Item>
-          <Breadcrumb.Item><a href='javascript:void(0);'>点击</a></Breadcrumb.Item>
-          <Breadcrumb.Item>点击</Breadcrumb.Item>
+          <Breadcrumb.Item>首页</Breadcrumb.Item>
+          <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
+          <Breadcrumb.Item>设置</Breadcrumb.Item>
         </Breadcrumb>
-        <h1 className='h1'>带图标的面包屑</h1>
+        <br />
+        <br />
+        <br />
+        <h1>带图标的面包屑</h1>
         <Breadcrumb>
           <Breadcrumb.Item href='javascript:void(0);'>
             <Icon type='home' />
@@ -83,7 +85,20 @@ export default class BreadcrumBreadcrumView extends React.Component {
           点击
           </Breadcrumb.Item>
         </Breadcrumb>
-        <h1 className='h1'>react-router@4面包屑</h1>
+        <br />
+        <br />
+        <br />
+        <h1>自定义分隔符的面包屑</h1>
+
+        <Breadcrumb separator='>'>
+          <Breadcrumb.Item>首页</Breadcrumb.Item>
+          <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
+          <Breadcrumb.Item>设置</Breadcrumb.Item>
+        </Breadcrumb>
+        <br />
+        <br />
+        <br />
+        <h1>react-router@4面包屑</h1>
         <Router>
           <Home />
         </Router>
