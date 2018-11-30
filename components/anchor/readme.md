@@ -1,6 +1,62 @@
 #### **何时使用**
 需要展现当前页面上可供跳转的锚点链接，以及快速在锚点之间跳转。
 
+#### **书签类型**
+
+```jsx
+const { Link } = Anchor;
+const anchorStyle = {
+  width: 500,
+  padding: 20,
+  border: '1px solid #ccc'
+};
+const titleStyle = {
+  height: 40,
+  lineHeight: '40px',
+  paddingLeft: 30,
+};
+const contentStyle = {
+  paddingLeft: 30,
+};
+handleGetCOntainer = () => {
+  const DOMcontainer = this.container
+  return DOMcontainer;
+}
+<div className='demo-anchor' style={{ display: 'flex', width: 700, height: 800, backgroundColor: '#ccc', paddingTop: 40 }}>
+    <Anchor type='bookmark' getContainer={() => this.handleGetCOntainer}>
+      <Link href='#components-anchor-demo-1' title='项目一' />
+      <Link href='#components-anchor-demo-2' title='项目二' />
+      <Link href='#components-anchor-demo-3' title='项目三' />
+      <Link href='#components-anchor-demo-4' title='项目四' />
+      <Link href='#components-anchor-demo-5' title='项目五' />
+    </Anchor>
+    <div>
+      <div style={{ width: 400, height: 600, backgroundColor: '#fff', marginLeft: 10 }} ref={node => { this.container = node }}>
+        <div id='components-anchor-demo-1' style={{marginBottom: 20}}>
+          <div style={titleStyle}>项目一</div>
+          <div style={contentStyle}>这里是内容...</div>
+        </div>
+        <div id='components-anchor-demo-2' style={{marginBottom: 20}}>
+          <div style={titleStyle}>项目二</div>
+          <div style={contentStyle}>这里是内容...</div>
+        </div>
+        <div id='components-anchor-demo-3' style={{marginBottom: 20}}>
+          <div style={titleStyle}>项目三</div>
+          <div style={contentStyle}>这里是内容...</div>
+        </div>
+        <div id='components-anchor-demo-4' style={{marginBottom: 20}}>
+          <div style={titleStyle}>项目四</div>
+          <div style={contentStyle}>这里是内容...</div>
+        </div>
+        <div id='components-anchor-demo-5' style={{marginBottom: 20}}>
+          <div style={titleStyle}>项目五</div>
+          <div style={contentStyle}>这里是内容...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+```
+
 #### **Tab样式的锚点**
 
 ```jsx
@@ -65,7 +121,7 @@ const { Link } = Anchor;
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 锚点展现的方式 | 'inline' , 'vertical' | 'inline' |
+| type | 锚点展现的方式 | 'inline' , 'vertical' , 'bookmark' | 'inline' |
 | bounds | 锚点区域边界 | number | 5(px) |
 | getContainer | 指定滚动的容器 | () => HTMLElement | () => window |
 | offsetBottom | 距离窗口底部达到指定偏移量后触发 | number | - |
