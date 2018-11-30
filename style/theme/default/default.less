@@ -237,7 +237,7 @@
   &:before {
     content: "";//加载icon
     font-family: dboxicon;
-    animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
+    animation: loadingCircle 1s infinite linear;
     text-align: center;
     display: inline-block;
     color: @color;
@@ -251,7 +251,7 @@
   }
 }
 
-  @keyframes dboxSwitchSmallLoadingCircle {
+  @keyframes loadingCircle {
     0% {
       transform-origin: 50% 50%;
       transform: rotate(0deg) scale(0.66667);
