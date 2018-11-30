@@ -6,27 +6,40 @@
 
 #### **基本使用**
 ```jsx
+const {ReactDOM} = require('./index');
 class AffixView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: 10,
-      bottom:10
+      top: 30,
     }
-    this.handleOffset = this.handleOffset.bind(this);
   }
-  handleOffset() {
-    this.setState({
-      top: this.state.top + 10
+   /* componentDidMount() {
+    const ele = ReactDOM.findDOMNode(this.refs.box_affix);
+    const currentHeight = ele.offsetTop - ele.offsetHeight;
+    const left = `${ele.offsetLeft}px`;
+    window.addEventListener('scroll', this.onScroll = () => {
+      if(window.scrollY >= currentHeight && window.scrollY < ele.offsetTop) {
+        ele.style.position = 'relative',
+        ele.style.top = '0';
+        ele.style.width = '50%';
+        ele.style.backgroundColor = '#dedede';
+      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +            ele.offsetHeight) {
+        ele.style.position = 'absolute';
+        ele.style.width = '50%';
+        ele.style.padding = '10px';
+        ele.style.backgroundColor = '#dedede';
+      }
     })
   }
+   componentWillUnmount () {
+      window.removeEventListener('scroll', this.onScroll);
+  } */
   render() {
     return (
-      <div>
-        <Affix offsetTop={this.state.top}>
-          <Button  onClick={this.handleOffset}>距离顶部10px触发</Button>
-        </Affix>
-      </div>
+      <Affix offsetTop={this.state.top} ref='box_affix'>
+        <Button  >距离顶部30px触发</Button>
+      </Affix>
     )
   }
 }
