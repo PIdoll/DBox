@@ -233,31 +233,34 @@
 @screen-xl-max          : (@screen-xxl-min - 1px);
 
 //loading
-.loading(@size:18px,@color:#13B886) {
+.loading(@size:14px,@color:#13B886) {
   &:before {
-    content: "";//加载icon
-    font-family: dboxicon;
+    content: "\E914";
+    font-family: idollicon;
+    
     animation: loadingCircle 1s infinite linear;
     text-align: center;
     display: inline-block;
     color: @color;
     z-index: 1;
-    font-size: 12px;
-    border:1px solid;
-    border-left:1px solid transparent;
-    border-radius: 50%;
-    width: @size;
-    height: @size;
+    font-size: @size;
+    // border:1px solid;
+    // border-left:1px solid transparent;
+    // border-radius: 50%;
+    // width: @size;
+    // height: @size;
+    opacity: 1;
+    background: none;
   }
 }
 
-  @keyframes loadingCircle {
-    0% {
-      transform-origin: 50% 50%;
-      transform: rotate(0deg) scale(0.66667);
-    }
-    100% {
-      transform-origin: 50% 50%;
-      transform: rotate(360deg) scale(0.66667);
-    }
+@keyframes loadingCircle {
+  0% {
+    // transform-origin: 50% 50%;
+    transform: rotate(0deg) scale(1);
   }
+  100% {
+    // transform-origin:50% 50%;
+    transform: rotate(360deg) scale(1);
+  }
+}
