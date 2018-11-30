@@ -59,10 +59,10 @@
     height: 20px;
     text-align: center;
     line-height: 20px;
-    top: 7px;
+    top: 10px;
     margin: 0;
 
-    &-icon svg {
+    &-icon {
       position: absolute;
       top: 0;
       right: 0;
@@ -89,6 +89,7 @@
     font-size: @font-size-base;
     border-left: @border-width-base @border-style-base @border-color-split;
     box-sizing: border-box;
+    border-color: #f5f5f5;
     width: @time-picker-panel-column-width;
     overflow: hidden;
     position: relative; // Fix chrome weird render bug
@@ -134,7 +135,8 @@
     }
 
     li:hover {
-      background: @item-hover-bg;
+      // background: @item-hover-bg;
+      background: @primary-LightBg;
     }
 
     li&-option-selected {
@@ -238,142 +240,3 @@
     right: @control-padding-horizontal-sm - 1px;
   }
 }
-
-//   &-clear-btn:after {
-//     font-size: 12px;
-//     color: #ccc;
-//     display: inline-block;
-//     width: 20px;
-//     line-height: 1;
-//     transition: color 0.3s ease;
-//     .iconfont-font("\E91B");
-//   }
-
-//   &-clear-btn:hover:after {
-//     color: #999;
-//   }
-
-//   &-narrow &-input-wrap {
-//     max-width: 111px;
-//   }
-
-//   &-select {
-//     float: left;
-//     font-size: 12px;
-//     border: 1px solid @border-color-split;
-//     border-width: 0 1px;
-//     margin-left: -1px;
-//     box-sizing: border-box;
-//     width: 56px;
-//     overflow: hidden;
-//     position: relative;//Fix chrome weird render bug
-
-//     &:hover {
-//       overflow-y: auto;
-//     }
-
-//     &:first-child {
-//       border-left: 0;
-//       margin-left: 0;
-//     }
-
-//     &:last-child {
-//       border-right: 0;
-//     }
-
-//     ul {
-//       list-style: none;
-//       box-sizing: border-box;
-//       margin: 0;
-//       padding: 0;
-//       width: 100%;
-//       max-height: 144px;
-//     }
-
-//     li {
-//       list-style: none;
-//       box-sizing: content-box;
-//       margin: 0;
-//       padding: 0 0 0 16px;
-//       width: 100%;
-//       height: 24px;
-//       line-height: 24px;
-//       text-align: left;
-//       cursor: pointer;
-//       user-select: none;
-//       transition: background 0.3s ease;
-//     }
-
-//     li:last-child:after {
-//       content: '';
-//       height: 120px;
-//       display: block;
-//     }
-
-//     li:hover {
-//       background: tint(@primary-color, 90%);
-//     }
-
-//     li&-option-selected {
-//       background: #f7f7f7;
-//       font-weight: bold;
-//     }
-
-//     li&-option-disabled {
-//       color: @btn-disable-color;
-//       &:hover {
-//         background: transparent;
-//         cursor: @cursor-disabled;
-//       }
-//     }
-//   }
-
-//   &.slide-up-enter.slide-up-enter-active&-placement-topLeft,
-//   &.slide-up-enter.slide-up-enter-active&-placement-topRight,
-//   &.slide-up-appear.slide-up-appear-active&-placement-topLeft,
-//   &.slide-up-appear.slide-up-appear-active&-placement-topRight {
-//     animation-name: idollSlideDownIn;
-//   }
-
-//   &.slide-up-enter.slide-up-enter-active&-placement-bottomLeft,
-//   &.slide-up-enter.slide-up-enter-active&-placement-bottomRight,
-//   &.slide-up-appear.slide-up-appear-active&-placement-bottomLeft,
-//   &.slide-up-appear.slide-up-appear-active&-placement-bottomRight {
-//     animation-name: idollSlideUpIn;
-//   }
-
-//   &.slide-up-leave.slide-up-leave-active&-placement-topLeft,
-//   &.slide-up-leave.slide-up-leave-active&-placement-topRight {
-//     animation-name: idollSlideDownOut;
-//   }
-
-//   &.slide-up-leave.slide-up-leave-active&-placement-bottomLeft,
-//   &.slide-up-leave.slide-up-leave-active&-placement-bottomRight {
-//     animation-name: idollSlideUpOut;
-//   }
-// }
-
-// .@{timepicker-prefix-cls} {
-//   position: relative;
-//   display: inline-block;
-//   outline: none;
-//   font-size: @font-size-base;
-//   transition: opacity 0.3s ease;
-
-//   &-input {
-//     .input;
-//     width: 100px;
-//   }
-
-//   &-large &-input {
-//     .input-lg;
-//   }
-
-//   &-small &-input {
-//     .input-sm
-//   }
-
-//   &-open {
-//     opacity: 0;
-//   }
-// }

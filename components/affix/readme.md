@@ -6,27 +6,40 @@
 
 #### **基本使用**
 ```jsx
+const {ReactDOM} = require('./index');
 class AffixView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       top: 30,
-      bottom:30
     }
-    this.handleOffset = this.handleOffset.bind(this);
   }
-  handleOffset() {
-    this.setState({
-      top: this.state.top + 10
+   /* componentDidMount() {
+    const ele = ReactDOM.findDOMNode(this.refs.box_affix);
+    const currentHeight = ele.offsetTop - ele.offsetHeight;
+    const left = `${ele.offsetLeft}px`;
+    window.addEventListener('scroll', this.onScroll = () => {
+      if(window.scrollY >= currentHeight && window.scrollY < ele.offsetTop) {
+        ele.style.position = 'relative',
+        ele.style.top = '0';
+        ele.style.width = '50%';
+        ele.style.backgroundColor = '#dedede';
+      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +            ele.offsetHeight) {
+        ele.style.position = 'absolute';
+        ele.style.width = '50%';
+        ele.style.padding = '10px';
+        ele.style.backgroundColor = '#dedede';
+      }
     })
   }
+   componentWillUnmount () {
+      window.removeEventListener('scroll', this.onScroll);
+  } */
   render() {
     return (
-      <div>
-        <Affix offsetTop={this.state.top}>
-          <Button type='primary' onClick={this.handleOffset}>距离顶部30米触发</Button>
-        </Affix>
-      </div>
+      <Affix offsetTop={this.state.top} ref='box_affix'>
+        <Button  >距离顶部30px触发</Button>
+      </Affix>
     )
   }
 }
@@ -34,11 +47,31 @@ class AffixView extends React.Component {
 ```
 #### **固定到底部**
 ```jsx
-<Affix offsetTop={100} onChange={affixed => console.log(affixed)}>
-  <Button >距离顶部30米触发</Button>
+<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+  <Button >距离底部0px触发</Button>
 </Affix>
 ```
 
+
+#### **固定在容器当中**
+```jsx
+class AffixView extends React.Component{
+  render() {
+    return (
+      <div ref={(node) => { this.container = node; }}>
+        <div style={{backgroundColor: '#dedede', padding: '10px 0'}}>
+          <Affix target={() => this.container}>
+            <Button type="primary">
+                固定在容器的顶部
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    )
+  }
+}
+<AffixView />
+```
 #### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |

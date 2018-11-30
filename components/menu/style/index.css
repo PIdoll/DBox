@@ -2,6 +2,16 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes dboxSwitchSmallLoadingCircle {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg) scale(0.66667);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg) scale(0.66667);
+  }
+}
 .idoll-menu {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -36,10 +46,12 @@
 .idoll-menu ol {
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 .idoll-menu-hidden {
   display: none;
+}
+.idoll-menu-item span {
+  vertical-align: middle;
 }
 .idoll-menu-item-group-title {
   color: rgba(0, 0, 0, 0.65);
@@ -51,6 +63,8 @@
 .idoll-menu-submenu,
 .idoll-menu-submenu-inline {
   transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 .idoll-menu-item:active,
 .idoll-menu-submenu-title:active {
@@ -172,8 +186,13 @@
 }
 .idoll-menu-horizontal > .idoll-menu-item:hover,
 .idoll-menu-horizontal > .idoll-menu-item-active,
-.idoll-menu-horizontal > .idoll-menu-submenu .idoll-menu-submenu-title:hover {
+.idoll-menu-horizontal > .idoll-menu-submenu .idoll-menu-submenu-title[aria-expanded='true']:hover {
   background-color: transparent;
+}
+.idoll-menu-horizontal > .idoll-menu-item:hover i,
+.idoll-menu-horizontal > .idoll-menu-item-active i,
+.idoll-menu-horizontal > .idoll-menu-submenu .idoll-menu-submenu-title[aria-expanded='true']:hover i {
+  color: #fff;
 }
 .idoll-menu-item-selected {
   color: #13B886;
@@ -402,7 +421,13 @@
 .idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal:hover {
   color: rgba(255, 255, 255, 0.65) !important;
 }
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal:hover i {
+  color: rgba(255, 255, 255, 0.65);
+}
 .idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled div i {
   color: rgba(255, 255, 255, 0.45) !important;
 }
 .idoll-menu-vertical .idoll-menu-item,
@@ -437,8 +462,8 @@
   font-size: 14px;
   line-height: 40px;
   height: 40px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -452,7 +477,7 @@
 .idoll-menu-vertical-left .idoll-menu-item:not(:last-child),
 .idoll-menu-vertical-right .idoll-menu-item:not(:last-child),
 .idoll-menu-inline .idoll-menu-item:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .idoll-menu-vertical > .idoll-menu-item,
 .idoll-menu-vertical-left > .idoll-menu-item,
@@ -707,7 +732,7 @@
 .idoll-menu-light.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline > .idoll-menu-item,
 .idoll-menu-dark.idoll-menu-inline .idoll-menu-submenu.idoll-menu-submenu-inline .idoll-menu-sub.idoll-menu-inline > .idoll-menu-item {
   padding-left: 40px !important;
-  margin: 0;
+  margin: 4px 0;
 }
 .idoll-menu-dark.idoll-menu-inline > .idoll-menu-item-selected i {
   color: #fff;

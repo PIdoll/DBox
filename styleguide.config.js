@@ -163,8 +163,7 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-          path.resolve(__dirname, './components/grid/index.jsx'),
-        //    path.resolve(__dirname, './components/grid/row.jsx'),
+            path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
           ])
         },
@@ -172,8 +171,7 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-          //  path.resolve(__dirname, './components/button/button-group.jsx'),
-           path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
@@ -197,14 +195,14 @@ module.exports = {
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
            path.resolve(__dirname, './components/input/index.jsx'),
-        //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
+           path.resolve(__dirname, './components/input-number/index.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+           path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
          //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
