@@ -239,11 +239,11 @@ class CascaderExample extends React.Component {
         setTimeout(() => {
             targetOption.loading = false;
             targetOption.children = [{
-              label: `${targetOption.label} 选项 1`,
-              value: '选项1',
+              label: `${targetOption.label} 城市`,
+              value: '城市',
             }, {
-              label: `${targetOption.label} 选项 2`,
-              value: '选项2',
+              label: `${targetOption.label} 地名`,
+              value: '地名',
             }];
             this.setState({
               options: [...this.state.loadDataOptions],

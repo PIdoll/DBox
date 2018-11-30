@@ -84,7 +84,7 @@
       z-index: 2;
       background: @component-background;
       top: 50%;
-      font-size: @font-size-sm;
+      font-size: @font-size-base;
       color: @disabled-color;
       width: 14px;
       height: 14px;
@@ -209,6 +209,10 @@
       cursor: not-allowed;
       color: @disabled-color;
       &:hover {
+        color: @disabled-color;
+      }
+
+      .@{idoll-prefix}-icon-pro-right {
         color: @disabled-color;
       }
     }
