@@ -1,263 +1,264 @@
-@import "../theme/default/index.less";
-@import "../mixins/iconfont.less";
-
-// font-face
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 @font-face {
   font-family: 'idollicon';
-  src:  url('@{icon-url}/idollicon.eot?zfzssk');
-  src:  url('@{icon-url}/idollicon.eot?zfzssk#iefix') format('embedded-opentype'),
-    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('@{icon-url}/idollicon.ttf') format('truetype'),
-    /* chrome、firefox */
-    url('@{icon-url}/idollicon.woff?zfzssk') format('woff'),
-    /* iOS 4.1- */
-    url('@{icon-url}/idollicon.svg?zfzssk#idollicon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'idoll-icon-pro';
-  src:  url('@{icon-url}/idoll-icon-pro.eot?pevkht');
-  src:  url('@{icon-url}/idoll-icon-pro.eot?pevkht#iefix') format('embedded-opentype'),
-    url('@{icon-url}/idoll-icon-pro.ttf?pevkht') format('truetype'),
-    url('@{icon-url}/idoll-icon-pro.woff?pevkht') format('woff'),
-    url('@{icon-url}/idoll-icon-pro.svg?pevkht#idoll-icon-pro') format('svg');
+  src: url('/assets/fonts/idollicon.eot?zfzssk');
+  src: url('/assets/fonts/idollicon.eot?zfzssk#iefix') format('embedded-opentype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('/assets/fonts/idollicon.ttf') format('truetype'), /* chrome、firefox */ url('/assets/fonts/idollicon.woff?zfzssk') format('woff'), /* iOS 4.1- */ url('/assets/fonts/idollicon.svg?zfzssk#idollicon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
-
-.@{iconfont-css-prefix} {
- .iconfont-mixin();
+@font-face {
+  font-family: 'idoll-icon-pro';
+  src: url('/assets/fonts/idoll-icon-pro.eot?pevkht');
+  src: url('/assets/fonts/idoll-icon-pro.eot?pevkht#iefix') format('embedded-opentype'), url('/assets/fonts/idoll-icon-pro.ttf?pevkht') format('truetype'), url('/assets/fonts/idoll-icon-pro.woff?pevkht') format('woff'), url('/assets/fonts/idoll-icon-pro.svg?pevkht#idoll-icon-pro') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.@{iconfont-css-prefix}-check-circle:before {
+.idoll-icon {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.idoll-icon:before {
+  display: block;
+  font-family: 'idollicon' !important;
+}
+.idoll-icon-check-circle:before {
   content: "\e917";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-achievement:before {
+.idoll-icon-achievement:before {
   content: "\e900";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-appstore-o:before {
+.idoll-icon-appstore-o:before {
   content: "\e901";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-clock-o:before {
+.idoll-icon-clock-o:before {
   content: "\e902";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-home:before {
+.idoll-icon-home:before {
   content: "\e903";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-platform:before {
+.idoll-icon-platform:before {
   content: "\e904";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-sound:before {
+.idoll-icon-sound:before {
   content: "\e905";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-tool:before {
+.idoll-icon-tool:before {
   content: "\e906";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-trophy:before {
+.idoll-icon-trophy:before {
   content: "\e907";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-unlock:before {
+.idoll-icon-unlock:before {
   content: "\e908";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-user-group:before {
+.idoll-icon-user-group:before {
   content: "\e909";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-user:before {
+.idoll-icon-user:before {
   content: "\e90a";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-bars:before {
+.idoll-icon-bars:before {
   content: "\e90b";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-calendar:before {
+.idoll-icon-calendar:before {
   content: "\e90c";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-copy:before {
+.idoll-icon-copy:before {
   content: "\e90d";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-delete:before {
+.idoll-icon-delete:before {
   content: "\e90e";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-edit:before {
+.idoll-icon-edit:before {
   content: "\e90f";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-filter:before {
+.idoll-icon-filter:before {
   content: "\e910";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-logout:before {
+.idoll-icon-logout:before {
   content: "\e911";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-message:before {
+.idoll-icon-message:before {
   content: "\e912";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-phone:before {
+.idoll-icon-phone:before {
   content: "\e913";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-search:before {
+.idoll-icon-search:before {
   content: "\e914";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-tag:before {
+.idoll-icon-tag:before {
   content: "\e915";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-check-circle-o:before {
+.idoll-icon-check-circle-o:before {
   content: "\e916";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-check:before {
+.idoll-icon-check:before {
   content: "\e919";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-close-circle-o:before {
+.idoll-icon-close-circle-o:before {
   content: "\e91a";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-close-circle:before {
+.idoll-icon-close-circle:before {
   content: "\e91b";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-close:before {
+.idoll-icon-close:before {
   content: "\e91c";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-plus-circle-o:before {
+.idoll-icon-plus-circle-o:before {
   content: "\e91d";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-plus-circle:before {
+.idoll-icon-plus-circle:before {
   content: "\e91e";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-plus:before {
+.idoll-icon-plus:before {
   content: "\e91f";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-remove-circle-o:before {
+.idoll-icon-remove-circle-o:before {
   content: "\e920";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-remove-circle:before {
+.idoll-icon-remove-circle:before {
   content: "\e921";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-remove:before {
+.idoll-icon-remove:before {
   content: "\e922";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-warning-circle:before {
+.idoll-icon-warning-circle:before {
   content: "\e923";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-arrows-alt:before {
+.idoll-icon-arrows-alt:before {
   content: "\e924";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-backward:before {
+.idoll-icon-backward:before {
   content: "\e925";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-caret-down:before {
+.idoll-icon-caret-down:before {
   content: "\e926";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-caret-left:before {
+.idoll-icon-caret-left:before {
   content: "\e927";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-caret-right:before {
+.idoll-icon-caret-right:before {
   content: "\e928";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-caret-up:before {
+.idoll-icon-caret-up:before {
   content: "\e929";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-down-circle-o:before {
+.idoll-icon-down-circle-o:before {
   content: "\e92a";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-down-circle:before {
+.idoll-icon-down-circle:before {
   content: "\e92b";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-down:before {
+.idoll-icon-down:before {
   content: "\e92c";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-forward:before {
+.idoll-icon-forward:before {
   content: "\e92d";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-left-circle-o:before {
+.idoll-icon-left-circle-o:before {
   content: "\e92e";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-left-circle:before {
+.idoll-icon-left-circle:before {
   content: "\e92f";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-menu-fold:before {
+.idoll-icon-menu-fold:before {
   content: "\e930";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-menu-unfold:before {
+.idoll-icon-menu-unfold:before {
   content: "\e931";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-right-circle-o:before {
+.idoll-icon-right-circle-o:before {
   content: "\e932";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-right-circle:before {
+.idoll-icon-right-circle:before {
   content: "\e933";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-shrink:before {
+.idoll-icon-shrink:before {
   content: "\e934";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-swap:before {
+.idoll-icon-swap:before {
   content: "\e935";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-up-circle-o:before {
+.idoll-icon-up-circle-o:before {
   content: "\e936";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-up-circle:before {
+.idoll-icon-up-circle:before {
   content: "\e937";
   font-family: 'idollicon' !important;
 }
-.@{iconfont-css-prefix}-up:before {
+.idoll-icon-up:before {
   content: "\e938";
   font-family: 'idollicon' !important;
 }
-
-// 5月7日pro新增
-[class^="idoll-icon-pro-"], [class*=" idoll-icon-pro-"] {
+[class^="idoll-icon-pro-"],
+[class*=" idoll-icon-pro-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'idoll-icon-pro' !important;
   speak: none;
@@ -266,7 +267,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -323,28 +323,17 @@
   content: "\e91a";
   font-family: 'idoll-icon-pro' !important;
 }
-
-.idoll-icon-pro-loading:before {
-  content: "\e91a";
-  font-family: 'idoll-icon-pro' !important;
-}
 .idoll-icon-pro-table:before {
   content: "\e91b";
   font-family: 'idoll-icon-pro' !important;
 }
-
-// 5月14号新增图标
 @font-face {
   font-family: 'idoll-icon-online';
-  src:  url('@{icon-url}/idoll-icon-online.eot?67rfls');
-  src:  url('@{icon-url}/idoll-icon-online.eot?67rfls#iefix') format('embedded-opentype'),
-    url('@{icon-url}/idoll-icon-online.ttf?67rfls') format('truetype'),
-    url('@{icon-url}/idoll-icon-online.woff?67rfls') format('woff'),
-    url('@{icon-url}/idoll-icon-online.svg?67rfls#idoll-icon-online') format('svg');
+  src: url('/assets/fonts/idoll-icon-online.eot?67rfls');
+  src: url('/assets/fonts/idoll-icon-online.eot?67rfls#iefix') format('embedded-opentype'), url('/assets/fonts/idoll-icon-online.ttf?67rfls') format('truetype'), url('/assets/fonts/idoll-icon-online.woff?67rfls') format('woff'), url('/assets/fonts/idoll-icon-online.svg?67rfls#idoll-icon-online') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
 .idoll-icon-arrowdown:before {
   content: "\e939";
   font-family: 'idoll-icon-online' !important;

@@ -1,10 +1,10 @@
-import React, { Component, Children, cloneElement } from 'react'
-import { PropTypes } from 'prop-types'
+import React, { Children, cloneElement } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import './style'
 
-class Row extends Component {
+class Row extends React.Component {
   static defulatProps = {
     gutter: 0
   };
@@ -28,7 +28,7 @@ class Row extends Component {
       [`idoll-row-${type}-${align}`]: align,
       [className]: !!className
     });
-
+    // 如果有gutter这个参数
     const rowStyle = gutter > 0 ? {
       marginLeft: gutter / -2,
       marginRight: gutter / -2,

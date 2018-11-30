@@ -1,6 +1,6 @@
 import React from 'react';
 import RcTree, { TreeNode } from 'rc-tree';
-import animation from '../_util/openAnimation';
+// import animation from '../_util/openAnimation';
 import './style';
 
 export default class Tree extends React.Component {
@@ -10,7 +10,7 @@ export default class Tree extends React.Component {
     prefixCls: 'idoll-tree',
     checkable: false,
     showIcon: false,
-    openAnimation: animation,
+    // openAnimation: animation,
   };
 	render() {
 		const { prefixCls, className, children } = this.props;
