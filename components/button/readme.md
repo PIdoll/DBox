@@ -61,7 +61,12 @@
 
 <Button icon='delete' shape='square' size='small' />
 <Button icon='delete' shape='square' />
-<Button icon='delete' shape='square' size='large' />
+<Button icon='delete' shape='square' size='large'/>
+<br /><br />
+
+<Button size='small' loading shape='circle'/>
+<Button loading shape='circle'/>
+<Button size='large' loading shape='circle'/>
 ```
 
 #### **幽灵按钮**

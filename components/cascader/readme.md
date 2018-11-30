@@ -50,7 +50,7 @@ function onChange(value) {
   console.log(value);
 }
 
-<Cascader options={basicDatas} onChange={onChange} placeholder='请选择' />
+<Cascader options={basicDatas} onChange={onChange} />
 ```
 
 
@@ -96,7 +96,7 @@ function onChange(value) {
   console.log(value);
 }
 
- <Cascader defaultValue={['浙江', '杭州', '西湖']} options={basicDatas} onChange={onChange} placeholder='请选择' />
+ <Cascader defaultValue={['浙江', '杭州', '西湖']} options={basicDatas} onChange={onChange} />
 ```
 
 #### **移入展开**
@@ -239,11 +239,11 @@ class CascaderExample extends React.Component {
         setTimeout(() => {
             targetOption.loading = false;
             targetOption.children = [{
-              label: `${targetOption.label} 选项 1`,
-              value: '选项1',
+              label: `${targetOption.label} 城市`,
+              value: '城市',
             }, {
-              label: `${targetOption.label} 选项 2`,
-              value: '选项2',
+              label: `${targetOption.label} 地名`,
+              value: '地名',
             }];
             this.setState({
               options: [...this.state.loadDataOptions],
@@ -306,7 +306,6 @@ function filter(inputValue, path) {
 <Cascader
     options={searchData}
     onChange={onChange}
-    placeholder='请选择'
     showSearch={{ filter }}
 />
 ```

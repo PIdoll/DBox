@@ -53,14 +53,22 @@ function callback(key) {
 }
 <Collapse defaultActiveKey={['3']} onChange={callback}>
   <Panel header='标题一' key='1' >
-    <p>{text5}</p>
+    <Collapse accordion>
+      <Panel header='标题一' key='2' >
+        <p>{text5}</p>
+      </Panel>
+    </Collapse>
   </Panel>
-  <Panel header='标题二' key='2'>
-    <p>{text5}</p>
+  <Panel header='标题二' key='3'>
+    <Collapse accordion defaultActiveKey={['4']}>
+      <Panel header='标题一' key='4' >
+        <p>{text5}</p>
+      </Panel>
+    </Collapse>
   </Panel>
-  <Panel header='标题三' key='3'>
-    <Collapse accordion defaultActiveKey={['3']}>
-      <Panel header='标题一' key='3' >
+  <Panel header='标题三' key='5'>
+    <Collapse accordion>
+      <Panel header='标题一' key='6' >
         <p>{text5}</p>
       </Panel>
     </Collapse>
@@ -88,28 +96,21 @@ function callback(key) {
 </Collapse>
 ```
 
-##### **自定义**
+##### **底纹样式**
 ```jsx
 const Panel = Collapse.Panel;
-const text4 = `一套没有边框的简洁样式。`
-const customPanelStyle = {
-  background: '#f7f7f7',
-  borderRadius: 4,
-  marginBottom: 24,
-  border: 0,
-  overflow: 'hidden'
-};
+const text4 = `一套拥有底纹的折叠样式。`
 function callback(key) {
   console.log(key);
 }
-<Collapse bordered={false}>
-  <Panel header='标题一' key='1' style={customPanelStyle}>
+<Collapse bgColor>
+  <Panel header='标题一' key='1'>
     <p>{text4}</p>
   </Panel>
-  <Panel header='标题二' key='2' style={customPanelStyle}>
+  <Panel header='标题二' key='2'>
     <p>{text4}</p>
   </Panel>
-  <Panel header='标题三' key='3' style={customPanelStyle}>
+  <Panel header='标题三' key='3'>
     <p>{text4}</p>
   </Panel>
 </Collapse>
@@ -122,6 +123,8 @@ function callback(key) {
 | --- | --- | --- | --- |
 | activeKey | 当前激活tab面板的key | string/[]/string |默认无，accordion模式下默认第一个元素 |
 | accordion | 切换手风琴模式 | bool | false |
+| bgColor | 切换底纹样式 | bool | false |
+| bordered | 切换无边框样式 | bool | true |
 | defaultActiveKey | 初始化选中面板的key | string | 无 |
 | onChange | 切换面板的回调 | Function | 无 |
 

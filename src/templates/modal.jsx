@@ -80,7 +80,7 @@ export default class ModalView extends React.Component {
   info = () => {
     Modal.info({
       title: '这是一条通知信息',
-      content: '一些附加信息......',
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>,
       onOk: function() {},
     });
   }
@@ -88,14 +88,14 @@ export default class ModalView extends React.Component {
   success = () => {
     Modal.success({
       title: '这是一条通知信息',
-      content: '一些附加信息......'
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>
     });
   }
 
   error = () => {
     Modal.error({
       title: '这是一条通知信息',
-      content: '一些附加信息......'
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>
     });
   }
 
