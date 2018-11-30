@@ -7,7 +7,59 @@ subtitle: 树形控件
 
 ## 何时使用
 
-文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用`树控件`可以完整展现其中的层级关系，并具有展开收起选择等交互功能。
+```
+
+##### **新增删除节点树1x**
+
+```jsx
+const treeData = [{
+  title: '0-0',
+  key: '0-0',
+  children: [{
+    title: '0-0-0',
+    key: '0-0-0',
+    children: [
+      { title: '0-0-0-0', key: '0-0-0-0' },
+      { title: '0-0-0-1', key: '0-0-0-1' },
+      { title: '0-0-0-2', key: '0-0-0-2' },
+    ],
+  }, {
+    title: '0-0-1',
+    key: '0-0-1',
+    children: [
+      { title: '0-0-1-0', key: '0-0-1-0' },
+      { title: '0-0-1-1', key: '0-0-1-1' },
+      { title: '0-0-1-2', key: '0-0-1-2' },
+    ],
+  }, {
+    title: '0-0-2',
+    key: '0-0-2',
+  }],
+	}, {
+	  title: '0-1',
+	  key: '0-1',
+	  children: [
+	    { title: '0-1-0-0', key: '0-1-0-0' },
+	    { title: '0-1-0-1', key: '0-1-0-1' },
+	    { title: '0-1-0-2', key: '0-1-0-2' },
+	  ],
+	}, {
+	  title: '0-2',
+	  key: '0-2',
+	}];
+const TreeNode = Tree.TreeNode;
+onSelect = (selectedKeys, info) => {
+	console.log('selected', selectedKeys, info);
+}
+
+<Tree
+  data={treeData}
+  defaultExpandedKeys={['0-0-0-0-0', '0-0-1']}
+  onSelect={this.onSelect}
+        >
+  
+</Tree>
+```
 
 ## API
 
