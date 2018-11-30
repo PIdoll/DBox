@@ -95,6 +95,7 @@ export default class Modal extends React.Component {
       <Button
         key='confirm'
         type='primary'
+        className={this.state.confirmLoading ? 'loading' : ''}
         loading={this.state.confirmLoading}
         onClick={this.handleOk}
       >
