@@ -2,7 +2,7 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
-@keyframes dboxSwitchSmallLoadingCircle {
+@keyframes loadingCircle {
   0% {
     transform-origin: 50% 50%;
     transform: rotate(0deg) scale(0.66667);
