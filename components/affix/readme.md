@@ -1,26 +1,45 @@
-# Affix
 
----
-category: Components
-subtitle: 固钉
-type: Navigation
-title: Affix
----
-
-将页面元素钉在可视范围。
-
-## 何时使用
+####  **何时使用**
 
 当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。
-
 页面可视范围过小时，慎用此功能以免遮挡页面内容。
 
-
+#### **基本使用**
 ```jsx
-
+class AffixView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      top: 10,
+      bottom:10
+    }
+    this.handleOffset = this.handleOffset.bind(this);
+  }
+  handleOffset() {
+    this.setState({
+      top: this.state.top + 10
+    })
+  }
+  render() {
+    return (
+      <div>
+        <Affix offsetTop={this.state.top}>
+          <Button  onClick={this.handleOffset}>距离顶部10px触发</Button>
+        </Affix>
+      </div>
+    )
+  }
+}
+<AffixView />
+```
+#### **固定到底部**
+```jsx
+<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+  <Button >距离底部0px触发</Button>
+</Affix>
 ```
 
-## API
+#### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -31,8 +50,4 @@ title: Affix
 
 **注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
 
-```jsx
-<Affix style={{ position: 'absolute', top: y, left: x }}>
-  ...
-</Affix>
-```
+

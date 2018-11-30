@@ -181,11 +181,11 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-         //   path.resolve(__dirname, './components/affix/affix.jsx'),
+            path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
-        //    path.resolve(__dirname, './components/breadcrumb/breadcrumb.jsx'),
-          path.resolve(__dirname, './components/steps/steps.jsx'),
+            path.resolve(__dirname, './components/breadcrumb/index.jsx'),
+            path.resolve(__dirname, './components/steps/steps.jsx'),
         //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
         //    path.resolve(__dirname, './components/anchor/index.jsx'),
            path.resolve(__dirname, './components/menu/index.jsx'),
@@ -195,20 +195,20 @@ module.exports = {
           name: 'Data Entry',
           components: () => ([
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
-        //    path.resolve(__dirname, './components/cascader/cascader.jsx'),
+           path.resolve(__dirname, './components/cascader/index.jsx'),
            path.resolve(__dirname, './components/input/index.jsx'),
-        //    path.resolve(__dirname, './components/input-number/inputNumber.jsx'),
+           path.resolve(__dirname, './components/input-number/index.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
         //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
-        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+           path.resolve(__dirname, './components/time-picker/index.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+           path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
          //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
-        //    path.resolve(__dirname, './components/slider/slider.jsx'),
+            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
         //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
@@ -220,7 +220,7 @@ module.exports = {
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
          //   path.resolve(__dirname, './components/card/card.jsx'),
-         //   path.resolve(__dirname, './components/collapse/index.jsx'),
+            path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
          path.resolve(__dirname, './components/tooltip/index.jsx'),
@@ -241,7 +241,14 @@ module.exports = {
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
         //  path.resolve(__dirname, './components/progress/progress.jsx'),
          path.resolve(__dirname, './components/popconfirm/index.jsx'),
-          path.resolve(__dirname, './components/spin/spin.jsx'),
+          path.resolve(__dirname, './components/spin/index.jsx'),
+          ])
+        },
+        {
+          name: 'Other',
+          components: () => ([
+          path.resolve(__dirname, './components/back-top/index.jsx'),
+          path.resolve(__dirname, './components/anchor/index.jsx'),
           ])
         },
       ]
@@ -265,9 +272,14 @@ module.exports = {
       ]
     },
     resolve: {
+      // 自动补全的拓展名
+      extensions: ['.js', '.jsx', '.json', '.less'],
+      // 路径别名
       alias: {
-        'react-styleguidist': path.join(__dirname, '../../')
+        'assets': path.resolve(__dirname, 'assets'),
+        'templates': path.resolve(__dirname, 'src/templates'),
+        'components': path.resolve(__dirname, 'components')
       }
-    }
+    },
   }
 }

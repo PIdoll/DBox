@@ -31,7 +31,6 @@ class TabsView extends React.Component {
 ```
 #### **有图标的标签**
 ```jsx
-const Icon = require('../icon/index.jsx').default;
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -233,7 +232,7 @@ class TabsView extends React.Component {
         element.style.width = '100%';
         element.style.padding = '20px 20px';
         element.style.backgroundColor = '#fff';
-      } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
+      } else if (window.scrollY < currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';
         element.style.padding = '0';
         element.style.left = '0';

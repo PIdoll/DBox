@@ -271,6 +271,12 @@ function Home() {
           <div className='info'>Input-Number</div>
         </NavLink>
       </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/back-top'>
+          <div className='name'>返回顶部</div>
+          <div className='info'>Back-Top</div>
+        </NavLink>
+      </div>
     </div>
   );
 }

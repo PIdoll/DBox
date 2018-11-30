@@ -73,7 +73,7 @@ export default class TabsView extends React.Component {
         element.style.width = '100%';
         element.style.padding = '0 170px 144px 64px';
         element.style.backgroundColor = '#fff';
-      } else if (window.scrollY <= currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
+      } else if (window.scrollY < currentHeight || window.scrollY > currentHeight + element.offsetHeight) {
         element.style.position = 'relative';
         element.style.padding = '0';
       }
