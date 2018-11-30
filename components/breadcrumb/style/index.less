@@ -9,20 +9,14 @@
 
   .@{iconfont-css-prefix} {
     font-size: @font-size-base;
+    line-height: 17px;
   }
 
   a {
     color: @text-color-secondary;
     transition: color .3s;
-    &:hover{
+    &:hover {
       color: @primary-color;
-    }
-    > .idoll-icon {
-      height: 18px;
-      line-height: 16px;
-      &:hover {
-        color: @primary-color
-      }
     }
   }
 
@@ -42,7 +36,7 @@
   &-link {
     > .@{iconfont-css-prefix} + span {
       margin-left: 4px;
-      margin-bottom: 2px;
     }
   }
+
 }
