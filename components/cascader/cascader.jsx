@@ -314,6 +314,12 @@ export default class Cascader extends React.Component {
       <Icon type='pro-right' />
     );
 
+    const loadingIcon = (
+      <span className={`${prefixCls}-menu-item-loading-icon`}>
+        <Icon type='pro-loading' />
+      </span>
+    );
+
     const input = children || (
       <span
         style={style}
@@ -352,6 +358,7 @@ export default class Cascader extends React.Component {
         onChange={this.handleChange}
         dropdownMenuColumnStyle={dropdownMenuColumnStyle}
         expandIcon={expandIcon}
+        loadingIcon={loadingIcon}
       >
         {input}
       </RcCascader>

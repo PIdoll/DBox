@@ -238,6 +238,12 @@
       right: @control-padding-horizontal;
     }
 
+    &-loading-icon {
+      .idoll-icon:before {
+        animation: loadingCircle 1s infinite linear;
+      }
+    }
+
     & &-keyword {
       color: @highlight-color;
     }
