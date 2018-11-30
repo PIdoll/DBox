@@ -20,6 +20,13 @@
   font-weight: normal;
   line-height: 1.5;
 }
+.idoll-dropdown .idoll-icon,
+.idoll-dropdown .idoll-icon:hover,
+.idoll-dropdown .idoll-icon:focus,
+.idoll-dropdown .idoll-icon:active {
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+}
 .idoll-dropdown-normal {
   margin-right: 50px;
   text-decoration: none;
@@ -272,13 +279,6 @@
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item-selected > a {
   background: #13B886;
   color: #fff;
-}
-.idoll-icon,
-.idoll-icon:hover,
-.idoll-icon:focus,
-.idoll-icon:active {
-  color: rgba(0, 0, 0, 0.45);
-  text-decoration: none;
 }
 h1.h1 {
   margin-top: 95px;
