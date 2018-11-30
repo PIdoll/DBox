@@ -46,15 +46,12 @@ export default class Modal extends React.Component {
 
   handleCancel = (e) => {
     this.props.onCancel(e);
-    this.setState({
-      confirmLoading: !this.state.confirmLoading
-    })
   }
 
   handleOk = () => {
     this.props.onOk();
     this.setState({
-      confirmLoading: !this.state.confirmLoading
+      confirmLoading: true
     })
   }
 
@@ -78,7 +75,7 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    let { okText, cancelText, footer, visible } = this.props;
+    let { okText, confirmLoading, cancelText, footer, visible } = this.props;
 
     if (this.context.idollLocale && this.context.idollLocale.Modal) {
       okText = okText || this.context.idollLocale.Modal.okText;
@@ -96,8 +93,8 @@ export default class Modal extends React.Component {
       <Button
         key='confirm'
         type='primary'
-        className={this.state.confirmLoading ? 'loading' : ''}
-        loading={this.state.confirmLoading}
+        className={confirmLoading ? 'loading' : ''}
+        loading={confirmLoading}
         onClick={this.handleOk}
       >
         {okText || '确定'}
@@ -107,7 +104,6 @@ export default class Modal extends React.Component {
       <Dialog
         onClose={this.handleCancel}
         footer={footer || defaultFooter}
-        // footer={null}
         {...this.props}
         visible={visible}
         mousePosition={mousePosition}
