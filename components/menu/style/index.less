@@ -21,11 +21,16 @@
   ol {
     list-style: none;
     margin: 0;
-    padding: 0;
   }
 
   &-hidden {
     display: none;
+  }
+
+  &-item {
+    span {
+      vertical-align: middle;
+    }
   }
 
   &-item-group-title {
@@ -39,6 +44,8 @@
   &-submenu,
   &-submenu-inline {
     transition: border-color .3s @ease-in-out, background .3s @ease-in-out;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   &-item:active,
@@ -122,8 +129,11 @@
 
   &-horizontal > &-item:hover,
   &-horizontal > &-item-active,
-  &-horizontal > &-submenu &-submenu-title:hover {
+  &-horizontal > &-submenu &-submenu-title[aria-expanded='true']:hover {
     background-color: transparent;
+    i {
+      color: #fff;
+    }
   }
 
   &-item-selected {
@@ -335,9 +345,17 @@
     }
     li.@{menu-prefix-cls}-submenu-horizontal:hover {
       color: @text-color-secondary-dark !important;
+      i {
+        color: @text-color-secondary-dark;
+      }
     }
     li.@{menu-prefix-cls}-item-disabled {
       color:@text-color-disable-dark !important;
+      div {
+        i {
+          color:@text-color-disable-dark !important;
+        }
+      }
     }
   }
 
@@ -366,8 +384,8 @@
       font-size: @font-size-base;
       line-height: @menu-item-height;
       height: @menu-item-height;
-      margin-top: 8px;
-      margin-bottom: 8px;
+      margin-top: 4px;
+      margin-bottom: 4px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -378,7 +396,7 @@
     }
 
     .@{menu-prefix-cls}-item:not(:last-child) {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     > .@{menu-prefix-cls}-item,
@@ -677,7 +695,7 @@
         }
         >.@{menu-prefix-cls}-item {
           padding-left: 40px !important;
-          margin: 0;
+          margin: 4px 0;
         }
       }
     }
