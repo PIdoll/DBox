@@ -499,11 +499,10 @@
 
       &-item {
         height: @select-height-base;
-        // line-height: @font-size-base;
-        line-height: 1.5;
+        line-height:  @select-height-base;
         position: relative;
         display: block;
-        padding: @select-option-padding-horizontal @select-option-padding-vertical - 8px;
+        padding: 0px @select-option-padding-vertical - 8px;
         font-weight: normal;
         color: #666;
         white-space: nowrap;
@@ -609,7 +608,7 @@
   .@{select-prefix-cls}-dropdown-menu-item {
     font-size: @font-size-sm;
     height: @select-height-sm ;
-    padding: 1px 7px;
+    padding: 0px 7px;
     line-height:  @select-height-sm ;
   }
 }
