@@ -27,10 +27,10 @@ class BreadcrumbView extends React.Component {
   render() {
     return (
       <Breadcrumb>
-        <Breadcrumb.Item href='javascript:void(0);'>
+        <Breadcrumb.Item href='#'>
           <Icon type='home' />
         </Breadcrumb.Item>
-        <Breadcrumb.Item href='javascript:void(0);'>
+        <Breadcrumb.Item href='#'>
           <Icon type='user' />
           <span>点击</span>
         </Breadcrumb.Item>
