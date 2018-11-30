@@ -48,6 +48,35 @@
     }
   }
 
+  // 书签类型
+  &-bookmark {
+    width: 40px;
+    padding: 16px 12px;
+    color: rgba(0,0,0,0.45);
+    font-size:16px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;  
+    background-color: #fff;
+    margin-bottom: 2px;
+    border-radius:3px 0px 0px 3px;
+
+    &-active {
+      background-color: @primary-color;
+    }
+  }
+
+  // 书签类型
+  &-bookmark-title {
+    color: @text-color;
+
+    &-active {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
   &-ink {
     position: absolute;
     height: 100%;
