@@ -224,6 +224,8 @@ export default class Anchor extends React.Component {
       visible: activeLink
     });
     const wrapperClass = classNames(className, `${prefixCls}-wrapper`);
+    // 书签类型锚点时去掉白色背景
+    const bookmarkWrapperClassName = (`${prefixCls}-bookmark-wrapper`);
     const anchorClass = classNames(prefixCls, {
       'fixed': !affix && !showInkInFixed,
     })
@@ -236,7 +238,7 @@ export default class Anchor extends React.Component {
       ...style,
     };
     const anchorContent = (
-      <div className={wrapperClass} style={wrapperStyle}>
+      <div className={type !== 'bookmark' ? wrapperClass : bookmarkWrapperClassName} style={wrapperStyle}>
         <div className={anchorClass}>
           {
           type !== 'bookmark' ? <div className={type === 'vertical' || !type || type === 'bookmark' ? `${prefixCls}-ink` : inlineAnchorClass}><span className={type === 'vertical' || !type ? inkClass : inlineAnimatingClass} ref={this.saveInkNode} /></div> : null
