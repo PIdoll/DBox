@@ -389,7 +389,7 @@ const evenColor = {
 }
  const alignDemo = {
   height: '80px',
-  backgroundColor: '#dedede'
+  backgroundColor: '#f6f6f6'
 }
 class GridView extends React.Component {
   render() {
