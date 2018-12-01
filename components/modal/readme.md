@@ -91,7 +91,7 @@ class ModalView extends React.Component {
   return (
     <div>
       <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
-      <Modal title='我是标题' visible={this.state.asyncvisible}
+      <Modal confirmLoading={this.state.confirmLoading} title='我是标题' visible={this.state.asyncvisible}
         onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
         <p>{this.state.ModalText}</p>
       </Modal>
