@@ -1,6 +1,7 @@
 import React from 'react'
 import CreateReactClass from 'create-react-class';
 import Table from 'components/table';
+import Button from '../../components/button/index';
 import Divider from '../../components/divider/index';
 // import Button from '../../components/button/index'
 import reqwest from 'reqwest'
@@ -31,9 +32,9 @@ const columns = [{
   key: 'action',
   render: (text, record) => (
     <span>
-      <a href='javascript:;'>Action</a>
+      <a href='javascript:;'>编辑</a>
       <Divider type='vertical' />
-      <a href='javascript:;'>Delete</a>
+      <a href='javascript:;'>删除</a>
     </span>
   ),
 }];
@@ -84,7 +85,7 @@ const data = [{
   Tel: '13262836283',
   state: '审核通过',
   action: ''
-}]
+}];
 
 // columns for Test
 const columnsTest = [{
@@ -132,7 +133,7 @@ const Test = CreateReactClass({
     console.log('请求参数：', params);
     this.setState({ loading: true });
     reqwest({
-      url: 'http://api.randomuser.me',
+      url: 'http://randomuser.me/api',
       method: 'get',
       data: {
         results: 10,
@@ -280,9 +281,9 @@ const columnsExpend = [
     key: 'x',
     render: (text, record) => (
       <span>
-        <a href='javascript:;'>Act</a>
+        <a href='javascript:;'>编辑</a>
         <Divider type='vertical' />
-        <a href='javascript:;'>Del</a>
+        <a href='javascript:;'>删除</a>
       </span>
     ),
   },
@@ -295,82 +296,117 @@ const dataExpend = [
 ];
 
 // 固定列
-const columnsFixRow = [
-  { title: '姓名', width: 100, dataIndex: 'name', key: 'name', fixed: 'left' },
-  { title: '年龄', width: 100, dataIndex: 'age', key: 'age' },
-  { title: '列1', dataIndex: 'address', key: '1' },
-  { title: '列2', dataIndex: 'address', key: '2' },
-  { title: '列3', dataIndex: 'address', key: '3' },
-  { title: '列4', dataIndex: 'address', key: '4' },
-  { title: '列5', dataIndex: 'address', key: '5' },
-  { title: '列6', dataIndex: 'address', key: '6' },
-  { title: '列7', dataIndex: 'address', key: '7' },
-  { title: '列8', dataIndex: 'address', key: '8' },
-  {
-    title: '操作',
-    key: 'operation',
-    fixed: 'right',
-    width: 100,
-    render: (text, record) => (
-      <span>
-        <a href='javascript:;'>Act</a>
-        <Divider type='vertical' />
-        <a href='javascript:;'>Del</a>
-      </span>
-    ),
-  },
-];
-
-const dataFixdRow = [{
-  key: '1',
-  name: '张大',
-  age: 32,
-  address: '浦东唐镇0号',
-}, {
-  key: '2',
-  name: '胡彦祖',
-  age: 40,
-  address: '浦东新区唐镇',
-}];
-
-// 带选择框
-const columnsCheckbox = [{
+const columnsFixRow = [{
   title: '姓名',
+  width: 70,
+  fixed: 'left',
   dataIndex: 'name',
-  render: text => <a href='#'>{text}</a>,
+  key: 'name'
 }, {
   title: '年龄',
+  width: 100,
   dataIndex: 'age',
+  key: 'age'
 }, {
-  title: '住址',
+  title: '所在城市',
+  width: 100,
   dataIndex: 'address',
-}];
-const dataCheckbox = [{
-  key: '1',
-  name: '张大',
-  age: 32,
-  address: '浦东新区唐镇',
+  key: 'address'
 }, {
-  key: '2',
-  name: '胡彦祖',
-  age: 42,
-  address: '浦东新区唐镇',
+  title: '手机号',
+  width: 150,
+  dataIndex: 'Tel',
+  key: 'Tel'
 }, {
-  key: '3',
-  name: '张大',
-  age: 32,
-  address: '浦东新区唐镇',
+  title: '审核状态',
+  width: 150,
+  dataIndex: 'state',
+  key: 'state'
+}, {
+  title: '操作',
+  width: 100,
+  dataIndex: 'action',
+  fixed: 'right',
+  key: 'action',
+  render: (text, record) => (
+    <span>
+      <a href='javascript:;'>编辑</a>
+      <Divider type='vertical' />
+      <a href='javascript:;'>删除</a>
+    </span>
+  ),
 }];
 
-// 通过 rowSelection 对象表明需要行选择
-const rowSelection = {
-  getCheckboxProps: record => ({
-    disabled: record.name === '胡彦祖', // 配置无法勾选的列
-  }),
-};
+const dataFixdRow = [{
+  key: '11',
+  name: '劉岳然',
+  age: 26,
+  address: '北京',
+  Tel: '13943250086',
+  state: '审核未通过',
+}, {
+  key: '12',
+  name: '天津',
+  age: 24,
+  address: '南京',
+  Tel: '13262717838',
+  state: '审核通过',
+}, {
+  key: '13',
+  name: '彭柔群',
+  age: 22,
+  address: '上海',
+  Tel: '13950035537',
+  state: '审核未通过',
+}, {
+  key: '14',
+  name: '顏仁豪',
+  age: 28,
+  address: '合肥',
+  Tel: '13947766628',
+  state: '审核通过',
+}, {
+  key: '15',
+  name: '王郁弘',
+  age: 32,
+  address: '郑州',
+  Tel: '13964507501',
+  state: '审核未通过',
+}, {
+  key: '16',
+  name: '陳柏萱',
+  age: 27,
+  address: '沈阳',
+  Tel: '13262836283',
+  state: '审核通过',
+}];
 
 class table extends React.Component {
+  state = {
+    selectedRowKeys: [], // Check here to configure the default column
+    loading: false,
+  };
+  start = () => {
+    this.setState({ loading: true });
+    // ajax request after empty completing
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
+  }
+  onSelectChange = (selectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  }
   render () {
+    const { loading, selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
+    const hasSelected = selectedRowKeys.length > 0;
     return (
       <div id='main-container'>
         <h1 className='h1'>中号表格（紧凑型）</h1>
@@ -378,20 +414,36 @@ class table extends React.Component {
         <br />
         <h1 className='h1'>小号表格</h1>
         <Table columns={columns} dataSource={data} size='small' />
+        <h1>带选择框</h1>
+        <div style={{ marginBottom: 16 }}>
+          <Button
+            type='primary'
+            onClick={this.start}
+            disabled={!hasSelected}
+            loading={loading}
+          >
+            选择
+          </Button>
+          <span style={{ marginLeft: 8 }}>
+            {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
+          </span>
+        </div>
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         <h1 className='h1'>Ajax</h1>
         <Test />
         <h1 className='h1'>行/列合并</h1>
         <Table columns={columnsCol} dataSource={dataCol} />
+        <h1 className='h1'>带边框表格</h1>
+        <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
+        <br />
         <h1 className='h1'>可展开</h1>
         <Table columns={columnsExpend}
           expandedRowRender={record => <p>{record.description}</p>}
           dataSource={dataExpend}
           className='table'
         />
-        <h1>固定列</h1>
-        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1300, y: 300 }} />
-        <h1>带选择框</h1>
-        <Table rowSelection={rowSelection} columns={columnsCheckbox} dataSource={dataCheckbox} />
+        <h1>固定行/列</h1>
+        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1300, y: 200 }} />
       </div>
     )
   }
