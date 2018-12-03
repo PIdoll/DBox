@@ -66,10 +66,17 @@ export default class AnchorLink extends React.Component {
     const titleClassName = classNames(
       `${prefixCls}-link-title`,
       { [`${prefixCls}-link-title-active`]: active, }
-    )
+    );
+    // 书签类型样式
+    const bookmarkAnchorClassName = classNames(`${prefixCls}-bookmark`, {
+      [`${prefixCls}-bookmark-active`]: active
+    });
+    const bookmarkTitleClassName = classNames(`${prefixCls}-bookmark-title`, {
+      [`${prefixCls}-bookmark-title-active`]: active
+    })
     return (
-      <div className={type === 'vertical' || !type ? wrapperClassName : inlineClassName}>
-        <a className={titleClassName} href={href} title={typeof title === 'string' ? title : ''} onClick={this.handleClick}>{title}</a>
+      <div className={type === 'vertical' || !type ? wrapperClassName : type === 'bookmark' ? bookmarkAnchorClassName : inlineClassName}>
+        <a className={type !== 'bookmark' ? titleClassName : bookmarkTitleClassName} href={href} title={typeof title === 'string' ? title : ''} onClick={this.handleClick}>{title}</a>
         {children}
       </div>
     )

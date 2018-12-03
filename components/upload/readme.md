@@ -6,7 +6,6 @@ category: Components
 chinese: 上传
 type: Form Controls
 english: Upload
-
 ---
 
 文件选择上传和拖拽上传控件。
