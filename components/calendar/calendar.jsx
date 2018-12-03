@@ -6,7 +6,9 @@ import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import { PREFIX_CLS } from './Constants';
 import Header from './Header';
 import interopDefault from '../_util/interopDefault';
-import zhCN from './locale/zh_CN';
+import zhCN from './locale/zh_CN.jsx';
+
+import './style/index'
 
 function noop() { return null; }
 
@@ -25,7 +27,8 @@ export default class Calendar extends React.Component {
     mode: 'month',
     onSelect: noop,
     onPanelChange: noop,
-    onChange: noop
+    onChange: noop,
+    mold: ''
   }
 
   static propTypes = {
@@ -44,6 +47,7 @@ export default class Calendar extends React.Component {
     onChange: PropTypes.func,
     disabledDate: PropTypes.func,
     value: PropTypes.object,
+    mold: PropTypes.string,
   }
 
   constructor(props) {
@@ -165,7 +169,7 @@ export default class Calendar extends React.Component {
       moment(value).locale(localeCode);
     }
 
-    const { prefixCls, style, className, fullscreen, dateFullCellRender, monthFullCellRender } = props;
+    const { prefixCls, style, className, fullscreen, dateFullCellRender, monthFullCellRender, mold } = props;
     const type = (mode === 'type') ? 'month' : 'date';
 
     let cls = className || '';
@@ -188,6 +192,7 @@ export default class Calendar extends React.Component {
           fullscreen={fullscreen}
           type={type}
           value={value}
+          mold={mold}
           locale={locale.lang}
           prefixCls={prefixCls}
           onTypeChange={this.onHeaderTypeChange}
@@ -198,7 +203,7 @@ export default class Calendar extends React.Component {
           disabledDate={disabledDate}
           Select={noop}
           locale={locale.lang}
-          type={value}
+          type={type}
           prefixCls={prefixCls}
           showHeader={false}
           value={value}
@@ -216,7 +221,7 @@ export default class Calendar extends React.Component {
     };
     result.lang = {
       ...result.lang,
-      ...result(this.props.locale || {}).lang,
+      ...(this.props.locale || {}).lang,
     };
     return result;
   }
