@@ -204,7 +204,7 @@ const headDemo = {
 }
 const alignDemo = {
       height: '80px',
-      backgroundColor: '#dedede'
+      backgroundColor: '#f3f3f3'
     }
 class GridView extends React.Component {
   render() {
@@ -313,7 +313,7 @@ const headDemo = {
 }
 const alignDemo = {
       height: '80px',
-      backgroundColor: '#dedede'
+      backgroundColor: '#f3f3f3'
     }
 class GridView extends React.Component {
   render() {
@@ -389,7 +389,7 @@ const evenColor = {
 }
  const alignDemo = {
   height: '80px',
-  backgroundColor: '#f6f6f6'
+  backgroundColor: '#f3f3f3'
 }
 class GridView extends React.Component {
   render() {
@@ -435,7 +435,7 @@ const evenColor = {
 }
 const alignDemo = {
   height: '80px',
-  backgroundColor: '#dedede'
+  backgroundColor: '#f3f3f3'
 }
 class GridView extends React.Component {
   render() {
