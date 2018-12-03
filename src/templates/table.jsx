@@ -1,33 +1,88 @@
 import React from 'react'
 import CreateReactClass from 'create-react-class';
-import Table from 'components/table'
+import Table from 'components/table';
+import Divider from '../../components/divider/index'
 import reqwest from 'reqwest'
 
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
+  key: 'name'
 }, {
   title: '年龄',
   dataIndex: 'age',
+  key: 'age'
 }, {
-  title: '住址',
+  title: '所在城市',
   dataIndex: 'address',
+  key: 'address'
+}, {
+  title: '手机号',
+  dataIndex: 'Tel',
+  key: 'Tel'
+}, {
+  title: '审核状态',
+  dataIndex: 'state',
+  key: 'state'
+}, {
+  title: '操作',
+  dataIndex: 'action',
+  key: 'action',
+  render: (text, record) => (
+    <span>
+      <a href='javascript:;'>Action</a>
+      <Divider type='vertical' />
+      <a href='javascript:;'>Delete</a>
+    </span>
+  ),
 }];
 const data = [{
   key: '1',
-  name: '李大大',
-  age: 32,
-  address: '浦东新区唐镇',
+  name: '劉岳然',
+  age: 26,
+  address: '北京',
+  Tel: '13943250086',
+  state: '审核未通过',
 }, {
   key: '2',
-  name: '李大大',
-  age: 42,
-  address: '浦东新区唐镇',
+  name: '天津',
+  age: 24,
+  address: '南京',
+  Tel: '13262717838',
+  state: '审核通过',
+  action: ''
 }, {
   key: '3',
-  name: '李大大',
+  name: '彭柔群',
+  age: 22,
+  address: '上海',
+  Tel: '13950035537',
+  state: '审核未通过',
+  action: ''
+}, {
+  key: '4',
+  name: '顏仁豪',
+  age: 28,
+  address: '合肥',
+  Tel: '13947766628',
+  state: '审核通过',
+  action: ''
+}, {
+  key: '5',
+  name: '王郁弘',
   age: 32,
-  address: '浦东新区唐镇',
+  address: '郑州',
+  Tel: '13964507501',
+  state: '审核未通过',
+  action: ''
+}, {
+  key: '6',
+  name: '陳柏萱',
+  age: 27,
+  address: '沈阳',
+  Tel: '13262836283',
+  state: '审核通过',
+  action: ''
 }]
 
 // columns for Test
@@ -231,7 +286,7 @@ const dataExpend = [
 // 固定列
 const columnsFixRow = [
   { title: '姓名', width: 100, dataIndex: 'name', key: 'name', fixed: 'left' },
-  { title: '年龄', width: 100, dataIndex: 'age', key: 'age', fixed: 'left' },
+  { title: '年龄', width: 100, dataIndex: 'age', key: 'age' },
   { title: '列1', dataIndex: 'address', key: '1' },
   { title: '列2', dataIndex: 'address', key: '2' },
   { title: '列3', dataIndex: 'address', key: '3' },
@@ -317,7 +372,7 @@ class table extends React.Component {
           className='table'
         />
         <h1>固定列</h1>
-        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1300 }} />
+        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1300, y: 300 }} />
         <h1>带选择框</h1>
         <Table rowSelection={rowSelection} columns={columnsCheckbox} dataSource={dataCheckbox} />
       </div>
