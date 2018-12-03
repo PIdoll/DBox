@@ -1,7 +1,8 @@
 import React from 'react'
 import CreateReactClass from 'create-react-class';
 import Table from 'components/table';
-import Divider from '../../components/divider/index'
+import Divider from '../../components/divider/index';
+// import Button from '../../components/button/index'
 import reqwest from 'reqwest'
 
 const columns = [{
@@ -274,7 +275,17 @@ const columnsExpend = [
   { title: '姓名', dataIndex: 'name', key: 'name' },
   { title: '年龄', dataIndex: 'age', key: 'age' },
   { title: '住址', dataIndex: 'address', key: 'address' },
-  { title: '操作', dataIndex: '', key: 'x', render: () => <a href='#'>删除</a> },
+  {title: '操作',
+    dataIndex: '',
+    key: 'x',
+    render: (text, record) => (
+      <span>
+        <a href='javascript:;'>Act</a>
+        <Divider type='vertical' />
+        <a href='javascript:;'>Del</a>
+      </span>
+    ),
+  },
 ];
 
 const dataExpend = [
@@ -300,7 +311,13 @@ const columnsFixRow = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: () => <a href='#'>操作</a>,
+    render: (text, record) => (
+      <span>
+        <a href='javascript:;'>Act</a>
+        <Divider type='vertical' />
+        <a href='javascript:;'>Del</a>
+      </span>
+    ),
   },
 ];
 
