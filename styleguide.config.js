@@ -179,7 +179,7 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-            path.resolve(__dirname, './components/affix/index.jsx'),
+            // path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
@@ -222,7 +222,8 @@ module.exports = {
             path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-         path.resolve(__dirname, './components/tooltip/index.jsx'),
+            path.resolve(__dirname, './components/tree/index.jsx'),
+            path.resolve(__dirname, './components/tooltip/index.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
