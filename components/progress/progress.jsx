@@ -19,7 +19,6 @@ const validProgress = (progress) => {
   }
   return progress;
 }
-
 export default class Progress extends React.Component {
   static defaultProps = {
     type: 'line',
