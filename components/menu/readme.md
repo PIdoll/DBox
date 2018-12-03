@@ -51,52 +51,17 @@ class MenuView extends React.Component {
 
 ```jsx
 const SubMenu = Menu.SubMenu;
-<Menu
-  onClick={this.handleClick}
-  defaultSelectedKeys={['1']}
-  defaultOpenKeys={['sub1']}
-  mode='inline'
->
-  <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-  <SubMenu key='sub2' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-    <Menu.Item>子菜单一</Menu.Item>
-    <Menu.Item>子菜单二</Menu.Item>
-    <Menu.Item>子菜单三</Menu.Item>
-    <Menu.Item>子菜单四</Menu.Item>
-  </SubMenu>
-  <SubMenu key='sub3' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-    <SubMenu title='菜单组一'>
-      <Menu.Item>子菜单五</Menu.Item>
-      <Menu.Item>子菜单六</Menu.Item>
-    </SubMenu>
-    <SubMenu title='菜单组二'>
-      <Menu.Item>子菜单七</Menu.Item>
-      <Menu.Item>子菜单八</Menu.Item>
-    </SubMenu>
-  </SubMenu>
-  <SubMenu key='sub4' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-    <Menu.Item>子菜单九</Menu.Item>
-    <Menu.Item>子菜单十</Menu.Item>
-    <Menu.Item>子菜单十一</Menu.Item>
-    <Menu.Item>子菜单十二</Menu.Item>
-  </SubMenu>
-</Menu>
-```
-
-#### **折叠侧栏导航**
-
-```jsx
-const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
     super(props);
 	  this.state = {
-	    mode: 'vertical',
+      current: 'home',
+      mode: 'inline',
 	  }
-    this.changeMode = this.changeMode.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.changeMode = this.changeMode.bind(this)
   };
-   handleClick (e) {
+  handleClick (e) {
     console.log('click ', e);
     this.setState({
       current: e.key,
@@ -104,50 +69,45 @@ class MenuView extends React.Component {
   }
   changeMode (value) {
     this.setState({
-      mode: value ? 'inline' : 'vertical',
+      mode: value ? 'vertical' : 'inline',
     });
   }
   render() {
   return (
-	<div>
-		<Switch
-			onChange={this.changeMode}
-			type='primary'
-	       checkedChildren='展开'
-	       unCheckedChildren='折叠'
-	    />
-        <br />
-        <Menu
-          onClick={this.handleClick}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          mode={this.state.mode}
-        >
-          <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-          <SubMenu key='sub2' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-            <Menu.Item>子菜单一</Menu.Item>
-            <Menu.Item>子菜单二</Menu.Item>
-            <Menu.Item>子菜单三</Menu.Item>
-            <Menu.Item>子菜单四</Menu.Item>
-          </SubMenu>
-          <SubMenu key='sub3' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-            <SubMenu title='菜单组一'>
-              <Menu.Item>子菜单五</Menu.Item>
-              <Menu.Item>子菜单六</Menu.Item>
-            </SubMenu>
-            <SubMenu title='菜单组二'>
-              <Menu.Item>子菜单七</Menu.Item>
-              <Menu.Item>子菜单八</Menu.Item>
-            </SubMenu>
-          </SubMenu>
-          <SubMenu key='sub4' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-            <Menu.Item>子菜单九</Menu.Item>
-            <Menu.Item>子菜单十</Menu.Item>
-            <Menu.Item>子菜单十一</Menu.Item>
-            <Menu.Item>子菜单十二</Menu.Item>
-          </SubMenu>
-        </Menu>
-	</div>
+    <div>
+      <Switch
+        onChange={this.changeMode}
+        type='primary'
+        checkedChildren='折叠'
+        unCheckedChildren='展开'
+      />
+      <br />
+      <Menu
+        onClick={this.handleClick}
+        defaultSelectedKeys={['5']}
+        mode={this.state.mode}
+      >
+      <Menu.Item key='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+      <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+        <Menu.Item key='6'>子菜单一</Menu.Item>
+        <Menu.Item key='7'>子菜单二</Menu.Item>
+        <Menu.Item key='8'>子菜单三</Menu.Item>
+        <Menu.Item key='9'>子菜单四</Menu.Item>
+      </SubMenu>
+      <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+        <Menu.Item key='10'>子菜单五</Menu.Item>
+        <Menu.Item key='11'>子菜单六</Menu.Item>
+        <Menu.Item key='12'>子菜单七</Menu.Item>
+        <Menu.Item key='13'>子菜单八</Menu.Item>
+      </SubMenu>
+      <SubMenu key='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+        <Menu.Item key='14'>子菜单九</Menu.Item>
+        <Menu.Item key='15'>子菜单十</Menu.Item>
+        <Menu.Item key='16'>子菜单十一</Menu.Item>
+        <Menu.Item key='17'>子菜单十二</Menu.Item>
+      </SubMenu>
+    </Menu>
+  </div>
   )
 }
 }
@@ -164,9 +124,9 @@ class MenuView extends React.Component {
 	  this.state = {
 	  	current: 'platform',
       theme: 'light',
-	    mode2: 'inline',
+	    mode: 'inline',
 	  }
-    this.changeMode2 = this.changeMode2.bind(this)
+    this.changeMode = this.changeMode.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.changeTheme = this.changeTheme.bind(this)
   };
@@ -181,9 +141,9 @@ class MenuView extends React.Component {
       theme: value ? 'light' : 'dark',
     })
   }
-  changeMode2 (value) {
+  changeMode (value) {
     this.setState({
-      mode2: value ? 'vertical' : 'inline',
+      mode: value ? 'vertical' : 'inline',
     });
   }
   render() {
@@ -196,43 +156,39 @@ class MenuView extends React.Component {
         unCheckedChildren='深色'
       />
       <Switch
-      	onChange={this.changeMode2}
+      	onChange={this.changeMode}
       	type='primary'
-       checkedChildren='折叠'
-       unCheckedChildren='展开'
+        checkedChildren='折叠'
+        unCheckedChildren='展开'
       	/>
       <br />
-        <Menu
-          theme={this.state.theme}
-          onClick={this.handleClick}
-          defaultOpenKeys={['sub1']}
-          mode={this.state.mode2}
-          selectedKeys={[this.state.current]}
-        >
-          <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-          <SubMenu key='sub2' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-            <Menu.Item>子菜单一</Menu.Item>
-            <Menu.Item>子菜单二</Menu.Item>
-            <Menu.Item>子菜单三</Menu.Item>
-            <Menu.Item>子菜单四</Menu.Item>
-          </SubMenu>
-          <SubMenu key='sub3' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-            <SubMenu title='菜单组一'>
-              <Menu.Item>子菜单五</Menu.Item>
-              <Menu.Item>子菜单六</Menu.Item>
-            </SubMenu>
-            <SubMenu title='菜单组二'>
-              <Menu.Item>子菜单七</Menu.Item>
-              <Menu.Item>子菜单八</Menu.Item>
-            </SubMenu>
-          </SubMenu>
-          <SubMenu key='sub4' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-            <Menu.Item>子菜单九</Menu.Item>
-            <Menu.Item>子菜单十</Menu.Item>
-            <Menu.Item>子菜单十一</Menu.Item>
-            <Menu.Item>子菜单十二</Menu.Item>
-          </SubMenu>
-        </Menu>
+      <Menu
+        theme={this.state.theme}
+        onClick={this.handleClick}
+        mode={this.state.mode}
+        defaultSelectedKeys={['21']}
+        defaultOpenKeys={['sub1']}
+      >
+        <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item key='22'>子菜单五</Menu.Item>
+          <Menu.Item key='23'>子菜单六</Menu.Item>
+          <Menu.Item key='24'>子菜单七</Menu.Item>
+          <Menu.Item key='25'>子菜单八</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item key='26'>子菜单九</Menu.Item>
+          <Menu.Item key='27'>子菜单十</Menu.Item>
+          <Menu.Item key='28'>子菜单十一</Menu.Item>
+          <Menu.Item key='29'>子菜单十二</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item key='30'>子菜单九</Menu.Item>
+          <Menu.Item key='31'>子菜单十</Menu.Item>
+          <Menu.Item key='32'>子菜单十一</Menu.Item>
+          <Menu.Item key='33'>子菜单十二</Menu.Item>
+        </SubMenu>
+      </Menu>
 	</div>
   )
 }
