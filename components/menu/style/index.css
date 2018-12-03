@@ -66,10 +66,6 @@
   margin-top: 4px;
   margin-bottom: 4px;
 }
-.idoll-menu-item:active,
-.idoll-menu-submenu-title:active {
-  background: #E6F7FF;
-}
 .idoll-menu-submenu .idoll-menu-sub {
   cursor: initial;
   transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -127,52 +123,44 @@
   color: #13B886;
   transition: all .3s;
 }
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title {
-  color: #13B886;
-}
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow {
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow {
   opacity: 1;
 }
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-item:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-item-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-active > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-open > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-selected > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
-.idoll-menu-light .idoll-menu-submenu-title:hover > .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before {
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:after,
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-item-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-active .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-open .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-selected .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before,
+.idoll-menu-light .idoll-menu-submenu-title:hover .idoll-menu-submenu-title:hover > .idoll-menu-submenu-arrow:before {
   background: #13B886;
 }
 .idoll-menu-horizontal .idoll-menu-item,
@@ -689,6 +677,10 @@
   font-size: 24px;
   margin-right: 0;
 }
+.idoll-menu-light.idoll-menu-inline,
+.idoll-menu-dark.idoll-menu-inline {
+  width: 168px;
+}
 .idoll-menu-light.idoll-menu-inline > .idoll-menu-item-selected i,
 .idoll-menu-dark.idoll-menu-inline > .idoll-menu-item-selected i {
   color: #13B886;
@@ -767,6 +759,10 @@
   height: 100%;
   left: 0;
   background-color: #13B886;
+}
+.idoll-menu-light.idoll-menu-horizontal .idoll-menu-submenu-horizontal .idoll-menu-submenu-title div span,
+.idoll-menu-dark.idoll-menu-horizontal .idoll-menu-submenu-horizontal .idoll-menu-submenu-title div span {
+  vertical-align: middle;
 }
 .idoll-menu-dark,
 .idoll-menu-dark .idoll-menu-sub {
