@@ -94,7 +94,7 @@
     "jquery": "^1.12.3",
     "jsonml.js": "^0.1.0",
     "less": "^2.7.3",
-    "less-loader": "^4.0.5",
+    "less-loader": "^4.1.0",
     "open-browser-webpack-plugin": "^0.0.5",
     "postcss-loader": "^2.0.10",
     "purify-css": "^1.2.5",
