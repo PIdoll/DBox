@@ -1,23 +1,10 @@
-# table
 
----
-
-category: Components
-chinese: 表格
-cols: 1
-type: Views
-english: Table
-
----
-
-展示行列数据。
-
-## 何时使用
+#### **何时使用**
 
 - 当有大量结构化的数据需要展现时；
 - 当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。
 
-## 如何使用
+#### **如何使用**
 
 指定表格的数据源 `dataSource` 为一个数组。
 
@@ -51,15 +38,14 @@ const columns = [{
 <Table dataSource={dataSource} columns={columns} />
 ```
 
-## API
 
-### Table
+#### **Table**
 
 | 参数           | 说明                     | 类型             | 默认值   |
 |---------------|--------------------------|-----------------|---------|
 | rowSelection  | 列表项是否可选择，[配置项](#rowSelection) | Object  | null  |
 | pagination    | 分页器，配置项参考 [pagination](/components/pagination)，设为 false 时不显示分页 | Object |  |
-| size          | 正常或迷你类型，`default` or `small`  | String | default |
+| size          | 正常或迷你类型，`large` `default` or `small`  | String | default |
 | dataSource    | 数据数组 | Array |            |
 | columns       | 表格列的配置描述，具体项见下表 | Array | - |
 | rowKey        | 表格行 key 的取值，可以是字符串或一个函数 | String or Function(record, index):string | 'key' |
@@ -79,7 +65,7 @@ const columns = [{
 | title  | 表格头部自定义渲染函数         | Function(currentPageData)   | |
 | scroll  | 横向或纵向支持滚动，也可用于指定滚动区域的宽高度：`{{ x: true, y: 300 }}` | Object   | -  |
 
-### Column
+#### **Column**
 
 列描述数据对象，是 columns 中的一项。
 
@@ -101,7 +87,7 @@ const columns = [{
 | filteredValue | 筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组 | Array | - |
 | sortOrder | 排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` `false` | Boolean or String | - |
 
-### rowSelection
+#### **rowSelection**
 
 选择功能的配置。
 

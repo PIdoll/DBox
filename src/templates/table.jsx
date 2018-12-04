@@ -2,8 +2,8 @@ import React from 'react'
 import CreateReactClass from 'create-react-class';
 import Table from 'components/table';
 import Button from '../../components/button/index';
+import Badge from '../../components/badge/index';
 import Divider from '../../components/divider/index';
-// import Button from '../../components/button/index'
 import reqwest from 'reqwest'
 
 const columns = [{
@@ -25,7 +25,7 @@ const columns = [{
 }, {
   title: '审核状态',
   dataIndex: 'state',
-  key: 'state'
+  key: 'state',
 }, {
   title: '操作',
   dataIndex: 'action',
@@ -47,7 +47,7 @@ const data = [{
   state: '审核未通过',
 }, {
   key: '2',
-  name: '天津',
+  name: '李鷽釁',
   age: 24,
   address: '南京',
   Tel: '13262717838',
@@ -87,7 +87,7 @@ const data = [{
   action: ''
 }];
 
-// columns for Test
+// 基础数据源
 const columnsTest = [{
   title: '姓名',
   dataIndex: 'name',
@@ -107,6 +107,7 @@ const columnsTest = [{
   dataIndex: 'email',
 }];
 
+// 异步加载
 const Test = CreateReactClass({
   getInitialState() {
     return {
@@ -130,10 +131,9 @@ const Test = CreateReactClass({
     });
   },
   fetch(params = {}) {
-    console.log('请求参数：', params);
     this.setState({ loading: true });
     reqwest({
-      url: 'http://randomuser.me/api',
+      url: 'https://randomuser.me/api',
       method: 'get',
       data: {
         results: 10,
@@ -142,8 +142,6 @@ const Test = CreateReactClass({
       type: 'json',
     }).then(data => {
       const pagination = this.state.pagination;
-      // Read total count from server
-      // pagination.total = data.totalCount;
       pagination.total = 200;
       this.setState({
         loading: false,
@@ -157,8 +155,10 @@ const Test = CreateReactClass({
   },
   render() {
     return (
-      <Table columns={columnsTest}
-        rowKey={record => record.registered}
+      <Table
+        columns={columnsTest}
+        showHeader={false}
+        rowKey={record => record.login.uuid}
         dataSource={this.state.data}
         pagination={this.state.pagination}
         loading={this.state.loading}
@@ -175,9 +175,6 @@ const renderContent = function (value, row, index) {
     children: value,
     props: {},
   };
-  if (index === 4) {
-    obj.props.colSpan = 0;
-  }
   return obj;
 };
 
@@ -185,15 +182,7 @@ const columnsCol = [{
   title: '姓名',
   dataIndex: 'name',
   render(text, row, index) {
-    if (index < 4) {
-      return <a href='#'>{text}</a>;
-    }
-    return {
-      children: <a href='#'>{text}</a>,
-      props: {
-        colSpan: 5,
-      },
-    };
+      return text;
   },
 }, {
   title: '年龄',
@@ -201,7 +190,6 @@ const columnsCol = [{
   render: renderContent,
 }, {
   title: '家庭电话',
-  colSpan: 2,
   dataIndex: 'tel',
   render(value, row, index) {
     const obj = {
@@ -213,21 +201,32 @@ const columnsCol = [{
       obj.props.rowSpan = 2;
     }
 
-    // 第三列的第四行被合并没了，设置 rowSpan = 0 直接不用渲染
+    // 第三列的第四行被合并没了，设置 rowSpan = 0 不要渲染
     if (index === 3) {
       obj.props.rowSpan = 0;
     }
 
-    if (index === 4) {
-      obj.props.colSpan = 0;
+    // 第一行的第第三列合并2列
+    if (index === 0) {
+      obj.props.colSpan = 2
     }
+
     return obj;
   },
 }, {
   title: '手机号',
-  colSpan: 0,
   dataIndex: 'phone',
-  render: renderContent,
+  render(value, row, index) {
+    const obj = {
+      children: value,
+      props: {},
+    };
+    // 第一行的第四列和第一行的第三列合并不要渲染
+    if (index === 0) {
+      obj.props.colSpan = 0
+    }
+    return obj
+   },
 }, {
   title: '住址',
   dataIndex: 'address',
@@ -236,72 +235,87 @@ const columnsCol = [{
 
 const dataCol = [{
   key: '1',
-  name: '张大',
-  age: 32,
+  name: '劉岳然',
+  age: 26,
   tel: '0571-22098909',
-  phone: 18889898989,
+  phone: 13943250086,
   address: '浦东新区唐镇',
 }, {
   key: '2',
-  name: '胡彦祖',
+  name: '李鷽釁',
   tel: '0571-22098333',
-  phone: 18889898888,
-  age: 42,
+  phone: 13262717838,
+  age: 24,
   address: '浦东新区唐镇',
 }, {
   key: '3',
-  name: '张大',
-  age: 32,
+  name: '彭柔群',
+  age: 22,
   tel: '0575-22098909',
-  phone: 18900010002,
+  phone: 13950035537,
   address: '浦东新区唐镇',
 }, {
   key: '4',
-  name: '李夫人',
-  age: 18,
+  name: '顏仁豪',
+  age: 28,
   tel: '0575-22098909',
-  phone: 18900010002,
+  phone: 13947766628,
   address: '浦东新区唐镇',
 }, {
   key: '5',
-  name: '习大大',
-  age: 18,
+  name: '王郁弘',
+  age: 32,
   tel: '0575-22098909',
-  phone: 18900010002,
+  phone: 13964507501,
   address: '浦东新区唐镇',
 }];
 
-// 可展开
-const columnsExpend = [
-  { title: '姓名', dataIndex: 'name', key: 'name' },
-  { title: '年龄', dataIndex: 'age', key: 'age' },
-  { title: '住址', dataIndex: 'address', key: 'address' },
-  {title: '操作',
-    dataIndex: '',
-    key: 'x',
-    render: (text, record) => (
-      <span>
-        <a href='javascript:;'>编辑</a>
-        <Divider type='vertical' />
-        <a href='javascript:;'>删除</a>
-      </span>
-    ),
-  },
-];
+//  内嵌表格
+const expandedRowRender = () => {
+  const columnsSubmenu = [
+    { title: '操作日期', dataIndex: 'date', key: 'date' },
+    { title: '操作人员', dataIndex: 'name', key: 'name' },
+    { title: '操作状态', key: 'state', render: () => <span style={{position: 'relative'}}><Badge dot status='success' text='成功' /></span> },
+    { title: '操作次数', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+    {
+      title: '异常状态',
+      dataIndex: 'operation',
+      key: 'operation',
+    },
+  ];
 
-const dataExpend = [
-  { key: 1, name: '张大', age: 32, address: '浦东新区唐镇', description: '我是张大，今年32岁，住在浦东新区唐镇。' },
-  { key: 2, name: '张大', age: 42, address: '浦东唐镇2号', description: '我是张大，今年42岁，住在浦东唐镇2号。' },
-  { key: 3, name: '张大', age: 32, address: '浦东唐镇3号', description: '我是张大，今年32岁，住在浦东唐镇3号。' },
-];
+  const datasubmenu = [];
+  for (let i = 0; i < 2; ++i) {
+    datasubmenu.push({
+      key: i,
+      date: new Date().toLocaleString(),
+      name: 'Admin',
+      operation: '正常',
+      upgradeNum: Math.ceil(Math.random() * 10),
+    });
+  }
+  return (
+    <Table
+      columns={columnsSubmenu}
+      dataSource={datasubmenu}
+      pagination={false}
+    />
+  );
+};
+
 
 // 固定列
 const columnsFixRow = [{
   title: '姓名',
-  width: 70,
+  width: 100,
   fixed: 'left',
   dataIndex: 'name',
   key: 'name'
+}, {
+  title: '性别',
+  width: 100,
+  dataIndex: 'sex',
+  key: 'sex'
 }, {
   title: '年龄',
   width: 100,
@@ -309,7 +323,12 @@ const columnsFixRow = [{
   key: 'age'
 }, {
   title: '所在城市',
-  width: 100,
+  width: 150,
+  dataIndex: 'city',
+  key: 'city'
+}, {
+  title: '地址',
+  width: 300,
   dataIndex: 'address',
   key: 'address'
 }, {
@@ -318,13 +337,28 @@ const columnsFixRow = [{
   dataIndex: 'Tel',
   key: 'Tel'
 }, {
+  title: '学历',
+  width: 150,
+  dataIndex: 'study',
+  key: 'study'
+}, {
+  title: '职业',
+  width: 150,
+  dataIndex: 'work',
+  key: 'work'
+}, {
+  title: '政治面貌',
+  width: 150,
+  dataIndex: 'status',
+  key: 'status'
+}, {
   title: '审核状态',
   width: 150,
   dataIndex: 'state',
   key: 'state'
 }, {
   title: '操作',
-  width: 100,
+  width: 110,
   dataIndex: 'action',
   fixed: 'right',
   key: 'action',
@@ -341,42 +375,72 @@ const dataFixdRow = [{
   key: '11',
   name: '劉岳然',
   age: 26,
-  address: '北京',
+  city: '北京',
+  sex: '男',
+  status: '党员',
+  work: '教师',
+  address: '上海市浦东新区唐镇上丰路88号',
+  study: '本科',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '12',
-  name: '天津',
+  name: '李鷽釁',
   age: 24,
-  address: '南京',
+  city: '南京',
+  sex: '女',
+  status: '群众',
+  work: 'IT',
+  address: '上海市浦东新区唐镇上丰路88号',
+  study: '本科',
   Tel: '13262717838',
   state: '审核通过',
 }, {
   key: '13',
   name: '彭柔群',
   age: 22,
-  address: '上海',
+  city: '上海',
+  sex: '女',
+  status: '党员',
+  work: '幼师',
+  address: '上海市浦东新区唐镇上丰路88号',
+  study: '专科',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '14',
   name: '顏仁豪',
   age: 28,
-  address: '合肥',
+  city: '合肥',
+  sex: '男',
+  address: '上海市浦东新区唐镇上丰路88号',
+  status: '群众',
+  work: '技工',
+  study: '专科',
   Tel: '13947766628',
   state: '审核通过',
 }, {
   key: '15',
   name: '王郁弘',
   age: 32,
-  address: '郑州',
+  city: '郑州',
+  sex: '男',
+  address: '上海市浦东新区唐镇上丰路88号',
+  status: '党员',
+  work: '自由职业',
+  study: '博士',
   Tel: '13964507501',
   state: '审核未通过',
 }, {
   key: '16',
   name: '陳柏萱',
   age: 27,
-  address: '沈阳',
+  city: '沈阳',
+  sex: '女',
+  status: '党员',
+  address: '上海市浦东新区唐镇上丰路88号',
+  work: '医师',
+  study: '本科',
   Tel: '13262836283',
   state: '审核通过',
 }];
@@ -409,41 +473,36 @@ class table extends React.Component {
     const hasSelected = selectedRowKeys.length > 0;
     return (
       <div id='main-container'>
-        <h1 className='h1'>中号表格（紧凑型）</h1>
+        <h1 className='h1'>默认表格</h1>
+        <Table columns={columns} dataSource={data} />
+        <h1 className='h1'>中号表格</h1>
         <Table columns={columns} dataSource={data} size='middle' />
         <br />
         <h1 className='h1'>小号表格</h1>
         <Table columns={columns} dataSource={data} size='small' />
         <h1>带选择框</h1>
-        <div style={{ marginBottom: 16 }}>
-          <Button
-            type='primary'
-            onClick={this.start}
-            disabled={!hasSelected}
-            loading={loading}
-          >
-            选择
-          </Button>
-          <span style={{ marginLeft: 8 }}>
+        <div style={{ marginBottom: 12 }}>
+          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>选择</Button>
+          <span style={{ marginLeft: 16 }}>
             {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
           </span>
         </div>
         <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-        <h1 className='h1'>Ajax</h1>
+        <h1 className='h1'>异步数据</h1>
         <Test />
         <h1 className='h1'>行/列合并</h1>
-        <Table columns={columnsCol} dataSource={dataCol} />
-        <h1 className='h1'>带边框表格</h1>
+        <Table columns={columnsCol} dataSource={dataCol} bordered />
+        <h1 className='h1'>边框表格</h1>
         <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
         <br />
-        <h1 className='h1'>可展开</h1>
-        <Table columns={columnsExpend}
-          expandedRowRender={record => <p>{record.description}</p>}
-          dataSource={dataExpend}
-          className='table'
+        <h1 className='h1'>内嵌表格</h1>
+        <Table
+          columns={columns}
+          expandedRowRender={expandedRowRender}
+          dataSource={data}
         />
         <h1>固定行/列</h1>
-        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1300, y: 200 }} />
+        <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
       </div>
     )
   }
