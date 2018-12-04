@@ -47,7 +47,7 @@ class ModalView extends React.Component {
   )
 }
 }
-<ModalView />   
+<ModalView />
 ```
 
 #### **异步关闭弹出框**
@@ -99,7 +99,7 @@ class ModalView extends React.Component {
   )
 }
 }
-<ModalView />   
+<ModalView />
 ```
 #### **信息提示**
 ```jsx
@@ -138,7 +138,7 @@ class ModalView extends React.Component {
   )
 }
 }
-<ModalView />   
+<ModalView />
 ```
 #### **确认对话框**
 ```jsx
@@ -163,7 +163,7 @@ class ModalView extends React.Component {
   )
 }
 }
-<ModalView />   
+<ModalView />
 ```
 
 
