@@ -60,6 +60,7 @@
     "react-lifecycles-compat": "3.0.4",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "shallowequal": "1.1.0",
     "warning": "^4.0.2"
   },
   "devDependencies": {

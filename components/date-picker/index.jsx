@@ -3,14 +3,16 @@ import MonthCalendar from 'rc-calendar/lib/MonthCalendar';
 import createPicker from './createPicker';
 import wrapPicker from './wrapPicker';
 import RangePicker from './RangePicker';
-import Calendar from './Calendar';
-import './style/index.jsx';
+import WeekPicker from './WeekPicker';
 
 const DatePicker = wrapPicker(createPicker(RcCalendar));
-const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'yyyy-MM');
+const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'YYYY-MM');
 
-DatePicker.Calendar = Calendar;
-DatePicker.RangePicker = wrapPicker(RangePicker, 'yyyy-MM-dd');
-DatePicker.MonthPicker = MonthPicker;
+Object.assign(DatePicker, {
+  RangePicker: wrapPicker(RangePicker),
+  MonthPicker,
+  WeekPicker: wrapPicker(WeekPicker, 'gggg-wo'),
+});
+
 export default DatePicker;
 
