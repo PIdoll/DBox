@@ -45,7 +45,7 @@
     float: left;
     .@{calendar-prefix-cls} {
       &-time-picker-inner {
-        border-right: 1px solid @boder-color-split;
+        border-right: 1px solid @border-color-split;
       }
     }
   }
@@ -94,6 +94,7 @@
     border: 0;
     box-shadow: none;
     padding-left: 0;
+    padding-right: 0;
 
     &:focus {
       box-shadow: none;
@@ -185,8 +186,7 @@
       &-inner {
         padding-top: 40px;
         height: 100%;
-        background-color: @component-background;
-        border-top: @border-width-base @border-style-base @border-color-split;
+        background-color: none;
       }
 
       &-combobx {

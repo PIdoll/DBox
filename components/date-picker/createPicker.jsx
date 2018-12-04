@@ -207,7 +207,7 @@ export default function createPicker(TheCalendar) {
             onFocus={props.onFocus}
             onBlur={props.onBlur}
             onMouseEnter={props.onMouseEnter}
-            omMouseLeave={props.onMouseLeave}>
+            onMouseLeave={props.onMouseLeave}>
             <RcDatePicker
               {...props}
               {...pickerProps}
