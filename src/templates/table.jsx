@@ -52,7 +52,6 @@ const data = [{
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
-  action: ''
 }, {
   key: '3',
   name: '彭柔群',
@@ -60,7 +59,6 @@ const data = [{
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
-  action: ''
 }, {
   key: '4',
   name: '顏仁豪',
@@ -68,7 +66,6 @@ const data = [{
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
-  action: ''
 }, {
   key: '5',
   name: '王郁弘',
@@ -76,7 +73,6 @@ const data = [{
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
-  action: ''
 }, {
   key: '6',
   name: '陳柏萱',
@@ -84,7 +80,6 @@ const data = [{
   address: '沈阳',
   Tel: '13262836283',
   state: '审核通过',
-  action: ''
 }];
 
 // 基础数据源
@@ -490,7 +485,7 @@ class table extends React.Component {
         <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         <h1 className='h1'>异步数据</h1>
         <Test />
-        <h1 className='h1'>行/列合并</h1>
+        <h1 className='h1'>行列合并</h1>
         <Table columns={columnsCol} dataSource={dataCol} bordered />
         <h1 className='h1'>边框表格</h1>
         <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
@@ -501,7 +496,7 @@ class table extends React.Component {
           expandedRowRender={expandedRowRender}
           dataSource={data}
         />
-        <h1>固定行/列</h1>
+        <h1>固定行列</h1>
         <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
       </div>
     )

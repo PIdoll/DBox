@@ -222,7 +222,7 @@ module.exports = {
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
          path.resolve(__dirname, './components/tooltip/index.jsx'),
-            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/table/index.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
