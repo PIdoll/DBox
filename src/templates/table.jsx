@@ -464,8 +464,17 @@ class EditableCell extends React.Component {
     if (this.props.inputType === 'number') {
       return <InputNumber />;
     }
-    if (this.props.inputType === 'time') {
-      return <Select />;
+    if (this.props.inputType === 'city') {
+      return <Select showSearch style={{ width: 100 }} placeholder='请选择' >
+        <Option value='北京'>北京</Option>
+        <Option value='上海'>上海</Option>
+        <Option value='广州'>广州</Option>
+        <Option value='沈阳'>沈阳</Option>
+        <Option value='郑州'>郑州</Option>
+        <Option value='合肥'>合肥</Option>
+        <Option value='南京'>南京</Option>
+        <Option value='深圳'>深圳</Option>
+      </Select>;
     }
     return <Input />;
   };
@@ -516,50 +525,42 @@ class table extends React.Component {
       key: '1',
       name: '劉岳然',
       age: 26,
-      time: '北京',
+      city: '北京',
       Tel: '13943250086',
       address: '上海市浦东新区唐镇上丰路88号',
-      render: (text, record) => (
-        <Select showSearch style={{ width: 100 }} placeholder='请选择' >
-          <Option value='beijing'>北京</Option>
-          <Option value='shanghai'>上海</Option>
-          <Option value='guangzhou'>广州</Option>
-          <Option value='shenzhen'>深圳</Option>
-        </Select>
-      )
     }, {
       key: '2',
       name: '李鷽釁',
       age: 24,
-      time: '南京',
+      city: '南京',
       Tel: '13262717838',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '3',
       name: '彭柔群',
       age: 22,
-      time: '上海',
+      city: '上海',
       Tel: '13950035537',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '4',
       name: '顏仁豪',
       age: 28,
-      time: '合肥',
+      city: '合肥',
       Tel: '13947766628',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '5',
       name: '王郁弘',
       age: 32,
-      time: '郑州',
+      city: '郑州',
       Tel: '13964507501',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '6',
       name: '陳柏萱',
       age: 27,
-      time: '沈阳',
+      city: '沈阳',
       Tel: '13262836283',
       address: '上海市浦东新区唐镇上丰路88号',
     }]
@@ -576,8 +577,8 @@ class table extends React.Component {
     editable: true,
   }, {
     title: '居住地',
-    dataIndex: 'time',
-    key: 'time',
+    dataIndex: 'city',
+    key: 'city',
     editable: true,
   }, {
     title: '手机号',
@@ -621,7 +622,7 @@ class table extends React.Component {
             <span>
               <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
               <Divider type='vertical' />
-              <Popconfirm title='Sure to delete?' onConfirm={() => this.handleDelete(record.key)}>
+              <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
                 <a href='javascript:;'>删除</a>
               </Popconfirm>
             </span>
@@ -633,7 +634,6 @@ class table extends React.Component {
 }
   start = () => {
     this.setState({ loading: true });
-    // ajax request after empty completing
     setTimeout(() => {
       this.setState({
         selectedRowKeys: [],
@@ -698,16 +698,15 @@ class table extends React.Component {
         ...col,
         onCell: record => ({
           record,
-          // inputType: col.dataIndex === 'age' ? 'number' : 'text',
-          inputType: () => {
+          inputType: (() => {
             if (col.dataIndex === 'age') {
               return 'number'
-            } else if (col.dataIndex === 'time') {
-              return 'time'
+            } else if (col.dataIndex === 'city') {
+              return 'city'
             } else {
               return 'text'
             }
-          },
+          })(),
           dataIndex: col.dataIndex,
           title: col.title,
           editing: this.isEditing(record),
@@ -722,7 +721,6 @@ class table extends React.Component {
           bordered
           dataSource={this.state.data}
           columns={column}
-          rowClassName='editable-row'
         />
         <h1 className='h1'>默认表格</h1>
         <Table columns={columns} dataSource={data} />
