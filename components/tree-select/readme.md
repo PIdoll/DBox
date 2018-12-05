@@ -37,7 +37,7 @@ class TreeSelectExample extends React.Component {
                         <TreeNode value="pudongxinqu" title="浦东新区" key="random1" />
                     </TreeNode>
                     <TreeNode value="anhui" title="安徽" key="random2">
-                        <TreeNode value="hefei" title={<b style={{ color: '#13B886' }}>合肥</b>} key="random3" />
+                        <TreeNode value="hefei" title="合肥" key="random3" />
                     </TreeNode>
                 </TreeNode>
             </TreeSelect>
@@ -149,6 +149,7 @@ class TreeSelectExample extends React.Component {
                 treeData={treeData}
                 placeholder="请选择"
                 multiple
+                allowClear
                 treeDefaultExpandAll
                 onChange={this.onChange}
             >
