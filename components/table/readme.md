@@ -372,6 +372,7 @@ class TableView extends React.Component {
 
 #### **异步数据**
 ```jsx
+const  {reqwest} = require('./index.jsx');
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
@@ -446,6 +447,7 @@ class App extends React.Component {
     return (
       <Table
         columns={columns}
+        showHeader={false}
         rowKey={record => record.login.uuid}
         dataSource={this.state.data}
         pagination={this.state.pagination}
