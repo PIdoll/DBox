@@ -461,10 +461,10 @@ const EditableFormRow = Form.create()(EditableRow);
 
 class EditableCell extends React.Component {
   getInput = () => {
-    if (this.props.inputType === 'number') {
+    if (this.props.inputtype === 'number') {
       return <InputNumber />;
     }
-    if (this.props.inputType === 'city') {
+    if (this.props.inputtype === 'city') {
       return <Select showSearch style={{ width: 100 }} placeholder='请选择' >
         <Option value='北京'>北京</Option>
         <Option value='上海'>上海</Option>
@@ -484,7 +484,7 @@ class EditableCell extends React.Component {
       editing,
       dataIndex,
       title,
-      // inputType,
+      // inputtype,
       record,
       // index,
       ...restProps
@@ -698,7 +698,7 @@ class table extends React.Component {
         ...col,
         onCell: record => ({
           record,
-          inputType: (() => {
+          inputtype: (() => {
             if (col.dataIndex === 'age') {
               return 'number'
             } else if (col.dataIndex === 'city') {
