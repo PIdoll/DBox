@@ -4,24 +4,31 @@ import Table from 'components/table';
 import Button from '../../components/button/index';
 import Badge from '../../components/badge/index';
 import Divider from '../../components/divider/index';
+import Form from '../../components/form/index';
+import Input from '../../components/input/index';
+import InputNumber from '../../components/input-number/index';
+import Popconfirm from '../../components/popconfirm/index';
+import Select from '../../components/select/index';
 import reqwest from 'reqwest'
+const {Option} = Select;
 
+// 公共数据
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
-  key: 'name'
+  key: 'name',
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
 }, {
   title: '所在城市',
   dataIndex: 'address',
-  key: 'address'
+  key: 'address',
 }, {
   title: '手机号',
   dataIndex: 'Tel',
-  key: 'Tel'
+  key: 'Tel',
 }, {
   title: '审核状态',
   dataIndex: 'state',
@@ -440,11 +447,190 @@ const dataFixdRow = [{
   state: '审核通过',
 }];
 
+// 可编辑功能
+const FormItem = Form.Item;
+const EditableContext = React.createContext();
+
+const EditableRow = ({ form, index, ...props }) => (
+  <EditableContext.Provider value={form}>
+    <tr {...props} />
+  </EditableContext.Provider>
+);
+
+const EditableFormRow = Form.create()(EditableRow);
+
+class EditableCell extends React.Component {
+  getInput = () => {
+    if (this.props.inputType === 'number') {
+      return <InputNumber />;
+    }
+    if (this.props.inputType === 'time') {
+      return <Select />;
+    }
+    return <Input />;
+  };
+
+  render() {
+    const {
+      editing,
+      dataIndex,
+      title,
+      // inputType,
+      record,
+      // index,
+      ...restProps
+    } = this.props;
+    return (
+      <EditableContext.Consumer>
+        {(form) => {
+          const { getFieldDecorator } = form;
+          return (
+            <td {...restProps}>
+              {editing ? (
+                <FormItem style={{ margin: 0 }}>
+                  {getFieldDecorator(dataIndex, {
+                    rules: [{
+                      required: true,
+                      message: `Please Input ${title}!`,
+                    }],
+                    initialValue: record[dataIndex],
+                  })(this.getInput())}
+                </FormItem>
+              ) : restProps.children}
+            </td>
+          );
+        }}
+      </EditableContext.Consumer>
+    );
+  }
+}
+
 class table extends React.Component {
-  state = {
+  constructor(props) {
+  super(props);
+  this.state = {
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
+    editingKey: '',
+    data: [{
+      key: '1',
+      name: '劉岳然',
+      age: 26,
+      time: '北京',
+      Tel: '13943250086',
+      address: '上海市浦东新区唐镇上丰路88号',
+      render: (text, record) => (
+        <Select showSearch style={{ width: 100 }} placeholder='请选择' >
+          <Option value='beijing'>北京</Option>
+          <Option value='shanghai'>上海</Option>
+          <Option value='guangzhou'>广州</Option>
+          <Option value='shenzhen'>深圳</Option>
+        </Select>
+      )
+    }, {
+      key: '2',
+      name: '李鷽釁',
+      age: 24,
+      time: '南京',
+      Tel: '13262717838',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '3',
+      name: '彭柔群',
+      age: 22,
+      time: '上海',
+      Tel: '13950035537',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '4',
+      name: '顏仁豪',
+      age: 28,
+      time: '合肥',
+      Tel: '13947766628',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '5',
+      name: '王郁弘',
+      age: 32,
+      time: '郑州',
+      Tel: '13964507501',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '6',
+      name: '陳柏萱',
+      age: 27,
+      time: '沈阳',
+      Tel: '13262836283',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }]
   };
+  this.columnss = [{
+    title: '姓名',
+    dataIndex: 'name',
+    key: 'name',
+    editable: true,
+  }, {
+    title: '年龄',
+    dataIndex: 'age',
+    key: 'age',
+    editable: true,
+  }, {
+    title: '居住地',
+    dataIndex: 'time',
+    key: 'time',
+    editable: true,
+  }, {
+    title: '手机号',
+    dataIndex: 'Tel',
+    key: 'Tel',
+    editable: true,
+  }, {
+    title: '地址',
+    dataIndex: 'address',
+    key: 'address',
+    editable: true,
+  }, {
+    title: '操作',
+    dataIndex: 'action',
+    key: 'action',
+    render: (text, record) => {
+      const editable = this.isEditing(record);
+      return (
+        <div>
+          {editable ? (
+            <span>
+              <EditableContext.Consumer>
+                {form => (
+                  <a
+                    href='javascript:;'
+                    onClick={() => this.save(form, record.key)}
+                  >
+                    保存
+                  </a>
+                )}
+              </EditableContext.Consumer>
+              <Divider type='vertical' />
+              <Popconfirm
+                title='您确定要取消吗?'
+                onConfirm={() => this.cancel(record.key)}
+              >
+                <a>取消</a>
+              </Popconfirm>
+            </span>
+          ) : (
+            <span>
+              <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
+              <Divider type='vertical' />
+              <Popconfirm title='Sure to delete?' onConfirm={() => this.handleDelete(record.key)}>
+                <a href='javascript:;'>删除</a>
+              </Popconfirm>
+            </span>
+          )}
+        </div>
+      );
+    },
+  }];
+}
   start = () => {
     this.setState({ loading: true });
     // ajax request after empty completing
@@ -455,9 +641,40 @@ class table extends React.Component {
       });
     }, 1000);
   }
+  handleDelete = (key) => {
+    const data = [...this.state.data];
+    this.setState({ data: data.filter(item => item.key !== key) });
+  }
   onSelectChange = (selectedRowKeys) => {
     console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({ selectedRowKeys });
+  }
+  edit(key) {
+    this.setState({ editingKey: key });
+  }
+  cancel = () => {
+    this.setState({ editingKey: '' });
+  };
+  isEditing = record => record.key === this.state.editingKey;
+  save(form, key) {
+    form.validateFields((error, row) => {
+      if (error) {
+        return;
+      }
+      const newData = [...this.state.data];
+      const index = newData.findIndex(item => key === item.key);
+      if (index > -1) {
+        const item = newData[index];
+        newData.splice(index, 1, {
+          ...item,
+          ...row,
+        });
+        this.setState({ data: newData, editingKey: '' });
+      } else {
+        newData.push(row);
+        this.setState({ data: newData, editingKey: '' });
+      }
+    });
   }
   render () {
     const { loading, selectedRowKeys } = this.state;
@@ -466,8 +683,47 @@ class table extends React.Component {
       onChange: this.onSelectChange,
     };
     const hasSelected = selectedRowKeys.length > 0;
+    // edit
+    const components = {
+      body: {
+        row: EditableFormRow,
+        cell: EditableCell,
+      },
+    };
+    const column = this.columnss.map((col) => {
+      if (!col.editable) {
+        return col;
+      }
+      return {
+        ...col,
+        onCell: record => ({
+          record,
+          // inputType: col.dataIndex === 'age' ? 'number' : 'text',
+          inputType: () => {
+            if (col.dataIndex === 'age') {
+              return 'number'
+            } else if (col.dataIndex === 'time') {
+              return 'time'
+            } else {
+              return 'text'
+            }
+          },
+          dataIndex: col.dataIndex,
+          title: col.title,
+          editing: this.isEditing(record),
+        }),
+      };
+    });
     return (
       <div id='main-container'>
+        <h1 className='h1'>可编辑表格</h1>
+        <Table
+          components={components}
+          bordered
+          dataSource={this.state.data}
+          columns={column}
+          rowClassName='editable-row'
+        />
         <h1 className='h1'>默认表格</h1>
         <Table columns={columns} dataSource={data} />
         <h1 className='h1'>中号表格</h1>
