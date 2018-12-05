@@ -46,7 +46,7 @@ export default function wrapPicker(Picker, defaultFormat) {
       },
       locale: {},
       prefixCls: 'idoll-calendar',
-      inoutPrefixCls: 'idoll-input'
+      inputPrefixCls: 'idoll-input'
     }
 
     componentDidMount() {
@@ -138,7 +138,7 @@ export default function wrapPicker(Picker, defaultFormat) {
           {...rcTimePickerProps}
           {...props.showTime}
           prefixCls={`${prefixCls}-time-picker`}
-          classNames={timePickerCls}
+          className={timePickerCls}
           placeholder={locale.timePickerLocale.placeholder}
           transitionName='slide-up' />
       ) : null;
@@ -170,3 +170,4 @@ export default function wrapPicker(Picker, defaultFormat) {
     }
   }
 }
+

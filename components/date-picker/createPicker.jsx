@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import omit from 'omit.js';
 import Icon from '../icon';
-import warning from '../_util/warning';
+// import warning from '../_util/warning';
 import interopDefault from '../_util/interopDefault';
 import getDataOrAriaProps from '../_util/getDataOrAriaProps';
 
@@ -27,7 +27,7 @@ export default function createPicker(TheCalendar) {
     static defaultProps = {
       prefixCls: 'idoll-calendar',
       allowClear: true,
-      showToday: true,
+      showToday: false,
     };
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -118,7 +118,7 @@ export default function createPicker(TheCalendar) {
       });
 
       if (value && localeCode) {
-        value.locale(localeCode);
+        moment(value).locale(localeCode);
       }
 
       let pickerProps = {};
@@ -138,7 +138,7 @@ export default function createPicker(TheCalendar) {
         calendarProps.mode = props.mode;
       }
 
-      warning(!('onOk' in props), 'It should be `DatePicker[onOk]` or `MonthPicker[onOk]`, instead of `onOK`!')
+      // warning(!('onOk' in props), 'It should be `DatePicker[onOk]` or `MonthPicker[onOk]`, instead of `onOK`!')
       const calendar = (
         <TheCalendar
           {...calendarProps}
@@ -147,7 +147,7 @@ export default function createPicker(TheCalendar) {
           locale={locale.lang}
           timePicker={props.timePicker}
           defaultValue={props.defaultPickerValue || interopDefault(moment)()}
-          dateInoutPlaceholder={placeholder}
+          dateInputPlaceholder={placeholder}
           prefixCls={prefixCls}
           className={calendarClassName}
           onOk={props.onOk}
@@ -189,7 +189,7 @@ export default function createPicker(TheCalendar) {
           <div>
             <input
               ref={this.saveInput}
-              disabeld={props.disabeld}
+              disabled={props.disabled}
               readOnly
               value={(inputValue && inputValue.format(props.format)) || ''}
               placeholder={placeholder}
@@ -224,142 +224,3 @@ export default function createPicker(TheCalendar) {
   polyfill(CalendarWrapper);
   return CalendarWrapper;
 }
-
-// export default function createPicker(TheCalendar) {
-//   return class CalenderWrapper extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       this.state = {
-//         value: this.props.parseDateFromValue(this.props.value || this.props.defaultValue),
-//       };
-//     }
-
-//     // 当传入新的props的时候触发
-//     componentWillReceiveProps(nextProps) {
-//       if ('value' in nextProps) {
-//         this.setState({
-//           value: nextProps.parseDateFromValue(nextProps.value),
-//         });
-//       }
-//     }
-
-//     clearSelection = (e) => {
-//       e.preventDefault();
-//       e.stopPropagation();
-//       this.setState({ value: null });
-//       this.handleChange(null);
-//     }
-
-//     handleChange = (value) => {
-//       const props = this.props;
-//       if (!('value' in props)) {
-//         this.setState({ value });
-//       }
-//       const timeValue = value ? new Date(value.getTime()) : null;
-//       props.onChange(timeValue, value ? props.getFormatter().format(value) : '');
-//     }
-
-//     render() {
-//       const props = this.props;
-//       const locale = props.locale;
-//       // 以下两行代码
-//       // 给没有初始值的日期选择框提供本地化信息
-//       // 否则会以周日开始排
-//       let defaultCalendarValue = new GregorianCalendar(locale);
-//       defaultCalendarValue.setTime(Date.now());
-
-//       const placeholder = ('placeholder' in props)
-//         ? props.placeholder : locale.lang.placeholder;
-
-//       const disabledTime = props.showTime ? props.disabledTime : null;
-
-//       const calendarClassName = classNames({
-//         'idoll-calendar-time': props.showTime,
-//         'idoll-calendar-month': MonthCalendar === TheCalendar,
-//       });
-
-//       // 需要选择时间时，点击 ok 时才触发 onChange
-//       let pickerChangeHandler = {
-//         onChange: this.handleChange,
-//       };
-//       let calendarHandler = {
-//         onOk: this.handleChange,
-//         // fix https://github.com/ant-design/ant-design/issues/1902
-//         onSelect: (value, cause) => {
-//           if (cause && cause.source === 'todayButton') {
-//             this.handleChange(value);
-//           }
-//         },
-//       };
-//       if (props.showTime) {
-//         pickerChangeHandler = {};
-//       } else {
-//         calendarHandler = {};
-//       }
-
-//       const calendar = (
-//         <TheCalendar
-//           formatter={props.getFormatter()}
-//           disabledDate={props.disabledDate}
-//           disabledTime={disabledTime}
-//           locale={locale.lang}
-//           timePicker={props.timePicker}
-//           defaultValue={defaultCalendarValue}
-//           dateInputPlaceholder={placeholder}
-//           prefixCls='idoll-calendar'
-//           className={calendarClassName}
-//           onOk={props.onOk}
-//           {...calendarHandler}
-//         />
-//       );
-
-//       // 默认时间选择框的宽度
-//       const pickerStyle = {};
-//       if (props.showTime) {
-//         pickerStyle.width = 180;
-//       }
-
-//       const clearIcon = (!props.disabled && this.state.value)
-//         ? <Icon type='close-circle'
-//           className='idoll-calendar-picker-clear '
-//           onClick={this.clearSelection}
-//         /> : null;
-//         return (
-//           <span className={props.pickerClass} style={{ ...pickerStyle, ...props.style }}>
-//             <RcDatePicker
-//               transitionName={props.transitionName}
-//               disabled={props.disabled}
-//               calendar={calendar}
-//               value={this.state.value}
-//               prefixCls='idoll-calendar-picker-container'
-//               style={props.popupStyle}
-//               align={props.align}
-//               getCalendarContainer={props.getCalendarContainer}
-//               open={props.open}
-//               onOpen={props.toggleOpen}
-//               onClose={props.toggleOpen}
-//               {...pickerChangeHandler}
-//             >
-//               {
-//                 ({ value }) => {
-//                   return (
-//                     <span>
-//                       <input
-//                         disabled={props.disabled}
-//                         readOnly
-//                         value={value ? props.getFormatter().format(value) : ''}
-//                         placeholder={placeholder}
-//                         className={props.pickerInputClass}
-//                       />
-//                       {clearIcon}
-//                       <span className='idoll-calendar-picker-icon' />
-//                     </span>
-//                   );
-//                 }
-//               }
-//             </RcDatePicker>
-//           </span>
-//       )
-//     }
-//   }
-// }

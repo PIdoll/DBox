@@ -5,6 +5,8 @@ import wrapPicker from './wrapPicker';
 import RangePicker from './RangePicker';
 import WeekPicker from './WeekPicker';
 
+import './style/index';
+
 const DatePicker = wrapPicker(createPicker(RcCalendar));
 const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'YYYY-MM');
 
