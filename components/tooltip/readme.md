@@ -37,7 +37,7 @@ const text = <span>提示文字</span>;
         <Button>LT</Button>
     </Tooltip>
     <Tooltip placement='left' title={text} >
-        <Button>Left</Button>
+        <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Left</Button>
     </Tooltip>
     <Tooltip placement='leftBottom' title={text}>
         <Button>LB</Button>
@@ -48,7 +48,7 @@ const text = <span>提示文字</span>;
         <Button>RT</Button>
     </Tooltip>
     <Tooltip placement='right' title={text} >
-        <Button>Right</Button>
+        <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Right</Button>
     </Tooltip>
     <Tooltip placement='rightBottom' title={text}>
         <Button>RB</Button>
