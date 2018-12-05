@@ -48,11 +48,6 @@
     margin-bottom: 4px;
   }
 
-  &-item:active,
-  &-submenu-title:active {
-    background: @menu-item-active-bg;
-  }
-
   &-submenu &-sub {
     cursor: initial;
     transition: background .3s @ease-in-out;
@@ -102,11 +97,8 @@
       color: @menu-highlight-color ;
       transition: all .3s;
     }
-    > .@{menu-prefix-cls}-submenu-title {
-      color: @menu-highlight-color;//**
-    }
-    > .@{menu-prefix-cls}-submenu-title,
-    > .@{menu-prefix-cls}-submenu-title:hover {
+     .@{menu-prefix-cls}-submenu-title,
+     .@{menu-prefix-cls}-submenu-title:hover {
       > .@{menu-prefix-cls}-submenu-arrow {
         opacity: 1;
         &:after,
@@ -421,10 +413,6 @@
     .@{menu-prefix-cls}-submenu-title {
       width: ~"calc(100% + 1px)";
     }
-
-    // .@{menu-prefix-cls}-submenu-title {
-    //   padding-right: 34px;
-    // }
   }
 
   &-inline-collapsed {
@@ -658,6 +646,7 @@
     }
   }
   &-light&-inline,&-dark&-inline {
+    width: 168px;
     >.@{menu-prefix-cls}-item-selected {
       i {
         color: @menu-highlight-color;
@@ -688,6 +677,7 @@
         .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
           div.@{menu-prefix-cls}-submenu-title {
             padding-left: 40px !important;
+            font-size: 14px;
           }
           .@{menu-prefix-cls}-item {
             padding-left: 60px !important;
@@ -719,10 +709,10 @@
     }
   }
   &-light&-vertical-right {
-    widows: 89px;;
+    widows: 89px;
   }
   &-dark&-vertical-right,&-light&-vertical-right {
-    width: 168px;;
+    width: 168px;
   }
   &-light&-vertical-right {
     > li.@{menu-prefix-cls}-item-selected {
@@ -740,6 +730,17 @@
       height: 100%;
       left: 0;
       background-color: @menu-highlight-color;
+    }
+  }
+  &-light&-horizontal,&-dark&-horizontal {
+    .@{menu-prefix-cls}-submenu-horizontal {
+      .@{menu-prefix-cls}-submenu-title {
+        div {
+          span {
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 }

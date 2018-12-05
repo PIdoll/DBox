@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { PropTypes } from 'prop-types'
-import omit from 'object.omit'
+// import omit from 'object.omit'
 
 import calculateNodeHeight from './calculateNodeHeight'
 import './style'

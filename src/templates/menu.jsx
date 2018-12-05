@@ -13,10 +13,9 @@ export default class MenuDemo extends React.Component {
     current: 'home',
     theme: 'light',
     mode: 'inline',
-    mode2: 'vertical'
+    mode2: 'inline'
   }
   handleClick = (e) => {
-    console.log('click ', e);
     this.setState({
       current: e.key,
     });
@@ -33,7 +32,7 @@ export default class MenuDemo extends React.Component {
   }
   changeMode2 = (value) => {
     this.setState({
-      mode2: value ? 'inline' : 'vertical',
+      mode2: value ? 'vertical' : 'inline',
     });
   }
   render() {
@@ -42,7 +41,6 @@ export default class MenuDemo extends React.Component {
         <h1 className='h1'>顶部导航</h1>
         <Menu
           onClick={this.handleClick}
-          defaultOpenKeys={['sub1']}
           selectedKeys={[this.state.current]}
           mode='horizontal'
           theme='dark'
@@ -56,7 +54,7 @@ export default class MenuDemo extends React.Component {
             <Menu.Item key='4'>子菜单四</Menu.Item>
           </SubMenu>
           <Menu.Item key='tool'>
-            <a href='https://www.baidu.com' target='_blank' rel='noopener noreferrer'><div><Icon type='tool' /><span>配置管理</span></div></a>
+            <a href='https://www.baidu.com' target='_blank'><div><Icon type='tool' /><span>配置管理</span></div></a>
           </Menu.Item>
         </Menu>
         <h1 className='h1'>内嵌菜单</h1>
@@ -69,32 +67,28 @@ export default class MenuDemo extends React.Component {
         <br />
         <Menu
           onClick={this.handleClick}
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['5']}
           defaultOpenKeys={['sub1']}
           mode={this.state.mode}
         >
-          <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-          <SubMenu key='sub2' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-            <Menu.Item>子菜单一</Menu.Item>
-            <Menu.Item>子菜单二</Menu.Item>
-            <Menu.Item>子菜单三</Menu.Item>
-            <Menu.Item>子菜单四</Menu.Item>
+          <Menu.Item key='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <Menu.Item key='6'>子菜单一</Menu.Item>
+            <Menu.Item key='7'>子菜单二</Menu.Item>
+            <Menu.Item key='8'>子菜单三</Menu.Item>
+            <Menu.Item key='9'>子菜单四</Menu.Item>
           </SubMenu>
-          <SubMenu key='sub3' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-            <SubMenu title='菜单组一'>
-              <Menu.Item>子菜单五</Menu.Item>
-              <Menu.Item>子菜单六</Menu.Item>
-            </SubMenu>
-            <SubMenu title='菜单组二'>
-              <Menu.Item>子菜单七</Menu.Item>
-              <Menu.Item>子菜单八</Menu.Item>
-            </SubMenu>
+          <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <Menu.Item key='10'>子菜单五</Menu.Item>
+            <Menu.Item key='11'>子菜单六</Menu.Item>
+            <Menu.Item key='12'>子菜单七</Menu.Item>
+            <Menu.Item key='13'>子菜单八</Menu.Item>
           </SubMenu>
-          <SubMenu key='sub4' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-            <Menu.Item>子菜单九</Menu.Item>
-            <Menu.Item>子菜单十</Menu.Item>
-            <Menu.Item>子菜单十一</Menu.Item>
-            <Menu.Item>子菜单十二</Menu.Item>
+          <SubMenu key='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <Menu.Item key='14'>子菜单九</Menu.Item>
+            <Menu.Item key='15'>子菜单十</Menu.Item>
+            <Menu.Item key='16'>子菜单十一</Menu.Item>
+            <Menu.Item key='17'>子菜单十二</Menu.Item>
           </SubMenu>
         </Menu>
         <h1 className='h1'>动态侧栏导航</h1>
@@ -116,32 +110,27 @@ export default class MenuDemo extends React.Component {
           <Menu
             theme={this.state.theme}
             onClick={this.handleClick}
-            defaultOpenKeys={['sub1']}
             mode={this.state.mode2}
-            selectedKeys={[this.state.current]}
+            defaultSelectedKeys={['21']}
           >
-            <Menu.Item key='sub1'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-            <SubMenu title={<div><Icon type='platform' /><span>工作台</span></div>}>
-              <SubMenu title='菜单组一'>
-                <Menu.Item key='5'>子菜单五</Menu.Item>
-                <Menu.Item key='6'>子菜单六</Menu.Item>
-              </SubMenu>
-              <SubMenu title='菜单组二'>
-                <Menu.Item key='7'>子菜单七</Menu.Item>
-                <Menu.Item key='8'>子菜单八</Menu.Item>
-              </SubMenu>
+            <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+            <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+              <Menu.Item key='22'>子菜单五</Menu.Item>
+              <Menu.Item key='23'>子菜单六</Menu.Item>
+              <Menu.Item key='24'>子菜单七</Menu.Item>
+              <Menu.Item key='25'>子菜单八</Menu.Item>
             </SubMenu>
-            <SubMenu title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-              <Menu.Item key='9'>子菜单九</Menu.Item>
-              <Menu.Item key='10'>子菜单十</Menu.Item>
-              <Menu.Item key='11'>子菜单十一</Menu.Item>
-              <Menu.Item key='12'>子菜单十二</Menu.Item>
+            <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+              <Menu.Item key='26'>子菜单九</Menu.Item>
+              <Menu.Item key='27'>子菜单十</Menu.Item>
+              <Menu.Item key='28'>子菜单十一</Menu.Item>
+              <Menu.Item key='29'>子菜单十二</Menu.Item>
             </SubMenu>
-            <SubMenu key='sub4' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-              <Menu.Item>子菜单九</Menu.Item>
-              <Menu.Item>子菜单十</Menu.Item>
-              <Menu.Item>子菜单十一</Menu.Item>
-              <Menu.Item>子菜单十二</Menu.Item>
+            <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+              <Menu.Item key='30'>子菜单九</Menu.Item>
+              <Menu.Item key='31'>子菜单十</Menu.Item>
+              <Menu.Item key='32'>子菜单十一</Menu.Item>
+              <Menu.Item key='33'>子菜单十二</Menu.Item>
             </SubMenu>
           </Menu>
         </div>
