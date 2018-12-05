@@ -55,6 +55,9 @@
 
   &-remove-icon {
     color: @text-color-disable !important;
+    &:hover {
+      color: @text-color-secondary !important;
+    }
   }
 
   // arrow
@@ -389,7 +392,7 @@
     .@{select-prefix-cls}-selection__rendered {
       overflow: hidden;
       text-overflow: ellipsis;
-      // padding-left: @select-padding-vertical;
+      padding-left: 4px;
       // padding-bottom: 4px;
     }
 
@@ -400,7 +403,7 @@
 
     > ul > li,
     .@{select-prefix-cls}-selection__rendered > ul > li {  // for tree-select
-      margin-left: 11px;
+      margin-left: 4px;
       margin-top: 5px;
       margin-bottom: 5px;
       height: 20px;
