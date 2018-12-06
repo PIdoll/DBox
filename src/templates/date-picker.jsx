@@ -114,7 +114,7 @@ export default class DatePickerView extends React.Component {
     console.log('OK')
   }
   render() {
-    const { size, startValue, endValue, endOpen } = this.state;
+    const { size } = this.state;
     return (
       <div id='main-container'>
         <h1 className='h1'>基本使用</h1>
@@ -157,30 +157,6 @@ export default class DatePickerView extends React.Component {
             onOk={this.onOk}
             disabled
             defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]} />
-        </div>
-        <h1 className='h1'>自定义日期范围选择</h1>
-        <div style={{ marginBottom: 15 }}>
-          <DatePicker
-            disabledDate={this.disabledStartDate}
-            showTime
-            format='YYYY-MM-DD HH:mm:ss'
-            value={startValue}
-            placeholder='起始时间'
-            onChange={this.onStartChange}
-            onOpenChange={this.handleStartOpenChange}
-          />
-        </div>
-        <div style={{ marginBottom: 15 }}>
-          <DatePicker
-            disabledDate={this.disabledEndDate}
-            showTime
-            format='YYYY-MM-DD HH:mm:ss'
-            value={endValue}
-            placeholder='结束时间'
-            onChange={this.onEndChange}
-            open={endOpen}
-            onOpenChange={this.handleEndOpenChange}
-          />
         </div>
         <h1 className='h1'>日期格式</h1>
         <div style={{ marginBottom: 15 }}>
