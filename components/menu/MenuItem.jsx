@@ -20,7 +20,7 @@ export default class MenuItem extends React.Component {
     const { mode, idollMenuTheme } = this.context;
     const { level, rootPrefixCls, children } = this.props;
     const menuClassName = classNames({
-      [`${rootPrefixCls}-inline-collapsed-tooltip`]: mode === 'vertical',
+      [`${rootPrefixCls}-inline-collapsed-popover`]: mode === 'vertical' && level === 1,
       [`${rootPrefixCls}-theme-${idollMenuTheme}`]: idollMenuTheme,
     })
     return (
@@ -28,6 +28,7 @@ export default class MenuItem extends React.Component {
         <Popover
           content={children}
           placement='right'
+          style={{width: '50px'}}
           overlayClassName={menuClassName}
       >
           <Item {...this.props} ref={this.saveMenuItem} />

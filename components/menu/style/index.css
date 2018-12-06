@@ -4,12 +4,10 @@
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 @keyframes loadingCircle {
   0% {
-    transform-origin: 50% 50%;
-    transform: rotate(0deg) scale(0.66667);
+    transform: rotate(0deg) scale(1);
   }
   100% {
-    transform-origin: 50% 50%;
-    transform: rotate(360deg) scale(0.66667);
+    transform: rotate(360deg) scale(1);
   }
 }
 .idoll-menu {
@@ -763,6 +761,15 @@
 .idoll-menu-light.idoll-menu-horizontal .idoll-menu-submenu-horizontal .idoll-menu-submenu-title div span,
 .idoll-menu-dark.idoll-menu-horizontal .idoll-menu-submenu-horizontal .idoll-menu-submenu-title div span {
   vertical-align: middle;
+}
+.idoll-menu-inline-collapsed-popover.idoll-menu-theme-dark .idoll-popover-content .idoll-popover-arrow {
+  background-color: #000;
+}
+.idoll-menu-inline-collapsed-popover.idoll-menu-theme-dark .idoll-popover-content .idoll-popover-inner {
+  background-color: #000;
+}
+.idoll-menu-inline-collapsed-popover.idoll-menu-theme-dark .idoll-popover-content .idoll-popover-inner-content {
+  color: #fff;
 }
 .idoll-menu-dark,
 .idoll-menu-dark .idoll-menu-sub {
