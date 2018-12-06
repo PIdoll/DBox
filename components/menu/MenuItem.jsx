@@ -1,6 +1,6 @@
 import React from 'react'
 import { Item } from 'rc-menu'
-import Tooltip from '../../components/tooltip';
+import Popover from '../../components/popover';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -24,13 +24,15 @@ export default class MenuItem extends React.Component {
       [`${rootPrefixCls}-theme-${idollMenuTheme}`]: idollMenuTheme,
     })
     return (
-      <Tooltip
-        title={mode === 'vertical' && level === 1 ? children : ''}
-        placement='right'
-        overlayClassName={menuClassName}
+      mode === 'vertical' && level === 1 ? (
+        <Popover
+          content={children}
+          placement='right'
+          overlayClassName={menuClassName}
       >
-        <Item {...this.props} ref={this.saveMenuItem} />
-      </Tooltip>
+          <Item {...this.props} ref={this.saveMenuItem} />
+        </Popover>
+      ) : <Item {...this.props} ref={this.saveMenuItem} />
     )
   }
 }
