@@ -14,6 +14,14 @@
   font-weight: normal;
   line-height: 1.5;
 
+  .idoll-icon,
+  .idoll-icon:hover,
+  .idoll-icon:focus,
+  .idoll-icon:active {
+    color: @text-color-secondary;
+    text-decoration: none;
+  }
+
   &-normal {
     margin-right: 50px;
     text-decoration: none;
@@ -221,7 +229,7 @@
   &.@{idoll-prefix}-btn-group {
     .@{idoll-prefix}-btn {
       border-radius: @border-radius-base;
-    } 
+    }
   }
 
   &.@{idoll-prefix}-btn-group > .@{idoll-prefix}-btn:last-child:not(:first-child) {
@@ -300,14 +308,6 @@
       color: #fff;
     }
   }
-}
-
-.idoll-icon,
-.idoll-icon:hover,
-.idoll-icon:focus,
-.idoll-icon:active {
-  color: @text-color-secondary;
-  text-decoration: none;
 }
 
 h1.h1 {

@@ -3,7 +3,7 @@
   &-dark,
   &-dark &-sub {
     color: @menu-dark-color;
-    background: @menu-dark-bg;
+    background: @Sider-Menu ;
     .@{menu-prefix-cls}-submenu-title .@{menu-prefix-cls}-submenu-arrow {
       opacity: .45;
       transition: all .3s;
@@ -12,15 +12,25 @@
         background: @menu-dark-arrow-color;
       }
     }
+    .@{menu-prefix-cls}-submenu-title {
+      i{
+        // opacity: .45;
+        transition: all .3s;
+        color: @text-color-disable-dark;
+      }
+    }
   }
 
   &-dark&-submenu-popup {
     background: transparent;
-  }
-
-  &-dark &-inline&-sub {
-    background: @menu-dark-submenu-bg;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .45) inset;
+    .@{menu-prefix-cls}-vertical {
+      li.@{menu-prefix-cls}-item {
+        padding: 9px 7px 9px 12px;
+        font-size: 14px;
+        line-height: 22px;
+        min-width: 128px;
+      }
+    }
   }
 
   &-dark&-horizontal {
@@ -39,13 +49,20 @@
     color: @menu-dark-color;
   }
 
+  &-dark &-item {
+    i {
+      color: @text-color-disable-dark;
+      transition: all .3s;
+    }
+  }
+
   &-dark&-inline,
   &-dark&-vertical,
   &-dark&-vertical-left,
   &-dark&-vertical-right {
     border-right: 0;
   }
-
+  
   &-dark&-inline &-item,
   &-dark&-vertical &-item,
   &-dark&-vertical-left &-item,
@@ -63,6 +80,7 @@
     width: 100%;
   }
 
+
   &-dark &-item:hover,
   &-dark &-item-active,
   &-dark &-submenu-active,
@@ -74,13 +92,20 @@
     > a {
       color: @menu-dark-highlight-color;
     }
+    i {
+      color: @heading-color-dark ;
+      transition: all .3s;
+    }
+    > .@{menu-prefix-cls}-submenu-title {
+      color: @menu-dark-highlight-color;//**
+    }
     > .@{menu-prefix-cls}-submenu-title,
     > .@{menu-prefix-cls}-submenu-title:hover {
       > .@{menu-prefix-cls}-submenu-arrow {
         opacity: 1;
         &:after,
         &:before {
-          background: @menu-dark-highlight-color;
+          background: @menu-dark-highlight-color;//!!
         }
       }
     }
@@ -92,6 +117,9 @@
     &:after {
       border-right: 0;
     }
+    i {
+      color: @heading-color-dark;
+    }
     > a,
     > a:hover {
       color: @menu-dark-highlight-color;
@@ -100,7 +128,12 @@
 
   &&-dark &-item-selected,
   &-submenu-popup&-dark &-item-selected {
-    background-color: @menu-dark-item-selected-bg;
+    background-color: @processing-color;
+  }
+  &-dark&-horizontal {
+    .@{menu-prefix-cls}-item-selected {
+      background-color: @Sider-Menu;
+    }
   }
 
   // Disabled state sets text to dark gray and nukes hover/tab effects
@@ -114,5 +147,8 @@
     > .@{menu-prefix-cls}-submenu-title {
       color: @disabled-color-dark !important;
     }
+  }
+  &-dark&-hidden {
+    min-width: 128px;
   }
 }

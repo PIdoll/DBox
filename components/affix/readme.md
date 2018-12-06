@@ -12,10 +12,9 @@ class AffixView extends React.Component {
     super(props);
     this.state = {
       top: 30,
-      bottom:30,
     }
   }
-   componentDidMount() {
+   /* componentDidMount() {
     const ele = ReactDOM.findDOMNode(this.refs.box_affix);
     const currentHeight = ele.offsetTop - ele.offsetHeight;
     const left = `${ele.offsetLeft}px`;
@@ -23,23 +22,23 @@ class AffixView extends React.Component {
       if(window.scrollY >= currentHeight && window.scrollY < ele.offsetTop) {
         ele.style.position = 'relative',
         ele.style.top = '0';
-        ele.style.left = left;
         ele.style.width = '50%';
-        ele.style.backgroundColor = '#999';
-      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +             ele.offsetHeight) {
-        ele.style.position = 'static important' ;
-        ele.style.padding = '20';
-        ele.style.left = '100';
+        ele.style.backgroundColor = '#dedede';
+      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +            ele.offsetHeight) {
+        ele.style.position = 'absolute';
+        ele.style.width = '50%';
+        ele.style.padding = '10px';
+        ele.style.backgroundColor = '#dedede';
       }
     })
   }
    componentWillUnmount () {
       window.removeEventListener('scroll', this.onScroll);
-  }
+  } */
   render() {
     return (
       <Affix offsetTop={this.state.top} ref='box_affix'>
-        <Button type='primary' >距离顶部30px触发</Button>
+        <Button  >距离顶部30px触发</Button>
       </Affix>
     )
   }
@@ -48,11 +47,31 @@ class AffixView extends React.Component {
 ```
 #### **固定到底部**
 ```jsx
-<Affix offsetTop={100} onChange={affixed => console.log(affixed)}>
-  <Button >距离顶部100px触发</Button>
+<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+  <Button >距离底部0px触发</Button>
 </Affix>
 ```
 
+
+#### **固定在容器当中**
+```jsx
+class AffixView extends React.Component{
+  render() {
+    return (
+      <div ref={(node) => { this.container = node; }}>
+        <div style={{backgroundColor: '#dedede', padding: '10px 0'}}>
+          <Affix target={() => this.container}>
+            <Button type="primary">
+                固定在容器的顶部
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    )
+  }
+}
+<AffixView />
+```
 #### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
@@ -63,5 +82,4 @@ class AffixView extends React.Component {
 | onChange | 固定状态改变时触发的回调函数 | Function(affixed) | 无 |
 
 **注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
-
 

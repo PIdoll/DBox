@@ -49,6 +49,7 @@ import InputNumber from 'templates/inputNumber';
 import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
+import Calendar from 'templates/calendar';
 
 
 import './App.css';
@@ -106,6 +107,7 @@ const App = () => (
       <Route exact path='/inputNumber' component={InputNumber} />
       <Route exact path='/back-top' component={BackTop} />
       <Route exact path='/grid' component={Grid} />
+      <Route exact path='/calendar' component={Calendar} />
     </div>
   </Router>
 )

@@ -1,19 +1,21 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom';
+// import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 // import { findDOMNode } from 'react-dom';
 import RcMenu, { Divider, ItemGroup } from 'rc-menu';
 
 // import { SliderContext } from 'components/layout/sider';
 import Item from './MenuItem';
-import SubMenu from './Submenu';
+import SubMenu from './SubMenu';
 
-// import animation from '../_util/openAnimation';
+import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
 
 import './style/index.jsx';
 
+function noop() {
+}
 export default class Menu extends React.Component {
     static Divider = Divider;
     static ItemGroup = ItemGroup;
@@ -22,59 +24,49 @@ export default class Menu extends React.Component {
     static defaultProps = {
       prefixCls: 'idoll-menu',
       className: '',
-      theme: 'light', // or dark
+      onClick: noop,
+      onClose: noop,
+      theme: 'dark', // or light
     }
     static childContextTypes = {
       inlineCollapsed: PropTypes.bool,
       idollMenuTheme: PropTypes.string,
+      mode: PropTypes.string
     };
-    static contextTypes = {
-      siderCollapsed: PropTypes.bool,
-      collapsedWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    getChildContext () {
+      return {
+        idollMenuTheme: this.props.theme,
+        mode: this.props.mode
+      }
     }
-
     constructor(props) {
       super(props);
-      warning(!('onOpen' in props || 'onClose' in props), `'onOpen'和‘onClose'已经被移除，请用'onOpenChange'代替`);
       warning(!('inlineCollapsed' in props && props.mode !== 'inline'), `'inlineCollapsed'只能在Menu的'mode'是'inline'的时候使用`);
-      let openKeys;
-      if ('defaultOpenKeys' in props) {
-        openKeys = props.defaultOpenKeys;
-      } else if ('openKeys' in props) {
-        openKeys = props.openKeys;
-      }
       this.state = {
-        openKeys: openKeys || [],
+        openKeys: [],
       };
     }
-    componentWillReceiveProps(nextProps, nextContext) {
-      const {prefixCls} = this.props;
+    componentWillReceiveProps(nextProps) {
       if (this.props.mode === 'inline' && nextProps.mode !== 'inline') {
         this.switchModeFromInline = true;
       }
       if ('openKeys' in nextProps) {
-        this.setState({
-          openKeys: nextProps.openKeys
-        });
-        return;
+        this.setOpenKeys(nextProps.openKeys)
       }
-      if ((nextProps.inlineCollapsed && !this.props.inlineCollapsed) || (nextContext.siderCollapsed && !this.context.siderCollapsed)) {
-        this.switchModeFromInline = !!this.state.openKeys.length && !!findDOMNode(this)
-          .querySelectorAll(`.${prefixCls}-submenu-open`)
-          .length;
-        this.inlineOpenKeys = this.state.openKeys;
-        this.setState({openKeys: []});
-      }
-      if ((!nextProps.inlineCollapsed && this.props.inlineCollapsed) || (!nextContext.siderCollapsed && this.context.siderCollapsed)) {
-        this.setState({openKeys: this.inlineOpenKeys});
-        this.inlineOpenKeys = [];
-      }
+    }
+    handleClick = (e) => {
+      this.setOpenKeys([]);
+      this.props.onClick(e);
+    }
+    handleCloseKeys = (e) => {
+      const { openKeys } = e;
+      this.setOpenKeys(openKeys);
+      this.props.onClose(e);
     }
     handleOpenChange = (openKeys) => {
       this.setOpenKeys(openKeys);
-      const { onOpenChange } = this.props;
-      if (onOpenChange) {
-        onOpenChange(openKeys);
+      if (!('onOpenChange' in this.props)) {
+        this.setOpenKeys(openKeys);
       }
     }
     setOpenKeys(openKeys) {
@@ -82,37 +74,46 @@ export default class Menu extends React.Component {
         this.setState({ openKeys });
       }
     }
-    getRealMenuMode() {
-      const inlineCollapsed = this.getInlineCollapsed();
-      if (this.switchModeFromInline && inlineCollapsed) {
-         return 'inline';
-      }
-      const { mode } = this.props;
-      return inlineCollapsed ? 'vertical' : mode;
-    }
-    // 水平折叠
-    getInlineCollapsed() {
-      const { inlineCollapsed } = this.props;
-      if (this.context.siderCollapsed !== undefined) {
-        return this.context.siderCollapsed;
-      }
-      return inlineCollapsed;
-    }
     render() {
-      const { prefixCls, className, theme } = this.props;
-      const menuMode = this.getRealMenuMode();
-      const menuClassName = classNames(className, `${prefixCls}-${theme}`, {
-        [`${prefixCls}-inline-collapsed`]: this.getInlineCollapsed(),
-      })
-      const menuProps = {
-        openKeys: this.state.openKeys,
-        onOpenChange: this.handleOpenChange,
-        className: menuClassName,
-        mode: menuMode,
-
+      let openAnimation = this.props.openAnimation || this.props.openTransitionName;
+      if (!openAnimation) {
+        switch (this.props.mode) {
+          case 'horizontal':
+            openAnimation = 'slide-up';
+            break;
+          case 'vertical':
+            if (this.switchModeFromInline) {
+              openAnimation = '';
+              this.switchModeFromInline = false;
+            } else {
+              openAnimation = 'zoom-big';
+            }
+            break;
+          case 'inline':
+            openAnimation = animation;
+            break;
+          default:
+        }
+      }
+      let props = {}
+      const className = `${this.props.className} ${this.props.prefixCls}-${this.props.theme}`;
+      if (this.props.mode !== 'inline') {
+        props = {
+          openKeys: this.state.openKeys,
+          onOpenChange: this.handleOpenChange,
+          onClick: this.handleClick,
+          onClose: this.handleCloseKeys,
+          openTransitionName: openAnimation,
+          className,
+        }
+      } else {
+        props = {
+          className,
+          openAnimation,
+        }
       }
       return (
-        <RcMenu {...this.props} {...menuProps} />
+        <RcMenu {...this.props} {...props} />
       )
     }
 }

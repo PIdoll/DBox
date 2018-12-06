@@ -12,7 +12,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #fafafa;
   border-radius: 3px;
   border: 1px solid #E2E2E2;
   border-bottom: 0;
@@ -26,7 +25,7 @@
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
   line-height: 22px;
-  padding: 12px 0 12px 40px;
+  padding: 12px 24px;
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
   position: relative;
@@ -51,7 +50,7 @@
   vertical-align: top;
   transition: transform 0.24s;
   top: 0;
-  left: 16px;
+  right: 24px;
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow:before {
   display: block;
@@ -66,9 +65,9 @@
 .idoll-collapse-content {
   overflow: hidden;
   color: rgba(0, 0, 0, 0.65);
-  padding: 0 16px;
+  padding: 0 24px;
   background-color: #fff;
-  border-top: 1px solid #E2E2E2;
+  border-width: 0;
 }
 .idoll-collapse-content > .idoll-collapse-content-box {
   padding-top: 16px;
@@ -76,15 +75,20 @@
 }
 .idoll-collapse-content-inactive {
   display: none;
+  border-bottom: 0;
 }
 .idoll-collapse-item:last-child > .idoll-collapse-content {
   border-radius: 0 0 3px 3px;
 }
+.idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
+  background-color: #FAFAFA;
+}
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="true"] {
   outline-width: 0;
+  border-top: 0;
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="true"] .arrow {
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header:focus {
   outline-width: 0;
@@ -93,22 +97,49 @@
   background-color: #fff;
   border: 0;
 }
-.idoll-collapse-borderless > .idoll-collapse-item {
-  border-bottom: 1px solid #E2E2E2;
-}
 .idoll-collapse-borderless > .idoll-collapse-item:last-child,
 .idoll-collapse-borderless > .idoll-collapse-item:last-child .idoll-collapse-header {
   border-radius: 0;
 }
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header {
+  padding: 12px 0;
+  background-color: #fff;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header .arrow {
+  right: 0;
+}
+.idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-header[aria-expanded="false"] {
+  border-bottom: 0;
+}
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content {
   background-color: transparent;
   border-top: 0;
+  padding: 0;
+  border-radius: 0;
 }
 .idoll-collapse-borderless > .idoll-collapse-item > .idoll-collapse-content > .idoll-collapse-content-box {
   padding-top: 4px;
+  border-bottom: 0;
 }
 .idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header,
 .idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header > .arrow {
   cursor: not-allowed;
   color: rgba(0, 0, 0, 0.25);
+}
+.idoll-collapse-bgColor {
+  border: none;
+}
+.idoll-collapse-bgColor .idoll-collapse-item {
+  border-bottom: 0;
+  margin-bottom: 24px;
+}
+.idoll-collapse-bgColor .idoll-collapse-item .idoll-collapse-content {
+  background-color: #FCFCFC;
+  border-bottom: 0;
+}
+.idoll-collapse-bgColor .idoll-collapse-item .idoll-collapse-content-box {
+  border-bottom: 0;
+}
+.idoll-collapse-bgColor .idoll-collapse-item:last-child .idoll-collapse-content {
+  border-bottom: 0;
 }

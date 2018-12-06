@@ -29,9 +29,47 @@ class SliderView extends React.Component {
 <SliderView />
 ```
 
-
 #### **带输入框的滑块**
 ```jsx
+const {Row, Col} = require('../grid');
+class SliderView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: 1,
+    }
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(value) {
+    this.setState({
+      inputValue: value
+    });
+  }
+  render() {
+    const {inputValue} = this.state;
+    return (
+      <Row>
+        <Col span={12}>
+          <Slider
+            min={1}
+            max={20}
+            onChange={this.onChange}
+            value={typeof inputValue === 'number' ? inputValue : 0}
+          />
+        </Col>
+        <Col span={4} >
+          <InputNumber
+            min={1}
+            max={20}
+            value={inputValue}
+            onChange={this.onChange}
+          />
+        </Col>
+      </Row>
+    )
+  }
+}
+<SliderView />
 
 ```
 
@@ -63,8 +101,6 @@ class SliderView extends React.Component {
 | tipFormatter | Slider会将当前值传给tipFormatter,并在Tooltip中显示tipFormatter的返回值 | Function\null | IDENTITY |
 | value | 设置当前取值。当range为false时，使用number，否则使用[number, number] | number\number[] |  |
 | onChange | 当slider的值发生改变时，会触发onChange事件，并把改变的值作为参数传入 | Function(value) | NOOP |
-| description | 步骤的详情描述，可选 | string | ReactNode |
-| description | 步骤的详情描述，可选 | string | ReactNode |
 
 #### **方法**
 | 名称 | 描述 |

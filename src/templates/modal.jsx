@@ -7,6 +7,7 @@ export default class ModalView extends React.Component {
     visible: false,
     asyncvisible: false,
     ModalText: '对话框的内容',
+    confirmLoading: false,
     loading: false,
     // footervisible: false,
     // modal1Visible: false,
@@ -38,7 +39,7 @@ export default class ModalView extends React.Component {
   // 异步关闭弹出框
   asyncshowModal = () => {
     this.setState({
-      asyncvisible: true
+      asyncvisible: true,
     });
   }
   asynchandleOk = (e) => {
@@ -80,7 +81,7 @@ export default class ModalView extends React.Component {
   info = () => {
     Modal.info({
       title: '这是一条通知信息',
-      content: '一些附加信息......',
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>,
       onOk: function() {},
     });
   }
@@ -88,14 +89,14 @@ export default class ModalView extends React.Component {
   success = () => {
     Modal.success({
       title: '这是一条通知信息',
-      content: '一些附加信息......'
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>
     });
   }
 
   error = () => {
     Modal.error({
       title: '这是一条通知信息',
-      content: '一些附加信息......'
+      content: <div><p>一些附加信息......</p><p>一些附加信息......</p></div>
     });
   }
 
@@ -146,7 +147,7 @@ export default class ModalView extends React.Component {
 
         <h1 className='h1'>异步关闭弹出框</h1>
         <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
-        <Modal title='我是标题' visible={this.state.asyncvisible}
+        <Modal confirmLoading={this.state.confirmLoading} title='我是标题' visible={this.state.asyncvisible}
           onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
           <p>{this.state.ModalText}</p>
         </Modal>

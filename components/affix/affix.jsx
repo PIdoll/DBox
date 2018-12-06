@@ -14,7 +14,7 @@ import './style/index.jsx'
 
 // 用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
 function getTargetRect(target) {
-  return target !== window
+  return target !== window && target.nodeType === 1
   ? target.getBoundingClientRect()
   : { top: 0, left: 0, bottom: 0 };
 }

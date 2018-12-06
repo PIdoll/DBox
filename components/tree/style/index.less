@@ -6,12 +6,16 @@
 @tree-prefix-cls: ~"@{idoll-prefix}-tree";
 @tree-showline-icon-color: @text-color-secondary;
 
-// .idollCheckboxFn(@checkbox-prefix-cls: ~"@{idoll-prefix}-tree-checkbox");
+.idollCheckboxFn(@checkbox-prefix-cls: ~"@{idoll-prefix}-tree-checkbox");
 
 .@{tree-prefix-cls} {
   .reset-component;
   margin: 0;
   padding: 0;
+
+  :focus {
+    outline: none;
+  }
 
   ol, ul {
     list-style: none;
@@ -73,13 +77,13 @@
       color: @text-color;
       transition: all .3s;
       position: relative;
-      height: 24px;
+      height:tree-title-height;
       line-height: 24px;
       &:hover {
-        background-color: @item-hover-bg;
+        background-color: @primary-LightBg;
       }
       &.@{tree-prefix-cls}-node-selected {
-        background-color: @primary-2;
+        background-color: @primary-LightBg;
       }
     }
     span {
@@ -108,8 +112,12 @@
         transition: all .3s;
         &:after {
           display: inline-block;
-          .iconfont-font("\E64D");
+          // E64D
+          // .iconfont-font("\E91A");
+          .iconfont-font-family("\E91A","idoll-icon-pro");
           animation: loadingCircle 1s infinite linear;
+          
+          // animation: loadingCircle .3s infinite linear;
           color: @primary-color;
         }
       }
