@@ -249,6 +249,7 @@ module.exports = {
           components: () => ([
           path.resolve(__dirname, './components/back-top/index.jsx'),
           path.resolve(__dirname, './components/anchor/index.jsx'),
+          path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
       ]
