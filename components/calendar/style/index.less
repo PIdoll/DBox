@@ -9,7 +9,7 @@
   border-top: @border-width-base @border-style-base @border-color-base;
 
   &-month-select {
-    margin-left: 5px;
+    margin-left: 8px;
   }
 
   &-backdrop-header {
@@ -39,7 +39,7 @@
   &-header {
     display: flex;
     justify-content: space-between;
-    padding: 11px 16px 11px 24px;
+    padding: 11px 24px 11px 24px;
     text-align: right;
 
     .title {
@@ -72,7 +72,7 @@
   }
 
   &-calendar-body {
-    padding: 8px 12px;
+    padding: 24px 24px;
   }
 
   table {
@@ -91,6 +91,10 @@
 
   td {
     position: relative;
+  }
+
+  th {
+    padding-bottom: 18px;
   }
 
   &-calendar-table {
@@ -134,7 +138,7 @@
     transition: all .3s;
 
     &:hover {
-      background: @item-hover-bg;
+      background: @primary-LightBg;
       cursor: pointer;
     }
 

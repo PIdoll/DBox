@@ -34,7 +34,6 @@ export default class Calendar extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
-    mode: PropTypes.oneOf(['month', 'year']),
     fullscreen: PropTypes.bool,
     dateCellRender: PropTypes.func,
     monthCellRender: PropTypes.func,
@@ -45,9 +44,7 @@ export default class Calendar extends React.Component {
     onPanelChange: PropTypes.func,
     onSelect: PropTypes.func,
     onChange: PropTypes.func,
-    disabledDate: PropTypes.func,
     value: PropTypes.object,
-    mold: PropTypes.string,
   }
 
   constructor(props) {
@@ -69,12 +66,12 @@ export default class Calendar extends React.Component {
   componentWillReceiveProps(nextProps) {
     if ('value' in nextProps) {
       this.setState({
-        value: nextProps.value && nextProps.value,
+        value: nextProps.value,
       });
     }
     if ('mode' in nextProps && nextProps.mode !== this.props.mode) {
       this.setState({
-        mode: nextProps.mode && nextProps.mode,
+        mode: nextProps.mode,
       })
     }
   }
@@ -150,12 +147,12 @@ export default class Calendar extends React.Component {
     this.setValue(value, 'select');
   }
 
-  getDateRange = (validRange, disabledDate, current) => {
+  getDateRange = (validRange, disabledDate) => (current) => {
     if (!current) {
       return false;
     }
     const [startDate, endDate] = validRange;
-    const inRange = !moment(current).isBetween(startDate, endDate, 'days', '[]');
+    const inRange = current.isBetween(startDate, endDate, 'days', '[]');
     if (disabledDate) {
       return (disabledDate(current) || inRange);
     }
@@ -236,3 +233,4 @@ export default class Calendar extends React.Component {
     )
   }
 }
+
