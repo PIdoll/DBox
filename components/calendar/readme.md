@@ -5,8 +5,9 @@
 #### **基本用法**
 
 ```jsx
+const moment = require('../../node_modules/moment');
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
-  <Calendar fullscreen={false} />
+  <Calendar fullscreen={false} validRange={[moment('2010-01'), moment('2018-12')]} />
 </div>
 ```
 
@@ -20,3 +21,4 @@
 | onPanelChange | 日期面板变化回调 | function(date: moment, mode: string) | 无 |
 | onChange | 日期变化回调 | function(date: moment) | 无 |
 | onSelect | 点击选择日期回调 | function(date: moment) | 无 |
+| validRange | 设置可以显示的日期 | [moment, moment] | 无 |

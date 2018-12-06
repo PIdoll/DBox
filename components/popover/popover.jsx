@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from '../../components/tooltip';
-
+import classNames from 'classnames';
 import warning from '../_util/warning';
 
 export default class Popover extends React.Component {
@@ -16,12 +16,15 @@ export default class Popover extends React.Component {
     this.tooltip = node;
   }
   getOverlay() {
-    const { title, prefixCls, content } = this.props;
+    const { title, prefixCls, content, className, overlayClassName } = this.props;
+    const menuClassName = classNames(className, `${prefixCls}-inner-content`, {
+      [`${prefixCls}-inline-popover`]: overlayClassName,
+    })
     warning(!('overlay' in this.props), `Popover[overlay]已被移除，请用Popover[content]替代`);
     return (
       <div>
         {title && <div className={`${prefixCls}-title`}>{title}</div>}
-        <div className={`${prefixCls}-inner-content`}>{content}</div>
+        <div className={menuClassName}>{content}</div>
       </div>
     )
   }
