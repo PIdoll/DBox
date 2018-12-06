@@ -10,8 +10,11 @@ export default class Tree extends React.Component {
     prefixCls: 'idoll-tree',
     checkable: false,
     showIcon: false,
+    // loadedKeys: [],
+    // onLoaded: (loadedKeys: string[], info: { event: 'load', node: AntTreeNode; }) => void;
     // openAnimation: animation,
   };
+
 	render() {
 		const { prefixCls, className, children } = this.props;
 		let checkable = this.props.checkable;
@@ -19,8 +22,8 @@ export default class Tree extends React.Component {
   <RcTree
     {...this.props}
     className={className}
-    checkable={checkable ? <span className={`${prefixCls}-checkable-inner`} /> : checkable}
-  >
+    checkable={checkable ? <span className={`${prefixCls}-checkbox-inner`} /> : checkable}
+        >
     { children }
   </RcTree>
 		);

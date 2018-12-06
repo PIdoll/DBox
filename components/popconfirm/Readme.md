@@ -80,7 +80,7 @@ class PopconfirmExample extends React.Component {
                 <Button>LT</Button>
             </Popconfirm>
             <Popconfirm placement='left' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
-                <Button>Left</Button>
+                <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Left</Button>
             </Popconfirm>
             <Popconfirm placement='leftBottom' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>LB</Button>
@@ -91,7 +91,7 @@ class PopconfirmExample extends React.Component {
                 <Button>RT</Button>
             </Popconfirm>
             <Popconfirm placement='right' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
-                <Button>Right</Button>
+                <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Right</Button>
             </Popconfirm>
             <Popconfirm placement='rightBottom' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>RB</Button>
