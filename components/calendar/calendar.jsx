@@ -44,7 +44,6 @@ export default class Calendar extends React.Component {
     onPanelChange: PropTypes.func,
     onSelect: PropTypes.func,
     onChange: PropTypes.func,
-    disabledDate: PropTypes.func,
     value: PropTypes.object,
   }
 
@@ -148,12 +147,12 @@ export default class Calendar extends React.Component {
     this.setValue(value, 'select');
   }
 
-  getDateRange = (validRange, disabledDate, current) => {
+  getDateRange = (validRange, disabledDate) => (current) => {
     if (!current) {
       return false;
     }
     const [startDate, endDate] = validRange;
-    const inRange = !moment(current).isBetween(startDate, endDate, 'days', '[]');
+    const inRange = current.isBetween(startDate, endDate, 'days', '[]');
     if (disabledDate) {
       return (disabledDate(current) || inRange);
     }
