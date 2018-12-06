@@ -73,6 +73,7 @@ export default class Table extends React.Component {
 
     this.state = {
       // 减少状态
+      boxChecked: false,
       selectedRowKeys: (props.rowSelection || {}).selectedRowKeys || [],
       filters: this.getFiltersFromColumns(),
       selectionDirty: false,
@@ -349,6 +350,7 @@ export default class Table extends React.Component {
 
   handleSelect = (record, rowIndex, e) => {
     const checked = e.target.checked;
+    this.setState({boxChecked: e.target.checked})
     const defaultSelection = this.state.selectionDirty ? [] : this.getDefaultSelection();
     let selectedRowKeys = this.state.selectedRowKeys.concat(defaultSelection);
     let key = this.getRecordKey(record, rowIndex);
@@ -525,7 +527,7 @@ export default class Table extends React.Component {
         selectionColumn = {
           key: 'selection-column',
           render: this.renderSelectionRadio,
-          className: 'idoll-table-selection-column',
+          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       } else {
         const checkboxAllDisabled = data.every(item => this.getCheckboxPropsByItem(item).disabled);
@@ -539,7 +541,7 @@ export default class Table extends React.Component {
           key: 'selection-column',
           title: checkboxAll,
           render: this.renderSelectionCheckBox,
-          className: 'idoll-table-selection-column',
+          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       }
       if (columns.some(column => column.fixed === 'left' || column.fixed === true)) {

@@ -611,12 +611,12 @@ class table extends React.Component {
                 )}
               </EditableContext.Consumer>
               <Divider type='vertical' />
-              <Popconfirm
-                title='您确定要取消吗?'
-                onConfirm={() => this.cancel(record.key)}
-              >
-                <a>取消</a>
-              </Popconfirm>
+              <a
+                href='javascript:;'
+                onClick={() => this.cancel(record.key)}
+                  >
+                    取消
+              </a>
             </span>
           ) : (
             <span>
@@ -646,7 +646,6 @@ class table extends React.Component {
     this.setState({ data: data.filter(item => item.key !== key) });
   }
   onSelectChange = (selectedRowKeys) => {
-    console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({ selectedRowKeys });
   }
   edit(key) {
@@ -690,7 +689,7 @@ class table extends React.Component {
         cell: EditableCell,
       },
     };
-    const column = this.columnss.map((col) => {
+    const columnn = this.columnss.map((col) => {
       if (!col.editable) {
         return col;
       }
@@ -716,12 +715,7 @@ class table extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>可编辑表格</h1>
-        <Table
-          components={components}
-          bordered
-          dataSource={this.state.data}
-          columns={column}
-        />
+        <Table components={components} bordered dataSource={this.state.data} columns={columnn} />
         <h1 className='h1'>默认表格</h1>
         <Table columns={columns} dataSource={data} />
         <h1 className='h1'>中号表格</h1>
@@ -729,7 +723,7 @@ class table extends React.Component {
         <br />
         <h1 className='h1'>小号表格</h1>
         <Table columns={columns} dataSource={data} size='small' />
-        <h1>带选择框</h1>
+        <h1 className='h1'>带选择框</h1>
         <div style={{ marginBottom: 12 }}>
           <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>选择</Button>
           <span style={{ marginLeft: 16 }}>
@@ -745,12 +739,8 @@ class table extends React.Component {
         <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
         <br />
         <h1 className='h1'>内嵌表格</h1>
-        <Table
-          columns={columns}
-          expandedRowRender={expandedRowRender}
-          dataSource={data}
-        />
-        <h1>固定行列</h1>
+        <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />
+        <h1 className='h1'>固定行列</h1>
         <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
       </div>
     )

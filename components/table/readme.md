@@ -597,21 +597,15 @@ const columnsCol = [{
       children: value,
       props: {},
     };
-    // 第三列的第三行行合并
     if (index === 2) {
       obj.props.rowSpan = 2;
     }
-
-    // 第三列的第四行被合并没了，设置 rowSpan = 0 不要渲染
     if (index === 3) {
       obj.props.rowSpan = 0;
     }
-
-    // 第一行的第第三列合并2列
     if (index === 0) {
       obj.props.colSpan = 2
     }
-
     return obj;
   },
 }, {
@@ -622,7 +616,6 @@ const columnsCol = [{
       children: value,
       props: {},
     };
-    // 第一行的第四列和第一行的第三列合并不要渲染
     if (index === 0) {
       obj.props.colSpan = 0
     }
@@ -812,6 +805,279 @@ const dataFixdRow = [{
   state: '审核通过',
 }];
 <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
+```
+
+#### **可编辑表格**
+```jsx
+const FormItem = Form.Item;
+const EditableContext = React.createContext();
+
+const EditableRow = ({ form, index, ...props }) => (
+  <EditableContext.Provider value={form}>
+    <tr {...props} />
+  </EditableContext.Provider>
+);
+
+const EditableFormRow = Form.create()(EditableRow);
+
+class EditableCell extends React.Component {
+  getInput () {
+    if (this.props.inputtype === 'number') {
+      return <InputNumber />;
+    }
+    if (this.props.inputtype === 'city') {
+      return <Select showSearch style={{ width: 100 }} placeholder='请选择' >
+        <Select.Option value='北京'>北京</Select.Option>
+        <Select.Option value='上海'>上海</Select.Option>
+        <Select.Option value='广州'>广州</Select.Option>
+        <Select.Option value='沈阳'>沈阳</Select.Option>
+        <Select.Option value='郑州'>郑州</Select.Option>
+        <Select.Option value='合肥'>合肥</Select.Option>
+        <Select.Option value='南京'>南京</Select.Option>
+        <Select.Option value='深圳'>深圳</Select.Option>
+      </Select>;
+    }
+    return <Input />;
+  };
+
+  render() {
+    const {
+      editing,
+      dataIndex,
+      title,
+      // inputtype,
+      record,
+      // index,
+      ...restProps
+    } = this.props;
+    return (
+      <EditableContext.Consumer>
+        {(form) => {
+          const { getFieldDecorator } = form;
+          return (
+            <td {...restProps}>
+              {editing ? (
+                <FormItem style={{ margin: 0 }}>
+                  {getFieldDecorator(dataIndex, {
+                    rules: [{
+                      required: true,
+                      message: `Please Input ${title}!`,
+                    }],
+                    initialValue: record[dataIndex],
+                  })(this.getInput())}
+                </FormItem>
+              ) : restProps.children}
+            </td>
+          );
+        }}
+      </EditableContext.Consumer>
+    );
+  }
+}
+class TableView extends React.Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+    selectedRowKeys: [], // Check here to configure the default column
+    loading: false,
+    editingKey: '',
+    data: [{
+      key: '1',
+      name: '劉岳然',
+      age: 26,
+      city: '北京',
+      Tel: '13943250086',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '2',
+      name: '李鷽釁',
+      age: 24,
+      city: '南京',
+      Tel: '13262717838',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '3',
+      name: '彭柔群',
+      age: 22,
+      city: '上海',
+      Tel: '13950035537',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '4',
+      name: '顏仁豪',
+      age: 28,
+      city: '合肥',
+      Tel: '13947766628',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '5',
+      name: '王郁弘',
+      age: 32,
+      city: '郑州',
+      Tel: '13964507501',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }, {
+      key: '6',
+      name: '陳柏萱',
+      age: 27,
+      city: '沈阳',
+      Tel: '13262836283',
+      address: '上海市浦东新区唐镇上丰路88号',
+    }]
+  };
+  this.columnss = [{
+    title: '姓名',
+    dataIndex: 'name',
+    key: 'name',
+    editable: true,
+  }, {
+    title: '年龄',
+    dataIndex: 'age',
+    key: 'age',
+    editable: true,
+  }, {
+    title: '居住地',
+    dataIndex: 'city',
+    key: 'city',
+    editable: true,
+  }, {
+    title: '手机号',
+    dataIndex: 'Tel',
+    key: 'Tel',
+    editable: true,
+  }, {
+    title: '地址',
+    dataIndex: 'address',
+    key: 'address',
+    editable: true,
+  }, {
+    title: '操作',
+    dataIndex: 'action',
+    key: 'action',
+    render: (text, record) => {
+      const editable = this.isEditing(record);
+      return (
+        <div>
+          {editable ? (
+            <span>
+              <EditableContext.Consumer>
+                {form => (
+                  <a
+                    href='javascript:;'
+                    onClick={() => this.save(form, record.key)}
+                  >
+                    保存
+                  </a>
+                )}
+              </EditableContext.Consumer>
+               | 
+              <a
+                href='javascript:;'
+                onClick={() => this.cancel(record.key)}
+                  >
+                    取消
+              </a>
+            </span>
+          ) : (
+            <span>
+              <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
+               | 
+              <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
+                <a href='javascript:;'>删除</a>
+              </Popconfirm>
+            </span>
+          )}
+        </div>
+      );
+    },
+  }];
+}
+  start () {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
+  }
+  handleDelete (key) {
+    const data = [...this.state.data];
+    this.setState({ data: data.filter(item => item.key !== key) });
+  }
+  onSelectChange (selectedRowKeys) {
+    this.setState({ selectedRowKeys });
+  }
+  edit (key) {
+    this.setState({ editingKey: key });
+  }
+  cancel () {
+    this.setState({ editingKey: '' });
+  };
+  isEditing (record) {return (record.key === this.state.editingKey)};
+  save (form, key) {
+    form.validateFields((error, row) => {
+      if (error) {
+        return;
+      }
+      const newData = [...this.state.data];
+      const index = newData.findIndex(item => key === item.key);
+      if (index > -1) {
+        const item = newData[index];
+        newData.splice(index, 1, {
+          ...item,
+          ...row,
+        });
+        this.setState({ data: newData, editingKey: '' });
+      } else {
+        newData.push(row);
+        this.setState({ data: newData, editingKey: '' });
+      }
+    });
+  }
+  render () {
+    const { loading, selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
+    const hasSelected = selectedRowKeys.length > 0;
+    // edit
+    const components = {
+      body: {
+        row: EditableFormRow,
+        cell: EditableCell,
+      },
+    };
+    const columnn = this.columnss.map((col) => {
+      if (!col.editable) {
+        return col;
+      }
+      return {
+        ...col,
+        onCell: record => ({
+          record,
+          inputtype: (() => {
+            if (col.dataIndex === 'age') {
+              return 'number'
+            } else if (col.dataIndex === 'city') {
+              return 'city'
+            } else {
+              return 'text'
+            }
+          })(),
+          dataIndex: col.dataIndex,
+          title: col.title,
+          editing: this.isEditing(record),
+        }),
+      };
+    });
+    return (
+        <Table components={components} bordered dataSource={this.state.data} columns={columnn} />
+    )
+  }
+}
+<TableView />
 ```
 
 
