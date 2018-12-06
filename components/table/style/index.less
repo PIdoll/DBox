@@ -2,7 +2,7 @@
 @import "../../../style/mixins/index";
 
 @table-prefix-cls: idoll-table;
-@table-head-background-color: #f7f7f7;
+@table-head-background-color: #FAFAFA;
 
 .@{table-prefix-cls} {
   font-size: @font-size-base;
@@ -27,9 +27,10 @@
 
   &-thead > tr > th {
     background: @table-head-background-color;
-    font-weight: bold;
+    font-weight: 500;
     transition: background .3s ease;
     text-align: left;
+    padding: 16px;
 
     .idollicon-filter {
       margin-left: 4px;
@@ -49,6 +50,23 @@
 
   &-tbody > tr > td {
     border-bottom: 1px solid @border-color-split;
+    padding: 16px;
+  }
+
+  &-tbody > .@{table-prefix-cls}-expanded-row[data-row-key*='-extra-row'] {
+    td {
+      .clearfix {
+        margin: -16px 0;
+        border-bottom: 1px solid #FAFAFA;
+        .@{table-prefix-cls}-tbody {
+          tr:last-child {
+            td {
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
   &-thead > tr,
@@ -56,7 +74,7 @@
     transition: all .3s ease;
     &.@{table-prefix-cls}-row-hover,
     &:hover {
-      background: tint(@primary-color, 90%);
+      background: @primary-LightBg;
     }
   }
 
@@ -65,8 +83,8 @@
   }
 
   &-footer {
-    padding: 16px 8px;
-    background: @table-head-background-color;
+    padding: 16px;
+    text-align: center;
     position: relative;
     z-index: 2;
     top: -1px;
@@ -78,7 +96,8 @@
   }
 
   &-title {
-    padding: 16px 8px;
+    padding: 16px;
+    text-align: center;
     position: relative;
     top: 1px;
     border-radius: @border-radius-base @border-radius-base 0 0;
@@ -107,7 +126,6 @@
 
   &-thead > tr > th,
   &-tbody > tr > td {
-    padding: 16px 8px;
     word-break: break-all;
   }
 
@@ -152,18 +170,20 @@
   &-middle {
     .@{table-prefix-cls}-thead > tr > th,
     .@{table-prefix-cls}-tbody > tr > td {
-      padding: 10px 8px;
+      padding: 12px 16px;
     }
   }
 
   &-small {
-    border: 1px solid @border-color-split;
     border-radius: @border-radius-base;
+
+    .@{table-prefix-cls}-body .@{table-prefix-cls}-thead > tr > th {
+      background-color: @table-head-background-color;
+    }
 
     .@{table-prefix-cls}-header > table,
     .@{table-prefix-cls}-body > table {
       border: 0;
-      padding: 0 8px;
     }
 
     &.@{table-prefix-cls}-bordered .@{table-prefix-cls}-body > table {
@@ -171,13 +191,13 @@
     }
 
     .@{table-prefix-cls}-thead > tr > th {
-      padding: 10px 8px;
+      padding: 8px;
       background: #fff;
       border-bottom: 1px solid @border-color-split;
     }
 
     .@{table-prefix-cls}-tbody > tr > td {
-      padding: 6px 8px;
+      padding: 8px;
     }
 
     .@{table-prefix-cls}-header {
@@ -188,10 +208,6 @@
       .@{table-prefix-cls}-thead > tr > th {
         border-bottom: 0;
       }
-    }
-
-    .@{table-prefix-cls}-row:last-child td {
-      border-bottom: 0;
     }
   }
 
@@ -278,7 +294,6 @@
   }
 
   &-placeholder {
-    padding: 16px 8px;
     background: #fff;
     border-bottom: 1px solid @border-color-split;;
     text-align: center;
@@ -322,7 +337,7 @@
       .idoll-dropdown-submenu-contain-selected {
         .idoll-dropdown-menu-submenu-title:after {
           color: @primary-color;
-          font-weight: bold;
+          font-weight: 500;
           text-shadow: 0 0 2px tint(@primary-color, 80%);
         }
       }
@@ -339,7 +354,7 @@
 
     &-btns {
       overflow: hidden;
-      padding: 7px 15px;
+      // padding: 7px 15px;
       border-top: 1px solid @border-color-split;
     }
 
@@ -395,6 +410,8 @@
       }
     }
 
+
+
     &[class*="@{table-prefix-cls}-row-level-0"] .@{table-prefix-cls}-selection-column > span {
       display: inline-block;
     }
@@ -413,6 +430,7 @@
 
   &-scroll {
     overflow: auto;
+    overflow-x: hidden;
     table {
       width: auto;
       min-width: 100%;
@@ -430,10 +448,12 @@
 
   &-fixed-header &-body-inner {
     overflow: scroll;
+    overflow-x: hidden;
   }
 
   &-fixed-header &-scroll &-header {
     overflow: scroll;
+    overflow-x: hidden;
     padding-bottom: 20px;
     margin-bottom: -20px;
   }
@@ -504,6 +524,9 @@
     display: none;
   }
 
+  &-thead > tr > th {
+    border-bottom: 1px solid @border-color-split;
+  }
   &-thead > tr > th&-column-has-prev {
     position: relative;
   }
@@ -536,7 +559,7 @@
     &:before {
       content: '\e601';
       .iconfont-size-under-12px(9px);
-      font-weight: bold;
+      font-weight: 500;
       font-family: idollicon;
     }
   }
@@ -547,7 +570,7 @@
     &:before {
       content: '\e600';
       .iconfont-size-under-12px(9px);
-      font-weight: bold;
+      font-weight: 500;
       font-family: idollicon;
     }
   }
