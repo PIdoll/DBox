@@ -108,8 +108,8 @@ class ProgressView  extends React.Component {
         <Progress type='line' percent={this.state.percent} />
         <Progress type='circle' percent={this.state.percent} />
         <ButtonGroup>
-          <Button type='secondary' onClick={this.decrease} icon='remove' />
-          <Button type='secondary' onClick={this.increase} icon='plus' />
+          <Button onClick={this.decrease} icon='remove' />
+          <Button onClick={this.increase} icon='plus' />
         </ButtonGroup>
       </div>
     )
