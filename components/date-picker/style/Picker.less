@@ -1,4 +1,8 @@
+@import '../../button/style/mixin.less';
+@import '../../../style/theme/default/compoments/timePicker.less';
 .@{calendar-prefix-cls}-picker-container {
+  .reset-component;
+  font-family: @font-family;
   position: absolute;
   z-index: @zindex-picker;
 
@@ -28,58 +32,66 @@
 }
 
 .@{calendar-prefix-cls}-picker {
+  .reset-component;
   position: relative;
   display: inline-block;
   outline: none;
-  font-size: @font-size-base;
   transition: opacity 0.3s ease;
 
-  > input {
+  &-input {
     outline: none;
+  }
+
+  &:hover &-input:not(.@{idoll-prefix}-input-disabled) {
+    border-color: @primary-color;
+  }
+
+  &:focus &-input:not(.@{idoll-prefix}-input-disabled) {
+    .active();
+  }
+
+  &-clear,
+  &-icon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: @control-padding-horizontal;
+    top: 50%;
+    margin-top: -7px;
+    line-height: 14px;
+    font-size: @font-size-sm;
+    transition: all .3s;
+    user-select: none;
+    z-index: 1;
   }
   &-clear {
     opacity: 0;
-    z-index: -1;
-    position: absolute;
-    right: 7px;
-    background: #fff;
-    top: 50%;
-    font-size: 12px;
-    color: #ccc;
-    width: 14px;
-    height: 14px;
-    margin-top: -7px;
-    line-height: 14px;
+    z-index: 2;
+    font-size: @font-size-base;
+    color: @disabled-color;
+    background: @input-bg;
+    pointer-events: none;
     cursor: pointer;
-    transition: color 0.3s ease, opacity 0.15s ease;
     &:hover {
-      color: #999;
+      color: @text-color-secondary;
     }
   }
 
   &:hover &-clear {
     opacity: 1;
-    z-index: 1;
+    pointer-events: auto;
   }
   &-icon {
-    position: absolute;
-    user-select: none;
-    transition: all .3s @ease-in-out;
-    width: 12px;
-    height: 12px;
-    line-height: 12px;
-    right: 8px;
-    color: #999;
-    top: 50%;
-    margin-top: -6px;
-    &:after {
-      content: "\e90c";
-      font-family: "idollicon";
-      font-size: 12px;
-      color: #999;
-      display: inline-block;
-      line-height: 1;
-      vertical-align: bottom;
-    }
+    font-family: 'idollicon';
+    font-size: @font-size-base;
+    color: @disabled-color;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  &-small &-clear,
+  &-small &-icon {
+    right: @control-padding-horizontal-sm;
   }
 }
+

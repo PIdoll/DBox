@@ -17,12 +17,12 @@
     z-index: 1;
     background: #fff;
     top: 50%;
-    font-size: 12px;
+    font-size: 14px;
     color: #ccc;
-    width: 12px;
-    height: 12px;
-    margin-top: -6px;
-    line-height: 12px;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
+    line-height: 14px;
     cursor: pointer;
     transition: color 0.3s ease, opacity 0.15s ease;
     &:before {
@@ -43,10 +43,21 @@
   vertical-align: middle;
   color: @select-color;
   font-size: @font-size-base;
+  // 去除外边距样式
+  &:focus {
+    outline: none;
+  }
 
   > ul > li > a {
       padding: 0;
       background-color: #fff;
+  }
+
+  &-remove-icon {
+    color: @text-color-disable !important;
+    &:hover {
+      color: @text-color-secondary !important;
+    }
   }
 
   // arrow
@@ -147,6 +158,9 @@
       white-space: nowrap;
       padding: 4px 11px ;
       line-height: @select-height-base - 10px;
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -264,7 +278,7 @@
         font-size: 12px;
         .@{select-prefix-cls}-selection__placeholder {
           left: 7px;
-          right: 7px;;
+          right: 7px;
         }
       }
       .@{select-prefix-cls}-arrow {
@@ -283,6 +297,15 @@
 
 
 
+  }
+
+  &-search__field__mirror {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: pre;
+    pointer-events: none;
+    opacity: 0;
   }
 
   &-disabled &-selection__choice__remove {
@@ -315,6 +338,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
+    &:focus {
+      outline: none;
+    }
   }
 
   &-search--inline {
@@ -366,7 +392,7 @@
     .@{select-prefix-cls}-selection__rendered {
       overflow: hidden;
       text-overflow: ellipsis;
-      // padding-left: @select-padding-vertical;
+      padding-left: 4px;
       // padding-bottom: 4px;
     }
 
@@ -377,7 +403,7 @@
 
     > ul > li,
     .@{select-prefix-cls}-selection__rendered > ul > li {  // for tree-select
-      margin-left: 11px;
+      margin-left: 4px;
       margin-top: 5px;
       margin-bottom: 5px;
       height: 20px;
@@ -411,6 +437,7 @@
       text-overflow: ellipsis;
       max-width: 100%;
       transition: margin .3s @ease-in-out;
+      line-height: 19px;
     }
 
     .@{select-prefix-cls}-selection__choice__remove {
@@ -424,15 +451,15 @@
       .iconfont-size-under-12px(10px);
       position: absolute;
       font-size: 12px !important;
-      top: -2px;
-      // right: 4px;
-      padding: 0 0 0 4px;
+      top: 0;
+      right: 0;
+      padding: 0 8px 0 4px;
       &:hover {
         color: @text-color-secondary;
       }
-      &:before {
-        content: "\e91c";
-      }
+      // &:before {
+      //   content: "\e91c";
+      // }
     }
   }
 

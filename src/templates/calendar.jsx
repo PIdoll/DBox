@@ -9,7 +9,7 @@ export default class CalendarView extends React.Component {
   }
 
   onPanelChange = (value, mode) => {
-    console.log(value, mode);
+    console.log('onPanelChange', value, mode);
   }
 
   onSelect = (date) => {

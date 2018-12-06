@@ -197,7 +197,7 @@ module.exports = {
            path.resolve(__dirname, './components/input/index.jsx'),
            path.resolve(__dirname, './components/input-number/index.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
-        //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
+           path.resolve(__dirname, './components/tree-select/index.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
@@ -239,7 +239,7 @@ module.exports = {
          path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
-        //  path.resolve(__dirname, './components/progress/progress.jsx'),
+          path.resolve(__dirname, './components/progress/progress.jsx'),
          path.resolve(__dirname, './components/popconfirm/index.jsx'),
           path.resolve(__dirname, './components/spin/index.jsx'),
           ])
