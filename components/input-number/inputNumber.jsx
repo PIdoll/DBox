@@ -6,7 +6,6 @@ import Icon from '../icon';
 
 import './style';
 
-
 export default class InputNumber extends React.Component {
   static propTypes = {
     defaultValue: PropTypes.number,
@@ -19,7 +18,7 @@ export default class InputNumber extends React.Component {
     step: PropTypes.number,
   }
   static defaultProps = {
-    prfixCls: 'idoll-input-number',
+    prefixCls: 'idoll-input-number',
     step: 1,
   };
 
