@@ -33,7 +33,7 @@ const columns = [{
   render: (text, record) => (
     <span>
       <a href='javascript:;'>编辑</a>
-      |
+      <Divider type='vertical' />
       <a href='javascript:;'>删除</a>
     </span>
   ),
@@ -112,7 +112,7 @@ const columns = [{
   render: (text, record) => (
     <span>
       <a href='javascript:;'>编辑</a>
-      |
+      <Divider type='vertical' />
       <a href='javascript:;'>删除</a>
     </span>
   ),
@@ -195,7 +195,7 @@ const columns = [{
   render: (text, record) => (
     <span>
       <a href='javascript:;'>编辑</a>
-      |
+      <Divider type='vertical' />
       <a href='javascript:;'>删除</a>
     </span>
   ),
@@ -274,7 +274,7 @@ const columns = [{
   render: (text, record) => (
     <span>
       <a href='javascript:;'>编辑</a>
-      |
+      <Divider type='vertical' />
       <a href='javascript:;'>删除</a>
     </span>
   ),
@@ -488,7 +488,7 @@ const columns = [{
   render: (text, record) => (
     <span>
       <a href='javascript:;'>编辑</a>
-      |
+      <Divider type='vertical' />
       <a href='javascript:;'>删除</a>
     </span>
   ),
@@ -726,7 +726,9 @@ const columnsFixRow = [{
   key: 'action',
   render: (text, record) => (
     <span>
-      <a href='javascript:;'>编辑</a> | <a href='javascript:;'>删除</a>
+      <a href='javascript:;'>编辑</a>
+      <Divider type='vertical' />
+      <a href='javascript:;'>删除</a>
     </span>
   ),
 }];
@@ -970,7 +972,7 @@ class TableView extends React.Component {
                   </a>
                 )}
               </EditableContext.Consumer>
-               | 
+              <Divider type='vertical' /> 
               <a
                 href='javascript:;'
                 onClick={() => this.cancel(record.key)}
@@ -981,7 +983,7 @@ class TableView extends React.Component {
           ) : (
             <span>
               <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
-               | 
+              <Divider type='vertical' /> 
               <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
                 <a href='javascript:;'>删除</a>
               </Popconfirm>
