@@ -1,6 +1,6 @@
 import React from 'react'
 import { Item } from 'rc-menu'
-import Popover from '../../components/popover';
+import Tooltip from '../../components/tooltip';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -9,7 +9,6 @@ export default class MenuItem extends React.Component {
     mode: PropTypes.string,
     idollMenuTheme: PropTypes.string,
   }
-  static isMenuItem = 1;
   onKeyDown = (e) => {
     this.menuItem.onKeyDown(e);
   }
@@ -20,19 +19,18 @@ export default class MenuItem extends React.Component {
     const { mode, idollMenuTheme } = this.context;
     const { level, rootPrefixCls, children } = this.props;
     const menuClassName = classNames({
-      [`${rootPrefixCls}-inline-collapsed-popover`]: mode === 'vertical' && level === 1,
+      [`${rootPrefixCls}-inline-collapsed-tooltip`]: mode === 'vertical' && level === 1,
       [`${rootPrefixCls}-theme-${idollMenuTheme}`]: idollMenuTheme,
     })
     return (
       mode === 'vertical' && level === 1 ? (
-        <Popover
-          content={children}
+        <Tooltip
+          title={children}
           placement='right'
-          style={{width: '50px'}}
           overlayClassName={menuClassName}
       >
           <Item {...this.props} ref={this.saveMenuItem} />
-        </Popover>
+        </Tooltip>
       ) : <Item {...this.props} ref={this.saveMenuItem} />
     )
   }
