@@ -58,8 +58,10 @@ export default class AnchorView extends React.Component {
             <Link href='#components-anchor-demo-1' title='项目一' />
             <Link href='#components-anchor-demo-2' title='项目二' />
             <Link href='#components-anchor-demo-3' title='项目三' />
-            <Link href='#components-anchor-demo-4' title='项目四' />
-            <Link href='#components-anchor-demo-5' title='项目五' />
+            <Link href='#API' title='API'>
+              <Link href='#components-anchor-demo-4' title='项目四' />
+              <Link href='#components-anchor-demo-5' title='项目五' />
+            </Link>
           </Anchor>
         </div>
         <h1 className='h1'>书签类型</h1>
