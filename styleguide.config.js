@@ -202,7 +202,7 @@ module.exports = {
            path.resolve(__dirname, './components/time-picker/index.jsx'),
             path.resolve(__dirname, './components/radio/radio.jsx'),
             path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-           path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
+          //  path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
          //   path.resolve(__dirname, './components/form/Form.jsx'),
             path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),

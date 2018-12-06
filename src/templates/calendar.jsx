@@ -29,7 +29,9 @@ export default class CalendarView extends React.Component {
             disabledDate={this.disabledDate}
             onPanelChange={this.onPanelChange}
             onSelect={this.onSelect}
-            onChange={this.onChange} />
+            onChange={this.onChange}
+            validRange={[moment('2008-01'), moment('2018-12')]}
+          />
         </div>
         <h1 className='h1'>基本用法</h1>
         <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
