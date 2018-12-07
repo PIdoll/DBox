@@ -590,7 +590,7 @@ class table extends React.Component {
     dataIndex: 'age',
     key: 'age',
     width: 70,
-    sorter: true,
+    sorter: (a, b) => a.age - b.age,
     editable: true,
   }, {
     title: '居住地',
