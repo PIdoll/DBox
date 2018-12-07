@@ -22,6 +22,22 @@
   .calendarPanelHeader(~"@{calendar-prefix-cls}-year-panel");
 }
 
+.@{calendar-prefix-cls}-month-panel-prev-year-btn {
+  left: 32px;
+
+  &:after {
+    content: '‹'!important;
+  }
+}
+
+.@{calendar-prefix-cls}-month-panel-next-year-btn {
+  right: 32px;
+
+  &:after {
+    content: '›'!important;
+  }
+}
+
 .@{calendar-prefix-cls}-year-panel-body {
   height: ~'calc(100% - 40px)';
 }
