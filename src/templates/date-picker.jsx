@@ -197,7 +197,7 @@ export default class DatePickerView extends React.Component {
             format='YYYY-MM-DD HH:mm:ss'
             disabledDate={this.disabledDate}
             disabledTime={this.disabledDateTime}
-            showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+            showTime
           />
         </div>
         <div style={{ marginBottom: 15 }}>

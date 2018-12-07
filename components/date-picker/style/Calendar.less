@@ -1,6 +1,6 @@
 .calendarPanelHeader(@calendar-prefix-cls) {
-  height: 40px;
-  line-height: 40px;
+  height: 54px;
+  line-height: 54px;
   text-align: center;
   user-select: none;
   // border-bottom: @border-width-base @border-style-base @border-color-split;
@@ -19,7 +19,7 @@
     font-weight: 500;
     display: inline-block;
     color: @heading-color;
-    line-height: 40px;
+    line-height: 54px;
     font-size: 14px;
   }
 
@@ -45,26 +45,38 @@
     padding: 0 5px;
     font-size: 16px;
     display: inline-block;
-    line-height: 40px;
+    line-height: 54px;
   }
 
   .@{calendar-prefix-cls}-prev-century-btn,
   .@{calendar-prefix-cls}-prev-decade-btn,
   .@{calendar-prefix-cls}-prev-year-btn {
-    left: 7px;
+    left: 32px;
 
     &:after {
       content: '«'
     }
   }
 
+  .@{calendar-prefix-cls}-prev-year-btn {
+    &:after {
+      content: ''
+    }
+  }
+
   .@{calendar-prefix-cls}-next-century-btn,
   .@{calendar-prefix-cls}-next-decade-btn,
   .@{calendar-prefix-cls}-next-year-btn {
-    right: 7px;
+    right: 32px;
 
     &:after {
       content: '»';
+    }
+  }
+
+  .@{calendar-prefix-cls}-next-year-btn {
+    &:after {
+      content: ''
     }
   }
 
@@ -130,8 +142,11 @@
     .calendarPanelHeader(@calendar-prefix-cls);
   }
 
+  // &-body {
+  //   padding: 8px 12px;
+  // }
   &-body {
-    padding: 8px 12px;
+    padding: 0px 12px;
   }
 
   table {
