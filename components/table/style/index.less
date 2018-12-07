@@ -25,6 +25,69 @@
     overflow: hidden;
   }
 
+  input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-column-sorter {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: normal;
+    color: @text-color-disable ;
+
+    &-up,
+    &-down {
+      line-height: 4px;
+      display: block;
+      width: 14px;
+      height: 6px;
+      cursor: pointer;
+      &:hover .@{iconfont-css-prefix} {
+        color: @text-color-secondary ;
+      }
+      &.on {
+        .@{iconfont-css-prefix}-caret-up,
+        .@{iconfont-css-prefix}-caret-down {
+          color: @primary-color;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        height: 30px;
+        width: 14px;
+        left: 0;
+      }
+    }
+
+    &-up:after {
+      top: -30px;
+    }
+
+    &-down:after {
+      bottom: -30px;
+    }
+
+    .@{iconfont-css-prefix}-caret-up,
+    .@{iconfont-css-prefix}-caret-down {
+      .iconfont-size-under-12px(8px);
+      line-height: 4px;
+      height: 4px;
+      transition: all .3s;
+    }
+  }
+
+  &-thead > tr >th.@{table-prefix-cls}-column-sort {
+    background: @table-head-background-color !important;
+  }
+
   &-thead > tr > th {
     background: @table-head-background-color;
     font-weight: 500;
@@ -67,6 +130,12 @@
         }
       }
     }
+  }
+
+  &-tbody > tr > td,&-thead > tr > th{
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        white-space: nowrap;
   }
 
   &-thead > tr,
@@ -211,42 +280,6 @@
     }
   }
 
-  &-column-sorter {
-    margin-left: 4px;
-    display: inline-block;
-    width: 12px;
-    height: 24px;
-    vertical-align: middle;
-    text-align: center;
-    &-up,
-    &-down {
-      line-height: 4px;
-      height: 12px;
-      display: block;
-      width: 12px;
-      cursor: pointer;
-      &:hover .idollicon {
-        color: #666;
-      }
-      &.on {
-        .idollicon-caret-up,
-        .idollicon-caret-down {
-          color: @primary-color;
-        }
-      }
-    }
-    .idollicon-caret-up,
-    .idollicon-caret-down {
-      .iconfont-size-under-12px(6px);
-      line-height: 6px;
-      height: 6px;
-      color: #aaa;
-      &:before {
-        transform-origin: 53% 50%;
-        -moz-transform-origin: 53% 50%; /* fix firefox position */
-      }
-    }
-  }
 
   &-bordered {
     .@{table-prefix-cls}-body > table {
