@@ -1,12 +1,10 @@
 import React from 'react'
-// import Button from 'components/button'
 import Menu from 'components/menu'
 import Icon from 'components/icon'
 import Switch from 'components/switch';
 
 
 const SubMenu = Menu.SubMenu;
-// const MenuItemGroup = Menu.ItemGroup;
 
 export default class MenuDemo extends React.Component {
   state = {

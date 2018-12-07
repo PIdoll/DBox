@@ -9,6 +9,7 @@ export default class MenuItem extends React.Component {
     mode: PropTypes.string,
     idollMenuTheme: PropTypes.string,
   }
+  static isMenuItem = 1;
   onKeyDown = (e) => {
     this.menuItem.onKeyDown(e);
   }
