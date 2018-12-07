@@ -111,7 +111,7 @@ export default class MenuDemo extends React.Component {
             theme={this.state.theme}
             onClick={this.handleClick}
             mode={this.state.mode2}
-            defaultSelectedKeys={['21']}
+            defaultSelectedKeys={['25']}
           >
             <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
             <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>

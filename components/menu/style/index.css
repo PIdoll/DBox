@@ -682,6 +682,10 @@
   opacity: .45;
   transition: all .3s;
 }
+.idoll-menu-dark .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before,
+.idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title .idoll-menu-submenu-arrow:before {
+  color: #fff;
+}
 .idoll-menu-dark .idoll-menu-submenu-title i,
 .idoll-menu-dark .idoll-menu-sub .idoll-menu-submenu-title i {
   transition: all .3s;
