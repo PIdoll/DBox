@@ -1,14 +1,8 @@
 import React from 'react';
-// import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
-// import classNames from 'classnames';
-// import { findDOMNode } from 'react-dom';
 import RcMenu, { Divider, ItemGroup } from 'rc-menu';
-
-// import { SliderContext } from 'components/layout/sider';
 import Item from './MenuItem';
 import SubMenu from './SubMenu';
-
 import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
 
