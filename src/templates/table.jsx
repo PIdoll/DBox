@@ -725,7 +725,7 @@ class table extends React.Component {
         <Table columns={columns} dataSource={data} size='small' />
         <h1 className='h1'>带选择框</h1>
         <div style={{ marginBottom: 12 }}>
-          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>选择</Button>
+          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>批量操作</Button>
           <span style={{ marginLeft: 16 }}>
             {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
           </span>
@@ -736,7 +736,7 @@ class table extends React.Component {
         <h1 className='h1'>行列合并</h1>
         <Table columns={columnsCol} dataSource={dataCol} bordered />
         <h1 className='h1'>边框表格</h1>
-        <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
+        <Table columns={columns} dataSource={data} bordered />
         <br />
         <h1 className='h1'>内嵌表格</h1>
         <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />

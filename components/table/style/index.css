@@ -13,9 +13,10 @@
 .idoll-table {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.65);
+  overflow: hidden;
   position: relative;
   border-radius: 3px 3px 0 0;
-  overflow: hidden;
+  overflow: auto;
 }
 .idoll-table-body {
   transition: opacity 0.3s ease;
