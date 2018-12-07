@@ -404,7 +404,6 @@ tr.idoll-table-expanded-row:hover {
   top: 0;
   overflow: hidden;
   z-index: 1;
-  transition: box-shadow 0.3s ease;
   border-radius: 0;
 }
 .idoll-table-fixed-left table,
@@ -422,10 +421,6 @@ tr.idoll-table-expanded-row:hover {
 }
 .idoll-table-fixed-left .idoll-table-header {
   overflow-y: hidden;
-}
-.idoll-table-fixed-left .idoll-table-body-inner {
-  margin-right: -20px;
-  padding-right: 20px;
 }
 .idoll-table-fixed-header .idoll-table-fixed-left .idoll-table-body-inner {
   padding-right: 0;

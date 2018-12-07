@@ -354,7 +354,6 @@
 
     &-btns {
       overflow: hidden;
-      // padding: 7px 15px;
       border-top: 1px solid @border-color-split;
     }
 
@@ -464,7 +463,6 @@
     top: 0;
     overflow: hidden;
     z-index: 1;
-    transition: box-shadow .3s ease;
     border-radius: 0;
     table {
       width: auto;
@@ -483,11 +481,10 @@
     .@{table-prefix-cls}-header {
       overflow-y: hidden;
     }
-    // hide scrollbar in left fixed columns
-    .@{table-prefix-cls}-body-inner {
-      margin-right: -20px;
-      padding-right: 20px;
-    }
+    // .@{table-prefix-cls}-body-inner {
+    //   margin-right: -20px;
+    //   padding-right: 20px;
+    // }
     .@{table-prefix-cls}-fixed-header & .@{table-prefix-cls}-body-inner {
       padding-right: 0;
     }
@@ -504,8 +501,6 @@
     table {
       border-radius: 0 @border-radius-base 0 0;
     }
-    // hide expand row content in right-fixed Table
-    // https://github.com/idoll-design/idoll-design/issues/1898
     .@{table-prefix-cls}-expanded-row {
       color: transparent;
       pointer-events: none;
