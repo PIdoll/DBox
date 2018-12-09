@@ -196,7 +196,7 @@ export default class DatePickerView extends React.Component {
           <DatePicker
             format='YYYY-MM-DD HH:mm:ss'
             disabledDate={this.disabledDate}
-            disabledTime={this.disabledDateTime}
+            disabledTime={this.disabledRangeTime}
             showTime
           />
         </div>
