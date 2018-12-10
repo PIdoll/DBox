@@ -1,35 +1,77 @@
-# Form
-
----
-
-category: Components
-subtitle: 表单
-type: Data Entry
-cols: 1
-title: Form
-
----
-
+#### **何时使用**
 具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。
 
-## 表单
-
-我们为 `form` 提供了以下三种排列方式：
-
-- 水平排列：标签和表单控件水平排列；（默认）
-- 垂直排列：标签和表单控件上下垂直排列；
-- 行内排列：表单项水平行内排列。
-
-## 表单域
-
-表单一定会包含表单域，表单域可以是输入控件，标准表单域，标签，下拉菜单，文本域等。
-
-这里我们封装了表单域 `<Form.Item />` 。
-
+#### **登录框**
 ```jsx
-<Form.Item {...props}>
-  {children}
-</Form.Item>
+const FormItem = Form.Item;
+
+class LoginForm extends React.Component {
+
+  constructor(){
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('输入框中的内容 ', values);
+      }
+    });
+  }
+
+  render() {
+    const { getFieldDecorator } = this.props.form;
+    return (
+      <Form onSubmit={this.handleSubmit} style={{width: '300px'}}>
+        <FormItem>
+          {getFieldDecorator('userName', {
+            rules: [{ required: true, message: '请输入用户名!' }],
+          })(
+            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
+          )}
+        </FormItem>
+        <FormItem>
+          {getFieldDecorator('password', {
+            rules: [{ required: true, message: '请输入密码!' }],
+          })(
+            <Input prefix={<Icon type="unlock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
+          )}
+        </FormItem>
+        <FormItem>
+          {
+            getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(
+              <Checkbox>记住我</Checkbox>
+            )
+          }
+          <a href="" style={{float: 'right'}}>忘记密码</a> <br />
+        </FormItem>
+        <Button type="primary" htmlType="submit" style={{width: '100%',margin: 0}}>
+            登陆
+        </Button>
+        <br />
+        或者 <a href="">注册</a>
+      </Form>
+    );
+  }
+}
+
+const WrappedLoginForm = Form.create()(LoginForm);
+<WrappedLoginForm />
+```
+
+#### **注册**
+```jsx
+
+class RegistrationForm extends React.Component {
+
+}
+const WrappedRegistrationForm = Form.create()(RegistrationForm);
+<WrappedRegistrationForm />
 ```
 
 ## API
