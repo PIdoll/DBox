@@ -1,0 +1,150 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.idoll-layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 50vh;
+  font-size: 20px;
+  font-weight: 500;
+  overflow: hidden;
+  background-color: #fff;
+}
+.idoll-layout-has-sider {
+  flex-direction: row;
+}
+.idoll-layout-sider {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vh;
+  height: 100%;
+  background-color: rgba(19, 184, 134, 0.6);
+}
+.idoll-layout-header {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  height: 10vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(19, 184, 134, 0.4);
+}
+.idoll-layout-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(19, 184, 134, 0.2);
+}
+.idoll-layout-footer {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-color: rgba(19, 184, 134, 0.4);
+}
+.layout-horizontal .idoll-layout-header {
+  width: 100%;
+  color: #fff;
+  display: block;
+  height: 56px;
+  line-height: 56px;
+  background: #2F323B;
+}
+.layout-horizontal .idoll-layout-header div.logo {
+  float: left;
+  padding: 12px 28px;
+}
+.layout-horizontal .idoll-layout-header div.logo div {
+  border-radius: 3px;
+  font-size: 24px;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 21px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-horizontal .idoll-layout-header .idoll-menu-horizontal {
+  height: 100%;
+  float: left;
+}
+.layout-horizontal .idoll-layout-header .idoll-menu-horizontal li.idoll-menu-item {
+  height: 100%;
+}
+.layout-horizontal .idoll-breadcrumb {
+  background-color: #ccc;
+  padding: 16px 24px 0 24px;
+}
+.layout-horizontal .idoll-layout-content {
+  padding: 24px;
+  background-color: #ccc;
+}
+.layout-horizontal .idoll-layout-content div {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.layout-inlineNav .idoll-layout-sider {
+  width: 168px;
+  display: block;
+  position: relative;
+  background-color: #2F323B;
+}
+.layout-inlineNav .idoll-layout-sider div.logo {
+  padding: 12px 28px 44px 28px;
+}
+.layout-inlineNav .idoll-layout-sider div.logo div {
+  border-radius: 3px;
+  font-size: 24px;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 21px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-inlineNav .idoll-layout-sider > i:before {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  cursor: pointer;
+}
+.layout-inlineNav .idoll-layout-sider .idoll-menu {
+  width: 100%;
+}
+.layout-inlineNav .idoll-layout-header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  padding-right: 24px;
+  line-height: 56px;
+  font-size: 14px;
+}
+.layout-inlineNav .idoll-layout-header .idoll-icon-message {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.layout-inlineNav .idoll-layout-header .dbox-avatar {
+  margin-right: 8px !important;
+  margin-left: 24px;
+}
+.layout-inlineNav .idoll-layout-header > a {
+  margin-right: 0;
+}

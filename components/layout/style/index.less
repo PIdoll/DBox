@@ -6,9 +6,12 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 100vh;
+  height: 50vh;
+  font-size: 20px;
+  font-weight: 500;
   overflow: hidden;
   background-color: @layout-backgound-color;
+
 }
 
 .@{idoll-prefix}-layout-has-sider {
@@ -16,42 +19,138 @@
 }
 
 .@{idoll-prefix}-layout-sider {
-  // position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: @layout-sider-basic-width;
   height: 100%;
   background-color: @layout-sider-background;
 }
 
-.@{idoll-prefix}-silder-toggle{
-  position: absolute;
-  top: 20px;
-  right: -30px;
-}
-
-.make-sider-span();
-
 .@{idoll-prefix}-layout-header {
   width: 100%;
+  color: #fff;
+  display: flex;
   height: @layout-header-base-height;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   background-color: @layout-header-background;
-}
-
-.@{idoll-prefix}-layout-header-1{
-  height: @layout-header-base-height + 15*1;
-}
-
-.@{idoll-prefix}-layout-header-2{
-  height: @layout-header-base-height + 15*2;
 }
 
 .@{idoll-prefix}-layout-content {
    width: 100%;
    height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
    background-color: @layout-content-background;
 }
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: @layout-footer-height;
   background-color: @layout-footer-background;
 }
+
+.layout-horizontal {
+  .@{idoll-prefix}-layout-header {
+    width: 100%;
+    color: #fff;
+    display: block;
+    height: 56px;
+    line-height: 56px;
+    background: #2F323B;
+    div.logo {
+      float: left;
+      padding: 12px 28px;
+      div {
+        border-radius: 3px;
+        font-size: 24px;
+        line-height: 32px;
+        height: 32px;
+        padding: 0 21px;
+        color: rgba(245, 245, 245, 0.2);
+        background-color: rgba(245, 245, 245, 0.2);
+      }
+    }
+    .@{idoll-prefix}-menu-horizontal {
+      height: 100%;
+      float: left;
+      li.@{idoll-prefix}-menu-item {
+        height: 100%;
+      }
+    }
+  }
+  .@{idoll-prefix}-breadcrumb {
+    background-color: #ccc;
+    padding: 16px 24px 0 24px;
+  }
+  .@{idoll-prefix}-layout-content {
+    padding: 24px;
+    background-color: #ccc;
+    div {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+    }
+  }
+}
+
+.layout-inlineNav {
+  .@{idoll-prefix}-layout {
+    &-sider {
+      width: 168px;
+      display: block;
+      position: relative;
+      background-color: #2F323B;
+      div.logo {
+        padding: 12px 28px 44px 28px;
+        div {
+          border-radius: 3px;
+          font-size: 24px;
+          line-height: 32px;
+          height: 32px;
+          padding: 0 21px;
+          color: rgba(245, 245, 245, 0.2);
+          background-color: rgba(245, 245, 245, 0.2);
+        }
+      }
+      > i:before {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        cursor: pointer;
+      }
+     .@{idoll-prefix}-menu {
+      width: 100%;
+     } 
+    }
+    &-header {
+      display: flex;
+      justify-content: flex-end;
+      background-color: #fff;
+      padding-right: 24px;
+      line-height: 56px;
+      font-size: 14px;
+      .@{idoll-prefix}-icon-message {
+        font-size: 16px;
+        color: @text-color;
+      }
+      .dbox-avatar {
+        margin-right: 8px !important;
+        margin-left: 24px;
+      }
+      > a{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
