@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 50vh;
+  height: 100vh;
   font-size: 20px;
   font-weight: 500;
   overflow: hidden;
@@ -97,10 +97,14 @@
   padding: 24px;
   background-color: #ccc;
 }
-.layout-horizontal .idoll-layout-content div {
+.layout-horizontal .idoll-layout-content .content {
   width: 100%;
   height: 100%;
   background-color: #fff;
+  color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .layout-inlineNav .idoll-layout-sider {
   width: 168px;
@@ -136,6 +140,8 @@
   padding-right: 24px;
   line-height: 56px;
   font-size: 14px;
+  border: 1px solid #ccc;
+  border-left: none;
 }
 .layout-inlineNav .idoll-layout-header .idoll-icon-message {
   font-size: 16px;
@@ -147,4 +153,47 @@
 }
 .layout-inlineNav .idoll-layout-header > a {
   margin-right: 0;
+}
+.layout-inlineNav .idoll-layout .idoll-breadcrumb {
+  background-color: #ccc;
+  padding: 16px 24px 16px 24px;
+}
+.layout-inlineNav .idoll-layout .idoll-layout-content {
+  padding: 0 24px 24px 24px;
+  background-color: #ccc;
+}
+.layout-inlineNav .idoll-layout .idoll-layout-content > div {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content {
+  padding: 0;
+  padding-bottom: 24px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs {
+  display: block;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar {
+  margin: 0;
+  border-right: 1px solid #ccc;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll {
+  margin-left: 4px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content {
+  height: 100%;
+  background-color: #ccc;
+  padding: 24px 24px 48px 24px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content > div.idoll-tabs-tabpane-active {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

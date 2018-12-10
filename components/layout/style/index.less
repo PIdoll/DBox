@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 50vh;
+  height: 100vh;
   font-size: 20px;
   font-weight: 500;
   overflow: hidden;
@@ -95,10 +95,14 @@
   .@{idoll-prefix}-layout-content {
     padding: 24px;
     background-color: #ccc;
-    div {
+    .content {
       width: 100%;
       height: 100%;
       background-color: #fff;
+      color: @text-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -139,6 +143,8 @@
       padding-right: 24px;
       line-height: 56px;
       font-size: 14px;
+      border: 1px solid #ccc;
+      border-left: none;
       .@{idoll-prefix}-icon-message {
         font-size: 16px;
         color: @text-color;
@@ -149,6 +155,54 @@
       }
       > a{
         margin-right: 0;
+      }
+    }
+    .@{idoll-prefix}-breadcrumb {
+      background-color: #ccc;
+      padding: 16px 24px 16px 24px;
+    }
+    .@{idoll-prefix}-layout-content {
+      padding: 0 24px 24px 24px;
+      background-color: #ccc;
+      > div {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: @text-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.layout-inlineNav.inlineTabs {
+  .@{idoll-prefix}-layout {
+    .@{idoll-prefix}-layout-content {
+      padding: 0;
+      padding-bottom: 24px;
+      > .@{idoll-prefix}-tabs {
+        display: block;
+        div.@{idoll-prefix}-tabs-bar {
+          margin: 0;
+          border-right: 1px solid #ccc;
+        }
+        div.@{idoll-prefix}-tabs-nav-scroll {
+          margin-left: 4px;
+        }
+        div.@{idoll-prefix}-tabs-content {
+          height: 100%;
+          background-color: #ccc;
+          padding: 24px 24px 48px 24px;
+          > div.@{idoll-prefix}-tabs-tabpane-active {
+            background-color: #fff;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
     }
   }
