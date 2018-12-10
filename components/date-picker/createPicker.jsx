@@ -10,6 +10,8 @@ import Icon from '../icon';
 // import warning from '../_util/warning';
 import interopDefault from '../_util/interopDefault';
 import getDataOrAriaProps from '../_util/getDataOrAriaProps';
+// 设置全局时间语言环境
+moment.locale('zh_cn');
 
 export default function createPicker(TheCalendar) {
   class CalendarWrapper extends React.Component {
