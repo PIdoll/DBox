@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20vh;
+  width: 20%;
   height: 100%;
   background-color: rgba(19, 184, 134, 0.8);
 }
@@ -37,7 +37,7 @@
   width: 100%;
   color: #fff;
   display: flex;
-  height: 10vh;
+  height: 10%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: 10%;
   background-color: rgba(19, 184, 134, 0.6);
 }
 .layout-horizontal .idoll-layout-header {

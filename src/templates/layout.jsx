@@ -18,12 +18,6 @@ const menu = (
 );
 
 class MainLayout extends Component {
-  static defaultProps = {
-    target() {
-      return window;
-    },
-    onChange() {},
-  }
   constructor(props) {
     super(props)
     const panes = [
@@ -47,18 +41,18 @@ class MainLayout extends Component {
   }
   handleClick = (e) => {
     this.setState({
-      current: e.key,
+      current: e.key
     })
-    this.add(e.key)
   }
   handleClickTabs = (e) => {
     this.setState({
       current: e.key,
+      activeKey: e.key
     });
     if (this.state.panes.findIndex(i => i.key === e.key) !== -1) {
       return false
     } else {
-      this.add(e.key)
+      this.add(e.key, e.item.props.title)
     }
   }
   changeModel2 = () => {
@@ -79,12 +73,12 @@ class MainLayout extends Component {
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   }
-  add = (key) => {
+  add = (key, title) => {
     const panes = this.state.panes;
     const activeKey = key;
-    panes.push({ title: '新增分页', content: '新增分页内容', key: activeKey });
+    panes.push({ title: title, content: title, key: activeKey });
     this.setState({panes, activeKey});
-  };
+  }
   remove = (targetKey) => {
     let activeKey = this.state.activeKey;
     let lastIndex;
@@ -98,37 +92,37 @@ class MainLayout extends Component {
       activeKey = panes[lastIndex].key;
     }
     this.setState({panes, activeKey});
-  };
+  }
   render () {
     return (
       <div id='main-container'>
         <h1 className='h1'>基础布局</h1>
         <div className='layout_temp'>
           <Layout>
-            <Header >头部</Header>
-            <Content >内容</Content>
-            <Footer >底部</Footer>
+            <Header>头部</Header>
+            <Content>内容</Content>
+            <Footer>底部</Footer>
           </Layout>
         </div>
         <br />
         <div className='layout_temp'>
           <Layout>
-            <Header >头部</Header>
+            <Header>头部</Header>
             <Layout>
-              <Sider style={{ lineHight: '20vh' }} >侧边栏</Sider>
-              <Content >内容</Content>
+              <Sider style={{ lineHight: '20vh' }}>侧边栏</Sider>
+              <Content>内容</Content>
             </Layout>
-            <Footer >底部</Footer>
+            <Footer>底部</Footer>
           </Layout>
         </div>
         <br />
         <div className='layout_temp'>
           <Layout>
-            <Sider >侧边栏</Sider>
+            <Sider>侧边栏</Sider>
             <Layout>
-              <Header >头部</Header>
-              <Content style={{ height: '100%' }} >内容</Content>
-              <Footer >底部</Footer>
+              <Header>头部</Header>
+              <Content style={{ height: '100%' }}>内容</Content>
+              <Footer>底部</Footer>
             </Layout>
           </Layout>
         </div>
@@ -229,24 +223,24 @@ class MainLayout extends Component {
                 defaultOpenKeys={['sub1']}
                 mode={this.state.modeMenu}
         >
-                <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+                <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
                 <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-                  <Menu.Item key='8'>子菜单一</Menu.Item>
-                  <Menu.Item key='9'>子菜单二</Menu.Item>
-                  <Menu.Item key='10'>子菜单三</Menu.Item>
-                  <Menu.Item key='11'>子菜单四</Menu.Item>
+                  <Menu.Item title='子菜单一' key='8'>子菜单一</Menu.Item>
+                  <Menu.Item title='子菜单二' key='9'>子菜单二</Menu.Item>
+                  <Menu.Item title='子菜单三' key='10'>子菜单三</Menu.Item>
+                  <Menu.Item title='子菜单四' key='11'>子菜单四</Menu.Item>
                 </SubMenu>
                 <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-                  <Menu.Item key='12'>子菜单五</Menu.Item>
-                  <Menu.Item key='13'>子菜单六</Menu.Item>
-                  <Menu.Item key='14'>子菜单七</Menu.Item>
-                  <Menu.Item key='15'>子菜单八</Menu.Item>
+                  <Menu.Item title='子菜单五' key='12'>子菜单五</Menu.Item>
+                  <Menu.Item title='子菜单六' key='13'>子菜单六</Menu.Item>
+                  <Menu.Item title='子菜单七' key='14'>子菜单七</Menu.Item>
+                  <Menu.Item title='子菜单八' key='15'>子菜单八</Menu.Item>
                 </SubMenu>
                 <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-                  <Menu.Item key='16'>子菜单九</Menu.Item>
-                  <Menu.Item key='17'>子菜单十</Menu.Item>
-                  <Menu.Item key='18'>子菜单十一</Menu.Item>
-                  <Menu.Item key='19'>子菜单十二</Menu.Item>
+                  <Menu.Item title='子菜单九' key='16'>子菜单九</Menu.Item>
+                  <Menu.Item title='子菜单十' key='17'>子菜单十</Menu.Item>
+                  <Menu.Item title='子菜单十一' key='18'>子菜单十一</Menu.Item>
+                  <Menu.Item title='子菜单十二' key='19'>子菜单十二</Menu.Item>
                 </SubMenu>
               </Menu>
               <Icon type={this.state.flag ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel} />
