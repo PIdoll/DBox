@@ -110,7 +110,7 @@
 .layout-inlineNav {
   .@{idoll-prefix}-layout {
     &-sider {
-      width: 168px;
+      width: auto;
       display: block;
       position: relative;
       background-color: #2F323B;
@@ -122,6 +122,18 @@
           line-height: 32px;
           height: 32px;
           padding: 0 21px;
+          color: rgba(245, 245, 245, 0.2);
+          background-color: rgba(245, 245, 245, 0.2);
+        }
+      }
+      div.miniLogo {
+        padding: 12px 12px 22px 12px;
+        div {
+          border-radius: 3px;
+          font-size: 18px;
+          line-height: 24px;
+          height: 24px;
+          padding: 0 4px;
           color: rgba(245, 245, 245, 0.2);
           background-color: rgba(245, 245, 245, 0.2);
         }
@@ -148,10 +160,12 @@
       .@{idoll-prefix}-icon-message {
         font-size: 16px;
         color: @text-color;
+        cursor: pointer;
       }
       .dbox-avatar {
         margin-right: 8px !important;
         margin-left: 24px;
+        cursor: pointer;
       }
       > a{
         margin-right: 0;

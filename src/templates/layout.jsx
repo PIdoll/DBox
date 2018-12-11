@@ -12,8 +12,8 @@ const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></MenuItem>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Dbox</a></MenuItem>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Idoll</a></MenuItem>
+    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></MenuItem>
+    <MenuItem key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></MenuItem>
   </Menu>
 );
 
@@ -26,52 +26,52 @@ class MainLayout extends Component {
   }
   constructor(props) {
     super(props)
-    this.newTabIndex = 0;
     const panes = [
-      { title: <Icon type='home' />, content: '主页', key: '1' }
+      { title: <Icon type='home' />, content: '首页', key: '7' }
     ];
     this.state = {
       flag: false,
+      flag2: false,
       current: 'platform',
       modeMenu: 'inline',
+      modeMenu2: 'inline',
       mode: 'top',
       panes,
       activeKey: panes[0].key
     }
   }
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state.current === nextState.current) {
-  //     console.log('11111')
-  //     this.handleClickTabs = (e) => {
-  //       this.setState({
-  //         current: e.key,
-  //       });
-  //       this.add()
-  //     }
-  //     return true;
-  //   }
-  //   console.log('2222')
-  //   return false;
-  // }
+  handleClickBread = (e) => {
+    this.setState({
+      current: e.key,
+    })
+  }
   handleClick = (e) => {
     this.setState({
       current: e.key,
     })
-    this.add()
+    this.add(e.key)
   }
   handleClickTabs = (e) => {
-    // console.log(e.props.children)
-    // console.log(this.state.panes[e.key])
     this.setState({
       current: e.key,
     });
-    this.add()
+    if (this.state.panes.findIndex(i => i.key === e.key) !== -1) {
+      return false
+    } else {
+      this.add(e.key)
+    }
+  }
+  changeModel2 = () => {
+    this.setState({
+      modeMenu2: !this.state.flag2 ? 'vertical' : 'inline',
+      flag2: !this.state.flag2,
+    })
   }
   changeModel = () => {
     this.setState({
+      modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
-      modeMenu: this.state.flag ? 'vertical' : 'inline',
-    });
+    })
   }
   onChange = (activeKey) => {
     this.setState({activeKey});
@@ -79,9 +79,9 @@ class MainLayout extends Component {
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   }
-  add = () => {
+  add = (key) => {
     const panes = this.state.panes;
-    const activeKey = `newTab${this.newTabIndex++}`;
+    const activeKey = key;
     panes.push({ title: '新增分页', content: '新增分页内容', key: activeKey });
     this.setState({panes, activeKey});
   };
@@ -169,12 +169,12 @@ class MainLayout extends Component {
         <div className='layout-inlineNav'>
           <Layout>
             <Sider >
-              <div className='logo'><div>LOGO</div></div>
+              <div className={this.state.flag2 ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
               <Menu
-                onClick={this.handleClick}
+                onClick={this.handleClickBread}
                 defaultSelectedKeys={['8']}
                 defaultOpenKeys={['sub1']}
-                mode={this.state.modeMenu}
+                mode={this.state.modeMenu2}
         >
                 <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
                 <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
@@ -196,7 +196,7 @@ class MainLayout extends Component {
                   <Menu.Item key='19'>子菜单十二</Menu.Item>
                 </SubMenu>
               </Menu>
-              <Icon type={this.state.flag ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel} />
+              <Icon type={this.state.flag2 ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel2} />
             </Sider>
             <Layout>
               <Header style={{height: '56px'}} >
@@ -221,10 +221,11 @@ class MainLayout extends Component {
         <div className='layout-inlineNav inlineTabs'>
           <Layout>
             <Sider >
-              <div className='logo'><div>LOGO</div></div>
+              <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
               <Menu
                 onClick={this.handleClickTabs}
                 defaultSelectedKeys={['7']}
+                selectedKeys={[this.state.activeKey]}
                 defaultOpenKeys={['sub1']}
                 mode={this.state.modeMenu}
         >
@@ -253,14 +254,14 @@ class MainLayout extends Component {
             <Layout>
               <Header style={{height: '56px'}} >
                 <Icon type='message' />
-                <Avatar size='small' style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
+                <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
                 <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
                   Alvin
                 </DropdownNormal>
               </Header>
               <Content>
                 <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
-                  {this.state.panes.map(pane => <TabPane closable={pane.key === '1' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+                  {this.state.panes.map(pane => <TabPane closable={pane.key === '7' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
                 </Tabs>
               </Content>
             </Layout>

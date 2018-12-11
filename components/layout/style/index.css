@@ -31,7 +31,7 @@
   justify-content: center;
   width: 20vh;
   height: 100%;
-  background-color: rgba(19, 184, 134, 0.6);
+  background-color: rgba(19, 184, 134, 0.8);
 }
 .idoll-layout-header {
   width: 100%;
@@ -41,7 +41,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: rgba(19, 184, 134, 0.4);
+  background-color: rgba(19, 184, 134, 0.6);
 }
 .idoll-layout-content {
   width: 100%;
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  background-color: rgba(19, 184, 134, 0.2);
+  background-color: rgba(19, 184, 134, 0.4);
 }
 .idoll-layout-footer {
   width: 100%;
@@ -59,7 +59,7 @@
   align-items: center;
   justify-content: center;
   height: 10vh;
-  background-color: rgba(19, 184, 134, 0.4);
+  background-color: rgba(19, 184, 134, 0.6);
 }
 .layout-horizontal .idoll-layout-header {
   width: 100%;
@@ -107,7 +107,7 @@
   align-items: center;
 }
 .layout-inlineNav .idoll-layout-sider {
-  width: 168px;
+  width: auto;
   display: block;
   position: relative;
   background-color: #2F323B;
@@ -121,6 +121,18 @@
   line-height: 32px;
   height: 32px;
   padding: 0 21px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-inlineNav .idoll-layout-sider div.miniLogo {
+  padding: 12px 12px 22px 12px;
+}
+.layout-inlineNav .idoll-layout-sider div.miniLogo div {
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  height: 24px;
+  padding: 0 4px;
   color: rgba(245, 245, 245, 0.2);
   background-color: rgba(245, 245, 245, 0.2);
 }
@@ -146,10 +158,12 @@
 .layout-inlineNav .idoll-layout-header .idoll-icon-message {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
 }
 .layout-inlineNav .idoll-layout-header .dbox-avatar {
   margin-right: 8px !important;
   margin-left: 24px;
+  cursor: pointer;
 }
 .layout-inlineNav .idoll-layout-header > a {
   margin-right: 0;
