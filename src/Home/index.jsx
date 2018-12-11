@@ -283,6 +283,12 @@ function Home() {
           <div className='info'>Back-Top</div>
         </NavLink>
       </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/drawer'>
+          <div className='name'>抽屉</div>
+          <div className='info'>Drawer</div>
+        </NavLink>
+      </div>
     </div>
   );
 }
