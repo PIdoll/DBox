@@ -90,12 +90,12 @@
   height: 100%;
 }
 .layout-horizontal .idoll-breadcrumb {
-  background-color: #ccc;
+  background-color: #F5F5F5;
   padding: 16px 24px 0 24px;
 }
 .layout-horizontal .idoll-layout-content {
   padding: 24px;
-  background-color: #ccc;
+  background-color: #F5F5F5;
 }
 .layout-horizontal .idoll-layout-content .content {
   width: 100%;
@@ -140,7 +140,7 @@
   padding-right: 24px;
   line-height: 56px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #F5F5F5;
   border-left: none;
 }
 .layout-inlineNav .idoll-layout-header .idoll-icon-message {
@@ -154,13 +154,22 @@
 .layout-inlineNav .idoll-layout-header > a {
   margin-right: 0;
 }
+.layout-inlineNav .idoll-layout-header > a i:before {
+  content: "\E926";
+  font-family: 'idollicon' !important;
+  color: #000;
+}
+.layout-inlineNav .idoll-layout-header > a:hover i:before {
+  color: #13B886;
+  transition: all .3s;
+}
 .layout-inlineNav .idoll-layout .idoll-breadcrumb {
-  background-color: #ccc;
+  background-color: #F5F5F5;
   padding: 16px 24px 16px 24px;
 }
 .layout-inlineNav .idoll-layout .idoll-layout-content {
   padding: 0 24px 24px 24px;
-  background-color: #ccc;
+  background-color: #F5F5F5;
 }
 .layout-inlineNav .idoll-layout .idoll-layout-content > div {
   width: 100%;
@@ -180,14 +189,24 @@
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar {
   margin: 0;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #F5F5F5;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar div.idoll-tabs-nav-container {
+  height: 40px;
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll {
   margin-left: 4px;
 }
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll div.idoll-tabs-tab {
+  height: 40px;
+  line-height: 16px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll div.idoll-tabs-tab i {
+  margin-right: 0;
+}
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content {
   height: 100%;
-  background-color: #ccc;
+  background-color: #F8F8F8;
   padding: 24px 24px 48px 24px;
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content > div.idoll-tabs-tabpane-active {

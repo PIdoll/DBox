@@ -39,14 +39,29 @@ class MainLayout extends Component {
       activeKey: panes[0].key
     }
   }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.state.current === nextState.current) {
+  //     console.log('11111')
+  //     this.handleClickTabs = (e) => {
+  //       this.setState({
+  //         current: e.key,
+  //       });
+  //       this.add()
+  //     }
+  //     return true;
+  //   }
+  //   console.log('2222')
+  //   return false;
+  // }
   handleClick = (e) => {
     this.setState({
       current: e.key,
     })
+    this.add()
   }
   handleClickTabs = (e) => {
-    // console.log(e.items.props.children)
-    console.log(e.item)
+    // console.log(e.props.children)
+    // console.log(this.state.panes[e.key])
     this.setState({
       current: e.key,
     });
