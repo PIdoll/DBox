@@ -3,29 +3,47 @@
 
  ##### **基本使用**
  ```jsx
-<InputNumber min={1} defaultValue={3} max={10} />
+import { InputNumber } from 'components';
+
+const InputNumberView = () => {
+  return (
+    <InputNumber min={1} defaultValue={3} max={10} />
+  )
+}
+<InputNumberView />
  ```
 
  ##### **三种尺寸**
  ```jsx
-<InputNumber size='small' min={1} defaultValue={3} max={10} />
-<InputNumber min={1} defaultValue={3} max={10} />
-<InputNumber size='large' min={1} defaultValue={3} max={10} />
+import { InputNumber } from 'components';
+
+const InputNumberView = () => {
+  return (
+    <div>
+      <InputNumber size='small' min={1} defaultValue={3} max={10} />
+      <InputNumber min={1} defaultValue={3} max={10} />
+      <InputNumber size='large' min={1} defaultValue={3} max={10} />
+    </div>
+  )
+}
+<InputNumberView />
  ```
 
  ##### **不可用切换**
 ```jsx
+import { Button, InputNumber } from 'components';
+
 class InputNumberView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      disabled: true
+      disabled: true,
     }
     this.handleToggle = this.handleToggle.bind(this);
   }
   handleToggle() {
     this.setState({
-      disabled: !this.state.disabled
+      disabled: !this.state.disabled,
     })
   }
   render() {
@@ -44,15 +62,32 @@ class InputNumberView extends React.Component {
 
 ##### **小数**
 ```jsx
-<InputNumber min={0} max={10} defaultValue={1} step={0.1} />
+import { InputNumber } from 'components';
+
+const InputNumberView = () => {
+  return (
+    <InputNumber min={1} defaultValue={3} max={10} />
+  )
+}
+<InputNumberView />
 ```
 
 ##### **格式化展示**
 ```jsx
-<InputNumber min={0} max={100} defaultValue={100} formatter={value => `${value}%`} parser={value => value.repalce('%', '')} />
-<InputNumber min={0} defaultValue={2600}
-formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-parser={value => value.repalce(/\$\s?|(,*)/g, '')} />
+import { InputNumber } from 'components';
+
+const InputNumberView = () => {
+  return (
+    <div>
+      <InputNumber min={0} max={100} defaultValue={100} formatter={value => `${value}%`} parser={value => value.replace('%', '')} />
+      <InputNumber min={0} defaultValue={2600}
+        formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        parser={value => value.replace(/\$\s?|(,*)/g, '')} />
+    </div>
+  )
+}
+<InputNumberView />
+
 ```
 
 ##### **InputNumber**

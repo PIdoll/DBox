@@ -3,6 +3,8 @@
 
 #### **基本使用**
 ```jsx
+import { Slider, Switch } from 'components';
+
 class SliderView extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +33,7 @@ class SliderView extends React.Component {
 
 #### **带输入框的滑块**
 ```jsx
-const {Row, Col} = require('../grid');
+import { Slider, InputNumber, Row, Col } from 'components';
 class SliderView extends React.Component {
   constructor(props) {
     super(props);
@@ -54,10 +56,10 @@ class SliderView extends React.Component {
             min={1}
             max={20}
             onChange={this.onChange}
-            value={typeof inputValue === 'number' ? inputValue : 0}
+            value={ typeof inputValue === 'number' ? inputValue : 0}
           />
         </Col>
-        <Col span={4} >
+        <Col span={4} offset={1}>
           <InputNumber
             min={1}
             max={20}
@@ -75,15 +77,15 @@ class SliderView extends React.Component {
 
 #### **自定义提示**
 ```jsx
-class SliderView extends React.Component {
-  render() {
-    return (
-      <div>
-        <Slider tipFormatter={(value) => `${value}%`}  defaultValue={20}/>
-        <Slider tipFormatter={null} defaultValue={10} />
-      </div>
-    )
-  }
+import { Slider, Switch } from 'components';
+
+const SliderView = () => {
+  return (
+    <div>
+      <Slider tipFormatter={(value) => `${value}%`}  defaultValue={20}/>
+      <Slider tipFormatter={null} defaultValue={10} />
+    </div>
+  )
 }
 <SliderView />
 ```

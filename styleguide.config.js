@@ -2,11 +2,15 @@ const path = require('path');
 const { version } = require('./package.json')
 const {camelCase, upperFirst} = require('lodash');
 
-
+const TITLE = `Dbox UI ${version}`;
+const PORT = parseInt(process.env.PROT || 9002, 10)
 
 module.exports = {
-  title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  title: TITLE,
+  serverPort: PORT,
+  // 忽略没有示例文件的组件
+  skipComponentsWithoutExample: false,
+
   exampleMode: 'collapse',
   usageMode: 'hidden',
   ribbon: {
@@ -179,7 +183,7 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-            // path.resolve(__dirname, './components/affix/index.jsx'),
+            path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
@@ -247,9 +251,9 @@ module.exports = {
         {
           name: 'Other',
           components: () => ([
-          path.resolve(__dirname, './components/back-top/index.jsx'),
-          path.resolve(__dirname, './components/anchor/index.jsx'),
-          path.resolve(__dirname, './components/divider/index.jsx'),
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+            path.resolve(__dirname, './components/back-top/index.jsx'),
+            path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
       ]
