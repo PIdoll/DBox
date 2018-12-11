@@ -133,7 +133,7 @@ class MainLayout extends Component {
             <div className='logo'><div>LOGO</div></div>
             <Menu
               onClick={this.handleClick}
-              selectedKeys={['sub1']}
+              selectedKeys={[this.state.current]}
               mode='horizontal'
               theme='dark'
         >
