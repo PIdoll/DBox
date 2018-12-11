@@ -22,7 +22,7 @@ export default class Button extends React.Component {
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
-      loading: PropTypes.bool,
+	    loading: PropTypes.bool,
 	    className: PropTypes.string,
 		icon: PropTypes.string,
 		block: PropTypes.bool
@@ -69,7 +69,7 @@ export default class Button extends React.Component {
 			[`${prefixCls}-block`]: block,
 			[className]: className
 		})
-	const iconType = loading ? 'pro-loading' : icon;
+	const iconType = loading ? 'loading' : icon;
 	const kids = (children || children === 0)
       ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
 	const iconNode = iconType ? <Icon type={iconType} /> : null;
