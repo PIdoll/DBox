@@ -99,7 +99,6 @@ class LayoutView extends React.Component {
 #### **侧边导航01**
 ```jsx
 const SubMenu = Menu.SubMenu;
-const MenuItem = Menu.MenuItem;
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -107,9 +106,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></MenuItem>
-    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></MenuItem>
-    <MenuItem key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></MenuItem>
+    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 class LayoutView extends React.Component {
@@ -203,7 +202,6 @@ class LayoutView extends React.Component {
 ```jsx
 const TabPane = Tabs.TabPane;
 const SubMenu = Menu.SubMenu;
-const MenuItem = Menu.MenuItem;
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -211,9 +209,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></MenuItem>
-    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></MenuItem>
-    <MenuItem key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></MenuItem>
+    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 class LayoutView extends React.Component {
@@ -341,7 +339,7 @@ class LayoutView extends React.Component {
 
 Layout
 
-| 成员       | 说明                   | 类型               | 默认值       |
+| 参数       | 说明                   | 类型               | 默认值       |
 |-----------|-------------------------------------|--------------------|-------------|
 | className      | 容器 className | string | - |
 | hasSider    | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动    | boolean             |  - |
