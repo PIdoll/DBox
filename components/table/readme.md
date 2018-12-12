@@ -13,7 +13,8 @@ const columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -92,7 +93,8 @@ const columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -175,7 +177,8 @@ const columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -243,7 +246,7 @@ const data = [{
   Tel: '13262836283',
   state: '审核通过',
   }];
-<Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
+<Table columns={columns} dataSource={data} bordered />
 ```
 #### **带选择框**
 ```jsx
@@ -254,7 +257,8 @@ const columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -357,7 +361,7 @@ class TableView extends React.Component {
   return (
 	<div>
 		<div style={{ marginBottom: 12 }}>
-		  <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>选择</Button>
+		  <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>批量操作</Button>
 		  <span style={{ marginLeft: 16 }}>
 		    {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
 		  </span>
@@ -376,16 +380,11 @@ const  {reqwest} = require('./index.jsx');
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
-  sorter: true,
   render: name => `${name.first} ${name.last}`,
   width: '20%',
 }, {
   title: 'Gender',
   dataIndex: 'gender',
-  filters: [
-    { text: 'Male', value: 'male' },
-    { text: 'Female', value: 'female' },
-  ],
   width: '20%',
 }, {
   title: 'Email',
@@ -447,7 +446,6 @@ class App extends React.Component {
     return (
       <Table
         columns={columns}
-        showHeader={false}
         rowKey={record => record.login.uuid}
         dataSource={this.state.data}
         pagination={this.state.pagination}
@@ -468,7 +466,8 @@ const columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -588,6 +587,7 @@ const columnsCol = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
+  sorter: (a, b) => a.age - b.age,
   render: renderContent,
 }, {
   title: '家庭电话',
@@ -682,7 +682,8 @@ const columnsFixRow = [{
   title: '年龄',
   width: 100,
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   width: 150,
@@ -937,6 +938,7 @@ class TableView extends React.Component {
     dataIndex: 'age',
     key: 'age',
     editable: true,
+  	 sorter: (a, b) => a.age - b.age
   }, {
     title: '居住地',
     dataIndex: 'city',

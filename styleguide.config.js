@@ -164,7 +164,7 @@ module.exports = {
           name: 'Basic',
           components: () => ([
             path.resolve(__dirname, './components/grid/index.jsx'),
-            path.resolve(__dirname, './components/layout/layout.jsx'),
+            path.resolve(__dirname, './components/layout/index.jsx'),
           ])
         },
         {
@@ -202,13 +202,12 @@ module.exports = {
            path.resolve(__dirname, './components/time-picker/index.jsx'),
            path.resolve(__dirname, './components/radio/radio.jsx'),
            path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-           path.resolve(__dirname, './components/time-picker/index.jsx'),
            path.resolve(__dirname, './components/form/index.jsx'),
            path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
-        //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
+           path.resolve(__dirname, './components/transfer/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },

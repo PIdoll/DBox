@@ -21,6 +21,9 @@ const columns = [{
   title: '年龄',
   dataIndex: 'age',
   key: 'age',
+
+  // sorter: true,
+  sorter: (a, b) => a.age - b.age
 }, {
   title: '所在城市',
   dataIndex: 'address',
@@ -93,16 +96,17 @@ const data = [{
 const columnsTest = [{
   title: '姓名',
   dataIndex: 'name',
-  sorter: true,
+  sorter: false,
   render: name => `${name.first} ${name.last}`,
   width: '20%',
 }, {
   title: '性别',
   dataIndex: 'gender',
-  filters: [
-    { text: 'Male', value: 'male' },
-    { text: 'Female', value: 'female' },
-  ],
+  // 筛选
+  // filters: [
+  //   { text: 'Male', value: 'male' },
+  //   { text: 'Female', value: 'female' },
+  // ],
   width: '20%',
 }, {
   title: '邮箱',
@@ -159,7 +163,6 @@ const Test = CreateReactClass({
     return (
       <Table
         columns={columnsTest}
-        showHeader={false}
         rowKey={record => record.login.uuid}
         dataSource={this.state.data}
         pagination={this.state.pagination}
@@ -189,6 +192,7 @@ const columnsCol = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
+  sorter: true,
   render: renderContent,
 }, {
   title: '家庭电话',
@@ -322,7 +326,8 @@ const columnsFixRow = [{
   title: '年龄',
   width: 100,
   dataIndex: 'age',
-  key: 'age'
+  key: 'age',
+  sorter: true,
 }, {
   title: '所在城市',
   width: 150,
@@ -462,10 +467,10 @@ const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component {
   getInput = () => {
     if (this.props.inputtype === 'number') {
-      return <InputNumber />;
+      return <InputNumber style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'city') {
-      return <Select showSearch style={{ width: 100 }} placeholder='请选择' >
+      return <Select showSearch style={{ width: 70 }} placeholder='请选择' >
         <Option value='北京'>北京</Option>
         <Option value='上海'>上海</Option>
         <Option value='广州'>广州</Option>
@@ -475,6 +480,15 @@ class EditableCell extends React.Component {
         <Option value='南京'>南京</Option>
         <Option value='深圳'>深圳</Option>
       </Select>;
+    }
+    if (this.props.inputtype === 'address') {
+      return <Input style={{ width: 200 }} />;
+    }
+    if (this.props.inputtype === 'name') {
+      return <Input style={{ width: 70 }} />;
+    }
+    if (this.props.inputtype === 'Tel') {
+      return <Input style={{ width: 130 }} />;
     }
     return <Input />;
   };
@@ -569,29 +583,36 @@ class table extends React.Component {
     title: '姓名',
     dataIndex: 'name',
     key: 'name',
+    width: 70,
     editable: true,
   }, {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
+    width: 70,
+    sorter: (a, b) => a.age - b.age,
     editable: true,
   }, {
     title: '居住地',
     dataIndex: 'city',
+    width: 70,
     key: 'city',
     editable: true,
   }, {
     title: '手机号',
     dataIndex: 'Tel',
+    width: 130,
     key: 'Tel',
     editable: true,
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
+    width: 200,
     editable: true,
   }, {
     title: '操作',
+    width: 70,
     dataIndex: 'action',
     key: 'action',
     render: (text, record) => {
@@ -631,6 +652,9 @@ class table extends React.Component {
       );
     },
   }];
+}
+ onChange = (pagination, filters, sorter) => {
+  console.log('params', pagination, filters, sorter);
 }
   start = () => {
     this.setState({ loading: true });
@@ -702,6 +726,12 @@ class table extends React.Component {
               return 'number'
             } else if (col.dataIndex === 'city') {
               return 'city'
+            } else if (col.dataIndex === 'name') {
+              return 'name'
+            } else if (col.dataIndex === 'address') {
+              return 'address'
+            } else if (col.dataIndex === 'Tel') {
+              return 'Tel'
             } else {
               return 'text'
             }
@@ -725,7 +755,7 @@ class table extends React.Component {
         <Table columns={columns} dataSource={data} size='small' />
         <h1 className='h1'>带选择框</h1>
         <div style={{ marginBottom: 12 }}>
-          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>选择</Button>
+          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>批量操作</Button>
           <span style={{ marginLeft: 16 }}>
             {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
           </span>
@@ -736,7 +766,7 @@ class table extends React.Component {
         <h1 className='h1'>行列合并</h1>
         <Table columns={columnsCol} dataSource={dataCol} bordered />
         <h1 className='h1'>边框表格</h1>
-        <Table columns={columns} dataSource={data} bordered title={() => '表头'} footer={() => '表底'} />
+        <Table columns={columns} dataSource={data} bordered />
         <br />
         <h1 className='h1'>内嵌表格</h1>
         <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />
