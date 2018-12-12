@@ -92,7 +92,34 @@ class SpinViewLoading extends React.Component {
 <SpinViewLoading />
 ```
 
-## API
+#### **自定义颜色**
+
+```jsx
+const style = {
+  textAlign: 'center',
+  background: '#13B886',
+  borderRadius: 4,
+  marginBottom: 20,
+  paddingTop: 30,
+  paddingBottom: 30,
+  paddingLeft: 50,
+  paddingRight: 50,
+  marginTop: 20,
+  marginBotton: 20
+}
+class SpinView extends React.Component {
+  render () {
+    return (
+      <div style={style}>
+        <Spin color={['#fff', 'rgba(255, 255, 255, 0.05)', 'rgba(255, 255, 255, 0.05)', 'rgba(255, 255, 255, 0.05)']} />
+      </div>
+    )
+  }
+}
+<SpinView />
+```
+
+#### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -101,3 +128,4 @@ class SpinViewLoading extends React.Component {
 | spinning | 是否旋转 | boolean | true |
 | tip | 当作为包裹元素时，可以自定义描述文案 | string | - |
 | wrapperClassName | 包装器的类属性 | string | - |
+| color | 在深色背景下，spin的四个边框颜色自定义 | Array |  |
