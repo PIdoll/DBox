@@ -1,7 +1,7 @@
 @import "../../../style/mixins/index";
 @import "../../../style/theme/default/index";
 
-@dawer-prefix-cls: ~"ant-drawer";
+@dawer-prefix-cls: ~"@{idoll-prefix}-drawer";
 
 .@{dawer-prefix-cls} {
   position: fixed;
@@ -10,7 +10,7 @@
   height: 100%;
   z-index: @zindex-modal;
   > * {
-    transition: transform @animation-duration-slow ease-base-in;
+    transition:transform .3s cubic-bezier(.7,.3,.1,1);
   }
 
   &-content-wrapper {
@@ -92,7 +92,7 @@
       &-mask {
         opacity: 0.3;
         height: 100%;
-        animation: antdDrawerFadeIn @animation-duration-slow ease-base-out;
+        animation: idollDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
         transition: none;
       }
     }
@@ -125,7 +125,7 @@
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    transition: color @animation-duration-slow;
+    transition: color .3s;
     color: @text-color-secondary;
     outline: 0;
     padding: 0;
@@ -171,17 +171,17 @@
     opacity: 0;
     background-color: @modal-mask-bg;
     filter: ~"alpha(opacity=50)";
-    transition: opacity @animation-duration-slow linear, height 0s ease @animation-duration-slow;
+    transition: opacity .3s linear, height 0s ease .3s;
   }
   &-open {
-    transition: transform @animation-duration-slow ease-base-out;
-    // &-content {
-    //   box-shadow: @shadow-2;
-    // }
+    transition: transform .3s cubic-bezier(.7,.3,.1,1);
+    &-content {
+      box-shadow: -2px 0 8px rgba(0,0,0,.15);
+    }
   }
 }
 
-@keyframes antdDrawerFadeIn {
+@keyframes idollDrawerFadeIn {
   0% {
     opacity: 0;
   }

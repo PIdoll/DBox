@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from 'components/button';
 import Drawer from 'components/drawer';
-// import Form from 'components/form';
-// import Input from 'components/input';
-// import Select from 'components/select';
-// import DatePicker from 'components/date-picker';
+import Form from 'components/form';
+import Input, { Textarea } from 'components/input';
+import Select from 'components/select';
+import { RangePicker } from 'components/date-picker';
 import { Row, Col } from 'components/grid';
 import Divider from 'components/divider';
 import Radio from 'components/radio';
@@ -13,7 +13,9 @@ import Radio from 'components/radio';
 
 
 const RadioGroup = Radio.RadioGroup;
-// const { Option } = Select;
+const FormItem = Form.Item;
+// const Textarea = Input.TextArea;
+const { Option } = Select;
 
 const pStyle = {
   fontSize: 16,
@@ -44,11 +46,13 @@ const DescriptionItem = ({ title, content }) => (
     {content}
   </div>
 );
-export default class DrawerView extends React.Component {
+class DrawerView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      placement: 'left',
+      childrenDrawer: false,
+      placement: 'right',
+      visible: false,
       visible1: false,
       visible2: false,
       visible3: false,
@@ -60,6 +64,11 @@ export default class DrawerView extends React.Component {
       placement: e.target.value,
     });
   }
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
   showDrawer1 = () => {
     this.setState({
       visible1: true,
@@ -78,6 +87,11 @@ export default class DrawerView extends React.Component {
   showDrawer4 = () => {
     this.setState({
       visible4: true,
+    });
+  };
+  onClose = () => {
+    this.setState({
+      visible: false,
     });
   };
   onClose1 = () => {
@@ -100,40 +114,49 @@ export default class DrawerView extends React.Component {
       visible4: false,
     });
   };
-
+  showChildrenDrawer = () => {
+    this.setState({
+      childrenDrawer: true,
+    });
+  };
+  onChildrenDrawerClose = () => {
+    this.setState({
+      childrenDrawer: false,
+    });
+  };
   render() {
-    // const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     return (
       <div id='main-container'>
         <h1 className='h1'>基本用法</h1>
         <div>
-          <Button type='primary' onClick={this.showDrawer1}>
-            Open
+          <Button type='primary' onClick={this.showDrawer}>
+            打开基础抽屉
           </Button>
           <Drawer
-            title='Basic Drawer'
+            title='基础抽屉'
             placement='right'
             closable={false}
-            onClose={this.onClose1}
-            visible={this.state.visible1}
+            onClose={this.onClose}
+            visible={this.state.visible}
           >
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+            <p>一些基本内容...</p>
+            <p>一些基本内容...</p>
+            <p>一些基本内容...</p>
           </Drawer>
         </div>
-        {/* <h1 className='h1'>基本用法</h1> */}
-        {/* <div>
-          <Button type='primary' onClick={this.showDrawer}>
-          Create
+        <h1 className='h1'>表单抽屉</h1>
+        <div>
+          <Button type='primary' onClick={this.showDrawer1}>
+          创建表单抽屉
           </Button>
           <Drawer
-            title='Create'
+            title='创建'
             width={720}
             placement='right'
-            onClose={this.onClose}
+            onClose={this.onClose1}
             maskClosable={false}
-            visible={this.state.visible}
+            visible={this.state.visible1}
             style={{
             height: 'calc(100% - 55px)',
             overflow: 'auto',
@@ -143,14 +166,14 @@ export default class DrawerView extends React.Component {
             <Form layout='vertical' hideRequiredMark>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Name'>
+                  {/* <FormItem label='Name'>
                     {getFieldDecorator('name', {
                     rules: [{ required: true, message: 'please enter user name' }],
                   })(<Input placeholder='please enter user name' />)}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='Url'>
+                  {/* <FormItem label='Url'>
                     {getFieldDecorator('url', {
                     rules: [{ required: true, message: 'please enter url' }],
                   })(
@@ -161,12 +184,12 @@ export default class DrawerView extends React.Component {
                       placeholder='please enter url'
                     />
                   )}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Owner'>
+                  {/* <FormItem label='Owner'>
                     {getFieldDecorator('owner', {
                     rules: [{ required: true, message: 'Please select an owner' }],
                   })(
@@ -175,10 +198,10 @@ export default class DrawerView extends React.Component {
                       <Option value='mao'>Maomao Zhou</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='Type'>
+                  {/* <FormItem label='Type'>
                     {getFieldDecorator('type', {
                     rules: [{ required: true, message: 'Please choose the type' }],
                   })(
@@ -187,12 +210,12 @@ export default class DrawerView extends React.Component {
                       <Option value='public'>Public</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Approver'>
+                  {/* <FormItem label='Approver'>
                     {getFieldDecorator('approver', {
                     rules: [{ required: true, message: 'Please choose the approver' }],
                   })(
@@ -201,33 +224,31 @@ export default class DrawerView extends React.Component {
                       <Option value='tom'>Tom Liu</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='DateTime'>
+                  {/* <FormItem label='DateTime'>
                     {getFieldDecorator('dateTime', {
                     rules: [{ required: true, message: 'Please choose the dateTime' }],
                   })(
-                    <DatePicker.RangePicker
+                    <RangePicker
                       style={{ width: '100%' }}
                       getPopupContainer={trigger => trigger.parentNode}
                     />
                   )}
-                  </Form.Item>
+                  </FormItem> */}
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={24}>
-                  <Form.Item label='Description'>
+                  <FormItem label='Description'>
                     {getFieldDecorator('description', {
-                    rules: [
-                      {
+                    rules: [{
                         required: true,
                         message: 'please enter url description',
-                      },
-                    ],
-                  })(<Input.TextArea rows={4} placeholder='please enter url description' />)}
-                  </Form.Item>
+                      }],
+                  })(<Textarea rows={4} placeholder='please enter url description' />)}
+                  </FormItem>
                 </Col>
               </Row>
             </Form>
@@ -248,37 +269,37 @@ export default class DrawerView extends React.Component {
                 style={{
                 marginRight: 8,
               }}
-                onClick={this.onClose}
+                onClick={this.onClose1}
             >
-              Cancel
+              取消
               </Button>
-              <Button onClick={this.onClose} type='primary'>Submit</Button>
+              <Button onClick={this.onClose1} type='primary'>提交</Button>
             </div>
           </Drawer>
-        </div> */}
-        <h1>多层抽屉</h1>
+        </div>
+        <h1 className='h1'>多层抽屉</h1>
         <div>
           <Button type='primary' onClick={this.showDrawer2}>
-          Open drawer
+          打开多层抽屉
           </Button>
           <Drawer
-            title='Multi-level drawer'
+            title='多层级抽屉'
             width={520}
             closable={false}
             onClose={this.onClose2}
             visible={this.state.visible2}
         >
             <Button type='primary' onClick={this.showChildrenDrawer}>
-            Two-level drawer
+            打开次级抽屉
             </Button>
             <Drawer
-              title='Two-level Drawer'
+              title='次级抽屉'
               width={320}
               closable={false}
               onClose={this.onChildrenDrawerClose}
               visible={this.state.childrenDrawer}
           >
-            This is two-level drawer
+            这是次级抽屉
             </Drawer>
             <div
               style={{
@@ -299,139 +320,139 @@ export default class DrawerView extends React.Component {
               }}
                 onClick={this.onClose2}
             >
-              Cancel
+              取消
               </Button>
               <Button onClick={this.onClose2} type='primary'>
-              Submit
+              提交
               </Button>
             </div>
           </Drawer>
         </div>
         <h1 className='h1'>信息预览</h1>
-        <Button type='primary' onClick={this.showDrawer3}>
-            Open List
-        </Button>
-        <Drawer
-          width={640}
-          placement='right'
-          closable={false}
-          onClose={this.onClose3}
-          visible={this.state.visible3}
+        <div>
+          <Button type='primary' href='javascript:;' onClick={this.showDrawer3}>查看个人信息</Button>
+          <Drawer
+            width={640}
+            placement='right'
+            closable={false}
+            onClose={this.onClose3}
+            visible={this.state.visible3}
         >
-          <p style={{ ...pStyle, marginBottom: 24 }}>User Profile</p>
-          <p style={pStyle}>Personal</p>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='Full Name' content='Lily' />{' '}
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Account' content='AntDesign@example.com' />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='City' content='HangZhou' />
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Country' content='China🇨🇳' />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='Birthday' content='February 2,1900' />
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Website' content='-' />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <DescriptionItem
-                title='Message'
-                content='Make things as simple as possible but no simpler.'
+            <p style={{ ...pStyle, marginBottom: 24 }}>User Profile</p>
+            <p style={pStyle}>Personal</p>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='Full Name' content='Lily' />{' '}
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Account' content='AntDesign@example.com' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='City' content='HangZhou' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Country' content='China🇨🇳' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='Birthday' content='February 2,1900' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Website' content='-' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24}>
+                <DescriptionItem
+                  title='Message'
+                  content='Make things as simple as possible but no simpler.'
               />
-            </Col>
-          </Row>
-          <Divider />
-          <p style={pStyle}>Company</p>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='Position' content='Programmer' />
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Responsibilities' content='Coding' />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='Department' content='AFX' />
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Supervisor' content={<a>Lin</a>} />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <DescriptionItem
-                title='Skills'
-                content='C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.'
+              </Col>
+            </Row>
+            <Divider />
+            <p style={pStyle}>Company</p>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='Position' content='Programmer' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Responsibilities' content='Coding' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='Department' content='AFX' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Supervisor' content={<a>Lin</a>} />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24}>
+                <DescriptionItem
+                  title='Skills'
+                  content='C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.'
               />
-            </Col>
-          </Row>
-          <Divider />
-          <p style={pStyle}>Contacts</p>
-          <Row>
-            <Col span={12}>
-              <DescriptionItem title='Email' content='AntDesign@example.com' />
-            </Col>
-            <Col span={12}>
-              <DescriptionItem title='Phone Number' content='+86 181 0000 0000' />
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <DescriptionItem
-                title='Github'
-                content={(
-                  <a href='http://github.com/ant-design/ant-design/'>
+              </Col>
+            </Row>
+            <Divider />
+            <p style={pStyle}>Contacts</p>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='Email' content='AntDesign@example.com' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='Phone Number' content='+86 181 0000 0000' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24}>
+                <DescriptionItem
+                  title='Github'
+                  content={(
+                    <a href='http://github.com/ant-design/ant-design/'>
                     github.com/ant-design/ant-design/
-                  </a>
+                    </a>
                 )}
               />
-            </Col>
-          </Row>
-        </Drawer>
-        <h1>四种方位</h1>
+              </Col>
+            </Row>
+          </Drawer>
+        </div>
+        <h1 className='h1'>四种方位</h1>
         <div>
           <RadioGroup
             style={{ marginRight: 8 }}
             defaultValue={this.state.placement}
             onChange={this.onChange}
         >
-            <Radio value='top'>top</Radio>
-            <Radio value='right'>right</Radio>
-            <Radio value='bottom'>bottom</Radio>
-            <Radio value='left'>left</Radio>
+            <Radio value='top'>上</Radio>
+            <Radio value='bottom'>下</Radio>
+            <Radio value='left'>左</Radio>
+            <Radio value='right'>右</Radio>
           </RadioGroup>
           <br />
           <Button type='primary' onClick={this.showDrawer4}>
-          Open
+          打开方位抽屉
           </Button>
           <Drawer
-            title='Basic Drawer'
+            title='基础抽屉'
             placement={this.state.placement}
             closable={false}
             onClose={this.onClose4}
             visible={this.state.visible4}
         >
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+            <p>一些基本内容...</p>
+            <p>一些基本内容...</p>
+            <p>一些基本内容...</p>
           </Drawer>
         </div>
       </div>
     );
   }
 }
-// const App = Form.create()(DrawerView);
-
+const DrawerDemo = Form.create()(DrawerView);
+export default DrawerDemo

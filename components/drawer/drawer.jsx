@@ -34,7 +34,7 @@ export default class Drawer extends React.Component {
   };
 
   static defaultProps = {
-    prefixCls: 'ant-drawer',
+    prefixCls: 'idoll-drawer',
     width: 256,
     height: 256,
     closable: true,
