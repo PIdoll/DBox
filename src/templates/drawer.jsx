@@ -143,7 +143,7 @@ class extends React.Component {
             visible={this.state.visible}
           >
             <p>一些基本内容...</p>
-            <p>一些基本内容...</p>
+            <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
             <p>一些基本内容...</p>
           </Drawer>
         </div>
@@ -333,80 +333,80 @@ class extends React.Component {
         <div>
           <Button type='primary' href='javascript:;' onClick={this.showDrawer3}>查看个人信息</Button>
           <Drawer
-            width={640}
+            width={620}
             placement='right'
             closable={false}
             onClose={this.onClose3}
             visible={this.state.visible3}
         >
-            <p style={{ ...pStyle, marginBottom: 24 }}>User Profile</p>
-            <p style={pStyle}>Personal</p>
+            <p style={{ ...pStyle, marginBottom: 24 }}>个人信息</p>
+            <p style={pStyle}>私人信息</p>
             <Row>
               <Col span={12}>
-                <DescriptionItem title='Full Name' content='Lily' />{' '}
+                <DescriptionItem title='名称' content='小明' />{' '}
               </Col>
               <Col span={12}>
-                <DescriptionItem title='Account' content='AntDesign@example.com' />
+                <DescriptionItem title='账户' content='Idoll@example.com' />
               </Col>
             </Row>
             <Row>
               <Col span={12}>
-                <DescriptionItem title='City' content='HangZhou' />
+                <DescriptionItem title='城市' content='上海' />
               </Col>
               <Col span={12}>
-                <DescriptionItem title='Country' content='China🇨🇳' />
+                <DescriptionItem title='国家' content='中国' />
               </Col>
             </Row>
             <Row>
               <Col span={12}>
-                <DescriptionItem title='Birthday' content='February 2,1900' />
+                <DescriptionItem title='生日' content='2018-8-8' />
               </Col>
               <Col span={12}>
-                <DescriptionItem title='Website' content='-' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <DescriptionItem
-                  title='Message'
-                  content='Make things as simple as possible but no simpler.'
-              />
-              </Col>
-            </Row>
-            <Divider />
-            <p style={pStyle}>Company</p>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='Position' content='Programmer' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='Responsibilities' content='Coding' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='Department' content='AFX' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='Supervisor' content={<a>Lin</a>} />
+                <DescriptionItem title='个人博客' content={<a href='http://www.Dbox.com'>http://www.Dbox.com</a>} />
               </Col>
             </Row>
             <Row>
               <Col span={24}>
                 <DescriptionItem
-                  title='Skills'
-                  content='C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.'
+                  title='座右铭'
+                  content='不忘初心,方得始终'
               />
               </Col>
             </Row>
             <Divider />
-            <p style={pStyle}>Contacts</p>
+            <p style={pStyle}>公司信息</p>
             <Row>
               <Col span={12}>
-                <DescriptionItem title='Email' content='AntDesign@example.com' />
+                <DescriptionItem title='职业' content='程序猿' />
               </Col>
               <Col span={12}>
-                <DescriptionItem title='Phone Number' content='+86 181 0000 0000' />
+                <DescriptionItem title='特长' content='码代码' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='部门' content='开发部' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='业务组' content='贷款组' />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24}>
+                <DescriptionItem
+                  title='技能'
+                  content='C / C + +, Javascript, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.'
+              />
+              </Col>
+            </Row>
+            <Divider />
+            <p style={pStyle}>🔗地址</p>
+            <Row>
+              <Col span={12}>
+                <DescriptionItem title='📮邮箱' content='Dbox@example.com' />
+              </Col>
+              <Col span={12}>
+                <DescriptionItem title='📱手机' content='+86 188 8888 6666' />
               </Col>
             </Row>
             <Row>
@@ -414,9 +414,7 @@ class extends React.Component {
                 <DescriptionItem
                   title='Github'
                   content={(
-                    <a href='http://github.com/ant-design/ant-design/'>
-                    github.com/ant-design/ant-design/
-                    </a>
+                    <a href='http://github.com'>Github</a>
                 )}
               />
               </Col>
@@ -447,7 +445,7 @@ class extends React.Component {
             visible={this.state.visible4}
         >
             <p>一些基本内容...</p>
-            <p>一些基本内容...</p>
+            <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
             <p>一些基本内容...</p>
           </Drawer>
         </div>
