@@ -1,19 +1,22 @@
 @import "../../../style/theme/default/index";
 @import "../../../style/mixins/index";
 
-@table-prefix-cls: idoll-table;
-@table-head-background-color: #FAFAFA;
+@table-prefix-cls:  ~'@{idoll-prefix}-table';
+@table-header-icon-color: @text-color-secondary;
+
+.@{table-prefix-cls}-wrapper {
+  .clearfix;
+}
 
 .@{table-prefix-cls} {
-  font-size: @font-size-base;
-  color: @text-color;
+  .reset-component;
   overflow: hidden;
   position: relative;
   border-radius: @border-radius-base @border-radius-base 0 0;
-  overflow: auto;
 
   &-body {
-    transition: opacity 0.3s ease;
+    transition: opacity .3s;
+    overflow: auto;
   }
 
   table {
@@ -21,35 +24,201 @@
     border-collapse: separate;
     border-spacing: 0;
     text-align: left;
+    table-layout: fixed;
     border-radius: @border-radius-base @border-radius-base 0 0;
+  }
+
+  &-thead > tr > th {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    background: @table-header-bg;
+    transition: background .3s ease;
+    text-align: left;
+    color: @heading-color;
+    font-weight: 500;
+    border-bottom: @border-width-base @border-style-base @border-color-split;
+
+    &[colspan] {
+      text-align: center;
+      border-bottom: 0;
+    }
+
+    .@{iconfont-css-prefix}-filter,
+    .@{table-prefix-cls}-filter-icon {
+      position: relative;
+      margin-left: 8px;
+      font-size: @font-size-base;
+      cursor: pointer;
+      color: @table-header-icon-color;
+      transition: all .3s;
+      width: 14px;
+      font-weight: normal;
+      vertical-align: text-bottom;
+
+      &:hover {
+        color: @text-color;
+      }
+    }
+
+    .@{table-prefix-cls}-column-sorter + .@{iconfont-css-prefix}-filter {
+      margin-left: 4px;
+    }
+
+    .@{table-prefix-cls}-filter-selected.@{iconfont-css-prefix}-filter {
+      color: @primary-color;
+    }
+  }
+
+  &-tbody > tr > td {
+    border-bottom: @border-width-base @border-style-base @border-color-split;
+    transition: all .3s;
+  }
+
+  &-thead > tr,
+  &-tbody > tr {
+    transition: all .3s;
+    &.@{table-prefix-cls}-row-hover,
+    &:hover {
+      & > td {
+        background: @primary-LightBg;
+      }
+    }
+  }
+
+  &-thead > tr:hover {
+    background: none;
+  }
+
+  &-footer {
+    padding: @table-padding-vertical @table-padding-horizontal;
+    background: @table-header-bg;
+    border-radius: 0 0 @border-radius-base @border-radius-base;
+    position: relative;
+    border-top: @border-width-base @border-style-base @border-color-split;
+    &:before {
+      content: '';
+      height: 1px;
+      background: @table-header-bg;
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &.@{table-prefix-cls}-bordered &-footer {
+    border: @border-width-base @border-style-base @border-color-split;
+  }
+
+  &-title {
+    padding: @table-padding-vertical 0;
+    position: relative;
+    top: 1px;
+    border-radius: @border-radius-base @border-radius-base 0 0;
+  }
+
+  &.@{table-prefix-cls}-bordered &-title {
+    border: @border-width-base @border-style-base @border-color-split;
+    padding-left: @table-padding-horizontal;
+    padding-right: @table-padding-horizontal;
+  }
+
+  &-title + &-content {
+    position: relative;
+    border-radius: @border-radius-base @border-radius-base 0 0;
+    overflow: hidden;
+    .@{table-prefix-cls}-bordered & {
+      &,
+      table {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &-without-column-header &-title + &-content,
+  &-without-column-header table {
+    border-radius: 0;
+  }
+
+  &-tbody > tr.@{table-prefix-cls}-row-selected td {
+    background: @table-selected-row-bg;
+  }
+
+  &-thead > tr > th,
+  &-tbody > tr > td {
+    padding: 16px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+  }
+
+  &-thead > tr > th.@{table-prefix-cls}-selection-column-custom {
+    padding-left: 16px;
+    padding-right: 0;
+  }
+
+  &-thead > tr > th.@{table-prefix-cls}-selection-column,
+  &-tbody > tr > td.@{table-prefix-cls}-selection-column {
+    text-align: center;
+  }
+
+  &-expand-icon-th,
+  &-row-expand-icon-cell {
+    text-align: center;
+  }
+
+  &-header {
+    background: @table-header-bg;
     overflow: hidden;
   }
 
-  input {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  &-header table {
+    border-radius: @border-radius-base @border-radius-base 0 0;
+  }
+
+  &-loading {
+    position: relative;
+    .@{table-prefix-cls}-body {
+      background: @component-background;
+      opacity: 0.5;
+    }
+    .@{table-prefix-cls}-spin-holder {
+      height: 20px;
+      line-height: 20px;
+      left: 50%;
+      top: 50%;
+      margin-left: -30px;
+      position: absolute;
+    }
+    .@{table-prefix-cls}-with-pagination {
+      margin-top: -20px;
+    }
+    .@{table-prefix-cls}-without-pagination {
+      margin-top: 10px;
+    }
   }
 
   &-column-sorter {
     position: relative;
+    margin-left: -2px;
     display: inline-block;
     width: 14px;
-    height: 14px;
+    height: 16px;
     vertical-align: middle;
     text-align: center;
     font-weight: normal;
-    color: @text-color-disable ;
+    color: @table-header-icon-color;
 
     &-up,
     &-down {
-      line-height: 4px;
+      line-height: 6px;
       display: block;
       width: 14px;
       height: 6px;
       cursor: pointer;
       &:hover .@{iconfont-css-prefix} {
-        color: @text-color-secondary ;
+        color: @text-color;
       }
       &.on {
         .@{iconfont-css-prefix}-caret-up,
@@ -84,310 +253,119 @@
     }
   }
 
-  &-thead > tr >th.@{table-prefix-cls}-column-sort {
-    background: @table-head-background-color !important;
-  }
-
-  &-thead > tr > th {
-    background: @table-head-background-color;
-    font-weight: 500;
-    transition: background .3s ease;
-    text-align: left;
-    padding: 16px;
-
-    .idollicon-filter {
-      margin-left: 4px;
-      .iconfont-size-under-12px(10px);
-      cursor: pointer;
-      color: #aaa;
-      transition: all 0.3s ease;
-      &:hover {
-        color: #666;
-      }
-    }
-
-    .@{table-prefix-cls}-filter-selected.idollicon-filter {
-      color: @primary-color;
-    }
-  }
-
-  &-tbody > tr > td {
-    border-bottom: 1px solid @border-color-split;
-    padding: 16px;
-  }
-
-  &-tbody > .@{table-prefix-cls}-expanded-row[data-row-key*='-extra-row'] {
-    td {
-      .clearfix {
-        margin: -16px 0;
-        border-bottom: 1px solid #FAFAFA;
-        .@{table-prefix-cls}-tbody {
-          tr:last-child {
-            td {
-              border-bottom: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &-tbody > tr > td,&-thead > tr > th{
-        // overflow: hidden;
-        // text-overflow: ellipsis;
-        white-space: nowrap;
-  }
-
-  &-thead > tr,
-  &-tbody > tr {
-    transition: all .3s ease;
-    &.@{table-prefix-cls}-row-hover,
-    &:hover {
-      background: @primary-LightBg;
-    }
-  }
-
-  &-thead > tr:hover {
-    background: none;
-  }
-
-  &-footer {
-    padding: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    top: -1px;
-    border-radius: 0 0 @border-radius-base @border-radius-base;
-  }
-
-  &.@{table-prefix-cls}-bordered &-footer {
-    border: 1px solid @border-color-split;
-  }
-
-  &-title {
-    padding: 16px;
-    text-align: center;
-    position: relative;
-    top: 1px;
-    border-radius: @border-radius-base @border-radius-base 0 0;
-  }
-
-  &.@{table-prefix-cls}-bordered &-title {
-    border: 1px solid @border-color-split;
-  }
-
-  &-title + &-content {
-    position: relative;
-
-    table {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  }
-
-  &-tbody > tr.@{table-prefix-cls}-row-selected {
-    background: #fafafa;
-  }
-
-  &-thead > tr > th.@{table-prefix-cls}-column-sort {
-    background: #eaeaea;
-  }
-
-  &-thead > tr > th,
-  &-tbody > tr > td {
-    word-break: break-all;
-  }
-
-  &-thead > tr > th.@{table-prefix-cls}-selection-column,
-  &-tbody > tr > td.@{table-prefix-cls}-selection-column {
-    text-align: center;
-    width: 60px;
-  }
-
-  &-header {
-    background: @table-head-background-color;
-    overflow: hidden;
-    border-radius: @border-radius-base @border-radius-base 0 0;
-  }
-
-  &-header table {
-    border-radius: @border-radius-base @border-radius-base 0 0;
-  }
-
-  &-loading {
-    position: relative;
-    .@{table-prefix-cls}-body {
-      background: #fff;
-      opacity: 0.5;
-    }
-    .@{table-prefix-cls}-spin-holder {
-      height: 20px;
-      line-height: 20px;
-      left: 50%;
-      top: 50%;
-      margin-left: -30px;
-      position: absolute;
-    }
-    .@{table-prefix-cls}-with-pagination {
-      margin-top: -20px;
-    }
-    .@{table-prefix-cls}-without-pagination {
-      margin-top: 10px;
-    }
-  }
-
-  &-middle {
-    .@{table-prefix-cls}-thead > tr > th,
-    .@{table-prefix-cls}-tbody > tr > td {
-      padding: 12px 16px;
-    }
-  }
-
-  &-small {
-    border-radius: @border-radius-base;
-
-    .@{table-prefix-cls}-body .@{table-prefix-cls}-thead > tr > th {
-      background-color: @table-head-background-color;
-    }
-
-    .@{table-prefix-cls}-header > table,
-    .@{table-prefix-cls}-body > table {
-      border: 0;
-    }
-
-    &.@{table-prefix-cls}-bordered .@{table-prefix-cls}-body > table {
-      border: 0;
-    }
-
-    .@{table-prefix-cls}-thead > tr > th {
-      padding: 8px;
-      background: #fff;
-      border-bottom: 1px solid @border-color-split;
-    }
-
-    .@{table-prefix-cls}-tbody > tr > td {
-      padding: 8px;
-    }
-
-    .@{table-prefix-cls}-header {
-      background: #fff;
-      table {
-        border-bottom: 1px solid @border-color-split;
-      }
-      .@{table-prefix-cls}-thead > tr > th {
-        border-bottom: 0;
-      }
-    }
-  }
-
-
   &-bordered {
-    .@{table-prefix-cls}-body > table {
-      border: 1px solid @border-color-split;
-    }
-
-    &.@{table-prefix-cls}-fixed-header {
-      border: 1px solid @border-color-split;
-      table {
-        border: 0;
-      }
-      .@{table-prefix-cls}-fixed-left {
-        border-right: 1px solid @border-color-split;
-      }
-      .@{table-prefix-cls}-fixed-right {
-        border-left: 1px solid @border-color-split;
-      }
-      .@{table-prefix-cls}-placeholder {
-        border-bottom: 0;
-      }
-    }
-
-    .@{table-prefix-cls}-thead > tr > th {
-      border-bottom: 1px solid @border-color-split;
-    }
-
-    &.@{table-prefix-cls}-empty .@{table-prefix-cls}-thead > tr > th {
+    .@{table-prefix-cls}-header > table,
+    .@{table-prefix-cls}-body > table,
+    .@{table-prefix-cls}-fixed-left table,
+    .@{table-prefix-cls}-fixed-right table {
+      border: @border-width-base @border-style-base @border-color-split;
+      border-right: 0;
       border-bottom: 0;
     }
 
-    .@{table-prefix-cls}-tbody tr:last-child {
-      > th,
-      > td {
+    &.@{table-prefix-cls}-empty {
+      .@{table-prefix-cls}-placeholder {
+        border-left: @border-width-base @border-style-base @border-color-split;
+        border-right: @border-width-base @border-style-base @border-color-split;
+      }
+    }
+
+    &.@{table-prefix-cls}-fixed-header {
+      .@{table-prefix-cls}-header > table {
         border-bottom: 0;
       }
+
+      .@{table-prefix-cls}-body > table {
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .@{table-prefix-cls}-body-inner > table {
+        border-top: 0;
+      }
+
+      .@{table-prefix-cls}-placeholder {
+        border: 0;
+      }
+    }
+
+    .@{table-prefix-cls}-thead > tr > th {
+      border-bottom: @border-width-base @border-style-base @border-color-split;
     }
 
     .@{table-prefix-cls}-thead > tr > th,
     .@{table-prefix-cls}-tbody > tr > td {
-      border-right: 1px solid @border-color-split;
-      &:last-child {
-        border-right: 0;
-      }
+      border-right: @border-width-base @border-style-base @border-color-split;
     }
   }
 
   &-placeholder {
-    background: #fff;
-    border-bottom: 1px solid @border-color-split;;
-    text-align: center;
     position: relative;
-    z-index: 2;
-    font-size: 12px;
-    color: #999;
-    .idollicon {
+    padding: @table-padding-vertical @table-padding-horizontal;
+    background: @component-background;
+    border-bottom: @border-width-base @border-style-base @border-color-split;
+    text-align: center;
+    font-size: @font-size-base;
+    color: @text-color-secondary;
+    z-index: 1;
+    .@{iconfont-css-prefix} {
       margin-right: 4px;
     }
   }
 
-  &-pagination {
+  &-pagination.@{idoll-prefix}-pagination {
     margin: 16px 0;
     float: right;
   }
 
   &-filter-dropdown {
-    min-width: 96px;
     margin-left: -8px;
-    background: #fff;
+    background: @component-background;
     border-radius: @border-radius-base;
-    border: 1px solid @border-color-base;
     box-shadow: @box-shadow-base;
 
-    .idoll-dropdown-menu {
+    .@{idoll-prefix}-dropdown-menu {
       border: 0;
       box-shadow: none;
       border-radius: @border-radius-base @border-radius-base 0 0;
 
+      &-without-submenu {
+        max-height: 400px;
+        overflow-x: hidden;
+      }
+
       &-item > label + span {
-        margin-left: 8px;
+        padding-right: 0;
       }
 
       &-sub {
         border-radius: @border-radius-base;
-        border: 1px solid @border-color-base;
         box-shadow: @box-shadow-base;
       }
 
-      .idoll-dropdown-submenu-contain-selected {
-        .idoll-dropdown-menu-submenu-title:after {
+      .@{idoll-prefix}-dropdown-submenu-contain-selected {
+        .@{idoll-prefix}-dropdown-menu-submenu-title:after {
           color: @primary-color;
-          font-weight: 500;
-          text-shadow: 0 0 2px tint(@primary-color, 80%);
+          font-weight: bold;
+          text-shadow: 0 0 2px @primary-2;
         }
       }
     }
 
-    .idoll-dropdown-menu-item {
+    .@{idoll-prefix}-dropdown-menu-item {
       overflow: hidden;
     }
 
-    > .idoll-dropdown-menu > .idoll-dropdown-menu-item:last-child,
-    > .idoll-dropdown-menu > .idoll-dropdown-menu-submenu:last-child .idoll-dropdown-menu-submenu-title {
+    > .@{idoll-prefix}-dropdown-menu > .@{idoll-prefix}-dropdown-menu-item:last-child,
+    > .@{idoll-prefix}-dropdown-menu > .@{idoll-prefix}-dropdown-menu-submenu:last-child .@{idoll-prefix}-dropdown-menu-submenu-title {
       border-radius: 0;
     }
 
     &-btns {
       overflow: hidden;
-      border-top: 1px solid @border-color-split;
+      padding: 7px 8px;
+      border-top: @border-width-base @border-style-base @border-color-split;
     }
 
     &-link {
@@ -407,8 +385,37 @@
     }
   }
 
-  &-expand-icon-th {
-    width: 34px;
+  &-selection {
+    &-select-all-custom {
+      margin-right: 4px !important;
+    }
+
+    .@{iconfont-css-prefix}-down {
+      color: @table-header-icon-color;
+      transition: all .3s;
+    }
+
+    &-menu {
+      margin-top: 5px;
+      margin-left: -30px;
+      background: @component-background;
+      border-radius: @border-radius-base;
+      box-shadow: @box-shadow-base;
+
+      .@{idoll-prefix}-action-down {
+        color: @table-header-icon-color;
+      }
+    }
+
+    &-down {
+      cursor: pointer;
+      padding: 0;
+      display: inline-block;
+      line-height: 1;
+      &:hover .@{iconfont-css-prefix}-down {
+        color: #666;
+      }
+    }
   }
 
   &-row {
@@ -419,12 +426,9 @@
       height: 17px;
       text-align: center;
       line-height: 14px;
-      border: 1px solid @border-color-split;
+      border: @border-width-base @border-style-base @border-color-split;
       user-select: none;
-      background: #fff;
-      &-cell {
-        width: 18px;
-      }
+      background: @component-background;
     }
 
     &-expanded:after {
@@ -441,8 +445,6 @@
         content: '.';
       }
     }
-
-
 
     &[class*="@{table-prefix-cls}-row-level-0"] .@{table-prefix-cls}-selection-column > span {
       display: inline-block;
@@ -465,7 +467,6 @@
     overflow-x: hidden;
     table {
       width: auto;
-      min-width: 100%;
     }
   }
 
@@ -473,19 +474,17 @@
     height: 100%;
   }
 
-  &-fixed-header &-body {
+  &-fixed-header > &-content > &-scroll > &-body {
     position: relative;
-    background: #fff;
+    background: @component-background;
   }
 
   &-fixed-header &-body-inner {
     overflow: scroll;
-    overflow-x: hidden;
   }
 
   &-fixed-header &-scroll &-header {
     overflow: scroll;
-    overflow-x: hidden;
     padding-bottom: 20px;
     margin-bottom: -20px;
   }
@@ -495,11 +494,11 @@
     position: absolute;
     top: 0;
     overflow: hidden;
-    z-index: 1;
+    transition: box-shadow .3s ease;
     border-radius: 0;
     table {
       width: auto;
-      background: #fff;
+      background: @component-background;
     }
   }
 
@@ -510,14 +509,14 @@
 
   &-fixed-left {
     left: 0;
-    box-shadow: @shadow-1-right;
+    box-shadow: 6px 0 6px -4px @shadow-color;
     .@{table-prefix-cls}-header {
       overflow-y: hidden;
     }
-    // .@{table-prefix-cls}-body-inner {
-    //   margin-right: -20px;
-    //   padding-right: 20px;
-    // }
+    .@{table-prefix-cls}-body-inner {
+      margin-right: -20px;
+      padding-right: 20px;
+    }
     .@{table-prefix-cls}-fixed-header & .@{table-prefix-cls}-body-inner {
       padding-right: 0;
     }
@@ -529,7 +528,7 @@
 
   &-fixed-right {
     right: 0;
-    box-shadow: @shadow-1-left;
+    box-shadow: -6px 0 6px -4px @shadow-color;
     &,
     table {
       border-radius: 0 @border-radius-base 0 0;
@@ -546,60 +545,5 @@
 
   &&-scroll-position-right &-fixed-right {
     box-shadow: none;
-  }
-
-  &-column-hidden {
-    display: none;
-  }
-
-  &-thead > tr > th {
-    border-bottom: 1px solid @border-color-split;
-  }
-  &-thead > tr > th&-column-has-prev {
-    position: relative;
-  }
-
-  &-thead > tr > th&-column-has-prev,
-  &-tbody > tr > td&-column-has-prev {
-    padding-left: 24px;
-  }
-
-  &-prev-columns-page,
-  &-next-columns-page {
-    cursor: pointer;
-    color: #666;
-    z-index: 1;
-    &:hover {
-      color: @primary-color;
-    }
-    &-disabled {
-      cursor: not-allowed;
-      color: #bbb;
-      &:hover {
-        color: #bbb;
-      }
-    }
-  }
-
-  &-prev-columns-page {
-    position: absolute;
-    left: 8px;
-    &:before {
-      content: '\e601';
-      .iconfont-size-under-12px(9px);
-      font-weight: 500;
-      font-family: idollicon;
-    }
-  }
-
-  &-next-columns-page {
-    float: right;
-    margin-left: 8px;
-    &:before {
-      content: '\e600';
-      .iconfont-size-under-12px(9px);
-      font-weight: 500;
-      font-family: idollicon;
-    }
   }
 }
