@@ -4,6 +4,7 @@ import RcDrawer from 'rc-drawer';
 import warning from 'warning';
 import classNames from 'classnames';
 import Icon from '../icon';
+import './style/index';
 
 // const DrawerContext: Context<Drawer | null> = createReactContext(null);
 // const DrawerContext = Context<Drawer>;
