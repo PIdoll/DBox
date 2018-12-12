@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'components/button';
 import Drawer from 'components/drawer';
-import Form from 'components/form';
+import Form from '../../components/form/index';
 import Input from 'components/input';
 import Select from 'components/select';
 import { RangePicker } from 'components/date-picker';
@@ -11,7 +11,7 @@ import Radio from 'components/radio';
 
 
 
-
+const FormItem = Form.Item;
 const RadioGroup = Radio.RadioGroup;
 const { Option } = Select;
 
@@ -165,14 +165,14 @@ class extends React.Component {
             <Form layout='vertical' hideRequiredMark>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Name'>
+                  <FormItem label='Name'>
                     {getFieldDecorator('name', {
                     rules: [{ required: true, message: 'please enter user name' }],
                   })(<Input placeholder='please enter user name' />)}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='Url'>
+                  <FormItem label='Url'>
                     {getFieldDecorator('url', {
                     rules: [{ required: true, message: 'please enter url' }],
                   })(
@@ -183,12 +183,12 @@ class extends React.Component {
                       placeholder='please enter url'
                     />
                   )}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Owner'>
+                  <FormItem label='Owner'>
                     {getFieldDecorator('owner', {
                     rules: [{ required: true, message: 'Please select an owner' }],
                   })(
@@ -197,10 +197,10 @@ class extends React.Component {
                       <Option value='mao'>Maomao Zhou</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='Type'>
+                  <FormItem label='Type'>
                     {getFieldDecorator('type', {
                     rules: [{ required: true, message: 'Please choose the type' }],
                   })(
@@ -209,12 +209,12 @@ class extends React.Component {
                       <Option value='public'>Public</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label='Approver'>
+                  <FormItem label='Approver'>
                     {getFieldDecorator('approver', {
                     rules: [{ required: true, message: 'Please choose the approver' }],
                   })(
@@ -223,10 +223,10 @@ class extends React.Component {
                       <Option value='tom'>Tom Liu</Option>
                     </Select>
                   )}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label='DateTime'>
+                  <FormItem label='DateTime'>
                     {getFieldDecorator('dateTime', {
                     rules: [{ required: true, message: 'Please choose the dateTime' }],
                   })(
@@ -235,19 +235,19 @@ class extends React.Component {
                       getPopupContainer={trigger => trigger.parentNode}
                     />
                   )}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
               </Row>
               <Row gutter={16}>
                 <Col span={24}>
-                  <Form.Item label='Description'>
+                  <FormItem label='Description'>
                     {getFieldDecorator('description', {
                     rules: [{
                         required: true,
                         message: 'please enter url description',
                       }],
                   })(<Input.TextArea rows={4} placeholder='please enter url description' />)}
-                  </Form.Item>
+                  </FormItem>
                 </Col>
               </Row>
             </Form>
