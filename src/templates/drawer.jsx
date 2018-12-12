@@ -46,7 +46,9 @@ const DescriptionItem = ({ title, content }) => (
     {content}
   </div>
 );
-class DrawerView extends React.Component {
+
+const DrawerView = Form.create()(
+class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -155,7 +157,6 @@ class DrawerView extends React.Component {
             width={720}
             placement='right'
             onClose={this.onClose1}
-            maskClosable={false}
             visible={this.state.visible1}
             style={{
             height: 'calc(100% - 55px)',
@@ -453,6 +454,5 @@ class DrawerView extends React.Component {
       </div>
     );
   }
-}
-const DrawerDemo = Form.create()(DrawerView);
-export default DrawerDemo
+})
+export default DrawerView
