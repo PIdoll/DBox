@@ -102,7 +102,7 @@ const content = {
 
 #### **动态变化** 
 ```jsx
-const {ButtonGroup} = require('./index.jsx');
+const ButtonGroup = Button.Group;
 const content = {
   width: 64,
   height: 64,

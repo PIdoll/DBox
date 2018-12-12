@@ -2,6 +2,7 @@ import React from 'react';
 import RcSelect, { Option, OptGroup } from 'rc-select';
 import { PropTypes } from 'prop-types';
 import classNames from 'classnames';
+import Icon from '../icon';
 
 import './style'
 
@@ -49,10 +50,24 @@ export default class Select extends React.Component {
       combobox: isCombobox,
     };
 
+    const clearIcon = (
+      <Icon
+        type='close-circle'
+        className={`${prefixCls}-picker-clear`}
+    />
+    );
+
+    const removeIcon = (
+      <Icon type='close' className={`${prefixCls}-remove-icon`} />
+    );
+
+
     size = size === 'small' ? 'small' : null;
     return (
       <RcSelect {...this.props}
         {...modeConfig}
+        removeIcon={removeIcon}
+        clearIcon={clearIcon}
         dropdownClassName={size}
         className={classs}
         optionLabelProp={optionLabelProp || 'children'}

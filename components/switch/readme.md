@@ -37,6 +37,7 @@ class SwitchView extends React.Component {
 ```
 
 #### **两种大小**
+
 ```jsx
 <div>
 	<Switch defaultChecked />

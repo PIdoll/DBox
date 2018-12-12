@@ -18,7 +18,7 @@ export default class InputNumber extends React.Component {
     step: PropTypes.number,
   }
   static defaultProps = {
-    prfixCls: 'idoll-input-number',
+    prefixCls: 'idoll-input-number',
     step: 1,
   };
 

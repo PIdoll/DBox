@@ -50,7 +50,7 @@ export default class PopoverDemo extends React.Component {
       <div id='main-container' className='demo-popover'>
         <h1 className='h1' id='demoPopover'>基本用法</h1>
         <p>弹出层的大小由内容区域决定</p>
-        <Popover content={content} title='标题' trigger='hover'>
+        <Popover overlayClassName='11111111111' content={content} title='标题' trigger='hover'>
           <Button>鼠标移入</Button>
         </Popover>
         <h1 className='h1'>三种触发方式</h1>
