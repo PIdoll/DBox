@@ -80,14 +80,20 @@ class SliderView extends React.Component {
 import { Slider, Switch } from 'components';
 
 const SliderView = () => {
-  return (
-    <div>
-      <Slider tipFormatter={(value) => `${value}%`}  defaultValue={20}/>
-      <Slider tipFormatter={null} defaultValue={10} />
-    </div>
-  )
-}
+    return (
+      <div>
+        <Slider tipFormatter={(value) => `${value}%`}  defaultValue={20}/>
+        <Slider tipFormatter={null} defaultValue={10} />
+      </div>
+    )
+  }
 <SliderView />
+```
+
+```jsx static
+import { Button } from 'components';
+
+<Button>BTN</Button>
 ```
 
 #### **Slider**

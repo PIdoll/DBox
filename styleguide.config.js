@@ -1,25 +1,58 @@
 const path = require('path');
 const { version } = require('./package.json')
-const {camelCase, upperFirst} = require('lodash');
+const { camelCase, upperFirst } = require('lodash');
 
 const TITLE = `Dbox UI ${version}`;
-const PORT = parseInt(process.env.PROT || 9002, 10)
+const PORT = parseInt(process.env.PROT || 9002, 10);
 
 module.exports = {
   title: TITLE,
   serverPort: PORT,
   // 忽略没有示例文件的组件
   skipComponentsWithoutExample: false,
-
+  // 定义示例代码选项卡的初始状态（可选collapse, hide, expand）
   exampleMode: 'collapse',
-  usageMode: 'hidden',
+  // 定义 props 和 methods 选项卡的初始状态（可选collapse, hide, expand）
+  usageMode: 'expand',
+  // 在右上角展示‘Folk me on Github'字样
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
   },
-  template: {
-    index: path.resolve(__dirname, 'styleguide/index.html')
-},
+  // 用于返回处理已发现组件和生成文档对象的函数
+  handlers: componentPath =>
+    require('react-docgen').defaultHandlers.concat(
+      (documentation, path) => {
+        // Calculate a display name for components based upon the declared class name.
+        if (
+          path.value.type === 'ClassDeclaration' &&
+          path.value.id.type === 'Identifier'
+        ) {
+          documentation.set('displayName', path.value.id.name)
+
+          // Calculate the key required to find the component in the module exports
+          if (
+            path.parentPath.value.type === 'ExportNamedDeclaration'
+          ) {
+            documentation.set('path', path.value.id.name)
+          }
+        }
+
+        // The component is the default export
+        if (
+          path.parentPath.value.type === 'ExportDefaultDeclaration'
+        ) {
+          documentation.set('path', 'default')
+        }
+      },
+
+      require('react-docgen-displayname-handler').createDisplayNameHandler(
+        componentPath
+      )
+    ),
+  // 每页渲染一个部分或组件
+  pagePerSection: true,
+  // 自定义样式指南UI字体，颜色等
   theme: {
     baseBackground: '#fdfdfc',
 		link: '#274e75',
@@ -28,6 +61,7 @@ module.exports = {
     font: ['Helvetica', 'sans-serif'],
     sidebarWidth: 240
   },
+  // 自定义styleguidist组件的样式
   styles: {
 		Playground: {
 			preview: {
@@ -97,11 +131,6 @@ module.exports = {
         },
       }
     },
-    ReactComponent: {
-      tabButtons: {
-        display: 'none'
-      }
-    },
     SectionHeading: {
       sectionName: {
         paddingBottom: '8px',
@@ -125,9 +154,6 @@ module.exports = {
           fontWeight: '700 !important'
         }
       },
-      heading2: {
-        display: 'none'
-      },
       heading3: {
         fontSize: '30px',
         width: '100%',
@@ -142,34 +168,42 @@ module.exports = {
 				background: 'none',
 			},
 			code: {
-				fontSize: 14,
+				fontSize: 24,
 			},
 		},
   },
+  // 返回一个组件的路径行的函数
   getComponentPathLine: (componentPath) => {
     const dirname = path.dirname(componentPath, '.jsx')
     const name = dirname.split('/').slice(-1)[0]
     const componentName = upperFirst(camelCase(name))
     return `import {${componentName}} from Dbox`
   },
-  pagePerSection: true,
   sections: [
     {
-      sections: [
-        {
-          content: ''
-        },
-      ]
+      name: '',
+      description: '由于设计过程中使用的颜色命名与开发过程中使用的颜色命名会有区别，这里将二者进行匹配编码，便于开发引用相应颜色。',
+      content: 'components/code.md'
     },
     {
-      name: 'Components',
+      name: '使用场景',
+      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
+      content: 'components/usage.md'
+    },
+    {
+      name: '颜色接口',
+      description: 'abc',
+      content: 'components/interface.md'
+    },
+    {
+      name: 'components',
       sections: [
         {
           name: 'Basic',
           components: () => ([
             path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/layout.jsx'),
-          ])
+          ]),
         },
         {
           name: 'General',
@@ -180,17 +214,15 @@ module.exports = {
         },
         {
           name: 'Navigation',
-          codeSamples: 'hide',
-          propsMethods: 'hide',
           components: () => ([
             path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
             path.resolve(__dirname, './components/steps/steps.jsx'),
-        //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
-        //    path.resolve(__dirname, './components/anchor/index.jsx'),
-           path.resolve(__dirname, './components/menu/index.jsx'),
+            path.resolve(__dirname, './components/pagination/pagination.jsx'),
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+            path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
@@ -206,13 +238,12 @@ module.exports = {
            path.resolve(__dirname, './components/time-picker/index.jsx'),
            path.resolve(__dirname, './components/radio/radio.jsx'),
            path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-           path.resolve(__dirname, './components/time-picker/index.jsx'),
            path.resolve(__dirname, './components/form/index.jsx'),
            path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
-        //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
+           path.resolve(__dirname, './components/transfer/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
@@ -221,10 +252,10 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
-         //   path.resolve(__dirname, './components/card/card.jsx'),
+          //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-         //   path.resolve(__dirname, './components/list/list.jsx'),
+          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
@@ -239,12 +270,12 @@ module.exports = {
           name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
-         path.resolve(__dirname, './components/modal/index.jsx'),
-         path.resolve(__dirname, './components/message/index.jsx'),
+          path.resolve(__dirname, './components/modal/index.jsx'),
+          path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
-          path.resolve(__dirname, './components/progress/progress.jsx'),
-         path.resolve(__dirname, './components/popconfirm/index.jsx'),
+          path.resolve(__dirname, './components/progress/index.jsx'),
+          path.resolve(__dirname, './components/popconfirm/index.jsx'),
           path.resolve(__dirname, './components/spin/index.jsx'),
           ])
         },
@@ -256,9 +287,14 @@ module.exports = {
             path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
-      ]
+      ],
+      sectionDepth: 3
     },
+
+
+
   ],
+  // 自定义webpack配置选项
   webpackConfig: {
     module: {
       rules: [
@@ -285,6 +321,6 @@ module.exports = {
         'templates': path.resolve(__dirname, 'src/templates'),
         'components': path.resolve(__dirname, 'components')
       }
-    },
+    }
   }
 }
