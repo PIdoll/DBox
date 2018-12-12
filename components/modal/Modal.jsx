@@ -13,14 +13,16 @@ let mousePosition;
 let mousePositionEventBinded;
 
 export default class Modal extends React.Component {
+  state = {
+    confirmLoading: false
+  }
   static defaultProps = {
     prefixCls: 'idoll-modal',
     onOk: noop,
     onCancel: noop,
-    width: 480,
+    width: 560,
     transitionName: 'zoom',
     maskTransitionName: 'fade',
-    confirmLoading: false,
     visible: false
   }
   static propTypes = {
@@ -44,11 +46,13 @@ export default class Modal extends React.Component {
 
   handleCancel = (e) => {
     this.props.onCancel(e);
-    // console.log(this.props);
   }
 
   handleOk = () => {
     this.props.onOk();
+    this.setState({
+      confirmLoading: true
+    })
   }
 
   componentDidMount() {
@@ -71,7 +75,7 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    let { okText, cancelText, confirmLoading, footer, visible } = this.props;
+    let { okText, confirmLoading, cancelText, footer, visible } = this.props;
 
     if (this.context.idollLocale && this.context.idollLocale.Modal) {
       okText = okText || this.context.idollLocale.Modal.okText;
@@ -82,7 +86,6 @@ export default class Modal extends React.Component {
       <Button
         key='cancel'
         type='ghost'
-        size='small'
         onClick={this.handleCancel}
         >
         {cancelText || '取消'}
@@ -90,7 +93,7 @@ export default class Modal extends React.Component {
       <Button
         key='confirm'
         type='primary'
-        size='small'
+        className={confirmLoading ? 'loading' : ''}
         loading={confirmLoading}
         onClick={this.handleOk}
       >
@@ -101,7 +104,6 @@ export default class Modal extends React.Component {
       <Dialog
         onClose={this.handleCancel}
         footer={footer || defaultFooter}
-        // footer={null}
         {...this.props}
         visible={visible}
         mousePosition={mousePosition}

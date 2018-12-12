@@ -8,7 +8,7 @@
 .@{progress-prefix-cls} {
   .reset-component;
   display: inline-block;
-
+  line-height: 18px;
   &-line {
     width: 100%;
     font-size: @font-size-base;
@@ -66,7 +66,7 @@
     color: @highlight-color;
     position: absolute;
     right: 0;
-    line-height: 1;
+    line-height: 18px;
     .@{iconfont-css-prefix} {
       font-size: @font-size-base;
     }
@@ -134,9 +134,10 @@
     transform: translateY(-50%);
     left: 0;
     margin: 0;
+
     color: @text-color;
     .@{iconfont-css-prefix} {
-      font-size: 14 / 12em;
+      font-size: 14 / 10em;
     }
   }
 
@@ -151,7 +152,6 @@
       color: @success-color;
     }
   }
-
   @keyframes ~"@{idoll-prefix}-progress-active" {
     0% {
       opacity: 0.1;
@@ -167,28 +167,4 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

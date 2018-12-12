@@ -1,26 +1,78 @@
-# Affix
 
----
-category: Components
-subtitle: 固钉
-type: Navigation
-title: Affix
----
-
-将页面元素钉在可视范围。
-
-## 何时使用
+####  **何时使用**
 
 当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。
-
 页面可视范围过小时，慎用此功能以免遮挡页面内容。
 
-
+#### **基本使用**
 ```jsx
-
+const {ReactDOM} = require('./index');
+class AffixView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      top: 30,
+    }
+  }
+   /* componentDidMount() {
+    const ele = ReactDOM.findDOMNode(this.refs.box_affix);
+    const currentHeight = ele.offsetTop - ele.offsetHeight;
+    const left = `${ele.offsetLeft}px`;
+    window.addEventListener('scroll', this.onScroll = () => {
+      if(window.scrollY >= currentHeight && window.scrollY < ele.offsetTop) {
+        ele.style.position = 'relative',
+        ele.style.top = '0';
+        ele.style.width = '50%';
+        ele.style.backgroundColor = '#dedede';
+      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +            ele.offsetHeight) {
+        ele.style.position = 'absolute';
+        ele.style.width = '50%';
+        ele.style.padding = '10px';
+        ele.style.backgroundColor = '#dedede';
+      }
+    })
+  }
+   componentWillUnmount () {
+      window.removeEventListener('scroll', this.onScroll);
+  } */
+  render() {
+    return (
+      <Affix offsetTop={this.state.top} ref='box_affix'>
+        <Button  >距离顶部30px触发</Button>
+      </Affix>
+    )
+  }
+}
+<AffixView />
+```
+#### **固定到底部**
+```jsx
+<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+  <Button >距离底部0px触发</Button>
+</Affix>
 ```
 
-## API
+
+#### **固定在容器当中**
+```jsx
+class AffixView extends React.Component{
+  render() {
+    return (
+      <div ref={(node) => { this.container = node; }}>
+        <div style={{backgroundColor: '#dedede', padding: '10px 0'}}>
+          <Affix target={() => this.container}>
+            <Button type="primary">
+                固定在容器的顶部
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    )
+  }
+}
+<AffixView />
+```
+#### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -31,8 +83,3 @@ title: Affix
 
 **注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
 
-```jsx
-<Affix style={{ position: 'absolute', top: y, left: x }}>
-  ...
-</Affix>
-```

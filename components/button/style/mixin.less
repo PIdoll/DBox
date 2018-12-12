@@ -49,6 +49,9 @@
   &:hover,
   &:focus {
     // .button-color(@color; @primary-spread-color; @primary-spread-color);
+    > .@{iconfont-css-prefix} {
+      color: @color;
+    }
     .button-color(@color; @primary-Hover; @primary-Hover);
   }
 
@@ -225,6 +228,9 @@
 // 重要按钮
 .btn-primary() {
   .button-variant-primary(@btn-primary-color; @btn-primary-bg);
+  .idoll-icon {
+    color: #fff;
+  }
 }
 
 // 次要按钮

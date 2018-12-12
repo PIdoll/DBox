@@ -1,62 +1,98 @@
 import React from 'react';
 import Progress from 'components/progress';
+import Button from '../../components/button';
 
-let interval
-
+const ButtonGroup = Button.Group;
 export default class ProgressView extends React.Component {
   constructor() {
     super();
     this.state = {
-      percentValue: 0
+      percentValue: 0,
+      percent: 0
     }
+    this.increase = this.increase.bind(this);
+    this.decrease = this.decrease.bind(this);
   }
-  componentWillMount() {
-    interval = setInterval(() => {
-      let percentValue = this.state.percentValue + 1;
-      if (percentValue < 100) {
-        this.setState({percentValue: percentValue});
-      } else {
-        percentValue = 100;
-        this.setState({percentValue: percentValue});
-        clearInterval(this.state.interval);
-      }
-    }, 100)
+  increase() {
+    let percent = this.state.percent + 10;
+    if (percent > 100) {
+      percent = 100;
+    }
+    this.setState({percent});
   }
-  componentWillUnmount() {
-    clearInterval(interval);
+  decrease() {
+    let percent = this.state.percent - 10;
+    if (percent < 0) {
+      percent = 0;
+    }
+    this.setState({percent});
   }
   render() {
     return (
       <div id='main-container'>
         <h1 className='h1'>线条型进度条</h1>
-        <Progress type='line' />
-        <br />
-        <br />
-        <Progress type='line' percent={50} status='active' />
-        <br />
-        <br />
-        <Progress type='line' percent={70} status='exception' />
-        <br />
-        <br />
-        <Progress type='line' percent={100} />
-        <br />
-        <br />
-        <Progress type='line' percent={30} showInfo={false} />
+        <div style={{ width: '500px' }}>
+          <Progress type='line' />
+          <br />
+          <br />
+          <Progress type='line' percent={50} status='active' />
+          <br />
+          <br />
+          <Progress type='line' percent={70} status='exception' />
+          <br />
+          <br />
+          <Progress type='line' percent={100} />
+          <br />
+          <br />
+          <Progress type='line' percent={30} showInfo={false} />
+        </div>
 
+        <h1 className='h1'>迷你线性进度条</h1>
+        <div style={{ width: '500px' }}>
+          <Progress size='small' type='line' />
+          <br />
+          <br />
+          <Progress size='small' type='line' percent={50} status='active' />
+          <br />
+          <br />
+          <Progress size='small' type='line' percent={70} status='exception' />
+          <br />
+          <br />
+          <Progress size='small' type='line' percent={100} />
+          <br />
+          <br />
+          <Progress size='small' type='line' percent={30} showInfo={false} />
+        </div>
 
         <h1 className='h1'>圆形进度条</h1>
-        <Progress type='circle' percent={50} status='active' gapPosition='bottom' />
-        <Progress type='circle' percent={70} status='active' gapPosition='bottom' strokeWidth={10} />
-        <Progress type='circle' percent={100} gapPosition='left' width={150} />
-        <Progress type='circle' percent={this.state.percentValue} gapPosition='left' />
+        <div style={{ width: '500px' }}>
+          <Progress type='circle' percent={50} />
+          <Progress type='circle' percent={70} status='exception' />
+          <Progress type='circle' percent={100} />
+        </div>
 
+        <h1 className='h1'>迷你圆形进度条</h1>
+        <div style={{ width: '500px' }}>
+          <Progress type='circle' width={80} percent={50} />
+          <Progress type='circle' width={80} percent={70} status='exception' />
+          <Progress type='circle' width={80} percent={100} />
+        </div>
 
-        <h1 className='h1'>仪表盘型进度条</h1>
-        <Progress type='dashboard' percent={100} status='active' gapPosition='top' />
-        <Progress type='dashboard' percent={100} status='exception' gapPosition='bottom' />
-        <Progress type='dashboard' percent={100} gapPosition='left' />
+        <h1 className='h1'>动态进度条</h1>
+        <div style={{ width: '500px' }}>
+          <Progress type='line' percent={this.state.percent} />
+          <Progress type='circle' percent={this.state.percent} />
+          <ButtonGroup>
+            <Button onClick={this.decrease} icon='remove' />
+            <Button onClick={this.increase} icon='plus' />
+          </ButtonGroup>
+        </div>
+        <h1 className='h1'>自定义文字格式进度条</h1>
+        <div style={{ width: '500px' }}>
+          <Progress type='circle' percent={50} format={(percent) => `${percent}Day`} />
+          <Progress type='circle' percent={100} format={() => 'Finish'} />
+        </div>
       </div>
     )
   }
 }
-

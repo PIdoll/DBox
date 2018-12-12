@@ -22,7 +22,7 @@ export default class Demo extends React.Component {
         <h1 className='h1'>滚动容器</h1>
         <div className='scrollable-container' ref={node => { this.container = node }}>
           <div className='background'>
-            <Affix target={() => (this.container)}>
+            <Affix target={() => (this.container)} offsetTop={20}>
               <Button type='primary'>固定在容器的顶部</Button>
             </Affix>
           </div>

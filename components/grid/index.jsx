@@ -4,7 +4,6 @@ let Grid = {
   Col: Col,
   Row: Row
 };
-
+export {Col, Row};
 export default Grid;
-export { Col, Row }
 
