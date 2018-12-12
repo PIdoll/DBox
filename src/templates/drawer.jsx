@@ -1,16 +1,17 @@
 import React from 'react';
 import Button from 'components/button';
 import Drawer from 'components/drawer';
-import Form from '../../components/form/index';
+import Form from 'components/form';
 import Input from 'components/input';
 import Select from 'components/select';
-import { RangePicker } from 'components/date-picker';
+import DatePicker from 'components/date-picker';
 import { Row, Col } from 'components/grid';
 import Divider from 'components/divider';
 import Radio from 'components/radio';
 
 
-
+const { RangePicker } = DatePicker;
+const Textarea = Input.Textarea;
 const FormItem = Form.Item;
 const RadioGroup = Radio.RadioGroup;
 const { Option } = Select;
@@ -165,22 +166,22 @@ class extends React.Component {
             <Form layout='vertical' hideRequiredMark>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Name'>
+                  <FormItem label='姓名'>
                     {getFieldDecorator('name', {
-                    rules: [{ required: true, message: 'please enter user name' }],
-                  })(<Input placeholder='please enter user name' />)}
+                    rules: [{ required: true, message: '请输入用户名' }],
+                  })(<Input placeholder='请输入用户名' />)}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='Url'>
+                  <FormItem label='URL'>
                     {getFieldDecorator('url', {
-                    rules: [{ required: true, message: 'please enter url' }],
+                    rules: [{ required: true, message: '请输入 url' }],
                   })(
                     <Input
                       style={{ width: '100%' }}
                       addonBefore='http://'
                       addonAfter='.com'
-                      placeholder='please enter url'
+                      placeholder='请输入 url'
                     />
                   )}
                   </FormItem>
@@ -188,25 +189,25 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Owner'>
+                  <FormItem label='选择'>
                     {getFieldDecorator('owner', {
-                    rules: [{ required: true, message: 'Please select an owner' }],
+                    rules: [{ required: true, message: '请选择' }],
                   })(
-                    <Select placeholder='Please select an owner'>
-                      <Option value='xiao'>Xiaoxiao Fu</Option>
-                      <Option value='mao'>Maomao Zhou</Option>
+                    <Select placeholder='请选择'>
+                      <Option value='xiao'>劉岳然</Option>
+                      <Option value='mao'>李欣桐</Option>
                     </Select>
                   )}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='Type'>
+                  <FormItem label='类型'>
                     {getFieldDecorator('type', {
-                    rules: [{ required: true, message: 'Please choose the type' }],
+                    rules: [{ required: true, message: '请选择类型' }],
                   })(
-                    <Select placeholder='Please choose the type'>
-                      <Option value='private'>Private</Option>
-                      <Option value='public'>Public</Option>
+                    <Select placeholder='请选择类型'>
+                      <Option value='private'>私密</Option>
+                      <Option value='public'>公开</Option>
                     </Select>
                   )}
                   </FormItem>
@@ -214,25 +215,27 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Approver'>
+                  <FormItem label='批复'>
                     {getFieldDecorator('approver', {
-                    rules: [{ required: true, message: 'Please choose the approver' }],
+                    rules: [{ required: true, message: '请选择批复人' }],
                   })(
-                    <Select placeholder='Please choose the approver'>
-                      <Option value='jack'>Jack Ma</Option>
-                      <Option value='tom'>Tom Liu</Option>
+                    <Select placeholder='请选择批复人'>
+                      <Option value='jack'>杰瑞</Option>
+                      <Option value='tom'>汤姆</Option>
                     </Select>
                   )}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='DateTime'>
+                  <FormItem label='时间'>
                     {getFieldDecorator('dateTime', {
-                    rules: [{ required: true, message: 'Please choose the dateTime' }],
+                    rules: [{ required: true, message: '请选择日期时间' }],
                   })(
                     <RangePicker
-                      style={{ width: '100%' }}
-                      getPopupContainer={trigger => trigger.parentNode}
+                      style={{width: '100%'}}
+                      showTime={{ format: 'HH:mm' }}
+                      format='YYYY-MM-DD HH:mm'
+                      placeholder={['开始时间', '结束时间']}
                     />
                   )}
                   </FormItem>
@@ -240,13 +243,13 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={24}>
-                  <FormItem label='Description'>
+                  <FormItem label='描述'>
                     {getFieldDecorator('description', {
                     rules: [{
                         required: true,
-                        message: 'please enter url description',
+                        message: '请输入url描述',
                       }],
-                  })(<Input.TextArea rows={4} placeholder='please enter url description' />)}
+                  })(<Textarea rows={10} placeholder='请输入url描述' />)}
                   </FormItem>
                 </Col>
               </Row>

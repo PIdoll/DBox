@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RcDrawer from 'rc-drawer';
 import warning from 'warning';
+// import createReactContext, { Context } from 'create-react-context';
 import classNames from 'classnames';
 import Icon from '../icon';
 import './style/index';
 
 // const DrawerContext: Context<Drawer | null> = createReactContext(null);
 // const DrawerContext = Context<Drawer>;
-// const ThemeContext: Context<Drawer> = createReactContext('light');
 
 export default class Drawer extends React.Component {
   static propTypes = {
@@ -51,7 +51,7 @@ export default class Drawer extends React.Component {
     };
   }
 
-  // static parentDrawer  <Drawer />;
+  // parentDrawer = <Drawer />;
   componentDidUpdate(preProps) {
     if (preProps.visible !== this.props.visible && this.parentDrawer) {
       if (this.props.visible) {
@@ -75,16 +75,16 @@ export default class Drawer extends React.Component {
     }
     this.close(e);
   }
-  // push = () => {
-  //   this.setState({
-  //     push: true,
-  //   });
-  // }
-  // pull = () => {
-  //   this.setState({
-  //     push: false,
-  //   });
-  // }
+  push = () => {
+    this.setState({
+      push: true,
+    });
+  }
+  pull = () => {
+    this.setState({
+      push: false,
+    });
+  }
   onDestoryTransitionEnd = () => {
     const isDestroyOnClose = this.getDestoryOnClose();
     if (!isDestroyOnClose) {
@@ -99,14 +99,14 @@ export default class Drawer extends React.Component {
   getDestoryOnClose = () => (this.props.destroyOnClose && !this.props.visible);
 
   // get drawar push width or height
-  // getPushTransform = (placement) => {
-  //   if (placement === 'left' || placement === 'right') {
-  //     return `translateX(${placement === 'left' ? 180 : -180}px)`;
-  //   }
-  //   if (placement === 'top' || placement === 'bottom') {
-  //     return `translateY(${placement === 'top' ? 180 : -180}px)`;
-  //   }
-  // }
+  getPushTransform = (placement) => {
+    if (placement === 'left' || placement === 'right') {
+      return `translateX(${placement === 'left' ? 180 : -180}px)`;
+    }
+    if (placement === 'top' || placement === 'bottom') {
+      return `translateY(${placement === 'top' ? 180 : -180}px)`;
+    }
+  }
   // render drawer body dom
   renderBody = () => {
     if (this.destoryClose && !this.props.visible) {

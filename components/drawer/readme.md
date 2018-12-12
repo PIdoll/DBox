@@ -48,6 +48,71 @@ class DrawerView extends React.Component {
 }
 <DrawerView />
 ```
+
+#### **四种方位**
+```jsx
+const RadioGroup = Radio.RadioGroup;
+class DrawerView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    visible: false,
+      placement: 'right'
+    }
+    this.showDrawer = this.showDrawer.bind(this)
+    this.onClose = this.onClose.bind(this)
+    this.onChange = this.onChange.bind(this)
+
+  };
+  onChange (e) {
+    this.setState({
+      placement: e.target.value,
+    });
+  }
+  showDrawer () {
+    this.setState({
+      visible: true,
+    });
+  }
+  onClose () {
+    this.setState({
+      visible: false,
+    });
+  };
+  render() {
+  return (
+    <div>
+      <RadioGroup
+        style={{ marginRight: 8 }}
+        defaultValue={this.state.placement}
+        onChange={this.onChange}
+    >
+        <Radio value='top'>上</Radio>
+        <Radio value='bottom'>下</Radio>
+        <Radio value='left'>左</Radio>
+        <Radio value='right'>右</Radio>
+      </RadioGroup>
+      <br />
+      <Button type='primary' onClick={this.showDrawer}>
+      打开方位抽屉
+      </Button>
+      <Drawer
+        title='基础抽屉'
+        placement={this.state.placement}
+        closable={false}
+        onClose={this.onClose}
+        visible={this.state.visible}
+    >
+        <p>一些基本内容...</p>
+        <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
+        <p>一些基本内容...</p>
+      </Drawer>
+    </div>  )
+}
+}
+<DrawerView />
+```
+
 #### **信息预览**
 ```jsx
 const { Row, Col } = require('../../components/grid');
@@ -197,26 +262,21 @@ class DrawerView extends React.Component {
 <DrawerView />
 ```
 
-#### **四种方位**
+#### **多层抽屉**
 ```jsx
-const RadioGroup = Radio.RadioGroup;
 class DrawerView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
     visible: false,
-      placement: 'right'
+  	 placement: 'right',
+  	 childrenDrawer: false,
     }
     this.showDrawer = this.showDrawer.bind(this)
     this.onClose = this.onClose.bind(this)
-    this.onChange = this.onChange.bind(this)
-
+    this.showChildrenDrawer = this.showChildrenDrawer.bind(this)
+    this.onChildrenDrawerClose = this.onChildrenDrawerClose.bind(this)
   };
-  onChange (e) {
-    this.setState({
-      placement: e.target.value,
-    });
-  }
   showDrawer () {
     this.setState({
       visible: true,
@@ -226,40 +286,238 @@ class DrawerView extends React.Component {
     this.setState({
       visible: false,
     });
+  }
+  showChildrenDrawer () {
+    this.setState({
+      childrenDrawer: true,
+    });
+  };
+  onChildrenDrawerClose () {
+    this.setState({
+      childrenDrawer: false,
+    });
   };
   render() {
   return (
     <div>
-      <RadioGroup
-        style={{ marginRight: 8 }}
-        defaultValue={this.state.placement}
-        onChange={this.onChange}
-    >
-        <Radio value='top'>上</Radio>
-        <Radio value='bottom'>下</Radio>
-        <Radio value='left'>左</Radio>
-        <Radio value='right'>右</Radio>
-      </RadioGroup>
-      <br />
       <Button type='primary' onClick={this.showDrawer}>
-      打开方位抽屉
+      打开多层抽屉
       </Button>
       <Drawer
-        title='基础抽屉'
-        placement={this.state.placement}
+        title='多层级抽屉'
+        width={520}
         closable={false}
         onClose={this.onClose}
         visible={this.state.visible}
     >
-        <p>一些基本内容...</p>
-        <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
-        <p>一些基本内容...</p>
+        <Button type='primary' onClick={this.showChildrenDrawer}>
+        打开次级抽屉
+        </Button>
+        <Drawer
+          title='次级抽屉'
+          width={320}
+          closable={false}
+          onClose={this.onChildrenDrawerClose}
+          visible={this.state.childrenDrawer}
+      >
+        这是次级抽屉
+        </Drawer>
+        <div
+          style={{
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+          borderTop: '1px solid #e8e8e8',
+          padding: '10px 16px',
+          textAlign: 'right',
+          left: 0,
+          background: '#fff',
+          borderRadius: '0 0 4px 4px',
+        }}
+      >
+          <Button
+            style={{
+            marginRight: 8,
+          }}
+            onClick={this.onClose}
+        >
+          取消
+          </Button>
+          <Button onClick={this.onClose} type='primary'>
+          提交
+          </Button>
+        </div>
       </Drawer>
-    </div>  )
-}
+    </div>
+     )
+  }
 }
 <DrawerView />
 ```
+
+#### **表单抽屉**
+```jsx
+const FormItem = Form.Item
+const DrawerView = Form.create()(
+class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    visible: false
+    }
+    this.showDrawer = this.showDrawer.bind(this)
+    this.onClose = this.onClose.bind(this)
+  };
+  showDrawer () {
+    this.setState({
+      visible: true,
+    });
+  }
+  onClose () {
+    this.setState({
+      visible: false,
+    });
+  }
+  render() {
+  const { getFieldDecorator } = this.props.form;
+  return (
+       <div>
+          <Button type='primary' onClick={this.showDrawer}>
+          创建表单抽屉
+          </Button>
+          <Drawer
+            title='创建'
+            width={720}
+            placement='right'
+            onClose={this.onClose}
+            visible={this.state.visible}
+            style={{
+            height: 'calc(100% - 55px)',
+            overflow: 'auto',
+            paddingBottom: 53,
+          }}
+        >
+            <Form layout='vertical' hideRequiredMark>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <FormItem label='Name'>
+                    {getFieldDecorator('name', {
+                    rules: [{ required: true, message: 'please enter user name' }],
+                  })(<Input placeholder='please enter user name' />)}
+                  </FormItem>
+                </Col>
+                <Col span={12}>
+                  <FormItem label='Url'>
+                    {getFieldDecorator('url', {
+                    rules: [{ required: true, message: 'please enter url' }],
+                  })(
+                    <Input
+                      style={{ width: '100%' }}
+                      addonBefore='http://'
+                      addonAfter='.com'
+                      placeholder='please enter url'
+                    />
+                  )}
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <FormItem label='Owner'>
+                    {getFieldDecorator('owner', {
+                    rules: [{ required: true, message: 'Please select an owner' }],
+                  })(
+                    <Select placeholder='Please select an owner'>
+                      <Option value='xiao'>Xiaoxiao Fu</Option>
+                      <Option value='mao'>Maomao Zhou</Option>
+                    </Select>
+                  )}
+                  </FormItem>
+                </Col>
+                <Col span={12}>
+                  <FormItem label='Type'>
+                    {getFieldDecorator('type', {
+                    rules: [{ required: true, message: 'Please choose the type' }],
+                  })(
+                    <Select placeholder='Please choose the type'>
+                      <Option value='private'>Private</Option>
+                      <Option value='public'>Public</Option>
+                    </Select>
+                  )}
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <FormItem label='Approver'>
+                    {getFieldDecorator('approver', {
+                    rules: [{ required: true, message: 'Please choose the approver' }],
+                  })(
+                    <Select placeholder='Please choose the approver'>
+                      <Option value='jack'>Jack Ma</Option>
+                      <Option value='tom'>Tom Liu</Option>
+                    </Select>
+                  )}
+                  </FormItem>
+                </Col>
+                <Col span={12}>
+                  <FormItem label='DateTime'>
+                    {getFieldDecorator('dateTime', {
+                    rules: [{ required: true, message: 'Please choose the dateTime' }],
+                  })(
+                    <RangePicker
+                      style={{ width: '100%' }}
+                      getPopupContainer={trigger => trigger.parentNode}
+                    />
+                  )}
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={24}>
+                  <FormItem label='Description'>
+                    {getFieldDecorator('description', {
+                    rules: [{
+                        required: true,
+                        message: 'please enter url description',
+                      }],
+                  })(<Input.TextArea rows={4} placeholder='please enter url description' />)}
+                  </FormItem>
+                </Col>
+              </Row>
+            </Form>
+            <div
+              style={{
+              position: 'absolute',
+              bottom: 0,
+              width: '100%',
+              borderTop: '1px solid #e8e8e8',
+              padding: '10px 16px',
+              textAlign: 'right',
+              left: 0,
+              background: '#fff',
+              borderRadius: '0 0 4px 4px',
+            }}
+          >
+              <Button
+                style={{
+                marginRight: 8,
+              }}
+                onClick={this.onClose}
+            >
+              取消
+              </Button>
+              <Button onClick={this.onClose} type='primary'>提交</Button>
+            </div>
+          </Drawer>
+        </div>
+     )
+  }
+})
+<DrawerView />
+```
+
+
 
 
 #### **Drawer**
