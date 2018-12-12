@@ -13,9 +13,10 @@
 .idoll-table {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.65);
+  overflow: hidden;
   position: relative;
   border-radius: 3px 3px 0 0;
-  overflow: hidden;
+  overflow: auto;
 }
 .idoll-table-body {
   transition: opacity 0.3s ease;
@@ -27,6 +28,70 @@
   text-align: left;
   border-radius: 3px 3px 0 0;
   overflow: hidden;
+}
+.idoll-table input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.idoll-table-column-sorter {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-table-column-sorter-up,
+.idoll-table-column-sorter-down {
+  line-height: 4px;
+  display: block;
+  width: 14px;
+  height: 6px;
+  cursor: pointer;
+}
+.idoll-table-column-sorter-up:hover .idoll-icon,
+.idoll-table-column-sorter-down:hover .idoll-icon {
+  color: rgba(0, 0, 0, 0.45);
+}
+.idoll-table-column-sorter-up.on .idoll-icon-caret-up,
+.idoll-table-column-sorter-down.on .idoll-icon-caret-up,
+.idoll-table-column-sorter-up.on .idoll-icon-caret-down,
+.idoll-table-column-sorter-down.on .idoll-icon-caret-down {
+  color: #13B886;
+}
+.idoll-table-column-sorter-up:after,
+.idoll-table-column-sorter-down:after {
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 14px;
+  left: 0;
+}
+.idoll-table-column-sorter-up:after {
+  top: -30px;
+}
+.idoll-table-column-sorter-down:after {
+  bottom: -30px;
+}
+.idoll-table-column-sorter .idoll-icon-caret-up,
+.idoll-table-column-sorter .idoll-icon-caret-down {
+  display: compact;
+  font-size: 12px;
+  font-size: 8px \ 9;
+  transform: scale(0.66666667) rotate(0deg);
+  line-height: 4px;
+  height: 4px;
+  transition: all .3s;
+}
+:root .idoll-table-column-sorter .idoll-icon-caret-up,
+:root .idoll-table-column-sorter .idoll-icon-caret-down {
+  font-size: 12px;
+}
+.idoll-table-thead > tr > th.idoll-table-column-sort {
+  background: #FAFAFA !important;
 }
 .idoll-table-thead > tr > th {
   background: #FAFAFA;
@@ -64,6 +129,10 @@
 }
 .idoll-table-tbody > .idoll-table-expanded-row[data-row-key*='-extra-row'] td .clearfix .idoll-table-tbody tr:last-child td {
   border-bottom: 0;
+}
+.idoll-table-tbody > tr > td,
+.idoll-table-thead > tr > th {
+  white-space: nowrap;
 }
 .idoll-table-thead > tr,
 .idoll-table-tbody > tr {
@@ -183,52 +252,6 @@
 }
 .idoll-table-small .idoll-table-header .idoll-table-thead > tr > th {
   border-bottom: 0;
-}
-.idoll-table-column-sorter {
-  margin-left: 4px;
-  display: inline-block;
-  width: 12px;
-  height: 24px;
-  vertical-align: middle;
-  text-align: center;
-}
-.idoll-table-column-sorter-up,
-.idoll-table-column-sorter-down {
-  line-height: 4px;
-  height: 12px;
-  display: block;
-  width: 12px;
-  cursor: pointer;
-}
-.idoll-table-column-sorter-up:hover .idollicon,
-.idoll-table-column-sorter-down:hover .idollicon {
-  color: #666;
-}
-.idoll-table-column-sorter-up.on .idollicon-caret-up,
-.idoll-table-column-sorter-down.on .idollicon-caret-up,
-.idoll-table-column-sorter-up.on .idollicon-caret-down,
-.idoll-table-column-sorter-down.on .idollicon-caret-down {
-  color: #13B886;
-}
-.idoll-table-column-sorter .idollicon-caret-up,
-.idoll-table-column-sorter .idollicon-caret-down {
-  display: compact;
-  font-size: 12px;
-  font-size: 6px \ 9;
-  transform: scale(0.5) rotate(0deg);
-  line-height: 6px;
-  height: 6px;
-  color: #aaa;
-}
-:root .idoll-table-column-sorter .idollicon-caret-up,
-:root .idoll-table-column-sorter .idollicon-caret-down {
-  font-size: 12px;
-}
-.idoll-table-column-sorter .idollicon-caret-up:before,
-.idoll-table-column-sorter .idollicon-caret-down:before {
-  transform-origin: 53% 50%;
-  -moz-transform-origin: 53% 50%;
-  /* fix firefox position */
 }
 .idoll-table-bordered .idoll-table-body > table {
   border: 1px solid #E2E2E2;
@@ -404,7 +427,6 @@ tr.idoll-table-expanded-row:hover {
   top: 0;
   overflow: hidden;
   z-index: 1;
-  transition: box-shadow 0.3s ease;
   border-radius: 0;
 }
 .idoll-table-fixed-left table,
@@ -422,10 +444,6 @@ tr.idoll-table-expanded-row:hover {
 }
 .idoll-table-fixed-left .idoll-table-header {
   overflow-y: hidden;
-}
-.idoll-table-fixed-left .idoll-table-body-inner {
-  margin-right: -20px;
-  padding-right: 20px;
 }
 .idoll-table-fixed-header .idoll-table-fixed-left .idoll-table-body-inner {
   padding-right: 0;
