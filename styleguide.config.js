@@ -163,17 +163,15 @@ module.exports = {
         {
           name: 'Basic',
           components: () => ([
-          path.resolve(__dirname, './components/grid/index.jsx'),
-        //    path.resolve(__dirname, './components/grid/row.jsx'),
-            path.resolve(__dirname, './components/layout/layout.jsx'),
+            path.resolve(__dirname, './components/grid/index.jsx'),
+            path.resolve(__dirname, './components/layout/index.jsx'),
           ])
         },
         {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-          //  path.resolve(__dirname, './components/button/button-group.jsx'),
-           path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
@@ -181,7 +179,7 @@ module.exports = {
           codeSamples: 'hide',
           propsMethods: 'hide',
           components: () => ([
-            path.resolve(__dirname, './components/affix/index.jsx'),
+            // path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
@@ -199,18 +197,17 @@ module.exports = {
            path.resolve(__dirname, './components/input/index.jsx'),
            path.resolve(__dirname, './components/input-number/index.jsx'),
            path.resolve(__dirname, './components/select/index.jsx'),
-        //    path.resolve(__dirname, './components/treeSelect/treeSelect.jsx'),
+           path.resolve(__dirname, './components/tree-select/index.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
-            path.resolve(__dirname, './components/radio/radio.jsx'),
-            path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
-        //    path.resolve(__dirname, './components/time-picker/timePicker.jsx'),
-         //   path.resolve(__dirname, './components/form/Form.jsx'),
-            path.resolve(__dirname, './components/switch/switch.jsx'),
+           path.resolve(__dirname, './components/radio/radio.jsx'),
+           path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
+           path.resolve(__dirname, './components/form/index.jsx'),
+           path.resolve(__dirname, './components/switch/switch.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
-            path.resolve(__dirname, './components/slider/index.jsx'),
+           path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
-        //    path.resolve(__dirname, './components/transfer/transfer.jsx'),
+           path.resolve(__dirname, './components/transfer/index.jsx'),
             path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
@@ -220,10 +217,12 @@ module.exports = {
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
          //   path.resolve(__dirname, './components/card/card.jsx'),
+            path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
-         path.resolve(__dirname, './components/tooltip/index.jsx'),
+            path.resolve(__dirname, './components/tree/index.jsx'),
+            path.resolve(__dirname, './components/tooltip/index.jsx'),
             path.resolve(__dirname, './components/table/table.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
@@ -235,11 +234,11 @@ module.exports = {
           name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
-       //   path.resolve(__dirname, './components/modal/index.jsx'),
+         path.resolve(__dirname, './components/modal/index.jsx'),
          path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
         //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
-        //  path.resolve(__dirname, './components/progress/progress.jsx'),
+          path.resolve(__dirname, './components/progress/progress.jsx'),
          path.resolve(__dirname, './components/popconfirm/index.jsx'),
           path.resolve(__dirname, './components/spin/index.jsx'),
           ])
@@ -249,6 +248,7 @@ module.exports = {
           components: () => ([
           path.resolve(__dirname, './components/back-top/index.jsx'),
           path.resolve(__dirname, './components/anchor/index.jsx'),
+          path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
       ]

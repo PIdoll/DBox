@@ -17,10 +17,20 @@ export default class LocaleReceiver extends React.Component {
     const { componentName, defaultLocale } = this.props;
     const { idollLocale } = this.context;
     const localeFromContext = idollLocale && idollLocale[componentName];
-    return {
-      ...(typeof defaultLoclae === 'function' ? defaultLocale() : defaultLocale),
-      ...(localeFromContext || {})
-    };
+    let locale = null;
+    let fromContext = null;
+    if (typeof defaultLocale === 'function') {
+      locale = defaultLocale();
+      fromContext = localeFromContext || {};
+    } else {
+      locale = defaultLocale;
+      fromContext = localeFromContext || {};
+    }
+    return Object.assign(locale, fromContext);
+    // return {
+    //   ...(typeof defaultLoclae === 'function' ? defaultLocale() : defaultLocale),
+    //   ...(localeFromContext || {})
+    // };
   }
 
   getLocaleCode() {

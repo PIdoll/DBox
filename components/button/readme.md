@@ -49,6 +49,10 @@
 <Button icon='delete'>图标</Button>
 <Button icon='delete' size='large'>图标</Button>
 <br /><br />
+<Button loading size='small'>图标</Button>
+<Button loading>图标</Button>
+<Button loading size='large'>图标</Button>
+<br /><br />
 <Button icon='down' size='small'>图标</Button>
 <Button icon='down' >图标</Button>
 <Button icon='down' size='large'>图标</Button>
@@ -61,7 +65,12 @@
 
 <Button icon='delete' shape='square' size='small' />
 <Button icon='delete' shape='square' />
-<Button icon='delete' shape='square' size='large' />
+<Button icon='delete' shape='square' size='large'/>
+<br /><br />
+
+<Button size='small' loading shape='circle'/>
+<Button loading shape='circle'/>
+<Button size='large' loading shape='circle'/>
 ```
 
 #### **幽灵按钮**
