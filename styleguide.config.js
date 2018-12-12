@@ -164,7 +164,7 @@ module.exports = {
           name: 'Basic',
           components: () => ([
             path.resolve(__dirname, './components/grid/index.jsx'),
-            path.resolve(__dirname, './components/layout/layout.jsx'),
+            path.resolve(__dirname, './components/layout/index.jsx'),
           ])
         },
         {
