@@ -15,6 +15,7 @@ const moment = require('../../node_modules/moment');
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| mold | 不同选择时间的方式('backdrop') | string | 无 |
 | value | 展示日期 | moment | 当前日期 |
 | defaultValue | 默认展示的日期 | moment | 默认日期 |
 | disabledDate | 不可选择的日期 | (currentDate: moment) => boolean | 无 |
