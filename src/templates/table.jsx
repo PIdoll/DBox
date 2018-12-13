@@ -587,7 +587,7 @@ class table extends React.Component {
     key: 'name',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}>{text}</Tooltip>
+      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
      }
   }, {
     title: '年龄',
@@ -595,18 +595,24 @@ class table extends React.Component {
     key: 'age',
     sorter: (a, b) => a.age - b.age,
     editable: true,
+    render: (text, record) => {
+      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
+     }
   }, {
     title: '居住地',
     dataIndex: 'city',
     key: 'city',
     editable: true,
+    render: (text, record) => {
+      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
+     }
   }, {
     title: '手机号',
     dataIndex: 'Tel',
     key: 'Tel',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}>{text}</Tooltip>
+      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
      }
   }, {
     title: '地址',
@@ -614,8 +620,8 @@ class table extends React.Component {
     key: 'address',
     editable: true,
     render: (text, record) => {
-     return <Tooltip title={text}>{text}</Tooltip>
-    }
+      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
+     }
   }, {
     title: '操作',
     dataIndex: 'action',
@@ -658,14 +664,18 @@ class table extends React.Component {
     },
   }];
 }
-  componentDidMount () {
-    const td = document.querySelector('td').offsetWidth
-    const sp = document.querySelector('td span').offsetWidth
-    console.log(typeof (td))
-    console.log(+sp)
-    if (+sp > +td) {
+  onMouseEnter = (e) => {
+    const parentWidth = e.target.parentNode.offsetWidth
+    const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
+    const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
+    console.log(selfWdith > parentWidth - (parentPadding * 2))
+    if (selfWdith >= parentWidth - (parentPadding * 2)) {
       this.setState({flag: true})
     }
+  }
+  onMouseLeave = () => {
+    this.setState({flag: false})
+    return false
   }
   onChange = (pagination, filters, sorter) => {
     console.log('params', pagination, filters, sorter);
