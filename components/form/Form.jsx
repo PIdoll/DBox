@@ -15,7 +15,7 @@ export default class Form extends React.Component {
   static defaultProps = {
     prefixCls: 'idoll-form',
     layout: 'horizontal',
-    hideRequiredMark: false,
+    hideRequiredMark: true,
     onSubmit(e) {
       e.preventDefault();
     },
@@ -23,7 +23,7 @@ export default class Form extends React.Component {
 
   static propTypes = {
     prefixCls: PropTypes.string,
-    layout: PropTypes.oneOf(['horizontal', 'inline', 'vertical']),
+    // layout: PropTypes.oneOf(['horizontal', 'inline', 'vertical']),
     children: PropTypes.any,
     onSubmit: PropTypes.func,
     hideRequiredMark: PropTypes.bool
