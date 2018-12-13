@@ -9,7 +9,7 @@
 @form-component-height: @input-height-base;
 @form-component-max-height: @input-height-lg;
 @form-feedback-icon-size: 14px;
-@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 + 2px;
+@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 + 4px;
 
 .@{form-prefix-cls} {
   .reset-component;
@@ -24,7 +24,6 @@
   line-height: 1;
   font-size: @font-size-base;
   color: @label-required-color;
-  display: none;  // 不显示*号
   .@{form-prefix-cls}-hide-required-mark & {
     display: none;
   }
@@ -83,7 +82,8 @@ input[type="checkbox"] {
   }
 
   &-control {
-    line-height: @form-component-max-height - 0.0001px; 
+    // line-height: @form-component-max-height - 0.0001px; 
+    // line-height: @input-height-base;
     position: relative;
     .clearfix;
     .@{idoll-prefix}-radio-wrapper {
@@ -99,7 +99,8 @@ input[type="checkbox"] {
   &-label {
     text-align: right;
     vertical-align: middle;
-    line-height: @form-component-max-height - 0.0001px;
+    // line-height: @form-component-max-height - 0.0001px;
+    line-height: @input-height-base;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -122,7 +123,8 @@ input[type="checkbox"] {
   }
 
   &-label-compact {
-    text-align: center;
+    // text-align: center;
+    padding-left: 12px;
     vertical-align: middle;
     display: inline-block;
     overflow: hidden;
@@ -431,8 +433,10 @@ form {
     visibility: visible;
     pointer-events: none;
     width: @form-component-height;
-    height: @form-component-max-height;
-    line-height: @form-component-max-height;
+    // height: @form-component-max-height;
+    // line-height: @form-component-max-height;
+    height: @input-height-base;
+    line-height: @input-height-base;
     text-align: center;
     font-size: @form-feedback-icon-size;
     animation: zoomIn .3s @ease-out-back;
