@@ -105,7 +105,8 @@ span.example {
     background-color: @success-color;
     width: 6px;
     height: 6px;
-    top: 8px;
+    top: 50%;
+    transform: translate(-50%,-50%);
     left: 0px;
     position: absolute;
     border-radius: 100%;
@@ -116,8 +117,9 @@ span.example {
     background-color: @error-color;
     width: 6px;
     height: 6px;
-    top: 8px;
+    top: 50%;
     left: 0;
+    transform: translate(-50%,-50%);
     position: absolute;
     border-radius: 100%;
   }
@@ -125,7 +127,8 @@ span.example {
     background-color: @default-color;
     width: 6px;
     height: 6px;
-    top: 8px;
+    top: 50%;
+    transform: translate(-50%,-50%);
     left: 0;
     position: absolute;
     border-radius: 100%;
@@ -134,7 +137,8 @@ span.example {
     background-color: @processing-color;
     width: 6px;
     height: 6px;
-    top: 8px;
+    top: 50%;
+    transform: translate(-50%,-50%);
     left: 0;
     position: absolute;
     border-radius: 100%;
@@ -155,7 +159,8 @@ span.example {
     background-color: @warning-color;
     width: 6px;
     height: 6px;
-    top: 8px;
+    top: 50%;
+    transform: translate(-50%,-50%);
     left: 0;
     position: absolute;
     border-radius: 100%;
@@ -178,8 +183,8 @@ span.example {
   }
 }
 .@{badge-prefix-cls}-success.@{badge-prefix-cls}-success-not-a-wrapper,.@{badge-prefix-cls}-error.@{badge-prefix-cls}-error-not-a-wrapper,.@{badge-prefix-cls}-default.@{badge-prefix-cls}-default-not-a-wrapper,.@{badge-prefix-cls}-processing.@{badge-prefix-cls}-processing-not-a-wrapper,.@{badge-prefix-cls}-warning.@{badge-prefix-cls}-warning-not-a-wrapper {
-  vertical-align: text-top;
   padding-left: 6px;
+  position: relative;
 }
 
 @keyframes enterIn {
