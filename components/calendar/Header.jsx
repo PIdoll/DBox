@@ -232,7 +232,7 @@ export default class Header extends React.Component {
       mold !== 'backdrop' ? (<div
         className={`${prefixCls}-header`}
         ref={this.getCalenderHeaderNode}>
-        <div className='title'>日历</div>
+        {/* <div className='title'>日历</div> */}
         <div>
           {yearSelect}
           {monthSelect}

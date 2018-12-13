@@ -7,7 +7,7 @@
 ```jsx
 const moment = require('../../node_modules/moment');
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
-  <Calendar fullscreen={false} validRange={[moment('2010-01'), moment('2018-12')]} />
+  <Calendar fullscreen={false} validRange={[moment('2018-01'), moment('2028-12')]} />
 </div>
 ```
 
