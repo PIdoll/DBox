@@ -11,7 +11,7 @@ module.exports = {
   // 忽略没有示例文件的组件
   skipComponentsWithoutExample: false,
   // 定义示例代码选项卡的初始状态（可选collapse, hide, expand）
-  exampleMode: 'collapse',
+  exampleMode: 'expand',
   // 定义 props 和 methods 选项卡的初始状态（可选collapse, hide, expand）
   usageMode: 'expand',
   // 在右上角展示‘Folk me on Github'字样
@@ -63,6 +63,9 @@ module.exports = {
   },
   // 自定义styleguidist组件的样式
   styles: {
+    footer: {
+      display: 'none'
+    },
 		Playground: {
 			preview: {
 				padding: '40px 20px',
@@ -196,37 +199,37 @@ module.exports = {
       content: 'components/interface.md'
     },
     {
-      name: 'components',
+      name: '组件',
       sections: [
         {
-          name: 'Basic',
-          components: () => ([
-            path.resolve(__dirname, './components/grid/index.jsx'),
-            path.resolve(__dirname, './components/layout/layout.jsx'),
-          ]),
-        },
-        {
-          name: 'General',
+          name: '通用',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
-          name: 'Navigation',
+          name: '布局',
+          components: () => ([
+            path.resolve(__dirname, './components/grid/index.jsx'),
+            path.resolve(__dirname, './components/layout/index.jsx'),
+          ]),
+        },
+        {
+          name: '导航',
           components: () => ([
             path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
-            path.resolve(__dirname, './components/steps/steps.jsx'),
-            path.resolve(__dirname, './components/pagination/pagination.jsx'),
+            path.resolve(__dirname, './components/steps/index.jsx'),
+            path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
-          name: 'Data Entry',
+          name: '数据录入',
           components: () => ([
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
@@ -236,19 +239,19 @@ module.exports = {
            path.resolve(__dirname, './components/tree-select/index.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
-           path.resolve(__dirname, './components/radio/radio.jsx'),
-           path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
+           path.resolve(__dirname, './components/radio/index.jsx'),
+           path.resolve(__dirname, './components/checkbox/index.jsx'),
            path.resolve(__dirname, './components/form/index.jsx'),
-           path.resolve(__dirname, './components/switch/switch.jsx'),
+           path.resolve(__dirname, './components/switch/index.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
            path.resolve(__dirname, './components/transfer/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
+            path.resolve(__dirname, './components/upload/index.jsx'),
           ])
         },
         {
-          name: 'Data Display',
+          name: '数据展示',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
@@ -259,15 +262,14 @@ module.exports = {
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
-            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/table/index.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {
-          name: 'Feedback',
+          name: '反馈',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
           path.resolve(__dirname, './components/modal/index.jsx'),
@@ -280,7 +282,7 @@ module.exports = {
           ])
         },
         {
-          name: 'Other',
+          name: '其他',
           components: () => ([
             path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/back-top/index.jsx'),
@@ -288,7 +290,7 @@ module.exports = {
           ])
         },
       ],
-      sectionDepth: 3
+      sectionDepth: 2
     },
 
 

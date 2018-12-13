@@ -32,6 +32,7 @@ export default class Breadcrumb extends React.Component {
   };
 
   static propTypes = {
+    /** 前缀别名 */
     prefixCls: PropTypes.string,
     separator: PropTypes.node,
     routes: PropTypes.array,
