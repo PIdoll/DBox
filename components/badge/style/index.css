@@ -2,6 +2,14 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-badge {
   position: relative;
   display: inline-block;
@@ -97,7 +105,7 @@ span.example {
   width: 6px;
   height: 6px;
   top: 8px;
-  left: -10px;
+  left: 0px;
   position: absolute;
   border-radius: 100%;
 }
@@ -106,7 +114,7 @@ span.example {
   width: 6px;
   height: 6px;
   top: 8px;
-  left: -10px;
+  left: 0;
   position: absolute;
   border-radius: 100%;
 }
@@ -115,7 +123,7 @@ span.example {
   width: 6px;
   height: 6px;
   top: 8px;
-  left: -10px;
+  left: 0;
   position: absolute;
   border-radius: 100%;
 }
@@ -124,7 +132,7 @@ span.example {
   width: 6px;
   height: 6px;
   top: 8px;
-  left: -10px;
+  left: 0;
   position: absolute;
   border-radius: 100%;
   overflow: visible;
@@ -145,7 +153,7 @@ span.example {
   width: 6px;
   height: 6px;
   top: 8px;
-  left: -10px;
+  left: 0;
   position: absolute;
   border-radius: 100%;
 }
@@ -162,6 +170,14 @@ span.example {
     transform: scale(0);
     opacity: 1;
   }
+}
+.idoll-badge-success.idoll-badge-success-not-a-wrapper,
+.idoll-badge-error.idoll-badge-error-not-a-wrapper,
+.idoll-badge-default.idoll-badge-default-not-a-wrapper,
+.idoll-badge-processing.idoll-badge-processing-not-a-wrapper,
+.idoll-badge-warning.idoll-badge-warning-not-a-wrapper {
+  vertical-align: text-top;
+  padding-left: 6px;
 }
 @keyframes enterIn {
   0% {

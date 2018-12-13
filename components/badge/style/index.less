@@ -106,7 +106,7 @@ span.example {
     width: 6px;
     height: 6px;
     top: 8px;
-    left: -10px;
+    left: 0px;
     position: absolute;
     border-radius: 100%;
   }
@@ -117,7 +117,7 @@ span.example {
     width: 6px;
     height: 6px;
     top: 8px;
-    left: -10px;
+    left: 0;
     position: absolute;
     border-radius: 100%;
   }
@@ -126,7 +126,7 @@ span.example {
     width: 6px;
     height: 6px;
     top: 8px;
-    left: -10px;
+    left: 0;
     position: absolute;
     border-radius: 100%;
   }
@@ -135,7 +135,7 @@ span.example {
     width: 6px;
     height: 6px;
     top: 8px;
-    left: -10px;
+    left: 0;
     position: absolute;
     border-radius: 100%;
     overflow: visible;
@@ -156,7 +156,7 @@ span.example {
     width: 6px;
     height: 6px;
     top: 8px;
-    left: -10px;
+    left: 0;
     position: absolute;
     border-radius: 100%;
   }
@@ -177,6 +177,10 @@ span.example {
     opacity: 1;
   }
 }
+.@{badge-prefix-cls}-success.@{badge-prefix-cls}-success-not-a-wrapper,.@{badge-prefix-cls}-error.@{badge-prefix-cls}-error-not-a-wrapper,.@{badge-prefix-cls}-default.@{badge-prefix-cls}-default-not-a-wrapper,.@{badge-prefix-cls}-processing.@{badge-prefix-cls}-processing-not-a-wrapper,.@{badge-prefix-cls}-warning.@{badge-prefix-cls}-warning-not-a-wrapper {
+  vertical-align: text-top;
+  padding-left: 6px;
+}
 
 @keyframes enterIn {
   0% {
@@ -190,13 +194,3 @@ span.example {
     transform: scale(0) translateX(-50%);
   }
 }
-
-// @keyframes enterOut {
-//   100% {
-//     transform: scale(1);
-//   }
-//   0% {
-//     opacity: 0;
-//     transform: scale(0);
-//   }
-// }
