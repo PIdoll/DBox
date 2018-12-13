@@ -419,12 +419,6 @@ export default () => (
         </span>
       </li>
       <li className=''>
-        <Icon type='pro-loading' />
-        <span className='icon-class'>
-          <span className='icon-name' >pro-loading</span>
-        </span>
-      </li>
-      <li className=''>
         <Icon type='pro-table' />
         <span className='icon-class'>
           <span className='icon-name' >pro-table</span>
@@ -470,6 +464,83 @@ export default () => (
         <Icon type='help' />
         <span className='icon-class'>
           <span className='icon-name' >help</span>
+        </span>
+      </li>
+
+      <li className=''>
+        <Icon type='pro2-info-circle-o' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-info-circle-o</span>
+        </span>
+      </li>
+
+      <li className=''>
+        <Icon type='pro2-info-circle' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-info-circle</span>
+        </span>
+      </li>
+
+      <li className=''>
+        <Icon type='pro2-calendar' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-calendar</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-clear' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-clear</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-clip' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-clip</span>
+        </span>
+      </li>
+
+      <li className=''>
+        <Icon type='pro2-eye' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-eye</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-delete' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-delete</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-loading' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-loading</span>
+        </span>
+      </li>
+
+      <li className=''>
+        <Icon type='pro2-pen' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-pen</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-upload' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-upload</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-download' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-download</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-file' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-file</span>
         </span>
       </li>
     </ul>
