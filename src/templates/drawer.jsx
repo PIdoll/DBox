@@ -11,10 +11,9 @@ import Radio from 'components/radio';
 
 
 const { RangePicker } = DatePicker;
-const Textarea = Input.Textarea;
 const FormItem = Form.Item;
 const RadioGroup = Radio.RadioGroup;
-const { Option } = Select;
+const Option = Select.Option;
 
 const pStyle = {
   fontSize: 16,
@@ -193,9 +192,9 @@ class extends React.Component {
                     {getFieldDecorator('owner', {
                     rules: [{ required: true, message: '请选择' }],
                   })(
-                    <Select placeholder='请选择'>
-                      <Option value='xiao'>劉岳然</Option>
-                      <Option value='mao'>李欣桐</Option>
+                    <Select initialValue='liu' placeholder='请选择'>
+                      <Option value='liu'>劉岳然</Option>
+                      <Option value='li'>李欣桐</Option>
                     </Select>
                   )}
                   </FormItem>
@@ -205,7 +204,7 @@ class extends React.Component {
                     {getFieldDecorator('type', {
                     rules: [{ required: true, message: '请选择类型' }],
                   })(
-                    <Select placeholder='请选择类型'>
+                    <Select initialValue='private' placeholder='请选择类型'>
                       <Option value='private'>私密</Option>
                       <Option value='public'>公开</Option>
                     </Select>
@@ -219,7 +218,7 @@ class extends React.Component {
                     {getFieldDecorator('approver', {
                     rules: [{ required: true, message: '请选择批复人' }],
                   })(
-                    <Select placeholder='请选择批复人'>
+                    <Select initialValue='jack' placeholder='请选择批复人'>
                       <Option value='jack'>杰瑞</Option>
                       <Option value='tom'>汤姆</Option>
                     </Select>
@@ -238,18 +237,6 @@ class extends React.Component {
                       placeholder={['开始时间', '结束时间']}
                     />
                   )}
-                  </FormItem>
-                </Col>
-              </Row>
-              <Row gutter={16}>
-                <Col span={24}>
-                  <FormItem label='描述'>
-                    {getFieldDecorator('description', {
-                    rules: [{
-                        required: true,
-                        message: '请输入url描述',
-                      }],
-                  })(<Textarea rows={10} placeholder='请输入url描述' />)}
                   </FormItem>
                 </Col>
               </Row>
@@ -426,7 +413,7 @@ class extends React.Component {
         <div>
           <RadioGroup
             style={{ marginRight: 8 }}
-            defaultValue={this.state.placement}
+            initialValue={this.state.placement}
             onChange={this.onChange}
         >
             <Radio value='top'>上</Radio>

@@ -357,9 +357,11 @@ class DrawerView extends React.Component {
 
 #### **表单抽屉**
 ```jsx
-const FormItem = Form.Item
-const DrawerView = Form.create()(
-class extends React.Component {
+const { RangePicker } = DatePicker;
+const FormItem = Form.Item;
+const {Row,Col} = Grid;
+const {Option} = Select;
+class DrawerDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -381,7 +383,7 @@ class extends React.Component {
   render() {
   const { getFieldDecorator } = this.props.form;
   return (
-       <div>
+         <div>
           <Button type='primary' onClick={this.showDrawer}>
           创建表单抽屉
           </Button>
@@ -400,22 +402,22 @@ class extends React.Component {
             <Form layout='vertical' hideRequiredMark>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Name'>
+                  <FormItem label='姓名'>
                     {getFieldDecorator('name', {
-                    rules: [{ required: true, message: 'please enter user name' }],
-                  })(<Input placeholder='please enter user name' />)}
+                    rules: [{ required: true, message: '请输入用户名' }],
+                  })(<Input placeholder='请输入用户名' />)}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='Url'>
+                  <FormItem label='URL'>
                     {getFieldDecorator('url', {
-                    rules: [{ required: true, message: 'please enter url' }],
+                    rules: [{ required: true, message: '请输入 url' }],
                   })(
                     <Input
                       style={{ width: '100%' }}
                       addonBefore='http://'
                       addonAfter='.com'
-                      placeholder='please enter url'
+                      placeholder='请输入 url'
                     />
                   )}
                   </FormItem>
@@ -423,25 +425,25 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Owner'>
+                  <FormItem label='选择'>
                     {getFieldDecorator('owner', {
-                    rules: [{ required: true, message: 'Please select an owner' }],
+                    rules: [{ required: true, message: '请选择' }],
                   })(
-                    <Select placeholder='Please select an owner'>
-                      <Option value='xiao'>Xiaoxiao Fu</Option>
-                      <Option value='mao'>Maomao Zhou</Option>
+                    <Select initialValue='liu' placeholder='请选择'>
+                      <Option value='liu'>刘岳然</Option>
+                      <Option value='li'>李欣桐</Option>
                     </Select>
                   )}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='Type'>
+                  <FormItem label='类型'>
                     {getFieldDecorator('type', {
-                    rules: [{ required: true, message: 'Please choose the type' }],
+                    rules: [{ required: true, message: '请选择类型' }],
                   })(
-                    <Select placeholder='Please choose the type'>
-                      <Option value='private'>Private</Option>
-                      <Option value='public'>Public</Option>
+                    <Select initialValue='private' placeholder='请选择类型'>
+                      <Option value='private'>私密</Option>
+                      <Option value='public'>公开</Option>
                     </Select>
                   )}
                   </FormItem>
@@ -449,39 +451,29 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={12}>
-                  <FormItem label='Approver'>
+                  <FormItem label='批复'>
                     {getFieldDecorator('approver', {
-                    rules: [{ required: true, message: 'Please choose the approver' }],
+                    rules: [{ required: true, message: '请选择批复人' }],
                   })(
-                    <Select placeholder='Please choose the approver'>
-                      <Option value='jack'>Jack Ma</Option>
-                      <Option value='tom'>Tom Liu</Option>
+                    <Select initialValue='jack' placeholder='请选择批复人'>
+                      <Option value='jack'>杰瑞</Option>
+                      <Option value='tom'>汤姆</Option>
                     </Select>
                   )}
                   </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label='DateTime'>
+                  <FormItem label='时间'>
                     {getFieldDecorator('dateTime', {
-                    rules: [{ required: true, message: 'Please choose the dateTime' }],
+                    rules: [{ required: true, message: '请选择日期时间' }],
                   })(
                     <RangePicker
-                      style={{ width: '100%' }}
-                      getPopupContainer={trigger => trigger.parentNode}
+                      style={{width: '100%'}}
+                      showTime={{ format: 'HH:mm' }}
+                      format='YYYY-MM-DD HH:mm'
+                      placeholder={['开始时间', '结束时间']}
                     />
                   )}
-                  </FormItem>
-                </Col>
-              </Row>
-              <Row gutter={16}>
-                <Col span={24}>
-                  <FormItem label='Description'>
-                    {getFieldDecorator('description', {
-                    rules: [{
-                        required: true,
-                        message: 'please enter url description',
-                      }],
-                  })(<Input.TextArea rows={4} placeholder='please enter url description' />)}
                   </FormItem>
                 </Col>
               </Row>
@@ -511,9 +503,10 @@ class extends React.Component {
             </div>
           </Drawer>
         </div>
-     )
+      )
   }
-})
+}
+const DrawerView = Form.create()(DrawerDemo);
 <DrawerView />
 ```
 
@@ -526,16 +519,16 @@ class extends React.Component {
 | --- | --- | --- | --- |
 | closable | 是否显示右上角的关闭按钮 | boolean | true |
 | destroyOnClose | 关闭时销毁 Drawer 里的子元素 | boolean | false |
-| getContainer | 指定 Drawer 挂载的 HTML 节点 | HTMLElement \| `() => HTMLElement` \| selectors  | 'body' |
+| getContainer | 指定 Drawer 挂载的 HTML 节点 | HTMLElement / `() => HTMLElement` / selectors  | 'body' |
 | maskClosable | 点击蒙层是否允许关闭 | boolean | true |
 | mask | 是否展示遮罩 | Boolean | true |
 | maskStyle | 遮罩样式 | object | {} |
 | style | 可用于设置 Drawer 的样式，调整浮层位置等 | object | - |
-| title | 标题 | string \| ReactNode | - |
+| title | 标题 | string / ReactNode | - |
 | visible | Drawer 是否可见 | boolean | - |
-| width | 宽度 | string \| number | 256 |
-| height | 高度, 在 `placement` 为 `top` 或 `bottom` 时使用 | string \| number | 256 |
+| width | 宽度 | string / number | 256 |
+| height | 高度, 在 `placement` 为 `top` 或 `bottom` 时使用 | string / number | 256 |
 | className | 对话框外层容器的类名 | string | - |
 | zIndex | 设置 Drawer 的 `z-index` | Number | 1000 |
-| placement | 抽屉的方向 | 'top'  \| 'right' \| 'bottom' \| 'left' | 'right'
+| placement | 抽屉的方向 | 'top'  / 'right' / 'bottom' / 'left' | 'right'
 | onClose | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | 无 |
