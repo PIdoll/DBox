@@ -65,8 +65,8 @@ class TransferView extends React.Component {
       <div>
         <div style={{marginBottom: 15}}>
           <Switch
-            unCheckedChildren='开启'
-            checkedChildren='禁用'
+            unCheckedChildren='禁用'
+            checkedChildren='启用'
             checked={disabled}
             onChange={this.handleDisable}
           />
