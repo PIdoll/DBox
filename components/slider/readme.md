@@ -90,12 +90,6 @@ const SliderView = () => {
 <SliderView />
 ```
 
-```jsx static
-import { Button } from 'components';
-
-<Button>BTN</Button>
-```
-
 #### **Slider**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

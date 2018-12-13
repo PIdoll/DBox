@@ -8,51 +8,17 @@ const PORT = parseInt(process.env.PROT || 9002, 10);
 module.exports = {
   title: TITLE,
   serverPort: PORT,
-  // 忽略没有示例文件的组件
   skipComponentsWithoutExample: false,
-  // 定义示例代码选项卡的初始状态（可选collapse, hide, expand）
-  exampleMode: 'expand',
-  // 定义 props 和 methods 选项卡的初始状态（可选collapse, hide, expand）
-  usageMode: 'expand',
-  // 在右上角展示‘Folk me on Github'字样
+  exampleMode: 'collapse',
+  usageMode: 'hide',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
   },
-  // 用于返回处理已发现组件和生成文档对象的函数
-  handlers: componentPath =>
-    require('react-docgen').defaultHandlers.concat(
-      (documentation, path) => {
-        // Calculate a display name for components based upon the declared class name.
-        if (
-          path.value.type === 'ClassDeclaration' &&
-          path.value.id.type === 'Identifier'
-        ) {
-          documentation.set('displayName', path.value.id.name)
-
-          // Calculate the key required to find the component in the module exports
-          if (
-            path.parentPath.value.type === 'ExportNamedDeclaration'
-          ) {
-            documentation.set('path', path.value.id.name)
-          }
-        }
-
-        // The component is the default export
-        if (
-          path.parentPath.value.type === 'ExportDefaultDeclaration'
-        ) {
-          documentation.set('path', 'default')
-        }
-      },
-
-      require('react-docgen-displayname-handler').createDisplayNameHandler(
-        componentPath
-      )
-    ),
+  ignore: ['**/*-test.jsx'],
+  // template: path.resolve(__dirname, './styleguide/index.html'),
   // 每页渲染一个部分或组件
   pagePerSection: true,
-  // 自定义样式指南UI字体，颜色等
   theme: {
     baseBackground: '#fdfdfc',
 		link: '#274e75',
@@ -61,11 +27,7 @@ module.exports = {
     font: ['Helvetica', 'sans-serif'],
     sidebarWidth: 240
   },
-  // 自定义styleguidist组件的样式
   styles: {
-    footer: {
-      display: 'none'
-    },
 		Playground: {
 			preview: {
 				padding: '40px 20px',
@@ -144,7 +106,8 @@ module.exports = {
       heading: {
         fontWeight: '700 !important',
         fontSize: '16px',
-        color: '#455a64 !important',
+        color: '#a1a1a1 !important',
+        cursor: 'text'
       }
     },
     Heading: {
@@ -152,7 +115,6 @@ module.exports = {
         display: 'block',
         position: 'relative',
         fontWeight: 600,
-        fontSize: '40px',
         '& > a': {
           fontWeight: '700 !important'
         }
@@ -175,7 +137,6 @@ module.exports = {
 			},
 		},
   },
-  // 返回一个组件的路径行的函数
   getComponentPathLine: (componentPath) => {
     const dirname = path.dirname(componentPath, '.jsx')
     const name = dirname.split('/').slice(-1)[0]
@@ -184,39 +145,34 @@ module.exports = {
   },
   sections: [
     {
-      name: '',
+      name: 'Color',
       description: '由于设计过程中使用的颜色命名与开发过程中使用的颜色命名会有区别，这里将二者进行匹配编码，便于开发引用相应颜色。',
-      content: 'components/code.md'
+      content: './components/color/readme.md'
     },
     {
-      name: '使用场景',
+      name: 'Typography',
       description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
-      content: 'components/usage.md'
+      content: 'components/typography/readme.md'
     },
     {
-      name: '颜色接口',
-      description: 'abc',
-      content: 'components/interface.md'
-    },
-    {
-      name: '组件',
+      name: 'Components',
       sections: [
         {
-          name: '通用',
+          name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
           ])
         },
         {
-          name: '布局',
+          name: 'Layout',
           components: () => ([
             path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/index.jsx'),
           ]),
         },
         {
-          name: '导航',
+          name: 'Navigation',
           components: () => ([
             path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
@@ -229,7 +185,7 @@ module.exports = {
           ])
         },
         {
-          name: '数据录入',
+          name: 'Data Entry',
           components: () => ([
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
@@ -251,7 +207,7 @@ module.exports = {
           ])
         },
         {
-          name: '数据展示',
+          name: 'Data Display',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
@@ -269,7 +225,7 @@ module.exports = {
           ])
         },
         {
-          name: '反馈',
+          name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
           path.resolve(__dirname, './components/modal/index.jsx'),
@@ -282,7 +238,7 @@ module.exports = {
           ])
         },
         {
-          name: '其他',
+          name: 'Others',
           components: () => ([
             path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/back-top/index.jsx'),
@@ -292,11 +248,7 @@ module.exports = {
       ],
       sectionDepth: 2
     },
-
-
-
   ],
-  // 自定义webpack配置选项
   webpackConfig: {
     module: {
       rules: [
@@ -311,6 +263,13 @@ module.exports = {
         {
           test: /\.jsx$/,
           loaders: 'babel-loader'
+        },
+        {
+          test: /\.(png|svg|jpg|gif|webp|ico)$/,
+          use: [
+             'file-loader'
+           ],
+           exclude: path.resolve(__dirname, 'node_modules')
         },
       ]
     },
