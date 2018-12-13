@@ -10,7 +10,7 @@ import Tabs from 'components/tabs'
 const TabPane = Tabs.TabPane;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
-  <Menu>
+  <Menu theme='light'>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></MenuItem>
     <MenuItem key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></MenuItem>
@@ -190,7 +190,7 @@ class MainLayout extends Component {
                   <Menu.Item key='19'>子菜单十二</Menu.Item>
                 </SubMenu>
               </Menu>
-              <Icon type={this.state.flag2 ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel2} />
+              <Icon type={this.state.flag2 ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel2} />
             </Sider>
             <Layout>
               <Header style={{height: '56px'}} >
@@ -243,7 +243,7 @@ class MainLayout extends Component {
                   <Menu.Item title='子菜单十二' key='19'>子菜单十二</Menu.Item>
                 </SubMenu>
               </Menu>
-              <Icon type={this.state.flag ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel} />
+              <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
             </Sider>
             <Layout>
               <Header style={{height: '56px'}} >
