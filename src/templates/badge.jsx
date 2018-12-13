@@ -89,12 +89,12 @@ export default class BadgeView extends React.Component {
           <Badge dot status='processing' style={{ marginLeft: '60px' }} />
           <Badge dot status='warning' style={{ marginLeft: '80px' }} />
         </div>
-        <div style={{ position: 'relative', marginTop: '20px', marginLeft: '10px' }}>
+        <div style={{ position: 'relative', marginLeft: '10px' }}>
           <Badge dot status='success' text='成功' /><br />
-          <Badge dot status='error' text='错误' style={{ top: '28px' }} /><br />
-          <Badge dot status='default' text='默认' style={{ top: '48px' }} /><br />
-          <Badge dot status='processing' text='进行中' style={{ top: '68px' }} /><br />
-          <Badge dot status='warning' text='警告' style={{ top: '88px' }} /><br />
+          <Badge dot status='error' text='错误' /><br />
+          <Badge dot status='default' text='默认' /><br />
+          <Badge dot status='processing' text='进行中' /><br />
+          <Badge dot status='warning' text='警告' /><br />
         </div>
         <h1>动态</h1>
         <p style={{ marginBottom: '10px' }}>展示动态变化</p>

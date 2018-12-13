@@ -24,6 +24,7 @@
   line-height: 1;
   font-size: @font-size-base;
   color: @label-required-color;
+  display: none;  // 不显示*号
   .@{form-prefix-cls}-hide-required-mark & {
     display: none;
   }
@@ -82,9 +83,12 @@ input[type="checkbox"] {
   }
 
   &-control {
-    line-height: @form-component-max-height - 0.0001px; // https://github.com/ant-design/ant-design/issues/8220
+    line-height: @form-component-max-height - 0.0001px; 
     position: relative;
     .clearfix;
+    .@{idoll-prefix}-radio-wrapper {
+      margin-right: 16px;
+    }
   }
 
   &-with-help {
@@ -117,6 +121,20 @@ input[type="checkbox"] {
     }
   }
 
+  &-label-compact {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    background-color: @input-addon-bg;
+    border: 1px solid @border;
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+    border-right: none;
+  }
+
   .@{idoll-prefix}-switch {
     margin: 2px 0 4px;
   }
@@ -126,6 +144,18 @@ input[type="checkbox"] {
   }
 }
 
+.@{form-prefix-cls}-item-compact {
+  .@{form-prefix-cls}-item-control {
+    line-height: 0;
+  }
+  .@{idoll-prefix}-input {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+  }
+  .@{idoll-prefix}-select-selection {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+  }
+} 
+
 .@{form-prefix-cls}-explain,
 .@{form-prefix-cls}-extra {
   color: @text-color-secondary;
@@ -133,6 +163,7 @@ input[type="checkbox"] {
   transition: color .15s @ease-out;
   margin-top: @form-help-margin-top;
 }
+
 
 .@{form-prefix-cls}-extra {
   padding-top: 4px;
@@ -235,6 +266,10 @@ form {
 
   .@{idoll-prefix}-input-number {
     margin-right: 8px;
+  }
+
+  .@{idoll-prefix}-input-number-handler-wrap {
+    z-index: 2;
   }
 
   .@{idoll-prefix}-select,
@@ -409,7 +444,8 @@ form {
 .has-success {
   &.has-feedback:after {
     animation-name: diffZoomIn1 !important;
-    content: '\e630';
+    // content: '\e630';
+    content: '\E917';
     color: @success-color;
   }
 }
@@ -418,7 +454,8 @@ form {
   .form-control-validation(@warning-color; @warning-color;);
 
   &.has-feedback:after {
-    content: '\e62c';
+    // content: '\e62c';
+    content: '\E923';
     color: @warning-color;
     animation-name: diffZoomIn3 !important;
   }
@@ -464,8 +501,15 @@ form {
 .has-error {
   .form-control-validation(@error-color; @error-color;);
 
+  .@{idoll-prefix}-input-group > .@{idoll-prefix}-input-group-addon {
+    color: @text-color;
+    border-color: @input-border-color;
+    background-color: @input-addon-bg;
+  }
+
   &.has-feedback:after {
-    content: '\e62e';
+    // content: '\e62e';
+    content: '\E91B';
     color: @error-color;
     animation-name: diffZoomIn2 !important;
   }
@@ -532,7 +576,9 @@ form {
   &.has-feedback:after {
     display: inline-block;
     animation: loadingCircle 1s infinite linear;
-    content: "\e64d";
+    // content: "\e64d";
+    font-family: 'idoll-icon-pro';
+    content: "\E91A";
     color: @primary-color;
   }
 }
@@ -540,6 +586,9 @@ form {
 .@{idoll-prefix}-advanced-search-form {
   .@{form-prefix-cls}-item {
     margin-bottom: 24px;
+    &-with-help {
+      margin-bottom: 5px;
+    }
   }
 }
 
