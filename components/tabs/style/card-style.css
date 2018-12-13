@@ -2,6 +2,14 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-nav-container {
   height: 46px;
 }
@@ -43,9 +51,11 @@
   vertical-align: middle;
   width: 16px;
   height: 16px;
+  line-height: 14px;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab .idoll-icon-close:hover {
   color: rgba(0, 0, 0, 0.85);
+  transition: color .3s;
 }
 .idoll-tabs.idoll-tabs-card .idoll-tabs-content > .idoll-tabs-tabpane,
 .idoll-tabs.idoll-tabs-editable-card .idoll-tabs-content > .idoll-tabs-tabpane {
