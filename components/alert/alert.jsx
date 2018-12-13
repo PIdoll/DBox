@@ -14,7 +14,7 @@ function noop() { };
 export default class Alert extends React.Component {
   static propTypes = {
     closable: PropTypes.bool,
-    description: PropTypes.node,
+    description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     type: PropTypes.oneOf(['success', 'info', 'warning', 'error']),
     message: PropTypes.node,
     closeText: PropTypes.node,

@@ -20,17 +20,19 @@ export default class MenuItem extends React.Component {
     const { mode, idollMenuTheme } = this.context;
     const { level, rootPrefixCls, children } = this.props;
     const menuClassName = classNames({
-      [`${rootPrefixCls}-inline-collapsed-tooltip`]: mode === 'vertical',
+      [`${rootPrefixCls}-inline-collapsed-tooltip`]: mode === 'vertical' && level === 1,
       [`${rootPrefixCls}-theme-${idollMenuTheme}`]: idollMenuTheme,
     })
     return (
-      <Tooltip
-        title={mode === 'vertical' && level === 1 ? children : ''}
-        placement='right'
-        overlayClassName={menuClassName}
+      mode === 'vertical' && level === 1 ? (
+        <Tooltip
+          title={children}
+          placement='right'
+          overlayClassName={menuClassName}
       >
-        <Item {...this.props} ref={this.saveMenuItem} />
-      </Tooltip>
+          <Item {...this.props} ref={this.saveMenuItem} />
+        </Tooltip>
+      ) : <Item {...this.props} ref={this.saveMenuItem} />
     )
   }
 }
