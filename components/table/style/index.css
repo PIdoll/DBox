@@ -87,7 +87,17 @@
 .idoll-table-thead > tr > th .idoll-table-filter-selected.idoll-icon-filter {
   color: #13B886;
 }
-.idoll-table-tbody tbody .idoll-table-tbody > tr > td {
+.idoll-table-tbody .idoll-form-item-control {
+  line-height: 0;
+}
+.idoll-table-tbody > .idoll-table-expanded-row[data-row-key*='-extra-row'] td .clearfix {
+  margin: -16px 0 -16px -16px;
+  border-bottom: 1px solid #FAFAFA;
+}
+.idoll-table-tbody > .idoll-table-expanded-row[data-row-key*='-extra-row'] td .clearfix .idoll-table-tbody tr:last-child td {
+  border-bottom: 0;
+}
+.idoll-table-tbody > tr > td {
   border-bottom: 1px solid #E2E2E2;
   transition: all .3s;
 }
@@ -184,8 +194,8 @@
   opacity: 0.5;
 }
 .idoll-table-loading .idoll-table-spin-holder {
-  height: 20px;
-  line-height: 20px;
+  height: 32px;
+  line-height: 32px;
   left: 50%;
   top: 50%;
   margin-left: -30px;
