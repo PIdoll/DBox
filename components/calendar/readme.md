@@ -11,10 +11,42 @@ const moment = require('../../node_modules/moment');
 </div>
 ```
 
+#### **带有背景色头部选择**
+
+```jsx
+const moment = require('../../node_modules/moment');
+disabledDate = (current) => {
+  // Can not select days before today and today
+  return current && current < moment().endOf('day');
+}
+
+onPanelChange = (value, mode) => {
+  console.log('onPanelChange', value, mode);
+}
+
+onSelect = (date) => {
+  console.log('onSelect', date);
+}
+
+onChange = (date) => {
+  console.log('onChange', date);
+}
+<div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
+  <Calendar
+    fullscreen={false}
+    mold='backdrop'
+    disabledDate={this.disabledDate}
+    onPanelChange={this.onPanelChange}
+    onSelect={this.onSelect}
+    onChange={this.onChange} />
+</div>
+```
+
 #### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| mold | 不同选择时间的方式('backdrop') | string | 无 |
 | value | 展示日期 | moment | 当前日期 |
 | defaultValue | 默认展示的日期 | moment | 默认日期 |
 | disabledDate | 不可选择的日期 | (currentDate: moment) => boolean | 无 |
