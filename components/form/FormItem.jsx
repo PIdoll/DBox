@@ -29,7 +29,8 @@ export default class FormItem extends React.Component {
     children: PropTypes.node,
     colon: PropTypes.bool,
     extra: PropTypes.node,
-    vertical: PropTypes.bool
+    vertical: PropTypes.bool,
+    formType: PropTypes.string, // 紧凑型表单使用
   };
 
   static contextTypes = {
@@ -114,7 +115,8 @@ export default class FormItem extends React.Component {
       <div className={`${prefixCls}-explain`} key='help'>
         {help}
       </div>
-    ) : null;
+      )
+     : null;
     return (
       <Animate transitionName='show-help' component='' transitionAppear key='help'>
         {children}
@@ -215,13 +217,12 @@ export default class FormItem extends React.Component {
   }
 
   renderLabel() {
-    const { prefixCls, label, labelCol, colon, id } = this.props;
+    const { prefixCls, label, labelCol, colon, id, formType } = this.props;
     const context = this.context;
     const required = this.isRequired();
-
     const labelColClassName = classNames(
-      `${prefixCls}-item-label`,
       labelCol && labelCol.className,
+      formType === 'compact' ? `${prefixCls}-item-label-compact` : `${prefixCls}-item-label`
     );
     const labelClassName = classNames({
       [`${prefixCls}-item-required`]: required,
@@ -272,6 +273,7 @@ export default class FormItem extends React.Component {
       [`${prefixCls}-item-with-help`]: !!this.getHelpMsg(),
       [`${prefixCls}-item-no-colon`]: !props.colon,
       [`${props.className}`]: !!props.className,
+      [`${prefixCls}-item-compact`]: props.formType === 'compact'
     };
 
     return (

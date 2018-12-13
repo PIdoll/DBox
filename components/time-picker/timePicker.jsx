@@ -44,7 +44,7 @@ class TimePicker extends React.Component {
     size: PropTypes.oneOf(['large', 'default', 'small']),
     open: PropTypes.bool,
     format: PropTypes.string,
-    omChange: PropTypes.func,
+    onChange: PropTypes.func,
     onOpenChange: PropTypes.func,
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
@@ -69,6 +69,7 @@ class TimePicker extends React.Component {
     align: PropTypes.object,
     placement: PropTypes.string,
     transitionName: PropTypes.string,
+    autoFocus: PropTypes.bool,
   }
 
   static defaultProps = {

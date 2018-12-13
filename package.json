@@ -58,6 +58,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.0",
     "react-github-button": "^0.1.11",
+    "react-lazy-load": "3.0.13",
     "react-lifecycles-compat": "3.0.4",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

@@ -17,12 +17,12 @@ function getShowDateFromValue(value) {
   if (!start && !end) {
     return;
   }
-  const newEnd = end && end.isSame(start, 'month') ? end.clone().add(1, 'month') : end;
+  const newEnd = end && moment(end).isSame(start, 'month') ? moment(end).clone().add(1, 'month') : end;
   return [start, newEnd];
 }
 
 function formatValue(value, format) {
-  return (value && value.format(format)) || '';
+  return (value && moment(value).format(format)) || '';
 }
 
 function pickerValueAdapter(value) {
@@ -32,7 +32,7 @@ function pickerValueAdapter(value) {
   if (Array.isArray(value)) {
     return value;
   }
-  return [value, value.clone().add(1, 'month')];
+  return [value, moment(value).clone().add(1, 'month')];
 }
 
 function isEmptyArray(arr) {
@@ -50,10 +50,10 @@ function fixLocale(value, localeCode) {
     return;
   }
   if (value[0]) {
-    value[0].locale(localeCode);
+    moment(value[0]).locale(localeCode);
   }
   if (value[1]) {
-    value[1].locale(localeCode);
+    moment(value[1]).locale(localeCode);
   }
 }
 
