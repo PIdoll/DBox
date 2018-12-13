@@ -182,9 +182,8 @@ div.layout_temp .idoll-layout {
   font-family: 'idollicon' !important;
   color: #000;
 }
-.layout-inlineNav .idoll-layout-header > a:hover i:before {
-  color: #13B886;
-  transition: all .3s;
+.layout-inlineNav .idoll-layout-header > a:hover {
+  color: rgba(0, 0, 0, 0.65);
 }
 .layout-inlineNav .idoll-layout .idoll-breadcrumb {
   background-color: #F5F5F5;
