@@ -100,7 +100,7 @@
   &-horizontal &-item,
   &-horizontal &-submenu {
     margin-top: -1px;
-    font-size: 16px;
+    font-size: @font-size-base;
     vertical-align: middle;
     padding: 0 24px;
     height: 56px;
@@ -212,7 +212,7 @@
           top: 5%;
           right: 16px;
           &:before {
-            content: "\E938";
+            content: "\E92C";
             font-family: 'idollicon' !important;
             font-style: normal;
             // transition: background .3s @ease-in-out, transform .3s @ease-in-out, top .3s @ease-in-out;
@@ -228,7 +228,7 @@
         position: relative;
         .@{menu-prefix-cls}-submenu-arrow {
           &:before {
-            content: "\E92C";
+            content: "\E938";
             font-family: 'idollicon' !important;
             font-style: normal;
             transition: background .3s @ease-in-out, transform .3s @ease-in-out, top .3s @ease-in-out;
@@ -377,7 +377,7 @@
         display: none;
       }
       .@{iconfont-css-prefix} {
-        font-size: 16px;
+        font-size: @font-size-base;
         line-height: @menu-item-height;
         margin: 0;
         + span {
@@ -478,7 +478,7 @@
         transition: none;
       }
       i {
-        font-size: 24px;
+        font-size: @font-size-base;
         margin-right: 0;
         transition: none;
       }
@@ -499,7 +499,7 @@
             display: none;
           }
           i {
-            font-size: 24px;
+            font-size: 16px;
             margin-right: 0;
           }
         }
@@ -564,7 +564,7 @@
         transition: none;
       }
       i {
-        font-size: 24px;
+        font-size: 16px;
         margin-right: 0;
         transition: none;
       }
@@ -580,7 +580,7 @@
             display: none;
           }
           i {
-            font-size: 24px;
+            font-size: 16px;
             margin-right: 0;
           }
         }
@@ -595,7 +595,7 @@
       }
     }
     >.@{menu-prefix-cls}-item {
-      font-size: 16px;
+      font-size: 14px;
       padding: 0 0 0 16px !important;
       margin: 4px 0;
       span {
@@ -609,7 +609,7 @@
     .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
       div.@{menu-prefix-cls}-submenu-title {
         padding-left: 16px !important;
-        font-size: 16px;
+        font-size: 14px;
         span {
           vertical-align: middle;
         }
