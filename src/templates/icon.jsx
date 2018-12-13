@@ -419,12 +419,6 @@ export default () => (
         </span>
       </li>
       <li className=''>
-        <Icon type='pro-loading' />
-        <span className='icon-class'>
-          <span className='icon-name' >pro-loading</span>
-        </span>
-      </li>
-      <li className=''>
         <Icon type='pro-table' />
         <span className='icon-class'>
           <span className='icon-name' >pro-table</span>
@@ -470,6 +464,24 @@ export default () => (
         <Icon type='help' />
         <span className='icon-class'>
           <span className='icon-name' >help</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-loading' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-loading</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-info-circle' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-info-circle</span>
+        </span>
+      </li>
+      <li className=''>
+        <Icon type='pro2-info-circle-o' />
+        <span className='icon-class'>
+          <span className='icon-name' >pro2-info-circle-o</span>
         </span>
       </li>
     </ul>

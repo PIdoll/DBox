@@ -69,7 +69,7 @@ export default class Button extends React.Component {
 			[`${prefixCls}-block`]: block,
 			[className]: className
 		})
-	const iconType = loading ? 'pro-loading' : icon;
+	const iconType = loading ? 'pro2-loading' : icon;
 	const kids = (children || children === 0)
       ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
 	const iconNode = iconType ? <Icon type={iconType} /> : null;
