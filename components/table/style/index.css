@@ -87,7 +87,7 @@
 .idoll-table-thead > tr > th .idoll-table-filter-selected.idoll-icon-filter {
   color: #13B886;
 }
-.idoll-table-tbody > tr > td {
+.idoll-table-tbody tbody .idoll-table-tbody > tr > td {
   border-bottom: 1px solid #E2E2E2;
   transition: all .3s;
 }
