@@ -520,9 +520,9 @@ class AdvancedSearchForm extends React.Component {
             <Button type="primary" htmlType="submit">查询</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               清除
-            </Button>
+            </Button>   
             <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.toggle}>
-              收缩展开 <Icon type={this.state.expand ? 'up' : 'down'} />
+              {this.state.expand ? <span> 收起 <Icon type= 'up'/></span>: <span> 更多 <Icon type= 'down'/> </span>}
             </a>
           </Col>
         </Row>
@@ -576,11 +576,11 @@ class CompactSearchForm extends React.Component {
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 },
+        sm: { span: 9 },
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 },
+        sm: { span: 15 },
       },
     };
     const formItemLayout2 = {
@@ -590,7 +590,7 @@ class CompactSearchForm extends React.Component {
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 17 },
+        sm: { span: 15 },
       },
     };
     const beforeLength = '100px';
@@ -618,7 +618,7 @@ class CompactSearchForm extends React.Component {
             <FormItem
               {...formItemLayout}
               formType='compact'
-              label='手机号'
+              label='手机号码'
             >
               {getFieldDecorator('phone', {
                 rules: [{
@@ -670,12 +670,11 @@ class CompactSearchForm extends React.Component {
               )}
             </FormItem>
           </Col>
-          <Col span={10}>
+          <Col span={12}>
             <FormItem
               {...formItemLayout2}
               formType='compact'
-              label='起止日期'
-              style={{marginLeft: '4px'}}
+              label='起止日期日期'
             >
               {getFieldDecorator('date', {
                 rules: [{
@@ -1283,8 +1282,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | form | 经 `Form.create()` 包装过的组件会自带 `this.props.form` 属性，直接传给 Form 即可。1.7.0 之后无需设置 | object | 无 |
-| hideRequiredMark | 隐藏所有表单项的必选标记 | Boolean | false |
-| layout | 表单布局 | 'horizontal'/'vertical'/'inline' | 'horizontal' |
+| hideRequiredMark | 隐藏所有表单项的必选标记 | Boolean | true |
 | onSubmit | 数据验证成功后回调事件 | Function(e:Event) |  |
 
 #### **Form.create(options)**

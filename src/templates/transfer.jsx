@@ -54,8 +54,8 @@ export default class TransferView extends React.Component {
         <h1 className='h1'>基本使用</h1>
         <div style={{marginBottom: 15}}>
           <Switch
-            unCheckedChildren='disabled'
-            checkedChildren='disabled'
+            unCheckedChildren='禁用'
+            checkedChildren='启用'
             checked={disabled}
             onChange={this.handleDisable}
           />
