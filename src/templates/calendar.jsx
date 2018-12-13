@@ -30,7 +30,7 @@ export default class CalendarView extends React.Component {
             onPanelChange={this.onPanelChange}
             onSelect={this.onSelect}
             onChange={this.onChange}
-            validRange={[moment('2011-01'), moment('2018-12')]}
+            validRange={[moment('2018-01'), moment('2038-12')]}
           />
         </div>
         <h1 className='h1'>基本用法</h1>
