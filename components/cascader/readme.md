@@ -1,6 +1,3 @@
-<!-- # [cascader] (http://naotu.baidu.com/file/d1a03b70d870257010a976d9129552b6?token=17e98a49d802129c) -->
-
-
 #### **何时使用**
 - 需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。
 - 从一个较大的数据集合中进行选择时，用多级分类进行分隔，方便选择。
@@ -10,6 +7,7 @@
 省市区级联，通过指定 `options` 里的 `disabled` 字段可以设置禁用选项。
 
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -57,6 +55,7 @@ function onChange(value) {
 #### **默认值**
 通过数组的方式指定默认值。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -102,6 +101,7 @@ function onChange(value) {
 #### **移入展开**
 通过移入展开下级菜单，点击完成选择。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -156,6 +156,7 @@ function onChange(value) {
 #### **尺寸**
 不同大小的级联选择器。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -203,6 +204,7 @@ function onChange(value) {
 #### **动态加载选项**
 使用 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
 ```jsx
+import { Cascader } from 'components';
 class CascaderExample extends React.Component {
     constructor(){
         super();
@@ -268,7 +270,7 @@ class CascaderExample extends React.Component {
 #### **搜索**
 可以直接搜索选项并选择（ `Cascader[showSearch]` 暂不支持服务端搜索）
 ```jsx
-
+import { Cascader } from 'components';
 const searchData = [{
     value: '上海',
     label: '上海',
