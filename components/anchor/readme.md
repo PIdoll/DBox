@@ -4,7 +4,9 @@
 #### **基本用法**
 
 ```jsx
+import { Anchor } from 'components';
 const { Link } = Anchor;
+
 <div>
   <span className='demo-anchor'>
     <Anchor>

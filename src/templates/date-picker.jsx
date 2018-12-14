@@ -178,6 +178,7 @@ export default class DatePickerView extends React.Component {
             showTime
             format='YYYY-MM-DD HH:mm:ss'
             placeholder='请选择时间'
+            // disabledDate={this.disabledDate}
             onChange={this.onChange}
             onOk={this.onOk}
           />
@@ -194,6 +195,7 @@ export default class DatePickerView extends React.Component {
         <h1 className='h1'>不可选择日期和时间</h1>
         <div style={{ marginBottom: 15 }}>
           <DatePicker
+            onChange={this.onChange}
             format='YYYY-MM-DD HH:mm:ss'
             disabledDate={this.disabledDate}
             disabledTime={this.disabledRangeTime}

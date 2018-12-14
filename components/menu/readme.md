@@ -7,6 +7,7 @@
 #### **顶部导航**
 
 ```jsx
+import {Menu} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class MenuView extends React.Component {
 #### **内嵌侧栏导航**
 
 ```jsx
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -117,6 +119,7 @@ class MenuView extends React.Component {
 #### **动态侧栏导航**
 
 ```jsx
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -204,7 +207,6 @@ class MenuView extends React.Component {
 | defaultOpenKeys | 初始展开的 SubMenu 菜单项 key 数组 |  |  |
 | defaultSelectedKeys | 初始选中的菜单项 key 数组 | string\[] |  |
 | forceSubMenuRender | 在子菜单展示之前就渲染进 DOM | boolean | false |
-| inlineIndent | inline 模式的菜单缩进宽度 | number | 24 |
 | mode | 菜单类型，现在支持垂直、水平、和内嵌模式三种 | string: `vertical` `vertical-right` `horizontal` `inline` | `vertical` |
 | multiple | 是否允许多选 | boolean | false |
 | openKeys | 当前展开的 SubMenu 菜单项 key 数组 | string\[] |  |

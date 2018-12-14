@@ -152,7 +152,7 @@ export default class Calendar extends React.Component {
       return false;
     }
     const [startDate, endDate] = validRange;
-    const inRange = current.isBetween(startDate, endDate, 'days', '[]');
+    const inRange = !current.isBetween(startDate, endDate, 'days', '[]');
     if (disabledDate) {
       return (disabledDate(current) || inRange);
     }
