@@ -10,6 +10,8 @@
 
 #### **线条型进度条**
 ```jsx
+import { Progress } from 'components';
+
 class ProgressView  extends React.Component {
   render() {
     return (
@@ -28,7 +30,9 @@ class ProgressView  extends React.Component {
 
 #### **迷你线条进度条**
 ```jsx
-class ProgressView  extends React.Component {
+import { Progress } from 'components';
+
+class ProgressView extends React.Component {
   render() {
     return (
       <div style={{ width: '600px' }}>
@@ -46,38 +50,40 @@ class ProgressView  extends React.Component {
 
 #### **圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
-      <div >
-        <Progress type='circle' percent={50} />
-        <Progress type='circle' percent={70} status='exception' />
-        <Progress type='circle' percent={100} />
-      </div>
-    )
-  }
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
+    <div >
+      <Progress type='circle' percent={50} />
+      <Progress type='circle' percent={70} status='exception' />
+      <Progress type='circle' percent={100} />
+    </div>
+  )
 }
 <ProgressView />
 ```
 
 #### **迷你圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
-      <div >
-        <Progress type='circle' width={80} percent={50} />
-        <Progress type='circle' width={80} percent={70} status='exception' />
-        <Progress type='circle' width={80} percent={100} />
-      </div>
-    )
-  }
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
+    <div >
+      <Progress type='circle' width={80} percent={50} />
+      <Progress type='circle' width={80} percent={70} status='exception' />
+      <Progress type='circle' width={80} percent={100} />
+    </div>
+  )
 }
 <ProgressView />
 ```
 
 #### **动态进度条**
 ```jsx
+import { Progress, Button } from 'components';
+
 const ButtonGroup = Button.Group;
 class ProgressView  extends React.Component {
   constructor(props) {
@@ -108,8 +114,8 @@ class ProgressView  extends React.Component {
         <Progress type='line' percent={this.state.percent} />
         <Progress type='circle' percent={this.state.percent} />
         <ButtonGroup>
-          <Button type='secondary' onClick={this.decrease} icon='remove' />
-          <Button type='secondary' onClick={this.increase} icon='plus' />
+          <Button onClick={this.decrease} icon='remove' />
+          <Button onClick={this.increase} icon='plus' />
         </ButtonGroup>
       </div>
     )
@@ -119,15 +125,15 @@ class ProgressView  extends React.Component {
 ```
 #### **自定义圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
       <div>
         <Progress type='circle' percent={50} format={(percent) => `${percent}Day`} />
         <Progress type='circle' percent={100} format={() => 'Finish'} />
       </div>
     )
-  }
 }
 <ProgressView />
 ```

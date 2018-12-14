@@ -199,6 +199,7 @@ class TreeSelectExample extends React.Component {
     render() {
         return (
             <TreeSelect
+                allowClear
                 showSearch
                 style={{ width: 300 }}
                 value={this.state.value}

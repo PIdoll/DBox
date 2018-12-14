@@ -6,18 +6,209 @@
 
 ```jsx
 const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
-const onPanelChange = (value, mode) => {
-        console.log('onPanelChange', value, mode);
-      }
-const onChange = (date, dateString) => {
-        console.log('onChange', date, dateString);
-      }
+onPanelChange = (value, mode) => {
+  console.log('onPanelChange', value, mode);
+}
+onChange = (date, dateString) => {
+  console.log('onChange', date, dateString);
+}
+onOk = () => {
+  console.log('OK')
+}
 <div>
   <div style={{ marginBottom: 15 }}>
-    <DatePicker onPanelChange={onPanelChange} />
+    <DatePicker onPanelChange={this.onPanelChange} />
   </div>
   <div style={{ marginBottom: 15 }}>
     <MonthPicker onChange={this.onChange} placeholder='请选择月份' />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <RangePicker onChange={this.onChange} onOk={onOk} />
+  </div>
+</div>
+```
+
+#### **三种大小**
+
+```jsx
+const RadioGroup = Radio.RadioGroup;
+const RadioButton = Radio.RadioButton;
+const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+class DatePickerView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: 'default',
+    }
+    this.handleSizeChange = this.handleSizeChange.bind(this);
+    this.onOk = this.onOk.bind(this);
+  }
+  handleSizeChange(e) {
+    this.setState({ size: e.target.value });
+  }
+  onOk() {
+    console.log('OK')
+  }
+  render() {
+    const { size } = this.state;
+    return (
+      <div>
+        <RadioGroup value={size} onChange={this.handleSizeChange}>
+          <RadioButton value='large'>大尺寸</RadioButton>
+          <RadioButton value='default'>默认</RadioButton>
+          <RadioButton value='small'>小尺寸</RadioButton>
+        </RadioGroup>
+        <br /><br />
+        <div style={{ marginBottom: 15 }}>
+          <DatePicker size={size} />
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <MonthPicker size={size} />
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <RangePicker size={size} onOk={this.onOk} />
+        </div>
+      </div>
+    )
+  }
+}
+<DatePickerView />
+```
+
+#### **禁用**
+
+```jsx
+const moment = require('../../node_modules/moment');
+const dateFormat = 'YYYY-MM-DD';
+const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+onOk = () => {
+  console.log('OK')
+}
+<div>
+  <div style={{ marginBottom: 15 }}>
+    <DatePicker defaultValue={moment('2015-06-06', dateFormat)} disabled />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <MonthPicker defaultValue={moment('2015-06', 'YYYY-MM')} disabled />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <RangePicker
+      onOk={this.onOk}
+      disabled
+      defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]} />
+  </div>
+</div>
+```
+
+#### **日期格式**
+
+```jsx
+const dateFormat1 = 'YYYY/MM/DD';
+const dateFormat = 'YYYY-MM-DD';
+const monthFormat = 'YYYY/MM';
+const moment = require('../../node_modules/moment');
+const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+<div>
+  <div style={{ marginBottom: 15 }}>
+    <DatePicker defaultValue={moment('2015/01/01', dateFormat1)} format={dateFormat1} />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <MonthPicker defaultValue={moment('2015/01', monthFormat)} format={monthFormat} />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <RangePicker
+      defaultValue={[moment('2015/01/01', dateFormat1), moment('2015/01/01', dateFormat1)]}
+      format={dateFormat1}
+    />
+  </div>
+</div>
+```
+
+#### **日期时间选择**
+
+```jsx
+const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+onChange = (date, dateString) => {
+  console.log('onChange', date, dateString);
+}
+onOk = () => {
+  console.log('OK')
+}
+<div>
+  <div style={{ marginBottom: 15 }}>
+    <DatePicker
+      showTime
+      format='YYYY-MM-DD HH:mm:ss'
+      placeholder='请选择时间'
+      onChange={this.onChange}
+      onOk={this.onOk}
+    />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <RangePicker
+      showTime={{ format: 'HH:mm' }}
+      format='YYYY-MM-DD HH:mm'
+      placeholder={['开始时间', '结束时间']}
+      onChange={this.onChange}
+      onOk={this.onOk}
+    />
+  </div>
+</div>
+```
+
+#### **不可选择日期和时间**
+
+```jsx
+const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+const moment = require('../../node_modules/moment');
+disabledDate = (current) => {
+  // Can not select days before today and today
+  return current && current < moment().endOf('day');
+}
+range = (start, end) => {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+disabledRangeTime = (_, type) => {
+  if (type === 'start') {
+    return {
+      disabledHours: () => this.range(0, 60).splice(4, 20),
+      disabledMinutes: () => this.range(30, 60),
+      disabledSeconds: () => [55, 56],
+    };
+  }
+    return {
+      disabledHours: () => this.range(0, 60).splice(20, 4),
+      disabledMinutes: () => this.range(0, 31),
+      disabledSeconds: () => [55, 56],
+    };
+  }
+<div>
+  <div style={{ marginBottom: 15 }}>
+    <DatePicker
+      format='YYYY-MM-DD HH:mm:ss'
+      disabledDate={this.disabledDate}
+      disabledTime={this.disabledRangeTime}
+      showTime
+    />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <MonthPicker disabledDate={this.disabledDate} placeholder='请选择月份' />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <RangePicker
+      onOk={this.onOk}
+      disabledDate={this.disabledDate}
+      disabledTime={this.disabledRangeTime}
+      showTime={{
+        hideDisabledOptions: true,
+        defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
+      }}
+      format='YYYY-MM-DD HH:mm:ss'
+    />
   </div>
 </div>
 ```

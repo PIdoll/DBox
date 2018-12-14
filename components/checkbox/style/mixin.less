@@ -148,31 +148,31 @@
     }
 
     .@{checkbox-prefix-cls}-disabled {
-    cursor: pointer;
-
-    &.@{checkbox-prefix-cls}-checked {
-        .@{checkbox-prefix-cls}-inner:after {
-        animation-name: none;
-        border-color: @disabled-color;
-        }
-    }
-
-    .@{checkbox-prefix-cls}-input {
         cursor: not-allowed;
-    }
-    //
-    .@{checkbox-prefix-cls}-inner {
-        border-color: @border-color-base !important;
-        background-color: @input-disabled-bg;
-        &:after {
-        animation-name: none;
-        border-color: @input-disabled-bg;
+
+        &.@{checkbox-prefix-cls}-checked {
+            .@{checkbox-prefix-cls}-inner:after {
+            animation-name: none;
+            border-color: @disabled-color;
+            }
         }
-    }
-    //
-    & + span {
-        color: @disabled-color;
-        cursor: not-allowed;
-    }
+
+        .@{checkbox-prefix-cls}-input {
+            cursor: not-allowed;
+        }
+        //
+        .@{checkbox-prefix-cls}-inner {
+            border-color: @border-color-base !important;
+            background-color: @input-disabled-bg;
+            &:after {
+            animation-name: none;
+            border-color: @input-disabled-bg;
+            }
+        }
+        //
+        & + span {
+            color: @disabled-color;
+            cursor: not-allowed;
+        }
     }
 }

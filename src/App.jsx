@@ -50,6 +50,8 @@ import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
 import Calendar from 'templates/calendar';
+import Transfer from 'templates/transfer';
+import Drawer from 'templates/drawer';
 
 
 import './App.css';
@@ -108,6 +110,8 @@ const App = () => (
       <Route exact path='/back-top' component={BackTop} />
       <Route exact path='/grid' component={Grid} />
       <Route exact path='/calendar' component={Calendar} />
+      <Route exact path='/drawer' component={Drawer} />
+      <Route exact path='/transfer' component={Transfer} />
     </div>
   </Router>
 )

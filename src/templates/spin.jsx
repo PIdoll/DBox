@@ -25,7 +25,7 @@ export default class SpinView extends React.Component {
   render() {
     const style = {
       textAlign: 'center',
-      background: 'rgba(0, 0, 0, 0.05)',
+      background: '#13B886',
       borderRadius: 4,
       marginBottom: 20,
       paddingTop: 30,
@@ -53,12 +53,12 @@ export default class SpinView extends React.Component {
           放在容器中
         </h1>
         <div style={style}>
-          <Spin />
+          <Spin color={['#fff', 'rgba(255, 255, 255, 0.05)', 'rgba(255, 255, 255, 0.05)', 'rgba(255, 255, 255, 0.05)']} />
         </div>
         <h1 className='h1'>
           自定义描述文案
         </h1>
-        <Spin tip='Loading...'>
+        <Spin tip='加载中...'>
           <Alert
             message='Alert信息标题'
             description='关于此警报上下文的详细信息.'

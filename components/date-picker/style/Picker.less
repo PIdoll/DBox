@@ -40,6 +40,7 @@
 
   &-input {
     outline: none;
+    padding: 5px 12px;
   }
 
   &:hover &-input:not(.@{idoll-prefix}-input-disabled) {
@@ -92,6 +93,16 @@
   &-small &-clear,
   &-small &-icon {
     right: @control-padding-horizontal-sm;
+  }
+}
+
+.@{calendar-prefix-cls}-picker-small {
+  .@{calendar-prefix-cls}-range-picker-separator {
+    vertical-align: middle;
+  }
+  span {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 

@@ -24,6 +24,8 @@
 
 .@{calendar-prefix-cls}-month-panel-body {
   height: ~'calc(100% - 40px)';
+  padding-bottom: 24px;
+  box-sizing: border-box;
 }
 
 .@{calendar-prefix-cls}-month-panel-table {
@@ -69,7 +71,7 @@
   transition: background 0.3s ease;
 
   &:hover {
-    background: @item-hover-bg;
+    background: @primary-LightBg;
     cursor: pointer;
   }
 }
