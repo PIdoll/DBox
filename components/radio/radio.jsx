@@ -13,6 +13,11 @@ export default class Radio extends React.Component {
   static contextTypes = {
     radioGroup: PropTypes.any
   }
+  static propTypes = {
+    defaultChecked: PropTypes.bool,
+    value: PropTypes.any,
+    checked: PropTypes.bool
+}
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.state, nextState) ||
