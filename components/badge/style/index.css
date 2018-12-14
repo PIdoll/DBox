@@ -2,6 +2,14 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-badge {
   position: relative;
   display: inline-block;
@@ -96,8 +104,9 @@ span.example {
   background-color: #3CCB69;
   width: 6px;
   height: 6px;
-  top: 8px;
-  left: -10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0px;
   position: absolute;
   border-radius: 100%;
 }
@@ -105,8 +114,9 @@ span.example {
   background-color: #F44336;
   width: 6px;
   height: 6px;
-  top: 8px;
-  left: -10px;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
   position: absolute;
   border-radius: 100%;
 }
@@ -114,8 +124,9 @@ span.example {
   background-color: #E2E2E2;
   width: 6px;
   height: 6px;
-  top: 8px;
-  left: -10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0;
   position: absolute;
   border-radius: 100%;
 }
@@ -123,8 +134,9 @@ span.example {
   background-color: #13B886;
   width: 6px;
   height: 6px;
-  top: 8px;
-  left: -10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0;
   position: absolute;
   border-radius: 100%;
   overflow: visible;
@@ -144,8 +156,9 @@ span.example {
   background-color: #F9AA29;
   width: 6px;
   height: 6px;
-  top: 8px;
-  left: -10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0;
   position: absolute;
   border-radius: 100%;
 }
@@ -162,6 +175,14 @@ span.example {
     transform: scale(0);
     opacity: 1;
   }
+}
+.idoll-badge-success.idoll-badge-success-not-a-wrapper,
+.idoll-badge-error.idoll-badge-error-not-a-wrapper,
+.idoll-badge-default.idoll-badge-default-not-a-wrapper,
+.idoll-badge-processing.idoll-badge-processing-not-a-wrapper,
+.idoll-badge-warning.idoll-badge-warning-not-a-wrapper {
+  padding-left: 6px;
+  position: relative;
 }
 @keyframes enterIn {
   0% {

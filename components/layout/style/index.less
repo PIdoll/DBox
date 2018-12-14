@@ -1,6 +1,12 @@
 @import '../../../style/theme/default/index';
 @import './mixin';
 
+div.layout_temp {
+  .@{idoll-prefix}-layout{
+    height: 50vh;
+  }
+}
+
 .@{idoll-prefix}-layout {
   box-sizing: border-box;
   display: flex;
@@ -127,12 +133,12 @@
         }
       }
       div.miniLogo {
-        padding: 12px 12px 22px 12px;
+        padding: 12px 12px 44px 12px;
         div {
           border-radius: 3px;
           font-size: 18px;
-          line-height: 24px;
-          height: 24px;
+          line-height: 32px;
+          height: 32px;
           padding: 0 4px;
           color: rgba(245, 245, 245, 0.2);
           background-color: rgba(245, 245, 245, 0.2);
@@ -143,6 +149,14 @@
         left: 16px;
         bottom: 16px;
         cursor: pointer;
+        color: @text-color-secondary-dark;
+        transition: color .3s
+      }
+      > i:hover {
+        &:before {
+          color: #fff;
+          transition: color .3s
+        }
       }
      .@{idoll-prefix}-menu {
       width: 100%;
@@ -176,10 +190,7 @@
         } 
       }
       > a:hover {
-        i:before {
-          color: @primary-color;
-          transition: all .3s;
-        }
+          color: @text-color;
       }
     }
     .@{idoll-prefix}-breadcrumb {
@@ -228,7 +239,7 @@
         }
         div.@{idoll-prefix}-tabs-content {
           height: 100%;
-          background-color: #F8F8F8;
+          background-color: @background;
           padding: 24px 24px 48px 24px;
           > div.@{idoll-prefix}-tabs-tabpane-active {
             background-color: #fff;
@@ -242,4 +253,6 @@
     }
   }
 }
+
+
 
