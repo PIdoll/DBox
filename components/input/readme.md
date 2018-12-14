@@ -7,17 +7,19 @@
 #### **基本使用**
 可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态
 ```jsx
-
-<Input type='text' placeholder='请输入' style={{width: '200px'}} /><br /><br />
-<Input type='text' disabled placeholder='请输入' style={{width: '200px'}} /><br /><br />
-<Input type='text' readOnly value='请输入' style={{width: '200px'}} />
+import { Input } from 'components';
+<div>
+    <Input type='text' placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input type='text' disabled placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input type='text' readOnly value='请输入' style={{width: '200px'}} />
+</div>
 
 ```
 #### **前置／后置**
 用于一些固定组合。`addonBefore` 设置前置内容，`beforelength` 设置前置内容长度。`addonAfter` 和`afterlength` 
 则用来设置后置属性。
 ```jsx
-
+import { Input,Select } from 'components';
 const selectBefore = (
   <Select defaultValue='Http://' style={{ width: '90px' }}>
     <Option value='Http://'>Http://</Option>
@@ -50,6 +52,7 @@ const selectAfter = (
 #### **搜索**
 带有搜索按钮的输入框
 ```jsx 
+import { Input } from 'components';
 const Search = Input.Search;
 <div>
     <Search
@@ -74,13 +77,17 @@ const Search = Input.Search;
 #### **前缀／后缀**
 使用 `prefix`、`suffix` 在输入框上添加前缀或后缀图标。
 ```jsx
-<Input placeholder='请输入' style={{ width: '250px' }} prefix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} /><br /><br />
-<Input placeholder='请输入' style={{ width: '250px' }} suffix={<Icon type='edit' />} onChange={(e) => console.log(e.target.value)} />
+import { Input,Icon } from 'components';
+<div >
+    <Input placeholder='请输入' style={{ width: '250px' }} prefix={<Icon type='user' />} onChange={(e) => console.log(e.target.value)} /><br /><br />
+    <Input placeholder='请输入' style={{ width: '250px' }} suffix={<Icon type='edit' />} onChange={(e) => console.log(e.target.value)} />
+</div>
 ```
 
 #### **三种大小**
 通过设置 `size` 属性控制输入框的大小。
 ```jsx
+import { Input } from 'components';
 const Search = Input.Search;
 <div>
     <Input size='large' placeholder='请输入' style={{width: '200px'}} /><br /><br />
@@ -97,8 +104,8 @@ const Search = Input.Search;
 #### **输入框的组合**
 使用 `InputGroup` 用于组合其它组件。
 ```jsx
+import { Input,Col,Select,DatePicker } from 'components';
 const InputGroup = Input.Group;
-const Col = Grid.Col;
 <div>
     <InputGroup size='large'>
         <Col span={3}>
@@ -133,6 +140,7 @@ const Col = Grid.Col;
 #### **文本框**
 `Textarea` 用于多行输入,设置 `autosize` 的 `minRows`和 `maxRows` 控制文本框高度。
 ```jsx
+import { Input } from 'components';
 const Textarea = Input.Textarea;
 <div>
     <Textarea style={{width: '400px'}} ></Textarea>  <br /><br />

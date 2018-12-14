@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class MenuItem extends React.Component {
+  static propTypes = {
+    disabled: PropTypes.bool,
+    key: PropTypes.string,
+}
   static contextTypes = {
     mode: PropTypes.string,
     idollMenuTheme: PropTypes.string,

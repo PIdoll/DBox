@@ -3,10 +3,10 @@
 
 #### **登录框**
 ```jsx
+import { Form,Input,Icon,Checkbox,Button } from 'components';
 const FormItem = Form.Item;
 
 class LoginForm extends React.Component {
-
   constructor(){
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,6 +66,7 @@ const WrappedLoginForm = Form.create()(LoginForm);
 
 #### **注册**
 ```jsx
+import { Form,Select,Input,Cascader,Checkbox,Button } from 'components';
 const FormItem = Form.Item;
 const residences = [{
   value: 'shanghai',
@@ -276,8 +277,8 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
 #### **高级搜索**
 ```jsx
+import { Form,Row,Col,DatePicker,Input,Cascader,Button,Icon } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const {RangePicker} = DatePicker;
 
 const labelValue = [
@@ -356,7 +357,7 @@ class AdvancedSearchForm extends React.Component {
     this.onCascaderChange = this.onCascaderChange.bind(this);
     this.loadData = this.loadData.bind(this);
     this.onDateChange = this.onDateChange.bind(this);
-    this.onOk = this.onOk.bind(this);
+    this.onOk = this.handleOnOk.bind(this);
     this.getInputElement = this.getInputElement.bind(this);
     this.getFormItem = this.getFormItem.bind(this);
     this.state = {
@@ -407,7 +408,7 @@ class AdvancedSearchForm extends React.Component {
     console.log('onDateChange', date, dateString);
   }
 
-  onOk(){
+  handleOnOk(){
     console.log('OK')
   }
 
@@ -420,7 +421,7 @@ class AdvancedSearchForm extends React.Component {
                 onChange={this.onCascaderChange}
                 changeOnSelect
                 />;
-      case 'date': return <RangePicker onChange={this.onDateChange} onOk={onOk} />;
+      case 'date': return <RangePicker onChange={this.onDateChange} onOk={this.handleOnOk} />;
       default: return <Input placeholder='请输入'/>;
     }
   }
@@ -520,9 +521,9 @@ class AdvancedSearchForm extends React.Component {
             <Button type="primary" htmlType="submit">查询</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               清除
-            </Button>
+            </Button>   
             <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.toggle}>
-              收缩展开 <Icon type={this.state.expand ? 'up' : 'down'} />
+              {this.state.expand ? <span> 收起 <Icon type= 'up'/></span>: <span> 更多 <Icon type= 'down'/> </span>}
             </a>
           </Col>
         </Row>
@@ -538,8 +539,8 @@ const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 
 #### **紧凑型表单**
 ```jsx
+import { Form,Row,Col,Select,DatePicker,Input,Button } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const {Option} = Select;
 const {RangePicker} = DatePicker;
 class CompactSearchForm extends React.Component {
@@ -548,14 +549,14 @@ class CompactSearchForm extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.onDateChange = this.onDateChange.bind(this);
-    this.onOk = this.onOk.bind(this);
+    this.handleOnOk = this.handleOnOk.bind(this);
   }
 
   onDateChange(date, dateString){
     console.log('onDateChange', date, dateString);
   }
 
-  onOk(){
+  handleOnOk(){
     console.log('OK')
   }
 
@@ -576,11 +577,11 @@ class CompactSearchForm extends React.Component {
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 },
+        sm: { span: 9 },
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 },
+        sm: { span: 15 },
       },
     };
     const formItemLayout2 = {
@@ -590,7 +591,7 @@ class CompactSearchForm extends React.Component {
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 17 },
+        sm: { span: 15 },
       },
     };
     const beforeLength = '100px';
@@ -618,7 +619,7 @@ class CompactSearchForm extends React.Component {
             <FormItem
               {...formItemLayout}
               formType='compact'
-              label='手机号'
+              label='手机号码'
             >
               {getFieldDecorator('phone', {
                 rules: [{
@@ -670,19 +671,18 @@ class CompactSearchForm extends React.Component {
               )}
             </FormItem>
           </Col>
-          <Col span={10}>
+          <Col span={12}>
             <FormItem
               {...formItemLayout2}
               formType='compact'
-              label='起止日期'
-              style={{marginLeft: '4px'}}
+              label='起止日期日期'
             >
               {getFieldDecorator('date', {
                 rules: [{
                   required: true, message: '不能为空!',
                 }],
               })(
-                <RangePicker onChange={this.onDateChange} onOk={onOk} />
+                <RangePicker onChange={this.onDateChange} onOk={this.handleOnOk} />
               )}
             </FormItem>
           </Col>
@@ -708,8 +708,8 @@ const WrappedCompactSearchForm = Form.create()(CompactSearchForm);
 
 #### **弹出层中新建表单**
 ```jsx
+import { Form,Row,Col,Button,Modal,Input,Icon } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 class modalForm extends React.Component {
   constructor(){
     super();
@@ -839,8 +839,8 @@ class ModalNewForm extends React.Component {
 
 #### **表单联动**
 ```jsx
+import { Form,Row,Col,Input,Select,Button } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 class FormDemo extends React.Component {
   constructor(){
     super();
@@ -912,8 +912,8 @@ const WrappedFormDemo = Form.create()(FormDemo);
 
 #### **自定义校验**
 ```jsx
+import { Form,Row,Col,Input,DatePicker,TimePicker,Cascader,InputNumber,Select,Button } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const Option = Select.Option;
 class FormDemo extends React.Component {
   render(){
@@ -1063,8 +1063,8 @@ class FormDemo extends React.Component {
 
 #### **动态校验规则**
 ```jsx
+import { Form,Row,Col,Select,Input,Checkbox,Button } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const Option = Select.Option;
 const formItemLayout = {
   labelCol: { span: 4 },
@@ -1148,8 +1148,8 @@ const WrappedFormDemo = Form.create()(FormDemo);
 
 #### **校验其他组件**
 ```jsx
+import { Form,Row,Col,Select,Radio,InputNumber,Switch,Slider,Button } from 'components';
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const Option = Select.Option;
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -1283,8 +1283,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | form | 经 `Form.create()` 包装过的组件会自带 `this.props.form` 属性，直接传给 Form 即可。1.7.0 之后无需设置 | object | 无 |
-| hideRequiredMark | 隐藏所有表单项的必选标记 | Boolean | false |
-| layout | 表单布局 | 'horizontal'/'vertical'/'inline' | 'horizontal' |
+| hideRequiredMark | 隐藏所有表单项的必选标记 | Boolean | true |
 | onSubmit | 数据验证成功后回调事件 | Function(e:Event) |  |
 
 #### **Form.create(options)**

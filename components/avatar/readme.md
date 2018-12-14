@@ -4,6 +4,7 @@
 
 ##### **基本用法**
 ```jsx
+import {Avatar} from 'components';
 <div>
   <div>
     <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
@@ -21,6 +22,7 @@
 
 ##### **基本类型**
 ```jsx
+import {Avatar} from 'components';
 <div>
   <Avatar style={{ marginRight: 47 }} icon='user' />
   <Avatar style={{ marginRight: 47 }}>USER</Avatar>
@@ -30,6 +32,7 @@
 ```
 ##### **带徽标的头像**
 ```jsx
+import {Avatar, Badge} from 'components';
 <div>
   <span style={{ marginRight: 47 }}>
     <Badge count={2}><Avatar shape='square' icon='user' /></Badge>
@@ -42,6 +45,7 @@
 
 ##### **自动调整字符大小**
 ```jsx
+import {Avatar} from 'components';
 <div>
    <Avatar style={{ marginRight: 47 }}>DBox</Avatar>
 	<Avatar style={{ marginRight: 47 }}>Alvin</Avatar>
@@ -51,6 +55,7 @@
 
 ##### **按钮调整字符大小**
 ```jsx
+import {Avatar, Button} from 'components';
 const UserList = ['Z', 'Alvin', 'Idoll', 'DBox'];
 class AvatarView extends React.Component {
   constructor(props) {

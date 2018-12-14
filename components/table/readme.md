@@ -6,6 +6,7 @@
 
 #### **默认表格**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -86,6 +87,7 @@ const data = [{
 ```
 #### **三种尺寸**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -170,6 +172,7 @@ const data = [{
 ```
 #### **边框表格**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -250,6 +253,7 @@ const data = [{
 ```
 #### **带选择框**
 ```jsx
+import {Table, Divider, Button, Checkbox} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -376,6 +380,7 @@ class TableView extends React.Component {
 
 #### **异步数据**
 ```jsx
+import {Table} from 'components';
 const  {reqwest} = require('./index.jsx');
 const columns = [{
   title: 'Name',
@@ -459,6 +464,7 @@ class App extends React.Component {
 ```
 #### **内嵌表格**
 ```jsx
+import {Table, Divider, Badge} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -570,6 +576,7 @@ const data = [{
 ```
 #### **行列合并**
 ```jsx
+import {Table, Divider} from 'components';
 const renderContent = function (value, row, index) {
   const obj = {
     children: value,
@@ -667,6 +674,7 @@ const dataCol = [{
 ```
 #### **固定行列**
 ```jsx
+import {Table, Divider} from 'components';
 const columnsFixRow = [{
   title: '姓名',
   width: 100,
@@ -812,6 +820,7 @@ const dataFixdRow = [{
 
 #### **可编辑表格**
 ```jsx
+import {Table, Divider, Input, Form, Popconfirm, Select, InputNumber} from 'components';
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
 
@@ -990,7 +999,7 @@ class TableView extends React.Component {
                   </a>
                 )}
               </EditableContext.Consumer>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <a
                 href='javascript:;'
                 onClick={() => this.cancel(record.key)}
@@ -1001,7 +1010,7 @@ class TableView extends React.Component {
           ) : (
             <span>
               <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
                 <a href='javascript:;'>删除</a>
               </Popconfirm>

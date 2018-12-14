@@ -6,11 +6,12 @@
 
 #### **基础布局**
 ```jsx
+import {Layout} from 'components';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
-<div>
+<div className='layout_temp'>
 	<Layout>
 		<Header>头部</Header>
 		<Content>内容</Content>
@@ -39,7 +40,8 @@ const Sider = Layout.Sider;
 
 #### **顶部导航**
 ```jsx
-const SubMenu = Menu.SubMenu;
+import{Menu, Breadcrumb, Layout} from 'components';
+import{SubMenu, MenuItem} from 'components/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -98,14 +100,15 @@ class LayoutView extends React.Component {
 
 #### **侧边导航01**
 ```jsx
-const SubMenu = Menu.SubMenu;
+import{Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'components';
+import{SubMenu, MenuItem} from 'components/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
-  <Menu>
+  <Menu theme='light'>
     <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
     <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
     <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
@@ -200,15 +203,16 @@ class LayoutView extends React.Component {
 
 #### **侧边导航02**
 ```jsx
+import{Menu, Breadcrumb, Avatar, Tabs, Icon, Dropdown, Layout} from 'components';
+import{SubMenu, MenuItem} from 'components/menu';
 const TabPane = Tabs.TabPane;
-const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
-  <Menu>
+  <Menu theme='light'>
     <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
     <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
     <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>

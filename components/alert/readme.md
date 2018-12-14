@@ -5,6 +5,8 @@
 #### **基本用法**
 
 ```jsx
+import { Alert } from 'components';
+
 <Alert
   message='成功提示'
   type='success' />
@@ -13,6 +15,8 @@
 #### **可关闭的警告提示**
 
 ```jsx
+import { Alert } from 'components';
+
 onClose = (e) => {
   console.log(e, 'I was closed.');
 };
@@ -34,51 +38,57 @@ onClose = (e) => {
 #### **带有图标的警告提示**
 
 ```jsx
-<div style={{ marginBottom: 15 }}>
-  <Alert message='成功' type='success' showIcon />
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert message='信息提示' type='info' showIcon />
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert message='警告' type='warning' showIcon />
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert message='错误' type='error' showIcon />
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert
-    message='成功'
-    description='关于成功的文案写作的详细描述和建议.'
-    type='success'
-    showIcon/>
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert
-    message='信息提示'
-    description='关于文案写作的额外描述和信息.'
-    type='info'
-    showIcon/>
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert
-    message='警告'
-    description='这是一个关于文案写作的警告通知.'
-    type='warning'
-    showIcon/>
-</div>
-<div style={{ marginBottom: 15 }}>
-  <Alert
-    message='错误'
-    description='这是一个关于文案写作的错误通知.'
-    type='error'
-    showIcon/>
+import { Alert } from 'components';
+
+<div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert message='成功' type='success' showIcon />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert message='信息提示' type='info' showIcon />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert message='警告' type='warning' showIcon />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert message='错误' type='error' showIcon />
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert
+      message='成功'
+      description='关于成功的文案写作的详细描述和建议.'
+      type='success'
+      showIcon/>
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert
+      message='信息提示'
+      description='关于文案写作的额外描述和信息.'
+      type='info'
+      showIcon/>
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert
+      message='警告'
+      description='这是一个关于文案写作的警告通知.'
+      type='warning'
+      showIcon/>
+  </div>
+  <div style={{ marginBottom: 15 }}>
+    <Alert
+      message='错误'
+      description='这是一个关于文案写作的错误通知.'
+      type='error'
+      showIcon/>
+  </div>
 </div>
 ```
 
 #### **四种样式**
 
 ```jsx
+import { Alert } from 'components';
+
  <div>
   <div style={{ marginBottom: 15 }}>
     <Alert message='成功文本' type='success' />
@@ -98,6 +108,8 @@ onClose = (e) => {
 #### **含有辅助性文字的文本**
 
 ```jsx
+import { Alert } from 'components';
+
  <div>
   <div style={{ marginBottom: 15 }}>
     <Alert
@@ -133,12 +145,15 @@ onClose = (e) => {
 #### **自定义关闭**
 
 ```jsx
+import { Alert } from 'components';
+
 <Alert message='Info Text' type='info' closeText='Close Now' />
 ```
 
 #### **平滑的卸载**
 
 ```jsx
+import { Alert } from 'components';
 
 class AlertView extends React.Component {
   constructor(props) {
@@ -177,10 +192,14 @@ class AlertView extends React.Component {
 #### **顶部公告**
 
 ```jsx
+import { Alert } from 'components';
+
+<div>
  <Alert message='警告文本' banner />
  <Alert message='非常长的警告文本非常长的警告文本' banner closable />
  <Alert showIcon={false} message='没有图标的警告文本' banner />
  <Alert type='error' message='错误文本' banner />
+</div>
 ```
 
 #### **API**

@@ -4,9 +4,9 @@
 - 当需要告知用户『你在哪里』时；
 - 当需要向上导航的功能时。
 
-
 #### **基本的面包屑**
 ```jsx
+import { Breadcrumb } from 'components';
 class BreadcrumbView extends React.Component {
   render() {
     return (
@@ -23,6 +23,8 @@ class BreadcrumbView extends React.Component {
 
 #### **带图标的面包屑**
 ```jsx
+import { Breadcrumb, Icon } from 'components';
+
 class BreadcrumbView extends React.Component {
   render() {
     return (
@@ -46,12 +48,14 @@ class BreadcrumbView extends React.Component {
 
 #### **自定义分隔符的面包屑**
 ```jsx
+import { Breadcrumb } from 'components';
+
 class BreadcrumbView extends React.Component {
   render() {
     return (
       <Breadcrumb separator='>'>
         <Breadcrumb.Item>首页</Breadcrumb.Item>
-        <Breadcrumb.Item><a href='javascript:void(0);'>个人中心     </a></Breadcrumb.Item>
+        <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
         <Breadcrumb.Item>设置</Breadcrumb.Item>
       </Breadcrumb>
     )
