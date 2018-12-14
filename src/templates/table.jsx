@@ -587,7 +587,7 @@ class table extends React.Component {
     key: 'name',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
+      return <Tooltip title={this.state.flag ? text : null}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
      }
   }, {
     title: '年龄',
@@ -675,6 +675,7 @@ class table extends React.Component {
   }
   onMouseLeave = () => {
     this.setState({flag: false})
+    this.onMouseEnter = null
     return false
   }
   onChange = (pagination, filters, sorter) => {
