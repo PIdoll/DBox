@@ -820,7 +820,7 @@ const dataFixdRow = [{
 
 #### **可编辑表格**
 ```jsx
-import {Table, Divider, Input, Form, Popconfirm, Select, InputNumber} from 'components';
+import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'components';
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
 
@@ -1020,6 +1020,8 @@ class TableView extends React.Component {
       );
     },
   }];
+  this.onMouseEnter = this.onMouseEnter.bind(this)
+  this.onMouseLeave = this.onMouseLeave.bind(this)
 }
   onMouseEnter (e) {
     const parentWidth = e.target.parentNode.offsetWidth
