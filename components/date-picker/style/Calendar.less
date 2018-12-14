@@ -54,7 +54,8 @@
     left: 32px;
 
     &:after {
-      content: '«'
+      font-size: 22px;
+      content: '«';
     }
   }
 
@@ -70,6 +71,7 @@
     right: 32px;
 
     &:after {
+      font-size: 22px;
       content: '»';
     }
   }
@@ -85,6 +87,7 @@
     left: 32px;
 
     &:after {
+      font-size: 22px;
       content: '‹';
     }
   }
@@ -94,6 +97,7 @@
     right: 32px;
 
     &:after {
+      font-size: 22px;
       content: '›';
     }
   }
@@ -142,11 +146,8 @@
     .calendarPanelHeader(@calendar-prefix-cls);
   }
 
-  // &-body {
-  //   padding: 8px 12px;
-  // }
   &-body {
-    padding: 0px 12px;
+    padding: 0px 16px 12px;
   }
 
   table {
@@ -217,7 +218,7 @@
 
     &:active {
       color: #fff;
-      background: @primary-5;
+      background: @primary-LightBg;
     }
   }
 
