@@ -48,7 +48,6 @@ import Tree from './tree';
 import Transfer from './transfer';
 import TreeSelect from './tree-select';
 import Upload from './upload';
-import Color from './color';
 import Typography from './typography';
 
 
@@ -101,6 +100,5 @@ export { Tree };
 export { Transfer };
 export { TreeSelect };
 export { Upload };
-export { Color };
 export { Typography };
 

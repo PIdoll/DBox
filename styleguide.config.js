@@ -16,8 +16,6 @@ module.exports = {
     text: 'Folk me on Github'
   },
   ignore: ['**/*-test.jsx'],
-  // template: path.resolve(__dirname, './styleguide/index.html'),
-  // 每页渲染一个部分或组件
   pagePerSection: true,
   theme: {
     baseBackground: '#fdfdfc',
@@ -144,11 +142,6 @@ module.exports = {
     return `import {${componentName}} from Dbox`
   },
   sections: [
-    {
-      name: 'Color',
-      description: '由于设计过程中使用的颜色命名与开发过程中使用的颜色命名会有区别，这里将二者进行匹配编码，便于开发引用相应颜色。',
-      content: './components/color/readme.md'
-    },
     {
       name: 'Typography',
       description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
