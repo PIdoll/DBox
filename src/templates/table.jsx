@@ -583,36 +583,30 @@ class table extends React.Component {
     title: '姓名',
     dataIndex: 'name',
     key: 'name',
-    width: 70,
     editable: true,
   }, {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
-    width: 70,
     sorter: (a, b) => a.age - b.age,
     editable: true,
   }, {
     title: '居住地',
     dataIndex: 'city',
-    width: 70,
     key: 'city',
     editable: true,
   }, {
     title: '手机号',
     dataIndex: 'Tel',
-    width: 130,
     key: 'Tel',
     editable: true,
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
-    width: 200,
     editable: true,
   }, {
     title: '操作',
-    width: 70,
     dataIndex: 'action',
     key: 'action',
     render: (text, record) => {
@@ -653,9 +647,9 @@ class table extends React.Component {
     },
   }];
 }
- onChange = (pagination, filters, sorter) => {
-  console.log('params', pagination, filters, sorter);
-}
+  onChange = (pagination, filters, sorter) => {
+    console.log('params', pagination, filters, sorter);
+  }
   start = () => {
     this.setState({ loading: true });
     setTimeout(() => {

@@ -6,6 +6,7 @@
 ##### **基本使用**
 通过设置 `size`属性控制大小, `disabled` 设置为禁用。
 ```jsx
+import { Select } from 'components';
 const {Option} = Select;
 <div>
     <Select size='small' placeholder='请选择' style={{ width: 200 }}>
@@ -40,6 +41,7 @@ const {Option} = Select;
 #### **搜索下拉框**
 展开后可对选项进行搜索。
 ```jsx
+import { Select } from 'components';
 const {Option} = Select;
 <Select showSearch style={{ width: 200 }} placeholder='请选择' >
     <Option value='beijing'>北京</Option>
@@ -52,6 +54,7 @@ const {Option} = Select;
 #### **多选下拉框**
 多选，从已有条目中选择。设置 `mode` 属性为 `tags` 可随意输入内容。
 ```jsx
+import { Select } from 'components';
 const {Option} = Select;
 <div>
     <Select mode='multiple' style={{ width: 200 }} placeholder='多选' >
@@ -73,6 +76,7 @@ const {Option} = Select;
 #### **获得选项文本**
 
 ```jsx
+import { Select } from 'components';
 const {Option} = Select;
 handleChange = (value) => {
     console.log(value); 
@@ -87,6 +91,7 @@ handleChange = (value) => {
 
 #### **搜索用户**
 ```jsx
+import { Select,Spin } from 'components';
 const {Option} = Select;
 class SearchExample extends React.Component {
     constructor() {
@@ -148,6 +153,7 @@ class SearchExample extends React.Component {
 #### **分组**
 使用用 `OptGroup` 进行选项分组。
 ```jsx
+import { Select } from 'components';
 const {Option, OptGroup} = Select;
 <Select
     defaultValue='hefei'

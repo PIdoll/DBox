@@ -6,6 +6,7 @@
 ##### **基本使用**
 最简单的用法，可选中，默认展开等功能。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -43,6 +44,7 @@ onCheck = (checkedKeys, info) => {
 ##### **多选树**
 有多选框可选择，可禁用。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -80,6 +82,7 @@ onCheck = (checkedKeys, info) => {
 
 ##### **可拖动**
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 
 const gData = [{
@@ -219,6 +222,7 @@ class TreeExample extends React.Component {
 
 ##### **点击展开节点，异步加载数据**
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -280,6 +284,7 @@ class TreeExample extends React.Component {
 ##### **受控操作示例**
 展示选择树节点，展开/收起节点，选择复选框和默认展开节点等操作示例。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
