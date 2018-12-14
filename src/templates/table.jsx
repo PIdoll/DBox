@@ -587,8 +587,8 @@ class table extends React.Component {
     key: 'name',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : null}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
-     }
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '年龄',
     dataIndex: 'age',
@@ -596,32 +596,32 @@ class table extends React.Component {
     sorter: (a, b) => a.age - b.age,
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
-     }
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '居住地',
     dataIndex: 'city',
     key: 'city',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
-     }
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '手机号',
     dataIndex: 'Tel',
     key: 'Tel',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
-     }
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
     editable: true,
     render: (text, record) => {
-      return <Tooltip title={this.state.flag ? text : ''}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>
-     }
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '操作',
     dataIndex: 'action',
@@ -668,15 +668,12 @@ class table extends React.Component {
     const parentWidth = e.target.parentNode.offsetWidth
     const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
     const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
-    console.log(selfWdith > parentWidth - (parentPadding * 2))
-    if (selfWdith >= parentWidth - (parentPadding * 2)) {
+    if (selfWdith < parentWidth - (parentPadding * 2)) {
       this.setState({flag: true})
     }
   }
   onMouseLeave = () => {
     this.setState({flag: false})
-    this.onMouseEnter = null
-    return false
   }
   onChange = (pagination, filters, sorter) => {
     console.log('params', pagination, filters, sorter);
