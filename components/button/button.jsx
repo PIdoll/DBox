@@ -22,7 +22,7 @@ export default class Button extends React.Component {
 	    size: PropTypes.oneOf(['large', 'default', 'small']),
 	    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
 	    onClick: PropTypes.func,
-      loading: PropTypes.bool,
+	    loading: PropTypes.bool,
 	    className: PropTypes.string,
 		icon: PropTypes.string,
 		block: PropTypes.bool

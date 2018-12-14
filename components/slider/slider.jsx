@@ -7,10 +7,13 @@ import Tooltip from '../tooltip';
 
 import './style'
 
-export default class Slider extends React.Component {
+class Slider extends React.Component {
   static propTypes = {
+    /** 最小值 */
     min: PropTypes.number,
+    /** 最大值 */
     max: PropTypes.number,
+    /** 刻度标记 */
     marks: PropTypes.object
   }
   static defaultProps = {
@@ -75,3 +78,4 @@ export default class Slider extends React.Component {
     return <RcSlider {...restProps} ref={this.saveSlider} handle={this.handleWithTooltip} />
   }
 }
+export default Slider;

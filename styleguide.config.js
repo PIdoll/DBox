@@ -1,21 +1,24 @@
 const path = require('path');
 const { version } = require('./package.json')
-const {camelCase, upperFirst} = require('lodash');
+const { camelCase, upperFirst } = require('lodash');
 
-
+const TITLE = `Dbox UI ${version}`;
+const PORT = parseInt(process.env.PROT || 9002, 10);
 
 module.exports = {
-  title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  title: TITLE,
+  serverPort: PORT,
+  skipComponentsWithoutExample: false,
   exampleMode: 'collapse',
-  usageMode: 'hidden',
+  usageMode: 'hide',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
     text: 'Folk me on Github'
   },
-  template: {
-    index: path.resolve(__dirname, 'styleguide/index.html')
-},
+  ignore: ['**/*-test.jsx'],
+  // template: path.resolve(__dirname, './styleguide/index.html'),
+  // 每页渲染一个部分或组件
+  pagePerSection: true,
   theme: {
     baseBackground: '#fdfdfc',
 		link: '#274e75',
@@ -93,11 +96,6 @@ module.exports = {
         },
       }
     },
-    ReactComponent: {
-      tabButtons: {
-        display: 'none'
-      }
-    },
     SectionHeading: {
       sectionName: {
         paddingBottom: '8px',
@@ -108,7 +106,8 @@ module.exports = {
       heading: {
         fontWeight: '700 !important',
         fontSize: '16px',
-        color: '#455a64 !important',
+        color: '#a1a1a1 !important',
+        cursor: 'text'
       }
     },
     Heading: {
@@ -116,13 +115,9 @@ module.exports = {
         display: 'block',
         position: 'relative',
         fontWeight: 600,
-        fontSize: '40px',
         '& > a': {
           fontWeight: '700 !important'
         }
-      },
-      heading2: {
-        display: 'none'
       },
       heading3: {
         fontSize: '30px',
@@ -138,7 +133,7 @@ module.exports = {
 				background: 'none',
 			},
 			code: {
-				fontSize: 14,
+				fontSize: 24,
 			},
 		},
   },
@@ -148,25 +143,20 @@ module.exports = {
     const componentName = upperFirst(camelCase(name))
     return `import {${componentName}} from Dbox`
   },
-  pagePerSection: true,
   sections: [
     {
-      sections: [
-        {
-          content: ''
-        },
-      ]
+      name: 'Color',
+      description: '由于设计过程中使用的颜色命名与开发过程中使用的颜色命名会有区别，这里将二者进行匹配编码，便于开发引用相应颜色。',
+      content: './components/color/readme.md'
+    },
+    {
+      name: 'Typography',
+      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
+      content: 'components/typography/readme.md'
     },
     {
       name: 'Components',
       sections: [
-        {
-          name: 'Basic',
-          components: () => ([
-            path.resolve(__dirname, './components/grid/index.jsx'),
-            path.resolve(__dirname, './components/layout/index.jsx'),
-          ])
-        },
         {
           name: 'General',
           components: () => ([
@@ -175,18 +165,23 @@ module.exports = {
           ])
         },
         {
-          name: 'Navigation',
-          codeSamples: 'hide',
-          propsMethods: 'hide',
+          name: 'Layout',
           components: () => ([
-            // path.resolve(__dirname, './components/affix/index.jsx'),
+            path.resolve(__dirname, './components/grid/index.jsx'),
+            path.resolve(__dirname, './components/layout/index.jsx'),
+          ]),
+        },
+        {
+          name: 'Navigation',
+          components: () => ([
+            path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
-            path.resolve(__dirname, './components/steps/steps.jsx'),
-        //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
-        //    path.resolve(__dirname, './components/anchor/index.jsx'),
-           path.resolve(__dirname, './components/menu/index.jsx'),
+            path.resolve(__dirname, './components/steps/index.jsx'),
+            path.resolve(__dirname, './components/pagination/index.jsx'),
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+            path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
@@ -200,15 +195,15 @@ module.exports = {
            path.resolve(__dirname, './components/tree-select/index.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
-           path.resolve(__dirname, './components/radio/radio.jsx'),
-           path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
+           path.resolve(__dirname, './components/radio/index.jsx'),
+           path.resolve(__dirname, './components/checkbox/index.jsx'),
            path.resolve(__dirname, './components/form/index.jsx'),
-           path.resolve(__dirname, './components/switch/switch.jsx'),
+           path.resolve(__dirname, './components/switch/index.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
            path.resolve(__dirname, './components/transfer/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
+            path.resolve(__dirname, './components/upload/index.jsx'),
           ])
         },
         {
@@ -216,26 +211,25 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
-         //   path.resolve(__dirname, './components/card/card.jsx'),
+          //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-         //   path.resolve(__dirname, './components/list/list.jsx'),
+          //   path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
-            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/table/index.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {
           name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
-         path.resolve(__dirname, './components/modal/index.jsx'),
-         path.resolve(__dirname, './components/message/index.jsx'),
+          path.resolve(__dirname, './components/modal/index.jsx'),
+          path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
          path.resolve(__dirname, './components/drawer/index.jsx'),
           path.resolve(__dirname, './components/progress/progress.jsx'),
@@ -244,14 +238,15 @@ module.exports = {
           ])
         },
         {
-          name: 'Other',
+          name: 'Others',
           components: () => ([
-          path.resolve(__dirname, './components/back-top/index.jsx'),
-          path.resolve(__dirname, './components/anchor/index.jsx'),
-          path.resolve(__dirname, './components/divider/index.jsx'),
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+            path.resolve(__dirname, './components/back-top/index.jsx'),
+            path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
-      ]
+      ],
+      sectionDepth: 2
     },
   ],
   webpackConfig: {
@@ -269,6 +264,13 @@ module.exports = {
           test: /\.jsx$/,
           loaders: 'babel-loader'
         },
+        {
+          test: /\.(png|svg|jpg|gif|webp|ico)$/,
+          use: [
+             'file-loader'
+           ],
+           exclude: path.resolve(__dirname, 'node_modules')
+        },
       ]
     },
     resolve: {
@@ -280,6 +282,6 @@ module.exports = {
         'templates': path.resolve(__dirname, 'src/templates'),
         'components': path.resolve(__dirname, 'components')
       }
-    },
+    }
   }
 }
