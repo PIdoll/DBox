@@ -820,7 +820,7 @@ const dataFixdRow = [{
 
 #### **可编辑表格**
 ```jsx
-import {Table, Divider, Input, Form, Popconfirm} from 'components';
+import {Table, Divider, Input, Form, Popconfirm, Select, InputNumber} from 'components';
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
 
