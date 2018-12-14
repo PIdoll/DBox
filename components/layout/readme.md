@@ -6,6 +6,7 @@
 
 #### **基础布局**
 ```jsx
+import Layout from 'components/layout';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -39,7 +40,9 @@ const Sider = Layout.Sider;
 
 #### **顶部导航**
 ```jsx
-const SubMenu = Menu.SubMenu;
+import Menu, {SubMenu, MenuItem} from 'components/menu';
+import Breadcrumb from 'components/breadcrumb';
+import Layout from 'components/layout';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -98,8 +101,12 @@ class LayoutView extends React.Component {
 
 #### **侧边导航01**
 ```jsx
-const SubMenu = Menu.SubMenu;
-const Header = Layout.Header;
+import Layout from 'components/layout';
+import Avatar from 'components/avatar'
+import Icon from 'components/icon'
+import Dropdown from 'components/dropdown'
+import Menu, {SubMenu, MenuItem} from 'components/menu';
+import Breadcrumb from 'components/breadcrumb';const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
@@ -200,8 +207,13 @@ class LayoutView extends React.Component {
 
 #### **侧边导航02**
 ```jsx
+import Layout from 'components/layout';
+import Tabs from 'components/tabs'
+import Avatar from 'components/avatar'
+import Icon from 'components/icon'
+import Dropdown from 'components/dropdown'
+import Menu, {SubMenu, MenuItem} from 'components/menu';
 const TabPane = Tabs.TabPane;
-const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;

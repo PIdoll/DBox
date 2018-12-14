@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import Select from '../select';
 import MiniSelect from './MiniSelect';
 import zhCN from './locale/zh_CN';
-
 import './style/index.jsx';
 
 
@@ -18,6 +17,22 @@ export default class Pagination extends React.Component {
         prefixCls: 'idoll-pagination',
         selectPrefixCls: 'idoll-select',
     }
+    static propTypes = {
+	    current: PropTypes.num,
+	    defaultCurrent: PropTypes.num,
+	    defaultPageSizecurrent: PropTypes.num,
+	    pageSize: PropTypes.num,
+	    total: PropTypes.num,
+        showQuickJumper: PropTypes.bool,
+        showTitle: PropTypes.bool,
+        showSizeChanger: PropTypes.bool,
+        simple: PropTypes.bool,
+        pageSizeOptions: PropTypes.array,
+	    showTotal: PropTypes.func,
+	    onChange: PropTypes.fuc,
+		icon: PropTypes.fuc,
+		onShowSizeChange: PropTypes.fuc
+	}
     static contextTypes = {
         idollLocale: PropTypes.object
     }
