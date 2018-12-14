@@ -1,5 +1,6 @@
 import Affix from './affix';
 import Alert from './alert';
+import Anchor from './anchor';
 import AutoComplete from './auto-complete';
 import Avatar from './avatar';
 import BackTop from './back-top';
@@ -54,6 +55,7 @@ export { Affix };
 export { Alert };
 export { AutoComplete };
 export { Avatar };
+export { Anchor };
 export { BackTop };
 export { Badge };
 export { Breadcrumb };

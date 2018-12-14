@@ -974,7 +974,7 @@ class TableView extends React.Component {
                   </a>
                 )}
               </EditableContext.Consumer>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <a
                 href='javascript:;'
                 onClick={() => this.cancel(record.key)}
@@ -985,7 +985,7 @@ class TableView extends React.Component {
           ) : (
             <span>
               <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
                 <a href='javascript:;'>删除</a>
               </Popconfirm>
