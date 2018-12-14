@@ -261,8 +261,9 @@ module.exports = {
           ]
         },
         {
-          test: /\.jsx$/,
-          loaders: 'babel-loader'
+          test: /\.(jsx|js|mb)$/,
+          loaders: 'babel-loader',
+          exclude: path.resolve(__dirname, 'node_modules'),
         },
         {
           test: /\.(png|svg|jpg|gif|webp|ico)$/,
