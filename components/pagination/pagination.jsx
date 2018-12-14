@@ -21,6 +21,22 @@ export default class Pagination extends React.Component {
     static contextTypes = {
         idollLocale: PropTypes.object
     }
+    static propTypes = {
+	    current: PropTypes.num,
+	    defaultCurrent: PropTypes.num,
+	    defaultPageSizecurrent: PropTypes.num,
+	    pageSize: PropTypes.num,
+	    total: PropTypes.num,
+        showQuickJumper: PropTypes.bool,
+        showTitle: PropTypes.bool,
+        showSizeChanger: PropTypes.bool,
+        simple: PropTypes.bool,
+        pageSizeOptions: PropTypes.array,
+	    showTotal: PropTypes.func,
+	    onChange: PropTypes.fuc,
+		icon: PropTypes.fuc,
+		onShowSizeChange: PropTypes.fuc
+	}
     render() {
         const { size, className, ...restProps } = this.props;
         const isSmall = size === 'small';
