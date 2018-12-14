@@ -7,7 +7,7 @@
 #### **顶部导航**
 
 ```jsx
-import Menu from 'components/menu';
+import {Menu} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -51,9 +51,7 @@ class MenuView extends React.Component {
 #### **内嵌侧栏导航**
 
 ```jsx
-import Menu from 'components/menu';
-import Icon from 'components/icon';
-import Switch from 'components/switch';
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -121,9 +119,7 @@ class MenuView extends React.Component {
 #### **动态侧栏导航**
 
 ```jsx
-import Menu from 'components/menu';
-import Icon from 'components/icon';
-import Switch from 'components/switch';
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {

@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RcDrawer from 'rc-drawer';
 import warning from 'warning';
-// import createReactContext, { Context } from 'create-react-context';
 import classNames from 'classnames';
 import Icon from '../icon';
 import './style/index';
-
-// const DrawerContext: Context<Drawer | null> = createReactContext(null);
-// const DrawerContext = Context<Drawer>;
 
 export default class Drawer extends React.Component {
   static propTypes = {
@@ -51,7 +47,6 @@ export default class Drawer extends React.Component {
     };
   }
 
-  // parentDrawer = <Drawer />;
   componentDidUpdate(preProps) {
     if (preProps.visible !== this.props.visible && this.parentDrawer) {
       if (this.props.visible) {

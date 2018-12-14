@@ -6,10 +6,8 @@
 
 ##### **基本用法**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
@@ -46,10 +44,8 @@ function handleMenu1Click(e) {
 
 ##### **常用类型**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu4 = (
@@ -106,10 +102,8 @@ function handleMenu1Click(e) {
 
 ##### **组合使用**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const ButtonGroup = Button.Group;
 const DropdownButton = Dropdown.DropdownButton;const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
@@ -137,10 +131,8 @@ function handleMenu1Click(e) {
 
 ##### **三种尺寸**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const menu2 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
@@ -167,10 +159,9 @@ function handleMenu1Click(e) {
 
 ##### **弹出位置**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';const menu = (
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const menu = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -204,10 +195,8 @@ function handleMenu1Click(e) {
 
 ##### **触发方式**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme = 'light'onClick={handleMenu1Click}>
@@ -243,10 +232,8 @@ function handleButtonClick(e) {
 
 ##### **触发事件**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -272,10 +259,9 @@ function handleButtonClick(e) {
 
 ##### **多级菜单**
 ```jsx
-import Icon from 'components/icon'
-import Button from 'components/button'
-import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'components/menu';const menu1 = (
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>

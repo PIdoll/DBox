@@ -6,6 +6,7 @@
 
 ##### **通用多选框**
 ```jsx
+import {Checkbox} from 'components';
 <Checkbox >
   多选框
 </Checkbox>
@@ -13,6 +14,7 @@
 
 ##### **受控多选框**
 ```jsx
+import {Checkbox, Button} from 'components';
 initialState = {
       checked: false,
       disabled: false
@@ -39,6 +41,7 @@ initialState = {
 
 ##### **多选框全选**
 ```jsx
+import {Checkbox} from 'components';
 const CheckboxGroup = Checkbox.CheckboxGroup;
 const plainOptions = ['苹果', '梨', '桔子'];
 const defaultCheckedList = ['苹果', '桔子'];
@@ -76,6 +79,7 @@ onChange = (checkedList) => {
 
 ##### **多选框组**
 ```jsx
+import {Checkbox} from 'components';
 const optionsWithDisabled = [
   { label: '苹果', value: '苹果' },
   { label: '梨', value: '梨' },
@@ -99,6 +103,7 @@ const CheckboxGroup = Checkbox.CheckboxGroup;
 
 ##### **多选框不可用**
 ```jsx
+import {Checkbox} from 'components';
 <div>
 	<Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
    <Checkbox defaultChecked disabled >不允许操作</Checkbox>
