@@ -9,6 +9,8 @@
 #### **基本用法**
 
 ```jsx
+import { Transfer, Switch} from 'components';
+
 const mockData = [];
 for (let i = 0; i < 20; i++) {
   mockData.push({
