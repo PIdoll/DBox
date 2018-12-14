@@ -1,5 +1,7 @@
 import React from 'react'
-import Pagination from '../../components/pagination'
+
+import Pagination from 'components/pagination';
+
 
 export default class PaginationView extends React.Component {
   render () {
