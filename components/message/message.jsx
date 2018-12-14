@@ -51,7 +51,7 @@ function notice (content, duration = defaultDuration, type, onClose, icon, norma
     icon = '';
   }
   const iconType = ({
-    info: 'warning-circle',
+    info: 'pro2-info-circle',
     success: 'check-circle',
     error: 'close-circle',
     warning: 'warning-circle',
