@@ -6,16 +6,19 @@
 
 ##### **基本用法**
 ```jsx
-const { Menu, MenuItem, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
-      <Menu onClick={handleMenu1Click}>
+      <Menu theme = 'light' onClick={handleMenu1Click}>
         <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
       </Menu>
     );
 const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -41,23 +44,26 @@ function handleMenu1Click(e) {
 
 ##### **常用类型**
 ```jsx
-const { Menu, MenuItem, DropdownButton, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu4 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -96,10 +102,11 @@ function handleMenu1Click(e) {
 
 ##### **组合使用**
 ```jsx
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const ButtonGroup = Button.Group;
-const { Menu, MenuItem, DropdownButton } = require('./index');
-const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+const DropdownButton = Dropdown.DropdownButton;const menu1 = (
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -109,7 +116,8 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 
-<ButtonGroup className='buttonGroup'>  <DropdownButton overlay={menu1} trigger={['hover']}>
+<ButtonGroup className='buttonGroup'>
+  <DropdownButton overlay={menu1} trigger={['hover']}>
   操作三
   </DropdownButton>
   <Button>
@@ -123,9 +131,11 @@ function handleMenu1Click(e) {
 
 ##### **三种尺寸**
 ```jsx
-const { Menu, MenuItem, DropdownButton } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -149,9 +159,10 @@ function handleMenu1Click(e) {
 
 ##### **弹出位置**
 ```jsx
-const { Menu, MenuItem } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -184,16 +195,18 @@ function handleMenu1Click(e) {
 
 ##### **触发方式**
 ```jsx
-const { Menu, MenuItem, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light'onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -219,9 +232,10 @@ function handleButtonClick(e) {
 
 ##### **触发事件**
 ```jsx
-const { Menu, MenuItem } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -245,9 +259,10 @@ function handleButtonClick(e) {
 
 ##### **多级菜单**
 ```jsx
-const { Menu, MenuItem, SubMenu  } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <SubMenu title='子菜单'>

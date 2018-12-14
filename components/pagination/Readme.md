@@ -6,24 +6,29 @@
 ##### **基础分页**
 - 不设置defaultPageSize时默认为每页10条数据；
 ```jsx
+import {Pagination} from 'components';
 <Pagination defaultCurrent={1} total={50}></Pagination>
 ```
 
 ##### **更多分页**
 ```jsx
+import {Pagination} from 'components';
 <Pagination defaultCurrent={6} total={500}></Pagination>
 ```
 
 ##### **改变每页显示条数目**
 ```jsx
+import {Pagination} from 'components';
 <Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
 ```
 ##### **跳转分页**
 ```jsx
+import {Pagination} from 'components';
 <Pagination defaultCurrent={2} total={500} showQuickJumper></Pagination>
 ```
 ##### **迷你分页**
 ```jsx
+import {Pagination} from 'components';
 function showTotal(total) {
   return `总 ${total} 条`;
 }
@@ -38,11 +43,13 @@ function showTotal(total) {
 
 ##### **简洁翻页**
 ```jsx
+import {Pagination} from 'components';
 <Pagination simple defaultCurrent={2} total={500}></Pagination>
 ```
 
 ##### **包含总数**
 ```jsx
+import {Pagination} from 'components';
 <Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
 ```
 
