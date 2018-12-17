@@ -483,15 +483,15 @@ class EditableCell extends React.Component {
       </Select>;
     }
     if (this.props.inputtype === 'address') {
-      return <Input style={{ width: 200 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 200 }} />;
     }
     if (this.props.inputtype === 'name') {
-      return <Input style={{ width: 70 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'Tel') {
-      return <Input style={{ width: 130 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 130 }} />;
     }
-    return <Input />;
+    return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
   };
 
   render() {
@@ -534,6 +534,7 @@ class table extends React.Component {
   super(props);
   this.state = {
     flag: false,
+    value: '',
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
@@ -672,6 +673,9 @@ class table extends React.Component {
       this.setState({flag: true})
     }
   }
+  onChangeValue = () => {
+    this.setState({ value: this.props.value });
+  }
   onMouseLeave = () => {
     this.setState({flag: false})
   }
@@ -796,6 +800,46 @@ class table extends React.Component {
         <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
       </div>
     )
+  }
+}
+
+class NumericInput extends React.Component {
+  onChange = (e) => {
+    const { value } = e.target;
+      this.props.onChange(value);
+  }
+  onBlur = () => {
+    const { value, onBlur, onChange } = this.props;
+    if (value.charAt(value.length - 1) === '.' || value === '-') {
+      onChange({ value: value.slice(0, -1) });
+    }
+    if (onBlur) {
+      onBlur();
+    }
+  }
+
+
+  render() {
+    const { value } = this.props;
+    const title = value ? (
+      <span>
+        {value}
+      </span>
+    ) : 'Input here';
+    return (
+      <Tooltip
+        trigger={['focus']}
+        title={title}
+        placement='topLeft'
+      >
+        <Input
+          {...this.props}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          placeholder='Input here'
+        />
+      </Tooltip>
+    );
   }
 }
 
