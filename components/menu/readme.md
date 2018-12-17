@@ -20,7 +20,7 @@ class MenuView extends React.Component {
   handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.indexkey,
     });
   }
   render() {
@@ -31,15 +31,15 @@ class MenuView extends React.Component {
       mode='horizontal'
       theme='dark'
     >
-      <Menu.Item key='home'>首页</Menu.Item>
-      <Menu.Item key='platform' disabled>工作台</Menu.Item>
-      <SubMenu key='bars' title={<span>订单中心</span>}>
-        <Menu.Item key='1'>子菜单一</Menu.Item>
-        <Menu.Item key='2'>子菜单二</Menu.Item>
-        <Menu.Item key='3'>子菜单三</Menu.Item>
-        <Menu.Item key='4'>子菜单四</Menu.Item>
+      <Menu.Item indexkey='home'>首页</Menu.Item>
+      <Menu.Item indexkey='platform' disabled>工作台</Menu.Item>
+      <SubMenu indexkey='bars' title={<span>订单中心</span>}>
+        <Menu.Item indexkey='1'>子菜单一</Menu.Item>
+        <Menu.Item indexkey='2'>子菜单二</Menu.Item>
+        <Menu.Item indexkey='3'>子菜单三</Menu.Item>
+        <Menu.Item indexkey='4'>子菜单四</Menu.Item>
       </SubMenu>
-      <Menu.Item key='tool'>
+      <Menu.Item indexkey='tool'>
         <a href='https://www.baidu.com' target='_blank' rel='noopener noreferrer'>配置管理</a>
       </Menu.Item>
     </Menu>
@@ -68,7 +68,7 @@ class MenuView extends React.Component {
   handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.indexkey,
     });
   }
   changeMode (value) {
@@ -91,24 +91,24 @@ class MenuView extends React.Component {
         defaultSelectedKeys={['5']}
         mode={this.state.mode}
       >
-      <Menu.Item key='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-      <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-        <Menu.Item key='6'>子菜单一</Menu.Item>
-        <Menu.Item key='7'>子菜单二</Menu.Item>
-        <Menu.Item key='8'>子菜单三</Menu.Item>
-        <Menu.Item key='9'>子菜单四</Menu.Item>
+      <Menu.Item indexkey='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+      <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+        <Menu.Item indexkey='6'>子菜单一</Menu.Item>
+        <Menu.Item indexkey='7'>子菜单二</Menu.Item>
+        <Menu.Item indexkey='8'>子菜单三</Menu.Item>
+        <Menu.Item indexkey='9'>子菜单四</Menu.Item>
       </SubMenu>
-      <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-        <Menu.Item key='10'>子菜单五</Menu.Item>
-        <Menu.Item key='11'>子菜单六</Menu.Item>
-        <Menu.Item key='12'>子菜单七</Menu.Item>
-        <Menu.Item key='13'>子菜单八</Menu.Item>
+      <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+        <Menu.Item indexkey='10'>子菜单五</Menu.Item>
+        <Menu.Item indexkey='11'>子菜单六</Menu.Item>
+        <Menu.Item indexkey='12'>子菜单七</Menu.Item>
+        <Menu.Item indexkey='13'>子菜单八</Menu.Item>
       </SubMenu>
-      <SubMenu key='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-        <Menu.Item key='14'>子菜单九</Menu.Item>
-        <Menu.Item key='15'>子菜单十</Menu.Item>
-        <Menu.Item key='16'>子菜单十一</Menu.Item>
-        <Menu.Item key='17'>子菜单十二</Menu.Item>
+      <SubMenu indexkey='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+        <Menu.Item indexkey='14'>子菜单九</Menu.Item>
+        <Menu.Item indexkey='15'>子菜单十</Menu.Item>
+        <Menu.Item indexkey='16'>子菜单十一</Menu.Item>
+        <Menu.Item indexkey='17'>子菜单十二</Menu.Item>
       </SubMenu>
     </Menu>
   </div>
@@ -140,7 +140,7 @@ class MenuView extends React.Component {
    handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.indexkey,
     });
   }
   changeTheme (value) {
@@ -176,24 +176,24 @@ class MenuView extends React.Component {
         defaultSelectedKeys={['21']}
         defaultOpenKeys={['sub1']}
       >
-        <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-        <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-          <Menu.Item key='22'>子菜单五</Menu.Item>
-          <Menu.Item key='23'>子菜单六</Menu.Item>
-          <Menu.Item key='24'>子菜单七</Menu.Item>
-          <Menu.Item key='25'>子菜单八</Menu.Item>
+        <Menu.Item indexkey='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item indexkey='22'>子菜单五</Menu.Item>
+          <Menu.Item indexkey='23'>子菜单六</Menu.Item>
+          <Menu.Item indexkey='24'>子菜单七</Menu.Item>
+          <Menu.Item indexkey='25'>子菜单八</Menu.Item>
         </SubMenu>
-        <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-          <Menu.Item key='26'>子菜单九</Menu.Item>
-          <Menu.Item key='27'>子菜单十</Menu.Item>
-          <Menu.Item key='28'>子菜单十一</Menu.Item>
-          <Menu.Item key='29'>子菜单十二</Menu.Item>
+        <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item indexkey='26'>子菜单九</Menu.Item>
+          <Menu.Item indexkey='27'>子菜单十</Menu.Item>
+          <Menu.Item indexkey='28'>子菜单十一</Menu.Item>
+          <Menu.Item indexkey='29'>子菜单十二</Menu.Item>
         </SubMenu>
-        <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-          <Menu.Item key='30'>子菜单九</Menu.Item>
-          <Menu.Item key='31'>子菜单十</Menu.Item>
-          <Menu.Item key='32'>子菜单十一</Menu.Item>
-          <Menu.Item key='33'>子菜单十二</Menu.Item>
+        <SubMenu indexkey='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item indexkey='30'>子菜单九</Menu.Item>
+          <Menu.Item indexkey='31'>子菜单十</Menu.Item>
+          <Menu.Item indexkey='32'>子菜单十一</Menu.Item>
+          <Menu.Item indexkey='33'>子菜单十二</Menu.Item>
         </SubMenu>
       </Menu>
 	</div>
@@ -232,7 +232,7 @@ class MenuView extends React.Component {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | disabled | 是否禁用 | boolean | false |
-| key | item 的唯一标志 | string |  |
+| indexkey | item 的唯一标志 | string |  |
 
 #### **Menu.SubMenu**
 
