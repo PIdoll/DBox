@@ -143,6 +143,11 @@ module.exports = {
   },
   sections: [
     {
+      name: 'Version',
+      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
+      content: 'components/version/readme.md'
+    },
+    {
       name: 'Typography',
       description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
       content: 'components/typography/readme.md'
@@ -173,7 +178,6 @@ module.exports = {
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
             path.resolve(__dirname, './components/steps/index.jsx'),
-            path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/menu/index.jsx'),
           ])
@@ -208,7 +212,7 @@ module.exports = {
           //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-          //   path.resolve(__dirname, './components/list/list.jsx'),
+          //  path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
