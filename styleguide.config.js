@@ -162,6 +162,7 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/color/index.jsx'),
           ])
         },
         {
