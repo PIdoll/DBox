@@ -6,13 +6,17 @@
 
 ##### **基本样式展示**
 ```jsx
-<Radio>世界很大1</Radio>
-<Radio checked >世界很大2</Radio>
-<Radio defaultChecked>世界很大3</Radio>
+import {Radio} from 'components';
+<div>
+	<Radio>A</Radio>
+	<Radio checked>B</Radio>
+	<Radio defaultChecked>C</Radio>
+</div>
 ```
 
 ##### **禁用单选框**
 ```jsx
+import {Radio, Button} from 'components';
 class RadioView extends React.Component {
   constructor(props) {
     super(props);
@@ -43,6 +47,7 @@ class RadioView extends React.Component {
 
 ##### **互斥单选框**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -73,6 +78,7 @@ class RadioView extends React.Component {
 
 ##### **垂直组合单选框**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -103,6 +109,7 @@ class RadioView extends React.Component {
 
 ##### **分组单选框**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -142,6 +149,7 @@ class RadioView extends React.Component {
 
 ##### **name单选框**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -172,6 +180,7 @@ class RadioView extends React.Component {
 
 ##### **按钮样式**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -202,6 +211,7 @@ const RadioButton = Radio.RadioButton;
 
 ##### **大小按钮**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -232,6 +242,7 @@ const RadioButton = Radio.RadioButton;
 
 ##### **按钮底纹**
 ```jsx
+import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -278,7 +289,7 @@ const RadioButton = Radio.RadioButton;
 | direction | 组合的垂直(vertical)与水平排列方式(默认无传参) | string | 无 |
 | name | RadioGroup 下所有 `input[type="radio"]` 的 `name` 属性 | string | 无 |
 | options | 以配置形式设置子元素 | string\[]\ Array&lt;{ label: string value: string disabled?: boolean }> | 无 |
-| size | 大小，只对按钮样式生效 | `large` \ `default` \ `small` \ `default` |
+| size | 大小，只对按钮样式生效 | `large` \ `default` \ `small` |`default`|
 | value | 用于设置当前选中的值 | any | 1 |
 | onChange | 选项变化时的回调函数 | Function(e:Event) | 无 |
 | buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | 默认描边 \ `solid`填充 | 无 |

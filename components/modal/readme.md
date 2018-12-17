@@ -5,6 +5,7 @@
 
 #### **普通弹出框(可用于展示和提交)**
 ```jsx
+import {Modal, Button} from 'components';
 class ModalView extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +53,7 @@ class ModalView extends React.Component {
 
 #### **异步关闭弹出框**
 ```jsx
+import {Modal, Button} from 'components';
 class ModalView extends React.Component {
   constructor(props) {
     super(props);
@@ -103,6 +105,7 @@ class ModalView extends React.Component {
 ```
 #### **信息提示**
 ```jsx
+import {Modal, Button} from 'components';
 class ModalView extends React.Component {
   constructor(props) {
     super(props)
@@ -132,7 +135,7 @@ class ModalView extends React.Component {
   return (
     <div>
       <Button onClick={this.info}>信息提示</Button>
-      <Button onClick={this.success}>成功提示</Button>
+      <Button style={{marginLeft: 20, marginRight: 20}} onClick={this.success}>成功提示</Button>
       <Button onClick={this.error}>失败提示</Button>
     </div>
   )
@@ -142,6 +145,7 @@ class ModalView extends React.Component {
 ```
 #### **确认对话框**
 ```jsx
+import {Modal, Button} from 'components';
 class ModalView extends React.Component {
   constructor(props) {
     super(props)

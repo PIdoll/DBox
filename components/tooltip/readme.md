@@ -10,6 +10,7 @@
 #### **基本用法**
 简单用法
 ```jsx
+import { Tooltip } from 'components';
 <Tooltip title='提示文字'>
     <span>当鼠标移入时会出现文字提示</span>
 </Tooltip>
@@ -18,6 +19,7 @@
 #### **12个方向**
 位置有12个方向
 ```jsx
+import { Tooltip,Button } from 'components';
 const buttonWidth = 70;
 const text = <span>提示文字</span>;
 <div>
@@ -26,7 +28,7 @@ const text = <span>提示文字</span>;
         <Button>TL</Button>
     </Tooltip>
     <Tooltip placement='top' title={text} >
-        <Button>Top</Button>
+        <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Top</Button>
     </Tooltip>
     <Tooltip placement='topRight' title={text}>
         <Button>TR</Button>
@@ -37,7 +39,7 @@ const text = <span>提示文字</span>;
         <Button>LT</Button>
     </Tooltip>
     <Tooltip placement='left' title={text} >
-        <Button>Left</Button>
+        <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Left</Button>
     </Tooltip>
     <Tooltip placement='leftBottom' title={text}>
         <Button>LB</Button>
@@ -48,7 +50,7 @@ const text = <span>提示文字</span>;
         <Button>RT</Button>
     </Tooltip>
     <Tooltip placement='right' title={text} >
-        <Button>Right</Button>
+        <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Right</Button>
     </Tooltip>
     <Tooltip placement='rightBottom' title={text}>
         <Button>RB</Button>
@@ -59,7 +61,7 @@ const text = <span>提示文字</span>;
         <Button>BL</Button>
     </Tooltip>
     <Tooltip placement='bottom' title={text} >
-        <Button>Bottom</Button>
+        <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Bottom</Button>
     </Tooltip>
     <Tooltip placement='bottomRight' title={text}>
         <Button>BR</Button>
@@ -70,6 +72,7 @@ const text = <span>提示文字</span>;
 
 #### **箭头指向**
 ```jsx
+import { Tooltip,Button } from 'components';
 const text = <span>提示文字</span>;
 <div className='arrow'>
     <Tooltip placement='topLeft' title={text} >

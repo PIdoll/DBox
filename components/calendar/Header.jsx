@@ -27,7 +27,8 @@ export default class Header extends React.Component {
     onValueChange: PropTypes.func,
     onTypeChange: PropTypes.func,
     value: PropTypes.any,
-    fullscreen: PropTypes.bool
+    fullscreen: PropTypes.bool,
+    mold: PropTypes.string
   }
 
   static defaultProps = {
@@ -46,6 +47,7 @@ export default class Header extends React.Component {
 
   // 右边 > 图标
   handleProIncreaseMonth = () => {
+    // debugger;
     let month;
     let year;
     const { monthNumber, yearValue } = this.state;
@@ -54,16 +56,24 @@ export default class Header extends React.Component {
     month++;
     if (month >= 12) {
       month = 0;
+      // 若将次函数放入setState的第二个函数参数内，次函数的执行结果将会是12月的数据
+      this.onMonthChange(month);
       this.setState({
         monthValue: MonthFormat(month),
         monthNumber: month,
         yearValue: year + 1
+      }, () => {
+        this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
       });
       return false;
     }
     this.setState({
       monthValue: MonthFormat(month),
-      monthNumber: month
+      monthNumber: month,
+      yearValue: year
+    }, () => {
+      this.onMonthChange(this.state.monthNumber);
+      this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
     });
   }
 
@@ -75,18 +85,25 @@ export default class Header extends React.Component {
     month = monthNumber;
     year = yearValue;
     month--;
-    if (month <= 0) {
+    if (month < 0) {
       month = 11;
+      this.onMonthChange(month);
       this.setState({
         monthValue: MonthFormat(month),
         monthNumber: month,
         yearValue: year - 1
+      }, () => {
+        this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
       });
       return false;
     }
     this.setState({
       monthValue: MonthFormat(month),
-      monthNumber: month
+      monthNumber: month,
+      yearValue: year
+    }, () => {
+      this.onMonthChange(this.state.monthNumber);
+      this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
     });
   }
 
@@ -215,7 +232,7 @@ export default class Header extends React.Component {
       mold !== 'backdrop' ? (<div
         className={`${prefixCls}-header`}
         ref={this.getCalenderHeaderNode}>
-        <div className='title'>日历</div>
+        {/* <div className='title'>日历</div> */}
         <div>
           {yearSelect}
           {monthSelect}

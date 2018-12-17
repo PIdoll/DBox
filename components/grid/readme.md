@@ -5,7 +5,8 @@
 
 ####  **基本栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import { Row, Col } from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -20,11 +21,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={12}>
             <div style={RowDemoStyle} >col-12</div>
           </Col>
@@ -32,7 +36,7 @@ class GridView extends React.Component {
             <div style={evenColor} >col-12</div>
           </Col>
         </Row>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={8}>
             <div style={RowDemoStyle} >col-8</div>
           </Col>
@@ -65,7 +69,8 @@ class GridView extends React.Component {
 ```
 #### **拥有间隔的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -83,22 +88,20 @@ const evenColor = {
 class GridView extends React.Component {
   render() {
     return (
-      <div>
-        <Row gutter={16}>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-        </Row>
-      </div>
+      <Row gutter={16}>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+      </Row>
     )
   }
 }
@@ -106,7 +109,8 @@ class GridView extends React.Component {
 ```
 #### **可以左右偏移的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -121,11 +125,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={6} offset={6}>
             <div style={RowDemoStyle}>col-6 col-offset-6</div>
           </Col>
@@ -149,7 +156,8 @@ class GridView extends React.Component {
 ```
 #### **可排序的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -164,6 +172,7 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+
 class GridView extends React.Component {
   render() {
     return (
@@ -184,7 +193,7 @@ class GridView extends React.Component {
 ```
 #### **Flex布局水平对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -204,44 +213,44 @@ const headDemo = {
 }
 const alignDemo = {
       height: '80px',
-      backgroundColor: '#dedede'
+      backgroundColor: '#f5f5f5'
     }
 class GridView extends React.Component {
   render() {
     return (
       <div>
         <h5 style={headDemo}>左对齐</h5>
-        <Row type='flex' justify='start' style={alignDemo}>
+        <Row type='flex' justify='start' align='middle' style={alignDemo}>
           <Col span={4} >
-            <div style={RowDemoStyle}>col-4</div>
+            <div style={RowDemoStyle}>col-6</div>
           </Col>
           <Col span={4} >
-            <div style={evenColor} >col-4</div>
+            <div style={evenColor} >col-6</div>
           </Col>
           <Col span={4} >
-            <div style={RowDemoStyle} >col-4</div>
+            <div style={RowDemoStyle} >col-6</div>
           </Col>
           <Col span={4} >
-            <div style={evenColor} >col-4</div>
+            <div style={evenColor} >col-6</div>
           </Col>
         </Row>
         <h5 style={headDemo}>右对齐</h5>
-        <Row type='flex' justify='end' style={alignDemo}>
+        <Row type='flex' justify='end' align='middle' style={alignDemo}>
           <Col span={4} >
-            <div style={RowDemoStyle}>col-4</div>
+            <div style={RowDemoStyle}>col-6</div>
           </Col>
           <Col span={4} >
-            <div style={evenColor} >col-4</div>
+            <div style={evenColor} >col-6</div>
           </Col>
           <Col span={4} >
-            <div style={RowDemoStyle} >col-4</div>
+            <div style={RowDemoStyle} >col-6</div>
           </Col>
           <Col span={4} >
-            <div style={evenColor} >col-4</div>
+            <div style={evenColor} >col-6</div>
           </Col>
         </Row>
         <h5 style={headDemo}>居中对齐</h5>
-        <Row type='flex' justify='center' style={alignDemo}>
+        <Row type='flex' justify='center' align='middle' style={alignDemo}>
           <Col span={4} >
             <div style={RowDemoStyle}>col-6</div>
           </Col>
@@ -256,7 +265,7 @@ class GridView extends React.Component {
           </Col>
         </Row>
         <h5 style={headDemo}>两端对齐</h5>
-        <Row type='flex' justify='space-between' style={alignDemo}>
+        <Row type='flex' justify='space-between' align='middle' style={alignDemo}>
           <Col span={4} >
             <div style={RowDemoStyle}>col-6</div>
           </Col>
@@ -271,7 +280,7 @@ class GridView extends React.Component {
           </Col>
         </Row>
         <h5 style={headDemo}>每个项目两端间隔相等</h5>
-        <Row type='flex' justify='space-around' style={alignDemo}>
+        <Row type='flex' justify='space-around' align='middle' style={alignDemo}>
           <Col span={4} >
             <div style={RowDemoStyle}>col-6</div>
           </Col>
@@ -293,7 +302,8 @@ class GridView extends React.Component {
 ```
 #### **Flex布局垂直对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -313,7 +323,7 @@ const headDemo = {
 }
 const alignDemo = {
       height: '80px',
-      backgroundColor: '#dedede'
+      backgroundColor: '#f5f5f5'
     }
 class GridView extends React.Component {
   render() {
@@ -372,7 +382,8 @@ class GridView extends React.Component {
 ```
 #### **Flex排序**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -389,7 +400,7 @@ const evenColor = {
 }
  const alignDemo = {
   height: '80px',
-  backgroundColor: '#f6f6f6'
+  backgroundColor: '#f5f5f5'
 }
 class GridView extends React.Component {
   render() {
@@ -418,7 +429,8 @@ class GridView extends React.Component {
 
 #### **自定义栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -435,13 +447,13 @@ const evenColor = {
 }
 const alignDemo = {
   height: '80px',
-  backgroundColor: '#dedede'
+  backgroundColor: '#f5f5f5'
 }
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row style={alignDemo}>
+        <Row style={alignDemo} type='flex' align='middle'>
           <Col xs={4} sm={12} md={14} lg={2} xl={12}>
             <div style={RowDemoStyle}>col-12 </div>
           </Col>
@@ -478,4 +490,4 @@ class GridView extends React.Component {
 | md       | `≥992px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object | - |
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
-<style>.idoll-row{margin-bottom:10px;}</style>
+<!-- <style>.idoll-row{margin-bottom:10px;}</style> -->

@@ -3,9 +3,10 @@
 
 #### **基本用法**
 ```jsx
+import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
 
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -37,19 +38,20 @@ class TreeSelectExample extends React.Component {
                         <TreeNode value="pudongxinqu" title="浦东新区" key="random1" />
                     </TreeNode>
                     <TreeNode value="anhui" title="安徽" key="random2">
-                        <TreeNode value="hefei" title={<b style={{ color: '#13B886' }}>合肥</b>} key="random3" />
+                        <TreeNode value="hefei" title="合肥" key="random3" />
                     </TreeNode>
                 </TreeNode>
             </TreeSelect>
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
 #### **从数据直接生成**
 使用treeData把JSON数据直接生成树结构
 ```jsx
+import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -69,7 +71,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -100,12 +102,13 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
 #### **多选**
 多选的树选择
 ```jsx
+import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -125,7 +128,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -149,6 +152,7 @@ class TreeSelectExample extends React.Component {
                 treeData={treeData}
                 placeholder="请选择"
                 multiple
+                allowClear
                 treeDefaultExpandAll
                 onChange={this.onChange}
             >
@@ -156,12 +160,13 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
 #### **可勾选**
 使用勾选框实现多选功能。
 ```jsx
+import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -181,7 +186,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -198,6 +203,7 @@ class TreeSelectExample extends React.Component {
     render() {
         return (
             <TreeSelect
+                allowClear
                 showSearch
                 style={{ width: 300 }}
                 value={this.state.value}
@@ -212,7 +218,7 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 #### **Tree**
 | 参数 | 说明 | 类型 | 默认值 |

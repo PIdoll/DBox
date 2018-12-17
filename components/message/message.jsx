@@ -2,7 +2,7 @@
 import React from 'react';
 import Notification from 'rc-notification';
 import Icon from '../icon/index';
-import './style/index';
+import './style/index.jsx';
 
 let defaultDuration = 3; // 默认自动关闭延时 3s
 let defaultTop; // 默认提示框的高度
@@ -51,7 +51,7 @@ function notice (content, duration = defaultDuration, type, onClose, icon, norma
     icon = '';
   }
   const iconType = ({
-    info: 'warning-circle',
+    info: 'pro2-info-circle',
     success: 'check-circle',
     error: 'close-circle',
     warning: 'warning-circle',

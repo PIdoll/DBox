@@ -6,6 +6,7 @@
 ##### **基本使用**
 最简单的用法，可选中，默认展开等功能。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -31,7 +32,7 @@ onCheck = (checkedKeys, info) => {
       <TreeNode title={<span>sss</span>} key='0-0-1-0' />
     </TreeNode>
     <TreeNode title='财务部' key='0-0-2'>
-      <TreeNode title={<span>sss</span>} key='0-0-1-0' />
+      <TreeNode title={<span>sss</span>} key='0-0-2-0' />
     </TreeNode>
   </TreeNode>
 
@@ -43,6 +44,7 @@ onCheck = (checkedKeys, info) => {
 ##### **多选树**
 有多选框可选择，可禁用。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -80,60 +82,45 @@ onCheck = (checkedKeys, info) => {
 
 ##### **可拖动**
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
-const x = 3;
-const y = 2;
-const z = 1;
-const gData = [];
 
-const generateData = (_level, _preKey, _tns) => {
-  const preKey = _preKey || '0';
-  const tns = _tns || gData;
+const gData = [{
+      title: '上海',
+      key: '0-0',
+      children: [{
+        title: '静安区',
+        key: '0-0-0',
+        children: [
+          { title: '延长路', key: '0-0-0-0' },
+          { title: '共和新路', key: '0-0-0-1' },
+          { title: '汉中路', key: '0-0-0-2' },
+        ],
+      }, {
+        title: '浦东新区',
+        key: '0-0-1',
+        children: [
+          { title: '龙阳路', key: '0-0-1-0' },
+          { title: '金科路', key: '0-0-1-1' },
+          { title: '张江高科', key: '0-0-1-2' },
+        ],
+      }, {
+        title: '闵行区',
+        key: '0-0-2',
+      }],
+    }, {
+      title: '安徽',
+      key: '0-1',
+      children: [
+        { title: '合肥', key: '0-1-0-0' },
+        { title: '宣城', key: '0-1-0-1' },
+        { title: '芜湖', key: '0-1-0-2' },
+      ],
+    }, {
+      title: '江苏',
+      key: '0-2',
+    }];
 
-  const children = [];
-  for (let i = 0; i < x; i++) {
-    const key = `${preKey}-${i}`;
-    tns.push({ title: key, key });
-    if (i < y) {
-      children.push(key);
-    }
-  }
-  if (_level < 0) {
-    return tns;
-  }
-  const level = _level - 1;
-  children.forEach((key, index) => {
-    tns[index].children = [];
-    return generateData(level, key, tns[index].children);
-  });
-};
-generateData(z);
-const dataList = [];
-const generateList = (data) => {
-  for (let i = 0; i < data.length; i++) {
-    const node = data[i];
-    const key = node.key;
-    dataList.push({ key, title: key });
-    if (node.children) {
-      generateList(node.children, node.key);
-    }
-  }
-};
-generateList(gData);
-const getParentKey = (key, tree) => {
-  let parentKey;
-  for (let i = 0; i < tree.length; i++) {
-    const node = tree[i];
-    if (node.children) {
-      if (node.children.some(item => item.key === key)) {
-        parentKey = node.key;
-      } else if (getParentKey(key, node.children)) {
-        parentKey = getParentKey(key, node.children);
-      }
-    }
-  }
-  return parentKey;
-};
 class TreeExample extends React.Component {
    constructor(){
     super();
@@ -204,6 +191,8 @@ class TreeExample extends React.Component {
   }
   render(){
     const loop = data => {
+      console.log('loop data');
+      console.log(data);
       return data.map((item) => {
         if (item.children && item.children.length) {
           return <TreeNode key={item.key} title={item.title}>{loop(item.children)}</TreeNode>;
@@ -211,6 +200,7 @@ class TreeExample extends React.Component {
         return <TreeNode key={item.key} title={item.title} />;
       });
     };
+
     return (
       <Tree
             className='draggable-tree'
@@ -232,15 +222,16 @@ class TreeExample extends React.Component {
 
 ##### **点击展开节点，异步加载数据**
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
     super();
     this.state = {
       treeData: [
-        { title: 'Expand to load', key: '0' },
-        { title: 'Expand to load', key: '1' },
-        { title: 'Tree Node', key: '2', isLeaf: true },
+        { title: '上海', key: '0' },
+        { title: '安徽', key: '1' },
+        { title: '江苏', key: '2', isLeaf: true },
       ]
     };
     this.onLoadData = this.onLoadData.bind(this);
@@ -255,8 +246,8 @@ class TreeExample extends React.Component {
       }
       setTimeout(() => {
         treeNode.props.dataRef.children = [
-          { title: 'Child Node', key: `${treeNode.props.eventKey}-0` },
-          { title: 'Child Node', key: `${treeNode.props.eventKey}-1` },
+          { title: '城市1', key: `${treeNode.props.eventKey}-0` },
+          { title: '城市2', key: `${treeNode.props.eventKey}-1` },
         ];
         this.setState({
           treeData: [...this.state.treeData],
@@ -293,6 +284,7 @@ class TreeExample extends React.Component {
 ##### **受控操作示例**
 展示选择树节点，展开/收起节点，选择复选框和默认展开节点等操作示例。
 ```jsx
+import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -342,38 +334,38 @@ class TreeExample extends React.Component {
 
   render(){
     const treeData = [{
-      title: '0-0',
+      title: '上海',
       key: '0-0',
       children: [{
-        title: '0-0-0',
+        title: '静安区',
         key: '0-0-0',
         children: [
-          { title: '0-0-0-0', key: '0-0-0-0' },
-          { title: '0-0-0-1', key: '0-0-0-1' },
-          { title: '0-0-0-2', key: '0-0-0-2' },
+          { title: '延长路', key: '0-0-0-0' },
+          { title: '共和新路', key: '0-0-0-1' },
+          { title: '汉中路', key: '0-0-0-2' },
         ],
       }, {
-        title: '0-0-1',
+        title: '浦东新区',
         key: '0-0-1',
         children: [
-          { title: '0-0-1-0', key: '0-0-1-0' },
-          { title: '0-0-1-1', key: '0-0-1-1' },
-          { title: '0-0-1-2', key: '0-0-1-2' },
+          { title: '龙阳路', key: '0-0-1-0' },
+          { title: '金科路', key: '0-0-1-1' },
+          { title: '张江高科', key: '0-0-1-2' },
         ],
       }, {
-        title: '0-0-2',
+        title: '闵行区',
         key: '0-0-2',
       }],
     }, {
-      title: '0-1',
+      title: '安徽',
       key: '0-1',
       children: [
-        { title: '0-1-0-0', key: '0-1-0-0' },
-        { title: '0-1-0-1', key: '0-1-0-1' },
-        { title: '0-1-0-2', key: '0-1-0-2' },
+        { title: '合肥', key: '0-1-0-0' },
+        { title: '宣城', key: '0-1-0-1' },
+        { title: '芜湖', key: '0-1-0-2' },
       ],
     }, {
-      title: '0-2',
+      title: '江苏',
       key: '0-2',
     }];
     return(

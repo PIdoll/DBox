@@ -7,11 +7,12 @@
 #### **基本用法**
 最简单用法
 ```jsx
-class PopconfirmExample extends React.Component {
+import { Popconfirm } from 'components';
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
-             visible: false,
+            visible: false,
         }
         this.confirm = this.confirm.bind(this);
         this.cancel = this.cancel.bind(this);
@@ -35,15 +36,16 @@ class PopconfirmExample extends React.Component {
     }
 }
 
-<PopconfirmExample />
+<PopconfirmDemo />
 ```
 
 #### **12个方向**
 位置有十二个方向。
 ```jsx
+import { Popconfirm,Button } from 'components';
 const buttonWidth = '70px';
 const text = '确定要删除吗';
-class PopconfirmExample extends React.Component {
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -69,7 +71,7 @@ class PopconfirmExample extends React.Component {
                 <Button>TL</Button>
             </Popconfirm>
             <Popconfirm placement='top' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
-                <Button>Top</Button>
+                <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Top</Button>
             </Popconfirm>
             <Popconfirm placement='topRight' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
                 <Button>TR</Button>
@@ -80,7 +82,7 @@ class PopconfirmExample extends React.Component {
                 <Button>LT</Button>
             </Popconfirm>
             <Popconfirm placement='left' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
-                <Button>Left</Button>
+                <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Left</Button>
             </Popconfirm>
             <Popconfirm placement='leftBottom' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>LB</Button>
@@ -91,7 +93,7 @@ class PopconfirmExample extends React.Component {
                 <Button>RT</Button>
             </Popconfirm>
             <Popconfirm placement='right' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
-                <Button>Right</Button>
+                <Button style={{ marginTop: '10px', marginBottom: '10px' }}>Right</Button>
             </Popconfirm>
             <Popconfirm placement='rightBottom' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>RB</Button>
@@ -102,7 +104,7 @@ class PopconfirmExample extends React.Component {
                 <Button>BL</Button>
             </Popconfirm>
             <Popconfirm placement='bottom' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
-                <Button>Bottom</Button>
+                <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Bottom</Button>
             </Popconfirm>
             <Popconfirm placement='bottomRight' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>BR</Button>
@@ -112,14 +114,15 @@ class PopconfirmExample extends React.Component {
         )
     }
 }
-<PopconfirmExample />
+<PopconfirmDemo />
 
 ```
 
 #### **条件触发**
 可以判断是否需要弹出。
 ```jsx
-class PopconfirmExample extends React.Component {
+import { Popconfirm,Switch } from 'components';
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -173,7 +176,7 @@ class PopconfirmExample extends React.Component {
         )
     }
 }
-<PopconfirmExample />
+<PopconfirmDemo />
 ```
 #### **Popconfirm**
 
