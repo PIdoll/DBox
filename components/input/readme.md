@@ -5,11 +5,11 @@
 - 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
 
 #### **基本使用**
-可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态
+可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态，设置`clearable` 为支持可清除。
 ```jsx
 import { Input } from 'components';
 <div>
-    <Input type='text' placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input type='text' placeholder='请输入' style={{width: '200px'}} clearable/><br /><br />
     <Input type='text' disabled placeholder='请输入' style={{width: '200px'}} /><br /><br />
     <Input type='text' readOnly value='请输入' style={{width: '200px'}} />
 </div>
@@ -247,6 +247,7 @@ class NumericInputDemo extends React.Component {
 | addonBefore | 带标签的 input，设置前置标签 | string|ReactNode |  |
 | afterlength | 后置标签宽度 | string|  |
 | beforelength | 前置标签宽度 | string| |
+| clearable | 输入框可删除 | boolean| false|
 | defaultValue | 输入框默认内容 | string |  |
 | disabled | 是否禁用状态，默认为 false | boolean | false |
 | id | 输入框的 id | string |  |
