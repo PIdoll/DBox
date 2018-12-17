@@ -212,7 +212,7 @@ module.exports = {
           //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-            path.resolve(__dirname, './components/list/list.jsx'),
+          //  path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
