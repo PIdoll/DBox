@@ -821,11 +821,7 @@ class NumericInput extends React.Component {
 
   render() {
     const { value } = this.props;
-    const title = value ? (
-      <span>
-        {value}
-      </span>
-    ) : 'Input here';
+    const title = value;
     return (
       <Tooltip
         trigger={['focus']}
