@@ -2,8 +2,8 @@ import React from 'react';
 
 import Input from 'components/input';
 import Icon from 'components/icon';
-import Select from 'components/Select';
-import Grid from 'components/Grid';
+import Select from 'components/select';
+import Grid from 'components/grid';
 import DatePicker from 'components/date-picker/index'
 
 

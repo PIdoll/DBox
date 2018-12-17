@@ -116,7 +116,7 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 
-<ButtonGroup className='buttonGroup'>
+<ButtonGroup className='ButtonGroup'>
   <DropdownButton overlay={menu1} trigger={['hover']}>
   操作三
   </DropdownButton>

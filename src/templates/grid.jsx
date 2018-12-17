@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from '../../components/grid/'
-import '../../components/grid';
 
 class GridView extends React.Component {
   render() {

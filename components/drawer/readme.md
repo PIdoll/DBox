@@ -361,7 +361,7 @@ class DrawerView extends React.Component {
 
 #### **表单抽屉**
 ```jsx
-import {Button, Divider, DatePicker, Form, Input, Grid, Select} from 'components';
+import {Button, Divider, DatePicker, Form, Input, Select} from 'components';
 import {Row, Col} from 'components/grid';
 const { RangePicker } = DatePicker;
 const FormItem = Form.Item;

@@ -29,15 +29,15 @@ export default class Menu extends React.Component {
     };
     static propTypes = {
 	    defaultOpenKeys: PropTypes.any,
-	    style: PropTypes.obj,
+	    style: PropTypes.object,
 	    defaultSelectedKeys: PropTypes.array,
 	    openKeys: PropTypes.array,
 	    selectedKeys: PropTypes.array,
       forceSubMenuRender: PropTypes.bool,
       selectable: PropTypes.bool,
       multiple: PropTypes.bool,
-      subMenuCloseDelay: PropTypes.num,
-      subMenuOpenDelay: PropTypes.num,
+      subMenuCloseDelay: PropTypes.number,
+      subMenuOpenDelay: PropTypes.number,
 	    mode: PropTypes.oneOf(['vertical', 'vertical-right', 'horizontal', 'inline']),
 	    theme: PropTypes.oneOf(['dark', 'light']),
 	    onClick: PropTypes.func,

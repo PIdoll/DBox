@@ -8,7 +8,7 @@ export default class SubMenu extends React.Component {
     disabled: PropTypes.bool,
     key: PropTypes.string,
     children: PropTypes.array,
-    onTitleClick: PropTypes.fuc,
+    onTitleClick: PropTypes.func,
 }
   static contextTypes = {
     idollMenuTheme: PropTypes.string,
