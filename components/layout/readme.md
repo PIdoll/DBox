@@ -71,13 +71,13 @@ class LayoutView extends React.Component {
 	      mode='horizontal'
 	      theme='dark'
 	>
-	      <Menu.Item indexkey='1'><div>首页</div></Menu.Item>
-	      <Menu.Item indexkey='2'><div>工作台</div></Menu.Item>
-	      <SubMenu indexkey='sub1' title={<div>订单中心</div>}>
-	        <Menu.Item indexkey='3'>子菜单一</Menu.Item>
-	        <Menu.Item indexkey='4'>子菜单二</Menu.Item>
-	        <Menu.Item indexkey='5'>子菜单三</Menu.Item>
-	        <Menu.Item indexkey='6'>子菜单四</Menu.Item>
+	      <Menu.Item key='1'><div>首页</div></Menu.Item>
+	      <Menu.Item key='2'><div>工作台</div></Menu.Item>
+	      <SubMenu key='sub1' title={<div>订单中心</div>}>
+	        <Menu.Item key='3'>子菜单一</Menu.Item>
+	        <Menu.Item key='4'>子菜单二</Menu.Item>
+	        <Menu.Item key='5'>子菜单三</Menu.Item>
+	        <Menu.Item key='6'>子菜单四</Menu.Item>
 	      </SubMenu>
 	      <Menu.Item indexkey='tool'>
 	        <a href='https://www.baidu.com' target='_blank'><div>配置管理</div></a>
@@ -114,9 +114,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'>
-    <Menu.Item indexkey='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
-    <Menu.Item indexkey='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
-    <Menu.Item indexkey='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
+    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 class LayoutView extends React.Component {
@@ -169,24 +169,24 @@ class LayoutView extends React.Component {
             onOpenChange={this.onOpenChange}
             mode={this.state.modeMenu2}
     >
-            <Menu.Item indexkey='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-            <SubMenu indexkey='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-              <Menu.Item indexkey='8'>子菜单一</Menu.Item>
-              <Menu.Item indexkey='9'>子菜单二</Menu.Item>
-              <Menu.Item indexkey='10'>子菜单三</Menu.Item>
-              <Menu.Item indexkey='11'>子菜单四</Menu.Item>
+            <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+            <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+              <Menu.Item key='8'>子菜单一</Menu.Item>
+              <Menu.Item key='9'>子菜单二</Menu.Item>
+              <Menu.Item key='10'>子菜单三</Menu.Item>
+              <Menu.Item key='11'>子菜单四</Menu.Item>
             </SubMenu>
-            <SubMenu indexkey='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-              <Menu.Item indexkey='12'>子菜单五</Menu.Item>
-              <Menu.Item indexkey='13'>子菜单六</Menu.Item>
-              <Menu.Item indexkey='14'>子菜单七</Menu.Item>
-              <Menu.Item indexkey='15'>子菜单八</Menu.Item>
+            <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+              <Menu.Item key='12'>子菜单五</Menu.Item>
+              <Menu.Item key='13'>子菜单六</Menu.Item>
+              <Menu.Item key='14'>子菜单七</Menu.Item>
+              <Menu.Item key='15'>子菜单八</Menu.Item>
             </SubMenu>
-            <SubMenu indexkey='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-              <Menu.Item indexkey='16'>子菜单九</Menu.Item>
-              <Menu.Item indexkey='17'>子菜单十</Menu.Item>
-              <Menu.Item indexkey='18'>子菜单十一</Menu.Item>
-              <Menu.Item indexkey='19'>子菜单十二</Menu.Item>
+            <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+              <Menu.Item key='16'>子菜单九</Menu.Item>
+              <Menu.Item key='17'>子菜单十</Menu.Item>
+              <Menu.Item key='18'>子菜单十一</Menu.Item>
+              <Menu.Item key='19'>子菜单十二</Menu.Item>
             </SubMenu>
           </Menu>
           <Icon type={this.state.flag2 ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel2} />
@@ -232,18 +232,18 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'>
-    <Menu.Item indexkey='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
-    <Menu.Item indexkey='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
-    <Menu.Item indexkey='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
+    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
+const array = [];
 class LayoutView extends React.Component {
   constructor(props) {
     super(props);
     const panes = [
       { title: <Icon type='home' />, content: '首页', key: '7' }
     ];
-    rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
     this.state = {
       openKeys: ['sub1'],
       flag: false,
@@ -263,12 +263,12 @@ class LayoutView extends React.Component {
   };
   onOpenChange (openKeys) {
     const latestOpenKey = openKeys.find(i => this.state.openKeys.indexOf(i) === -1);
-    console.log(latestOpenKey)
       this.setState({
         openKeys: latestOpenKey ? [latestOpenKey] : [],
       });
   }
   handleClickTabs (e) {
+    array.push(...e.keyPath)
     this.setState({
       current: e.key,
       activeKey: e.key
@@ -278,6 +278,7 @@ class LayoutView extends React.Component {
     } else {
       this.add(e.key, e.item.props.title)
     }
+    console.log(array)
   }
   changeModel () {
     this.setState({
@@ -286,7 +287,8 @@ class LayoutView extends React.Component {
     })
   }
   onChange (activeKey) {
-    this.setState({activeKey});
+    const id = array.indexOf(activeKey) + 1
+    this.setState({ activeKey, openKeys: [array[id]] });
   }
   onEdit (targetKey, action) {
     this[action](targetKey);
@@ -309,7 +311,11 @@ class LayoutView extends React.Component {
     if (lastIndex >= 0 && activeKey === targetKey) {
       activeKey = panes[lastIndex].key;
     }
-    this.setState({panes, activeKey});
+    const id = array.indexOf(activeKey) + 1
+    this.setState({
+      panes,
+      activeKey,
+      openKeys: [array[id]]});
   }
   render() {
   return (
@@ -325,24 +331,24 @@ class LayoutView extends React.Component {
             onOpenChange={this.onOpenChange}
             mode={this.state.modeMenu}
     >
-            <Menu.Item title='首页' indexkey='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-            <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-              <Menu.Item title='子菜单一' indexkey='8'>子菜单一</Menu.Item>
-              <Menu.Item title='子菜单二' indexkey='9'>子菜单二</Menu.Item>
-              <Menu.Item title='子菜单三' indexkey='10'>子菜单三</Menu.Item>
-              <Menu.Item title='子菜单四' indexkey='11'>子菜单四</Menu.Item>
+            <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+            <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+              <Menu.Item title='子菜单一' key='8'>子菜单一</Menu.Item>
+              <Menu.Item title='子菜单二' key='9'>子菜单二</Menu.Item>
+              <Menu.Item title='子菜单三' key='10'>子菜单三</Menu.Item>
+              <Menu.Item title='子菜单四' key='11'>子菜单四</Menu.Item>
             </SubMenu>
-            <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-              <Menu.Item title='子菜单五' indexkey='12'>子菜单五</Menu.Item>
-              <Menu.Item title='子菜单六' indexkey='13'>子菜单六</Menu.Item>
-              <Menu.Item title='子菜单七' indexkey='14'>子菜单七</Menu.Item>
-              <Menu.Item title='子菜单八' indexkey='15'>子菜单八</Menu.Item>
+            <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+              <Menu.Item title='子菜单五' key='12'>子菜单五</Menu.Item>
+              <Menu.Item title='子菜单六' key='13'>子菜单六</Menu.Item>
+              <Menu.Item title='子菜单七' key='14'>子菜单七</Menu.Item>
+              <Menu.Item title='子菜单八' key='15'>子菜单八</Menu.Item>
             </SubMenu>
-            <SubMenu indexkey='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-              <Menu.Item title='子菜单九' indexkey='16'>子菜单九</Menu.Item>
-              <Menu.Item title='子菜单十' indexkey='17'>子菜单十</Menu.Item>
-              <Menu.Item title='子菜单十一' indexkey='18'>子菜单十一</Menu.Item>
-              <Menu.Item title='子菜单十二' indexkey='19'>子菜单十二</Menu.Item>
+            <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+              <Menu.Item title='子菜单九' key='16'>子菜单九</Menu.Item>
+              <Menu.Item title='子菜单十' key='17'>子菜单十</Menu.Item>
+              <Menu.Item title='子菜单十一' key='18'>子菜单十一</Menu.Item>
+              <Menu.Item title='子菜单十二' key='19'>子菜单十二</Menu.Item>
             </SubMenu>
           </Menu>
           <Icon type={this.state.flag ? 'left-circle-o' : 'right-circle-o'} onClick={this.changeModel} />

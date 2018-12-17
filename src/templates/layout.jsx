@@ -19,6 +19,7 @@ const menu = (
 
 class MainLayout extends Component {
   rootSubmenuKeys = ['item_1', 'item_2', 'item_3', 'sub1', 'sub2', 'sub3'];
+  array = [];
   constructor(props) {
     super(props)
     const panes = [
@@ -26,7 +27,6 @@ class MainLayout extends Component {
     ];
     this.state = {
       openKeys: ['sub1'],
-      currentKeys: ['sub1'],
       flag: false,
       flag2: false,
       current: 'platform',
@@ -48,18 +48,16 @@ class MainLayout extends Component {
     })
   }
   handleClickTabs = (e) => {
-    // console.log(e.keyPath.slice(-1))
+    this.array.push(...e.keyPath)
     this.setState({
       current: e.key,
       activeKey: e.key,
-      currentKeys: e.keyPath.slice(-1)
     });
     if (this.state.panes.findIndex(i => i.key === e.key) !== -1) {
       return false
     } else {
       this.add(e.key, e.item.props.title)
     }
-    // console.log(this.state.currentKeys)
   }
   changeModel2 = () => {
     this.setState({
@@ -74,11 +72,10 @@ class MainLayout extends Component {
     })
   }
   onChange = (activeKey) => {
-    this.setState({activeKey});
-    this.onOpenChange(this.state.currentKeys)
+    const id = this.array.indexOf(activeKey) + 1
+    this.setState({ activeKey, openKeys: [this.array[id]] });
   }
   onOpenChange = (value) => {
-    console.log('1')
     const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       this.setState({ openKeys: value });
@@ -88,7 +85,6 @@ class MainLayout extends Component {
         openKeys: latestOpenKey ? [latestOpenKey] : [],
       });
     }
-    console.log('3')
   }
   onEdit = (targetKey, action) => {
     this[action](targetKey);
@@ -111,7 +107,12 @@ class MainLayout extends Component {
     if (lastIndex >= 0 && activeKey === targetKey) {
       activeKey = panes[lastIndex].key;
     }
-    this.setState({panes, activeKey});
+    const id = this.array.indexOf(activeKey) + 1
+    this.setState({
+      panes,
+      activeKey,
+      openKeys: [this.array[id]]
+    });
   }
   render () {
     return (
