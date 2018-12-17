@@ -49,6 +49,7 @@ import Transfer from './transfer';
 import TreeSelect from './tree-select';
 import Upload from './upload';
 import Typography from './typography';
+import Version from './version';
 
 
 export { Affix };
@@ -101,4 +102,5 @@ export { Transfer };
 export { TreeSelect };
 export { Upload };
 export { Typography };
+export { Version };
 
