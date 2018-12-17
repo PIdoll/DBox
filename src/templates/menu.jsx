@@ -7,11 +7,16 @@ import Switch from 'components/switch';
 const SubMenu = Menu.SubMenu;
 
 export default class MenuDemo extends React.Component {
-  state = {
-    current: 'home',
-    theme: 'light',
-    mode: 'inline',
-    mode2: 'inline'
+  rootSubmenuKeys = ['item_1', 'item_2', 'item_3'];
+  constructor(props) {
+    super(props)
+    this.state = {
+      openKeys: ['item_1'],
+      current: 'home',
+      theme: 'light',
+      mode: 'inline',
+      mode2: 'inline'
+    }
   }
   handleClick = (e) => {
     this.setState({
@@ -32,6 +37,17 @@ export default class MenuDemo extends React.Component {
     this.setState({
       mode2: value ? 'vertical' : 'inline',
     });
+  }
+  onOpenChange = (openKeys) => {
+    const latestOpenKey = openKeys.find(i => this.state.openKeys.indexOf(i) === -1);
+    console.log(this.rootSubmenuKeys.indexOf(latestOpenKey))
+    if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      this.setState({ openKeys });
+    } else {
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+    }
   }
   render() {
     return (
@@ -66,23 +82,24 @@ export default class MenuDemo extends React.Component {
         <Menu
           onClick={this.handleClick}
           defaultSelectedKeys={['5']}
-          defaultOpenKeys={['sub1']}
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
           mode={this.state.mode}
         >
           <Menu.Item indexkey='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-          <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <SubMenu indexkey='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
             <Menu.Item indexkey='6'>子菜单一</Menu.Item>
             <Menu.Item indexkey='7'>子菜单二</Menu.Item>
             <Menu.Item indexkey='8'>子菜单三</Menu.Item>
             <Menu.Item indexkey='9'>子菜单四</Menu.Item>
           </SubMenu>
-          <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <SubMenu indexkey='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
             <Menu.Item indexkey='10'>子菜单五</Menu.Item>
             <Menu.Item indexkey='11'>子菜单六</Menu.Item>
             <Menu.Item indexkey='12'>子菜单七</Menu.Item>
             <Menu.Item indexkey='13'>子菜单八</Menu.Item>
           </SubMenu>
-          <SubMenu indexkey='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <SubMenu indexkey='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
             <Menu.Item indexkey='14'>子菜单九</Menu.Item>
             <Menu.Item indexkey='15'>子菜单十</Menu.Item>
             <Menu.Item indexkey='16'>子菜单十一</Menu.Item>
