@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from 'components/dropdown';
-import Menu, { MenuItem, SubMenu } from 'rc-menu';
+import Menu, { MenuItem, SubMenu } from 'components/menu';
 import Button from 'components/button'
 import Icon from 'components/icon'
 import './dropdown.less'
@@ -16,14 +16,14 @@ function handleMenu1Click(e) {
 }
 
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme='light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 )
 const menu4 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme='light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
@@ -50,7 +50,7 @@ export default class DropView extends React.Component {
   };
   render() {
     const menu1 = (
-      <Menu onClick={handleMenu1Click}>
+      <Menu theme='light' onClick={handleMenu1Click}>
         <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <SubMenu title='子菜单'>
@@ -60,7 +60,7 @@ export default class DropView extends React.Component {
       </Menu>
     )
     const menu2 = (
-      <Menu onClick={handleMenu1Click}>
+      <Menu theme='light' onClick={handleMenu1Click}>
         <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>

@@ -5,6 +5,7 @@
 
 ##### **折叠面板**
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text1 = `可以同时展开多个面板，这个例子默认展开了第一个。`
 function callback(key) {
@@ -25,6 +26,7 @@ function callback(key) {
 
 ##### **手风琴**
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text2 = `同时只能展开一个面板，这个例子默认展开了第二个。`
 function callback(key) {
@@ -46,6 +48,7 @@ function callback(key) {
 
 ##### **嵌套面板**
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text5 = `这里是嵌套折叠面板。`
 function callback(key) {
@@ -78,6 +81,7 @@ function callback(key) {
 
 ##### **简洁风格**
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text3 = `一套没有边框的简洁样式。`
 function callback(key) {
@@ -98,6 +102,7 @@ function callback(key) {
 
 ##### **底纹样式**
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text4 = `一套拥有底纹的折叠样式。`
 function callback(key) {

@@ -6,6 +6,7 @@
 
 #### **默认表格**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -86,6 +87,7 @@ const data = [{
 ```
 #### **三种尺寸**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -170,6 +172,7 @@ const data = [{
 ```
 #### **边框表格**
 ```jsx
+import {Table, Divider} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -250,6 +253,7 @@ const data = [{
 ```
 #### **带选择框**
 ```jsx
+import {Table, Divider, Button, Checkbox} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -376,6 +380,7 @@ class TableView extends React.Component {
 
 #### **异步数据**
 ```jsx
+import {Table} from 'components';
 const  {reqwest} = require('./index.jsx');
 const columns = [{
   title: 'Name',
@@ -459,6 +464,7 @@ class App extends React.Component {
 ```
 #### **内嵌表格**
 ```jsx
+import {Table, Divider, Badge} from 'components';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -570,6 +576,7 @@ const data = [{
 ```
 #### **行列合并**
 ```jsx
+import {Table, Divider} from 'components';
 const renderContent = function (value, row, index) {
   const obj = {
     children: value,
@@ -667,6 +674,7 @@ const dataCol = [{
 ```
 #### **固定行列**
 ```jsx
+import {Table, Divider} from 'components';
 const columnsFixRow = [{
   title: '姓名',
   width: 100,
@@ -812,6 +820,7 @@ const dataFixdRow = [{
 
 #### **可编辑表格**
 ```jsx
+import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'components';
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
 
@@ -881,6 +890,7 @@ class TableView extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
+    flag: false,
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
@@ -933,27 +943,42 @@ class TableView extends React.Component {
     dataIndex: 'name',
     key: 'name',
     editable: true,
+    render: (text, record) => {
+    return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+    }
   }, {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
     editable: true,
-  	 sorter: (a, b) => a.age - b.age
+  	sorter: (a, b) => a.age - b.age,
+    render: (text, record) => {
+    return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+    }
   }, {
     title: '居住地',
     dataIndex: 'city',
     key: 'city',
     editable: true,
+    render: (text, record) => {
+    return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+    }
   }, {
     title: '手机号',
     dataIndex: 'Tel',
     key: 'Tel',
     editable: true,
+    render: (text, record) => {
+    return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+    }
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
     editable: true,
+    render: (text, record) => {
+    return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+    }
   }, {
     title: '操作',
     dataIndex: 'action',
@@ -974,7 +999,7 @@ class TableView extends React.Component {
                   </a>
                 )}
               </EditableContext.Consumer>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <a
                 href='javascript:;'
                 onClick={() => this.cancel(record.key)}
@@ -985,7 +1010,7 @@ class TableView extends React.Component {
           ) : (
             <span>
               <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
-              <Divider type='vertical' /> 
+              <Divider type='vertical' />
               <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
                 <a href='javascript:;'>删除</a>
               </Popconfirm>
@@ -995,7 +1020,20 @@ class TableView extends React.Component {
       );
     },
   }];
+  this.onMouseEnter = this.onMouseEnter.bind(this)
+  this.onMouseLeave = this.onMouseLeave.bind(this)
 }
+  onMouseEnter (e) {
+    const parentWidth = e.target.parentNode.offsetWidth
+    const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
+    const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
+    if (selfWdith < parentWidth - (parentPadding * 2)) {
+      this.setState({flag: true})
+    }
+  }
+  onMouseLeave () {
+    this.setState({flag: false})
+  }
   start () {
     this.setState({ loading: true });
     setTimeout(() => {
@@ -1089,8 +1127,8 @@ class TableView extends React.Component {
 
 | 参数           | 说明                     | 类型             | 默认值   |
 |---------------|--------------------------|-----------------|---------|
-| rowSelection  | 列表项是否可选择，[配置项](#rowSelection) | Object  | null  |
-| pagination    | 分页器，配置项参考 [pagination](/components/pagination)，设为 false 时不显示分页 | Object |  |
+| rowSelection  | 列表项是否可选择，配置项 | Object  | null  |
+| pagination    | 分页器，配置项参考 pagination，设为 false 时不显示分页 | Object |  |
 | size          | 正常或迷你类型，`large` `middle` or `small`  | String | `large` |
 | dataSource    | 数据数组 | Array |            |
 | columns       | 表格列的配置描述，具体项见下表 | Array | - |
@@ -1120,7 +1158,7 @@ class TableView extends React.Component {
 | title      | 列头显示文字               | String or React.Element | - |
 | key        | React 需要的 key，建议设置 | String          | - |
 | dataIndex  | 列数据在数据项中对应的 key，支持 `a.b.c` 的嵌套写法 | String | - |
-| render     | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return里面可以设置表格[行/列合并](#demo-colspan-rowspan) | Function(text, record, index) {} | - |
+| render     | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return里面可以设置表格行/列合并 | Function(text, record, index) {} | - |
 | filters    | 表头的筛选菜单项           | Array           | - |
 | onFilter   | 本地模式下，确定筛选的运行函数 | Function    | - |
 | filterMultiple | 是否多选 | Boolean    | true    |
@@ -1151,8 +1189,6 @@ class TableView extends React.Component {
 按照 React 的[规范](http://facebook.github.io/react/docs/multiple-components.html#dynamic-children)，所有的组件数组必须绑定 key。在 Table 中，`dataSource` 和 `columns` 里的数据值都需要指定 `key` 值。对于 `dataSource` 默认将每列数据的 `key` 属性作为唯一的标识。
 
 如果你的数据没有这个属性，务必使用 `rowKey` 来指定数据列的主键。若没有指定，控制台会出现以下的提示，表格组件也会出现各类奇怪的错误。
-
-![](https://os.alipayobjects.com/rmsportal/luLdLvhPOiRpyss.png)
 
 ```jsx
 // 比如你的数据主键是 uid

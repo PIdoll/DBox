@@ -33,11 +33,6 @@ function handleTimeFormat(timeValue) {
   return timeValue;
 }
 
-
-// const date = new Date();
-// const timeValue = handleTimeFormat(date.getHours()) + ':' + handleTimeFormat(date.getMinutes()) + ':' + handleTimeFormat(date.getSeconds());
-// const defaultOpenValue = moment(timeValue, 'HH:mm:ss')
-
 class TimePicker extends React.Component {
   static propTypes = {
     className: PropTypes.string,

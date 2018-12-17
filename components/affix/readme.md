@@ -6,7 +6,8 @@
 
 #### **基本使用**
 ```jsx
-const {ReactDOM} = require('./index');
+import { Affix, Button } from 'components';
+
 class AffixView extends React.Component {
   constructor(props) {
     super(props);
@@ -14,27 +15,6 @@ class AffixView extends React.Component {
       top: 30,
     }
   }
-   /* componentDidMount() {
-    const ele = ReactDOM.findDOMNode(this.refs.box_affix);
-    const currentHeight = ele.offsetTop - ele.offsetHeight;
-    const left = `${ele.offsetLeft}px`;
-    window.addEventListener('scroll', this.onScroll = () => {
-      if(window.scrollY >= currentHeight && window.scrollY < ele.offsetTop) {
-        ele.style.position = 'relative',
-        ele.style.top = '0';
-        ele.style.width = '50%';
-        ele.style.backgroundColor = '#dedede';
-      } else if(window.scrollY < currentHeight || window.scrollY > currentHeight +            ele.offsetHeight) {
-        ele.style.position = 'absolute';
-        ele.style.width = '50%';
-        ele.style.padding = '10px';
-        ele.style.backgroundColor = '#dedede';
-      }
-    })
-  }
-   componentWillUnmount () {
-      window.removeEventListener('scroll', this.onScroll);
-  } */
   render() {
     return (
       <Affix offsetTop={this.state.top} ref='box_affix'>
@@ -47,14 +27,23 @@ class AffixView extends React.Component {
 ```
 #### **固定到底部**
 ```jsx
-<Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
-  <Button >距离底部0px触发</Button>
-</Affix>
+import { Affix, Button } from 'components';
+
+const AffixView = () => {
+  return (
+    <Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+      <Button >距离底部0px触发</Button>
+    </Affix>
+  )
+}
+<AffixView />
 ```
 
 
 #### **固定在容器当中**
 ```jsx
+import { Affix, Button } from 'components';
+
 class AffixView extends React.Component{
   render() {
     return (

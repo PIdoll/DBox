@@ -5,16 +5,20 @@
 #### **基本用法**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { Calendar } from 'components';
+import moment from 'moment';
+
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
-  <Calendar fullscreen={false} validRange={[moment('2010-01'), moment('2018-12')]} />
+  <Calendar fullscreen={false} validRange={[moment('2018-01'), moment('2028-12')]} />
 </div>
 ```
 
 #### **带有背景色头部选择**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { Calendar } from 'components';
+import moment from 'moment';
+
 disabledDate = (current) => {
   // Can not select days before today and today
   return current && current < moment().endOf('day');

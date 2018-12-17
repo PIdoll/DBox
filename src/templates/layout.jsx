@@ -79,7 +79,6 @@ class MainLayout extends Component {
     const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       this.setState({ openKeys: value });
-      console.log('2')
     } else {
       this.setState({
         openKeys: latestOpenKey ? [latestOpenKey] : [],

@@ -6,6 +6,7 @@
 
 #### **基本用法**
 ```jsx
+import {Button, Drawer} from 'components';
 class DrawerView extends React.Component {
   constructor(props) {
     super(props);
@@ -51,6 +52,7 @@ class DrawerView extends React.Component {
 
 #### **四种方位**
 ```jsx
+import {Button, Radio, Drawer} from 'components';
 const RadioGroup = Radio.RadioGroup;
 class DrawerView extends React.Component {
   constructor(props) {
@@ -115,7 +117,7 @@ class DrawerView extends React.Component {
 
 #### **信息预览**
 ```jsx
-const { Row, Col } = require('../../components/grid');
+import {Button, Row, Drawer, Col, Divider} from 'components';
 const pStyle = {
   fontSize: 16,
   color: 'rgba(0,0,0,0.85)',
@@ -264,6 +266,7 @@ class DrawerView extends React.Component {
 
 #### **多层抽屉**
 ```jsx
+import {Button, Drawer} from 'components';
 class DrawerView extends React.Component {
   constructor(props) {
     super(props);
@@ -357,9 +360,10 @@ class DrawerView extends React.Component {
 
 #### **表单抽屉**
 ```jsx
+import {Button, Divider, DatePicker, Form, Input, Select} from 'components';
+import {Row, Col} from 'components/grid';
 const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
-const {Row,Col} = Grid;
 const {Option} = Select;
 class DrawerDemo extends React.Component {
   constructor(props) {

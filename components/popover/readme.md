@@ -6,6 +6,7 @@
 
 #### **基本用法**
 ```jsx
+import {Popover, Button} from 'components';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -18,6 +19,7 @@ const content = (
 
 #### **三种触发方式**
 ```jsx
+import {Popover, Button} from 'components';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -38,6 +40,7 @@ const content = (
 
 #### **12个方向**
 ```jsx
+import {Popover, Button} from 'components';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -95,6 +98,7 @@ const text = <span>标题</span>;
 
 #### **箭头指向**
 ```jsx
+import {Popover, Button} from 'components';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -113,6 +117,7 @@ const text = <span>标题</span>;
 
 #### **从浮层内关闭**
 ```jsx
+import {Popover, Button} from 'components';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -155,6 +160,7 @@ class PopoverView extends React.Component {
 
 #### **悬停点击弹出层**
 ```jsx
+import {Popover, Button} from 'components';
 const clickContent = (
   <div>
     这是点击内容

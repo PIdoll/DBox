@@ -12,6 +12,7 @@ DBox 依次提供了三级选项卡，分别用于不同的场景。
 
 #### **基本用法和禁用**
 ```jsx
+import {Tabs} from 'components';
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -31,6 +32,7 @@ class TabsView extends React.Component {
 ```
 #### **有图标的标签**
 ```jsx
+import {Tabs, Icon} from 'components';
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -55,6 +57,7 @@ class TabsView extends React.Component {
 
 #### **tab页水平，垂直滑动**
 ```jsx
+import {Tabs, Radio} from 'components';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -102,6 +105,7 @@ class TabsView extends React.Component {
 
 #### **卡片式标签页容器**
 ```jsx
+import {Tabs} from 'components';
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -131,6 +135,7 @@ class TabsView extends React.Component {
 
 #### **新增和关闭**
 ```jsx
+import {Tabs} from 'components';
 const TabPane = Tabs.TabPane;
 const panes = [
   { title: '分页一', content: '分页内容一', key: '1' },
@@ -189,6 +194,7 @@ class TabsView extends React.Component {
 
 #### **卡片式容器**
 ```jsx
+import {Tabs} from 'components';
 const TabPane = Tabs.TabPane; 
 class TabsView extends React.Component {
   render() {
@@ -217,8 +223,8 @@ class TabsView extends React.Component {
 
 #### **吸顶效果**
 ```jsx
-const TabPane = Tabs.TabPane; 
-const {ReactDOM} = require('./index');
+import {Tabs} from 'components';
+import {TabPane, ReactDOM} from 'components/tabs';
 class TabsView extends React.Component {
 	componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);

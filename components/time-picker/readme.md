@@ -5,7 +5,8 @@
 #### **基本用法**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { TimePicker } from 'components';
+import moment from 'moment';
 onChange = (time, timeString) => {
     console.log(time, timeString);
   }
@@ -15,7 +16,9 @@ onChange = (time, timeString) => {
 #### **三种尺寸**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { TimePicker } from 'components';
+import moment from 'moment';
+
 <div style={{ display: 'flex' }}>
   <div style={{marginRight: 10}}>
     <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} size='large' />
@@ -32,7 +35,9 @@ const moment = require('../../node_modules/moment');
 #### **禁用**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { TimePicker } from 'components';
+import moment from 'moment';
+
 <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />
 ```
 

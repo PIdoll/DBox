@@ -316,7 +316,7 @@ export default class Cascader extends React.Component {
 
     const loadingIcon = (
       <span className={`${prefixCls}-menu-item-loading-icon`}>
-        <Icon type='pro-loading' />
+        <Icon type='pro2-loading' />
       </span>
     );
 

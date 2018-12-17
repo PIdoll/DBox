@@ -1,14 +1,15 @@
 import React from 'react'
 import CreateReactClass from 'create-react-class';
 import Table from 'components/table';
-import Button from '../../components/button/index';
-import Badge from '../../components/badge/index';
-import Divider from '../../components/divider/index';
-import Form from '../../components/form/index';
-import Input from '../../components/input/index';
-import InputNumber from '../../components/input-number/index';
-import Popconfirm from '../../components/popconfirm/index';
-import Select from '../../components/select/index';
+import Button from 'components/button';
+import Badge from 'components/badge';
+import Divider from 'components/divider';
+import Form from 'components/form';
+import Input from 'components/input';
+import InputNumber from 'components/input-number';
+import Popconfirm from 'components/popconfirm';
+import Select from 'components/select';
+import Tooltip from 'components/tooltip';
 import reqwest from 'reqwest'
 const {Option} = Select;
 
@@ -532,6 +533,7 @@ class table extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
+    flag: false,
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
@@ -583,36 +585,45 @@ class table extends React.Component {
     title: '姓名',
     dataIndex: 'name',
     key: 'name',
-    width: 70,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
-    width: 70,
     sorter: (a, b) => a.age - b.age,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '居住地',
     dataIndex: 'city',
-    width: 70,
     key: 'city',
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '手机号',
     dataIndex: 'Tel',
-    width: 130,
     key: 'Tel',
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
-    width: 200,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '操作',
-    width: 70,
     dataIndex: 'action',
     key: 'action',
     render: (text, record) => {
@@ -653,9 +664,20 @@ class table extends React.Component {
     },
   }];
 }
- onChange = (pagination, filters, sorter) => {
-  console.log('params', pagination, filters, sorter);
-}
+  onMouseEnter = (e) => {
+    const parentWidth = e.target.parentNode.offsetWidth
+    const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
+    const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
+    if (selfWdith < parentWidth - (parentPadding * 2)) {
+      this.setState({flag: true})
+    }
+  }
+  onMouseLeave = () => {
+    this.setState({flag: false})
+  }
+  onChange = (pagination, filters, sorter) => {
+    console.log('params', pagination, filters, sorter);
+  }
   start = () => {
     this.setState({ loading: true });
     setTimeout(() => {

@@ -27,6 +27,25 @@ export default class Menu extends React.Component {
       idollMenuTheme: PropTypes.string,
       mode: PropTypes.string
     };
+    static propTypes = {
+	    defaultOpenKeys: PropTypes.any,
+	    style: PropTypes.object,
+	    defaultSelectedKeys: PropTypes.array,
+	    openKeys: PropTypes.array,
+	    selectedKeys: PropTypes.array,
+      forceSubMenuRender: PropTypes.bool,
+      selectable: PropTypes.bool,
+      multiple: PropTypes.bool,
+      subMenuCloseDelay: PropTypes.number,
+      subMenuOpenDelay: PropTypes.number,
+	    mode: PropTypes.oneOf(['vertical', 'vertical-right', 'horizontal', 'inline']),
+	    theme: PropTypes.oneOf(['dark', 'light']),
+	    onClick: PropTypes.func,
+	    onDeselect: PropTypes.func,
+	    onOpenChange: PropTypes.func,
+	    onSelect: PropTypes.func,
+	    className: PropTypes.string,
+	}
     getChildContext () {
       return {
         idollMenuTheme: this.props.theme,

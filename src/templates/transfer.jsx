@@ -21,7 +21,7 @@ export default class TransferView extends React.Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
-    disabled: false,
+    disabled: true,
   }
 
   handleChange = (nextTargetKeys, direction, moveKeys) => {
@@ -54,8 +54,6 @@ export default class TransferView extends React.Component {
         <h1 className='h1'>基本使用</h1>
         <div style={{marginBottom: 15}}>
           <Switch
-            unCheckedChildren='开启'
-            checkedChildren='禁用'
             checked={disabled}
             onChange={this.handleDisable}
           />
@@ -69,7 +67,7 @@ export default class TransferView extends React.Component {
           onSelectChange={this.handleSelectChange}
           onScroll={this.handleScroll}
           render={item => item.title}
-          disabled={disabled}
+          disabled={!disabled}
           />
       </div>
     )

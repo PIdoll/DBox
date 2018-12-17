@@ -92,7 +92,15 @@
   &-sm {
     .input-sm();
   }
+
+  &-clear-icon {
+    color: #ccc;
+    :hover {
+      color: #999;
+    }
+  }
 }
+
 
 // 只读状态
 .readOnly() {
@@ -378,6 +386,10 @@
     z-index: 2;
     line-height: 0;
     color: @input-color;
+    > :nth-child(2) {
+      margin-left: 2px;
+      transition: none;
+    }
   }
 
   .@{inputClass}-prefix {

@@ -1,11 +1,22 @@
 import React from 'react'
 import Button from '../button'
 import Icon from '../icon'
+import { PropTypes } from 'prop-types';
 import Dropdown from './dropdown'
 import classNames from 'classnames'
 const ButtonGroup = Button.Group;
 
 export default class DropdownButton extends React.Component {
+  static propTypes = {
+    type: PropTypes.string,
+    trigger: PropTypes.array,
+    overlay: PropTypes.any,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+    visible: PropTypes.bool,
+    placement: PropTypes.string,
+    size: PropTypes.string
+}
   state = {
     visible: false
   };
