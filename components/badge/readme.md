@@ -4,6 +4,7 @@
 
 #### **基本徽标展示**
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -18,6 +19,7 @@ const content = {
 
 #### **独立使用**
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -34,6 +36,7 @@ const content = {
 
 #### **封顶数字**
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -57,6 +60,7 @@ const content = {
 
 #### **讨嫌的小红点**
 ```jsx
+import {Badge, Icon} from 'components';
 <div>
 	<Badge>
 	  <Icon type='phone' />
@@ -72,6 +76,7 @@ const content = {
 
 #### **a标签包裹可点击**
 ```jsx
+import {Badge} from 'components';
 <a href='https://www.baidu.com'>
   <Badge count={8}>
     <span className='example' />
@@ -81,6 +86,7 @@ const content = {
 
 #### **用于表示状态的小圆点**
 ```jsx
+import {Badge} from 'components';
 <div>
 	<div style={{ position: 'relative', marginLeft: '10px' }}>
       <Badge dot status='success' />
@@ -102,6 +108,7 @@ const content = {
 
 #### **动态变化** 
 ```jsx
+import {Badge, Button, Switch, Icon} from 'components';
 const ButtonGroup = Button.Group;
 const content = {
   width: 64,

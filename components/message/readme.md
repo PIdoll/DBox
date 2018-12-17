@@ -5,6 +5,7 @@
 #### **基本类型信息展示**
 
 ```jsx
+import { Switch, Message, Button } from 'components';
   let normal = false;
   onChange = () => {
     normal = !normal
@@ -34,6 +35,8 @@
 #### **修改延时**
 
 ```jsx
+import { Switch, Message, Button } from 'components';
+
 let normal = false;
 onChange = () => {
   normal = !normal
@@ -51,6 +54,8 @@ DelayInfo = () => {
 #### **加载中**
 
 ```jsx
+import { Switch, Message, Button } from 'components';
+
 LoadingSuccess = () => {
   const hide = Message.loading('活动加载中..', 10);
     setTimeout(hide, 250000);
@@ -61,6 +66,8 @@ LoadingSuccess = () => {
 #### **Promise接口**
 
 ```jsx
+import { Switch, Message, Button, Icon } from 'components';
+
 let normal = false;
 onChange = () => {
   normal = !normal

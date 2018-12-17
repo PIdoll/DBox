@@ -6,11 +6,13 @@
 
 #### **基本用法**
 ```jsx
+import {Switch} from 'components';
 <Switch defaultChecked></Switch>
 ```
 
 #### **按钮操作**
 ```jsx
+import {Switch, Button} from 'components';
 class SwitchView extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +41,7 @@ class SwitchView extends React.Component {
 #### **两种大小**
 
 ```jsx
+import {Switch} from 'components';
 <div>
 	<Switch defaultChecked />
 	<br />
@@ -49,11 +52,13 @@ class SwitchView extends React.Component {
 
 #### **带有文字的按钮**
 ```jsx
+import {Switch} from 'components';
 <Switch checkedChildren={'1'} unCheckedChildren={'0'} />
 ```
 
 #### **执行中**
 ```jsx
+import {Switch} from 'components';
 <div>
 	<Switch disabled loading defaultChecked />
     <br />

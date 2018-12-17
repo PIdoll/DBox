@@ -7,6 +7,7 @@
 
 ##### **基本用法**
 ```jsx
+import {Tag} from 'components';
 <div>
 	<Tag>标签</Tag>
    <Tag href='https://www.baidu.com'>链接</Tag>
@@ -15,6 +16,7 @@
 
 ##### **多彩标签**
 ```jsx
+import {Tag} from 'components';
 <div>
 	<Tag color='peru'>peru</Tag>
     <Tag color='coral'>coral</Tag>
@@ -29,11 +31,13 @@
 
 ##### **可移除标签**
 ```jsx
+import {Tag} from 'components';
 <Tag closable>可移除标签</Tag>
 ```
 
 ##### **热门标签**
 ```jsx
+import {Tag} from 'components';
 <div>
 	<span>热门话题:</span>
 	<Tag hot>电影</Tag>
@@ -45,7 +49,8 @@
 
 ##### **动态添加和删除标签**
 ```jsx
-const { TagGroup } = require('./index');
+import {Tag} from 'components';
+import {TagGroup} from 'components/tag';
 <TagGroup></TagGroup>
 ```
 
