@@ -31,7 +31,7 @@ class TransferView extends React.Component {
     this.state = {
       targetKeys: oriTargetKeys,
       selectedKeys: [],
-      disabled: false,
+      disabled: true,
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSelectChange = this.handleSelectChange.bind(this);
@@ -67,8 +67,6 @@ class TransferView extends React.Component {
       <div>
         <div style={{marginBottom: 15}}>
           <Switch
-            unCheckedChildren='禁用'
-            checkedChildren='启用'
             checked={disabled}
             onChange={this.handleDisable}
           />
@@ -82,7 +80,7 @@ class TransferView extends React.Component {
           onSelectChange={this.handleSelectChange}
           onScroll={this.handleScroll}
           render={item => item.title}
-          disabled={disabled}
+          disabled={!disabled}
           />
       </div>
     )
