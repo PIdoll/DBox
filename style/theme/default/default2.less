@@ -1,0 +1,105 @@
+@import "../colors/colors.less";
+
+@idoll-prefix             : idoll;
+
+// ----------- Colors ------------
+
+// default colors
+
+@primary-color          : @green-6;
+@success-color          : #3CCB69;
+@warning-color          : #F9AA29;
+@error-color            : #F44336;
+
+// hover colors
+
+@primary-Highlight      : #E7F8F3;
+@success-Highlight      : #EBF9F0;
+@warning-Highlight      : #FEF6EA;
+@error-Highlight        : #FDECEB;
+
+
+// border color
+@primary-border-color   : @primary-color;
+@success-border-color   : @success-color;
+@warning-border-color   : @warning-color;
+@error-border-color     : @error-color;
+
+// ------------ Neutral Colors(中性色) --------------
+
+@shadow                 : rgba(0, 0, 0, 0.10);
+@button-shadow          : rgba(19, 184, 134, 0.20);
+
+// 白色背景
+
+@background-base        : #FFFFFF;
+@background             : #F8F8F8;
+@body-background        : fade(#000, 60%);
+
+// 白色背景字体颜色
+
+@text-color-disable          : fade(#000, 20%);
+@text-color-secondary        : fade(#000, 40%);
+@title                       : fade(#000, 80%);
+
+// 白色背景字体图标颜色
+
+@default-icon           : fade(#000, 40%);
+@disabled-icon          : fade(#000, 20%);
+@hover-icon             : fade(#000, 60%);
+@pressed-icon           : fade(#000, 80%);
+
+// 白色背景边框颜色
+
+@border-color           : #E2E2E2;
+
+
+// 深色背景
+
+@background-base-dark   : #000000;
+@body-background-dark   : fade(#FFFFFF, 80%);
+
+// 深色背景字体颜色
+
+@text-color-disable-dark           : fade(#FFFFFF, 40%);
+@text-color-secondary-dark    : fade(#FFFFFF, 60%);
+@title                        : #FFFFFF;
+
+// 深色背景字体图标颜色
+
+@default-icon-dark           : fade(#FFFFFF, 60%);
+@disabled-icon-dark          : fade(#FFFFFF, 40%);
+@hover-icon-dark             : fade(#FFFFFF, 80%);
+@pressed-icon-dark           : #FFFFFF;
+
+// 深色背景边框颜色
+
+@border-color-dark           : fade(#E2E2E2, 40%);
+
+// ------------ other Colors ---------------
+@disabled                    : #F8F9FC;
+@navbar                      : #2F323B;
+
+// ------------ shadows ----------------
+
+@shadow-small                 : 0 2px 8px 0 @shadow-small;
+@shadow-large                 : 0 8px 16px 0 @shadow;
+@shadow-button                : 0 2px 8px 0 @button-shadow;
+
+// ------------ table ------------------
+
+@table-header-color                 : #FAFAFA;
+
+// ------------ divider -----------------
+
+@divider-color                      : #F5F5F5;
+
+// ------------ border -----------------
+@border-radius-base     : 3px;
+@border-radius-sm       : 2px;
+@border-color-base      : @border;  // base border outline a component
+@border-color-split     : @border;  // split border inside a component
+@border-width-base      : 1px;            // width of the border for a component
+@border-style-base      : solid;          // style of a components border
+@border-style-split     : dash;          // style of a components border
+
