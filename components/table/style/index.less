@@ -95,14 +95,12 @@
     transition: all .3s;
   }
 
-  &-thead > tr,
   &-tbody > tr {
     transition: all .3s;
     &.@{table-prefix-cls}-row-hover,
     &:hover {
-      & > td {
         background: @primary-LightBg;
-      }
+        transition: all .3s;
     }
   }
 

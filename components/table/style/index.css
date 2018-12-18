@@ -101,15 +101,13 @@
   border-bottom: 1px solid #E2E2E2;
   transition: all .3s;
 }
-.idoll-table-thead > tr,
 .idoll-table-tbody > tr {
   transition: all .3s;
 }
-.idoll-table-thead > tr.idoll-table-row-hover > td,
-.idoll-table-tbody > tr.idoll-table-row-hover > td,
-.idoll-table-thead > tr:hover > td,
-.idoll-table-tbody > tr:hover > td {
+.idoll-table-tbody > tr.idoll-table-row-hover,
+.idoll-table-tbody > tr:hover {
   background: #E7F8F3;
+  transition: all .3s;
 }
 .idoll-table-thead > tr:hover {
   background: none;
