@@ -31,9 +31,19 @@
 ```jsx
 import {Icon} from 'components';
 const icons1 = ['step-backward', 'step-forward', 'fast-backward', 'fast-forward', 'shrink', 'arrow-salt', 'down', 'up', 'left', 'right', 'caret-down', 'caret-up', 'caret-left', 'caret-right', 'caret-circle-right', 'caret-circle-left', 'caret-circle-o-right', 'caret-circle-o-left', 'circle-right', 'circle-left', 'circle-o-right', 'circle-o-left', 'double-right', 'double-left', 'verticle-right', 'verticle-left', 'forward', 'backward', 'rollback', 'enter', 'retweet', 'swap', 'swap-left', 'swap-right', 'arrow-right', 'arrow-up', 'arrow-down', 'arrow-left', 'play-circle', 'play-circle-o', 'circle-up', 'circle-down', 'circle-o-up', 'circle-o-down', 'caret-circle-o-up', 'caret-circle-o-down', 'caret-circle-up', 'caret-circle-down'];
-icons1.map(function(val,index){
-  return <Icon type={val} key={val} />         
+class IconView extends React.Component {
+  render() {
+    return (
+      icons1.map(function(val,index){
+  return <li><Icon type={val} key={val} /></li>        
 })
+    )
+  }
+}
+// icons1.map(function(val,index){
+//   return <li><Icon type={val} key={val} /></li>        
+// })
+<IconView />
 ```
 
 #### **二. 提示建议性图标**
