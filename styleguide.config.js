@@ -178,7 +178,6 @@ module.exports = {
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
             path.resolve(__dirname, './components/steps/index.jsx'),
-            path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
