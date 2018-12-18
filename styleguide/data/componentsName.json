@@ -1,0 +1,19 @@
+{ "General": [
+    { "Id": 1, "Button":"按钮" },
+    { "Id": 2, "Icon": "图标" }
+  ],
+  "Layout": [
+    { "Id": 1, "Grid":"栅格" },
+    { "Id": 2, "Layout":"布局" }
+  ],
+  "Navigation": [
+    { "Id": 1, "Affix":"固钉" },
+    { "Id": 2, "Dropdown":"下拉框" },
+    { "Id": 3, "Pagination":"分页" },
+    { "Id": 4, "Breadcrumb":"面包屑" },
+    { "Id": 5, "Steps":"步骤条" },
+    { "Id": 6, "Anchor":"锚点" },
+    { "Id": 7, "Menu":"菜单" }
+  ]
+
+}

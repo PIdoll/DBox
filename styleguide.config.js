@@ -149,7 +149,7 @@ module.exports = {
     },
     {
       name: 'Typography',
-      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
+      description: '字体是产品界面设计中感知性设计模式的要素之一，是设计模式可视化的内容和完成工作的主要方式，科学有序的字体系统可以有效提升产品的阅读体验。因此我们在进行大量的尝试和研究对比主流设计体系之后，制定出一套（以下）系统字体来处理 DBox 产品中所有标准字体，以确保使用 DBox 设计体系产出的产品或系统具有阅读清晰、层次分明和性能良好的特点。',
       content: 'components/typography/readme.md'
     },
     {
@@ -223,7 +223,7 @@ module.exports = {
           ])
         },
         {
-          name: 'Feedback',
+          name: 'Feedback(反馈)',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
           path.resolve(__dirname, './components/modal/index.jsx'),
