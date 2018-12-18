@@ -107,7 +107,7 @@
 .idoll-table-tbody > tr.idoll-table-row-hover,
 .idoll-table-tbody > tr:hover {
   background: #E7F8F3;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .idoll-table-thead > tr:hover {
   background: none;
