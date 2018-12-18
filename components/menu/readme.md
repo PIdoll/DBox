@@ -306,3 +306,12 @@ class MenuView extends React.Component {
 #### **Menu.Divider**
 
 菜单项分割线，只用在弹出菜单内。
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

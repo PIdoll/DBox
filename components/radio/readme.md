@@ -305,3 +305,11 @@ const RadioButton = Radio.RadioButton;
 
 
 <style>.idoll-steps{margin-bottom: 10px}</style>
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

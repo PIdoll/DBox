@@ -152,14 +152,11 @@ const ProgressView = () => {
 | width `(type=circle)` | 圆形进度条画布宽度，单位 px | number | 132 |
 <style>.idoll-progress{margin:0 10px 10px 0}</style>
 
-``` jsx noeditor
-import { BackTop, Anchor } from 'components';
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
 <div>
-<BackTop visibilityHeight={30}/>
-<Anchor>
-  <Link href='#components-anchor-demo-1' title='项目一' />
-  <Link href='#components-anchor-demo-2' title='项目二' />
-</Anchor>
-
-<div/>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
 ```
+

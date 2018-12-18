@@ -231,9 +231,6 @@ class PopoverView extends React.Component {
 <PopoverView />
 
 
-
-
-
 ```
 
 
@@ -248,3 +245,12 @@ class PopoverView extends React.Component {
 #### **Action**
 
 请确保 `Popover` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

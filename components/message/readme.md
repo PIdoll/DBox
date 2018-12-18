@@ -137,3 +137,12 @@ Message.config({
 | duration | 默认自动关闭延时 | number | 3 |
 | maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - |
 | top | 消息距离顶部的位置 | number | 24 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

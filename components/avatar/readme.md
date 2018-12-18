@@ -97,3 +97,12 @@ class AvatarView extends React.Component {
 | src | 图片类头像的资源地址 | string | - |
 | alt | 图片无法显示时的替代文本 | string | - |
 | onError | 给定src属性但未赋值的事件，返回false会关闭组件默认的fallback行为 | () => boolean | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -40,7 +40,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **自定义选项**
@@ -87,8 +87,8 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />  
-``` 
+<AutoCompleteExamplDemo />
+```
 
 #### **不区分大小写**
 不区分大小写的 `AutoComplete`。
@@ -120,7 +120,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **查询模式-确定类目**
@@ -206,7 +206,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **查询模式-不确定类目**
@@ -233,7 +233,7 @@ class AutoCompleteExamplDemo extends React.Component {
             dataSource: value ? this.searchResult(value) : [],
         });
     }
-    
+
     onSelect(value){
         console.log('onSelect', value);
     }
@@ -285,7 +285,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **AutoComplete**
@@ -317,4 +317,11 @@ class AutoCompleteExamplDemo extends React.Component {
 | focus() | 获取焦点 |
 | blur() | 移除焦点 |
 
-<!-- <style> .idoll-select-dropdown-menu-item.show-all {text-align:center;cursor:default}</style>  -->
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

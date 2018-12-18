@@ -92,3 +92,12 @@ function itemRender(route, params, routes, paths) {
 
 return <Breadcrumb itemRender={itemRender} routes={routes}/>;
 ```
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

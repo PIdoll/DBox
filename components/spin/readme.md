@@ -139,3 +139,13 @@ class SpinView extends React.Component {
 | tip | 当作为包裹元素时，可以自定义描述文案 | string | - |
 | wrapperClassName | 包装器的类属性 | string | - |
 | color | 在深色背景下，spin的四个边框颜色自定义 | Array |  |
+
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

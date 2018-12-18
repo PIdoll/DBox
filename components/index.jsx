@@ -51,6 +51,7 @@ import TreeSelect from './tree-select';
 import Upload from './upload';
 import Typography from './typography';
 import Version from './version';
+import PrevPage from './prevPage';
 
 
 export { Affix };
@@ -105,4 +106,5 @@ export { TreeSelect };
 export { Upload };
 export { Typography };
 export { Version };
+export { PrevPage };
 

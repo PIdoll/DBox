@@ -223,3 +223,12 @@ class StepsView extends React.Component {
 | icon | 步骤图标的类型，可选 | string | ReactNode |
 | title | 标题 | string | ReactNode |
 
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

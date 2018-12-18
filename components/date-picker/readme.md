@@ -305,3 +305,12 @@ disabledRangeTime = (_, type) => {
 | value | 日期 | moment[] | 无 |
 | onCalendarChange | 待选日期发生变化的回调 | function(dates: moment, moment, dateStrings: string, string) | 无 |
 | onChange | 日期范围发生变化的回调 | function(dates: moment, moment, dateStrings: string, string) | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
