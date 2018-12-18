@@ -141,3 +141,12 @@ function callback(key) {
 | header | 面板头内容 | string/ReactNode | 无|
 | forceRender | 被隐藏时是否渲染DOM结构 | bool | false|
 | key | 对应activeKey | string | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

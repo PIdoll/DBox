@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode development",
-    "styleguide": "NODE_ENV=development styleguidist server",
-    "styleguide:build": "NODE_ENV=production styleguidist build"
+    "doc": "NODE_ENV=development styleguidist server",
+    "doc:build": "NODE_ENV=production styleguidist build"
   },
   "keywords": [
     "idoll",

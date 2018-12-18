@@ -305,3 +305,12 @@ function handleMenu1Click(e) {
 | visible     | 菜单是否显示 | Bool   | 无           |
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | size     | 按钮菜单大小和Button一致 | string (`large` `small`) | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

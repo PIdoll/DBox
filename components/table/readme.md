@@ -1196,3 +1196,12 @@ return <Table rowKey="uid" />;
 // 或
 return <Table rowKey={record => record.uid} />;
 ```
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

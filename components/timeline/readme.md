@@ -80,3 +80,12 @@ import { Timeline,Icon } from 'components';
 |----------|------------------------------------------|------------|-------|
 | color   | 指定圆圈颜色 `blue, red, green`，或自定义的色值 | string | blue  |
 | dot   | 自定义时间轴点 | React.Element | -  |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

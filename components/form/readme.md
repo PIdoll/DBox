@@ -95,7 +95,7 @@ class RegistrationForm extends React.Component {
 
   constructor(){
     super();
-    this.validateToNextPassword = this.validateToNextPassword.bind(this); 
+    this.validateToNextPassword = this.validateToNextPassword.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.compareToFirstPassword = this.compareToFirstPassword.bind(this);
     this.handleConfirmBlur = this.handleConfirmBlur.bind(this);
@@ -515,13 +515,13 @@ class AdvancedSearchForm extends React.Component {
         onSubmit={this.handleSearch}
       >
         <Row gutter={24}>{this.getFields()}</Row>
-        
+
         <Row>
           <Col span={24} style={{ textAlign: 'right' }}>
             <Button type="primary" htmlType="submit">查询</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               清除
-            </Button>   
+            </Button>
             <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.toggle}>
               {this.state.expand ? <span> 收起 <Icon type= 'up'/></span>: <span> 更多 <Icon type= 'down'/> </span>}
             </a>
@@ -745,7 +745,7 @@ class modalForm extends React.Component {
         onCancel={onCancel}
         onOk={onCreate}
       >
-        
+
         <Form onSubmit={this.handleSubmit} style={{width: '300px'}}>
           <FormItem  label='账号' {...formItemLayout}>
             {getFieldDecorator('userName', {
@@ -764,7 +764,7 @@ class modalForm extends React.Component {
 
             <FormItem label='确认密码' {...formItemLayout}>
             {getFieldDecorator('confirmPassword', {
-              rules: [{ required: true, message: '不能为空!' 
+              rules: [{ required: true, message: '不能为空!'
               }, {validator: this.compareToFirstPassword,
                 }],
             })(
@@ -1390,11 +1390,11 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
    }
    ```
 
-#### **  Form.createFormField ** 
+#### **  Form.createFormField **
 
 用于标记 `mapPropsToFields` 返回的表单域数据。
 
-#### ** this.props.form.getFieldDecorator(id, options) ** 
+#### ** this.props.form.getFieldDecorator(id, options) **
 
 经过 `getFieldDecorator` 包装的控件，表单控件会自动添加 `value`（或 `valuePropName` 指定的其他属性） `onChange`（或 `trigger` 指定的其他属性），数据同步将被 Form 接管，这会导致以下结果：
 
@@ -1402,12 +1402,12 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 2. 你不能用控件的 `value` `defaultValue` 等属性来设置表单域的值，默认值可以用 `getFieldDecorator` 里的 `initialValue`。
 3. 你不应该用 `setState`，可以使用 `this.props.form.setFieldsValue` 来动态改变表单值。
 
-#### ** 特别注意 ** 
+#### ** 特别注意 **
 
 1. `getFieldDecorator` 不能用于装饰纯函数组件。
 2. 如果使用的是 `react@<15.3.0`，则 `getFieldDecorator` 调用不能位于纯函数组件中: <https://github.com/facebook/react/pull/6534>
 
-#### ** getFieldDecorator(id, options) 参数 ** 
+#### ** getFieldDecorator(id, options) 参数 **
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -1423,7 +1423,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 
 更多参数请查看 [rc-form option](https://github.com/react-component/form#option-object)。
 
-#### ** Form.Item  ** 
+#### ** Form.Item  **
 
 注意：
 
@@ -1434,7 +1434,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 | --- | --- | --- | --- |
 | colon | 配合 label 属性使用，表示是否显示 label 后面的冒号 | boolean | true |
 | extra | 额外的提示信息，和 help 类似，当需要错误信息和提示文案同时出现时，可以使用这个。 | string/ReactNode |  |
-| formType | 表单类型，目前有紧凑型和默认型，紧凑型设置为 `compact`  | string | 
+| formType | 表单类型，目前有紧凑型和默认型，紧凑型设置为 `compact`  | string |
 | hasFeedback | 配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用 | boolean | false |
 | help | 提示信息，如不设置，则会根据校验规则自动生成 | string/ReactNode |  |
 | label | label 标签的文本 | string/ReactNode |  |
@@ -1460,3 +1460,12 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 | whitespace | 必选时，空格是否会被视为错误 | boolean | `false` |
 
 更多高级用法可研究 [async-validator](https://github.com/yiminghe/async-validator)。
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -78,3 +78,10 @@ ReactDOM.render(<IconSet className="icons" icons={icons3} key="icons3" />, mount
 ```
 
 
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

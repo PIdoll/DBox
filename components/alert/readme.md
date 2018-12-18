@@ -215,3 +215,11 @@ import { Alert } from 'components';
 | showIcon | 是否显示辅助图标 | boolean | false，banner 模式下默认值为 true |
 | type | 指定警告提示的样式，有四种选择 success、info、warn、error | string | info，banner 模式下默认值为 warn |
 | onClose | 关闭时触发的回调函数 | (e: MouseEvent) => void | 无 |
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

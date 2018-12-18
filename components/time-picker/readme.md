@@ -60,3 +60,12 @@ import moment from 'moment';
 | onChange | 时间发生变化的回调 | function(time: moment, timeString: string): void | 无 |
 | onOpenChange | 面板打开/关闭时的回调 | (open: boolean): void | 无 |
 | value | 当前时间 | moment | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -163,3 +163,12 @@ const ButtonGroup = Button.Group;
 | text | 设置按钮为文字按钮 | boolean | `false` |
 | type | 设置按钮类型，可选值为 `default`、 `primary`、 `secondary`、 `disabled`、 `dashed`、 `danger`或者不设 | string | - |
 | onClick | `click` 事件的 handler | function | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -376,3 +376,12 @@ Layout
 | hasSider    | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动    | boolean             |  - |
 | style    | 样式    | object             |  - |
 -具体API可参考使用的组件API
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
