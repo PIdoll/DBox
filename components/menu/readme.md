@@ -20,7 +20,7 @@ class MenuView extends React.Component {
   handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.indexkey,
+      current: e.key,
     });
   }
   render() {
@@ -31,15 +31,15 @@ class MenuView extends React.Component {
       mode='horizontal'
       theme='dark'
     >
-      <Menu.Item indexkey='home'>首页</Menu.Item>
-      <Menu.Item indexkey='platform' disabled>工作台</Menu.Item>
-      <SubMenu indexkey='bars' title={<span>订单中心</span>}>
-        <Menu.Item indexkey='1'>子菜单一</Menu.Item>
-        <Menu.Item indexkey='2'>子菜单二</Menu.Item>
-        <Menu.Item indexkey='3'>子菜单三</Menu.Item>
-        <Menu.Item indexkey='4'>子菜单四</Menu.Item>
+      <Menu.Item key='home'>首页</Menu.Item>
+      <Menu.Item key='platform' disabled>工作台</Menu.Item>
+      <SubMenu key='bars' title={<span>订单中心</span>}>
+        <Menu.Item key='1'>子菜单一</Menu.Item>
+        <Menu.Item key='2'>子菜单二</Menu.Item>
+        <Menu.Item key='3'>子菜单三</Menu.Item>
+        <Menu.Item key='4'>子菜单四</Menu.Item>
       </SubMenu>
-      <Menu.Item indexkey='tool'>
+      <Menu.Item key='tool'>
         <a href='https://www.baidu.com' target='_blank' rel='noopener noreferrer'>配置管理</a>
       </Menu.Item>
     </Menu>
@@ -51,13 +51,13 @@ class MenuView extends React.Component {
 
 #### **手风琴菜单**
 ```jsx
-import {Menu} from 'components';
+import {Menu, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
-	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
   constructor(props) {
     super(props);
 	  this.state = {
+      openKeys: ['sub_1'],
 	    current: 'home'
 	  }
 	  this.onOpenChange = this.onOpenChange.bind(this)
@@ -117,12 +117,12 @@ class MenuView extends React.Component {
       mode: 'inline',
 	  }
 	  this.handleClick = this.handleClick.bind(this)
-	  this.hangeMode = this.hangeMode.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.indexkey,
+      current: e.key,
     });
   }
   changeMode (value) {
@@ -145,18 +145,18 @@ class MenuView extends React.Component {
         defaultSelectedKeys={['5']}
         mode={this.state.mode}
       >
-      <Menu.Item indexkey='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-      <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-        <Menu.Item indexkey='6'>子菜单一</Menu.Item>
-        <Menu.Item indexkey='7'>子菜单二</Menu.Item>
-        <Menu.Item indexkey='8'>子菜单三</Menu.Item>
-        <Menu.Item indexkey='9'>子菜单四</Menu.Item>
+      <Menu.Item key='5'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+      <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+        <Menu.Item key='6'>子菜单一</Menu.Item>
+        <Menu.Item key='7'>子菜单二</Menu.Item>
+        <Menu.Item key='8'>子菜单三</Menu.Item>
+        <Menu.Item key='9'>子菜单四</Menu.Item>
       </SubMenu>
-      <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-        <Menu.Item indexkey='10'>子菜单五</Menu.Item>
-        <Menu.Item indexkey='11'>子菜单六</Menu.Item>
-        <Menu.Item indexkey='12'>子菜单七</Menu.Item>
-        <Menu.Item indexkey='13'>子菜单八</Menu.Item>
+      <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+        <Menu.Item key='10'>子菜单五</Menu.Item>
+        <Menu.Item key='11'>子菜单六</Menu.Item>
+        <Menu.Item key='12'>子菜单七</Menu.Item>
+        <Menu.Item key='13'>子菜单八</Menu.Item>
       </SubMenu>
       <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
         <Menu.Item key='14'>子菜单九</Menu.Item>
@@ -186,13 +186,13 @@ class MenuView extends React.Component {
 	    mode: 'inline',
 	  }
 	  this.handleClick = this.handleClick.bind(this)
-	  this.hangeMode = this.hangeMode.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
 	  this.changeTheme = this.changeTheme.bind(this)
   };
    handleClick (e) {
     console.log('click ', e);
     this.setState({
-      current: e.indexkey,
+      current: e.key,
     });
   }
   changeTheme (value) {
