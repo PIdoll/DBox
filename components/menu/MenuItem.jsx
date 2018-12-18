@@ -7,7 +7,7 @@ import classNames from 'classnames';
 export default class MenuItem extends React.Component {
   static propTypes = {
     disabled: PropTypes.bool,
-    key: PropTypes.string,
+    indexkey: PropTypes.string,
 }
   static contextTypes = {
     mode: PropTypes.string,

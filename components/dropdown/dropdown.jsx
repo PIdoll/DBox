@@ -12,14 +12,13 @@ export default class Dropdown extends React.Component {
   }
   static propTypes = {
     placement: PropTypes.string,
-    trigger: PropTypes.oneOf(['click', 'hover']),
+    trigger: PropTypes.array,
     overlay: PropTypes.any,
     disabled: PropTypes.bool,
-    getPopupContainer: PropTypes.func,
     visible: PropTypes.bool,
-    onVisibleChange: PropTypes.fuc,
-  icon: PropTypes.string,
-  block: PropTypes.bool
+    onVisibleChange: PropTypes.func,
+    icon: PropTypes.string,
+    block: PropTypes.bool
 }
 
   render() {
