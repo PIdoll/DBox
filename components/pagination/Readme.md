@@ -7,7 +7,7 @@
 - 不设置defaultPageSize时默认为每页10条数据；
 ```jsx
 import {Pagination} from 'components';
-<Pagination defaultCurrent={1} total={50}></Pagination>
+<Pagination defaultCurrent={1} current={5} total={50}></Pagination>
 ```
 
 ##### **更多分页**

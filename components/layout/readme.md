@@ -78,7 +78,7 @@ class LayoutView extends React.Component {
 	        <Menu.Item key='5'>子菜单三</Menu.Item>
 	        <Menu.Item key='6'>子菜单四</Menu.Item>
 	      </SubMenu>
-	      <Menu.Item key='tool'>
+	      <Menu.Item indexkey='tool'>
 	        <a href='https://www.baidu.com' target='_blank'><div>配置管理</div></a>
 	      </Menu.Item>
 	    </Menu>
@@ -120,9 +120,10 @@ class LayoutView extends React.Component {
     const panes = [
       { title: <Icon type='home' />, content: '首页', key: '7' }
     ];
+    rootSubmenuKeys = ['item_1', 'item_2', 'item_3'];
     this.state = {
       flag2: false,
-      current: 'platform',
+      openKeys: ['item_1'],
       modeMenu2: 'inline',
       mode: 'top',
       panes,
@@ -130,6 +131,7 @@ class LayoutView extends React.Component {
     }
     this.handleClickBread = this.handleClickBread.bind(this)
     this.changeModel2 = this.changeModel2.bind(this)
+    this.onOpenChange = this.onOpenChange.bind(this)
   };
   handleClickBread (e) {
     this.setState({
@@ -142,6 +144,13 @@ class LayoutView extends React.Component {
       flag2: !this.state.flag2,
     })
   }
+  onOpenChange (openKeys) {
+    const latestOpenKey = openKeys.find(i => this.state.openKeys.indexOf(i) === -1);
+    console.log(latestOpenKey)
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+  }
   render() {
   return (
     <div className='layout-inlineNav'>
@@ -151,23 +160,24 @@ class LayoutView extends React.Component {
           <Menu
             onClick={this.handleClickBread}
             defaultSelectedKeys={['8']}
-            defaultOpenKeys={['sub1']}
+            openKeys={this.state.openKeys}
+            onOpenChange={this.onOpenChange}
             mode={this.state.modeMenu2}
     >
             <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-            <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
               <Menu.Item key='8'>子菜单一</Menu.Item>
               <Menu.Item key='9'>子菜单二</Menu.Item>
               <Menu.Item key='10'>子菜单三</Menu.Item>
               <Menu.Item key='11'>子菜单四</Menu.Item>
             </SubMenu>
-            <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
               <Menu.Item key='12'>子菜单五</Menu.Item>
               <Menu.Item key='13'>子菜单六</Menu.Item>
               <Menu.Item key='14'>子菜单七</Menu.Item>
               <Menu.Item key='15'>子菜单八</Menu.Item>
             </SubMenu>
-            <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
               <Menu.Item key='16'>子菜单九</Menu.Item>
               <Menu.Item key='17'>子菜单十</Menu.Item>
               <Menu.Item key='18'>子菜单十一</Menu.Item>
@@ -218,6 +228,7 @@ const menu = (
     <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
+const array = [];
 class LayoutView extends React.Component {
   constructor(props) {
     super(props);
@@ -225,6 +236,7 @@ class LayoutView extends React.Component {
       { title: <Icon type='home' />, content: '首页', key: '7' }
     ];
     this.state = {
+      openKeys: ['sub1'],
       flag: false,
       current: 'platform',
       modeMenu: 'inline',
@@ -238,8 +250,16 @@ class LayoutView extends React.Component {
     this.onEdit = this.onEdit.bind(this)
     this.add = this.add.bind(this)
     this.remove = this.remove.bind(this)
+    this.onOpenChange = this.onOpenChange.bind(this)
   };
+  onOpenChange (openKeys) {
+    const latestOpenKey = openKeys.find(i => this.state.openKeys.indexOf(i) === -1);
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+  }
   handleClickTabs (e) {
+    array.push(...e.keyPath)
     this.setState({
       current: e.key,
       activeKey: e.key
@@ -249,6 +269,7 @@ class LayoutView extends React.Component {
     } else {
       this.add(e.key, e.item.props.title)
     }
+    console.log(array)
   }
   changeModel () {
     this.setState({
@@ -257,7 +278,8 @@ class LayoutView extends React.Component {
     })
   }
   onChange (activeKey) {
-    this.setState({activeKey});
+    const id = array.indexOf(activeKey) + 1
+    this.setState({ activeKey, openKeys: [array[id]] });
   }
   onEdit (targetKey, action) {
     this[action](targetKey);
@@ -280,7 +302,11 @@ class LayoutView extends React.Component {
     if (lastIndex >= 0 && activeKey === targetKey) {
       activeKey = panes[lastIndex].key;
     }
-    this.setState({panes, activeKey});
+    const id = array.indexOf(activeKey) + 1
+    this.setState({
+      panes,
+      activeKey,
+      openKeys: [array[id]]});
   }
   render() {
   return (
@@ -292,7 +318,8 @@ class LayoutView extends React.Component {
             onClick={this.handleClickTabs}
             defaultSelectedKeys={['7']}
             selectedKeys={[this.state.activeKey]}
-            defaultOpenKeys={['sub1']}
+            openKeys={this.state.openKeys}
+            onOpenChange={this.onOpenChange}
             mode={this.state.modeMenu}
     >
             <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>

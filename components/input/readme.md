@@ -5,11 +5,11 @@
 - 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
 
 #### **基本使用**
-可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态
+可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态，设置`clearable` 为支持可清除。
 ```jsx
 import { Input } from 'components';
 <div>
-    <Input type='text' placeholder='请输入' style={{width: '200px'}} /><br /><br />
+    <Input type='text' placeholder='请输入' style={{width: '200px'}} clearable/><br /><br />
     <Input type='text' disabled placeholder='请输入' style={{width: '200px'}} /><br /><br />
     <Input type='text' readOnly value='请输入' style={{width: '200px'}} />
 </div>
@@ -148,6 +148,96 @@ const Textarea = Input.Textarea;
 </div>
 ```
 
+#### **输入时格式化展示**
+结合 `Tooltip` 组件，实现一个数值输入框，方便内容超长时的全量展现。
+```jsx
+import { Input, Tooltip} from 'components';
+
+function formatNumber(value) {
+  value += '';
+  const list = value.split('.');
+  const prefix = list[0].charAt(0) === '-' ? '-' : '';
+  let num = prefix ? list[0].slice(1) : list[0];
+  let result = '';
+  while (num.length > 3) {
+    result = `,${num.slice(-3)}${result}`;
+    num = num.slice(0, num.length - 3);
+  }
+  if (num) {
+    result = num + result;
+  }
+  return `${prefix}${result}${list[1] ? `.${list[1]}` : ''}`;
+}
+
+class NumericInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+  }
+  onChange(e){
+    const { value } = e.target;
+    const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
+    if ((!Number.isNaN(value) && reg.test(value)) || value === '' || value === '-') {
+      this.props.onChange(value);
+    }
+  }
+
+  // '.' at the end or only '-' in the input box.
+  onBlur(){
+    const { value, onBlur, onChange } = this.props;
+    if (value.charAt(value.length - 1) === '.' || value === '-') {
+      onChange({ value: value.slice(0, -1) });
+    }
+    if (onBlur) {
+      onBlur();
+    }
+  }
+
+  render() {
+    const { value } = this.props;
+    const title = value ? (
+      <span>
+        {value !== '-' ? formatNumber(value) : '-'}
+      </span>
+    ) : '请输入数字';
+    return (
+      <Tooltip
+        trigger={['focus']}
+        title={title}
+        placement="topLeft"
+        overlayClassName="numeric-input"
+      >
+        <Input
+          {...this.props}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          placeholder="请输入数字"
+          maxLength="25"
+        />
+      </Tooltip>
+    );
+  }
+}
+
+class NumericInputDemo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(value){
+    this.setState({ value });
+  }
+
+  render() {
+    return <NumericInput style={{ width: 120 }} value={this.state.value} onChange={this.onChange} />;
+  }
+}
+
+<NumericInputDemo />
+```
 
 #### **Input**
 
@@ -157,6 +247,7 @@ const Textarea = Input.Textarea;
 | addonBefore | 带标签的 input，设置前置标签 | string|ReactNode |  |
 | afterlength | 后置标签宽度 | string|  |
 | beforelength | 前置标签宽度 | string| |
+| clearable | 输入框可删除 | boolean| false|
 | defaultValue | 输入框默认内容 | string |  |
 | disabled | 是否禁用状态，默认为 false | boolean | false |
 | id | 输入框的 id | string |  |

@@ -15,7 +15,7 @@ class MenuView extends React.Component {
 	  this.state = {
 	    current: 'home'
 	  }
-    this.handleClick = this.handleClick.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
@@ -48,6 +48,62 @@ class MenuView extends React.Component {
 }
 <MenuView />
 ```
+
+#### **手风琴菜单**
+```jsx
+import {Menu} from 'components';
+const SubMenu = Menu.SubMenu;
+class MenuView extends React.Component {
+	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
+  constructor(props) {
+    super(props);
+	  this.state = {
+	    current: 'home'
+	  }
+	  this.onOpenChange = this.onOpenChange.bind(this)
+  };
+  onOpenChange (value) {
+    const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+  }
+  render() {
+  return (
+        <Menu
+          onClick={this.handleClick}
+          defaultSelectedKeys={['55']}
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
+          mode='inline'
+        >
+          <Menu.Item key='55'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <SubMenu key='sub_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <Menu.Item key='56'>子菜单一</Menu.Item>
+            <Menu.Item key='57'>子菜单二</Menu.Item>
+            <Menu.Item key='58'>子菜单三</Menu.Item>
+            <Menu.Item key='59'>子菜单四</Menu.Item>
+          </SubMenu>
+          <SubMenu key='sub_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <Menu.Item key='60'>子菜单五</Menu.Item>
+            <Menu.Item key='61'>子菜单六</Menu.Item>
+            <Menu.Item key='62'>子菜单七</Menu.Item>
+            <Menu.Item key='63'>子菜单八</Menu.Item>
+          </SubMenu>
+          <SubMenu key='sub_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <Menu.Item key='64'>子菜单九</Menu.Item>
+            <Menu.Item key='65'>子菜单十</Menu.Item>
+            <Menu.Item key='66'>子菜单十一</Menu.Item>
+            <Menu.Item key='67'>子菜单十二</Menu.Item>
+          </SubMenu>
+        </Menu>
+  )
+}
+}
+<MenuView />
+```
+
+
 #### **内嵌侧栏导航**
 
 ```jsx
@@ -60,8 +116,8 @@ class MenuView extends React.Component {
       current: 'home',
       mode: 'inline',
 	  }
-    this.handleClick = this.handleClick.bind(this)
-    this.changeMode = this.changeMode.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
+	  this.hangeMode = this.hangeMode.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
@@ -102,11 +158,11 @@ class MenuView extends React.Component {
         <Menu.Item indexkey='12'>子菜单七</Menu.Item>
         <Menu.Item indexkey='13'>子菜单八</Menu.Item>
       </SubMenu>
-      <SubMenu indexkey='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-        <Menu.Item indexkey='14'>子菜单九</Menu.Item>
-        <Menu.Item indexkey='15'>子菜单十</Menu.Item>
-        <Menu.Item indexkey='16'>子菜单十一</Menu.Item>
-        <Menu.Item indexkey='17'>子菜单十二</Menu.Item>
+      <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+        <Menu.Item key='14'>子菜单九</Menu.Item>
+        <Menu.Item key='15'>子菜单十</Menu.Item>
+        <Menu.Item key='16'>子菜单十一</Menu.Item>
+        <Menu.Item key='17'>子菜单十二</Menu.Item>
       </SubMenu>
     </Menu>
   </div>
@@ -129,9 +185,9 @@ class MenuView extends React.Component {
       theme: 'light',
 	    mode: 'inline',
 	  }
-    this.changeMode = this.changeMode.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-    this.changeTheme = this.changeTheme.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
+	  this.hangeMode = this.hangeMode.bind(this)
+	  this.changeTheme = this.changeTheme.bind(this)
   };
    handleClick (e) {
     console.log('click ', e);
@@ -170,26 +226,26 @@ class MenuView extends React.Component {
         onClick={this.handleClick}
         mode={this.state.mode}
         defaultSelectedKeys={['21']}
-        defaultOpenKeys={['sub1']}
+        defaultOpenKeys={['sub11']}
       >
-        <Menu.Item indexkey='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-        <SubMenu indexkey='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-          <Menu.Item indexkey='22'>子菜单五</Menu.Item>
-          <Menu.Item indexkey='23'>子菜单六</Menu.Item>
-          <Menu.Item indexkey='24'>子菜单七</Menu.Item>
-          <Menu.Item indexkey='25'>子菜单八</Menu.Item>
+        <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='sub11' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item key='22'>子菜单五</Menu.Item>
+          <Menu.Item key='23'>子菜单六</Menu.Item>
+          <Menu.Item key='24'>子菜单七</Menu.Item>
+          <Menu.Item key='25'>子菜单八</Menu.Item>
         </SubMenu>
-        <SubMenu indexkey='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-          <Menu.Item indexkey='26'>子菜单九</Menu.Item>
-          <Menu.Item indexkey='27'>子菜单十</Menu.Item>
-          <Menu.Item indexkey='28'>子菜单十一</Menu.Item>
-          <Menu.Item indexkey='29'>子菜单十二</Menu.Item>
+        <SubMenu key='sub12' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item key='26'>子菜单九</Menu.Item>
+          <Menu.Item key='27'>子菜单十</Menu.Item>
+          <Menu.Item key='28'>子菜单十一</Menu.Item>
+          <Menu.Item key='29'>子菜单十二</Menu.Item>
         </SubMenu>
-        <SubMenu indexkey='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-          <Menu.Item indexkey='30'>子菜单九</Menu.Item>
-          <Menu.Item indexkey='31'>子菜单十</Menu.Item>
-          <Menu.Item indexkey='32'>子菜单十一</Menu.Item>
-          <Menu.Item indexkey='33'>子菜单十二</Menu.Item>
+        <SubMenu key='sub13' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item key='30'>子菜单九</Menu.Item>
+          <Menu.Item key='31'>子菜单十</Menu.Item>
+          <Menu.Item key='32'>子菜单十一</Menu.Item>
+          <Menu.Item key='33'>子菜单十二</Menu.Item>
         </SubMenu>
       </Menu>
 	</div>
@@ -228,7 +284,7 @@ class MenuView extends React.Component {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | disabled | 是否禁用 | boolean | false |
-| indexkey | item 的唯一标志 | string |  |
+| key | item 的唯一标志 | string |  |
 
 #### **Menu.SubMenu**
 

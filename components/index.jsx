@@ -15,6 +15,7 @@ import Collapse from './collapse';
 import DatePicker from './date-picker';
 import Divider from './divider';
 import Dropdown from './dropdown';
+import Drawer from './drawer';
 import Form from './form';
 import Col from './grid/col';
 import Row from './grid/row';
@@ -48,8 +49,8 @@ import Tree from './tree';
 import Transfer from './transfer';
 import TreeSelect from './tree-select';
 import Upload from './upload';
-import Color from './color';
 import Typography from './typography';
+import Version from './version';
 
 
 export { Affix };
@@ -69,6 +70,7 @@ export { Collapse };
 export { DatePicker };
 export { Divider };
 export { Dropdown };
+export { Drawer };
 export { Form };
 export { Row, Col };
 export { Icon };
@@ -101,6 +103,6 @@ export { Tree };
 export { Transfer };
 export { TreeSelect };
 export { Upload };
-export { Color };
 export { Typography };
+export { Version };
 

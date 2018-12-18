@@ -16,8 +16,6 @@ module.exports = {
     text: 'Folk me on Github'
   },
   ignore: ['**/*-test.jsx'],
-  // template: path.resolve(__dirname, './styleguide/index.html'),
-  // 每页渲染一个部分或组件
   pagePerSection: true,
   theme: {
     baseBackground: '#fdfdfc',
@@ -145,9 +143,9 @@ module.exports = {
   },
   sections: [
     {
-      name: 'Color',
-      description: '由于设计过程中使用的颜色命名与开发过程中使用的颜色命名会有区别，这里将二者进行匹配编码，便于开发引用相应颜色。',
-      content: './components/color/readme.md'
+      name: 'Version',
+      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
+      content: 'components/version/readme.md'
     },
     {
       name: 'Typography',
@@ -162,6 +160,7 @@ module.exports = {
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/color/index.jsx'),
           ])
         },
         {
@@ -179,7 +178,6 @@ module.exports = {
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
             path.resolve(__dirname, './components/steps/index.jsx'),
-            path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/anchor/index.jsx'),
             path.resolve(__dirname, './components/menu/index.jsx'),
           ])
@@ -214,7 +212,7 @@ module.exports = {
           //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-          //   path.resolve(__dirname, './components/list/list.jsx'),
+          //  path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
@@ -261,8 +259,9 @@ module.exports = {
           ]
         },
         {
-          test: /\.jsx$/,
-          loaders: 'babel-loader'
+          test: /\.(jsx|js|mb)$/,
+          loaders: 'babel-loader',
+          exclude: path.resolve(__dirname, 'node_modules'),
         },
         {
           test: /\.(png|svg|jpg|gif|webp|ico)$/,

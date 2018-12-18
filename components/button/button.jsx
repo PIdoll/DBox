@@ -55,7 +55,7 @@ export default class Button extends React.Component {
 		return React.Children.count(children) === 1 && !icon && sizeCls !== 'sm';
 	  }
 	render() {
-		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, block, ...others } = this.props;
+		const { type, text, shape, size, className, htmlType, children, icon, loading, ghost, prefixCls, block, iconLocation, ...others } = this.props;
 		const sizeCls = ({large: 'lg', small: 'sm'})[size] || '';
 		const classes = classNames({
 			[prefixCls]: true,
@@ -83,7 +83,7 @@ export default class Button extends React.Component {
 			);
 	} else {
 		//	如果是下拉框图标，则icon放右边
-		if (icon === 'down') {
+		if (iconLocation === 'right') {
 			return (
   <button {...others} type={htmlType || 'button'} className={classes} onClick={this.handleClick}>
     {kids}{iconNode}
