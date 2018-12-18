@@ -3,12 +3,13 @@ import message from 'components/message';
 import Button from 'components/button';
 import Upload from 'components/upload';
 import Icon from 'components/icon';
+import reqwest from 'reqwest';
 
 const Dragger = Upload.Dragger;
 // 基础上传
 const props = {
   name: 'file',
-  action: '/upload.do',
+  action: '／/jsonplaceholder.typicode.com/posts/',
   headers: {
     authorization: 'authorization-text',
   },
@@ -93,7 +94,7 @@ class PicturesWall extends React.Component {
     const uploadButton = (
       <div>
         <Icon type='plus' />
-        <div className='idoll-upload-text'>Upload</div>
+        <div className='idoll-upload-text'>上传</div>
       </div>
     );
     return (
@@ -133,36 +134,116 @@ const props3 = {
   defaultFileList: [...fileList],
 };
 
+// 手动上传
+// const { uploading, fileList } = this.state;
+const props4 = {
+  onRemove: (file) => {
+    this.setState((state) => {
+      const index = state.fileList.indexOf(file);
+      const newFileList = state.fileList.slice();
+      newFileList.splice(index, 1);
+      return {
+        fileList: newFileList,
+      };
+    });
+  },
+  beforeUpload: (file) => {
+    this.setState(state => ({
+      fileList: [...state.fileList, file],
+    }));
+    return false;
+  },
+  fileList,
+};
 
-const Uploader = () => (
-  <div id='main-container'>
-    <h1 className='h1'>基础上传</h1>
-    <Upload {...props}>
-      <Button type='ghost' icon='plus'>
-        点击上传
-      </Button>
-    </Upload>
-    <br />
-    <h1 className='h1'>传入已上传的文件</h1>
-    <Upload {...props1}>
-      <Button type='ghost' icon='plus'>
-        点击上传
-      </Button>
-    </Upload>
-    <br />
-    <h1 className='h1'>拖拽上传</h1>
-    <Dragger {...props2}>
-      <p className='idoll-upload-text'>点击或拖拽到此区域上传</p>
-    </Dragger>
-    <h1 className='h1'>用户头像上传</h1>
-    <PicturesWall />
-    <h1 className='h1'>图片列表形式上</h1>
-    <Upload {...props3}>
-      <Button>
-        <Icon type='plus' /> upload
-      </Button>
-    </Upload>
-  </div>
-)
+
+class Uploader extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      fileList: [],
+      uploading: false,
+    }
+  }
+  handleUpload = () => {
+    const { fileList } = this.state;
+    const formData = new FormData();
+    fileList.forEach((file) => {
+      formData.append('files[]', file);
+    });
+
+    this.setState({
+      uploading: true,
+    });
+
+    // You can use any AJAX library you like
+    reqwest({
+      url: '//jsonplaceholder.typicode.com/posts/',
+      method: 'post',
+      processData: false,
+      data: formData,
+      success: () => {
+        this.setState({
+          fileList: [],
+          uploading: false,
+        });
+        message.success('upload successfully.');
+      },
+      error: () => {
+        this.setState({
+          uploading: false,
+        });
+        message.error('upload failed.');
+      },
+    });
+  }
+  render() {
+    return (
+      <div id='main-container'>
+        <h1 className='h1'>基础上传</h1>
+        <Upload {...props}>
+          <Button type='primary' icon='pro2-upload'>上传</Button>
+        </Upload>
+        <br />
+        <h1 className='h1'>传入已上传的文件</h1>
+        <Upload {...props1}>
+          <Button type='primary' icon='pro2-upload'>
+          上传
+          </Button>
+        </Upload>
+        <br />
+        <h1 className='h1'>拖拽上传</h1>
+        <Dragger {...props2}>
+          <p lassName='idoll-upload-icon'><Icon type='pro2-upload' /></p>
+          <p className='idoll-upload-text'>将文件拖到此处，或者点击上传</p>
+          <p lassName='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
+        </Dragger>
+        <h1 className='h1'>用户头像上传</h1>
+        <PicturesWall />
+        <h1 className='h1'>图片列表形式上</h1>
+        <Upload {...props3}>
+          <Button>
+            <Icon type='plus' /> upload
+          </Button>
+        </Upload>
+        <h1 className='h1'>手动上传</h1>
+        <div>
+          <Upload {...props4}>
+            <Button type='primary'><Icon type='pro2-file' />选择文件</Button>
+          </Upload>
+          <Button
+            type='primary'
+            onClick={this.handleUpload}
+            disabled={this.state.fileList.length === 0}
+            loading={this.state.uploading}
+            style={{ marginTop: 16 }}
+          >
+            {!this.state.uploading ? <Icon type='pro2-upload' /> : null}{this.state.uploading ? '上传' : '开始上传' }
+          </Button>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default Uploader;
