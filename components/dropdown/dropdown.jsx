@@ -16,7 +16,7 @@ export default class Dropdown extends React.Component {
     overlay: PropTypes.any,
     disabled: PropTypes.bool,
     visible: PropTypes.bool,
-    onVisibleChange: PropTypes.function,
+    onVisibleChange: PropTypes.func,
     icon: PropTypes.string,
     block: PropTypes.bool
 }
