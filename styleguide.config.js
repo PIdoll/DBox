@@ -148,6 +148,11 @@ module.exports = {
       content: 'components/version/readme.md'
     },
     {
+      name: 'HomePage',
+      description: '',
+      content: 'styleguide/home/readme.md'
+    },
+    {
       name: 'Typography',
       description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
       content: 'components/typography/readme.md'
