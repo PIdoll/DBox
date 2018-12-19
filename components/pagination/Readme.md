@@ -73,3 +73,12 @@ import {Pagination} from 'components';
 | showLessItems | 显示较少的页码项 | boolean | false |
 | onChange | 页码改变的回调，参数是改变后的页码及每页条数 | Function(page, pageSize) | noop |
 | onShowSizeChange | pageSize 变化的回调 | Function(current, size) | noop |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

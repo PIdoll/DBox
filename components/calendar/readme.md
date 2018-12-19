@@ -58,3 +58,12 @@ onChange = (date) => {
 | onChange | 日期变化回调 | function(date: moment) | 无 |
 | onSelect | 点击选择日期回调 | function(date: moment) | 无 |
 | validRange | 设置可以显示的日期 | [moment, moment] | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

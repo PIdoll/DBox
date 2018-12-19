@@ -9,7 +9,7 @@ const ButtonGroup = Button.Group;
 export default class DropdownButton extends React.Component {
   static propTypes = {
     type: PropTypes.string,
-    trigger: PropTypes.oneOf(['click', 'hover']),
+    trigger: PropTypes.array,
     overlay: PropTypes.any,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,

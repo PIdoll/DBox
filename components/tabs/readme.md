@@ -13,7 +13,7 @@ DBox 依次提供了三级选项卡，分别用于不同的场景。
 #### **基本用法和禁用**
 ```jsx
 import {Tabs} from 'components';
-const TabPane = Tabs.TabPane; 
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -23,17 +23,17 @@ class TabsView extends React.Component {
         <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
         <TabPane tab='选项三' key='3'>选项三</TabPane>
       </Tabs>
-    </div>		
+    </div>
     )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 #### **有图标的标签**
 ```jsx
 import {Tabs, Icon} from 'components';
-const TabPane = Tabs.TabPane; 
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -51,8 +51,8 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 
 #### **tab页水平，垂直滑动**
@@ -100,13 +100,13 @@ class TabsView extends React.Component {
   )
 }
 }
-<TabsView />   
+<TabsView />
 ```
 
 #### **卡片式标签页容器**
 ```jsx
 import {Tabs} from 'components';
-const TabPane = Tabs.TabPane; 
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -130,7 +130,7 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 #### **新增和关闭**
@@ -188,14 +188,14 @@ class TabsView extends React.Component {
      )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 
 #### **卡片式容器**
 ```jsx
 import {Tabs} from 'components';
-const TabPane = Tabs.TabPane; 
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -218,7 +218,7 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 #### **吸顶效果**
@@ -258,7 +258,7 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 
@@ -290,3 +290,13 @@ class TabsView extends React.Component {
 | key | 对应 activeKey | string | 无 |
 | closable | 在type="editable-card"模式下使用阻止卡片关闭 | boolean | `true` |
 | tab | 选项卡头显示文字 | string / ReactNode | 无 |
+
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

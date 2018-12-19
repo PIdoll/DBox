@@ -52,6 +52,7 @@ import Upload from './upload';
 import Typography from './typography';
 import Version from './version';
 import HomePage from '../styleguide/home';
+import PrevPage from './prevPage';
 
 
 export { Affix };
@@ -107,4 +108,5 @@ export { Upload };
 export { Typography };
 export { Version };
 export { HomePage };
+export { PrevPage };
 

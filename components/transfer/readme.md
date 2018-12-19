@@ -116,3 +116,12 @@ class TransferView extends React.Component {
 // 比如你的数据主键是 uid
 return <Transfer rowKey={record => record.uid} />;
 ```
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

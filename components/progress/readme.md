@@ -151,3 +151,12 @@ const ProgressView = () => {
 | type | 类型，可选 `line` `circle` | string | line |
 | width `(type=circle)` | 圆形进度条画布宽度，单位 px | number | 132 |
 <style>.idoll-progress{margin:0 10px 10px 0}</style>
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
+

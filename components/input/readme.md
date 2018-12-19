@@ -16,7 +16,7 @@ import { Input } from 'components';
 
 ```
 #### **前置／后置**
-用于一些固定组合。`addonBefore` 设置前置内容，`beforelength` 设置前置内容长度。`addonAfter` 和`afterlength` 
+用于一些固定组合。`addonBefore` 设置前置内容，`beforelength` 设置前置内容长度。`addonAfter` 和`afterlength`
 则用来设置后置属性。
 ```jsx
 import { Input,Select } from 'components';
@@ -51,7 +51,7 @@ const selectAfter = (
 ```
 #### **搜索**
 带有搜索按钮的输入框
-```jsx 
+```jsx
 import { Input } from 'components';
 const Search = Input.Search;
 <div>
@@ -280,3 +280,12 @@ class NumericInputDemo extends React.Component {
 | --- | --- | --- | --- |
 | compact | 是否用紧凑模式 | boolean | false |
 | size | `Input.Group` 中所有的 `Input` 的大小，可选 `large` `default` `small` | string | `default` |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
