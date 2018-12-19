@@ -13,12 +13,17 @@ module.exports = {
   usageMode: 'hide',
   ribbon: {
     url: 'https://github.com/PIdoll/DBox',
-    text: 'Folk me on Github'
+    text: 'folk me on github'
   },
+  // Override Styleguidist components
+	styleguideComponents: {
+    LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
+    componentListRenderer: path.join(__dirname, 'styleguide/components/componentListRenderer')
+	},
   ignore: ['**/*-test.jsx'],
   pagePerSection: true,
   theme: {
-    baseBackground: '#fdfdfc',
+   // baseBackground: '#fdfdfc',
 		link: '#274e75',
 		linkHover: '#90a7bf',
 		border: '#e0d2de',
@@ -243,7 +248,7 @@ module.exports = {
           ])
         },
       ],
-      sectionDepth: 2
+       sectionDepth: 2
     },
   ],
   webpackConfig: {

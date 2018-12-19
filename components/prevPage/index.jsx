@@ -3,6 +3,7 @@ import {Row, Col} from '../grid/index';
 import Icon from '../icon';
 import './style';
 
+
 class PageView extends React.Component {
   render () {
     return (
