@@ -26,10 +26,10 @@ import { Steps } from 'components';
 const StepsView = () => {
   return (
     <Steps size='small' current={2}>
-      <Steps.Step title='示例文字' description='这里是一段描述文字，最多不超过两行' />
-      <Steps.Step title='示例文字' description='这里是一段描述文字，最多不超过两行' />
-      <Steps.Step title='等待处理' description='这里是一段描述文字，最多不超过两行' />
-      <Steps.Step title='完成' description='这里是一段描述文字，最多不超过两行' />
+      <Steps.Step title='示例文字' />
+      <Steps.Step title='示例文字' />
+      <Steps.Step title='等待处理' />
+      <Steps.Step title='完成' />
     </Steps>
   )
 }
