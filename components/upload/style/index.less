@@ -155,7 +155,7 @@
       white-space: nowrap;
       width: 100%;
       display: inline-block;
-      p > span {
+      > span {
         margin-left: 8px;
       }
       p > i:last-child {
@@ -187,7 +187,7 @@
     }
 
     .@{iconfont-css-prefix}-close {
-      .iconfont-size-under-12px(10px);
+      font-size: 14px;
       opacity: 0;
       cursor: pointer;
       position: absolute;
@@ -231,6 +231,16 @@
       padding-left: @font-size-base + 12px;
     }
   }
+  &-item-done {
+    .@{upload-item}-info a {
+      .@{iconfont-css-prefix}-check {
+        font-size: 14px;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+      }
+    }
+  }
 
   &-picture,
   &-picture-card {
@@ -258,7 +268,6 @@
 
     .@{upload-item} span{
       display: block;
-      color: @text-color-disable-dark;
       font-size: 16px;
       position: absolute;
       cursor: pointer;
@@ -281,16 +290,6 @@
 
     .@{upload-item}:hover span {
        opacity: 1;
-    }
-
-    .@{upload-item}-uploading {
-      border-style: dashed;
-      // position: relative;
-      .idoll-progress-inner {
-        position: relative;
-        // top: -100%;
-        // left:0;
-      }
     }
 
     .@{upload-item}-thumbnail {
@@ -340,15 +339,39 @@
     }
 
     .@{iconfont-css-prefix}-close {
+      font-size: 14px !important;
       position: absolute;
-      right: 8px;
-      top: 8px;
+      right: 4px;
+      top: 4px;
       line-height: 1;
     }
   }
 
   &-picture-card {
     display: inline;
+
+    .@{upload-item} span{
+      display: block;
+      color: @text-color-disable-dark;
+      font-size: 16px;
+      position: absolute;
+      cursor: pointer;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 10;
+      white-space: nowrap;
+      opacity: 0;
+      a {
+        margin-right: 8px;
+        i {
+        color: @text-color-disable-dark;
+        }
+      }
+      a:active i {
+        color: #fff;
+      }
+    }
 
     &.@{upload-prefix-cls}-list:after {
       display: none;
@@ -439,7 +462,49 @@
     }
     .@{upload-item}-progress {
       padding-left: 0;
-      bottom: 32px;
+      .@{idoll-prefix}-progress-circle {
+        .@{idoll-prefix}-progress-inner {
+          .@{idoll-prefix}-progress-text {
+            opacity: 1;
+            color: @text-color-secondary;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  &-picture {
+    .@{upload-item} a span {
+      opacity: 1;
+      left: 15%;
+    }
+    //
+    .@{upload-item}-done {
+      .@{upload-item}-info {
+        a {
+          .@{iconfont-css-prefix}-check {
+            font-size: 14px;
+            position: absolute;
+            top: 4px;
+            right: 4px;
+          }
+        }
+        > span {
+          opacity: 1;
+        }
+      }
+    }
+    .@{upload-item}-progress {
+      .@{idoll-prefix}-progress {
+        .@{idoll-prefix}-progress-inner {
+          .@{idoll-prefix}-progress-text {
+            opacity: 1;
+            color: @text-color-secondary;
+            line-height: 24px;
+          }
+        }
+      }
     }
   }
 

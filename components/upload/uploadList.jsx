@@ -61,11 +61,8 @@ export default class UploadList extends React.Component {
     let list = this.props.items.map(file => {
       let progress;
       let icon = <Icon type='paper-clip' />;
-
+      // 图片列表
       if (this.props.listType === 'picture' || this.props.listType === 'picture-card') {
-        if (file.status === 'uploading' || (!file.thumbUrl && !file.url)) {
-          icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
-        } else {
           icon = (
             <a
               className={`${prefixCls}-list-item-thumbnail`}
@@ -75,14 +72,18 @@ export default class UploadList extends React.Component {
             >
               <img src={file.thumbUrl || file.url} alt={file.name} />
             </a>
-          );
-        }
+          )
+      }
+      // 头像上传
+      if (this.props.listType === 'picture-card' && file.status === 'uploading') {
+          icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
       }
 
+      // 进度条
       if (file.status === 'uploading') {
         progress = (
           <div className={`${prefixCls}-list-item-progress`}>
-            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : ''} {...this.props.progressAttr} percent={Math.floor(file.percent)} />
+            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : null} {...this.props.progressAttr} percent={Math.floor(file.percent)} />
           </div>
         );
       }
@@ -103,14 +104,14 @@ export default class UploadList extends React.Component {
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
                 >
-                  {file.name}
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
                 </a>
               ) : (
                 <span
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
                 >
-                  {file.name}
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
                 </span>
               )
             }

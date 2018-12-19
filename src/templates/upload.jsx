@@ -10,17 +10,17 @@ const Dragger = Upload.Dragger;
 
 const commonFileList = [{
   uid: -1,
-  name: <p><Icon type='pro2-clip' /><span>xxx.png</span><Icon type='check' /></p>,
+  name: 'xxx.png',
   status: 'done',
   url: 'http://www.baidu.com/xxx.png',
 }, {
   uid: -2,
-  name: <p><Icon type='pro2-clip' /><span>yyy.png</span><Icon type='check' /></p>,
+  name: 'yyy.png',
   status: 'done',
   url: 'http://www.baidu.com/yyy.png',
 }, {
   uid: -3,
-  name: <p><Icon type='pro2-clip' /><span>zzz.png</span><Icon type='close' /></p>,
+  name: 'zzz.png',
   status: 'error',
   response: 'Server Error 500',
   url: 'http://www.baidu.com/zzz.png',
