@@ -2,10 +2,29 @@ import React from 'react'
 import message from 'components/message';
 import Button from 'components/button';
 import Upload from 'components/upload';
+import Modal from 'components/modal';
 import Icon from 'components/icon';
 import reqwest from 'reqwest';
 
 const Dragger = Upload.Dragger;
+
+const commonFileList = [{
+  uid: -1,
+  name: <p><Icon type='pro2-clip' /><span>xxx.png</span><Icon type='check' /></p>,
+  status: 'done',
+  url: 'http://www.baidu.com/xxx.png',
+}, {
+  uid: -2,
+  name: <p><Icon type='pro2-clip' /><span>yyy.png</span><Icon type='check' /></p>,
+  status: 'done',
+  url: 'http://www.baidu.com/yyy.png',
+}, {
+  uid: -3,
+  name: <p><Icon type='pro2-clip' /><span>zzz.png</span><Icon type='close' /></p>,
+  status: 'error',
+  response: 'Server Error 500',
+  url: 'http://www.baidu.com/zzz.png',
+}];
 // 基础上传
 const props = {
   name: 'file',
@@ -14,7 +33,9 @@ const props = {
     authorization: 'authorization-text',
   },
   onChange(info) {
+    console.log(`info${info}`)
     if (info.file.status !== 'uploading') {
+      this.setState({fileList: this.state.fileList.push(info.file)})
       console.log(info.file, info.fileList);
     }
     if (info.file.status === 'done') {
@@ -23,6 +44,17 @@ const props = {
       message.error(`${info.file.name} 上传失败。`);
     }
   },
+  beforeUpload(file) {
+    const isJPG = file.type === 'image/jpeg' || 'image／png';
+    if (!isJPG) {
+      message.error('您只能上传JPG/PNG图片!');
+    }
+    const isLt1M = file.size > 1024;
+    if (!isLt1M) {
+      message.error('图片过大，请选择小于1MB的图片!');
+    }
+    return isJPG && isLt1M;
+  }
 };
 
 // 已上传列表
@@ -34,17 +66,6 @@ const props1 = {
       console.log(info.fileList);
     }
   },
-  defaultFileList: [{
-    uid: -1,
-    name: 'xxx.png',
-    status: 'done',
-    url: 'http://www.baidu.com/xxx.png',
-  }, {
-    uid: -2,
-    name: 'yyy.png',
-    status: 'done',
-    url: 'http://www.baidu.com/yyy.png',
-  }],
 };
 
 // 拖拽上传
@@ -108,6 +129,9 @@ class PicturesWall extends React.Component {
         >
           {fileList.length >= 3 ? null : uploadButton}
         </Upload>
+        <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
+          <img alt='example' style={{ width: '100%' }} src={this.state.previewImage} />
+        </Modal>
       </div>
     );
   }
@@ -123,7 +147,7 @@ const fileList = [{
 }, {
   uid: -2,
   name: 'yyy.png',
-  status: 'done',
+  status: 'error',
   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
   thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
 }];
@@ -134,44 +158,17 @@ const props3 = {
   defaultFileList: [...fileList],
 };
 
-// 手动上传
-// const { uploading, fileList } = this.state;
-const props4 = {
-  onRemove: (file) => {
-    this.setState((state) => {
-      const index = state.fileList.indexOf(file);
-      const newFileList = state.fileList.slice();
-      newFileList.splice(index, 1);
-      return {
-        fileList: newFileList,
-      };
-    });
-  },
-  beforeUpload: (file) => {
-    this.setState(state => ({
-      fileList: [...state.fileList, file],
-    }));
-    return false;
-  },
-  fileList,
-};
-
-
 class Uploader extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+    state = {
       fileList: [],
       uploading: false,
     }
-  }
   handleUpload = () => {
     const { fileList } = this.state;
     const formData = new FormData();
     fileList.forEach((file) => {
       formData.append('files[]', file);
     });
-
     this.setState({
       uploading: true,
     });
@@ -198,47 +195,67 @@ class Uploader extends React.Component {
     });
   }
   render() {
+    const { fileList } = this.state;
+    const props4 = {
+      onRemove: (file) => {
+        this.setState((state) => {
+          const index = this.state.fileList.indexOf(file);
+          const newFileList = this.state.fileList.slice();
+          newFileList.splice(index, 1);
+          return {
+            fileList: newFileList,
+          };
+        });
+      },
+      beforeUpload: (file) => {
+        this.setState(state => ({
+          fileList: [...this.state.fileList, file],
+        }));
+        console.log(this.state.fileList)
+        return false;
+      },
+      fileList,
+    };
     return (
       <div id='main-container'>
         <h1 className='h1'>基础上传</h1>
-        <Upload {...props}>
+        <Upload {...props} defaultFileList={commonFileList}>
           <Button type='primary' icon='pro2-upload'>上传</Button>
+          <p>支持上传jpg/png文件格式，且不超过1024kb</p>
         </Upload>
         <br />
         <h1 className='h1'>传入已上传的文件</h1>
-        <Upload {...props1}>
-          <Button type='primary' icon='pro2-upload'>
-          上传
-          </Button>
+        <Upload {...props1} defaultFileList={commonFileList}>
+          <Button type='primary' icon='pro2-upload'>上传</Button>
+          <p>支持上传jpg/png文件格式，且不超过1024kb</p>
         </Upload>
         <br />
         <h1 className='h1'>拖拽上传</h1>
-        <Dragger {...props2}>
-          <p lassName='idoll-upload-icon'><Icon type='pro2-upload' /></p>
+        <Dragger {...props2} defaultFileList={commonFileList}>
+          <p className='idoll-upload-icon'><Icon type='pro2-upload' /></p>
           <p className='idoll-upload-text'>将文件拖到此处，或者点击上传</p>
-          <p lassName='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
+          <p className='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
         </Dragger>
         <h1 className='h1'>用户头像上传</h1>
         <PicturesWall />
         <h1 className='h1'>图片列表形式上</h1>
         <Upload {...props3}>
-          <Button>
-            <Icon type='plus' /> upload
-          </Button>
+          <Button type='primary'><Icon type='pro2-upload' />上传</Button>
         </Upload>
         <h1 className='h1'>手动上传</h1>
         <div>
           <Upload {...props4}>
-            <Button type='primary'><Icon type='pro2-file' />选择文件</Button>
+            <Button type='secondary'><Icon type='pro2-file' />选择文件</Button>
           </Upload>
           <Button
             type='primary'
+            className='beginUpload'
             onClick={this.handleUpload}
             disabled={this.state.fileList.length === 0}
             loading={this.state.uploading}
             style={{ marginTop: 16 }}
           >
-            {!this.state.uploading ? <Icon type='pro2-upload' /> : null}{this.state.uploading ? '上传' : '开始上传' }
+            {!this.state.uploading ? <Icon type='pro2-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
           </Button>
         </div>
       </div>

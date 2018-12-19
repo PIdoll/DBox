@@ -19,7 +19,6 @@ export default class UploadList extends React.Component {
     items: [],
     progressAttr: {
       strokeWidth: 3,
-      showInfo: false,
     },
   };
 
@@ -65,11 +64,7 @@ export default class UploadList extends React.Component {
 
       if (this.props.listType === 'picture' || this.props.listType === 'picture-card') {
         if (file.status === 'uploading' || (!file.thumbUrl && !file.url)) {
-          if (this.props.listType === 'picture-card') {
-            icon = <div className={`${prefixCls}-list-item-uploading-text`}>文件上传中</div>;
-          } else {
-            icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
-          }
+          icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
         } else {
           icon = (
             <a
@@ -87,7 +82,7 @@ export default class UploadList extends React.Component {
       if (file.status === 'uploading') {
         progress = (
           <div className={`${prefixCls}-list-item-progress`}>
-            <Progress type='line' {...this.props.progressAttr} percent={file.percent} />
+            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : ''} {...this.props.progressAttr} percent={Math.floor(file.percent)} />
           </div>
         );
       }
@@ -130,7 +125,7 @@ export default class UploadList extends React.Component {
                     style={{ pointerEvents: file.url ? '' : 'none' }}
                     onClick={e => this.handlePreview(file, e)}
                   >
-                    <Icon type='eye-o' />
+                    <Icon type='pro2-eye' />
                   </a>
                   <Icon type='delete' onClick={() => this.handleClose(file)} />
                 </span>
