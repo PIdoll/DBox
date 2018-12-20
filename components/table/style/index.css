@@ -29,7 +29,7 @@
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -57,7 +57,7 @@
   background: #fafafa;
   transition: background .3s ease;
   text-align: left;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
   border-bottom: 1px solid #E2E2E2;
 }
@@ -71,7 +71,7 @@
   margin-left: 8px;
   font-size: 14px;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   transition: all .3s;
   width: 14px;
   font-weight: normal;
@@ -79,7 +79,7 @@
 }
 .idoll-table-thead > tr > th .idoll-icon-filter:hover,
 .idoll-table-thead > tr > th .idoll-table-filter-icon:hover {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-table-thead > tr > th .idoll-table-column-sorter + .idoll-icon-filter {
   margin-left: 4px;
@@ -104,7 +104,13 @@
 .idoll-table-tbody > tr {
   transition: all .3s;
 }
+<<<<<<< HEAD
 .idoll-table-tbody > tr.idoll-table-row-hover,
+=======
+.idoll-table-thead > tr.idoll-table-row-hover,
+.idoll-table-tbody > tr.idoll-table-row-hover,
+.idoll-table-thead > tr:hover,
+>>>>>>> develop
 .idoll-table-tbody > tr:hover {
   background: #E7F8F3;
   transition: all 0.3s;
@@ -214,7 +220,7 @@
   vertical-align: middle;
   text-align: center;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-table-column-sorter-up,
 .idoll-table-column-sorter-down {
@@ -226,7 +232,7 @@
 }
 .idoll-table-column-sorter-up:hover .idoll-icon,
 .idoll-table-column-sorter-down:hover .idoll-icon {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-table-column-sorter-up.on .idoll-icon-caret-up,
 .idoll-table-column-sorter-down.on .idoll-icon-caret-up,
@@ -302,7 +308,7 @@
   border-bottom: 1px solid #E2E2E2;
   text-align: center;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 .idoll-table-placeholder .idoll-icon {
@@ -316,7 +322,7 @@
   margin-left: -8px;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .idoll-table-filter-dropdown .idoll-dropdown-menu {
   border: 0;
@@ -332,12 +338,11 @@
 }
 .idoll-table-filter-dropdown .idoll-dropdown-menu-sub {
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .idoll-table-filter-dropdown .idoll-dropdown-menu .idoll-dropdown-submenu-contain-selected .idoll-dropdown-menu-submenu-title:after {
   color: #13B886;
   font-weight: bold;
-  text-shadow: 0 0 2px #BAE7FF;
 }
 .idoll-table-filter-dropdown .idoll-dropdown-menu-item {
   overflow: hidden;
@@ -370,7 +375,7 @@
   margin-right: 4px !important;
 }
 .idoll-table-selection .idoll-icon-down {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   transition: all .3s;
 }
 .idoll-table-selection-menu {
@@ -378,10 +383,10 @@
   margin-left: -30px;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .idoll-table-selection-menu .idoll-action-down {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-table-selection-down {
   cursor: pointer;
@@ -466,7 +471,7 @@ tr.idoll-table-expanded-row:hover {
 }
 .idoll-table-fixed-left {
   left: 0;
-  box-shadow: 6px 0 6px -4px rgba(18, 34, 29, 0.1);
+  box-shadow: 6px 0 6px -4px rgba(0, 0, 0, 0.1);
 }
 .idoll-table-fixed-left .idoll-table-header {
   overflow-y: hidden;
@@ -484,7 +489,7 @@ tr.idoll-table-expanded-row:hover {
 }
 .idoll-table-fixed-right {
   right: 0;
-  box-shadow: -6px 0 6px -4px rgba(18, 34, 29, 0.1);
+  box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.1);
 }
 .idoll-table-fixed-right,
 .idoll-table-fixed-right table {

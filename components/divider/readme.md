@@ -34,3 +34,12 @@
 | type | 水平还是垂直类型 | enum: `horizontal` `vertical` | `horizontal` |
 | className | 分割线样式类 | string | - |
 | style | 分割线样式对象 | object | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

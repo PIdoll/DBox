@@ -79,7 +79,7 @@ const {Option} = Select;
 import { Select } from 'components';
 const {Option} = Select;
 handleChange = (value) => {
-    console.log(value); 
+    console.log(value);
 }
 <Select labelInValue defaultValue={{ key: 'beijing' }} style={{ width: 200 }} onChange={this.handleChange}>
     <Option value='beijing'>北京</Option>
@@ -235,3 +235,12 @@ const {Option, OptGroup} = Select;
 | --- | --- | --- | --- |
 | key |  | string | - |
 | label | 组名 | string\React.Element | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

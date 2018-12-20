@@ -12,10 +12,10 @@ const buttonStyle = {
   marginLeft: '10px'
 };
 <div>
-  <Button type='default' style={buttonStyle}>默认</Button>
+  <Button style={buttonStyle}>默认</Button>
   <Button type='primary' style={buttonStyle}>主要</Button>
   <Button type='secondary' style={buttonStyle}>次要</Button>
-  <Button disabled style={buttonStyle}>禁止</Button>
+  <Button disabled style={buttonStyle}>禁用</Button>
   <Button type='dashed' style={buttonStyle}>虚线</Button>
   <Button type='danger' style={buttonStyle}>危险</Button>
 </div>
@@ -29,8 +29,8 @@ const buttonStyle = {
   marginLeft: '10px'
 };
 <div>
-  <Button type='default' style={buttonStyle}>默认</Button>
-  <Button type='secondary' style={buttonStyle}>主要</Button>
+  <Button text style={buttonStyle}>默认</Button>
+  <Button type='secondary' text style={buttonStyle}>主要</Button>
 </div>
 ```
 
@@ -64,8 +64,7 @@ const buttonStyle = {
 ```
 
 ##### **图标按钮(icon)**
-当需要在 `Button` 内嵌入 `Icon` 时，可以设置 `icon` 属性，或者直接在 `Button` 内使用 `Icon` 组件。
-如果想控制 `Icon` 具体的位置，只能直接使用 `Icon` 组件，而非 `icon` 属性。
+当需要在 `Button` 内嵌入 `Icon` 时，可以设置 `icon` 属性,通过 `shape` 可以设置图标的形状。
 ```jsx
 import { Button } from 'components';
 const buttonStyle = {
@@ -76,9 +75,9 @@ const buttonStyle = {
   <Button icon='delete' style={buttonStyle}>图标</Button>
   <Button icon='delete' size='large' style={buttonStyle}>图标</Button>
   <br /><br />
-  <Button icon='down' size='small' style={buttonStyle}>图标</Button>
-  <Button icon='down' style={buttonStyle}>图标</Button>
-  <Button icon='down' size='large' style={buttonStyle}>图标</Button>
+  <Button icon='down' iconLocation='right' size='small' style={buttonStyle}>图标</Button>
+  <Button icon='down' iconLocation='right' style={buttonStyle}>图标</Button>
+  <Button icon='down' iconLocation='right' size='large' style={buttonStyle}>图标</Button>
   <br /><br />
 
   <Button icon='delete' size='small' shape='circle' style={buttonStyle}/>
@@ -164,3 +163,12 @@ const ButtonGroup = Button.Group;
 | text | 设置按钮为文字按钮 | boolean | `false` |
 | type | 设置按钮类型，可选值为 `default`、 `primary`、 `secondary`、 `disabled`、 `dashed`、 `danger`或者不设 | string | - |
 | onClick | `click` 事件的 handler | function | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

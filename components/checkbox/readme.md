@@ -30,11 +30,11 @@ initialState = {
       checked: !state.checked
     });
   }
-  
+
 <div>
 	<Checkbox onChange={this.onChangeState} checked={state.checked} disabled={state.disabled}>{`${state.checked ? 'Checked' : 'Unchecked'}-${state.disabled ? 'Disabled' : 'Enabled'}`}</Checkbox>
 	<Button onClick={this.toggleChecked}>选中切换</Button>
-	
+
 	<Button onClick={this.toggleDisabled}>禁用切换</Button>
 </div>
 ```
@@ -145,3 +145,12 @@ import {Checkbox} from 'components';
 
 
 <style>.idoll-steps{margin-bottom: 10px}</style>
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

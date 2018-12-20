@@ -116,12 +116,12 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 
-<ButtonGroup className='buttonGroup'>
-  <Button>
-    操作二
-  </Button>
+<ButtonGroup className='ButtonGroup'>
   <Button>
     操作一
+  </Button>
+  <Button>
+    操作二
   </Button>
   <DropdownButton overlay={menu1} trigger={['hover']}>
   操作三
@@ -290,7 +290,6 @@ function handleMenu1Click(e) {
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | overlay     | 菜单  | Menu | - |
 | disabled     | 菜单是否禁用搭配按钮一起使用并放置于按钮身上 | `boolean` | false    |
-| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位| Function(triggerNode) () => document.body |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
 
@@ -307,3 +306,11 @@ function handleMenu1Click(e) {
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | size     | 按钮菜单大小和Button一致 | string (`large` `small`) | - |
 
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

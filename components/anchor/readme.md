@@ -40,3 +40,11 @@ const { Link } = Anchor;
 | --- | --- | --- | --- |
 | href | 锚点链接 | string | - |
 | title | 文字内容 | string , ReactNode | - |
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -6,9 +6,9 @@ import classNames from 'classnames'
 export default class SubMenu extends React.Component {
   static propTypes = {
     disabled: PropTypes.bool,
-    key: PropTypes.string,
+    indexkey: PropTypes.string,
     children: PropTypes.array,
-    onTitleClick: PropTypes.fuc,
+    onTitleClick: PropTypes.func,
 }
   static contextTypes = {
     idollMenuTheme: PropTypes.string,

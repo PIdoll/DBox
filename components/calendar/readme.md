@@ -5,7 +5,9 @@
 #### **基本用法**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { Calendar } from 'components';
+import moment from 'moment';
+
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
   <Calendar fullscreen={false} validRange={[moment('2018-01'), moment('2028-12')]} />
 </div>
@@ -14,7 +16,9 @@ const moment = require('../../node_modules/moment');
 #### **带有背景色头部选择**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { Calendar } from 'components';
+import moment from 'moment';
+
 disabledDate = (current) => {
   // Can not select days before today and today
   return current && current < moment().endOf('day');
@@ -54,3 +58,12 @@ onChange = (date) => {
 | onChange | 日期变化回调 | function(date: moment) | 无 |
 | onSelect | 点击选择日期回调 | function(date: moment) | 无 |
 | validRange | 设置可以显示的日期 | [moment, moment] | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

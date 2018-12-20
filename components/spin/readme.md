@@ -5,12 +5,16 @@
 #### **简单的加载中**
 
 ```jsx
+import { Spin } from 'components';
+
 <div style={{ marginTop: 51, marginLeft: 100 }}><Spin /></div>
 ```
 
 #### **三种不同大小的加载中**
 
 ```jsx
+import { Spin } from 'components';
+
 <div style={{ width: 300, display: 'flex', justifyContent: 'space-between', marginTop: 50 }}>
   <Spin size='small' />
   <Spin />
@@ -21,6 +25,8 @@
 #### **放在容器中**
 
 ```jsx
+import { Spin } from 'components';
+
 const style = {
   textAlign: 'center',
   background: 'rgba(0, 0, 0, 0.05)',
@@ -48,6 +54,8 @@ class SpinView extends React.Component {
 #### **自定义描述文案**
 
 ```jsx
+import { Spin, Alert } from 'components';
+
 <Spin tip='Loading...'>
   <Alert
     message='Alert信息标题'
@@ -60,6 +68,8 @@ class SpinView extends React.Component {
 #### **卡片加载中**
 
 ```jsx
+import { Alert, Spin, Switch } from 'components';
+
 const container = (
   <Alert
     message='Alert message title'
@@ -129,3 +139,13 @@ class SpinView extends React.Component {
 | tip | 当作为包裹元素时，可以自定义描述文案 | string | - |
 | wrapperClassName | 包装器的类属性 | string | - |
 | color | 在深色背景下，spin的四个边框颜色自定义 | Array |  |
+
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

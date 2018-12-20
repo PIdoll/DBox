@@ -490,4 +490,10 @@ class GridView extends React.Component {
 | md       | `≥992px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object | - |
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
-<!-- <style>.idoll-row{margin-bottom:10px;}</style> -->
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
