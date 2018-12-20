@@ -336,7 +336,7 @@
   color: rgba(255, 255, 255, 0.65) !important;
 }
 .idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-submenu-horizontal:hover i {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.45);
 }
 .idoll-menu-horizontal.idoll-menu-dark li.idoll-menu-item-disabled {
   color: rgba(255, 255, 255, 0.45) !important;

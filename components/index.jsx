@@ -41,7 +41,7 @@ import Switch from './switch';
 import Table from './table';
 import Tabs from './tabs';
 import Tag from './tag';
-import TimePicker from './Time-picker';
+import TimePicker from './time-picker';
 import Timeline from './timeline';
 import Title from './title';
 import Tooltip from './tooltip';
