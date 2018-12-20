@@ -58,9 +58,14 @@ const props = {
 const props1 = {
   action: '/upload.do',
   onChange(info) {
-    if (info.file.status !== 'uploading') {
-      console.log(info.file);
-      console.log(info.fileList);
+    const status = info.file.status;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (status === 'done') {
+      message.success(`${info.file.name}文件上传成功.`);
+    } else if (status === 'error') {
+      message.error(`${info.file.name}文件上传失败.`);
     }
   },
 };
@@ -76,9 +81,9 @@ const props2 = {
       console.log(info.file, info.fileList);
     }
     if (status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully.`);
+      message.success(`${info.file.name}文件上传成功.`);
     } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
+      message.error(`${info.file.name}文件上传失败.`);
     }
   },
 };
@@ -95,6 +100,17 @@ class PicturesWall extends React.Component {
       url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     }],
   };
+  onChange = (info) => {
+    const status = info.file.status;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (status === 'done') {
+      message.success(`${info.file.name}文件上传成功.`);
+    } else if (status === 'error') {
+      message.error(`${info.file.name}文件上传失败.`);
+    }
+  }
 
   handleCancel = () => this.setState({ previewVisible: false })
 
@@ -153,6 +169,17 @@ const props3 = {
   action: '//jsonplaceholder.typicode.com/posts/',
   listType: 'picture',
   defaultFileList: [...fileList],
+  onChange(info) {
+    const status = info.file.status;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (status === 'done') {
+      message.success(`${info.file.name}文件上传成功.`);
+    } else if (status === 'error') {
+      message.error(`${info.file.name}文件上传失败.`);
+    }
+  },
 };
 
 class Uploader extends React.Component {
@@ -194,6 +221,17 @@ class Uploader extends React.Component {
   render() {
     const { fileList } = this.state;
     const props4 = {
+      onChange: (info) => {
+        const status = info.file.status;
+        if (status !== 'uploading') {
+          console.log(info.file, info.fileList);
+        }
+        if (status === 'done') {
+          message.success(`${info.file.name}文件上传成功.`);
+        } else if (status === 'error') {
+          message.error(`${info.file.name}文件上传失败.`);
+        }
+      },
       onRemove: (file) => {
         this.setState((state) => {
           const index = this.state.fileList.indexOf(file);

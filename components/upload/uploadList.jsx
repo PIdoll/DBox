@@ -2,6 +2,7 @@ import React from 'react';
 import Animate from 'rc-animate';
 import Icon from '../icon';
 import Progress from '../progress';
+import Tooltip from '../tooltip';
 import classNames from 'classnames';
 
 const prefixCls = 'idoll-upload';
@@ -96,16 +97,22 @@ export default class UploadList extends React.Component {
             {icon}
             {
               file.url
-              ? (
-                <a
-                  href={file.url}
-                  target='_blank'
-                  className={`${prefixCls}-list-item-name`}
-                  onClick={e => this.handlePreview(file, e)}
+              ? (file.status === 'error'
+              ? <Tooltip title={file.response || 'Server Error 500'}><a
+                href={file.url}
+                target='_blank'
+                className={`${prefixCls}-list-item-name`}
+                onClick={e => this.handlePreview(file, e)}
                 >
-                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
-                </a>
-              ) : (
+                <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
+              </a></Tooltip> : <a
+                href={file.url}
+                target='_blank'
+                className={`${prefixCls}-list-item-name`}
+                onClick={e => this.handlePreview(file, e)}
+                >
+                <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
+              </a>) : (
                 <span
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
