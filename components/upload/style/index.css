@@ -240,6 +240,15 @@
   top: 4px;
   right: 4px;
 }
+.idoll-upload-list-item-done .idoll-upload-list-item-info span {
+  color: #13B886;
+}
+.idoll-upload-list-item-done .idoll-upload-list-item-info span .idoll-icon-check {
+  font-size: 14px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
 .idoll-upload-list-picture .idoll-upload-list-item,
 .idoll-upload-list-picture-card .idoll-upload-list-item {
   padding: 8px;

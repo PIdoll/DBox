@@ -26,9 +26,9 @@ const commonFileList = [{
   url: 'http://www.baidu.com/zzz.png',
 }];
 // 基础上传
-const props = {
+const props1 = {
   name: 'file',
-  action: '／/jsonplaceholder.typicode.com/posts/',
+  action: 'https://jsonplaceholder.typicode.com/posts/',
   headers: {
     authorization: 'authorization-text',
   },
@@ -38,8 +38,10 @@ const props = {
     }
     if (info.file.status === 'done') {
       message.success(`${info.file.name} 上传成功。`);
+      return false;
     } else if (info.file.status === 'error') {
       message.error(`${info.file.name} 上传失败。`);
+      return false;
     }
   },
   beforeUpload(file) {
@@ -54,27 +56,11 @@ const props = {
   }
 };
 
-// 已上传列表
-const props1 = {
-  action: '/upload.do',
-  onChange(info) {
-    const status = info.file.status;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name}文件上传成功.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name}文件上传失败.`);
-    }
-  },
-};
-
 // 拖拽上传
 const props2 = {
   name: 'file',
   multiple: true,
-  action: '//jsonplaceholder.typicode.com/posts/',
+  action: 'https://jsonplaceholder.typicode.com/posts/',
   onChange(info) {
     const status = info.file.status;
     if (status !== 'uploading') {
@@ -83,6 +69,15 @@ const props2 = {
     if (status === 'done') {
       message.success(`${info.file.name}文件上传成功.`);
     } else if (status === 'error') {
+      const formData = [];
+      this.state.fileList.forEach((file) => {
+        formData.push(info.file);
+        console.log(info.file)
+      });
+      this.setState({
+        fileList: formData
+      });
+      console.log(this.state.fileList)
       message.error(`${info.file.name}文件上传失败.`);
     }
   },
@@ -94,23 +89,12 @@ class PicturesWall extends React.Component {
     previewVisible: false,
     previewImage: '',
     fileList: [{
-      uid: -1,
+      uid: '-1',
       name: 'xxx.png',
       status: 'done',
       url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     }],
   };
-  onChange = (info) => {
-    const status = info.file.status;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name}文件上传成功.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name}文件上传失败.`);
-    }
-  }
 
   handleCancel = () => this.setState({ previewVisible: false })
 
@@ -124,17 +108,17 @@ class PicturesWall extends React.Component {
   handleChange = ({ fileList }) => this.setState({ fileList })
 
   render() {
-    const { fileList } = this.state;
+    const { previewVisible, previewImage, fileList } = this.state;
     const uploadButton = (
       <div>
         <Icon type='plus' />
-        <div className='idoll-upload-text'>上传</div>
+        <div className='idoll-upload-text'>Upload</div>
       </div>
     );
     return (
       <div className='clearfix'>
         <Upload
-          action='//jsonplaceholder.typicode.com/posts/'
+          action='https://jsonplaceholder.typicode.com/posts/'
           listType='picture-card'
           fileList={fileList}
           onPreview={this.handlePreview}
@@ -142,8 +126,8 @@ class PicturesWall extends React.Component {
         >
           {fileList.length >= 3 ? null : uploadButton}
         </Upload>
-        <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
-          <img alt='example' style={{ width: '100%' }} src={this.state.previewImage} />
+        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+          <img alt='example' style={{ width: '100%' }} src={previewImage} />
         </Modal>
       </div>
     );
@@ -183,55 +167,65 @@ const props3 = {
 };
 
 class Uploader extends React.Component {
-    state = {
-      fileList: [],
+  constructor(props) {
+    super(props)
+    this.state = {
+      fileList: [{
+        uid: -1,
+        name: 'xxx.png',
+        status: 'done',
+        url: 'http://www.baidu.com/xxx.png',
+      }, {
+        uid: -2,
+        name: 'yyy.png',
+        status: 'done',
+        url: 'http://www.baidu.com/yyy.png',
+      }, {
+        uid: -3,
+        name: 'zzz.png',
+        status: 'error',
+        response: 'Server Error 500',
+        url: 'http://www.baidu.com/zzz.png',
+      }],
       uploading: false,
     }
+  }
   handleUpload = () => {
     const { fileList } = this.state;
-    const formData = new FormData();
+    const formData = [];
     fileList.forEach((file) => {
-      formData.append('files[]', file);
+      formData.push(file);
+      console.log(file)
     });
     this.setState({
       uploading: true,
+      fileList: formData
     });
 
     // You can use any AJAX library you like
     reqwest({
-      url: '//jsonplaceholder.typicode.com/posts/',
+      url: 'https://jsonplaceholder.typicode.com/posts/',
       method: 'post',
       processData: false,
       data: formData,
       success: () => {
         this.setState({
-          fileList: [],
+          fileList: formData,
           uploading: false,
         });
-        message.success('upload successfully.');
+        message.success('文件上传成功.');
       },
       error: () => {
         this.setState({
           uploading: false,
         });
-        message.error('upload failed.');
+        message.error('文件上传失败.');
       },
     });
   }
   render() {
     const { fileList } = this.state;
     const props4 = {
-      onChange: (info) => {
-        const status = info.file.status;
-        if (status !== 'uploading') {
-          console.log(info.file, info.fileList);
-        }
-        if (status === 'done') {
-          message.success(`${info.file.name}文件上传成功.`);
-        } else if (status === 'error') {
-          message.error(`${info.file.name}文件上传失败.`);
-        }
-      },
       onRemove: (file) => {
         this.setState((state) => {
           const index = this.state.fileList.indexOf(file);
@@ -246,7 +240,7 @@ class Uploader extends React.Component {
         this.setState(state => ({
           fileList: [...this.state.fileList, file],
         }));
-        console.log(this.state.fileList)
+        // console.log(this.state.fileList)
         return false;
       },
       fileList,
@@ -254,12 +248,6 @@ class Uploader extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>基础上传</h1>
-        <Upload {...props} defaultFileList={commonFileList}>
-          <Button type='primary' icon='pro2-upload'>上传</Button>
-          <p>支持上传jpg/png文件格式，且不超过1024kb</p>
-        </Upload>
-        <br />
-        <h1 className='h1'>传入已上传的文件</h1>
         <Upload {...props1} defaultFileList={commonFileList}>
           <Button type='primary' icon='pro2-upload'>上传</Button>
           <p>支持上传jpg/png文件格式，且不超过1024kb</p>
@@ -271,9 +259,9 @@ class Uploader extends React.Component {
           <p className='idoll-upload-text'>将文件拖到此处，或者点击上传</p>
           <p className='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
         </Dragger>
-        <h1 className='h1'>用户头像上传</h1>
+        <h1 className='h1'>照片墙上传</h1>
         <PicturesWall />
-        <h1 className='h1'>图片列表形式上</h1>
+        <h1 className='h1'>图片列表上传</h1>
         <Upload {...props3}>
           <Button type='primary'><Icon type='pro2-upload' />上传</Button>
         </Upload>
@@ -286,7 +274,6 @@ class Uploader extends React.Component {
             type='primary'
             className='beginUpload'
             onClick={this.handleUpload}
-            disabled={this.state.fileList.length === 0}
             loading={this.state.uploading}
             style={{ marginTop: 16 }}
           >

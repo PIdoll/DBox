@@ -147,7 +147,7 @@ export default class Upload extends React.Component {
     targetItem.status = 'done';
     targetItem.response = response;
     this.onChange({
-      file: targetItem,
+      file: { ...targetItem },
       fileList,
     });
   }
@@ -178,7 +178,10 @@ export default class Upload extends React.Component {
     targetItem.error = error;
     targetItem.response = response;
     targetItem.status = 'error';
-    this.handleRemove(targetItem);
+    this.onChange({
+      file: { ...targetItem },
+      fileList,
+    });
   }
 
   handleRemove(file) {
