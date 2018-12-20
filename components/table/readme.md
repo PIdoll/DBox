@@ -381,7 +381,7 @@ class TableView extends React.Component {
 #### **异步数据**
 ```jsx
 import {Table} from 'components';
-const  {reqwest} = require('./index.jsx');
+import reqwest from 'reqwest'
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
