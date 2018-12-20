@@ -79,7 +79,7 @@
 }
 .idoll-upload.idoll-upload-select-picture-card .idoll-upload-text {
   margin-top: 14px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.45);
   line-height: 22px;
 }
 .idoll-upload.idoll-upload-drag {
@@ -109,7 +109,7 @@
   vertical-align: middle;
 }
 .idoll-upload.idoll-upload-drag:not(.idoll-upload-disabled):hover {
-  border-color: #40A9FF;
+  border-color: #13B886;
 }
 .idoll-upload.idoll-upload-drag p.idoll-upload-icon {
   margin-bottom: 18px;
@@ -263,73 +263,9 @@
 .idoll-upload-list-picture-card .idoll-upload-list-item:hover .idoll-upload-list-item-info {
   background: transparent;
 }
-.idoll-upload-list-picture .idoll-upload-list-item span,
-.idoll-upload-list-picture-card .idoll-upload-list-item span {
-  display: block;
-  font-size: 16px;
-  position: absolute;
-  cursor: pointer;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  white-space: nowrap;
-  opacity: 0;
-}
-.idoll-upload-list-picture .idoll-upload-list-item span a,
-.idoll-upload-list-picture-card .idoll-upload-list-item span a {
-  margin-right: 8px;
-}
-.idoll-upload-list-picture .idoll-upload-list-item span a i,
-.idoll-upload-list-picture-card .idoll-upload-list-item span a i {
-  color: rgba(255, 255, 255, 0.45);
-}
-.idoll-upload-list-picture .idoll-upload-list-item span a:active i,
-.idoll-upload-list-picture-card .idoll-upload-list-item span a:active i {
-  color: #fff;
-}
-.idoll-upload-list-picture .idoll-upload-list-item:hover span,
-.idoll-upload-list-picture-card .idoll-upload-list-item:hover span {
+.idoll-upload-list-picture .idoll-upload-list-item:hover > span,
+.idoll-upload-list-picture-card .idoll-upload-list-item:hover > span {
   opacity: 1;
-}
-.idoll-upload-list-picture .idoll-upload-list-item-thumbnail,
-.idoll-upload-list-picture-card .idoll-upload-list-item-thumbnail {
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-}
-.idoll-upload-list-picture .idoll-upload-list-item-thumbnail img,
-.idoll-upload-list-picture-card .idoll-upload-list-item-thumbnail img {
-  width: 48px;
-  height: 48px;
-  overflow: hidden;
-  display: block;
-}
-.idoll-upload-list-picture .idoll-upload-list-item-thumbnail.idoll-icon:before,
-.idoll-upload-list-picture-card .idoll-upload-list-item-thumbnail.idoll-icon:before {
-  line-height: 48px;
-  font-size: 24px;
-  color: rgba(0, 0, 0, 0.45);
-}
-.idoll-upload-list-picture .idoll-upload-list-item-name,
-.idoll-upload-list-picture-card .idoll-upload-list-item-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0 0 0 8px;
-  line-height: 44px;
-  transition: all .3s;
-  padding-left: 48px;
-  padding-right: 8px;
-  max-width: 100%;
-  display: inline-block;
-  box-sizing: border-box;
-}
-.idoll-upload-list-picture .idoll-upload-list-item-uploading .idoll-upload-list-item-name,
-.idoll-upload-list-picture-card .idoll-upload-list-item-uploading .idoll-upload-list-item-name {
-  line-height: 28px;
 }
 .idoll-upload-list-picture .idoll-upload-list-item-progress,
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress {
@@ -337,6 +273,10 @@
   margin-top: 0;
   bottom: 14px;
   width: calc(100% - 24px);
+}
+.idoll-upload-list-picture .idoll-upload-list-item-progress span,
+.idoll-upload-list-picture-card .idoll-upload-list-item-progress span {
+  color: rgba(0, 0, 0, 0.45);
 }
 .idoll-upload-list-picture .idoll-icon-close,
 .idoll-upload-list-picture-card .idoll-icon-close {
@@ -447,31 +387,65 @@
 .idoll-upload-list-picture-card .idoll-upload-list-item-uploading .idoll-upload-list-item-info .idoll-icon-delete {
   display: none;
 }
+.idoll-upload-list-picture-card .idoll-upload-list-item-progress span {
+  color: rgba(0, 0, 0, 0.45);
+}
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress {
   padding-left: 0;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress .idoll-progress-circle .idoll-progress-inner .idoll-progress-text {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.45);
   line-height: 24px;
 }
-.idoll-upload-list-picture .idoll-upload-list-item a span {
-  opacity: 1;
-  left: 15%;
+.idoll-upload-list-picture-card .idoll-upload-list-item-progress .idoll-progress-circle .idoll-progress-inner .idoll-progress-circle .idoll-progress-circle-path {
+  stroke: #13B886 !important;
 }
-.idoll-upload-list-picture .idoll-upload-list-item-done .idoll-upload-list-item-info a .idoll-icon-check {
+.idoll-upload-list-picture .idoll-upload-list-item a span .idoll-upload-list-item .idoll-upload-list-item-info a .idoll-icon-check {
   font-size: 14px;
   position: absolute;
   top: 4px;
   right: 4px;
 }
-.idoll-upload-list-picture .idoll-upload-list-item-done .idoll-upload-list-item-info > span {
+.idoll-upload-list-picture .idoll-upload-list-item a span .idoll-upload-list-item .idoll-upload-list-item-info a span {
   opacity: 1;
 }
-.idoll-upload-list-picture .idoll-upload-list-item-progress .idoll-progress .idoll-progress-inner .idoll-progress-text {
+.idoll-upload-list-picture .idoll-upload-list-item a span .idoll-upload-list-item-progress .idoll-progress .idoll-progress-inner .idoll-progress-text {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.45);
   line-height: 24px;
+}
+.idoll-upload-list-picture .idoll-upload-list-item-thumbnail {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.idoll-upload-list-picture .idoll-upload-list-item-thumbnail img {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  display: block;
+}
+.idoll-upload-list-picture .idoll-upload-list-item-thumbnail.idoll-icon:before {
+  line-height: 48px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.45);
+}
+.idoll-upload-list-picture .idoll-upload-list-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 0 0 8px;
+  line-height: 44px;
+  transition: all .3s;
+  padding-left: 48px;
+  padding-right: 8px;
+  max-width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.idoll-upload-list-picture .idoll-upload-list-item-uploading .idoll-upload-list-item-name {
+  line-height: 28px;
 }
 .idoll-upload-list .idoll-upload-success-icon {
   color: #3CCB69;
@@ -495,6 +469,9 @@
 }
 .idoll-upload-list .idoll-upload-animate-inline-leave {
   animation-name: uploadAnimateInlineOut;
+}
+.idoll-progress-text {
+  color: rgba(0, 0, 0, 0.45);
 }
 @keyframes uploadAnimateIn {
   from {

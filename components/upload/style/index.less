@@ -75,7 +75,7 @@
     }
     .@{upload-prefix-cls}-text {
       margin-top: 14px;
-      color: @disabled-color;
+      color: @text-color-secondary;
       line-height: 22px;
     }
   }
@@ -111,7 +111,7 @@
     }
 
     &:not(.@{upload-prefix-cls}-disabled):hover {
-      border-color: @primary-5;
+      border-color: @primary-color;
     }
 
     p.@{upload-prefix-cls}-icon {
@@ -266,76 +266,20 @@
       background: transparent;
     }
 
-    .@{upload-item} span{
-      display: block;
-      font-size: 16px;
-      position: absolute;
-      cursor: pointer;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-      z-index: 10;
-      white-space: nowrap;
-      opacity: 0;
-      a {
-        margin-right: 8px;
-        i {
-        color: @text-color-disable-dark;
-        }
-      }
-      a:active i {
-        color: #fff;
-      }
-    }
 
-    .@{upload-item}:hover span {
+    .@{upload-item}:hover > span {
        opacity: 1;
     }
 
-    .@{upload-item}-thumbnail {
-      width: 48px;
-      height: 48px;
-      position: absolute;
-      top: 8px;
-      left: 8px;
-    }
-
-    .@{upload-item}-thumbnail img {
-      width: 48px;
-      height: 48px;
-      overflow: hidden;
-      display: block;
-    }
-
-    .@{upload-item}-thumbnail.@{iconfont-css-prefix}:before {
-      line-height: 48px;
-      font-size: 24px;
-      color: @text-color-secondary;
-    }
-
-    .@{upload-item}-name {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      margin: 0 0 0 8px;
-      line-height: 44px;
-      transition: all .3s;
-      padding-left: 48px;
-      padding-right: 8px;
-      max-width: 100%;
-      display: inline-block;
-      box-sizing: border-box;
-    }
-
-    .@{upload-item}-uploading .@{upload-item}-name {
-      line-height: 28px;
-    }
 
     .@{upload-item}-progress {
       padding-left: 56px;
       margin-top: 0;
       bottom: 14px;
       width: ~"calc(100% - 24px)";
+      span {
+        color: @text-color-secondary;
+      }
     }
 
     .@{iconfont-css-prefix}-close {
@@ -460,14 +404,22 @@
         }
       }
     }
+
+    .@{upload-item}-progress span {
+      color: @text-color-secondary;
+    }
     .@{upload-item}-progress {
       padding-left: 0;
       .@{idoll-prefix}-progress-circle {
         .@{idoll-prefix}-progress-inner {
           .@{idoll-prefix}-progress-text {
             opacity: 1;
-            color: @text-color-secondary;
             line-height: 24px;
+          }
+          .idoll-progress-circle {
+            .idoll-progress-circle-path {
+              stroke: @primary-color !important;
+            }
           }
         }
       }
@@ -476,35 +428,74 @@
 
   &-picture {
     .@{upload-item} a span {
-      opacity: 1;
-      left: 15%;
-    }
+      // opacity: 1;
+      // left: 0;
+      // margin-left: 90px;
     //
-    .@{upload-item}-done {
-      .@{upload-item}-info {
-        a {
-          .@{iconfont-css-prefix}-check {
-            font-size: 14px;
-            position: absolute;
-            top: 4px;
-            right: 4px;
+      .@{upload-item} {
+        .@{upload-item}-info {
+          a {
+            .@{iconfont-css-prefix}-check {
+              font-size: 14px;
+              position: absolute;
+              top: 4px;
+              right: 4px;
+            }
+             span {
+              opacity: 1;
+            }
           }
         }
-        > span {
-          opacity: 1;
+      }
+      .@{upload-item}-progress {
+        .@{idoll-prefix}-progress {
+          .@{idoll-prefix}-progress-inner {
+            .@{idoll-prefix}-progress-text {
+              opacity: 1;
+              line-height: 24px;
+            }
+          }
         }
       }
+    } 
+    .@{upload-item}-thumbnail {
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: 8px;
+      left: 8px;
     }
-    .@{upload-item}-progress {
-      .@{idoll-prefix}-progress {
-        .@{idoll-prefix}-progress-inner {
-          .@{idoll-prefix}-progress-text {
-            opacity: 1;
-            color: @text-color-secondary;
-            line-height: 24px;
-          }
-        }
-      }
+
+    .@{upload-item}-thumbnail img {
+      width: 48px;
+      height: 48px;
+      overflow: hidden;
+      display: block;
+    }
+
+    .@{upload-item}-thumbnail.@{iconfont-css-prefix}:before {
+      line-height: 48px;
+      font-size: 24px;
+      color: @text-color-secondary;
+    }
+
+
+    .@{upload-item}-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin: 0 0 0 8px;
+      line-height: 44px;
+      transition: all .3s;
+      padding-left: 48px;
+      padding-right: 8px;
+      max-width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+
+    .@{upload-item}-uploading .@{upload-item}-name {
+      line-height: 28px;
     }
   }
 
@@ -538,6 +529,9 @@
   }
 }
 
+.@{idoll-prefix}-progress-text {
+  color: @text-color-secondary;
+}
 @keyframes uploadAnimateIn {
   from {
     height: 0;

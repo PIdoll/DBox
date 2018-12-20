@@ -33,9 +33,7 @@ const props = {
     authorization: 'authorization-text',
   },
   onChange(info) {
-    console.log(`info${info}`)
     if (info.file.status !== 'uploading') {
-      this.setState({fileList: this.state.fileList.push(info.file)})
       console.log(info.file, info.fileList);
     }
     if (info.file.status === 'done') {
@@ -45,15 +43,14 @@ const props = {
     }
   },
   beforeUpload(file) {
-    const isJPG = file.type === 'image/jpeg' || 'image／png';
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJPG) {
-      message.error('您只能上传JPG/PNG图片!');
+      message.error('您只能上传 JPG或PNG 文件!');
     }
-    const isLt1M = file.size > 1024;
+    const isLt1M = file.size / 1024 / 1024 < 1;
     if (!isLt1M) {
-      message.error('图片过大，请选择小于1MB的图片!');
+      message.error('上传图片文件必须小于 1024KB!');
     }
-    return isJPG && isLt1M;
   }
 };
 

@@ -6,7 +6,6 @@ import classNames from 'classnames';
 
 const prefixCls = 'idoll-upload';
 
-// https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 const previewFile = (file, callback) => {
   const reader = new FileReader();
   reader.onloadend = () => callback(reader.result);
@@ -15,7 +14,7 @@ const previewFile = (file, callback) => {
 
 export default class UploadList extends React.Component {
   static defaultProps = {
-    listType: 'text', // or picture
+    listType: 'text',
     items: [],
     progressAttr: {
       strokeWidth: 3,
@@ -83,7 +82,7 @@ export default class UploadList extends React.Component {
       if (file.status === 'uploading') {
         progress = (
           <div className={`${prefixCls}-list-item-progress`}>
-            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : null} {...this.props.progressAttr} percent={Math.floor(file.percent)} />
+            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : null} {...this.props.progressAttr} percent={Math.floor(file.percent)} status={file.status === 'error' ? 'exception' : 'active'} />
           </div>
         );
       }
