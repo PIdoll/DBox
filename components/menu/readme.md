@@ -51,13 +51,14 @@ class MenuView extends React.Component {
 
 #### **手风琴菜单**
 ```jsx
-import {Menu} from 'components';
+import {Menu, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
+const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
 class MenuView extends React.Component {
-	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
   constructor(props) {
     super(props);
 	  this.state = {
+      openKeys: ['sub_1'],
 	    current: 'home'
 	  }
 	  this.onOpenChange = this.onOpenChange.bind(this)
@@ -117,7 +118,7 @@ class MenuView extends React.Component {
       mode: 'inline',
 	  }
 	  this.handleClick = this.handleClick.bind(this)
-	  this.hangeMode = this.hangeMode.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
@@ -186,7 +187,7 @@ class MenuView extends React.Component {
 	    mode: 'inline',
 	  }
 	  this.handleClick = this.handleClick.bind(this)
-	  this.hangeMode = this.hangeMode.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
 	  this.changeTheme = this.changeTheme.bind(this)
   };
    handleClick (e) {
