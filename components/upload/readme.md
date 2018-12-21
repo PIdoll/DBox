@@ -130,7 +130,7 @@ class PicturesWall extends React.Component {
       uid: '-1',
       name: 'xxx.png',
       status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+      url: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
     }],
   };
   this.handleCancel = this.handleCancel.bind(this);
@@ -194,14 +194,15 @@ const fileList = [{
   uid: -1,
   name: 'xxx.png',
   status: 'done',
-  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  url: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
+  thumbUrl:
+  'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
 }, {
   uid: -2,
   name: 'yyy.png',
   status: 'error',
-  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  url: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
+  thumbUrl: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
 }];
 
 const props3 = {
