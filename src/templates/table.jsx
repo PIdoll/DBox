@@ -295,7 +295,7 @@ const expandedRowRender = () => {
   for (let i = 0; i < 2; ++i) {
     datasubmenu.push({
       key: i,
-      date: new Date().toLocaleString(),
+      date: '2018-8-8',
       name: 'Admin',
       operation: '正常',
       upgradeNum: Math.ceil(Math.random() * 10),

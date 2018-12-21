@@ -49,8 +49,9 @@ import Tree from './tree';
 import Transfer from './transfer';
 import TreeSelect from './tree-select';
 import Upload from './upload';
-import Color from './color';
 import Typography from './typography';
+import Version from './version';
+import PrevPage from './prevPage';
 
 
 export { Affix };
@@ -103,6 +104,7 @@ export { Tree };
 export { Transfer };
 export { TreeSelect };
 export { Upload };
-export { Color };
 export { Typography };
+export { Version };
+export { PrevPage };
 

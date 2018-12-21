@@ -18,12 +18,15 @@ const menu = (
 );
 
 class MainLayout extends Component {
+  rootSubmenuKeys = ['item_1', 'item_2', 'item_3', 'sub1', 'sub2', 'sub3'];
+  array = [];
   constructor(props) {
     super(props)
     const panes = [
       { title: <Icon type='home' />, content: '首页', key: '7' }
     ];
     this.state = {
+      openKeys: ['sub1'],
       flag: false,
       flag2: false,
       current: 'platform',
@@ -41,13 +44,14 @@ class MainLayout extends Component {
   }
   handleClick = (e) => {
     this.setState({
-      current: e.key
+      current: e.key,
     })
   }
   handleClickTabs = (e) => {
+    this.array.push(...e.keyPath)
     this.setState({
       current: e.key,
-      activeKey: e.key
+      activeKey: e.key,
     });
     if (this.state.panes.findIndex(i => i.key === e.key) !== -1) {
       return false
@@ -68,12 +72,23 @@ class MainLayout extends Component {
     })
   }
   onChange = (activeKey) => {
-    this.setState({activeKey});
+    const id = this.array.indexOf(activeKey) + 1
+    this.setState({ activeKey, openKeys: [this.array[id]] });
+  }
+  onOpenChange = (value) => {
+    const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
+    if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      this.setState({ openKeys: value });
+    } else {
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+    }
   }
   onEdit = (targetKey, action) => {
     this[action](targetKey);
   }
-  add = (key, title) => {
+  add = (key, title, e) => {
     const panes = this.state.panes;
     const activeKey = key;
     panes.push({ title: title, content: title, key: activeKey });
@@ -91,7 +106,12 @@ class MainLayout extends Component {
     if (lastIndex >= 0 && activeKey === targetKey) {
       activeKey = panes[lastIndex].key;
     }
-    this.setState({panes, activeKey});
+    const id = this.array.indexOf(activeKey) + 1
+    this.setState({
+      panes,
+      activeKey,
+      openKeys: [this.array[id]]
+    });
   }
   render () {
     return (
@@ -167,23 +187,24 @@ class MainLayout extends Component {
               <Menu
                 onClick={this.handleClickBread}
                 defaultSelectedKeys={['8']}
-                defaultOpenKeys={['sub1']}
+                openKeys={this.state.openKeys}
+                onOpenChange={this.onOpenChange}
                 mode={this.state.modeMenu2}
         >
                 <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-                <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+                <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
                   <Menu.Item key='8'>子菜单一</Menu.Item>
                   <Menu.Item key='9'>子菜单二</Menu.Item>
                   <Menu.Item key='10'>子菜单三</Menu.Item>
                   <Menu.Item key='11'>子菜单四</Menu.Item>
                 </SubMenu>
-                <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+                <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
                   <Menu.Item key='12'>子菜单五</Menu.Item>
                   <Menu.Item key='13'>子菜单六</Menu.Item>
                   <Menu.Item key='14'>子菜单七</Menu.Item>
                   <Menu.Item key='15'>子菜单八</Menu.Item>
                 </SubMenu>
-                <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+                <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
                   <Menu.Item key='16'>子菜单九</Menu.Item>
                   <Menu.Item key='17'>子菜单十</Menu.Item>
                   <Menu.Item key='18'>子菜单十一</Menu.Item>
@@ -220,7 +241,8 @@ class MainLayout extends Component {
                 onClick={this.handleClickTabs}
                 defaultSelectedKeys={['7']}
                 selectedKeys={[this.state.activeKey]}
-                defaultOpenKeys={['sub1']}
+                openKeys={this.state.openKeys}
+                onOpenChange={this.onOpenChange}
                 mode={this.state.modeMenu}
         >
                 <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>

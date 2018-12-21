@@ -85,3 +85,13 @@ import {TagGroup} from 'components/tag';
 | onClose | 关闭时的回调 | (e) => void | - |
 | --- | --- | --- | --- |
 | onChange | 点击标签时触发的回调 | (checked) => void | - |
+
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

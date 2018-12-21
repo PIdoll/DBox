@@ -122,17 +122,18 @@
     font-size: @spin-dot-size;
 
     // .square(@spin-dot-size);
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 
     i {
       display: inline-block;
       content: '';
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       border: 1px solid;
       margin-right: 8px;
       border-color: @primary-color @Black5 @Black5 @Black5;
+      border-width: 3px;
       border-radius: 50%;
       box-sizing: border-box;
       /*动画时间1s，线性变化，无限循环*/
@@ -157,6 +158,7 @@
     width: 16px;
     height: 16px;
     i {
+      border-width: 1px;
       width: 16px;
       height: 16px;
     }
@@ -167,11 +169,12 @@
     font-size: @spin-dot-size-lg;
 
     // .square(@spin-dot-size-lg);
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     i {
-      width: 32px;
-      height: 32px;
+      border-width: 4px;
+      width: 48px;
+      height: 48px;
     }
   }
 

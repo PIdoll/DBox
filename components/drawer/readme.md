@@ -360,7 +360,7 @@ class DrawerView extends React.Component {
 
 #### **表单抽屉**
 ```jsx
-import {Button, Drawer, Divider, DatePicker, Form, Input, Grid, Select} from 'components';
+import {Button, Divider, DatePicker, Form, Input, Select} from 'components';
 import {Row, Col} from 'components/grid';
 const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
@@ -536,3 +536,12 @@ const DrawerView = Form.create()(DrawerDemo);
 | zIndex | 设置 Drawer 的 `z-index` | Number | 1000 |
 | placement | 抽屉的方向 | 'top'  / 'right' / 'bottom' / 'left' | 'right'
 | onClose | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

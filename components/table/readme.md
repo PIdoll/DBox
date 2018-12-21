@@ -558,7 +558,7 @@ const data = [{
   for (let i = 0; i < 2; ++i) {
     datasubmenu.push({
       key: i,
-      date: new Date().toLocaleString(),
+      date: '2018-8-8',
       name: 'Admin',
       operation: '正常',
       upgradeNum: Math.ceil(Math.random() * 10),
@@ -1246,4 +1246,13 @@ class NumericInput extends React.Component {
 return <Table rowKey="uid" />;
 // 或
 return <Table rowKey={record => record.uid} />;
+```
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
 ```

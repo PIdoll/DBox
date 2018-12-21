@@ -15,7 +15,7 @@
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,7 +39,7 @@
 .idoll-upload.idoll-upload-select .idoll-upload p {
   font-size: 12px;
   line-height: 20px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   margin: 16px 0;
   user-select: none;
   pointer-events: none;
@@ -72,11 +72,11 @@
 .idoll-upload.idoll-upload-select-picture-card .idoll-icon-plus {
   font-size: 30px;
   transition: all .3s;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-upload.idoll-upload-select-picture-card .idoll-upload-text {
   margin-top: 14px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   line-height: 22px;
 }
 .idoll-upload.idoll-upload-select-picture-card.idoll-upload-disabled:hover {
@@ -92,9 +92,6 @@
   height: 100%;
   position: relative;
   background: #fafafa;
-}
-.idoll-upload.idoll-upload-drag.idoll-upload-drag-hover:not(.idoll-upload-disabled) {
-  border: 2px dashed #40A9FF;
 }
 .idoll-upload.idoll-upload-drag.idoll-upload-disabled {
   cursor: not-allowed;
@@ -122,12 +119,12 @@
 .idoll-upload.idoll-upload-drag p.idoll-upload-text {
   font-size: 14px;
   margin: 0 0 8px 0;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 22px;
 }
 .idoll-upload.idoll-upload-drag p.idoll-upload-limit {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   line-height: 20px;
 }
 .idoll-upload-disabled,
@@ -145,25 +142,25 @@
 .idoll-upload-disabled:hover .idoll-btn i,
 .idoll-upload-disabled .idoll-btn span,
 .idoll-upload-disabled:hover .idoll-btn span {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-upload-disabled .idoll-btn-primary:focus > .idoll-icon,
 .idoll-upload-disabled:hover .idoll-btn-primary:focus > .idoll-icon {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-upload-disabled div.idoll-upload-drag-container .idoll-upload-icon i.idoll-icon,
 .idoll-upload-disabled:hover div.idoll-upload-drag-container .idoll-upload-icon i.idoll-icon {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .beginUpload[disabled] .idoll-icon {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-upload-list {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -216,7 +213,7 @@
 .idoll-upload-list-item-info .idoll-icon-loading,
 .idoll-upload-list-item-info .idoll-icon-paper-clip {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 5px;
 }
@@ -227,11 +224,11 @@
   position: absolute;
   top: 0;
   right: 4px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   line-height: 22px;
 }
 .idoll-upload-list-item .idoll-icon-close:hover {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-upload-list-item:hover .idoll-upload-list-item-info {
   background-color: #E7F8F3;
@@ -323,7 +320,7 @@
 }
 .idoll-upload-list-picture .idoll-upload-list-item-progress span,
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress span {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-upload-list-picture .idoll-icon-close,
 .idoll-upload-list-picture-card .idoll-icon-close {
@@ -343,7 +340,7 @@
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span {
   display: block;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 16px;
   position: absolute;
   cursor: pointer;
@@ -358,7 +355,7 @@
   margin-right: 8px;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span a i {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span a:active i {
   color: #fff;
@@ -407,7 +404,7 @@
   cursor: pointer;
   font-size: 16px;
   width: 16px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 8px;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item-actions .idoll-icon-pro2-eye:hover,
@@ -440,7 +437,7 @@
   display: none;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress span {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item-progress {
   padding-left: 0;
@@ -481,7 +478,7 @@
 .idoll-upload-list-picture .idoll-upload-list-item-thumbnail.idoll-icon:before {
   line-height: 48px;
   font-size: 24px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-upload-list-picture .idoll-upload-list-item-name {
   overflow: hidden;
@@ -523,7 +520,7 @@
   animation-name: uploadAnimateInlineOut;
 }
 .idoll-progress-text {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 @keyframes uploadAnimateIn {
   from {

@@ -400,3 +400,12 @@ class Demo extends React.Component {
 #### **IE note**
 
 - [https://github.com/react-component/upload#ie89-note](https://github.com/react-component/upload#ie89-note)
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

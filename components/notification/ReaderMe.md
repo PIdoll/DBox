@@ -52,3 +52,12 @@ notification.config({
 |------------|--------------------|----------------------------|--------------|
 | top        | 消息距离顶部的位置 | Number                     | 24px         |
 | duration   | 默认自动关闭延时，单位秒 | Number                   | 4.5         |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

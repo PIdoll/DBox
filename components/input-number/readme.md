@@ -115,3 +115,12 @@ const InputNumberView = () => {
 | focus()| 获取焦点 |
 
 <style>.idoll-input-number{margin-right:10px}</style>
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

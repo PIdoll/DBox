@@ -87,3 +87,12 @@ import {Switch} from 'components';
 | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

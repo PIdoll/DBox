@@ -4,7 +4,7 @@ import confirm from './confirm';
 Modal.info = function (props) {
   const config = {
     type: 'info',
-    iconType: 'warning-circle',
+    iconType: 'pro2-info-circle',
     okCancel: false,
     ...props
   };

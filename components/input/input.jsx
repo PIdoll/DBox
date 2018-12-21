@@ -1,8 +1,9 @@
 // object.omit github.com/jonschlinkert/object.omit
-import React, { Component } from 'react'
-import classNames from 'classnames'
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import omit from 'object.omit';
+import Icon from '../icon';
 
 import './style'
 
@@ -55,10 +56,18 @@ export default class Input extends Component {
     onChange: PropTypes.func,
     beforelength: PropTypes.string, // 前置的宽度
     afterlength: PropTypes.string, // 后置的宽度
+    clearable: PropTypes.bool,
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
   };
+
+  constructor() {
+    super();
+    this.state = {
+      isHover: false
+    }
+  }
 
   handleKeyDown = (e) => {
     const { onPressEnter, onKeyDown } = this.props;
@@ -66,7 +75,7 @@ export default class Input extends Component {
       onPressEnter(e);
     }
     if (onKeyDown) {
-      onKeyDown(e)
+      onKeyDown(e);
     }
   }
 
@@ -131,10 +140,6 @@ export default class Input extends Component {
         )
     ) : null;
 
-    // const className = classNames({
-    //   [`${props.prefixCls}-wrap`]: true,
-    //   [wrapperClassName]: (addonBefore || addonAfter)
-    // });
     const className = classNames(`${props.prefixCls}-wrapper`, {
       [wrapperClassName]: (addonBefore || addonAfter),
     });
@@ -168,10 +173,18 @@ export default class Input extends Component {
     );
   }
 
+  // 清除输入框
+  onClear = () => {
+    this.input.value = '';
+    this.setState({
+      isHover: false
+    })
+  }
+
   renderLaybeldIcon = (children) => {
     const { props } = this;
 
-    if (!('prefix' in props || 'suffix' in props)) {
+    if (!('prefix' in props || 'suffix' in props || 'clearable' in props)) {
       return children;
     }
     const prefix = props.prefix ? (
@@ -180,14 +193,31 @@ export default class Input extends Component {
       </span>
     ) : null;
 
+    const clearIcon = <Icon type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
+    const clearSuffix = React.cloneElement(clearIcon, {
+      onClick: this.onClear,
+      className: 'icon-hover',
+    });
+
+    let clearAfter = (
+      <span className={`${props.prefixCls}-clear-icon`}>{clearSuffix}</span>
+    )
+
+    let clearAfterNone = (
+      <span style={{display: 'none'}} className={`${props.prefixCls}-clear-icon`}>{clearSuffix}</span>
+    )
+
     const suffix =
-      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
+      <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
+        {(this.input && this.input.value && this.state.isHover && !this.props.disabled && !this.props.readOnly) ? clearAfter : clearAfterNone}
         {props.suffix}
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
     });
+
+
 
     return (
       <span
@@ -200,6 +230,24 @@ export default class Input extends Component {
         {suffix}
       </span>
     );
+  }
+
+  onMouseEnter = (e) => {
+    this.setState({
+      isHover: true
+    })
+  }
+
+  onChange = (e) => {
+    this.setState({
+      isHover: true
+    })
+  }
+
+  onBlur = (e) => {
+    this.setState({
+      isHover: false
+    })
   }
 
   renderInput() {
@@ -216,26 +264,24 @@ export default class Input extends Component {
     ]);
 
 
-    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
-    // const clearSuffix = React.cloneElement(node, {
-    //   onClick: this.onClear,
-    //   className: 'icon-hover',
-    // });
-
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);
       // Input elements must be either controlled or uncontrolled,
       // specify either the value prop, or the defaultValue props, but no both
       delete otherProps.defaultValue;
     }
+
     return this.renderLaybeldIcon(
       <input
         {...otherProps}
         className={classNames(this.getInputClassName(), className)}
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
-      />
-    );
+        onMouseEnter={this.onMouseEnter}
+        onChange={this.onChange}
+        onBlur={this.onBlur}
+        />
+    )
   }
 
   render() {
