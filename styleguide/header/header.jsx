@@ -1,7 +1,7 @@
 import React from 'react';
 import logoPath from '../../assets/images/logo02.png';
 import './style/index';
-import HeaderNav from '../header-nav';
+// import HeaderNav from '../header-nav';
 
 export default class Header extends React.Component {
   render() {
@@ -12,9 +12,9 @@ export default class Header extends React.Component {
             <img src={logoPath} alt='logo' />
             <span className='logo_text'>DBOX</span>
           </div>
-          <div>
+          {/* <div>
             <HeaderNav />
-          </div>
+          </div> */}
         </div>
       </div>
     )

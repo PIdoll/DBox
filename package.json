@@ -11,7 +11,8 @@
     "styleguide": "NODE_ENV=development && styleguidist server",
     "styleguide:build": "NODE_ENV=production styleguidist build",
     "doc": "NODE_ENV=development styleguidist server",
-    "doc:build": "NODE_ENV=production styleguidist build"
+    "doc:build": "NODE_ENV=production styleguidist build",
+    "doc:build:windows": "set NODE_ENV=production && styleguidist build"
   },
   "keywords": [
     "idoll",

@@ -54,6 +54,7 @@ import Transfer from 'templates/transfer';
 import Drawer from 'templates/drawer';
 import HomePage from 'templates/homepage';
 import Resource from 'templates/resource';
+import DesignTent from './templates/design-tent';
 
 
 import './App.css';
@@ -116,6 +117,7 @@ const App = () => (
       <Route exact path='/transfer' component={Transfer} />
       <Route exact path='/homepage' component={HomePage} />
       <Route exact path='/resource' component={Resource} />
+      <Route exact path='/designTent' component={DesignTent} />
     </div>
   </Router>
 )

@@ -23,6 +23,7 @@ export default class HomePage extends React.Component {
   }
 
   handleStartUse = () => {
+    location.pathname = '../../guide/index.html';
   }
 
   render () {
