@@ -7,6 +7,7 @@ import Icon from '../../components/icon'
 
 import './style/index.js'
 
+
 export default class Button extends React.Component {
 	static defaultProps = {
 	    prefixCls: 'idoll-btn',

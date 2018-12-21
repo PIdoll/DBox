@@ -23,19 +23,16 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	isChild: {
 		[mq.small]: {
 			display: 'inline-block',
-			margin: [[0, space[1], 0, 0]],
 		},
 	},
 	heading: {
-		color: color.base,
+		color: '#999',
 		marginTop: space[1],
 		fontFamily: fontFamily.base,
 		fontWeight: 'bold',
 	},
 	isSelected: {
-    fontWeight: 'bold',
-    width: '100%',
-    border: '1px solid blue'
+		fontWeight: 'bold',
 	},
 });
 

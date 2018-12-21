@@ -41,7 +41,7 @@ import Switch from './switch';
 import Table from './table';
 import Tabs from './tabs';
 import Tag from './tag';
-import TimePicker from './Time-picker';
+import TimePicker from './time-picker';
 import Timeline from './timeline';
 import Title from './title';
 import Tooltip from './tooltip';
@@ -51,6 +51,7 @@ import TreeSelect from './tree-select';
 import Upload from './upload';
 import Typography from './typography';
 import Version from './version';
+import Color from './color';
 import PrevPage from './prevPage';
 
 
@@ -107,4 +108,5 @@ export { Upload };
 export { Typography };
 export { Version };
 export { PrevPage };
+export { Color };
 

@@ -40,6 +40,11 @@ function noop() {}
 function getDefaultTarget() {
   return typeof window !== 'undefined' ? window : null;
 }
+/**
+ * The only true button.
+ *
+ * @visibleName The Best Button Ever 🐙
+ */
 export default class Affix extends React.Component {
   static propTypes = {
     offsetTop: PropTypes.number, // 距离窗口顶部达到指定偏移量后触发
