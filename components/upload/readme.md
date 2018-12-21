@@ -1,16 +1,4 @@
-# [upload](http://naotu.baidu.com/file/6e99640f70c5c74be8261090819ed68e?token=130d3ddf7e756498)
-
----
-
-category: Components
-chinese: 上传
-type: Form Controls
-english: Upload
----
-
-文件选择上传和拖拽上传控件。
-
-## 何时使用
+#### **何时使用**
 
 上传是将信息（网页、文字、图片、视频等）通过网页或者上传工具发布到远程服务器上的过程。
 
@@ -18,9 +6,344 @@ english: Upload
 - 当需要展现上传的进度时。
 - 当需要使用拖拽交互时。
 
-## API
+#### **基础上传**
+```jsx
+import {Upload, Message, Button} from 'components';
+const commonFileList = [{
+  uid: -1,
+  name: 'xxx.png',
+  status: 'done',
+  url: 'http://www.baidu.com/xxx.png',
+}, {
+  uid: -2,
+  name: 'yyy.png',
+  status: 'done',
+  url: 'http://www.baidu.com/yyy.png',
+}, {
+  uid: -3,
+  name: 'zzz.png',
+  status: 'error',
+  response: 'Server Error 500',
+  url: 'http://www.baidu.com/zzz.png',
+}];
+const props1 = {
+  name: 'file',
+  action: 'https://jsonplaceholder.typicode.com/posts/',
+  headers: {
+    authorization: 'authorization-text',
+  },
+  onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      Message.success(`${info.file.name} 上传成功。`);
+      return false;
+    } else if (info.file.status === 'error') {
+    	Message.error(`${info.file.name} 上传失败。`);
+      return false;
+    }
+  },
+  beforeUpload(file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  }
+};
+<Upload {...props1} defaultFileList={commonFileList}>
+  <Button type='primary' icon='pro2-upload'>上传</Button>
+  <p>支持上传jpg/png文件格式，且不超过1024kb</p>
+</Upload>
+```
 
-### upload
+#### **拖拽上传**
+```jsx
+import {Upload, Message, Icon} from 'components';
+const Dragger = Upload.Dragger;
+const commonFileList = [{
+  uid: -1,
+  name: 'xxx.png',
+  status: 'done',
+  url: 'http://www.baidu.com/xxx.png',
+}, {
+  uid: -2,
+  name: 'yyy.png',
+  status: 'done',
+  url: 'http://www.baidu.com/yyy.png',
+}, {
+  uid: -3,
+  name: 'zzz.png',
+  status: 'error',
+  response: 'Server Error 500',
+  url: 'http://www.baidu.com/zzz.png',
+}];
+const props2 = {
+  name: 'file',
+  multiple: true,
+  action: 'https://jsonplaceholder.typicode.com/posts/',
+  onChange(info) {
+    const status = info.file.status;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (status === 'done') {
+      Message.success(`${info.file.name}文件上传成功.`);
+    } else if (status === 'error') {
+      Message.error(`${info.file.name}文件上传失败.`);
+    }
+  },
+  beforeUpload(file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  }
+};
+<Dragger {...props2} defaultFileList={commonFileList}>
+  <p className='idoll-upload-icon'><Icon type='pro2-upload' /></p>
+  <p className='idoll-upload-text'>将文件拖到此处，或者点击上传</p>
+  <p className='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
+</Dragger>
+```
+
+#### **照片墙上传**
+```jsx
+import {Upload, Message, Modal, Icon} from 'components';
+class PicturesWall extends React.Component {
+	constructor(props) {
+	super(props)
+  this.state = {
+    previewVisible: false,
+    previewImage: '',
+    fileList: [{
+      uid: '-1',
+      name: 'xxx.png',
+      status: 'done',
+      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    }],
+  };
+  this.handleCancel = this.handleCancel.bind(this);
+  this.handlePreview = this.handlePreview.bind(this);
+  this.handleChange = this.handleChange.bind(this);
+  this.beforeUpload = this.beforeUpload.bind(this);
+}
+  handleCancel () { this.setState({ previewVisible: false })};
+  handlePreview (file) {
+    this.setState({
+      previewImage: file.url || file.thumbUrl,
+      previewVisible: true,
+    });
+  };
+  beforeUpload (file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  };
+  handleChange ({ fileList }) {this.setState({ fileList })};
+  render() {
+    const { previewVisible, previewImage, fileList } = this.state;
+    const uploadButton = (
+      <div>
+        <Icon type='plus' />
+        <div className='idoll-upload-text'>Upload</div>
+      </div>
+    );
+    return (
+      <div className='clearfix'>
+        <Upload
+          action='https://jsonplaceholder.typicode.com/posts/'
+          listType='picture-card'
+          fileList={fileList}
+          beforeUpload={this.beforeUpload}
+          onPreview={this.handlePreview}
+          onChange={this.handleChange}
+        >
+          {fileList.length >= 3 ? null : uploadButton}
+        </Upload>
+        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+          <img alt='example' style={{ width: '100%' }} src={previewImage} />
+        </Modal>
+      </div>
+    );
+  }
+};
+<PicturesWall />
+```
+
+#### **图片列表上传**
+```jsx
+import {Upload, Message, Icon, Button} from 'components';
+const fileList = [{
+  uid: -1,
+  name: 'xxx.png',
+  status: 'done',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}, {
+  uid: -2,
+  name: 'yyy.png',
+  status: 'error',
+  url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+}];
+
+const props3 = {
+  action: 'https://jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  defaultFileList: [...fileList],
+  beforeUpload (file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  },
+  onChange(info) {
+    const status = info.file.status;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (status === 'done') {
+      Message.success(`${info.file.name}文件上传成功.`);
+    } else if (status === 'error') {
+      Message.error(`${info.file.name}文件上传失败.`);
+    }
+  },
+};
+<Upload {...props3}>
+  <Button type='primary'><Icon type='pro2-upload' />上传</Button>
+</Upload>
+```
+
+#### **手动上传**
+```jsx
+import reqwest from 'reqwest';
+import {Upload, Message, Button, Icon} from 'components';
+class Demo extends React.Component {
+	constructor(props) {
+	super(props)
+      this.state = {
+      fileList: [{
+        uid: -1,
+        name: 'xxx.png',
+        status: 'done',
+        url: 'http://www.baidu.com/xxx.png',
+      }, {
+        uid: -2,
+        name: 'yyy.png',
+        status: 'done',
+        url: 'http://www.baidu.com/yyy.png',
+      }, {
+        uid: -3,
+        name: 'zzz.png',
+        status: 'error',
+        response: 'Server Error 500',
+        url: 'http://www.baidu.com/zzz.png',
+      }],
+      uploading: false,
+    }
+    this.handleUpload = this.handleUpload.bind(this);
+  };
+  handleUpload () {
+    const { fileList } = this.state;
+    const formData = [];
+    fileList.forEach((file) => {
+      formData.push(file);
+    });
+    this.setState({
+      uploading: true,
+      fileList: formData
+    });
+
+    // 你可以用AJAX类似这样
+    reqwest({
+      url: 'https://jsonplaceholder.typicode.com/posts/',
+      method: 'post',
+      processData: false,
+      data: formData,
+      success: () => {
+        this.setState({
+          fileList: formData,
+          uploading: false,
+        });
+        console.log(formData)
+        Message.success('文件上传成功.');
+      },
+      error: () => {
+        this.setState({
+          uploading: false,
+        });
+        Message.error('文件上传失败.');
+      },
+    });
+  };
+  render() {
+    const { fileList } = this.state;
+    const props4 = {
+      onRemove: (file) => {
+        this.setState((state) => {
+          const index = this.state.fileList.indexOf(file);
+          const newFileList = this.state.fileList.slice();
+          newFileList.splice(index, 1);
+          return {
+            fileList: newFileList,
+          };
+        });
+      },
+      beforeUpload: (file) => {
+        this.setState(state => ({
+          fileList: [...this.state.fileList, file],
+        }));
+        return false;
+      },
+      fileList,
+    };
+    return (
+        <div>
+          <Upload {...props4}>
+            <Button type='secondary'><Icon type='pro2-file' />选择文件</Button>
+          </Upload>
+          <Button
+            type='primary'
+            className='beginUpload'
+            disabled={this.state.fileList.length <= 3}
+            onClick={this.handleUpload}
+            loading={this.state.uploading}
+            style={{ marginTop: 16 }}
+          >
+            {!this.state.uploading ? <Icon type='pro2-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
+          </Button>
+        </div>
+    )
+  }
+};
+<Demo />
+```
+
+
+
+#### **upload**
 
 | 参数   |   说明   |     类型        | 默认值 |
 |------------|------------| ----------- |-------|
@@ -41,13 +364,13 @@ english: Upload
 | supportServerRender | 服务端渲染时需要打开这个                           | Boolean | false    |
 | disabled | 是否禁用                           | Boolean | false    |
 
-### onChange
+#### **onChange**
 
 > 上传中、完成、失败都会调用这个函数。
 
 文件状态改变的回调，返回为：
 
-```js
+```html
 {
   file: { /* ... */ },
   fileList: [ /* ... */ ],
@@ -57,7 +380,7 @@ english: Upload
 
 1. `file` 当前操作的文件对象。
 
-   ```js
+   ```html
    {
       uid: 'uid',      // 文件唯一标识，建议设置为负数，防止和内部产生的 id 冲突
       name: 'xx.png'   // 文件名
@@ -69,10 +392,10 @@ english: Upload
 2. `fileList` 当前的文件列表。
 3. `event` 上传中的服务端响应内容，包含了上传进度等信息，高级浏览器支持。
 
-## 显示下载链接
+#### **显示下载链接**
 
 请使用 fileList 属性设置数组项的 url 属性进行展示控制。
 
-## IE note
+#### **IE note**
 
 - [https://github.com/react-component/upload#ie89-note](https://github.com/react-component/upload#ie89-note)

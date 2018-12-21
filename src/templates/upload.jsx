@@ -1,5 +1,5 @@
 import React from 'react'
-import message from 'components/message';
+import Message from 'components/message';
 import Button from 'components/button';
 import Upload from 'components/upload';
 import Modal from 'components/modal';
@@ -37,22 +37,23 @@ const props1 = {
       console.log(info.file, info.fileList);
     }
     if (info.file.status === 'done') {
-      message.success(`${info.file.name} 上传成功。`);
+      Message.success(`${info.file.name} 上传成功。`);
       return false;
     } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} 上传失败。`);
+      Message.error(`${info.file.name} 上传失败。`);
       return false;
     }
   },
   beforeUpload(file) {
     const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJPG) {
-      message.error('您只能上传 JPG或PNG 文件!');
+      Message.error('您只能上传 JPG或PNG 文件!');
     }
     const isLt1M = file.size / 1024 / 1024 < 1;
     if (!isLt1M) {
-      message.error('上传图片文件必须小于 1024KB!');
+      Message.error('上传图片文件必须小于 1024KB!');
     }
+    return isJPG && isLt1M;
   }
 };
 
@@ -67,23 +68,26 @@ const props2 = {
       console.log(info.file, info.fileList);
     }
     if (status === 'done') {
-      message.success(`${info.file.name}文件上传成功.`);
+      Message.success(`${info.file.name}文件上传成功.`);
     } else if (status === 'error') {
-      const formData = [];
-      this.state.fileList.forEach((file) => {
-        formData.push(info.file);
-        console.log(info.file)
-      });
-      this.setState({
-        fileList: formData
-      });
-      console.log(this.state.fileList)
-      message.error(`${info.file.name}文件上传失败.`);
+      Message.error(`${info.file.name}文件上传失败.`);
     }
   },
+  beforeUpload(file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  }
 };
 
 // 照片墙上传
+
 class PicturesWall extends React.Component {
   state = {
     previewVisible: false,
@@ -104,7 +108,17 @@ class PicturesWall extends React.Component {
       previewVisible: true,
     });
   }
-
+  beforeUpload = (file) => {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!');
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!');
+    }
+    return isJPG && isLt1M;
+  }
   handleChange = ({ fileList }) => this.setState({ fileList })
 
   render() {
@@ -112,15 +126,16 @@ class PicturesWall extends React.Component {
     const uploadButton = (
       <div>
         <Icon type='plus' />
-        <div className='idoll-upload-text'>Upload</div>
+        <div className='ant-upload-text'>Upload</div>
       </div>
     );
     return (
       <div className='clearfix'>
         <Upload
-          action='https://jsonplaceholder.typicode.com/posts/'
+          action='//jsonplaceholder.typicode.com/posts/'
           listType='picture-card'
           fileList={fileList}
+          beforeUpload={this.beforeUpload}
           onPreview={this.handlePreview}
           onChange={this.handleChange}
         >
@@ -150,18 +165,29 @@ const fileList = [{
 }];
 
 const props3 = {
-  action: '//jsonplaceholder.typicode.com/posts/',
+  action: 'https://jsonplaceholder.typicode.com/posts/',
   listType: 'picture',
   defaultFileList: [...fileList],
+  beforeUpload (file) {
+    const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJPG) {
+      Message.error('您只能上传 JPG或PNG 文件!')
+    }
+    const isLt1M = file.size / 1024 / 1024 < 1;
+    if (!isLt1M) {
+      Message.error('上传图片文件必须小于 1024KB!')
+    }
+    return isJPG && isLt1M;
+  },
   onChange(info) {
     const status = info.file.status;
     if (status !== 'uploading') {
       console.log(info.file, info.fileList);
     }
     if (status === 'done') {
-      message.success(`${info.file.name}文件上传成功.`);
+      Message.success(`${info.file.name}文件上传成功.`);
     } else if (status === 'error') {
-      message.error(`${info.file.name}文件上传失败.`);
+      Message.error(`${info.file.name}文件上传失败.`);
     }
   },
 };
@@ -195,14 +221,13 @@ class Uploader extends React.Component {
     const formData = [];
     fileList.forEach((file) => {
       formData.push(file);
-      console.log(file)
     });
     this.setState({
       uploading: true,
       fileList: formData
     });
 
-    // You can use any AJAX library you like
+    // 你可以用AJAX类似这样
     reqwest({
       url: 'https://jsonplaceholder.typicode.com/posts/',
       method: 'post',
@@ -213,16 +238,17 @@ class Uploader extends React.Component {
           fileList: formData,
           uploading: false,
         });
-        message.success('文件上传成功.');
+        console.log(formData)
+        Message.success('文件上传成功.');
       },
       error: () => {
         this.setState({
           uploading: false,
         });
-        message.error('文件上传失败.');
+        Message.error('文件上传失败.');
       },
     });
-  }
+  };
   render() {
     const { fileList } = this.state;
     const props4 = {
@@ -232,15 +258,15 @@ class Uploader extends React.Component {
           const newFileList = this.state.fileList.slice();
           newFileList.splice(index, 1);
           return {
-            fileList: newFileList,
+            fileList: newFileList
           };
         });
       },
       beforeUpload: (file) => {
+        console.log(file)
         this.setState(state => ({
           fileList: [...this.state.fileList, file],
         }));
-        // console.log(this.state.fileList)
         return false;
       },
       fileList,
@@ -273,6 +299,7 @@ class Uploader extends React.Component {
           <Button
             type='primary'
             className='beginUpload'
+            disabled={this.state.fileList.length <= 3}
             onClick={this.handleUpload}
             loading={this.state.uploading}
             style={{ marginTop: 16 }}

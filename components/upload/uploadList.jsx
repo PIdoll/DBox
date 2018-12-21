@@ -19,6 +19,7 @@ export default class UploadList extends React.Component {
     items: [],
     progressAttr: {
       strokeWidth: 3,
+      status: 'active'
     },
   };
 
@@ -112,12 +113,19 @@ export default class UploadList extends React.Component {
                 onClick={e => this.handlePreview(file, e)}
                 >
                 <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
-              </a>) : (
-                <span
+              </a>) : (file.status === 'error' ? <Tooltip title={file.response || 'Server Error 500'}>
+                <a
+                  href=''
+                  target='_blank'
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
                 >
-                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type='' />
+                </a></Tooltip> : <span
+                  className={`${prefixCls}-list-item-name`}
+                  onClick={e => this.handlePreview(file, e)}
+                >
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type='check' />
                 </span>
               )
             }
@@ -148,7 +156,7 @@ export default class UploadList extends React.Component {
     });
     return (
       <div className={listClassNames}>
-        <Animate transitionName={`${prefixCls}-margin-top`}>
+        <Animate transitionName='fade'>
           {list}
         </Animate>
       </div>

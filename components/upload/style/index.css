@@ -58,6 +58,9 @@
   margin-bottom: 8px;
   display: table;
 }
+.idoll-upload.idoll-upload-select-picture-card:hover {
+  border-color: #13B886;
+}
 .idoll-upload.idoll-upload-select-picture-card > .idoll-upload {
   width: 100%;
   height: 100%;
@@ -66,21 +69,18 @@
   vertical-align: middle;
   padding: 8px;
 }
-.idoll-upload.idoll-upload-select-picture-card:hover {
-  border-color: #13B886;
-}
 .idoll-upload.idoll-upload-select-picture-card .idoll-icon-plus {
   font-size: 30px;
   transition: all .3s;
   color: rgba(0, 0, 0, 0.25);
 }
-.idoll-upload.idoll-upload-select-picture-card .idoll-icon-plus:hover {
-  color: rgba(0, 0, 0, 0.45);
-}
 .idoll-upload.idoll-upload-select-picture-card .idoll-upload-text {
   margin-top: 14px;
   color: rgba(0, 0, 0, 0.45);
   line-height: 22px;
+}
+.idoll-upload.idoll-upload-select-picture-card.idoll-upload-disabled:hover {
+  border-color: #E2E2E2;
 }
 .idoll-upload.idoll-upload-drag {
   border: 1px dashed #E2E2E2;
@@ -129,6 +129,31 @@
   font-size: 12px;
   color: rgba(0, 0, 0, 0.45);
   line-height: 20px;
+}
+.idoll-upload-disabled,
+.idoll-upload-disabled:hover {
+  user-select: none;
+  cursor: not-allowed;
+}
+.idoll-upload-disabled .idoll-btn,
+.idoll-upload-disabled:hover .idoll-btn {
+  background-color: #F8F9FC;
+  border: 1px solid #E2E2E2;
+  cursor: not-allowed;
+}
+.idoll-upload-disabled .idoll-btn i,
+.idoll-upload-disabled:hover .idoll-btn i,
+.idoll-upload-disabled .idoll-btn span,
+.idoll-upload-disabled:hover .idoll-btn span {
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-upload-disabled .idoll-btn-primary:focus > .idoll-icon,
+.idoll-upload-disabled:hover .idoll-btn-primary:focus > .idoll-icon {
+  color: rgba(0, 0, 0, 0.25);
+}
+.idoll-upload-disabled div.idoll-upload-drag-container .idoll-upload-icon i.idoll-icon,
+.idoll-upload-disabled:hover div.idoll-upload-drag-container .idoll-upload-icon i.idoll-icon {
+  color: rgba(0, 0, 0, 0.25);
 }
 .beginUpload[disabled] .idoll-icon {
   color: rgba(0, 0, 0, 0.25);
@@ -220,6 +245,7 @@
 .idoll-upload-list-item-error,
 .idoll-upload-list-item-error .idoll-icon-paper-clip,
 .idoll-upload-list-item-error .idoll-upload-list-item-name {
+  cursor: pointer;
   color: #F44336;
 }
 .idoll-upload-list-item-error .idoll-icon-close {
@@ -233,6 +259,9 @@
   width: 100%;
   bottom: -12px;
   padding-left: 26px;
+}
+.idoll-upload-list-item-done {
+  cursor: pointer;
 }
 .idoll-upload-list-item-done .idoll-upload-list-item-info a .idoll-icon-check {
   font-size: 14px;
@@ -248,6 +277,14 @@
   position: absolute;
   top: 4px;
   right: 4px;
+}
+.idoll-upload-list-item-uploading,
+.idoll-upload-list-item-undefined {
+  cursor: pointer;
+}
+.idoll-upload-list-item-uploading .idoll-upload-list-item-info span .idoll-icon-check,
+.idoll-upload-list-item-undefined .idoll-upload-list-item-info span .idoll-icon-check {
+  display: none !important;
 }
 .idoll-upload-list-picture .idoll-upload-list-item,
 .idoll-upload-list-picture-card .idoll-upload-list-item {
@@ -298,6 +335,11 @@
 }
 .idoll-upload-list-picture-card {
   display: inline;
+}
+.idoll-upload-list-picture-card .idoll-upload-disabled,
+.idoll-upload-list-picture-card .idoll-upload-disabled:hover {
+  cursor: not-allowed;
+  border-color: #E2E2E2;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span {
   display: block;
