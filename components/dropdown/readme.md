@@ -181,19 +181,19 @@ function handleMenu1Click(e) {
       <Button>上左</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='topCenter'>
-      <Button>上中</Button>
+      <Button  style={{marginLeft: 25, marginRight: 25}}>上中</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='topRight'>
       <Button>上右</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomLeft'>
-      <Button>下左</Button>
+      <Button  style={{marginLeft: 25, marginRight: 25}}>下左</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomCenter'>
       <Button>下中</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomRight'>
-      <Button>下右</Button>
+      <Button style={{marginLeft: 25}}>下右</Button>
     </Dropdown>
 </div>
 ```

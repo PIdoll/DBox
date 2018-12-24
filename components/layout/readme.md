@@ -145,6 +145,7 @@ class LayoutView extends React.Component {
     this.setState({
       modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
+      openKeys: [],
     })
   }
   onOpenChange (openKeys) {
@@ -311,6 +312,7 @@ class LayoutView extends React.Component {
     this.setState({
       modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
+      openKeys: [],
     })
   }
   onChange (activeKey) {
