@@ -5,7 +5,7 @@
 /* eslint-disable func-call-spacing */
 import React from 'react';
 import moment from 'moment';
-import { polyfill } from 'react-lifecycles-compat';
+// import { polyfill } from 'react-lifecycles-compat';
 import RcTimePicker from 'rc-time-picker/lib/TimePicker';
 import classNames from 'classnames';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
@@ -225,6 +225,6 @@ class TimePicker extends React.Component {
     )
   }
 }
-polyfill(TimePicker);
+// polyfill(TimePicker);
 
 export default TimePicker;

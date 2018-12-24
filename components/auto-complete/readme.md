@@ -1,7 +1,7 @@
 #### **何时使用**
 需要自动完成时。
 #### **基本使用**
-基本使用。通过 dataSource 设置自动完成的数据源。
+通过 dataSource 设置自动完成的数据源。
 
 ```jsx
 import { AutoComplete } from 'components';

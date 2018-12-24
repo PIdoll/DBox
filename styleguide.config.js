@@ -8,25 +8,21 @@ const PORT = parseInt(process.env.PROT || 9002, 10);
 module.exports = {
   title: TITLE,
   serverPort: PORT,
-  skipComponentsWithoutExample: false,
   exampleMode: 'collapse',
   usageMode: 'hide',
-  ribbon: {
-    url: 'https://github.com/PIdoll/DBox',
-    text: 'Folk me on Github'
-  },
+  // Override Styleguidist components
+	styleguideComponents: {
+    LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
+    // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/PlaygroundRenderer'),
+    ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
+    LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
+  // SectionsRenderer: path.join(__dirname, 'styleguide/components/sectionRenderer'),
+    StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide'),
+	},
   ignore: ['**/*-test.jsx'],
   pagePerSection: true,
-  theme: {
-    baseBackground: '#fdfdfc',
-		link: '#274e75',
-		linkHover: '#90a7bf',
-		border: '#e0d2de',
-    font: ['Helvetica', 'sans-serif'],
-    sidebarWidth: 240
-  },
   styles: {
-		Playground: {
+		 Playground: {
 			preview: {
 				padding: '40px 20px',
         borderRadius: 2,
@@ -39,28 +35,22 @@ module.exports = {
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
-        backgroundColor: '#e1e1e1',
         '& > div:nth-child(1)': {
           flexGrow: '2',
         },
         '& button ': {
           display: 'block',
+          width: '100%',
           padding: '10px 20px ',
           color: '#455a64',
           cursor: 'pointer',
           float: 'right',
-          backgroundColor: '#e1e1e1',
+          textAlign: 'center',
         },
          '& > div:nth-child(2)': {
           display: 'none',
         }
       },
-      logo: {
-        fontSize: '18px'
-      },
-      mq: {
-        small: '@media(max-width:600px)'
-      }
     },
     Table: {
       table: {
@@ -100,30 +90,6 @@ module.exports = {
         fontSize: '40px'
       }
     },
-    ComponentsList: {
-      heading: {
-        fontWeight: '700 !important',
-        fontSize: '16px',
-        color: '#a1a1a1 !important',
-        cursor: 'text'
-      }
-    },
-    Heading: {
-      heading1: {
-        display: 'block',
-        position: 'relative',
-        fontWeight: 600,
-        '& > a': {
-          fontWeight: '700 !important'
-        }
-      },
-      heading3: {
-        fontSize: '30px',
-        width: '100%',
-        lineHeight: '80px',
-        fontWeight: '600 !important',
-      },
-    },
 		Markdown: {
 			pre: {
         border: 0,
@@ -143,19 +109,8 @@ module.exports = {
   },
   sections: [
     {
-      name: 'Version',
-      description: '品牌色和功能色在用于按钮或者状态信息底色的时候会根据用户的操作衍生出默认色（default）、悬浮色（Hover）、点击色（Pressed）和相关信息底色（lightBg）',
-      content: 'components/version/readme.md'
-    },
-    {
-      name: 'HomePage',
-      description: '',
-      content: 'styleguide/home/readme.md'
-    },
-    {
-      name: 'Typography',
-      description: '字体是产品界面设计中感知性设计模式的要素之一，是设计模式可视化的内容和完成工作的主要方式，科学有序的字体系统可以有效提升产品的阅读体验。因此我们在进行大量的尝试和研究对比主流设计体系之后，制定出一套（以下）系统字体来处理 DBox 产品中所有标准字体，以确保使用 DBox 设计体系产出的产品或系统具有阅读清晰、层次分明和性能良好的特点。',
-      content: 'components/typography/readme.md'
+      name: 'Get Started',
+      content: 'components/getStarted.md'
     },
     {
       name: 'Components',
@@ -166,14 +121,10 @@ module.exports = {
             path.resolve(__dirname, './components/button/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
             path.resolve(__dirname, './components/color/index.jsx'),
-          ])
-        },
-        {
-          name: 'Layout',
-          components: () => ([
+            path.resolve(__dirname, './components/typography/index.jsx'),
             path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/index.jsx'),
-          ]),
+          ])
         },
         {
           name: 'Navigation',
@@ -187,7 +138,7 @@ module.exports = {
           ])
         },
         {
-          name: 'Data Entry',
+          name: 'DataEntry',
           components: () => ([
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
@@ -209,7 +160,7 @@ module.exports = {
           ])
         },
         {
-          name: 'Data Display',
+          name: 'DataDisplay',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
@@ -227,7 +178,7 @@ module.exports = {
           ])
         },
         {
-          name: 'Feedback(反馈)',
+          name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
           path.resolve(__dirname, './components/modal/index.jsx'),
@@ -248,7 +199,7 @@ module.exports = {
           ])
         },
       ],
-      sectionDepth: 2
+       sectionDepth: 2
     },
   ],
   webpackConfig: {

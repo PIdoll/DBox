@@ -1,0 +1,99 @@
+@import '../../../style/theme/default/index';
+@import '../../../style/index';
+@color-prefix-cls: ~'idoll-color';
+@color-border: 1px solid rgba(226,226,226,1);
+@color: #ffffff;
+@color-radius: 3px;
+
+.@{color-prefix-cls} {
+  .reset-component;
+  &-img {
+   width: 100%;
+   margin: 10px 0;
+  }
+  &-h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 40px 0 10px 0;
+  }
+  &-p {
+    font-size: inherit;
+    margin-bottom: 20px;
+  }
+  &-item {
+    border-radius: @color-radius;
+    border: @color-border;
+    background:rgba(248,248,248,1);
+    margin-bottom: 20px;
+  }
+  &-item-title {
+    border-bottom: @color-border;
+    padding: 30px 10px 10px 10px;
+  }
+  &-item-title-shadow {
+    padding: 30px 10px 10px 10px;
+    margin: 6px;
+    border-radius: @color-radius;
+  }
+  &-item-title-value {
+    display: inline-block;
+    float: right;
+  }
+  &-item-desc {
+    height: 116px;
+    padding: 20px 10px;
+  }
+
+  &-recommend1 {
+    .idoll-color-recommend;
+    background:rgba(255,95,63,1);
+  }
+  &-recommend2 {
+    .idoll-color-recommend;
+    background:rgba(255,153,51,1);
+  }
+  &-recommend3 {
+    .idoll-color-recommend;
+    background:rgba(102,102,153,1);
+  }
+  &-recommend4 {
+    .idoll-color-recommend;
+    background:rgba(84,159,255,1);
+    margin-right: 0;
+  }
+  &-recommend5 {
+    .idoll-color-recommend;
+    background:rgba(255,116,87,1);
+  }
+  &-recommend6 {
+    .idoll-color-recommend;
+    background:rgba(255,153,102,1);
+  }
+  &-recommend7 {
+    .idoll-color-recommend;
+    background:rgba(19,184,134,1);
+  }
+  &-recommend8 {
+    .idoll-color-recommend;
+    background:rgba(51,102,153,1);
+    margin-right: 0;
+  }
+
+  &-main-title {
+    font-size: 14px;
+    color: #000000;
+    margin: 20px 0;
+    font-weight: 400;
+  }
+}
+.idoll-color-recommend {
+  display: inline-block;
+  width:80px;
+  text-align: center;
+  line-height: 80px;
+  margin-right: 10px;
+  height:80px;
+  color: #fff;
+  border-radius: @color-radius;
+}
