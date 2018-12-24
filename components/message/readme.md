@@ -1,6 +1,6 @@
 #### **何时使用**
-- 可提供成功、警告和错误等反馈信息。
-- 顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。
+- 可提供成功、警告和错误等反馈信息,让用户知晓当前信息的状态。
+- 顶部居中显示并自动消失的方式，是一种不打断用户操作的轻量级提示方式,给与用户良好的视觉体验。
 
 #### **基本类型信息展示**
 
@@ -77,7 +77,7 @@ const PromiseSuccess = () => {
   Message.open({
     content: 'open触发了',
     normal: normal,
-    icon: <Icon type='down-circle' />,
+    icon: <Icon type='check-circle' />,
   })
     .then(() => Message.success('加载结束', 2.5))
     .then(() => Message.info('加载中的加载结束', 2.5));
