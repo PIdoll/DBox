@@ -47,6 +47,7 @@ export default class HomePage extends React.Component {
               onMouseLeave={this.handleMouseLeave}>联系我们</Button>
             <div className={cls}>
               <img src={QRCODE} alt='快乐平安' />
+              <div className='scamQR'>使用快乐平安扫码加群</div>
             </div>
           </div>
         </div>

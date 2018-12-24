@@ -7,12 +7,15 @@ import './style/index';
 const { Option } = Select;
 
 export default class HeaderNav extends React.Component {
+  handleMenuChange = (e) => {
+    console.log(e);
+  }
   render() {
     return (
       <div>
         <div className='nav_container'>
           <div className='nav_menu'>
-            <Menu mode='horizontal' theme='light'>
+            <Menu mode='horizontal' theme='light' onClick={this.handleMenuChange}>
               <Menu.Item key='homePage'>首页</Menu.Item>
               <Menu.Item key='design'>设计指南</Menu.Item>
               <Menu.Item key='component'>组件</Menu.Item>

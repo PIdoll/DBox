@@ -1,5 +1,6 @@
 import React from 'react';
-// import Header from '../header';
+import Header from '../header';
+import HeaderNav from '../header-nav';
 import sketchPath from '../../assets/images/Sketch.png';
 import QRCODE from '../../assets/images/HAPPY PINGAN.png';
 import Button from 'components/button';
@@ -34,9 +35,12 @@ export default class Resource extends React.Component {
     });
     return (
       <section className='resource_container'>
-        {/* <div className='header'>
-          <Header />
-        </div> */}
+        <div className='header'>
+          <Header>
+            <HeaderNav />
+          </Header>
+        </div>
+        <div className='clearfix_fixed' />
         <div className='design_resource'>
           <h1>设计资源</h1>
           <p>DBox Sketch库包含于设计和构建Web产品的最新基础组件,下载以开始使用Sketch文档,如果初次使用课阅读<a href='https://www.sketchapp.com/'>如何使用Sketch Libraries</a></p>
@@ -59,6 +63,7 @@ export default class Resource extends React.Component {
             </div>
             <div className={cls}>
               <img className='qrcode' src={QRCODE} alt='快乐平安' />
+              <div className='scamQR'>使用快乐平安扫码加群</div>
             </div>
           </div>
         </div>
