@@ -1,10 +1,7 @@
-<!-- # [Button](http://naotu.baidu.com/file/111809d1ee65fd61593e3afc13e79839?token=6b90e3ea029b1c7d) -->
-### 代码演示
-##### **按钮类型(type)**
-
-按钮有以下几种类型：默认按钮、主按钮、次按钮、失效按钮、虚线按钮、危险按钮。
-
-通过设置 `type` 为 `default`、 `primary`、 `secondary`、 `disabled`、 `dashed`、 `danger`可分别创建默认按钮、主按钮、次按钮、失效按钮、虚线按钮、危险按钮。需要强引导用主按钮，主按钮在同一个操作区域最好只出现一次。
+用来触发操作和链接。
+##### **基本用法**
+通过 `type` 属性来控制按钮样式； 
+按钮中的文字要尽可能短，并且清晰的表示按钮被激活时会发生什么。一个屏幕上应该只出现一个主按钮，主按钮需谨慎使用。
 
 ```jsx
 import { Button } from 'components';
@@ -21,50 +18,8 @@ const buttonStyle = {
 </div>
 ```
 
-##### **文字按钮(icon)**
-添加 `text` 属性即可让按钮变成文字按钮，同时按钮样式也会改变。
-```jsx
-import { Button } from 'components';
-const buttonStyle = {
-  marginLeft: '10px'
-};
-<div>
-  <Button text style={buttonStyle}>默认</Button>
-  <Button type='secondary' text style={buttonStyle}>主要</Button>
-</div>
-```
-
-##### **按钮尺寸(size)**
-按钮有大、中、小三种尺寸。
-通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
-
-```jsx
-import { Button } from 'components';
-const buttonStyle = {
-  marginLeft: '10px'
-};
-<div>
-  <Button type='primary' size='small' style={buttonStyle}>按钮</Button>
-  <Button type='primary' style={buttonStyle}>按钮</Button>
-  <Button type='primary' size='large' style={buttonStyle}>按钮</Button>
-</div>
-```
-
-##### **跳转按钮(size)**
-通过设置 `href` 属性可把按钮设为跳转按钮，同 `a` 标签类似。
-```jsx
-import { Button } from 'components';
-const buttonStyle = {
-  marginLeft: '10px'
-};
-<div>
-  <Button type='secondary' href='http://www.baidu.com' target='_blank' style={buttonStyle}>新页面</Button>
-  <Button type='secondary' href='http://www.baidu.com' target='_self' style={buttonStyle}>本页面</Button>
-</div>
-```
-
-##### **图标按钮(icon)**
-当需要在 `Button` 内嵌入 `Icon` 时，可以设置 `icon` 属性,通过 `shape` 可以设置图标的形状。
+##### **图标按钮**
+通过 `icon` 属性在按钮中嵌入图标，设置 iconLocation 可以控制图标的位置，对于没有文字的图标按钮可以通过设置 `shape` 属性控制按钮的形状为圆形或方形。 在按钮中使用图标可以吸引更多注意力或帮助传达更多意义。
 ```jsx
 import { Button } from 'components';
 const buttonStyle = {
@@ -80,6 +35,11 @@ const buttonStyle = {
   <Button icon='down' iconLocation='right' size='large' style={buttonStyle}>图标</Button>
   <br /><br />
 
+  <Button icon='down' loading iconLocation='right' size='small' style={buttonStyle}>加载中</Button>
+  <Button icon='down' loading iconLocation='right' style={buttonStyle}>加载中</Button>
+  <Button icon='down' loading iconLocation='right' size='large' style={buttonStyle}>加载中</Button>
+  <br /><br />
+
   <Button icon='delete' size='small' shape='circle' style={buttonStyle}/>
   <Button icon='delete' shape='circle' style={buttonStyle}/>
   <Button icon='delete' size='large' shape='circle' style={buttonStyle}/>
@@ -91,8 +51,49 @@ const buttonStyle = {
 </div>
 ```
 
-##### **幽灵按钮(ghost)**
-通过设置 `ghost` 可将按钮设置为幽灵按钮，幽灵按钮将按钮的内容反色，背景透明。
+##### **文字按钮**
+通过添加 `text` 属性可以设置文字按钮，文字按钮常用于链接跳转。
+```jsx
+import { Button } from 'components';
+const buttonStyle = {
+  marginLeft: '10px'
+};
+<div>
+  <Button text style={buttonStyle}>默认</Button>
+  <Button type='secondary' text style={buttonStyle}>主要</Button>
+</div>
+```
+
+##### **按钮尺寸**
+通过 `size` 属性来控制按钮的大、小尺寸，默认尺寸为中。
+
+```jsx
+import { Button } from 'components';
+const buttonStyle = {
+  marginLeft: '10px'
+};
+<div>
+  <Button type='primary' size='small' style={buttonStyle}>按钮</Button>
+  <Button type='primary' style={buttonStyle}>按钮</Button>
+  <Button type='primary' size='large' style={buttonStyle}>按钮</Button>
+</div>
+```
+
+##### **跳转按钮**
+通过 `href` 属性来设置跳转按钮，并且可以通过 `target` 属性控制打开方式。
+```jsx
+import { Button } from 'components';
+const buttonStyle = {
+  marginLeft: '10px'
+};
+<div>
+  <Button type='secondary' href='http://www.baidu.com' target='_blank' style={buttonStyle}>新页面</Button>
+  <Button type='secondary' href='http://www.baidu.com' target='_self' style={buttonStyle}>本页面</Button>
+</div>
+```
+
+##### **幽灵按钮**
+通过添加 `ghost` 属性来设置幽灵按钮
 ```jsx
 import { Button } from 'components';
 const buttonStyle = {
@@ -106,8 +107,8 @@ const buttonStyle = {
   <Button disabled ghost style={buttonStyle}>禁用</Button>
 </div>
 ```
-##### **block按钮(block)**
-`block` 按钮会使按钮适合其父宽度。
+##### **block按钮**
+通过 `block` 属性将按钮宽度撑满父容器。
 ```jsx
 import { Button } from 'components';
 <div style={{ width: '600px' }}>
@@ -117,8 +118,8 @@ import { Button } from 'components';
   <Button block>默认</Button>
 </div>
 ```
-##### **组合按钮(ButtonGroup)**
-可使用 `Button.Group` 将个按钮组合在一起。演示代码中的 `ButtonGroup=Button.Group`
+##### **组合按钮**
+通过 `ButtonGroup` 将按钮组合在一起，可通过设置 `size` 属性控制组合按钮的尺寸，默认为中。
 ```jsx
 import { Button,Icon } from 'components';
 const ButtonGroup = Button.Group;

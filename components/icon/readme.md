@@ -30,7 +30,7 @@
 
 ```jsx
 import {Icon} from 'components';
-const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up', 'down', 'forward', 'fullscreen-exit','fullscreen', 'left', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','shrink','swap-horiz','swap-vert','undo','up','zoom-out'];
+const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up', 'down', 'forward', 'fullscreen-exit','fullscreen', 'left','left-circle-o', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','right-circle-o','shrink','swap-horiz','swap-vert','undo','up','zoom-out'];
 class IconView extends React.Component {
   render() {
     return (
@@ -46,7 +46,7 @@ class IconView extends React.Component {
 
 ```jsx
 import {Icon} from 'components';
-const icons2 = ['bars','block','check-circle-o','check-circle','checkbox-blank-o', 'checkbox-checked','checkbox-indeterminate','close-circle-o','close','delete','done',
+const icons2 = ['bars','block','check','check-circle-o','check-circle','checkbox-blank-o', 'checkbox-checked','checkbox-indeterminate','close-circle','close-circle-o','close','delete','done',
 'error-circle-o','error-circle','filter','help-circle-o','help-circle','history', 'info-circle-o','info-circle', 'list','loading','menu','more','plus_box','plus-circle-o',
 'plus-circle','plus','radio-checked','radio-unchecked','refresh','remove-circle-o','remove-circle','remove','search','warning-o','warning'];
 

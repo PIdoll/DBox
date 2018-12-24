@@ -1,11 +1,8 @@
-<!-- # [input](http://naotu.baidu.com/file/16cb7711732e8567b985a181505e2bfe?token=4cb434845c75e538) -->
 
-#### **何时使用**
-- 需要用户输入表单域内容时。
-- 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
+数据输入，可用于表单提交。
 
 #### **基本使用**
-可以设置 `disabled` 为禁用状态，设置 `readOnly` 为只读状态，设置`clearable` 为支持可清除。
+可通过设置 `disabled` 属性为禁用状态，设置 `readOnly` 属性为只读状态，设置`clearable` 属性为支持可清除。
 ```jsx
 import { Input } from 'components';
 <div>
@@ -50,7 +47,7 @@ const selectAfter = (
 </div>
 ```
 #### **搜索**
-带有搜索按钮的输入框
+使用 `Input.Search` 用于带有搜索按钮或者搜索图标的输入框, `enterButton` 属性设置值则会显示搜索按钮,否则显示搜索图标。
 ```jsx
 import { Input } from 'components';
 const Search = Input.Search;
@@ -75,7 +72,7 @@ const Search = Input.Search;
 ```
 
 #### **前缀／后缀**
-使用 `prefix`、`suffix` 在输入框上添加前缀或后缀图标。
+可通过设置 `prefix`、`suffix` 属性在输入框上添加前缀或后缀图标。
 ```jsx
 import { Input,Icon } from 'components';
 <div >
@@ -85,7 +82,7 @@ import { Input,Icon } from 'components';
 ```
 
 #### **三种大小**
-通过设置 `size` 属性控制输入框的大小。
+可通过设置 `size` 属性控制输入框的大小,默认为中。
 ```jsx
 import { Input } from 'components';
 const Search = Input.Search;

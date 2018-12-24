@@ -1,11 +1,5 @@
 
-<!-- # [Tooltip](http://naotu.baidu.com/file/31da15d78e14d807c75299d5f34fcbae?token=2da0729ca523eb90) -->
-
-#### **何时使用**
-
-鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。
-
-可用来代替系统默认的 `title` 提示，提供一个`按钮/文字/操作`的文案解释。
+鼠标移入则显示提示，移出消失，用于提示等场景。
 
 #### **基本用法**
 简单用法
@@ -17,7 +11,7 @@ import { Tooltip } from 'components';
 ```
 
 #### **12个方向**
-位置有12个方向
+可通过设置 `placement` 属性控制位置，有12个方向
 ```jsx
 import { Tooltip,Button } from 'components';
 const buttonWidth = 70;
