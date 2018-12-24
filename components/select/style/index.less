@@ -27,9 +27,6 @@
     transition: color 0.3s ease, opacity 0.15s ease;
     &:before {
       display: block;
-      // .iconfont-font("\e92c");
-      // .iconfont-font("\e919");
-      // color: @text-color-disable;
     }
     &:hover {
       color: #999;
@@ -76,7 +73,7 @@
       }
 
       &:before {
-        content: '\e92c';
+        content: '\e6f5';
         transition: transform 0.2s ease;
         color: @text-color-disable;
       }
@@ -191,7 +188,7 @@
 
   &-open {
     .@{select-prefix-cls}-arrow:before {
-      content: '\e938';
+      content: '\e73a';
       transition: transform 0.2s ease;
       color: @text-color-disable;
     }
@@ -577,7 +574,7 @@
     &&--multiple {
       .@{select-prefix-cls}-dropdown-menu-item {
         &:after {
-          .iconfont-font("\e919");
+          .iconfont-font("\e6f4");
           color: transparent;
           .iconfont-size-under-12px(10px);
           transition: all 0.2s ease;

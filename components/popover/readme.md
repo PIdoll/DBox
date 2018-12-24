@@ -1,10 +1,9 @@
-#### **何时使用**
+#### **概述**
+当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现；可以承载更复杂的内容，比如链接或按钮等
 
-- 当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。
-
-- 和 `Tooltip` 的区别是，用户可以对浮层上的元素进行操作，因此它可以承载更复杂的内容，比如链接或按钮等。
 
 #### **基本用法**
+基本内容展示，通常用于操作的再次确认
 ```jsx
 import {Popover, Button} from 'components';
 const content = (
@@ -18,6 +17,7 @@ const content = (
 ```
 
 #### **三种触发方式**
+通过设置trigger为hover,focus,click来控制触发的方式
 ```jsx
 import {Popover, Button} from 'components';
 const content = (
@@ -39,6 +39,7 @@ const content = (
 ```
 
 #### **12个方向**
+通过设置placement来设置气泡卡片的显示位置
 ```jsx
 import {Popover, Button} from 'components';
 const content = (
@@ -97,6 +98,7 @@ const text = <span>标题</span>;
 ```
 
 #### **箭头指向**
+通过arrowPointAtCenter控制箭头指向中心，默认指向left
 ```jsx
 import {Popover, Button} from 'components';
 const content = (
@@ -116,6 +118,7 @@ const text = <span>标题</span>;
 ```
 
 #### **从浮层内关闭**
+可从弹出层内关闭弹出层
 ```jsx
 import {Popover, Button} from 'components';
 const content = (
@@ -159,6 +162,7 @@ class PopoverView extends React.Component {
 
 
 #### **悬停点击弹出层**
+设置悬浮和点击不同触发内容
 ```jsx
 import {Popover, Button} from 'components';
 const clickContent = (

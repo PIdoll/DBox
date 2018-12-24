@@ -2,12 +2,20 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-collapse {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -26,7 +34,7 @@
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header {
   line-height: 22px;
   padding: 12px 24px;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   position: relative;
   transition: all .3s;
@@ -57,14 +65,14 @@
   font-family: 'idollicon' !important;
 }
 .idoll-collapse > .idoll-collapse-item > .idoll-collapse-header .arrow:before {
-  content: "\E92C";
+  content: "\E6F5";
 }
 .idoll-collapse-anim-active {
   transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .idoll-collapse-content {
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   padding: 0 24px;
   background-color: #fff;
   border-width: 0;
@@ -124,7 +132,7 @@
 .idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header,
 .idoll-collapse .idoll-collapse-item-disabled > .idoll-collapse-header > .arrow {
   cursor: not-allowed;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-collapse-bgColor {
   border: none;

@@ -14,7 +14,7 @@
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-variant: tabular-nums;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,17 +32,17 @@
 .idoll-dropdown .idoll-icon:hover,
 .idoll-dropdown .idoll-icon:focus,
 .idoll-dropdown .idoll-icon:active {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
 }
 .idoll-dropdown-normal {
   margin-right: 50px;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-dropdown-normal i:before {
   margin-left: 4px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-normal:hover {
   color: #13B886;
@@ -82,11 +82,11 @@
   text-align: left;
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(18, 34, 29, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background-clip: padding-box;
 }
 .idoll-dropdown-menu-item-group-title {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   padding: 5px 12px;
   transition: all 0.3s;
 }
@@ -100,14 +100,14 @@
   clear: both;
   font-size: 14px;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   white-space: nowrap;
   cursor: pointer;
   line-height: 22px;
 }
 .idoll-dropdown-menu-item > a,
 .idoll-dropdown-menu-submenu-title > a {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   display: block;
   padding: 5px 12px;
   margin: -5px -12px;
@@ -118,7 +118,7 @@
 }
 .idoll-dropdown-menu-item-selected,
 .idoll-dropdown-menu-submenu-title-selected {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-dropdown-menu-item:hover,
 .idoll-dropdown-menu-submenu-title:hover {
@@ -126,16 +126,16 @@
 }
 .idoll-dropdown-menu-item:hover a,
 .idoll-dropdown-menu-submenu-title:hover a {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .idoll-dropdown-menu-item-disabled,
 .idoll-dropdown-menu-submenu-title-disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
   cursor: not-allowed;
 }
 .idoll-dropdown-menu-item-disabled:hover,
 .idoll-dropdown-menu-submenu-title-disabled:hover {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
   background-color: #fff;
   cursor: not-allowed;
 }
@@ -171,10 +171,10 @@
 }
 .idoll-dropdown-menu-item .idoll-dropdown-menu-submenu-arrow:after,
 .idoll-dropdown-menu-submenu-title .idoll-dropdown-menu-submenu-arrow:after {
-  font-family: 'idoll-icon-pro' !important;
+  font-family: "idollicon" !important;
   font-style: normal;
-  content: '\E915';
-  color: rgba(0, 0, 0, 0.45);
+  content: "\E72A";
+  color: rgba(0, 0, 0, 0.4);
   font-size: 14px;
 }
 .idoll-dropdown-menu-submenu-title {
@@ -197,7 +197,7 @@
 }
 .idoll-dropdown-menu-submenu.idoll-dropdown-menu-submenu-disabled .idoll-dropdown-menu-submenu-title,
 .idoll-dropdown-menu-submenu.idoll-dropdown-menu-submenu-disabled .idoll-dropdown-menu-submenu-title .idoll-dropdown-menu-submenu-arrow:after {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-menu-submenu:first-child .idoll-dropdown-menu-submenu-title {
   border-radius: 3px 3px 0 0;
@@ -220,10 +220,10 @@
   white-space: nowrap;
 }
 .idoll-dropdown-button-disabled i:before {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-button-disabled:hover i:before {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-button.idoll-btn-group .idoll-btn {
   border-radius: 3px;
@@ -234,7 +234,7 @@
 }
 .idoll-dropdown-button .idoll-icon-down {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-button .idoll-btn-sm {
   font-size: 12px;
@@ -244,7 +244,7 @@
 }
 .idoll-dropdown-button .idoll-btn-sm .idoll-icon.idoll-icon-down:before {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-button .idoll-btn-sm:hover .idoll-icon.idoll-icon-down:before {
   color: #13B886;
@@ -254,7 +254,7 @@
 }
 .idoll-dropdown-button .idoll-btn-lg i:before {
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-dropdown-button .idoll-btn-lg:hover .idoll-icon.idoll-icon-down:before {
   color: #13B886;
@@ -269,12 +269,12 @@
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-submenu-title,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item > a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
 }
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item .idoll-dropdown-menu-submenu-arrow:after,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-submenu-title .idoll-dropdown-menu-submenu-arrow:after,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item > a .idoll-dropdown-menu-submenu-arrow:after {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
 }
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-item:hover,
 .idoll-dropdown-menu-dark .idoll-dropdown-menu-submenu-title:hover,
@@ -302,11 +302,11 @@ h1.h1:first-child {
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.buttonGroup button {
+.idoll-btn-group.buttonGroup button {
   margin-right: 0;
 }
-.buttonGroup div.idoll-btn-group {
-  float: none;
+.idoll-btn-group.buttonGroup > .idoll-btn-group {
+  float: none !important;
 }
 @keyframes idollSlideUpIn {
   0% {

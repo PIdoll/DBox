@@ -1,9 +1,5 @@
+用户操作需要进一步确认，会在操作元素附近弹出浮层提示。
 
-#### **何时使用**
-
-目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，询问用户。
-
-和 `confirm` 弹出的全屏居中模态对话框相比，交互形式更轻量。
 #### **基本用法**
 最简单用法
 ```jsx
@@ -40,7 +36,7 @@ class PopconfirmDemo extends React.Component {
 ```
 
 #### **12个方向**
-位置有十二个方向。
+弹出框位置有十二个方向。可通过设置 `placement` 属性控制。
 ```jsx
 import { Popconfirm,Button } from 'components';
 const buttonWidth = '70px';

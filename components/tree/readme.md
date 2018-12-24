@@ -1,10 +1,7 @@
 
-#### **何时使用**
-文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用`树控件`可以完整展现其中的层级关系，并具有展开收起选择等交互功能。
-
-
+可使用树组件用于表示层级关系的结构，具有收起展开等交互效果。
 ##### **基本使用**
-最简单的用法，可选中，默认展开等功能。
+可选中，默认展开等功能。
 ```jsx
 import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
@@ -42,7 +39,7 @@ onCheck = (checkedKeys, info) => {
 ```
 
 ##### **多选树**
-有多选框可选择，可禁用。
+可通过设置`checkable`为多选框可选择，设置`disabled`和`disableCheckbox`可分别禁用整个节点和选择框。
 ```jsx
 import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
@@ -81,6 +78,7 @@ onCheck = (checkedKeys, info) => {
 ```
 
 ##### **可拖动**
+可通过设置`draggable`属性为可拖动。
 ```jsx
 import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;
@@ -221,6 +219,7 @@ class TreeExample extends React.Component {
 ```
 
 ##### **点击展开节点，异步加载数据**
+可通过设置 `loadData` 属性异步加载数据。
 ```jsx
 import { Tree } from 'components';
 const TreeNode = Tree.TreeNode;

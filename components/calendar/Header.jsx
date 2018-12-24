@@ -240,11 +240,11 @@ export default class Header extends React.Component {
       </div>) : (<div
         className={`${prefixCls}-backdrop-header`}
         ref={this.getCalenderHeaderNode}>
-        <Icon type='pro-left' className={`${prefixCls}-backdrop-header-left`} onClick={this.handleDecIncreaseMonth} />
+        <Icon type='left' className={`${prefixCls}-backdrop-header-left`} onClick={this.handleDecIncreaseMonth} />
         <div className={`${prefixCls}-backdrop-header-time`}>
           {`${yearValue}年`}&nbsp;&nbsp;{monthValue}
         </div>
-        <Icon type='pro-right' className={`${prefixCls}-backdrop-header-right`} onClick={this.handleProIncreaseMonth} />
+        <Icon type='right' className={`${prefixCls}-backdrop-header-right`} onClick={this.handleProIncreaseMonth} />
       </div>)
     )
   }

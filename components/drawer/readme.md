@@ -1,10 +1,9 @@
-#### **何时使用**
-
-
-* 当需要一个附加的面板来控制父窗体内容，这个面板在需要时呼出。比如，控制界面展示样式，往界面中添加内容。
-* 当需要在当前任务流中插入临时任务，创建或预览附加内容。比如展示协议条款，创建子对象。
+#### **概述**
+在需要时呼出一个附加的面板来控制父窗体内容；
+在当前任务流中插入临时任务，创建或预览附加内容。比如展示协议条款，创建子对象。
 
 #### **基本用法**
+较简单的用法
 ```jsx
 import {Button, Drawer} from 'components';
 class DrawerView extends React.Component {
@@ -51,6 +50,7 @@ class DrawerView extends React.Component {
 ```
 
 #### **四种方位**
+控制placement为top,bottom,left,right来确定抽屉展示位置
 ```jsx
 import {Button, Radio, Drawer} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -116,6 +116,7 @@ class DrawerView extends React.Component {
 ```
 
 #### **信息预览**
+展示一些基本信息
 ```jsx
 import {Button, Row, Drawer, Col, Divider} from 'components';
 const pStyle = {
@@ -265,6 +266,7 @@ class DrawerView extends React.Component {
 ```
 
 #### **多层抽屉**
+可在父抽屉中创建子抽屉
 ```jsx
 import {Button, Drawer} from 'components';
 class DrawerView extends React.Component {
@@ -359,6 +361,7 @@ class DrawerView extends React.Component {
 ```
 
 #### **表单抽屉**
+在新抽屉中提交一些表单数据
 ```jsx
 import {Button, Divider, DatePicker, Form, Input, Select} from 'components';
 import {Row, Col} from 'components/grid';

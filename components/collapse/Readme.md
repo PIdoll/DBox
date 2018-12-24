@@ -1,9 +1,8 @@
-#### **何时使用**
-
-- 对复杂区域进行分组和隐藏，保持页面的整洁。
-- `手风琴` 是一种特殊的折叠面板，只允许单个内容区域展开。
+#### **概述**
+对复杂区域进行分组和隐藏，保持页面的整洁性。
 
 ##### **折叠面板**
+同时折叠或展开多个面板，通过defaultActiveKey设置默认展开项
 ```jsx
 import {Collapse} from 'components';
 const Panel = Collapse.Panel;
@@ -25,6 +24,7 @@ function callback(key) {
 ```
 
 ##### **手风琴**
+特殊的折叠面板，只允许单个内容区域展开，通过添加accordion属性
 ```jsx
 import {Collapse} from 'components';
 const Panel = Collapse.Panel;
@@ -47,6 +47,7 @@ function callback(key) {
 
 
 ##### **嵌套面板**
+对复杂层级面板进行嵌套
 ```jsx
 import {Collapse} from 'components';
 const Panel = Collapse.Panel;
@@ -80,6 +81,7 @@ function callback(key) {
 ```
 
 ##### **简洁风格**
+一套没有过多样式的折叠面板可通过设置bordered={false}属性值来去掉多余边框
 ```jsx
 import {Collapse} from 'components';
 const Panel = Collapse.Panel;
@@ -101,6 +103,7 @@ function callback(key) {
 ```
 
 ##### **底纹样式**
+为面板内容区域增加底纹区分层次
 ```jsx
 import {Collapse} from 'components';
 const Panel = Collapse.Panel;

@@ -1,5 +1,5 @@
-#### **何时使用**
-类似 Select 的选择控件，可选择的数据结构是一个树形结构时，可以使用 TreeSelect，例如公司层级、学科系统、分类目录等等。
+
+类似 `Select` 的选择控件，可选择的数据结构是一个树形结构。
 
 #### **基本用法**
 ```jsx
@@ -49,7 +49,7 @@ class TreeSelectDemo extends React.Component {
 ```
 
 #### **从数据直接生成**
-使用treeData把JSON数据直接生成树结构
+可通过设置 `treeData` 属性将 `JSON` 数据直接生成树结构。
 ```jsx
 import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
@@ -106,7 +106,7 @@ class TreeSelectDemo extends React.Component {
 ```
 
 #### **多选**
-多选的树选择
+可通过设置 `multiple` 属性可多选。
 ```jsx
 import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;
@@ -164,7 +164,7 @@ class TreeSelectDemo extends React.Component {
 ```
 
 #### **可勾选**
-使用勾选框实现多选功能。
+可通过设置 `treeCheckable` 属性实现勾选框多选功能。
 ```jsx
 import { TreeSelect } from 'components';
 const TreeNode = TreeSelect.TreeNode;

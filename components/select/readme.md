@@ -1,10 +1,8 @@
-<!-- # [Select](http://naotu.baidu.com/file/8d654ac25a8b27c4e3ece259370aae2e?token=f63e1566705c1ce6) -->
 
-#### **何时使用**
-需要应用到下拉选项时，用于替换原生的选择器。
+可进行单选、多选、分组选择等场景。
 
 ##### **基本使用**
-通过设置 `size`属性控制大小, `disabled` 设置为禁用。
+可通过设置 `size` 属性控制大小, `disabled` 属性可设置为禁用。
 ```jsx
 import { Select } from 'components';
 const {Option} = Select;
@@ -39,7 +37,7 @@ const {Option} = Select;
 </div>
 ```
 #### **搜索下拉框**
-展开后可对选项进行搜索。
+可通过设置`showSearch` 属性对选项进行搜索。
 ```jsx
 import { Select } from 'components';
 const {Option} = Select;
@@ -52,7 +50,7 @@ const {Option} = Select;
 ```
 
 #### **多选下拉框**
-多选，从已有条目中选择。设置 `mode` 属性为 `tags` 可随意输入内容。
+可通过设置 `mode` 属性为 `multiple` 从已有条目中多选。设置 `mode` 属性为 `tags` 可随意输入内容。
 ```jsx
 import { Select } from 'components';
 const {Option} = Select;
@@ -151,7 +149,7 @@ class SearchExample extends React.Component {
 
 
 #### **分组**
-使用用 `OptGroup` 进行选项分组。
+使用 `Select.OptGroup` 进行选项分组。
 ```jsx
 import { Select } from 'components';
 const {Option, OptGroup} = Select;

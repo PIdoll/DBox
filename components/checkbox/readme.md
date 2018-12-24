@@ -1,10 +1,9 @@
 
-#### **何时使用**
-
-- 在一组可选项中进行多项选择时；
-- 单独使用可以表示两种状态之间的切换，和 `switch` 类似。区别在于切换 `switch` 会直接触发状态改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合。
+#### **概述**
+在一组可选项中进行多项选择时；
 
 ##### **通用多选框**
+可在选中和非选中之间切换
 ```jsx
 import {Checkbox} from 'components';
 <Checkbox >
@@ -13,6 +12,7 @@ import {Checkbox} from 'components';
 ```
 
 ##### **受控多选框**
+通过按钮控制多选框的属性
 ```jsx
 import {Checkbox, Button} from 'components';
 initialState = {
@@ -40,6 +40,7 @@ initialState = {
 ```
 
 ##### **多选框全选**
+通过一个多选框来控制另一组多选框的选中状态
 ```jsx
 import {Checkbox} from 'components';
 const CheckboxGroup = Checkbox.CheckboxGroup;
@@ -78,6 +79,7 @@ onChange = (checkedList) => {
 ```
 
 ##### **多选框组**
+多个多选框形成的多选框组合
 ```jsx
 import {Checkbox} from 'components';
 const optionsWithDisabled = [
@@ -102,6 +104,7 @@ const CheckboxGroup = Checkbox.CheckboxGroup;
 ```
 
 ##### **多选框不可用**
+通过disabled控制多选框的可操作属性
 ```jsx
 import {Checkbox} from 'components';
 <div>
@@ -110,8 +113,6 @@ import {Checkbox} from 'components';
 </div>
 ```
 
-
-## API
 
 ### Checkbox
 

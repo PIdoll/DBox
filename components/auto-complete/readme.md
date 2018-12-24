@@ -5,7 +5,7 @@
 
 ```jsx
 import { AutoComplete } from 'components';
-class AutoCompleteExamplDemo extends React.Component {
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -40,7 +40,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />
+<AutoCompleteDemo />
 ```
 
 #### **自定义选项**
