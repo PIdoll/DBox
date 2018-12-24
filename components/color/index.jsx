@@ -8,9 +8,6 @@ import NeutralColor from './neutralColor';
 import OtherColor from './otherColor';
 import ShadowColor from './shadowColor';
 
-/**
- * @visibleName Color 色彩
- */
 class Color extends React.Component {
   render() {
     return (
