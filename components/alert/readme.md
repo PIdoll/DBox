@@ -25,7 +25,7 @@ onClose = (e) => {
     message='警告文本警告文本警告文本警告文本警告文本警告文本警告文本警告文本警告文本警告文本警告文本警告文本'
     type='warning'
     closable
-    onClose={onClose} />
+    onClose={onClose} /><br />
   <Alert
     message='错误文本'
     description='错误文本错误文本错误文本错误文本错误文本错误文本错误文本错误文本错误文本错误文本错误文本错误文本'
