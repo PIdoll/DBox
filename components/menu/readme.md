@@ -1,10 +1,9 @@
-#### **何时使用**
+#### **概述**
+提供导航的功能菜单。
 
-导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。
-
-更多布局和导航的使用可以参考：[通用布局]。
 
 #### **顶部导航**
+广泛适用的顶部导航。通过 theme 属性设置为 light dark 切换主题模式。
 
 ```jsx
 import {Menu} from 'components';
@@ -50,6 +49,7 @@ class MenuView extends React.Component {
 ```
 
 #### **手风琴菜单**
+每次只打开一个菜单，其他菜单自动收起，使菜单简洁聚焦，同时避免同时展开多个菜单，导致侧边导航文字溢出。
 ```jsx
 import {Menu, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
@@ -106,6 +106,7 @@ class MenuView extends React.Component {
 
 
 #### **内嵌侧栏导航**
+垂直导航的基本使用，支持展开/收起。
 
 ```jsx
 import {Menu, Switch, Icon} from 'components';
@@ -174,6 +175,7 @@ class MenuView extends React.Component {
 ```
 
 #### **动态侧栏导航**
+支持两种主题切换,垂直导航的基本使用，支持展开/收起。
 
 ```jsx
 import {Menu, Switch, Icon} from 'components';

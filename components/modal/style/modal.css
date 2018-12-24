@@ -64,7 +64,7 @@
   line-height: 1;
 }
 .idoll-modal-close-x:before {
-  content: "\e91c";
+  content: "\E6EC";
   display: block;
   font-family: "idollicon";
 }

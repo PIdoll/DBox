@@ -1,10 +1,9 @@
 
-#### **何时使用**
-
-- 当有大量结构化的数据需要展现时；
-- 当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。
+#### **概述**
+当有大量结构化的数据需要展现，同时可对数据进行排序、搜索、分页、自定义操作等复杂行为时；
 
 #### **默认表格**
+设置columns,data来决定展示的内容
 ```jsx
 import {Table, Divider} from 'components';
 const columns = [{
@@ -86,6 +85,7 @@ const data = [{
 <Table columns={columns} dataSource={data} />
 ```
 #### **三种尺寸**
+通过设置size设置为large,middle,small来控制表格的大小默认为large
 ```jsx
 import {Table, Divider} from 'components';
 const columns = [{
@@ -171,6 +171,7 @@ const data = [{
 </div>
 ```
 #### **边框表格**
+通过设置bordered来设置是否展示表格边框
 ```jsx
 import {Table, Divider} from 'components';
 const columns = [{
@@ -252,6 +253,7 @@ const data = [{
 <Table columns={columns} dataSource={data} bordered />
 ```
 #### **带选择框**
+通过选择框来搜集选中单元格的信息
 ```jsx
 import {Table, Divider, Button, Checkbox} from 'components';
 const columns = [{
@@ -379,6 +381,7 @@ class TableView extends React.Component {
 ```
 
 #### **异步数据**
+通过ajax实时动态获取后台数据
 ```jsx
 import {Table} from 'components';
 import reqwest from 'reqwest'
@@ -463,6 +466,7 @@ class App extends React.Component {
 <App />
 ```
 #### **内嵌表格**
+对于复杂表格的嵌套
 ```jsx
 import {Table, Divider, Badge} from 'components';
 const columns = [{
@@ -575,6 +579,7 @@ const data = [{
 <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />
 ```
 #### **行列合并**
+对于一些公共数据的合并
 ```jsx
 import {Table, Divider} from 'components';
 const renderContent = function (value, row, index) {
@@ -673,6 +678,7 @@ const dataCol = [{
 <Table columns={columnsCol} dataSource={dataCol} bordered />
 ```
 #### **固定行列**
+对某些特殊列进行固定，方便操作
 ```jsx
 import {Table, Divider} from 'components';
 const columnsFixRow = [{
@@ -819,6 +825,7 @@ const dataFixdRow = [{
 ```
 
 #### **可编辑表格**
+对表格内数据进行复杂操作
 ```jsx
 import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'components';
 const FormItem = Form.Item;

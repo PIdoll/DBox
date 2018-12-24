@@ -1,12 +1,8 @@
-#### **何时使用**
-
+#### **概述**
 上传是将信息（网页、文字、图片、视频等）通过网页或者上传工具发布到远程服务器上的过程。
 
-- 当需要上传一个或一些文件时。
-- 当需要展现上传的进度时。
-- 当需要使用拖拽交互时。
-
 #### **基础上传**
+基本的上传操作
 ```jsx
 import {Upload, Message, Button} from 'components';
 const commonFileList = [{
@@ -57,12 +53,13 @@ const props1 = {
   }
 };
 <Upload {...props1} defaultFileList={commonFileList}>
-  <Button type='primary' icon='pro2-upload'>上传</Button>
+  <Button type='primary' icon='cloud-upload'>上传</Button>
   <p>支持上传jpg/png文件格式，且不超过1024kb</p>
 </Upload>
 ```
 
 #### **拖拽上传**
+将文件拖拽到制定区域或者点击制定区域上传
 ```jsx
 import {Upload, Message, Icon} from 'components';
 const Dragger = Upload.Dragger;
@@ -111,13 +108,14 @@ const props2 = {
   }
 };
 <Dragger {...props2} defaultFileList={commonFileList}>
-  <p className='idoll-upload-icon'><Icon type='pro2-upload' /></p>
+  <p className='idoll-upload-icon'><Icon type='cloud-upload' /></p>
   <p className='idoll-upload-text'>将文件拖到此处，或者点击上传</p>
   <p className='idoll-upload-limit'>支持上传jpg/png文件格式，且不超过1024kb</p>
 </Dragger>
 ```
 
 #### **照片墙上传**
+将图片上传后展示为照片墙的上传模式
 ```jsx
 import {Upload, Message, Modal, Icon} from 'components';
 class PicturesWall extends React.Component {
@@ -130,7 +128,7 @@ class PicturesWall extends React.Component {
       uid: '-1',
       name: 'xxx.png',
       status: 'done',
-      url: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
+      url: 'https://images.pexels.com/photos/160739/smilies-bank-sit-rest-160739.jpeg?cs=srgb&dl=blur-chair-cheerful-160739.jpg&fm=jpg',
     }],
   };
   this.handleCancel = this.handleCancel.bind(this);
@@ -188,21 +186,22 @@ class PicturesWall extends React.Component {
 ```
 
 #### **图片列表上传**
+将上传后的图片展示为列表样式的上传模式
 ```jsx
 import {Upload, Message, Icon, Button} from 'components';
 const fileList = [{
   uid: -1,
   name: 'xxx.png',
   status: 'done',
-  url: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
+  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?cs=srgb&dl=box-cheerful-color-207983.jpg&fm=jpg',
   thumbUrl:
-  'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
+  'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?cs=srgb&dl=box-cheerful-color-207983.jpg&fm=jpg',
 }, {
   uid: -2,
   name: 'yyy.png',
   status: 'error',
-  url: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
-  thumbUrl: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
+  url: 'https://images.pexels.com/photos/207969/pexels-photo-207969.jpeg?cs=srgb&dl=cup-cute-emotions-207969.jpg&fm=jpg',
+  thumbUrl: 'https://images.pexels.com/photos/207969/pexels-photo-207969.jpeg?cs=srgb&dl=cup-cute-emotions-207969.jpg&fm=jpg',
 }];
 
 const props3 = {
@@ -233,11 +232,12 @@ const props3 = {
   },
 };
 <Upload {...props3}>
-  <Button type='primary'><Icon type='pro2-upload' />上传</Button>
+  <Button type='primary'><Icon type='cloud-upload' />上传</Button>
 </Upload>
 ```
 
 #### **手动上传**
+将上传操作拆分为选中文件和手动上传操作，确保上传文件的准确性
 ```jsx
 import reqwest from 'reqwest';
 import {Upload, Message, Button, Icon} from 'components';
@@ -313,28 +313,41 @@ class Demo extends React.Component {
         });
       },
       beforeUpload: (file) => {
-        this.setState(state => ({
+        const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+        if (!isJPG) {
+          Message.error('您只能上传 JPG或PNG 文件!');
+          return isJPG
+        }
+        const isLt1M = file.size / 1024 / 1024 < 1;
+        if (!isLt1M) {
+          Message.error('上传图片文件必须小于 1024KB!');
+          return isLt1M
+        }
+        if (isJPG || isLt1M) {
+          this.setState(state => ({
           fileList: [...this.state.fileList, file],
         }));
         return false;
+        }
       },
       fileList,
     };
     return (
         <div>
-          <Upload {...props4}>
-            <Button type='secondary'><Icon type='pro2-file' />选择文件</Button>
+          <Upload className='manual' {...props4}>
+            <Button type='secondary'><Icon type='file' />选择文件</Button>
+            <Button
+              type='primary'
+              className='beginUpload'
+              disabled={this.state.fileList.length <= 3}
+              onClick={this.handleUpload}
+              loading={this.state.uploading}
+              style={{ marginTop: 16 }}
+            >
+              {!this.state.uploading ? <Icon type='cloud-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
+            </Button>
+            <p>支持上传jpg/png文件格式，且不超过1024kb</p>
           </Upload>
-          <Button
-            type='primary'
-            className='beginUpload'
-            disabled={this.state.fileList.length <= 3}
-            onClick={this.handleUpload}
-            loading={this.state.uploading}
-            style={{ marginTop: 16 }}
-          >
-            {!this.state.uploading ? <Icon type='pro2-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
-          </Button>
         </div>
     )
   }

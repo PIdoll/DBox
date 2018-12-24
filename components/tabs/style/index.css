@@ -2,6 +2,14 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-nav-container {
   height: 46px;
 }
@@ -35,7 +43,7 @@
   margin-bottom: 0;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab .idoll-icon-close {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   transition: all 0.3s;
   font-size: 12px;
   margin: 0 0 0 8px;
@@ -43,9 +51,11 @@
   vertical-align: middle;
   width: 16px;
   height: 16px;
+  line-height: 14px;
 }
 .idoll-tabs.idoll-tabs-card > .idoll-tabs-bar .idoll-tabs-tab .idoll-icon-close:hover {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.8);
+  transition: color .3s;
 }
 .idoll-tabs.idoll-tabs-card .idoll-tabs-content > .idoll-tabs-tabpane,
 .idoll-tabs.idoll-tabs-editable-card .idoll-tabs-content > .idoll-tabs-tabpane {
@@ -70,7 +80,7 @@
   border-radius: 2px;
   border: 1px solid #E2E2E2;
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   transition: all 0.3s;
 }
 .idoll-tabs-extra-content .idoll-tabs-new-tab:hover {
@@ -119,7 +129,7 @@
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -198,7 +208,7 @@
   background-color: transparent;
   position: absolute;
   text-align: center;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
   transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0;
   pointer-events: none;
@@ -216,7 +226,7 @@
 }
 .idoll-tabs-tab-prev:hover,
 .idoll-tabs-tab-next:hover {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.4);
 }
 .idoll-tabs-tab-prev-icon,
 .idoll-tabs-tab-next-icon {
@@ -253,21 +263,21 @@
 }
 .idoll-tabs-tab-btn-disabled,
 .idoll-tabs-tab-btn-disabled:hover {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-tabs-tab-next {
   right: 2px;
 }
 .idoll-tabs-tab-next-icon:before {
-  content: "\E915";
-  font-family: 'idoll-icon-pro' !important;
+  font-family: "idollicon" !important;
+  content: "\E72A";
 }
 .idoll-tabs-tab-prev {
   left: 0;
 }
 .idoll-tabs-tab-prev-icon:before {
-  content: "\E913";
-  font-family: 'idoll-icon-pro' !important;
+  font-family: "idollicon" !important;
+  content: "\E70F";
 }
 :root .idoll-tabs-tab-prev {
   filter: none;
@@ -299,17 +309,17 @@
 }
 .idoll-tabs-nav .idoll-tabs-tab-disabled {
   cursor: default;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-tabs-nav .idoll-tabs-tab-disabled span i:before {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-tabs-nav .idoll-tabs-tab.idoll-tabs-tab-disabled:hover {
   cursor: not-allowed;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-tabs-nav .idoll-tabs-tab.idoll-tabs-tab-disabled:hover span i:before {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 .idoll-tabs-nav .idoll-tabs-tab {
   display: inline-block;
@@ -460,8 +470,8 @@
   height: 32px;
 }
 .idoll-tabs-vertical > .idoll-tabs-bar .idoll-tabs-tab-next-icon:before {
-  content: "\E92C";
-  font-family: 'idollicon' !important;
+  font-family: "idollicon" !important;
+  content: "\E6F5";
 }
 .idoll-tabs-vertical > .idoll-tabs-bar .idoll-tabs-tab-prev {
   top: 0;
@@ -469,8 +479,8 @@
   height: 32px;
 }
 .idoll-tabs-vertical > .idoll-tabs-bar .idoll-tabs-tab-prev-icon:before {
-  content: "\E938";
-  font-family: 'idollicon' !important;
+  font-family: "idollicon" !important;
+  content: "\E73A";
 }
 .idoll-tabs-vertical > .idoll-tabs-content {
   overflow: hidden;

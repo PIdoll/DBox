@@ -157,6 +157,9 @@
   
 }
 
+.beginUpload {
+  margin-left: 10px;
+}
 .beginUpload[disabled] {
   .@{iconfont-css-prefix} {
     color: @text-color-disable;
@@ -355,8 +358,11 @@
       a {
         margin-right: 8px;
         i {
-        color: @text-color-disable-dark;
+        color: @default-icon-dark ;
         }
+      }
+      a:hover i {
+        color: @hover-icon-dark;
       }
       a:active i {
         color: #fff;
@@ -568,6 +574,16 @@
   .@{upload-prefix-cls}-animate-inline-leave {
     animation-name: uploadAnimateInlineOut;
   }
+}
+.manual {
+  overflow: hidden;
+  // .@{upload-prefix-cls} {
+  //   float: left;
+  // }
+  // .beginUpload {
+  //  float: left; 
+  // }
+  // display: inline-block;
 }
 
 .@{idoll-prefix}-progress-text {

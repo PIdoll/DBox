@@ -152,6 +152,9 @@
 .idoll-upload-disabled:hover div.idoll-upload-drag-container .idoll-upload-icon i.idoll-icon {
   color: rgba(0, 0, 0, 0.2);
 }
+.beginUpload {
+  margin-left: 10px;
+}
 .beginUpload[disabled] .idoll-icon {
   color: rgba(0, 0, 0, 0.2);
 }
@@ -355,7 +358,10 @@
   margin-right: 8px;
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span a i {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
+}
+.idoll-upload-list-picture-card .idoll-upload-list-item span a:hover i {
+  color: rgba(255, 255, 255, 0.8);
 }
 .idoll-upload-list-picture-card .idoll-upload-list-item span a:active i {
   color: #fff;
@@ -518,6 +524,9 @@
 }
 .idoll-upload-list .idoll-upload-animate-inline-leave {
   animation-name: uploadAnimateInlineOut;
+}
+.manual {
+  overflow: hidden;
 }
 .idoll-progress-text {
   color: rgba(0, 0, 0, 0.4);

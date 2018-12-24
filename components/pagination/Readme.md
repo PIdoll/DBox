@@ -1,32 +1,36 @@
-#### **何时使用**
-
-- 当加载/渲染所有数据将花费很多时间时；
-- 可切换页码浏览数据。
+#### **概述**
+当数据量较多时，使用分页可以帮助快速移动，常见于列表、表格、搜索结果和目录
 
 ##### **基础分页**
-- 不设置defaultPageSize时默认为每页10条数据；
+较简单的基础用法，不设置 defaultPageSize 时默认为每页10条数据；通过 total 可以设置总条数。
 ```jsx
 import {Pagination} from 'components';
 <Pagination defaultCurrent={1} total={50}></Pagination>
 ```
 
 ##### **更多分页**
+页数过多时自动折叠。
+
 ```jsx
 import {Pagination} from 'components';
 <Pagination defaultCurrent={6} total={500}></Pagination>
 ```
 
 ##### **改变每页显示条数目**
+通过 defaultPageSize 设置每页显示的条数。
 ```jsx
 import {Pagination} from 'components';
 <Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
 ```
 ##### **跳转分页**
+添加 showQuickJumper 设置快速页面跳转。
 ```jsx
 import {Pagination} from 'components';
 <Pagination defaultCurrent={2} total={500} showQuickJumper></Pagination>
 ```
 ##### **迷你分页**
+较小的分页器，可通过 showSizeChanger showQuickJumper showTotal={showTotal} 来控制是否
+显示每页显示的条数、跳转和总条数。
 ```jsx
 import {Pagination} from 'components';
 function showTotal(total) {
@@ -42,12 +46,14 @@ function showTotal(total) {
 ```
 
 ##### **简洁翻页**
+通过 simple 设置简洁分页器，常用户弹出框中。
 ```jsx
 import {Pagination} from 'components';
 <Pagination simple defaultCurrent={2} total={500}></Pagination>
 ```
 
 ##### **包含总数**
+与表格搭配较常用的分页器。
 ```jsx
 import {Pagination} from 'components';
 <Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
