@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+  <div class="home_page">
+    <div class="header">
+      <div class="header_left">
+        <img src="./images/logo.png" alt="Logo">
+        <div class="DBox">DBox</div>
+      </div>
+      <!-- <div class="header_right">
+        <select>
+          <option>1</option>
+        </select>
+      </div> -->
+    </div>
+    <div class="content">
+      <div class="descript_container">
+        <div class="team">©2018 DBox Team</div>
+        <div class="component_name">DBOX DESIGN</div>
+        <div class="component_name2">SYSTEM</div>
+        <div class="purpose">一套基于React实现的PC端UI组件库,致力于高效的创建简约美观的产品体验</div>
+        <div class="operation">
+          <button class="start_use" onclick="handleStartUse()">开始使用</button>
+          <button class="connect_us" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">联系我们</button>
+          <div class="Happy" id="Happy">
+            <img src="./images/HAPPY PINGAN.png" alt="快乐平安">
+            <div class="scamQR">使用快乐平安扫码加群</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var Happy = document.getElementById('Happy');
+  function handleHappyMouseEnter() {
+    Happy.classList.add('show');
+  }
+  function handleHappyMouseOut() {
+    Happy.classList.remove('show');
+  }
+  function handleStartUse() {
+    location.pathname = '';
+  }
+</script>
+</html>

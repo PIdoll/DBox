@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+
+<body>
+    <div class="resource_container">
+        <div class="resource_container_header">
+            <div class="dresource_container_header_container">
+                <div class="header_left">
+                    <div class="header_left_logo">
+                        <img src="./images/logo.png" alt="Logo">
+                        <div class="DBox">DBox</div>
+                    </div>
+                </div>
+                <div class="header_right">
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">首页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">设计原则</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">组件文档</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">设计资源</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="design_source">
+            <h1>设计资源</h1>
+            <p>
+                DBox&nbsp;Sketch库包含用于设计和构建Web产品的最新基础组件,下载以开始使用Sketch文档,如是初次使用可阅读有关<a href="https://sketchapp.com/docs/libraries/">如何使用Sketch&nbsp;Libraries。</a>
+            </p>
+            <div class="design_source_logo_container">
+                <div class="design_source_logo">
+                    <img src="./images/Sketch.png" alt="Sketch">
+                </div>
+                <p>
+                    DBox&nbsp;Library_V1.0
+                </p>
+                <div class="operation">
+                    <button class="download">立即下载</button>
+                    <button class="getlink" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">获取链接</button>
+                </div>
+            </div>
+            <div class="Happy_qrcode" id="Happy_qrcode">
+                <img src="./images/HAPPY PINGAN.png" alt="快乐平安">
+                <div class="scamQR">使用快乐平安扫码加群</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+var Happy = document.getElementById('Happy_qrcode');
+  function handleHappyMouseEnter() {
+    Happy.classList.add('show');
+  }
+  function handleHappyMouseOut() {
+    Happy.classList.remove('show');
+  }
+  function handleStartUse() {
+    location.pathname = '';
+	}
+</script>
+</html>
