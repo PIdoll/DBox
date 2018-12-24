@@ -95,18 +95,18 @@
     }
   }
 
-  //&-error {
-  //  .@{steps-prefix-cls}-item-icon {
-  //    border-color: @error-icon-color;
-  //    color: @error-icon-color;
-  //  }
-  //  .@{steps-prefix-cls}-item-content {
-  //    .@{steps-prefix-cls}-item-title,
-  //    .@{steps-prefix-cls}-item-description {
-  //      color: @error-icon-color;
-  //    }
-  //  }
-  //}
+  &-error {
+  .@{steps-prefix-cls}-item-icon {
+  border-color: @error-icon-color;
+  color: @error-icon-color;
+  }
+ .@{steps-prefix-cls}-item-content {
+  .@{steps-prefix-cls}-item-title,
+  .@{steps-prefix-cls}-item-description {
+    color: @error-icon-color;
+  }
+ }
+}
 
   &-title {
     font-size: @font-size-lg;
@@ -213,18 +213,6 @@
 
   &-@{status} > &-tail:after {
     background-color: @@tail-color;
-  }
-}
-.idoll-icon-check{
-  color: @primary-color;
-  &:hover{
-    color: @primary-color;
-  }
-}
-.idoll-icon-close{
-  color: @error-icon-color;
-  &:hover{
-    color: @error-icon-color;
   }
 }
 @import 'progress-dot';
