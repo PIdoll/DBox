@@ -53,6 +53,7 @@ class MenuView extends React.Component {
 ```jsx
 import {Menu, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
+const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
 class MenuView extends React.Component {
   constructor(props) {
     super(props);

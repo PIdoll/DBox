@@ -117,15 +117,15 @@ function handleMenu1Click(e) {
 };
 
 <ButtonGroup className='ButtonGroup'>
-  <DropdownButton overlay={menu1} trigger={['hover']}>
-  操作三
-  </DropdownButton>
-  <Button>
-    操作二
-  </Button>
   <Button>
     操作一
   </Button>
+  <Button>
+    操作二
+  </Button>
+  <DropdownButton overlay={menu1} trigger={['hover']}>
+  操作三
+  </DropdownButton>
 </ButtonGroup>
 ```
 
