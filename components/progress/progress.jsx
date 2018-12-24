@@ -64,7 +64,7 @@ export default class Progress extends React.Component {
 
     if (showInfo) {
       let text;
-      const iconType = (type === 'circle') ? '' : '-circle';
+      const iconType = (type === 'circle') ? '' : '-circle-o';
       if (format || (progressStatus !== 'exception' && progressStatus !== 'success')) {
         text = textFormatter(validProgress(percent), validProgress(successPercent));
       } else if (progressStatus === 'exception') {
