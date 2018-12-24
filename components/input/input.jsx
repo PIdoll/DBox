@@ -193,7 +193,7 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const clearIcon = <Icon type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
+    const clearIcon = <Icon type='close-circle-o' className={`${props.prefixCls}-picker-clear`} />;
     const clearSuffix = React.cloneElement(clearIcon, {
       onClick: this.onClear,
       className: 'icon-hover',
