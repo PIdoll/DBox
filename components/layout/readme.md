@@ -217,7 +217,7 @@ class LayoutView extends React.Component {
         <Sider >
           <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
           {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'left' : 'right'} onClick={this.changeModel} />
+          <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
         </Sider>
         <Layout>
           <Header style={{height: '56px'}} >
@@ -410,7 +410,7 @@ class LayoutView extends React.Component {
         <Sider >
           <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
           {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'left' : 'right'} onClick={this.changeModel} />
+          <Icon type={this.state.flag ? 'right-circle-o' : 'left-cirlcle-o'} onClick={this.changeModel} />
         </Sider>
         <Layout>
           <Header style={{height: '56px'}} >

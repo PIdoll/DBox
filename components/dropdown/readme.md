@@ -180,7 +180,7 @@ function handleMenu1Click(e) {
 	<Dropdown overlay={menu} placement='topLeft'>
       <Button>上左</Button>
     </Dropdown>
-    <Dropdown overlay={menu} style={{marginLeft: '10px', marginRight: '10px'}} placement='topCenter'>
+    <Dropdown overlay={menu} placement='topCenter'>
       <Button>上中</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='topRight'>

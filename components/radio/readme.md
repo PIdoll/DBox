@@ -1,10 +1,10 @@
 
-#### **何时使用**
+#### **概述**
 
-- 用于在多个备选项中选中单个状态。
-- 和 Select 的区别是，Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
+在多个备选项中选中单个状态。
 
 ##### **基本样式展示**
+点击文字或按钮选中对应状态
 ```jsx
 import {Radio} from 'components';
 <div>
@@ -15,6 +15,7 @@ import {Radio} from 'components';
 ```
 
 ##### **禁用单选框**
+通过增加按钮来控制时候允许操作
 ```jsx
 import {Radio, Button} from 'components';
 class RadioView extends React.Component {
@@ -46,6 +47,7 @@ class RadioView extends React.Component {
 ```
 
 ##### **互斥单选框**
+一组单选框只允许选中一个
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -77,6 +79,7 @@ class RadioView extends React.Component {
 ```
 
 ##### **垂直组合单选框**
+适用于垂直组合样式
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -108,6 +111,7 @@ class RadioView extends React.Component {
 ```
 
 ##### **分组单选框**
+通过RadioGroup包裹多个单选组合
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -148,6 +152,7 @@ class RadioView extends React.Component {
 ```
 
 ##### **name单选框**
+通过给RadioGroup添加name属性给予值让所有的单选框拥有统一的类名方便统一操作
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -179,6 +184,7 @@ class RadioView extends React.Component {
 ```
 
 ##### **按钮样式**
+仿按钮样式的单选框
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -210,6 +216,7 @@ const RadioButton = Radio.RadioButton;
 ```
 
 ##### **大小按钮**
+通过size属性设置large,small和不设置属性改变单选框的大小
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;
@@ -241,6 +248,7 @@ const RadioButton = Radio.RadioButton;
 ```
 
 ##### **按钮底纹**
+拥有底纹的仿按钮样式的单选框
 ```jsx
 import {Radio} from 'components';
 const RadioGroup = Radio.RadioGroup;

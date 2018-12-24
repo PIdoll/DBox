@@ -140,7 +140,7 @@ export default class UploadList extends React.Component {
                     style={{ pointerEvents: file.url ? '' : 'none' }}
                     onClick={e => this.handlePreview(file, e)}
                   >
-                    <Icon type='pro2-eye' />
+                    <Icon type='eye' />
                   </a>
                   <Icon type='delete' onClick={() => this.handleClose(file)} />
                 </span>
