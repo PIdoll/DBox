@@ -2,6 +2,14 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .idoll-modal {
   position: relative;
   margin: 0 auto;
@@ -83,7 +91,6 @@
 }
 .idoll-modal-body {
   min-height: 180px;
-  max-height: 488px;
   padding: 24px;
   font-size: 14px;
   line-height: 22px;

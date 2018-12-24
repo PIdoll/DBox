@@ -2,11 +2,11 @@ import React from 'react';
 import Animate from 'rc-animate';
 import Icon from '../icon';
 import Progress from '../progress';
+import Tooltip from '../tooltip';
 import classNames from 'classnames';
 
 const prefixCls = 'idoll-upload';
 
-// https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 const previewFile = (file, callback) => {
   const reader = new FileReader();
   reader.onloadend = () => callback(reader.result);
@@ -15,11 +15,11 @@ const previewFile = (file, callback) => {
 
 export default class UploadList extends React.Component {
   static defaultProps = {
-    listType: 'text', // or picture
+    listType: 'text',
     items: [],
     progressAttr: {
       strokeWidth: 3,
-      showInfo: false,
+      status: 'active'
     },
   };
 
@@ -62,15 +62,8 @@ export default class UploadList extends React.Component {
     let list = this.props.items.map(file => {
       let progress;
       let icon = <Icon type='paper-clip' />;
-
+      // 图片列表
       if (this.props.listType === 'picture' || this.props.listType === 'picture-card') {
-        if (file.status === 'uploading' || (!file.thumbUrl && !file.url)) {
-          if (this.props.listType === 'picture-card') {
-            icon = <div className={`${prefixCls}-list-item-uploading-text`}>文件上传中</div>;
-          } else {
-            icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
-          }
-        } else {
           icon = (
             <a
               className={`${prefixCls}-list-item-thumbnail`}
@@ -80,14 +73,18 @@ export default class UploadList extends React.Component {
             >
               <img src={file.thumbUrl || file.url} alt={file.name} />
             </a>
-          );
-        }
+          )
+      }
+      // 头像上传
+      if (this.props.listType === 'picture-card' && file.status === 'uploading') {
+          icon = <Icon className={`${prefixCls}-list-item-thumbnail`} type='picture' />;
       }
 
+      // 进度条
       if (file.status === 'uploading') {
         progress = (
           <div className={`${prefixCls}-list-item-progress`}>
-            <Progress type='line' {...this.props.progressAttr} percent={file.percent} />
+            <Progress type={this.props.listType === 'picture-card' ? 'circle' : 'line'} width={this.props.listType === 'picture-card' ? 80 : null} {...this.props.progressAttr} percent={Math.floor(file.percent)} status={file.status === 'error' ? 'exception' : 'active'} />
           </div>
         );
       }
@@ -101,21 +98,34 @@ export default class UploadList extends React.Component {
             {icon}
             {
               file.url
-              ? (
+              ? (file.status === 'error'
+              ? <Tooltip title={file.response || 'Server Error 500'}><a
+                href={file.url}
+                target='_blank'
+                className={`${prefixCls}-list-item-name`}
+                onClick={e => this.handlePreview(file, e)}
+                >
+                <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
+              </a></Tooltip> : <a
+                href={file.url}
+                target='_blank'
+                className={`${prefixCls}-list-item-name`}
+                onClick={e => this.handlePreview(file, e)}
+                >
+                <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />
+              </a>) : (file.status === 'error' ? <Tooltip title={file.response || 'Server Error 500'}>
                 <a
-                  href={file.url}
+                  href=''
                   target='_blank'
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
                 >
-                  {file.name}
-                </a>
-              ) : (
-                <span
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type='' />
+                </a></Tooltip> : <span
                   className={`${prefixCls}-list-item-name`}
                   onClick={e => this.handlePreview(file, e)}
                 >
-                  {file.name}
+                  <Icon type={this.props.listType === 'picture' ? null : 'pro2-clip'} /><span>{file.name}</span><Icon type='check' />
                 </span>
               )
             }
@@ -130,7 +140,7 @@ export default class UploadList extends React.Component {
                     style={{ pointerEvents: file.url ? '' : 'none' }}
                     onClick={e => this.handlePreview(file, e)}
                   >
-                    <Icon type='eye-o' />
+                    <Icon type='pro2-eye' />
                   </a>
                   <Icon type='delete' onClick={() => this.handleClose(file)} />
                 </span>
@@ -146,7 +156,7 @@ export default class UploadList extends React.Component {
     });
     return (
       <div className={listClassNames}>
-        <Animate transitionName={`${prefixCls}-margin-top`}>
+        <Animate transitionName='fade'>
           {list}
         </Animate>
       </div>
