@@ -41,7 +41,7 @@ function defaultSortFilteredOption(a, b, inputValue) {
 const defaultDisplayRender = (label) => label.join(' / ');
 
 export default class Cascader extends React.Component {
-  static PropTypes = {
+  static propTypes = {
       defaultValue: PropTypes.array,
       filter: PropTypes.bool,
       matchInputWidth: PropTypes.number,

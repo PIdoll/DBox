@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import RcCheckbox from 'rc-checkbox'
 import shallowEqual from 'shallowequal'
-import './style/index.jsx'
+import './style/index'
 
 export default class Checkbox extends React.Component {
   static defaultProps = {

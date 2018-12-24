@@ -6,7 +6,7 @@ import SubMenu from './SubMenu';
 import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
 
-import './style/index.jsx';
+import './style/index';
 
 function noop() {
 }

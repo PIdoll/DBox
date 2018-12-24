@@ -7,9 +7,9 @@ import addEventListener from 'rc-util/lib/Dom/addEventListener'
 import getScroll from '../_util/getScroll'
 import raf from 'raf';
 import AnchorLink from './anchorLink'
-import Affix from '../../components/affix'
+import Affix from '../affix'
 
-import './style/index.jsx'
+import './style/index'
 
 function getDefaultContainer() {
   return window;

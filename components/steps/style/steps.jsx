@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Steps from 'components/steps';
-import Popover from 'components/popover';
-import Button from 'components/button';
-import Message from 'components/message';
+import Steps from '../steps';
+import Popover from '../../popover';
+import Button from '../../button';
+import Message from '../../message';
 
 
 const Step = Steps.Step;

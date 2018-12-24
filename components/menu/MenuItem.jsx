@@ -1,6 +1,6 @@
 import React from 'react'
 import { Item } from 'rc-menu'
-import Tooltip from '../../components/tooltip';
+import Tooltip from '../tooltip';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
