@@ -145,6 +145,7 @@ class LayoutView extends React.Component {
     this.setState({
       modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
+      openKeys: [],
     })
   }
   onOpenChange (openKeys) {
@@ -311,6 +312,7 @@ class LayoutView extends React.Component {
     this.setState({
       modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
+      openKeys: [],
     })
   }
   onChange (activeKey) {
@@ -410,7 +412,7 @@ class LayoutView extends React.Component {
         <Sider >
           <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
           {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'right-circle-o' : 'left-cirlcle-o'} onClick={this.changeModel} />
+          <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
         </Sider>
         <Layout>
           <Header style={{height: '56px'}} >

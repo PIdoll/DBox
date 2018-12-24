@@ -30,7 +30,7 @@ const content = (
     <Button>鼠标移入</Button>
   </Popover>
   <Popover content={content} title='标题' trigger='focus'>
-    <Button>鼠标聚焦</Button>
+    <Button  style={{marginLeft: 25, marginRight: 25}}>鼠标聚焦</Button>
   </Popover>
   <Popover content={content} title='标题' trigger='click'>
     <Button>单击鼠标</Button>
@@ -55,7 +55,7 @@ const text = <span>标题</span>;
       <Button> T L </Button>
     </Popover>
     <Popover placement='top' title={text} content={content} trigger='click'>
-      <Button>Top</Button>
+      <Button style={{marginLeft: 25, marginRight: 25}}>Top</Button>
     </Popover>
     <Popover placement='topRight' title={text} content={content} trigger='click'>
       <Button>T R</Button>
@@ -88,7 +88,7 @@ const text = <span>标题</span>;
       <Button>B L</Button>
     </Popover>
     <Popover placement='bottom' title={text} content={content} trigger='click'>
-      <Button>Bottom</Button>
+      <Button style={{marginLeft: 15, marginRight: 15}}>Bottom</Button>
     </Popover>
     <Popover placement='bottomRight' title={text} content={content} trigger='click'>
       <Button> B R </Button>
@@ -112,7 +112,7 @@ const text = <span>标题</span>;
     <Button>边缘对齐</Button>
   </Popover>
   <Popover placement='topLeft' title={text} content={content} arrowPointAtCenter>
-    <Button>箭头指向中心</Button>
+    <Button style={{marginLeft: 25}}>箭头指向中心</Button>
   </Popover>
 </div>
 ```
