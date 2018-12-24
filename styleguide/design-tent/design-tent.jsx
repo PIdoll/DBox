@@ -1,13 +1,18 @@
 import React from 'react';
-// import Header from '../header';
+import Header from '../header';
+import HeaderNav from '../header-nav';
+import principlePath from '../../assets/images/principle.png';
 import './style/index';
 
 export default function DesignTent() {
   return (
     <section className='designTent_container'>
       <div className='design_header'>
-        {/* <Header /> */}
+        <Header>
+          <HeaderNav />
+        </Header>
       </div>
+      <div className='clearfix_fixed' />
       <div className='design_descript'>
         <h1>设计原则</h1>
         <p>
@@ -42,7 +47,7 @@ export default function DesignTent() {
         </div>
       </div>
       <div className='design_pic'>
-        {/* <img src="" alt=""/> */}
+        <img src={principlePath} alt='设计原则' />
       </div>
     </section>
   )

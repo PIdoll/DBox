@@ -3,11 +3,19 @@
   height: 100vh;
   padding: 0 120px 0;
   background: #fff;
-  background-image: url('../../../assets//images/Illustration.png');
+  background-image: url('../../../assets/images/Illustration.png');
   background-size: contain;
   background-repeat: no-repeat;
   box-sizing: border-box;
 }
+
+.header {
+}
+
+// .clearfix_fixed {
+//   height: 80px;
+//   width: 100%;
+// }
 
 .description_container {
   position: relative;
@@ -57,18 +65,28 @@
     right: 0;
     .QRCode {
       position: absolute;
-      right: -8px;
+      right: -16px;
+      top: 35px;
+      width: 117px;
+      height: 120px;
+      border: 1px solid #E2E2E2;
       opacity: 1;
       transition: opacity .8s;
       img {
         width: 100px;
         height: 100px;
+        margin-left: 8px;
       }
     }
     .happy_pinan {
       opacity: 0;
       transition: opacity .8s;
     }
+  }
+
+  .scamQR {
+    font-size: 10px;
+    text-align: center;
   }
 
 }

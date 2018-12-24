@@ -1,18 +1,24 @@
 .resource_container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   background-color: #fff;
-  padding-bottom: 30px;
+  padding-bottom: 160px;
   box-sizing: border-box;
 
   .header {
-    // background-color: #fff;
-    // padding: 0 120px;
-    // height: 80px;
-    // width: 100%;
-    // box-shadow: 0 2px 8px 0px rgba(0, 0, 0, .1);
-    // box-sizing: border-box;
+    position: fixed;
+    background-color: #fff;
+    padding: 0 120px;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 2px 8px 0px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+  }
+
+  .clearfix_fixed {
+    width: 100%;
+    height: 80px;
   }
 
   h1 {
@@ -59,20 +65,30 @@
   }
 
   .relation {
+    width: 117px;
+    height: 120px;
     position: absolute;
-    bottom: -100px;
+    bottom: -130px;
     right: 18px;
     opacity: 0;
     transition: opacity .5s;
+    border: 1px solid #E2E2E2;
 
     .qrcode {
       width: 100px;
       height: 100px;
+      margin-left: 8px;
+      margin-top: 2px;
     }
   }
 
   .isShow {
     opacity: 1;
     transition: opacity .5s;
+  }
+
+  .scamQR {
+    font-size: 10px;
+    text-align: center;
   }
 }
