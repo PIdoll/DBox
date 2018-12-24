@@ -7,31 +7,32 @@ import typographyData from './typography.jsx';
 
 class Typography extends React.Component {
   handelRender(item) {
+    const children = [];
     item.map((listItem, index) => {
-      console.log('1' + listItem.name);
-      return (
-        <div>{listItem.name}</div>
-         /* <dl key={index}>
+      children.push(
+        <dl key={index}>
           <dt>{listItem.name}</dt>
           <dd>{listItem.fontSize}</dd>
           <dd>{listItem.fontWeight}</dd>
           <dd>{listItem.color}</dd>
           <dd>{listItem.opacity}</dd>
-        </dl> */
-        )
-      })
-  }
-  handleRenderUi(item) {
-    item.map((listUi, index) => {
-      // console.log(listUi.name);
-      return (
-        <dl>
-          <dt>{listUi.name}</dt>
-          <dd>{listUi.lineHeight}</dd>
-          <dd>{listUi.marginTop}</dd>
         </dl>
       )
     })
+    return children;
+  }
+  handleRenderUi(item) {
+    const children = [];
+    item.map((listUi, index) => {
+      children.push(
+        <dl key={index}>
+          <dt>{listUi.name}</dt>
+          <dd>{listUi.lineHeight}</dd>
+          <dd>{listUi.MarginTop}</dd>
+        </dl>
+      )
+    })
+    return children;
   }
   render() {
     return (
@@ -46,18 +47,17 @@ class Typography extends React.Component {
           <p>DBox 提供了一套完整的标准字体，并提供建议用法，以帮助使用者更好的理解和使用本套系统。</p>
         </div>
         {typographyData.map((item, index) => {
-          console.log(item.basic[index].name);
           return (
-            <Row key={index}>
-              <Col span={8}>
-                <h4>{item.title}</h4>
+            <Row key={index} className='idoll-typography-wrap'>
+              <Col span={9}>
+                <h4 style={{fontSize: item.size}} className='idoll-typography-h4'>{item.title}</h4>
                 <p>{item.description}</p>
               </Col>
               <Col span={8}>
                 {this.handelRender(item.basic)}
               </Col>
-              <Col span={8}>
-                {/* {this.handleRenderUi(item.ui)} */}
+              <Col span={7}>
+                {this.handleRenderUi(item.ui)}
               </Col>
             </Row>
           )
