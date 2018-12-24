@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import Select from '../select';
 import MiniSelect from './MiniSelect';
 import zhCN from './locale/zh_CN';
-import './style/index.jsx';
+import './style/index';
 
 
 export default class Pagination extends React.Component {

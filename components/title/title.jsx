@@ -2,9 +2,9 @@ import React from 'react';
 import { PropTypes } from 'prop-types'
 import classNames from 'classnames';
 
-import Icon from 'components/icon'
+import Icon from '../icon'
 
-import './style/index.jsx';
+import './style/index';
 
 export default class Title extends React.Component {
   static defaultProps = {

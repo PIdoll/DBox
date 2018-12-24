@@ -30,7 +30,7 @@
 
 ```jsx
 import {Icon} from 'components';
-const icons1 = ['arrows-alt', 'shrink', 'backward', 'forward','caret-left', 'caret-right', 'caret-up', 'caret-down', 'down', 'up', 'up-circle', 'down-circle','left-circle-o', 'right-circle-o', 'up-circle-o', 'down-circle-o', 'menu-fold', 'menu-unfold', 'swap'];
+const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up', 'down', 'forward', 'fullscreen-exit','fullscreen', 'left', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','shrink','swap-horiz','swap-vert','undo','up','zoom-out'];
 class IconView extends React.Component {
   render() {
     return (
@@ -46,7 +46,9 @@ class IconView extends React.Component {
 
 ```jsx
 import {Icon} from 'components';
-const icons2 = ['warning-circle', 'plus', 'check-circle-o', 'close-circle', 'close', 'plus-circle-o', 'remove-circle-o', 'remove-circle', 'check', 'plus-circle', 'check-circle', 'check-circle-o', 'remove'];
+const icons2 = ['bars','block','check-circle-o','check-circle','checkbox-blank-o', 'checkbox-checked','checkbox-indeterminate','close-circle-o','close','delete','done',
+'error-circle-o','error-circle','filter','help-circle-o','help-circle','history', 'info-circle-o','info-circle', 'list','loading','menu','more','plus_box','plus-circle-o',
+'plus-circle','plus','radio-checked','radio-unchecked','refresh','remove-circle-o','remove-circle','remove','search','warning-o','warning'];
 
 class IconView extends React.Component {
   render() {
@@ -59,28 +61,17 @@ class IconView extends React.Component {
 <IconView />
 ```
 
-#### **三. 网站通用性图标**
+#### **三. 网站通用图标**
 
 ```jsx
 import {Icon} from 'components';
-const icons3 = ['delete', 'edit', 'copy', 'bars', 'calendar', 'message', 'phone', 'tag', 'search', 'filter', 'logout',];
-
-class IconView extends React.Component {
-  render() {
-    return (
-      icons3.map(function(val,index){
-      return <li><Icon type={val} key={val} /><span>{val}</span></li>})
-    )
-  }
-}
-<IconView />
-```
-
-#### **四. 网站通用图标**
-
-```jsx
-import {Icon} from 'components';
-const icons4 = ['platform', 'user-group', 'appstore-o', 'user', 'home', 'clock-o', 'tool', 'unlock', 'achievement', 'trophy', 'sound','pro-chart', 'pro-clock-circle', 'pro-download', 'pro-drag', 'pro-info', 'pro-left', 'pro-phone-circle', 'pro-right', 'pro-rollback', 'filter', 'logout','delete', 'edit', 'copy', 'bars', 'calendar', 'message', 'pro-safety', 'pro-setting', 'pro-sharealt', 'pro-sync', 'pro-table','arrowdown', 'arrowup', 'book', 'contacts', 'detail', 'flag', 'help', 'pro2-info-circle-o', 'pro2-info-circle', 'pro2-calendar', 'pro2-clear','pro2-clip', 'pro2-eye', 'pro2-delete', 'pro2-loading', 'pro2-pen', 'pro2-upload', 'pro2-download', 'pro2-file'];
+const icons4 = ['chart','clear','clip','clock-o','cloud-download','cloud-upload','cloud',
+'computer','copy','copyright','creditcard','dashboard','download','edit','email','equalizer',
+'explore','eye_close','eye','file','flag','folder','home','hourglass','image','link-off',
+'link','lock','logout','message','notifications','phone','platform','sad','setting','share',
+'smile','star-half','star-o','star','tag','thumb-down','thumb-up','tool','trophy','unlock',
+'upload','user-add','user-group','user','verified','voice','volume-down','volume-mute',
+'volume-off','volume-up','wallet','widgets'];
 
 class IconView extends React.Component {
   render() {

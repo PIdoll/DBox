@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 // webpack错误信息提示插件
@@ -26,7 +26,7 @@ module.exports = merge(common, {
 	// 添加我们的插件
 	plugins: [
 		// 清除dist文件夹，保证每次build的文件都是最新的
-		new CleanWebpackPlugin(['dist']),
+		// new CleanWebpackPlugin(['dist']),
 		// 会自动生成一个html文件
 		new HtmlwebpackPlugin({
 			filename: 'index.html',
