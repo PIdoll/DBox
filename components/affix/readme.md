@@ -1,10 +1,7 @@
 
-####  **何时使用**
+将元素固定在特定区域，一般用于导航栏或反馈按钮。
 
-当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。
-页面可视范围过小时，慎用此功能以免遮挡页面内容。
-
-#### **基本使用**
+#### **固定在顶部**
 ```jsx
 import { Affix, Button } from 'components';
 
@@ -25,7 +22,7 @@ class AffixView extends React.Component {
 }
 <AffixView />
 ```
-#### **固定到底部**
+#### **固定在底部**
 ```jsx
 import { Affix, Button } from 'components';
 
@@ -39,8 +36,7 @@ const AffixView = () => {
 <AffixView />
 ```
 
-
-#### **固定在容器当中**
+#### **固定在容器**
 ```jsx
 import { Affix, Button } from 'components';
 

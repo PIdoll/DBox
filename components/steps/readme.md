@@ -1,8 +1,7 @@
 
-#### **何时使用**
-当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。
+用于指导用户完成跨多个屏幕的流程和操作，或引导用户按照流程完成任务的导航。
 
-#### **通用步骤条**
+#### **基本用法**
 ```jsx
 import { Steps } from 'components';
 
@@ -19,7 +18,7 @@ const StepsView = () => {
 <StepsView />
 ```
 
-#### **小尺寸步骤条**
+#### **小尺寸**
 ```jsx
 import { Steps } from 'components';
 
@@ -53,7 +52,7 @@ const StepsView = () => {
 <StepsView />
 ```
 
-#### **自定义点状步骤条**
+#### **带popover点状步骤条**
 ```jsx
 import { Steps, Popover } from 'components';
 
@@ -77,7 +76,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-#### **步骤切换**
+#### **可步骤切换**
 ```jsx
 import { Steps, Button } from 'components';
 
