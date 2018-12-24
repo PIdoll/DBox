@@ -1,19 +1,28 @@
 import React from 'react';
-import { Row, Col} from '../grid';
+import colorImg from '../../styleguide/assets/img/Color.png';
+import './style';
 
+import PrimaryColor from './primaryColor';
+import FunctionColor from './functionColor';
+import NeutralColor from './neutralColor';
+import OtherColor from './otherColor';
+import ShadowColor from './shadowColor';
 
 /**
  * @visibleName Color 色彩
  */
-class PrimaryColor extends React.Component {
+class Color extends React.Component {
   render() {
     return (
-      <Row>
-      <Col span={8} gutter={16}>adc</Col>
-      <Col span={8} gutter={16}>adc</Col>
-      <Col span={8} gutter={16}>adc</Col>
-    </Row>
+      <React.Fragment>
+        <img src={colorImg} className='idoll-color-img' />
+        <PrimaryColor />
+        <FunctionColor />
+        <NeutralColor />
+        <OtherColor />
+        <ShadowColor />
+      </React.Fragment >
     )
   }
 }
-export {PrimaryColor}
+export default Color;
