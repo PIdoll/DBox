@@ -24,7 +24,7 @@ Modal.success = function (props) {
 Modal.error = function (props) {
   const config = {
     type: 'error',
-    iconType: 'close-circle-o',
+    iconType: 'error-circle-o',
     okCancel: false,
     ...props
   };
