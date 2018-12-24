@@ -4,39 +4,65 @@ const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
+// var safeParser = require('postcss-safe-parser');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 const common = require('./webpack.common.js');
 
  let webpackConfig = merge(common, {
 	devtool: '#source-map',
+	mode: 'production',
 	module: {
 		rules: [
 			{
 				test: /\.(less|css)$/,
-				use: ExtractTextPlugin.extract({
-			        fallbackLoader: 'style-loader',
-			        // 如果需要，可以在 less-loader 之前将 resolve-url-loader 链接进来
-				use: [
-					'css-loader', {
-						loader: 'postcss-loader',
+				use: [{
+					loader: MiniCssExtractPlugin.loader,
+					options: {
+					// you can specify a publicPath here
+					// by default it use publicPath in webpackOptions.output
+					// publicPath: '../'
+					}
+				}, 'css-loader', {
+					loader: 'postcss-loader',
 						options: {
 							plugins: () => [
 								autoprefixer({add: true, remove: true, browsers: ['>0%']}),
 								cssnano()
 								]
 						}
-					},
-					'less-loader'
-					]
-				})
+				}, 'less-loader']
 			}
 		]
 	},
+	optimization: {
+		minimizer: [
+		  // we specify a custom UglifyJsPlugin here to get source maps in production
+		  new UglifyJSPlugin({
+			cache: true,
+			parallel: true,
+			uglifyOptions: {
+			  compress: false,
+			  ecma: 6,
+			  mangle: true
+			},
+			sourceMap: true
+		  }),
+		new OptimizeCSSAssetsPlugin({
+			// cssProcessorOptions: { parser: safeParser }
+		})
+		]
+	},
 	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'css/app.[name].css',
+			chunkFilename: 'css/app.[contenthash:12].css' // use contenthash *
+		  }),
 	// 会自动生成一个html文件
 	new HtmlwebpackPlugin({
 		filename: 'dbox.html',
@@ -49,7 +75,7 @@ const common = require('./webpack.common.js');
                 // 更多选项:
                 // https://github.com/kangax/html-minifier#options-quick-reference
             },
-        // 必须通过 CommonsChunkPlugin一致地处理多个 chunks
+        // 必须通过 CommonsChunkPlugin 一致地处理多个 chunks
         chunksSortMode: 'dependency'
 	}),
 	// webpack 复制文件和文件夹的插件
@@ -65,23 +91,23 @@ const common = require('./webpack.common.js');
 			to: path.resolve(__dirname, 'dist/')
 		}
 	]),
-	// 压缩混淆js文件
-	new webpack.optimize.UglifyJsPlugin({
-		compress: {
-			warnings: false
-		},
-		comments: false,
-		sourceMap: true
-	}),
-	// 删除掉未引用的export代码
-	new UglifyJSPlugin({
-		sourceMap: true
-	}),
+	// // 压缩混淆js文件
+	// new webpack.optimize.UglifyJsPlugin({
+	// 	compress: {
+	// 		warnings: false
+	// 	},
+	// 	comments: false,
+	// 	sourceMap: true
+	// }),
+	// // 删除掉未引用的export代码
+	// new UglifyJSPlugin({
+	// 	sourceMap: true
+	// }),
 	// 提取 css
-    new ExtractTextPlugin({
-        filename: 'main.[contenthash].css',
-        allChunks: true
-    }),
+    // new ExtractTextPlugin({
+    //     filename: 'main.[contenthash].css',
+    //     allChunks: true
+    // }),
 
     // Dll user的配置
     // 单独编译更改不频繁的代码
@@ -98,11 +124,11 @@ const common = require('./webpack.common.js');
 	// definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
 	// 此处，插入适当的环境
 	// https://webpack.js.org/plugins/define-plugin/
-	new webpack.DefinePlugin({
-		'process.env': {
-		 'NODE_ENV': JSON.stringify('production')
-		}
-	})
+	// new webpack.DefinePlugin({
+	// 	'process.env': {
+	// 	 'NODE_ENV': JSON.stringify('production')
+	// 	}
+	// })
 	]
 })
 

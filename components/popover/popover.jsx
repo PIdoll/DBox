@@ -1,5 +1,5 @@
 import React from 'react';
-import Tooltip from '../../components/tooltip';
+import Tooltip from '../tooltip';
 import classNames from 'classnames';
 import warning from '../_util/warning';
 

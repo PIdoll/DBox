@@ -6,7 +6,7 @@ import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import { PREFIX_CLS } from './Constants';
 import Header from './Header';
 import interopDefault from '../_util/interopDefault';
-import zhCN from './locale/zh_CN.jsx';
+import zhCN from './locale/zh_CN';
 
 import './style/index'
 

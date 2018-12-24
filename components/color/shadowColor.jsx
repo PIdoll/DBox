@@ -3,9 +3,9 @@ import { Row, Col } from '../grid';
 import './style';
 
 const shadowColor = [
-  { title: 'Primary', value: '#13B886', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#13B886', color: '#ffffff' },
-  { title: 'Black', value: '#000000', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#000000', color: '#ffffff' },
-  { title: 'White', value: '#ffffff', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#ffffff', color: '#000000' },
+  { title: 'Small', value: '0 8 16px 0', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#F8F8F8', color: '#000000', shadow: '0px 2px 8px 0px rgba(0,0,0,0.1)' },
+  { title: 'Large', value: '0px 8px 16px 0px', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#ffffff', color: '#000000', shadow: '0px 8px 16px 0px rgba(0,0,0,0.1)' },
+  { title: 'Button', value: '0px 2px 8px 0px', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', bgColor: '#13B886', color: '#ffffff', shadow: '0px 2px 8px 0px rgba(19,184,134,0.2)' },
 ]
 class ShadowColor extends React.Component {
   render() {
@@ -18,7 +18,7 @@ class ShadowColor extends React.Component {
             return (
               <Col span={6} key={index}>
                 <dl className='idoll-color-item '>
-                  <dt className='idoll-color-item-title' style={{backgroundColor: item.bgColor, color: item.color}}>
+                  <dt className='idoll-color-item-title-shadow' style={{backgroundColor: item.bgColor, color: item.color, boxShadow: item.shadow}}>
                     {item.title}
                     <span className='idoll-color-item-title-value'>{item.value}</span>
                   </dt>

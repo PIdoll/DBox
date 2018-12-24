@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RcSteps from 'rc-steps';
-import './style/index.jsx';
+import './style/index';
 import Icon from '../icon';
 
 export default class Steps extends React.Component {
