@@ -48,7 +48,7 @@ export default class messageView extends React.Component {
       Message.loading('活动加载中..', 2.5)
       Message.open({
         content: 'open触发了',
-        icon: <Icon type='down-circle' />,
+        icon: <Icon type='check-circle' />,
       })
         .then(() => Message.success('加载结束', 2.5))
         .then(() => Message.info('加载中的加载结束', 2.5));
