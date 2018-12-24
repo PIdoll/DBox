@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Logo from 'rsg-components/Logo';
-import Markdown from 'rsg-components/Markdown';
 import Styled from 'rsg-components/Styled';
 
 const xsmall = '@media (max-width: 600px)';
 
-const styles = ({color, font, base, light, link, mq }) => ({
+const styles = ({ color, font, base, light, link, mq }) => ({
 	root: {
 		minHeight: '100vh',
-    backgroundColor: '#fff',  
+    backgroundColor: '#fff',
   },
 	header: {
     position: 'fixed',
@@ -38,7 +37,7 @@ const styles = ({color, font, base, light, link, mq }) => ({
 		[xsmall]: {
 			margin: [[10, 0, 0]],
     },
-  }, 
+  },
   mainCont: {
     maxWidth: '1200px',
     margin: '100px auto 0',
@@ -88,33 +87,33 @@ const styles = ({color, font, base, light, link, mq }) => ({
 	},
 });
 
-export function StyleGuideRenderer({ classes, title, homepageUrl, children ,hasSidebar,toc}) {
+export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasSidebar, toc }) {
 	return (
 		<div className={classes.root}>
 			<header className={classes.header}>
-					<div className={classes.bar}>
-						<Logo>{title}</Logo>
-						<nav className={classes.nav}>
-							<a
-								className={classes.headerLink}
-								href="https://github.com/styleguidist/react-styleguidist/tree/master/docs"
-							>
-								首页
-							</a>
-							<a
-								className={classes.headerLink}
-								href="https://github.com/styleguidist/react-styleguidist"
-							>
-								设计指南
-							</a>
-							<a className={classes.headerLink} href="#/Version">
-								组件文档
-							</a>
-              <a className={classes.headerLink} href="https://gitter.im/styleguidist/styleguidist">
-								设计资源
-							</a>
-						</nav>
-					</div>
+				<div className={classes.bar}>
+					<Logo>{title}</Logo>
+					<nav className={classes.nav}>
+						<a
+							className={classes.headerLink}
+							href="https://github.com/styleguidist/react-styleguidist/tree/master/docs"
+						>
+							首页
+            </a>
+            <a
+							className={classes.headerLink}
+							href="https://github.com/styleguidist/react-styleguidist"
+						>
+							设计指南
+            </a>
+						<a className={classes.headerLink} href="#/Version">
+							组件文档
+            </a>
+            <a className={classes.headerLink} href="https://gitter.im/styleguidist/styleguidist">
+              设计资源
+            </a>
+          </nav>
+        </div>
 			</header>
       <div className={classes.mainCont}>
         <aside className={classes.sidebar}>
@@ -122,11 +121,10 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children ,hasS
         </aside>
         <main className={classes.content}>
           <div className={classes.innerCont}>
-             {children}
+            {children}
           </div>
 			  </main>
       </div>
-      
 		</div>
 	);
 }

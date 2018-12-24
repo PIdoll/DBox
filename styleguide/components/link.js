@@ -22,10 +22,10 @@ const styles = ({ color }) => ({
 });
 
 export function LinkRenderer({ classes, children, ...props }) {
-	const headline = ['Components', 'General', 'LayoutArea', 'Navigation', 'DataEntry', 'DataDisplay', 'Feedback', 'Others'];
+	const headline = ['Components', 'General', 'Navigation', 'DataEntry', 'DataDisplay', 'Feedback', 'Others'];
 	for (const item of headline.values()) {
 		console.log(item);
-		if (children === item){
+		if (children === item) {
 			return (
 				<h3 className={cx(classes.h1, props.className)} >
 					{children}
@@ -33,13 +33,11 @@ export function LinkRenderer({ classes, children, ...props }) {
 			);
 		}
 	}
-	
 	return (
 		<a {...props} className={cx(classes.link, props.className)} >
 			{children}
 		</a>
 	);
-	
 }
 
 LinkRenderer.propTypes = {
