@@ -93,18 +93,18 @@ div.layout_temp .idoll-layout {
   height: 100%;
 }
 .layout-horizontal .idoll-breadcrumb {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   padding: 16px 24px 0 24px;
 }
 .layout-horizontal .idoll-layout-content {
   padding: 24px;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
 }
 .layout-horizontal .idoll-layout-content .content {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +144,7 @@ div.layout_temp .idoll-layout {
   left: 16px;
   bottom: 16px;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.3s;
 }
 .layout-inlineNav .idoll-layout-sider > i:hover:before {
@@ -161,12 +161,12 @@ div.layout_temp .idoll-layout {
   padding-right: 24px;
   line-height: 56px;
   font-size: 14px;
-  border: 1px solid #F5F5F5;
+  border: 1px solid #F8F8F8;
   border-left: none;
 }
 .layout-inlineNav .idoll-layout-header .idoll-icon-message {
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 .layout-inlineNav .idoll-layout-header .dbox-avatar {
@@ -178,26 +178,26 @@ div.layout_temp .idoll-layout {
   margin-right: 0;
 }
 .layout-inlineNav .idoll-layout-header > a i:before {
-  content: "\E926";
+  content: "\E6DE";
   font-family: 'idollicon' !important;
   color: #000;
 }
 .layout-inlineNav .idoll-layout-header > a:hover {
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
 }
 .layout-inlineNav .idoll-layout .idoll-breadcrumb {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   padding: 16px 24px 16px 24px;
 }
 .layout-inlineNav .idoll-layout .idoll-layout-content {
   padding: 0 24px 24px 24px;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
 }
 .layout-inlineNav .idoll-layout .idoll-layout-content > div {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +211,7 @@ div.layout_temp .idoll-layout {
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar {
   margin: 0;
-  border-right: 1px solid #F5F5F5;
+  border-right: 1px solid #F8F8F8;
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar div.idoll-tabs-nav-container {
   height: 40px;
@@ -228,7 +228,7 @@ div.layout_temp .idoll-layout {
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content {
   height: 100%;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   padding: 24px 24px 48px 24px;
 }
 .layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content > div.idoll-tabs-tabpane-active {
