@@ -68,17 +68,7 @@ ul {
   color: rgba(0, 0, 0, .4);
   font-family:PingFangSC-Regular;
 }
-@media only screen and (min-width: 1200px) {
-  .descript_container .team {
-    margin-bottom: 90px;
-  }
-  .descript_container .component_name2 {
-    margin-bottom: 120px;
-  }
-  .descript_container .purpose {
-    margin-bottom: 152px;
-  }
-}
+
 .descript_container .component_name {
   color:#000;
   font-size: 50px;
@@ -166,4 +156,28 @@ ul {
   font-size: 10px;
   text-align: center;
   color: rgba(0, 0, 0, .6);
+}
+
+@media(min-width: 1200px) {
+  .descript_container .team {
+    margin-bottom: 90px;
+  }
+  .descript_container .component_name2 {
+    margin-bottom: 120px;
+  }
+  .descript_container .purpose {
+    margin-bottom: 152px;
+  }
+}
+
+@media(min-width: 992px) {
+  .descript_container .team {
+    margin-bottom: 50px;
+  }
+  .descript_container .component_name2 {
+    margin-bottom: 80px;
+  }
+  .descript_container .purpose {
+    margin-bottom: 100px;
+  }
 }
