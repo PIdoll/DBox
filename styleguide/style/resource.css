@@ -26,7 +26,11 @@ a {
 	height: 80px;
 	position: fixed;
 }
-
+.download-href {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
 .resource_container_header .dresource_container_header_container {
 	width: 100%;
 	height: 100%;
@@ -177,7 +181,6 @@ a {
 	border-top: 1px solid #E2E2E2;
 	font-family:PingFangSC-Regular;
 }
-
 .operation .getlink {
 	height: 41px;
 	border: none;
