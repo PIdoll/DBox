@@ -11,7 +11,7 @@ class Typography extends React.Component {
     item.map((listItem, index) => {
       children.push(
         <dl key={index}>
-          <dt>{listItem.name}</dt>
+          <dt className='idoll-typography-subtitle'>{listItem.name}</dt>
           <dd>{listItem.fontSize}</dd>
           <dd>{listItem.fontWeight}</dd>
           <dd>{listItem.color}</dd>
@@ -26,7 +26,7 @@ class Typography extends React.Component {
     item.map((listUi, index) => {
       children.push(
         <dl key={index}>
-          <dt>{listUi.name}</dt>
+          <dt className='idoll-typography-subtitle'>{listUi.name}</dt>
           <dd>{listUi.lineHeight}</dd>
           <dd>{listUi.MarginTop}</dd>
         </dl>

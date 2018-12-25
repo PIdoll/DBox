@@ -1,0 +1,218 @@
+body, html, ul, h1, p, button {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .4);
+}
+
+.resource_container {
+	width: 100%;
+	padding-bottom: 130px;
+  box-sizing: border-box;
+}
+
+.resource_container_header {
+	top: 0;
+	left: 0;
+	z-index: 1;
+  width: 100%;
+	height: 80px;
+	position: fixed;
+}
+
+.resource_container_header .dresource_container_header_container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	padding: 0 124px;
+	background-color: #fff;
+	box-sizing: border-box;
+	justify-content: space-between;
+	box-shadow: 0 2px 8px 0px rgba(0, 0, 0, .1);
+}
+
+.resource_container_header .header_left {
+	position: relative;
+}
+
+
+.header_left .header_left_logo {
+	top: 50%;
+	display: flex;
+	position: absolute;
+	transform: translateY(-50%);
+}
+
+
+.resource_container_header img {
+	width: 19px;
+	height: 22px;
+	margin-top: 3px;
+  vertical-align: middle;
+}
+
+.resource_container_header .DBox {
+	font-size: 20px;
+	margin-left: 14px;
+	font-family:PingFangSC-Regular;
+}
+
+.resource_container_header .header_right {
+	display: flex;
+}
+
+.header_right ul {
+	top: 50%;
+	display: flex;
+	position: relative;
+	transform: translateY(-50%);
+}
+
+.header_right ul > div {
+	height: 100%;
+}
+
+.header_right ul li {
+	height: 80px;
+	font-size:14px;
+	font-weight:400;
+	line-height: 80px;
+	font-family:PingFangSC-Regular;
+}
+
+.header_right ul li a {
+	width: 100%;
+	height: 100%;
+	padding: 0 12px;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.header_right ul li a:hover {
+	cursor: pointer;
+	color: #13B886;
+	border-bottom: 3px solid #13B886;
+}
+
+.design_source {
+	padding: 0 124px;
+	margin-top: 136px;
+	position: relative;
+}
+
+.design_source h1 {
+	font-size: 38px;
+	font-weight: 500px;
+	margin-bottom: 24px;
+	color: rgba(0, 0, 0, .8);
+	font-family:PingFangSC-Regular;
+}
+
+.design_source p {
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 64px;
+	color: rgba(0, 0, 0, .6);
+	font-family:PingFangSC-Regular;
+}
+
+.design_source a {
+	color: rgba(19, 184, 134, 1);
+}
+
+.design_source_logo_container {
+	width: 282px;
+	height: 282px;
+	text-align: center;
+	border: 1px solid #E2E2E2;
+}
+
+.design_source_logo_container .design_source_logo {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	margin-top: 32px;
+}
+
+.design_source_logo_container .design_source_logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.design_source_logo_container p {
+	color: #000;
+	font-size: 20px;
+	margin-top: 14px;
+	font-weight: 500;
+	margin-bottom: 48px;
+	font-family: PingFangSC-Regular;
+}
+
+.design_source_logo_container .operation {
+	display: flex;
+	justify-content: space-between;
+}
+
+.design_source_logo_container .operation button {
+	width: 50%;
+	outline: none;
+	cursor: pointer;
+}
+
+.operation .download {
+	height: 40px;
+	font-size: 14px;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	background-color: #fff;
+	color: rgba(0, 0, 0, .6);
+	border-top: 1px solid #E2E2E2;
+	font-family:PingFangSC-Regular;
+}
+
+.operation .getlink {
+	height: 41px;
+	border: none;
+	color: #FFF;
+	font-size: 14px;
+	border-top-color: #13B886;
+	background-color: #13B886;
+	font-family:PingFangSC-Regular;
+}
+
+.Happy_qrcode {
+	opacity: 0;
+	left: 273px;
+	width: 125px;
+	height: 125px;
+	margin-top: 10px;
+	position: absolute;
+	box-sizing: border-box;
+	transition: opacity 0.4s;
+	border: 1px solid #E2E2E2;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.Happy_qrcode img {
+	width: 100px;
+	height: 100px;
+	margin-left: 12px;
+}
+
+.Happy_qrcode .scamQR {
+	font-size: 10px;
+  text-align: center;
+  color: rgba(0, 0, 0, .6);
+}

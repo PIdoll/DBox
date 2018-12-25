@@ -20,7 +20,7 @@ export function SectionsRenderer({ classes, children }) {
 	return (
 		<div>
 			{children.length > 0 && (
-			)}
+)}
 			<DefaultSectionsRenderer>{children}</DefaultSectionsRenderer>
 		</div>
 	);

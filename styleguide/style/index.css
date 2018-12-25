@@ -1,0 +1,159 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.home_page {
+  width: 100%;
+  height: 100vh;
+  padding: 0 124px;
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../assets/img/Illustration.png');
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.header_left {
+  top: 50%;
+  left: 0;
+  display: flex;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.header img {
+  width: 19px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.DBox {
+  margin-left: 14px;
+}
+
+.header_right {
+  top: 50%;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.content {
+  position: relative;
+}
+
+.descript_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.descript_container .team {
+  font-size:14px;
+  font-weight:400;
+  text-align: right;
+  margin-bottom: 32px;
+  color: rgba(0, 0, 0, .4);
+  font-family:PingFangSC-Regular;
+}
+
+.descript_container .component_name {
+  color:#000;
+  font-size: 50px;
+  font-weight:500;
+  text-align: right;
+  font-family:PingFangSC-Medium;
+}
+
+.descript_container .component_name2 {
+  color:#000;
+  font-size: 50px;
+  font-weight:500;
+  text-align: right;
+  margin-bottom: 32px;
+  font-family:PingFangSC-Medium;
+}
+
+.descript_container .purpose {
+  font-size:14px;
+  font-weight:400;
+  text-align: right;
+  margin-bottom: 72px;
+  color: rgba(0, 0, 0, .6);
+  font-family:PingFangSC-Medium;
+}
+
+.operation {
+  text-align: right;
+}
+
+.operation button {
+  width: 128px;
+  height: 40px;
+  outline:none;
+  border-radius: 3px;
+}
+
+.start_use {
+  border: none;
+  color: #fff;
+  margin-right: 20px;
+  background-color: #13B886;
+}
+
+.start_use:hover {
+  cursor: pointer;
+}
+
+.connect_us {
+  border-radius: 3px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, .6);
+  border: 1px solid #E2E2E2;
+}
+
+.connect_us:hover {
+  cursor: pointer;
+  border: 1px solid #13B886;
+}
+
+.Happy {
+  right: 0;
+  opacity: 0;
+  width: 125px;
+  height: 125px;
+  /* padding: 0 5px; */
+  margin-top: 10px;
+  position: absolute;
+  transition: opacity 0.4s;
+  border: 1px solid #E2E2E2;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.Happy img {
+  margin-right: 12px;
+  width: 100px;
+  height: 100px;
+}
+
+.scamQR {
+  font-size: 10px;
+  text-align: center;
+  color: rgba(0, 0, 0, .6);
+}

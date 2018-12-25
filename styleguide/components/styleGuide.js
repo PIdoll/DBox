@@ -78,7 +78,7 @@ const styles = ({ color, font, base, light, link, mq }) => ({
       height: '80px',
       padding: '0 10px',
       display: 'inline-block',
-      borderBottom: '2px solid #13B886',
+      borderBottom: '3px solid #13B886',
 		},
 	},
 
@@ -96,20 +96,20 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasS
 					<nav className={classes.nav}>
 						<a
 							className={classes.headerLink}
-							href="https://github.com/styleguidist/react-styleguidist/tree/master/docs"
+							href="styleguide/index.html"
 						>
 							首页
             </a>
             <a
 							className={classes.headerLink}
-							href="https://github.com/styleguidist/react-styleguidist"
+							href="styleguide/design.html"
 						>
 							设计指南
             </a>
-						<a className={classes.headerLink} href="#/Version">
+						<a className={classes.headerLink} href="styleguide/doc.html">
 							组件文档
             </a>
-            <a className={classes.headerLink} href="https://gitter.im/styleguidist/styleguidist">
+            <a className={classes.headerLink} href="styleguide/resource.html">
               设计资源
             </a>
           </nav>
