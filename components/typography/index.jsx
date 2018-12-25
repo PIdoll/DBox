@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row } from '../grid';
 import './style';
-import typographyImg from '../../styleguide/assets/img/Font.png';
-import typographyData from './typography.jsx';
+import typographyImg from '../../assets/images/Font.png';
+import typographyData from './typography';
 
 
 class Typography extends React.Component {

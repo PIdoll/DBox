@@ -15,6 +15,10 @@ module.exports = {
 		vendors: vendors
 	},
 	mode: 'production',
+	// node: {
+	// 	fs: 'empty',
+	// 	child_process: 'empty'
+	// },
 	output: {
 		filename: '[name].dll.js',
 		path: path.resolve(__dirname, 'dist/dll'),

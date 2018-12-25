@@ -17,6 +17,10 @@ const common = require('./webpack.common.js');
  let webpackConfig = merge(common, {
 	devtool: '#source-map',
 	mode: 'production',
+	// node: {
+	// 	fs: 'empty',
+	// 	child_process: 'empty'
+	// },
 	module: {
 		rules: [
 			{
