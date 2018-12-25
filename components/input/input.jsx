@@ -238,7 +238,7 @@ export default class Input extends Component {
     })
   }
 
-  onChange = (e) => {
+  onInput = (e) => {
     this.setState({
       isHover: true
     })
@@ -278,7 +278,7 @@ export default class Input extends Component {
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
         onMouseEnter={this.onMouseEnter}
-        onChange={this.onChange}
+        onInput={this.onInput}
         onBlur={this.onBlur}
         />
     )
