@@ -68,7 +68,17 @@ ul {
   color: rgba(0, 0, 0, .4);
   font-family:PingFangSC-Regular;
 }
-
+@media only screen and (min-width: 1200px) {
+  .descript_container .team {
+    margin-bottom: 90px;
+  }
+  .descript_container .component_name2 {
+    margin-bottom: 120px;
+  }
+  .descript_container .purpose {
+    margin-bottom: 152px;
+  }
+}
 .descript_container .component_name {
   color:#000;
   font-size: 50px;
