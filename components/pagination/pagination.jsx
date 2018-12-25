@@ -9,7 +9,6 @@ import MiniSelect from './MiniSelect';
 import zhCN from './locale/zh_CN';
 import './style/index';
 
-
 export default class Pagination extends React.Component {
     static defaultProps = {
         locale: zhCN,
@@ -28,10 +27,9 @@ export default class Pagination extends React.Component {
         showSizeChanger: PropTypes.bool,
         simple: PropTypes.bool,
         pageSizeOptions: PropTypes.array,
-	    showTotal: PropTypes.function,
-	    onChange: PropTypes.function,
-		icon: PropTypes.function,
-		onShowSizeChange: PropTypes.function
+	    showTotal: PropTypes.func,
+	    onChange: PropTypes.func,
+		onShowSizeChange: PropTypes.func
 	}
     static contextTypes = {
         idollLocale: PropTypes.object
