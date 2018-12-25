@@ -96,20 +96,20 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasS
 					<nav className={classes.nav}>
 						<a
 							className={classes.headerLink}
-							href="styleguide/index.html"
+							href="/styleguide/index.html"
 						>
 							首页
             </a>
             <a
 							className={classes.headerLink}
-							href="styleguide/design.html"
+							href="/styleguide/design.html"
 						>
 							设计指南
             </a>
-						<a className={classes.headerLink} href="styleguide/doc.html">
+						<a className={classes.headerLink} href="/styleguide/doc.html">
 							组件文档
             </a>
-            <a className={classes.headerLink} href="styleguide/resource.html">
+            <a className={classes.headerLink} href="/styleguide/resource.html">
               设计资源
             </a>
           </nav>

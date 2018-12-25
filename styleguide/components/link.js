@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Styled from 'rsg-components/Styled';
-import Data from '../data/componentsName.json';
+// import Data from '../data/componentsName.json';
 
 const styles = ({ color }) => ({
 	link: {
