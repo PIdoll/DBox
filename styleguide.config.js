@@ -1,6 +1,5 @@
 const path = require('path');
 const { version } = require('./package.json')
-const { camelCase, upperFirst } = require('lodash');
 const webpackConf = require('./webpack.common.js');
 
 const TITLE = `Dbox UI ${version}`;
@@ -13,15 +12,15 @@ module.exports = {
   usageMode: 'hide',
   // Override Styleguidist components
 	styleguideComponents: {
-
-    LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
-    // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/PlaygroundRenderer'),
-    ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
-    LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
+    PathlineRenderer: path.join(__dirname, 'styleguide/components/pathlineRenderer.js'),
+    LinkRenderer: path.join(__dirname, 'styleguide/components/link.js'),
+   // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/PlaygroundRender.js'),
+    ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList.js'),
+    LogoRenderer: path.join(__dirname, 'styleguide/components/logo.js'),
   // SectionsRenderer: path.join(__dirname, 'styleguide/components/sectionRenderer'),
 
     SectionHeadingRenderer: path.join(__dirname, 'styleguide/components/sectionHeadingRenderer.js'),
-    StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide'),
+    StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide.js'),
 	},
   ignore: ['**/*-test.jsx'],
   pagePerSection: true,
@@ -104,12 +103,6 @@ module.exports = {
 				fontSize: 24,
 			},
 		},
-  },
-  getComponentPathLine: (componentPath) => {
-    const dirname = path.dirname(componentPath, '.jsx')
-    const name = dirname.split('/').slice(-1)[0]
-    const componentName = upperFirst(camelCase(name))
-    return `import {${componentName}} from Dbox`
   },
   sections: [
     {
