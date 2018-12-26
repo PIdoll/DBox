@@ -46,5 +46,7 @@ export default {
   Divider: '分割线',
   Form: '表单',
   Checkbox: '多选框',
-  Popconfirm: '气泡确认框'
+  Popconfirm: '气泡确认框',
+  Color: '颜色',
+  Typography: '字体'
 }

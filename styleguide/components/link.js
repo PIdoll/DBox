@@ -25,7 +25,7 @@ export function LinkRenderer({ classes, children, ...props }) {
 	const headline = ['Components', 'General', 'Navigation', 'DataEntry', 'DataDisplay', 'Feedback', 'Others'];
 	for (const item of headline.values()) {
 		if (children === item) {
-			return (<h3 className={cx(classes.h1, props.className)} >{children}</h3>
+			return (<h1 className={cx(classes.h1, props.className)} >{children}</h1>
 			);
 		}
 	}

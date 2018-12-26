@@ -79,7 +79,6 @@ const styles = ({ color, font, base, light, link, mq }) => ({
       borderBottom: '3px solid #13B886',
 		},
 	},
-
 	components: {
 		overflow: 'auto',
 	},
