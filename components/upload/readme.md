@@ -7,9 +7,53 @@
 import {Upload, Message, Button} from 'components';
 const commonFileList = [{
   uid: -1,
-  name: 'xxx.png',
+  name: 'xxx.html',
   status: 'done',
-  url: 'http://www.baidu.com/xxx.png',
+}, {
+  uid: -2,
+  name: 'yyy.video',
+  status: 'done',
+}, {
+  uid: -3,
+  name: 'zzz.ppt',
+  status: 'error',
+  response: 'Server Error 500',
+}];
+const props1 = {
+  name: 'file',
+  action: 'https://jsonplaceholder.typicode.com/posts/',
+  headers: {
+    authorization: 'authorization-text',
+  },
+  onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      Message.success(`${info.file.name} 上传成功。`);
+      return false;
+    } else if (info.file.status === 'error') {
+    	Message.error(`${info.file.name} 上传失败。`);
+      return false;
+    }
+  }
+};
+<Upload {...props1} defaultFileList={commonFileList}>
+  <Button type='primary' icon='cloud-upload'>上传</Button>
+  <p>支持上传网页、文字、图片、视频等文件格式，不限大小</p>
+</Upload>
+
+```
+
+#### **图片上传**
+仅限图片上传操作
+```jsx
+import {Upload, Message, Button} from 'components';
+const commonFileList = [{
+  uid: -1,
+  name: 'xxx.jpg',
+  status: 'done',
+  url: 'http://www.baidu.com/xxx.jpg',
 }, {
   uid: -2,
   name: 'yyy.png',
@@ -65,9 +109,9 @@ import {Upload, Message, Icon} from 'components';
 const Dragger = Upload.Dragger;
 const commonFileList = [{
   uid: -1,
-  name: 'xxx.png',
+  name: 'xxx.jpg',
   status: 'done',
-  url: 'http://www.baidu.com/xxx.png',
+  url: 'http://www.baidu.com/xxx.jpg',
 }, {
   uid: -2,
   name: 'yyy.png',
@@ -119,8 +163,8 @@ const props2 = {
 ```jsx
 import {Upload, Message, Modal, Icon} from 'components';
 class PicturesWall extends React.Component {
-	constructor(props) {
-	super(props)
+ constructor(props) {
+  super(props)
   this.state = {
     previewVisible: false,
     previewImage: '',
@@ -128,21 +172,23 @@ class PicturesWall extends React.Component {
       uid: '-1',
       name: 'xxx.png',
       status: 'done',
-      url: 'https://images.pexels.com/photos/160739/smilies-bank-sit-rest-160739.jpeg?cs=srgb&dl=blur-chair-cheerful-160739.jpg&fm=jpg',
+      url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
     }],
   };
-  this.handleCancel = this.handleCancel.bind(this);
-  this.handlePreview = this.handlePreview.bind(this);
-  this.handleChange = this.handleChange.bind(this);
-  this.beforeUpload = this.beforeUpload.bind(this);
+  this.handleCancel =this.handleCancel.bind(this)
+  this.handlePreview =this.handlePreview.bind(this)
+  this.beforeUpload =this.beforeUpload.bind(this)
+  this.handleChange =this.handleChange.bind(this)
 }
-  handleCancel () { this.setState({ previewVisible: false })};
+  handleCancel () {this.setState({ previewVisible: false })}
+
   handlePreview (file) {
+    console.log('1')
     this.setState({
       previewImage: file.url || file.thumbUrl,
       previewVisible: true,
     });
-  };
+  }
   beforeUpload (file) {
     const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJPG) {
@@ -153,27 +199,29 @@ class PicturesWall extends React.Component {
       Message.error('上传图片文件必须小于 1024KB!');
     }
     return isJPG && isLt1M;
-  };
-  handleChange ({ fileList }) {this.setState({ fileList })};
+  }
+  handleChange ({ fileList }) {this.setState({ fileList })}
+
   render() {
     const { previewVisible, previewImage, fileList } = this.state;
+    console.log('previewVisible', previewVisible)
     const uploadButton = (
       <div>
         <Icon type='plus' />
-        <div className='idoll-upload-text'>Upload</div>
+        <div className='ant-upload-text'>上传</div>
       </div>
     );
     return (
       <div className='clearfix'>
         <Upload
-          action='https://jsonplaceholder.typicode.com/posts/'
+          action='//jsonplaceholder.typicode.com/posts/'
           listType='picture-card'
           fileList={fileList}
           beforeUpload={this.beforeUpload}
           onPreview={this.handlePreview}
           onChange={this.handleChange}
         >
-          {fileList.length >= 3 ? null : uploadButton}
+          {uploadButton}
         </Upload>
         <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
           <img alt='example' style={{ width: '100%' }} src={previewImage} />
@@ -181,7 +229,7 @@ class PicturesWall extends React.Component {
       </div>
     );
   }
-};
+}
 <PicturesWall />
 ```
 
@@ -191,17 +239,16 @@ class PicturesWall extends React.Component {
 import {Upload, Message, Icon, Button} from 'components';
 const fileList = [{
   uid: -1,
-  name: 'xxx.png',
+  name: 'xxx.jpg',
   status: 'done',
-  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?cs=srgb&dl=box-cheerful-color-207983.jpg&fm=jpg',
-  thumbUrl:
-  'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?cs=srgb&dl=box-cheerful-color-207983.jpg&fm=jpg',
+  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
+  thumbUrl: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
 }, {
   uid: -2,
   name: 'yyy.png',
   status: 'error',
-  url: 'https://images.pexels.com/photos/207969/pexels-photo-207969.jpeg?cs=srgb&dl=cup-cute-emotions-207969.jpg&fm=jpg',
-  thumbUrl: 'https://images.pexels.com/photos/207969/pexels-photo-207969.jpeg?cs=srgb&dl=cup-cute-emotions-207969.jpg&fm=jpg',
+  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
+  thumbUrl: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
 }];
 
 const props3 = {
@@ -211,11 +258,11 @@ const props3 = {
   beforeUpload (file) {
     const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJPG) {
-      Message.error('您只能上传 JPG或PNG 文件!');
+      Message.error('您只能上传 JPG或PNG 文件!')
     }
     const isLt1M = file.size / 1024 / 1024 < 1;
     if (!isLt1M) {
-      Message.error('上传图片文件必须小于 1024KB!');
+      Message.error('上传图片文件必须小于 1024KB!')
     }
     return isJPG && isLt1M;
   },
@@ -233,6 +280,7 @@ const props3 = {
 };
 <Upload {...props3}>
   <Button type='primary'><Icon type='cloud-upload' />上传</Button>
+  <p>支持上传jpg/png文件格式，且不超过1024kb</p>
 </Upload>
 ```
 
@@ -247,9 +295,9 @@ class Demo extends React.Component {
       this.state = {
       fileList: [{
         uid: -1,
-        name: 'xxx.png',
+        name: 'xxx.jpg',
         status: 'done',
-        url: 'http://www.baidu.com/xxx.png',
+        url: 'http://www.baidu.com/xxx.jpg',
       }, {
         uid: -2,
         name: 'yyy.png',
@@ -288,7 +336,6 @@ class Demo extends React.Component {
           fileList: formData,
           uploading: false,
         });
-        console.log(formData)
         Message.success('文件上传成功.');
       },
       error: () => {
@@ -300,12 +347,12 @@ class Demo extends React.Component {
     });
   };
   render() {
-    const { fileList } = this.state;
+    const { uploading, fileList } = this.state;
     const props4 = {
       onRemove: (file) => {
         this.setState((state) => {
-          const index = this.state.fileList.indexOf(file);
-          const newFileList = this.state.fileList.slice();
+          const index = state.fileList.indexOf(file);
+          const newFileList = state.fileList.slice();
           newFileList.splice(index, 1);
           return {
             fileList: newFileList,
@@ -313,29 +360,19 @@ class Demo extends React.Component {
         });
       },
       beforeUpload: (file) => {
-        const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
-        if (!isJPG) {
-          Message.error('您只能上传 JPG或PNG 文件!');
-          return isJPG
-        }
-        const isLt1M = file.size / 1024 / 1024 < 1;
-        if (!isLt1M) {
-          Message.error('上传图片文件必须小于 1024KB!');
-          return isLt1M
-        }
-        if (isJPG || isLt1M) {
-          this.setState(state => ({
-          fileList: [...this.state.fileList, file],
+        this.setState(state => ({
+          fileList: [...state.fileList, file],
         }));
         return false;
-        }
       },
       fileList,
     };
     return (
-        <div>
-          <Upload className='manual' {...props4}>
+        <div className='manual'>
+          <Upload {...props4}>
             <Button type='secondary'><Icon type='file' />选择文件</Button>
+            <p>支持上传jpg/png文件格式，且不超过1024kb</p>
+          </Upload>
             <Button
               type='primary'
               className='beginUpload'
@@ -346,8 +383,6 @@ class Demo extends React.Component {
             >
               {!this.state.uploading ? <Icon type='cloud-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
             </Button>
-            <p>支持上传jpg/png文件格式，且不超过1024kb</p>
-          </Upload>
         </div>
     )
   }
@@ -379,8 +414,7 @@ class Demo extends React.Component {
 | disabled | 是否禁用                           | Boolean | false    |
 
 #### **onChange**
-
-> 上传中、完成、失败都会调用这个函数。
+上传中、完成、失败都会调用这个函数。
 
 文件状态改变的回调，返回为：
 
