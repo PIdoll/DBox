@@ -129,29 +129,30 @@ a {
 
 .design_source_logo_container {
 	width: 282px;
-	height: 282px;
+	height: 285px;
 	text-align: center;
 	border: 1px solid #E2E2E2;
 }
 
 .design_source_logo_container .design_source_logo {
-	width: 120px;
-	height: 120px;
+	width: 80px;
+	height: 80px;
 	margin: 0 auto;
 	margin-top: 32px;
 }
 
 .design_source_logo_container .design_source_logo img {
 	width: 100%;
-	height: 100%;
+  height: 100%;
+  margin-top: 20px;
 }
 
 .design_source_logo_container p {
 	color: #000;
 	font-size: 20px;
-	margin-top: 14px;
+	margin-top: 40px;
 	font-weight: 500;
-	margin-bottom: 48px;
+	margin-bottom: 64px;
 	font-family: PingFangSC-Regular;
 }
 
@@ -205,8 +206,7 @@ a {
 
 .Happy_qrcode img {
 	width: 100px;
-	height: 100px;
-	margin: 2px 18px;
+	margin: 18px 18px 0;
 }
 
 .Happy_qrcode .scamQR {

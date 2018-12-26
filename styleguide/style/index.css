@@ -16,6 +16,7 @@ ul {
 .home_page {
   width: 100%;
   height: 100vh;
+  position: relative;
   padding: 0 124px;
   box-sizing: border-box;
 }
@@ -70,14 +71,17 @@ ul {
 }
 
 .content {
-  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  /* position: relative; */
   /* margin-top: 64px; */
 }
 
 .descript_container {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
+  right: 120px;
+  transform: translateY(-60%);
 }
 
 .descript_container .team {
@@ -166,7 +170,7 @@ ul {
 .Happy img {
   width: 100px;
 	height: 100px;
-	margin: 2px 18px;
+	margin: 18px 18px 0;
 }
 
 .scamQR {
@@ -177,25 +181,9 @@ ul {
 }
 
 @media(min-width: 1200px) {
-  .descript_container .team {
-    margin-bottom: 90px;
-  }
-  .descript_container .component_name2 {
-    margin-bottom: 120px;
-  }
-  .descript_container .purpose {
-    margin-bottom: 152px;
-  }
+
 }
 
 @media(min-width: 992px) {
-  .descript_container .team {
-    margin-bottom: 50px;
-  }
-  .descript_container .component_name2 {
-    margin-bottom: 80px;
-  }
-  .descript_container .purpose {
-    margin-bottom: 100px;
-  }
+
 }

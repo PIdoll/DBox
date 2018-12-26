@@ -12,11 +12,14 @@ module.exports = {
   usageMode: 'hide',
   // Override Styleguidist components
 	styleguideComponents: {
+
     LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
     // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/PlaygroundRenderer'),
     ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
     LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
   // SectionsRenderer: path.join(__dirname, 'styleguide/components/sectionRenderer'),
+
+    SectionHeadingRenderer: path.join(__dirname, 'styleguide/components/sectionHeadingRenderer.js'),
     StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide'),
 	},
   ignore: ['**/*-test.jsx'],

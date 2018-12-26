@@ -3,7 +3,7 @@
 
 #### **固定在顶部**
 ```jsx
-import { Affix, Button } from 'components';
+import { Affix, Button } from 'idoll';
 
 class AffixView extends React.Component {
   constructor(props) {
