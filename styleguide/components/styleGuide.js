@@ -16,11 +16,10 @@ const styles = ({ color, font, base, light, link, mq }) => ({
 		left: 0,
     bottom: 0,
     width: '100%',
-    height: '80px',
+    height: '64px',
     zIndex: '10',
-    lineHeight: '80px',
+    lineHeight: '64px',
     background: 'rgba(255,255,255,1)',
-    boxShadow: '0px 2px 8px 0px rgba(0,0,0,0.1)',
 	},
 	bar: {
     maxWidth: '1200px',
@@ -41,7 +40,6 @@ const styles = ({ color, font, base, light, link, mq }) => ({
   mainCont: {
     maxWidth: '1200px',
     margin: '100px auto 0',
-
     clear: 'both',
   },
   sidebar: {
@@ -69,14 +67,14 @@ const styles = ({ color, font, base, light, link, mq }) => ({
 	headerLink: {
 		'&': {
       display: 'inline-block',
-      color: '#333',
-      padding: '0 10px',
+      color: 'rgba(0, 0, 0, 0.4)',
+      padding: '0 12px',
 		},
 		'&:hover, &:active': {
       color: '#13B886',
       cursor: 'pointer',
-      height: '80px',
-      padding: '0 10px',
+      height: '64px',
+      padding: '0 12px',
       display: 'inline-block',
       borderBottom: '3px solid #13B886',
 		},
@@ -104,7 +102,7 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasS
 							className={classes.headerLink}
 							href="design.html"
 						>
-							设计指南
+							设计原则
             </a>
 						<a className={classes.headerLink} href="doc.html">
 							组件文档
