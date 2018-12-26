@@ -44,11 +44,10 @@ export function ComponentsListRenderer({ classes, items }) {
 	}
 
 	const windowHash = window.location.pathname + getHash(window.location.hash);
-	return (
-		<ul className={classes.list}>
-			{items.map(({ heading, visibleName, href, content, external }) => {
-				const isItemSelected = hasInHash(windowHash, href);
-				return (
+	return (<ul className={classes.list}>
+  {items.map(({ heading, visibleName, href, content, external }) => {
+    const isItemSelected = hasInHash(windowHash, href);
+      return (
 					<li
 						className={cx(
 							classes.item,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Styled from 'rsg-components/Styled';
-// import Data from '../data/componentsName.json';
+import Data from '../data/componentsName.jsx';
 
 const styles = ({ color }) => ({
 	link: {
@@ -25,17 +25,11 @@ export function LinkRenderer({ classes, children, ...props }) {
 	const headline = ['Components', 'General', 'Navigation', 'DataEntry', 'DataDisplay', 'Feedback', 'Others'];
 	for (const item of headline.values()) {
 		if (children === item) {
-			return (
-				<h3 className={cx(classes.h1, props.className)} >
-					{children}
-				</h3>
+			return (<h3 className={cx(classes.h1, props.className)} >{children}</h3>
 			);
 		}
 	}
-	return (
-		<a {...props} className={cx(classes.link, props.className)} >
-			{children}
-		</a>
+	return (<a {...props} className={cx(classes.link, props.className)} >{children}<span>{Data[children]}</span></a>
 	);
 }
 

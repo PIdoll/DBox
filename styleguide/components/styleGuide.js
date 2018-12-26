@@ -86,43 +86,10 @@ const styles = ({ color, font, base, light, link, mq }) => ({
 });
 
 export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasSidebar, toc }) {
-	return (
-		<div className={classes.root}>
-			<header className={classes.header}>
-				<div className={classes.bar}>
-					<Logo>{title}</Logo>
-					<nav className={classes.nav}>
-						<a
-							className={classes.headerLink}
-							href="index.html"
-						>
-							首页
-            </a>
-            <a
-							className={classes.headerLink}
-							href="design.html"
-						>
-							设计原则
-            </a>
-						<a className={classes.headerLink} href="doc.html">
-							组件文档
-            </a>
-            <a className={classes.headerLink} href="resource.html">
-              设计资源
-            </a>
-          </nav>
-        </div>
-			</header>
-      <div className={classes.mainCont}>
-        <aside className={classes.sidebar}>
-          {toc}
-        </aside>
-        <main className={classes.content}>
-          <div className={classes.innerCont}>
-            {children}
-          </div>
-			  </main>
-      </div>
+	return (<div className={classes.root}><header className={classes.header}><div className={classes.bar}><Logo>{title}</Logo><nav className={classes.nav}><a className={classes.headerLink} href='index.html'>首页</a><a className={classes.headerLink} href='design.html'>设计原则</a><a className={classes.headerLink} href='doc.html'>组件文档</a><a className={classes.headerLink} href='resource.html'>设计资源</a>
+</nav></div></header><div className={classes.mainCont}><aside className={classes.sidebar}>{toc}</aside><main className={classes.content}><div className={classes.innerCont}>{children}
+</div></main>
+</div>
 		</div>
 	);
 }

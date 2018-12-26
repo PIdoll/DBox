@@ -18,11 +18,7 @@ const styles = () => ({
 });
 
 export function LogoRenderer({ classes, children }) {
-	return (
-		<h1 className={classes.logo}>
-			<img className={classes.image} src={logo} />
-			 DBox
-		</h1>
+	return (<h1 className={classes.logo}><img className={classes.image} src={logo} />DBox</h1>
 	);
 }
 

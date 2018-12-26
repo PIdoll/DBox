@@ -36,17 +36,9 @@ export function PlaygroundRenderer({
 	toolbar,
 }) {
 	const { className, ...props } = previewProps;
-	return (
-		<div className={classes.root}>
-			<div className={cx(classes.preview, className)} {...props} data-preview={name}>
-				{preview}
-			</div>
-			<div className={classes.controls}>
-				<div className={classes.tabs}>{tabButtons}</div>
-				<div className={classes.toolbar}>{toolbar}</div>
-			</div>
-			<div className={classes.tab}>{tabBody}</div>
-		</div>
+	return (<div className={classes.root}><div className={cx(classes.preview, className)} {...props} data-preview={name}>{preview}</div><div className={classes.controls}><div className={classes.tabs}>{tabButtons}</div><div className={classes.toolbar}>{toolbar}</div>
+			      </div><div className={classes.tab}>{tabBody}</div>
+		      </div>
 	);
 }
 

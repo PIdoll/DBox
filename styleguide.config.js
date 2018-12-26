@@ -1,6 +1,7 @@
 const path = require('path');
 const { version } = require('./package.json')
 const { camelCase, upperFirst } = require('lodash');
+const webpackConf = require('./webpack.common.js');
 
 const TITLE = `Dbox UI ${version}`;
 const PORT = parseInt(process.env.PROT || 9002, 10);
@@ -205,40 +206,5 @@ module.exports = {
        sectionDepth: 2
     },
   ],
-  webpackConfig: {
-    module: {
-      rules: [
-        {
-          test: /\.less$/,
-          loaders: [
-            'style-loader',
-            'css-loader',
-            'less-loader?precision=10'
-          ]
-        },
-        {
-          test: /\.(jsx|js|mb)$/,
-          loaders: 'babel-loader',
-          exclude: path.resolve(__dirname, 'node_modules'),
-        },
-        {
-          test: /\.(png|svg|jpg|gif|webp|ico)$/,
-          use: [
-             'file-loader'
-           ],
-           exclude: path.resolve(__dirname, 'node_modules')
-        },
-      ]
-    },
-    resolve: {
-      // 自动补全的拓展名
-      extensions: ['.js', '.jsx', '.json', '.less'],
-      // 路径别名
-      alias: {
-        'assets': path.resolve(__dirname, 'assets'),
-        'templates': path.resolve(__dirname, 'src/templates'),
-        'components': path.resolve(__dirname, 'components')
-      }
-    }
-  }
+  webpackConfig: webpackConf,
 }

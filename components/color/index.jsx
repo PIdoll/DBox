@@ -7,7 +7,10 @@ import FunctionColor from './functionColor';
 import NeutralColor from './neutralColor';
 import OtherColor from './otherColor';
 import ShadowColor from './shadowColor';
-
+/**
+ *
+ * @visibleName Color颜色
+ */
 class Color extends React.Component {
   render() {
     return (

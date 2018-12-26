@@ -10,11 +10,7 @@ function SectionHeadingRenderer({ classes, children, toolbar, id, href, depth, d
 		[classes.isDeprecated]: deprecated,
 	});
 
-	return (
-		<div className={classes.wrapper}>
-			<Heading level={headingLevel} id={id}>
-				<h3 href={href} className={sectionNameClasses}>
-					{children}
+	return (<div className={classes.wrapper}><Heading level={headingLevel} id={id}><h3 href={href} className={sectionNameClasses}>{children}
 				</h3>
 			</Heading>
 		</div>
