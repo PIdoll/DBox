@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        #holder {
+            height: 25%;
+        }
+        #content {
+            text-align: center;
+        }
+        #content p {
+            font-size: 20px;
+            line-height: 36px;
+            margin-bottom: 20px;
+        }
+        #link {
+            display: inline-block;
+            width: 80%;
+            color: #2D71DB;
+            text-align: left;
+            font-size: 12px;
+            word-break:break-all;
+        }
+        #link a {
+            color: #2D71DB !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="holder"></div>
+    <div id="content">
+        <p>
+            <span id="tar">请复制网址后使用浏览器下载</span><br>
+            或发送下载链接至PC端微信下载
+        </p>
+        <div id="link">
+            https://github.com/salesforce-ux/design-system-ui-kit/archive/master.zip
+        </div>
+    </div>
+
+    <script>
+        var ua = navigator.userAgent.toLocaleLowerCase();
+        var isWeixin  = ua.indexOf('micromessenger') != -1;
+
+        var tar = document.getElementById('tar');
+
+        var link = 'https://github.com/salesforce-ux/design-system-ui-kit/archive/master.zip';
+
+        var linkWrap = document.getElementById('link');
+
+        if (!isWeixin) {
+            tar.innerText = '可点击直接下载';
+            linkWrap.innerHTML = '<a href="' + link + '">' + link + '</a>';
+        }
+    </script>
+</body>
+</html>
