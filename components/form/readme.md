@@ -3,7 +3,7 @@
 
 #### **登录框**
 ```jsx
-import { Form,Input,Icon,Checkbox,Button } from 'components';
+import { Form,Input,Icon,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 
 class LoginForm extends React.Component {
@@ -66,7 +66,7 @@ const WrappedLoginForm = Form.create()(LoginForm);
 
 #### **注册**
 ```jsx
-import { Form,Select,Input,Cascader,Checkbox,Button } from 'components';
+import { Form,Select,Input,Cascader,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 const residences = [{
   value: 'shanghai',
@@ -277,7 +277,7 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
 #### **高级搜索**
 ```jsx
-import { Form,Row,Col,DatePicker,Input,Cascader,Button,Icon } from 'components';
+import { Form,Row,Col,DatePicker,Input,Cascader,Button,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
 const {RangePicker} = DatePicker;
 
@@ -539,7 +539,7 @@ const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 
 #### **紧凑型表单**
 ```jsx
-import { Form,Row,Col,Select,DatePicker,Input,Button } from 'components';
+import { Form,Row,Col,Select,DatePicker,Input,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 const {Option} = Select;
 const {RangePicker} = DatePicker;
@@ -708,7 +708,7 @@ const WrappedCompactSearchForm = Form.create()(CompactSearchForm);
 
 #### **弹出层中新建表单**
 ```jsx
-import { Form,Row,Col,Button,Modal,Input,Icon } from 'components';
+import { Form,Row,Col,Button,Modal,Input,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
 class modalForm extends React.Component {
   constructor(){
@@ -839,7 +839,7 @@ class ModalNewForm extends React.Component {
 
 #### **表单联动**
 ```jsx
-import { Form,Row,Col,Input,Select,Button } from 'components';
+import { Form,Row,Col,Input,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 class FormDemo extends React.Component {
   constructor(){
@@ -912,7 +912,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 
 #### **自定义校验**
 ```jsx
-import { Form,Row,Col,Input,DatePicker,TimePicker,Cascader,InputNumber,Select,Button } from 'components';
+import { Form,Row,Col,Input,DatePicker,TimePicker,Cascader,InputNumber,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 const Option = Select.Option;
 class FormDemo extends React.Component {
@@ -1063,7 +1063,7 @@ class FormDemo extends React.Component {
 
 #### **动态校验规则**
 ```jsx
-import { Form,Row,Col,Select,Input,Checkbox,Button } from 'components';
+import { Form,Row,Col,Select,Input,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const formItemLayout = {
@@ -1148,7 +1148,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 
 #### **校验其他组件**
 ```jsx
-import { Form,Row,Col,Select,Radio,InputNumber,Switch,Slider,Button } from 'components';
+import { Form,Row,Col,Select,Radio,InputNumber,Switch,Slider,Button } from 'dbox-ui';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioGroup = Radio.RadioGroup;
@@ -1463,7 +1463,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

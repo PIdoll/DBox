@@ -21,7 +21,8 @@ module.exports = {
     alias: {
       'assets': path.resolve(__dirname, 'assets'),
       'templates': path.resolve(__dirname, 'src/templates'),
-      'components': path.resolve(__dirname, 'components')
+      'components': path.resolve(__dirname, 'components'),
+      'dbox-ui': path.resolve(__dirname, 'components'),
     }
   },
   // devserver 配置

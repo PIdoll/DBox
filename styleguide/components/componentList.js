@@ -47,24 +47,12 @@ export function ComponentsListRenderer({ classes, items }) {
 	return (<ul className={classes.list}>
   {items.map(({ heading, visibleName, href, content, external }) => {
     const isItemSelected = hasInHash(windowHash, href);
-      return (
-					<li
-						className={cx(
+      return (<li className={cx(
 							classes.item,
 							(!content || !content.props.items.length) && classes.isChild,
 							isItemSelected && classes.isSelected
-						)}
-						key={href}
-					>
-						<Link
-							className={cx(heading && classes.heading)}
-							href={href}
-							target={external ? '_blank' : undefined}
-						>
-							{visibleName}
-						</Link>
-						{content}
-					</li>
+						)}key={href}
+					><Link className={cx(heading && classes.heading)} href={href}target={external ? '_blank' : undefined}>{visibleName}</Link>{content}</li>
 				);
 			})}
 		</ul>

@@ -55,7 +55,7 @@ notification.config({
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

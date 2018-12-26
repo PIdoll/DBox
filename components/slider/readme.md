@@ -3,7 +3,7 @@
 
 #### **基本使用**
 ```jsx
-import { Slider, Switch } from 'components';
+import { Slider, Switch } from 'dbox-ui';
 
 class SliderView extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class SliderView extends React.Component {
 
 #### **带输入框的滑块**
 ```jsx
-import { Slider, InputNumber, Row, Col } from 'components';
+import { Slider, InputNumber, Row, Col } from 'dbox-ui';
 class SliderView extends React.Component {
   constructor(props) {
     super(props);
@@ -77,7 +77,7 @@ class SliderView extends React.Component {
 
 #### **自定义提示**
 ```jsx
-import { Slider, Switch } from 'components';
+import { Slider, Switch } from 'dbox-ui';
 
 const SliderView = () => {
     return (
@@ -112,7 +112,7 @@ const SliderView = () => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

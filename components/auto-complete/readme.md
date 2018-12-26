@@ -4,7 +4,7 @@
 通过 dataSource 设置自动完成的数据源。
 
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
@@ -46,7 +46,7 @@ class AutoCompleteDemo extends React.Component {
 #### **自定义选项**
 可以直接传 `AutoComplete.Option` 作为 `AutoComplete` 的 `children`，而非使用 `dataSource`。
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 const Option = AutoComplete.Option;
 class AutoCompleteExamplDemo extends React.Component {
     constructor(){
@@ -93,7 +93,7 @@ class AutoCompleteExamplDemo extends React.Component {
 #### **不区分大小写**
 不区分大小写的 `AutoComplete`。
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
@@ -126,7 +126,7 @@ class AutoCompleteExamplDemo extends React.Component {
 #### **查询模式-确定类目**
 查询模式: 确定类目 示例。
 ```jsx
-import { AutoComplete,Input,Icon } from 'components';
+import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 class AutoCompleteExamplDemo extends React.Component {
@@ -212,7 +212,7 @@ class AutoCompleteExamplDemo extends React.Component {
 #### **查询模式-不确定类目**
 查询模式: 不确定类目 示例。
 ```jsx
-import { AutoComplete,Input,Icon } from 'components';
+import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 class AutoCompleteExamplDemo extends React.Component {
@@ -319,7 +319,7 @@ class AutoCompleteExamplDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

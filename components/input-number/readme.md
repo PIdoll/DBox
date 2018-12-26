@@ -3,7 +3,7 @@
 
  ##### **基本使用**
  ```jsx
-import { InputNumber } from 'components';
+import { InputNumber } from 'dbox-ui';
 
 const InputNumberView = () => {
   return (
@@ -15,7 +15,7 @@ const InputNumberView = () => {
 
  ##### **三种尺寸**
  ```jsx
-import { InputNumber } from 'components';
+import { InputNumber } from 'dbox-ui';
 
 const InputNumberView = () => {
   return (
@@ -31,7 +31,7 @@ const InputNumberView = () => {
 
  ##### **不可用切换**
 ```jsx
-import { Button, InputNumber } from 'components';
+import { Button, InputNumber } from 'dbox-ui';
 
 class InputNumberView extends React.Component {
   constructor(props) {
@@ -62,7 +62,7 @@ class InputNumberView extends React.Component {
 
 ##### **小数**
 ```jsx
-import { InputNumber } from 'components';
+import { InputNumber } from 'dbox-ui';
 
 const InputNumberView = () => {
   return (
@@ -74,7 +74,7 @@ const InputNumberView = () => {
 
 ##### **格式化展示**
 ```jsx
-import { InputNumber } from 'components';
+import { InputNumber } from 'dbox-ui';
 
 const InputNumberView = () => {
   return (
@@ -118,7 +118,7 @@ const InputNumberView = () => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

@@ -5,7 +5,7 @@
 #### **基本类型信息展示**
 
 ```jsx
-import { Switch, Message, Button } from 'components';
+import { Switch, Message, Button } from 'dbox-ui';
   let normal = false;
   onChange = () => {
     normal = !normal
@@ -35,7 +35,7 @@ import { Switch, Message, Button } from 'components';
 #### **修改延时**
 
 ```jsx
-import { Switch, Message, Button } from 'components';
+import { Switch, Message, Button } from 'dbox-ui';
 
 let normal = false;
 onChange = () => {
@@ -54,7 +54,7 @@ DelayInfo = () => {
 #### **加载中**
 
 ```jsx
-import { Switch, Message, Button } from 'components';
+import { Switch, Message, Button } from 'dbox-ui';
 
 LoadingSuccess = () => {
   const hide = Message.loading('活动加载中..', 10);
@@ -66,7 +66,7 @@ LoadingSuccess = () => {
 #### **Promise接口**
 
 ```jsx
-import { Switch, Message, Button, Icon } from 'components';
+import { Switch, Message, Button, Icon } from 'dbox-ui';
 
 let normal = false;
 onChange = () => {
@@ -140,7 +140,7 @@ Message.config({
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

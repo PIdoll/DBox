@@ -5,7 +5,7 @@
 #### **基本用法**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 
 const RangePicker = DatePicker.RangePicker;
 const MonthPicker = DatePicker.MonthPicker;
@@ -36,7 +36,7 @@ onOk = () => {
 #### **三种大小**
 
 ```jsx
-import { Radio, DatePicker } from 'components';
+import { Radio, DatePicker } from 'dbox-ui';
 
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -88,7 +88,7 @@ class DatePickerView extends React.Component {
 #### **禁用**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -118,7 +118,7 @@ onOk = () => {
 #### **日期格式**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -147,7 +147,7 @@ const monthFormat = 'YYYY/MM';
 #### **日期时间选择**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 
 const RangePicker = DatePicker.RangePicker;
 const MonthPicker = DatePicker.MonthPicker;
@@ -184,7 +184,7 @@ onOk = () => {
 #### **不可选择日期和时间**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -308,7 +308,7 @@ disabledRangeTime = (_, type) => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

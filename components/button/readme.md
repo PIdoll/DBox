@@ -1,10 +1,10 @@
 用来触发操作和链接。
 ##### **基本用法**
-通过 `type` 属性来控制按钮样式； 
+通过 `type` 属性来控制按钮样式；
 按钮中的文字要尽可能短，并且清晰的表示按钮被激活时会发生什么。一个屏幕上应该只出现一个主按钮，主按钮需谨慎使用。
 
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -21,7 +21,7 @@ const buttonStyle = {
 ##### **图标按钮**
 通过 `icon` 属性在按钮中嵌入图标，设置 iconLocation 可以控制图标的位置，对于没有文字的图标按钮可以通过设置 `shape` 属性控制按钮的形状为圆形或方形。 在按钮中使用图标可以吸引更多注意力或帮助传达更多意义。
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -54,7 +54,7 @@ const buttonStyle = {
 ##### **文字按钮**
 通过添加 `text` 属性可以设置文字按钮，文字按钮常用于链接跳转。
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -68,7 +68,7 @@ const buttonStyle = {
 通过 `size` 属性来控制按钮的大、小尺寸，默认尺寸为中。
 
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -82,7 +82,7 @@ const buttonStyle = {
 ##### **跳转按钮**
 通过 `href` 属性来设置跳转按钮，并且可以通过 `target` 属性控制打开方式。
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -95,7 +95,7 @@ const buttonStyle = {
 ##### **幽灵按钮**
 通过添加 `ghost` 属性来设置幽灵按钮
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
@@ -110,7 +110,7 @@ const buttonStyle = {
 ##### **block按钮**
 通过 `block` 属性将按钮宽度撑满父容器。
 ```jsx
-import { Button } from 'components';
+import { Button } from 'dbox-ui';
 <div style={{ width: '600px' }}>
   <Button type='primary' block>主要</Button>
   <br />
@@ -121,7 +121,7 @@ import { Button } from 'components';
 ##### **组合按钮**
 通过 `ButtonGroup` 将按钮组合在一起，可通过设置 `size` 属性控制组合按钮的尺寸，默认为中。
 ```jsx
-import { Button,Icon } from 'components';
+import { Button,Icon } from 'dbox-ui';
 const ButtonGroup = Button.Group;
 <div>
   <ButtonGroup>
@@ -167,7 +167,7 @@ const ButtonGroup = Button.Group;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

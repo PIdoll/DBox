@@ -3,7 +3,7 @@
 
 #### **基本用法**
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 
 class TreeSelectDemo extends React.Component {
@@ -51,7 +51,7 @@ class TreeSelectDemo extends React.Component {
 #### **从数据直接生成**
 可通过设置 `treeData` 属性将 `JSON` 数据直接生成树结构。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -108,7 +108,7 @@ class TreeSelectDemo extends React.Component {
 #### **多选**
 可通过设置 `multiple` 属性可多选。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -166,7 +166,7 @@ class TreeSelectDemo extends React.Component {
 #### **可勾选**
 可通过设置 `treeCheckable` 属性实现勾选框多选功能。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -282,7 +282,7 @@ class TreeSelectDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

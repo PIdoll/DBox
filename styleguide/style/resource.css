@@ -28,7 +28,11 @@ a {
   z-index: 1;
   background-color: #fff;
 }
-
+.download-href {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
 .resource_container_header .dresource_container_header_container {
 	max-width: 1200px;
   margin: 0 auto;
@@ -178,7 +182,6 @@ a {
 	border-top: 1px solid #E2E2E2;
 	font-family:PingFangSC-Regular;
 }
-
 .operation .getlink {
 	height: 41px;
 	border: none;

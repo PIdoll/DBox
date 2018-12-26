@@ -13,7 +13,7 @@ DBox 依次提供了三级选项卡，分别用于不同的场景。
 #### **基本用法和禁用**
 水平展示tab栏
 ```jsx
-import {Tabs} from 'components';
+import {Tabs} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
@@ -34,7 +34,7 @@ class TabsView extends React.Component {
 #### **有图标的标签**
 在tab栏内添加图标
 ```jsx
-import {Tabs, Icon} from 'components';
+import {Tabs, Icon} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
@@ -60,7 +60,7 @@ class TabsView extends React.Component {
 #### **tab页水平，垂直滑动**
 通过设置tabPosition为top和left来水平和垂直模式展示
 ```jsx
-import {Tabs, Radio} from 'components';
+import {Tabs, Radio} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -109,7 +109,7 @@ class TabsView extends React.Component {
 #### **卡片式标签页容器**
 设置type='card'来仿卡片式的tabs
 ```jsx
-import {Tabs} from 'components';
+import {Tabs} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
@@ -140,7 +140,7 @@ class TabsView extends React.Component {
 #### **新增和关闭**
 动态添加和删除tabs分页
 ```jsx
-import {Tabs} from 'components';
+import {Tabs} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 const panes = [
   { title: '分页一', content: '分页内容一', key: '1' },
@@ -200,7 +200,7 @@ class TabsView extends React.Component {
 #### **卡片式容器**
 对容器设置背景使其更像是一个容器
 ```jsx
-import {Tabs} from 'components';
+import {Tabs} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
@@ -230,8 +230,8 @@ class TabsView extends React.Component {
 #### **吸顶效果**
 页面滑动到一定距离固定tabs栏
 ```jsx
-import {Tabs} from 'components';
-import {TabPane, ReactDOM} from 'components/tabs';
+import {Tabs} from 'dbox-ui';
+import {TabPane, ReactDOM} from 'dbox-ui/tabs';
 class TabsView extends React.Component {
 	componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
@@ -301,7 +301,7 @@ class TabsView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

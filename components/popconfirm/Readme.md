@@ -3,7 +3,7 @@
 #### **基本用法**
 最简单用法
 ```jsx
-import { Popconfirm } from 'components';
+import { Popconfirm } from 'dbox-ui';
 class PopconfirmDemo extends React.Component {
     constructor() {
         super();
@@ -38,7 +38,7 @@ class PopconfirmDemo extends React.Component {
 #### **12个方向**
 弹出框位置有十二个方向。可通过设置 `placement` 属性控制。
 ```jsx
-import { Popconfirm,Button } from 'components';
+import { Popconfirm,Button } from 'dbox-ui';
 const buttonWidth = '70px';
 const text = '确定要删除吗';
 class PopconfirmDemo extends React.Component {
@@ -117,7 +117,7 @@ class PopconfirmDemo extends React.Component {
 #### **条件触发**
 可以判断是否需要弹出。
 ```jsx
-import { Popconfirm,Switch } from 'components';
+import { Popconfirm,Switch } from 'dbox-ui';
 class PopconfirmDemo extends React.Component {
     constructor() {
         super();
@@ -194,7 +194,7 @@ class PopconfirmDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

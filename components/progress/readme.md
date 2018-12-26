@@ -7,7 +7,7 @@
 
 #### **线条型进度条**
 ```jsx
-import { Progress } from 'components';
+import { Progress } from 'dbox-ui';
 
 class ProgressView  extends React.Component {
   render() {
@@ -27,7 +27,7 @@ class ProgressView  extends React.Component {
 
 #### **迷你线条进度条**
 ```jsx
-import { Progress } from 'components';
+import { Progress } from 'dbox-ui';
 
 class ProgressView extends React.Component {
   render() {
@@ -47,7 +47,7 @@ class ProgressView extends React.Component {
 
 #### **圆形进度条**
 ```jsx
-import { Progress } from 'components';
+import { Progress } from 'dbox-ui';
 
 const ProgressView = () => {
   return (
@@ -63,7 +63,7 @@ const ProgressView = () => {
 
 #### **迷你圆形进度条**
 ```jsx
-import { Progress } from 'components';
+import { Progress } from 'dbox-ui';
 
 const ProgressView = () => {
   return (
@@ -79,7 +79,7 @@ const ProgressView = () => {
 
 #### **动态进度条**
 ```jsx
-import { Progress, Button } from 'components';
+import { Progress, Button } from 'dbox-ui';
 
 const ButtonGroup = Button.Group;
 class ProgressView  extends React.Component {
@@ -122,7 +122,7 @@ class ProgressView  extends React.Component {
 ```
 #### **自定义圆形进度条**
 ```jsx
-import { Progress } from 'components';
+import { Progress } from 'dbox-ui';
 
 const ProgressView = () => {
   return (
@@ -150,7 +150,7 @@ const ProgressView = () => {
 <style>.idoll-progress{margin:0 10px 10px 0}</style>
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

@@ -34,7 +34,7 @@
 | onClick | 点击按钮的回调函数 | Function | - |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

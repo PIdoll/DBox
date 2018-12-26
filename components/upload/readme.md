@@ -4,7 +4,7 @@
 #### **基础上传**
 基本的上传操作
 ```jsx
-import {Upload, Message, Button} from 'components';
+import {Upload, Message, Button} from 'dbox-ui';
 const commonFileList = [{
   uid: -1,
   name: 'xxx.png',
@@ -61,7 +61,7 @@ const props1 = {
 #### **拖拽上传**
 将文件拖拽到制定区域或者点击制定区域上传
 ```jsx
-import {Upload, Message, Icon} from 'components';
+import {Upload, Message, Icon} from 'dbox-ui';
 const Dragger = Upload.Dragger;
 const commonFileList = [{
   uid: -1,
@@ -117,7 +117,7 @@ const props2 = {
 #### **照片墙上传**
 将图片上传后展示为照片墙的上传模式
 ```jsx
-import {Upload, Message, Modal, Icon} from 'components';
+import {Upload, Message, Modal, Icon} from 'dbox-ui';
 class PicturesWall extends React.Component {
 	constructor(props) {
 	super(props)
@@ -188,7 +188,7 @@ class PicturesWall extends React.Component {
 #### **图片列表上传**
 将上传后的图片展示为列表样式的上传模式
 ```jsx
-import {Upload, Message, Icon, Button} from 'components';
+import {Upload, Message, Icon, Button} from 'dbox-ui';
 const fileList = [{
   uid: -1,
   name: 'xxx.png',
@@ -240,7 +240,7 @@ const props3 = {
 将上传操作拆分为选中文件和手动上传操作，确保上传文件的准确性
 ```jsx
 import reqwest from 'reqwest';
-import {Upload, Message, Button, Icon} from 'components';
+import {Upload, Message, Button, Icon} from 'dbox-ui';
 class Demo extends React.Component {
 	constructor(props) {
 	super(props)
@@ -416,7 +416,7 @@ class Demo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

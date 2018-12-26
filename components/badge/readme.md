@@ -4,7 +4,7 @@
 #### **基本徽标展示**
 通常配合avatar展示需要用户处理的数据量
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -20,7 +20,7 @@ const content = {
 #### **独立使用**
 将用户需要处理的数量单独抽离出来
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -38,7 +38,7 @@ const content = {
 #### **封顶数字**
 通过设置overflowCount来控制最大的消息数量值
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -63,7 +63,7 @@ const content = {
 #### **讨嫌的小红点**
 通过dot设置不显示待处理的消息数量
 ```jsx
-import {Badge, Icon} from 'components';
+import {Badge, Icon} from 'dbox-ui';
 <div>
 	<Badge>
 	  <Icon type='phone' />
@@ -80,7 +80,7 @@ import {Badge, Icon} from 'components';
 #### **a标签包裹可点击**
 通过a链接包裹badge来控制点击跳转
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 <a href='https://www.baidu.com'>
   <Badge count={8}>
     <span className='example' />
@@ -91,7 +91,7 @@ import {Badge} from 'components';
 #### **用于表示状态的小圆点**
 用dot控制消息的状态
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 <div>
 	<div style={{ position: 'relative', marginLeft: '10px' }}>
       <Badge dot status='success' />
@@ -111,10 +111,10 @@ import {Badge} from 'components';
 </div>
 ```
 
-#### **动态变化** 
+#### **动态变化**
 通过引入按钮或者开关控制消息的数量或者是否展示
 ```jsx
-import {Badge, Button, Switch, Icon} from 'components';
+import {Badge, Button, Switch, Icon} from 'dbox-ui';
 const ButtonGroup = Button.Group;
 const content = {
   width: 64,

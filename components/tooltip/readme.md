@@ -4,7 +4,7 @@
 #### **基本用法**
 简单用法
 ```jsx
-import { Tooltip } from 'components';
+import { Tooltip } from 'dbox-ui';
 <Tooltip title='提示文字'>
     <span>当鼠标移入时会出现文字提示</span>
 </Tooltip>
@@ -13,7 +13,7 @@ import { Tooltip } from 'components';
 #### **12个方向**
 可通过设置 `placement` 属性控制位置，有12个方向
 ```jsx
-import { Tooltip,Button } from 'components';
+import { Tooltip,Button } from 'dbox-ui';
 const buttonWidth = 70;
 const text = <span>提示文字</span>;
 <div>
@@ -66,7 +66,7 @@ const text = <span>提示文字</span>;
 
 #### **箭头指向**
 ```jsx
-import { Tooltip,Button } from 'components';
+import { Tooltip,Button } from 'dbox-ui';
 const text = <span>提示文字</span>;
 <div className='arrow'>
     <Tooltip placement='topLeft' title={text} >
@@ -108,7 +108,7 @@ const text = <span>提示文字</span>;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

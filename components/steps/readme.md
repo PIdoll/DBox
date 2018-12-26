@@ -3,7 +3,7 @@
 
 #### **基本用法**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const StepsView = () => {
   return(
@@ -20,7 +20,7 @@ const StepsView = () => {
 
 #### **小尺寸**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const StepsView = () => {
   return (
@@ -37,7 +37,7 @@ const StepsView = () => {
 
 #### **点状步骤条**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const StepsView = () => {
   return (
@@ -54,7 +54,7 @@ const StepsView = () => {
 
 #### **带popover点状步骤条**
 ```jsx
-import { Steps, Popover } from 'components';
+import { Steps, Popover } from 'dbox-ui';
 
 const customDot = (dot, {status, index}) => (
   <Popover content={<span>步骤： {index} 状态: {status}</span>}>{dot}</Popover>
@@ -78,7 +78,7 @@ class StepsView extends React.Component {
 
 #### **可步骤切换**
 ```jsx
-import { Steps, Button } from 'components';
+import { Steps, Button } from 'dbox-ui';
 
 const Step = Steps.Step;
 const steps = [
@@ -142,7 +142,7 @@ class StepsView extends React.Component {
 
 #### **步骤运行错误**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -162,7 +162,7 @@ class StepsView extends React.Component {
 
 #### **竖直方向步骤条**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -181,7 +181,7 @@ class StepsView extends React.Component {
 
 #### **竖直方向小尺寸步骤条**
 ```jsx
-import { Steps } from 'components';
+import { Steps } from 'dbox-ui';
 
 const Step = Steps.Step;
 class StepsView extends React.Component {
@@ -225,7 +225,7 @@ class StepsView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

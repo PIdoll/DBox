@@ -7,7 +7,7 @@
 通过添加href属性区别链接状态
 ```jsx
 
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<Tag>标签</Tag>
   <Tag href='https://www.baidu.com'>链接</Tag>
@@ -17,7 +17,7 @@ import {Tag} from 'components';
 #### **多彩标签**
 通过添加颜色进行分类
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<Tag color='peru'>peru</Tag>
     <Tag color='coral'>coral</Tag>
@@ -33,14 +33,14 @@ import {Tag} from 'components';
 #### **可移除标签**
 标签可移除，支持动态删除
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <Tag closable>可移除标签</Tag>
 ```
 
 #### **热门标签**
 通过添加hot属性进行分类
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<span>热门话题:</span>
 	<Tag hot>电影</Tag>
@@ -53,8 +53,8 @@ import {Tag} from 'components';
 #### **动态添加和删除标签**
 动态添加和删除标签
 ```jsx
-import {Tag} from 'components';
-import {TagGroup} from 'components/tag';
+import {Tag} from 'dbox-ui';
+import {TagGroup} from 'dbox-ui/tag';
 <TagGroup></TagGroup>
 ```
 
@@ -92,7 +92,7 @@ import {TagGroup} from 'components/tag';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

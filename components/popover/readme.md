@@ -5,7 +5,7 @@
 #### **基本用法**
 基本内容展示，通常用于操作的再次确认
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -19,7 +19,7 @@ const content = (
 #### **三种触发方式**
 通过设置trigger为hover,focus,click来控制触发的方式
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -41,7 +41,7 @@ const content = (
 #### **12个方向**
 通过设置placement来设置气泡卡片的显示位置
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -100,7 +100,7 @@ const text = <span>标题</span>;
 #### **箭头指向**
 通过arrowPointAtCenter控制箭头指向中心，默认指向left
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -120,7 +120,7 @@ const text = <span>标题</span>;
 #### **从浮层内关闭**
 可从弹出层内关闭弹出层
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -164,7 +164,7 @@ class PopoverView extends React.Component {
 #### **悬停点击弹出层**
 设置悬浮和点击不同触发内容
 ```jsx
-import {Popover, Button} from 'components';
+import {Popover, Button} from 'dbox-ui';
 const clickContent = (
   <div>
     这是点击内容
@@ -252,7 +252,7 @@ class PopoverView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

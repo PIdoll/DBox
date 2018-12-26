@@ -7,8 +7,8 @@
 ##### **基本用法**
 只允许用户选择单个选项，其中按钮提供文字按钮和默认按钮两种样式。触发对象可以是链接、按钮等各种元素。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
@@ -46,8 +46,8 @@ function handleMenu1Click(e) {
 ##### **常用类型**
 通过 type 属性可设置下拉菜单按钮的样式。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu4 = (
@@ -105,8 +105,8 @@ function handleMenu1Click(e) {
 ##### **组合使用**
 在一组按钮中可放置一个Dropdown按钮，常置于最右侧。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const ButtonGroup = Button.Group;
 const DropdownButton = Dropdown.DropdownButton;const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
@@ -135,8 +135,8 @@ function handleMenu1Click(e) {
 ##### **三种尺寸**
 通过 size 属性设置为 large small 来控制大、小尺寸，默认尺寸为中。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const DropdownButton = Dropdown.DropdownButton;
 const menu2 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
@@ -164,8 +164,8 @@ function handleMenu1Click(e) {
 ##### **弹出位置**
 通过 placement 属性来设置弹框弹出位置，支持6个方向。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const menu = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -201,8 +201,8 @@ function handleMenu1Click(e) {
 ##### **触发方式**
 通过 trigger 属性设置为 hover click 来控制触发方式，默认鼠标移入触发弹框。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme = 'light'onClick={handleMenu1Click}>
@@ -239,8 +239,8 @@ function handleButtonClick(e) {
 ##### **触发事件**
 点击菜单触发相应事件，用户可以通过相应的菜单项 key 进行不同的操作。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const menu = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -267,8 +267,8 @@ function handleButtonClick(e) {
 ##### **多级菜单**
 弹出框里的菜单支持多级传入。
 ```jsx
-import {Icon, Button, Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu} from 'components/menu';
+import {Icon, Button, Dropdown, Menu} from 'dbox-ui'
+import { MenuItem, SubMenu} from 'dbox-ui/menu';
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -316,7 +316,7 @@ function handleMenu1Click(e) {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

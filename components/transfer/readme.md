@@ -8,7 +8,7 @@
 #### **基本用法**
 
 ```jsx
-import { Transfer, Switch} from 'components';
+import { Transfer, Switch} from 'dbox-ui';
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -118,7 +118,7 @@ return <Transfer rowKey={record => record.uid} />;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

@@ -4,7 +4,7 @@
 #### **基本用法**
 
 ```jsx
-import { Anchor } from 'components';
+import { Anchor } from 'dbox-ui';
 const { Link } = Anchor;
 
 <div>
@@ -42,7 +42,7 @@ const { Link } = Anchor;
 | title | 文字内容 | string , ReactNode | - |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

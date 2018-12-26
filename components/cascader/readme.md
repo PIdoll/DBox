@@ -4,7 +4,7 @@
 可通过设置 `options` 属性来展示数据,其中 `disabled` 字段可设置是否禁用。
 
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -52,7 +52,7 @@ function onChange(value) {
 #### **默认值**
 可通过设置 `defaultValue` 属性用于展示默认值。
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -98,7 +98,7 @@ function onChange(value) {
 #### **移入展开**
 可通过设置 `expandTrigger` 属性为 `hover` 来移入展开下级菜单，点击完成选择。
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -153,7 +153,7 @@ function onChange(value) {
 #### **尺寸**
 可通过设置 `size` 属性控制级联框的尺寸，默认为中。
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -201,7 +201,7 @@ function onChange(value) {
 #### **动态加载选项**
 可通过设置 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 class CascaderExample extends React.Component {
     constructor(){
         super();
@@ -267,7 +267,7 @@ class CascaderExample extends React.Component {
 #### **搜索**
 可设置 `showSearch` 属性实现级联框中内容的搜索。
 ```jsx
-import { Cascader } from 'components';
+import { Cascader } from 'dbox-ui';
 const searchData = [{
     value: '上海',
     label: '上海',
@@ -353,7 +353,7 @@ function filter(inputValue, path) {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

@@ -3,7 +3,7 @@
 
 ####  **基本栅格布局**
 ```jsx
-import { Row, Col } from 'components';
+import { Row, Col } from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -67,7 +67,7 @@ class GridView extends React.Component {
 ```
 #### **拥有间隔的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -107,7 +107,7 @@ class GridView extends React.Component {
 ```
 #### **可以左右偏移的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -154,7 +154,7 @@ class GridView extends React.Component {
 ```
 #### **可排序的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -191,7 +191,7 @@ class GridView extends React.Component {
 ```
 #### **Flex布局水平对齐**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -300,7 +300,7 @@ class GridView extends React.Component {
 ```
 #### **Flex布局垂直对齐**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -380,7 +380,7 @@ class GridView extends React.Component {
 ```
 #### **Flex排序**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -427,7 +427,7 @@ class GridView extends React.Component {
 
 #### **自定义栅格布局**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -489,7 +489,7 @@ class GridView extends React.Component {
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

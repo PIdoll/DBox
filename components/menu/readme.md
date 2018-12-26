@@ -6,7 +6,7 @@
 广泛适用的顶部导航。通过 theme 属性设置为 light dark 切换主题模式。
 
 ```jsx
-import {Menu} from 'components';
+import {Menu} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class MenuView extends React.Component {
 #### **手风琴菜单**
 每次只打开一个菜单，其他菜单自动收起，使菜单简洁聚焦，同时避免同时展开多个菜单，导致侧边导航文字溢出。
 ```jsx
-import {Menu, Icon} from 'components';
+import {Menu, Icon} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
 const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
 class MenuView extends React.Component {
@@ -109,7 +109,7 @@ class MenuView extends React.Component {
 垂直导航的基本使用，支持展开/收起。
 
 ```jsx
-import {Menu, Switch, Icon} from 'components';
+import {Menu, Switch, Icon} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -178,7 +178,7 @@ class MenuView extends React.Component {
 支持两种主题切换,垂直导航的基本使用，支持展开/收起。
 
 ```jsx
-import {Menu, Switch, Icon} from 'components';
+import {Menu, Switch, Icon} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -312,7 +312,7 @@ class MenuView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

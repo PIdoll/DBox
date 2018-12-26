@@ -3,7 +3,7 @@
 ##### **基本使用**
 可选中，默认展开等功能。
 ```jsx
-import { Tree } from 'components';
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -41,7 +41,7 @@ onCheck = (checkedKeys, info) => {
 ##### **多选树**
 可通过设置`checkable`为多选框可选择，设置`disabled`和`disableCheckbox`可分别禁用整个节点和选择框。
 ```jsx
-import { Tree } from 'components';
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -80,7 +80,7 @@ onCheck = (checkedKeys, info) => {
 ##### **可拖动**
 可通过设置`draggable`属性为可拖动。
 ```jsx
-import { Tree } from 'components';
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 
 const gData = [{
@@ -221,7 +221,7 @@ class TreeExample extends React.Component {
 ##### **点击展开节点，异步加载数据**
 可通过设置 `loadData` 属性异步加载数据。
 ```jsx
-import { Tree } from 'components';
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -283,7 +283,7 @@ class TreeExample extends React.Component {
 ##### **受控操作示例**
 展示选择树节点，展开/收起节点，选择复选框和默认展开节点等操作示例。
 ```jsx
-import { Tree } from 'components';
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -430,7 +430,7 @@ class TreeExample extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

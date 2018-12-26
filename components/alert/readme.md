@@ -5,7 +5,7 @@
 #### **基本用法**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <Alert
   message='成功提示'
@@ -15,7 +15,7 @@ import { Alert } from 'components';
 #### **可关闭的警告提示**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 onClose = (e) => {
   console.log(e, 'I was closed.');
@@ -38,7 +38,7 @@ onClose = (e) => {
 #### **带有图标的警告提示**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <div>
   <div style={{ marginBottom: 15 }}>
@@ -87,7 +87,7 @@ import { Alert } from 'components';
 #### **四种样式**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
  <div>
   <div style={{ marginBottom: 15 }}>
@@ -108,7 +108,7 @@ import { Alert } from 'components';
 #### **含有辅助性文字的文本**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
  <div>
   <div style={{ marginBottom: 15 }}>
@@ -145,7 +145,7 @@ import { Alert } from 'components';
 #### **自定义关闭**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <Alert message='Info Text' type='info' closeText='Close Now' />
 ```
@@ -153,7 +153,7 @@ import { Alert } from 'components';
 #### **平滑的卸载**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 class AlertView extends React.Component {
   constructor(props) {
@@ -192,7 +192,7 @@ class AlertView extends React.Component {
 #### **顶部公告**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <div>
  <Alert message='警告文本' banner />
@@ -217,7 +217,7 @@ import { Alert } from 'components';
 | onClose | 关闭时触发的回调函数 | (e: MouseEvent) => void | 无 |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

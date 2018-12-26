@@ -5,7 +5,7 @@
 
 #### **更新记录**
 ```jsx noeditor
-import { Version } from 'components';
+import { Version } from 'dbox-ui';
 
 <Version />
 

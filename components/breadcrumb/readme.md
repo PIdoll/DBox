@@ -3,7 +3,7 @@
 
 #### **基本用法**
 ```jsx
-import { Breadcrumb } from 'components';
+import { Breadcrumb } from 'dbox-ui';
 class BreadcrumbView extends React.Component {
   render() {
     return (
@@ -20,7 +20,7 @@ class BreadcrumbView extends React.Component {
 
 #### **带图标的**
 ```jsx
-import { Breadcrumb, Icon } from 'components';
+import { Breadcrumb, Icon } from 'dbox-ui';
 
 class BreadcrumbView extends React.Component {
   render() {
@@ -45,7 +45,7 @@ class BreadcrumbView extends React.Component {
 
 #### **自定义分隔符**
 ```jsx
-import { Breadcrumb } from 'components';
+import { Breadcrumb } from 'dbox-ui';
 
 class BreadcrumbView extends React.Component {
   render() {
@@ -92,7 +92,7 @@ return <Breadcrumb itemRender={itemRender} routes={routes}/>;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

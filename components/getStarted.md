@@ -4,7 +4,7 @@
 
 + An enterprise-class UI design language for web applications.
 
-+ A set of high-quality React components out of the box.
++ A set of high-quality React dbox-ui out of the box.
 
 + Written in TypeScript with complete defined types.
 

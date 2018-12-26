@@ -5,14 +5,14 @@
 #### **基本用法**
 切换开关状态
 ```jsx
-import {Switch} from 'components';
+import {Switch} from 'dbox-ui';
 <Switch defaultChecked></Switch>
 ```
 
 #### **按钮操作**
 通过按钮控制开关状态
 ```jsx
-import {Switch, Button} from 'components';
+import {Switch, Button} from 'dbox-ui';
 class SwitchView extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +41,7 @@ class SwitchView extends React.Component {
 #### **两种大小**
 通过size是否设置small来控制开关的大小
 ```jsx
-import {Switch} from 'components';
+import {Switch} from 'dbox-ui';
 <div>
 	<Switch defaultChecked />
 	<br />
@@ -53,14 +53,14 @@ import {Switch} from 'components';
 #### **带有文字的按钮**
 在开关内添加描述，一目了然开关的状态
 ```jsx
-import {Switch} from 'components';
+import {Switch} from 'dbox-ui';
 <Switch checkedChildren={'1'} unCheckedChildren={'0'} />
 ```
 
 #### **执行中**
 多于其他操作搭配，表示开关的执行过程
 ```jsx
-import {Switch} from 'components';
+import {Switch} from 'dbox-ui';
 <div>
 	<Switch disabled loading defaultChecked />
     <br />
@@ -92,7 +92,7 @@ import {Switch} from 'components';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

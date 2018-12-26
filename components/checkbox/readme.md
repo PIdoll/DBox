@@ -5,7 +5,7 @@
 ##### **通用多选框**
 可在选中和非选中之间切换
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 <Checkbox >
   多选框
 </Checkbox>
@@ -14,7 +14,7 @@ import {Checkbox} from 'components';
 ##### **受控多选框**
 通过按钮控制多选框的属性
 ```jsx
-import {Checkbox, Button} from 'components';
+import {Checkbox, Button} from 'dbox-ui';
 initialState = {
       checked: false,
       disabled: false
@@ -42,7 +42,7 @@ initialState = {
 ##### **多选框全选**
 通过一个多选框来控制另一组多选框的选中状态
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 const CheckboxGroup = Checkbox.CheckboxGroup;
 const plainOptions = ['苹果', '梨', '桔子'];
 const defaultCheckedList = ['苹果', '桔子'];
@@ -81,7 +81,7 @@ onChange = (checkedList) => {
 ##### **多选框组**
 多个多选框形成的多选框组合
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 const optionsWithDisabled = [
   { label: '苹果', value: '苹果' },
   { label: '梨', value: '梨' },
@@ -106,7 +106,7 @@ const CheckboxGroup = Checkbox.CheckboxGroup;
 ##### **多选框不可用**
 通过disabled控制多选框的可操作属性
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 <div>
 	<Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
    <Checkbox defaultChecked disabled >不允许操作</Checkbox>
@@ -149,7 +149,7 @@ import {Checkbox} from 'components';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

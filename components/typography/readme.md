@@ -4,14 +4,14 @@
 
 ```jsx noeditor
 
-import {Typography} from 'components';
+import {Typography} from 'dbox-ui';
 
 <Typography />
 
 ```
 
 ```jsx noeditor
-import { BackTop } from 'components';
+import { BackTop } from 'dbox-ui';
 
 <BackTop visibilityHeight={10}/>
 

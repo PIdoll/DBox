@@ -6,7 +6,7 @@
 ##### **基本样式展示**
 点击文字或按钮选中对应状态
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 <div>
 	<Radio>A</Radio>
 	<Radio checked>B</Radio>
@@ -17,7 +17,7 @@ import {Radio} from 'components';
 ##### **禁用单选框**
 通过增加按钮来控制时候允许操作
 ```jsx
-import {Radio, Button} from 'components';
+import {Radio, Button} from 'dbox-ui';
 class RadioView extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +49,7 @@ class RadioView extends React.Component {
 ##### **互斥单选框**
 一组单选框只允许选中一个
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -81,7 +81,7 @@ class RadioView extends React.Component {
 ##### **垂直组合单选框**
 适用于垂直组合样式
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -113,7 +113,7 @@ class RadioView extends React.Component {
 ##### **分组单选框**
 通过RadioGroup包裹多个单选组合
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -154,7 +154,7 @@ class RadioView extends React.Component {
 ##### **name单选框**
 通过给RadioGroup添加name属性给予值让所有的单选框拥有统一的类名方便统一操作
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 class RadioView extends React.Component {
   constructor(props) {
@@ -186,7 +186,7 @@ class RadioView extends React.Component {
 ##### **按钮样式**
 仿按钮样式的单选框
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -218,7 +218,7 @@ const RadioButton = Radio.RadioButton;
 ##### **大小按钮**
 通过size属性设置large,small和不设置属性改变单选框的大小
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -250,7 +250,7 @@ const RadioButton = Radio.RadioButton;
 ##### **按钮底纹**
 拥有底纹的仿按钮样式的单选框
 ```jsx
-import {Radio} from 'components';
+import {Radio} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
 <div>
@@ -315,7 +315,7 @@ const RadioButton = Radio.RadioButton;
 <style>.idoll-steps{margin-bottom: 10px}</style>
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

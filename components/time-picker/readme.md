@@ -5,7 +5,7 @@
 #### **基本用法**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 onChange = (time, timeString) => {
     console.log(time, timeString);
@@ -16,7 +16,7 @@ onChange = (time, timeString) => {
 #### **三种尺寸**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 
 <div style={{ display: 'flex' }}>
@@ -35,7 +35,7 @@ import moment from 'moment';
 #### **禁用**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 
 <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />
@@ -63,7 +63,7 @@ import moment from 'moment';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

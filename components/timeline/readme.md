@@ -4,7 +4,7 @@
 #### **基本用法**
 基本的时间轴
 ```jsx
-import { Timeline } from 'components';
+import { Timeline } from 'dbox-ui';
 <Timeline>
   <Timeline.Item>需求评审 2018-11-21</Timeline.Item>
   <Timeline.Item>开发 2018-12-01</Timeline.Item>
@@ -17,7 +17,7 @@ import { Timeline } from 'components';
 可通过设置 `pending` 属性展示幽灵节点。
 可通过设置`reverse` 属性用于控制节点排序，为 `false` 时按正序排列，为 `true` 时按倒序排列。
 ```jsx
-import { Timeline,Button } from 'components';
+import { Timeline,Button } from 'dbox-ui';
 class TimelineExample extends React.Component {
   constructor(){
     super();
@@ -51,7 +51,7 @@ class TimelineExample extends React.Component {
 #### **自定义图标**
 可通过设置 `dot` 属性为`Icon`时添加自定义图标。
 ```jsx
-import { Timeline,Icon } from 'components';
+import { Timeline,Icon } from 'dbox-ui';
 <Timeline>
   <Timeline.Item>需求评审 2018-11-21</Timeline.Item>
   <Timeline.Item>开发 2018-12-01</Timeline.Item>
@@ -80,7 +80,7 @@ import { Timeline,Icon } from 'components';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

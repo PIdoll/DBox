@@ -5,7 +5,7 @@
 #### **简单的加载中**
 
 ```jsx
-import { Spin } from 'components';
+import { Spin } from 'dbox-ui';
 
 <div style={{ marginTop: 51, marginLeft: 100 }}><Spin /></div>
 ```
@@ -13,7 +13,7 @@ import { Spin } from 'components';
 #### **三种不同大小的加载中**
 
 ```jsx
-import { Spin } from 'components';
+import { Spin } from 'dbox-ui';
 
 <div style={{ width: 300, display: 'flex', justifyContent: 'space-between', marginTop: 50 }}>
   <Spin size='small' />
@@ -25,7 +25,7 @@ import { Spin } from 'components';
 #### **放在容器中**
 
 ```jsx
-import { Spin } from 'components';
+import { Spin } from 'dbox-ui';
 
 const style = {
   textAlign: 'center',
@@ -54,7 +54,7 @@ class SpinView extends React.Component {
 #### **自定义描述文案**
 
 ```jsx
-import { Spin, Alert } from 'components';
+import { Spin, Alert } from 'dbox-ui';
 
 <Spin tip='Loading...'>
   <Alert
@@ -68,7 +68,7 @@ import { Spin, Alert } from 'components';
 #### **卡片加载中**
 
 ```jsx
-import { Alert, Spin, Switch } from 'components';
+import { Alert, Spin, Switch } from 'dbox-ui';
 
 const container = (
   <Alert
@@ -143,7 +143,7 @@ class SpinView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />

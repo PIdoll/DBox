@@ -5,7 +5,7 @@
 #### **普通弹出框(可用于展示和提交)**
 通常用于展示和提交数据
 ```jsx
-import {Modal, Button} from 'components';
+import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +54,7 @@ class ModalView extends React.Component {
 #### **异步关闭弹出框**
 在浮层内提交数据不影响当前页面的操作
 ```jsx
-import {Modal, Button} from 'components';
+import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
   constructor(props) {
     super(props);
@@ -107,7 +107,7 @@ class ModalView extends React.Component {
 #### **信息提示**
 通过设置info，success，error来设置信息提示的类型
 ```jsx
-import {Modal, Button} from 'components';
+import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
   constructor(props) {
     super(props)
@@ -148,7 +148,7 @@ class ModalView extends React.Component {
 #### **确认对话框**
 通常用来确认操作
 ```jsx
-import {Modal, Button} from 'components';
+import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
   constructor(props) {
     super(props)
@@ -216,7 +216,7 @@ class ModalView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {PrevPage, BackTop} from 'dbox-ui';
 <div>
   <BackTop visibilityHeight={20}/>
   <PrevPage />
