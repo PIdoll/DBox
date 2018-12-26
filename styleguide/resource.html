@@ -50,12 +50,13 @@
                 </div>
             </div>
             <div class="Happy_qrcode" id="Happy_qrcode">
-                <img src="./assets/img/pingan.png" alt="快乐平安">
+                <div id="qrcode"></div>
                 <div class="scamQR">微信扫码获取下载链接</div>
             </div>
         </div>
     </div>
 </body>
+<script src="./utils/qrcode.min.js"></script>
 <script>
 var Happy = document.getElementById('Happy_qrcode');
   function handleHappyMouseEnter() {
@@ -66,6 +67,7 @@ var Happy = document.getElementById('Happy_qrcode');
   }
   function handleStartUse() {
     location.pathname = 'index.html';
-	}
+    }
+new QRCode(document.getElementById('Happy_qrcode'), `${location.origin}/link.html`);
 </script>
 </html>
