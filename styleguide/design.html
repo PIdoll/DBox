@@ -13,14 +13,14 @@
       <header class='header-warper'>
         <div class='header-warper-top'>
           <div class='header-warper-logo'>
-              <img  src='./assets/img/logo.png' alt='logo' style=/>
+              <img  src='./assets/img/logo.png' alt='logo'/>
               <span>DBOX</span>
           </div>
           <nav class='header-warper-navbar'>
             <a href='index.html'>主页</a>
-            <a href='index.html'>设计原则</a>
-            <a href='index.html'>组件文档</a>
-            <a href='index.html'>设计资源</a>
+            <a href='design.html'>设计原则</a>
+            <a href='doc.html'>组件文档</a>
+            <a href='resource.html'>设计资源</a>
           </nav>
         </div>
       </header>
@@ -58,8 +58,10 @@
     </div>
     <script>
       var alink = document.querySelectorAll('.header-warper-navbar a');
-      for( var i = 0; i < 5; i++ ) {
-
+      var currentLink = window.loaction.href;
+      for( var i = 0; i < currentLink.length; i++ ) {
+          var menuLink=links[i].href;
+          
       }
     </script>
 </body>
