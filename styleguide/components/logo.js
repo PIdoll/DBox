@@ -9,16 +9,20 @@ const styles = () => ({
 		alignItems: 'center',
 		margin: 0,
 		fontSize: 20,
-		color: '#333',
+		color: '#000',
 	},
 	image: {
     width: '22px',
-    marginRight: '14px'
-	},
+    marginRight: '12px'
+  },
+  text: {
+    fontSize: '20px',
+    color: '#000'
+  }
 });
 
 export function LogoRenderer({ classes, children }) {
-	return (<h1 className={classes.logo}><img className={classes.image} src={logo} />DBox</h1>
+	return (<h1 className={classes.logo}><img className={classes.image} src={logo} /><span>DBOX</span></h1>
 	);
 }
 

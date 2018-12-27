@@ -17,7 +17,7 @@ const styles = ({ color, font, base, light, link, mq }) => ({
     bottom: 0,
     width: '100%',
     height: '64px',
-    zIndex: '10',
+    zIndex: '1',
     lineHeight: '64px',
     background: 'rgba(255,255,255,1)',
 	},
@@ -59,7 +59,6 @@ const styles = ({ color, font, base, light, link, mq }) => ({
   },
   content: {
     width: '100%',
-    float: 'right',
   },
   innerCont: {
     marginLeft: '280px',
@@ -67,36 +66,43 @@ const styles = ({ color, font, base, light, link, mq }) => ({
 	headerLink: {
 		'&': {
       display: 'inline-block',
-      color: 'rgba(0, 0, 0, 0.4)',
-      padding: '0 12px',
+      color: '#000',
+      width: '80px',
+      textAlign: 'center',
 		},
-		'&:hover, &:active': {
+	'&:hover, &:active': {
       color: '#13B886',
+      textAlign: 'center',
+      width: '80px',
       cursor: 'pointer',
-      height: '64px',
+      height: '61px',
       padding: '0 12px',
       display: 'inline-block',
       borderBottom: '3px solid #13B886',
 		},
-	},
-	components: {
-		overflow: 'auto',
-	},
+  },
+  active: {
+    color: '#13B886',
+    cursor: 'pointer',
+    height: '64px',
+    padding: '0 12px',
+    display: 'inline-block',
+    borderBottom: '3px solid #13B886',
+  }
 });
 
-export function StyleGuideRenderer({ classes, title, homepageUrl, children, hasSidebar, toc }) {
+export function StyleGuideRenderer({ classes, title, children, toc }) {
 	return (<div className={classes.root}><header className={classes.header}><div className={classes.bar}><Logo>{title}</Logo><nav className={classes.nav}><a className={classes.headerLink} href='index.html'>首页</a><a className={classes.headerLink} href='design.html'>设计原则</a><a className={classes.headerLink} href='doc.html'>组件文档</a><a className={classes.headerLink} href='resource.html'>设计资源</a>
 </nav></div></header><div className={classes.mainCont}><aside className={classes.sidebar}>{toc}</aside><main className={classes.content}><div className={classes.innerCont}>{children}
 </div></main>
 </div>
-		</div>
+</div>
 	);
 }
 
 StyleGuideRenderer.propTypes = {
 	classes: PropTypes.object.isRequired,
 	title: PropTypes.string.isRequired,
-	homepageUrl: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
 };
 export default Styled(styles)(StyleGuideRenderer);

@@ -8,7 +8,8 @@ import { hasInHash, getHash } from '../../utils/handleHash';
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
 		margin: 0,
-		paddingLeft: space[2],
+    paddingLeft: 0,
+    border: '1px solid red',
 	},
 	item: {
 		color: color.base,
@@ -18,12 +19,13 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 		fontSize: fontSize.base,
 		listStyle: 'none',
 		overflow: 'hidden',
-		textOverflow: 'ellipsis',
+    textOverflow: 'ellipsis',
 	},
 	isChild: {
 		[mq.small]: {
 			display: 'inline-block',
-		},
+    },
+    border: '1px solid red',
 	},
 	heading: {
 		color: '#999',
@@ -44,7 +46,7 @@ export function ComponentsListRenderer({ classes, items }) {
 	}
 
 	const windowHash = window.location.pathname + getHash(window.location.hash);
-	return (<ul className={classes.list}>
+	return (<ul>
   {items.map(({ heading, visibleName, href, content, external }) => {
     const isItemSelected = hasInHash(windowHash, href);
       return (<li className={cx(
