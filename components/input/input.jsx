@@ -193,7 +193,7 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const clearIcon = <Icon type='close-circle-o' className={`${props.prefixCls}-picker-clear`} />;
+    const clearIcon = <Icon type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
     const clearSuffix = React.cloneElement(clearIcon, {
       onClick: this.onClear,
       className: 'icon-hover',
@@ -238,7 +238,7 @@ export default class Input extends Component {
     })
   }
 
-  onChange = (e) => {
+  onInput = (e) => {
     this.setState({
       isHover: true
     })
@@ -278,7 +278,7 @@ export default class Input extends Component {
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
         onMouseEnter={this.onMouseEnter}
-        onChange={this.onChange}
+        onInput={this.onInput}
         onBlur={this.onBlur}
         />
     )

@@ -66,7 +66,6 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "shallowequal": "1.1.0",
-    "uglifyjs-webpack-plugin": "^2.0.1",
     "warning": "^4.0.2"
   },
   "devDependencies": {
@@ -112,6 +111,7 @@
     "reqwest": "^2.0.5",
     "style-loader": "^0.19.1",
     "transform-runtime": "0.0.0",
+    "uglifyjs-webpack-plugin": "^2.1.0",
     "url-loader": "^0.6.2",
     "webpack": "^4.25.1",
     "webpack-bundle-analyzer": "^2.9.2",

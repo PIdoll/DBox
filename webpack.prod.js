@@ -17,6 +17,10 @@ const common = require('./webpack.common.js');
  let webpackConfig = merge(common, {
 	devtool: '#source-map',
 	mode: 'production',
+	// node: {
+	// 	fs: 'empty',
+	// 	child_process: 'empty'
+	// },
 	module: {
 		rules: [
 			{
@@ -64,20 +68,20 @@ const common = require('./webpack.common.js');
 			chunkFilename: 'css/app.[contenthash:12].css' // use contenthash *
 		  }),
 	// 会自动生成一个html文件
-	new HtmlwebpackPlugin({
-		filename: 'dbox.html',
-		template: 'dbox.html',
-		inject: true,
-		minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-                // 更多选项:
-                // https://github.com/kangax/html-minifier#options-quick-reference
-            },
-        // 必须通过 CommonsChunkPlugin 一致地处理多个 chunks
-        chunksSortMode: 'dependency'
-	}),
+	// new HtmlwebpackPlugin({
+	// 	filename: 'dbox.html',
+	// 	template: 'dbox.html',
+	// 	inject: true,
+	// 	minify: {
+    //             removeComments: true,
+    //             collapseWhitespace: true,
+    //             removeAttributeQuotes: true
+    //             // 更多选项:
+    //             // https://github.com/kangax/html-minifier#options-quick-reference
+    //         },
+    //     // 必须通过 CommonsChunkPlugin 一致地处理多个 chunks
+    //     chunksSortMode: 'dependency'
+	// }),
 	// webpack 复制文件和文件夹的插件
     // https://github.com/kevlened/copy-webpack-plugin
 	new CopyWebpackPlugin([
