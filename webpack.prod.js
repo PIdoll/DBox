@@ -44,6 +44,7 @@ const common = require('./webpack.common.js');
 			}
 		]
 	},
+	node: { fs: 'empty' },
 	optimization: {
 		minimizer: [
 		  // we specify a custom UglifyJsPlugin here to get source maps in production
