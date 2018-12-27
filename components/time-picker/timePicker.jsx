@@ -93,8 +93,7 @@ class TimePicker extends React.Component {
     const value = props.value || props.defaultValue;
     if (value && !interopDefault(moment).isMoment(value)) {
       throw new Error (
-        'The value/defaultValue of TimePicker must be a moment object after `antd@2.0`, ' +
-        'see: https://u.ant.design/time-picker-value',
+        '',
       );
     }
     this.state = {
