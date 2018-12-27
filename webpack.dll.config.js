@@ -14,15 +14,9 @@ module.exports = {
 		vendors: vendors
 	},
 	mode: 'production',
-	// node: {
-	// 	fs: 'empty',
-	// 	child_process: 'empty'
-	// },
 	output: {
 		filename: '[name].dll.js',
 		path: path.resolve(__dirname, 'dist/dll'),
-		/* 将会定义为window.${output.library}
-		这里将会被定义为“window.vendors_[chunkhash] */
 		library
 	},
 	optimization: {

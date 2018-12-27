@@ -64,8 +64,8 @@ const common = require('./webpack.common.js');
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/app.[name].css',
-			chunkFilename: 'css/app.[contenthash:12].css' // use contenthash *
+			filename: 'css/dbox-ui.[name].css',
+			chunkFilename: 'css/dbox-ui.[contenthash:12].css' // use contenthash *
 		  }),
 	// 会自动生成一个html文件
 	// new HtmlwebpackPlugin({

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Menu, Row, Col, Icon, Popover } from 'antd';
+import { Menu, Row, Col, Icon, Popover } from 'components';
 
 export class Header extends Component {
 	static prop
