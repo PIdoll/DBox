@@ -67,7 +67,7 @@ const styles = ({ color, font, base, light, link, mq }) => ({
 	headerLink: {
 		'&': {
       display: 'inline-block',
-      color: '#000',
+      color: 'rgba(0,0,0,.6)',
       width: '80px',
       textAlign: 'center',
 		},

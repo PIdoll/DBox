@@ -62,7 +62,7 @@ a {
   width: 22px;
   vertical-align: middle;
   position: relative;
-  top: -2px;
+  top: -3px;
   margin-right: 8px;
 }
 .header-warper-logo span {
@@ -318,6 +318,7 @@ a {
   font-size: 80px;
   font-weight:500;
   text-align: right;
+  margin-bottom: 40px;
   font-family:PingFangSC-Medium;
 }
 

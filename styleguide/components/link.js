@@ -9,12 +9,13 @@ const styles = ({ color }) => ({
 	link: {
 		display: 'block',
 		height: '30px',
-		color: '#444',
+		color: '#333',
 		lineHeight: '30px',
 		overflow: 'hidden',
 		fontWeight: '400',
 		fontSize: '14px',
-		cursor: 'pointer',
+    cursor: 'pointer',
+    paddingLeft: '8px',
 	},
 	h1: {
 		fontSize: '12px',

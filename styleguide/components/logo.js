@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'rsg-components/Styled';
-import logo from '../assets/img/logo.png';
+import logo from '../assets/img/logo.svg';
 
 const styles = () => ({
 	logo: {
