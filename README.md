@@ -1,4 +1,4 @@
-# DBOX UI
+# dbox-ui
 一套基于React实现的PC端UI组件库，致力于高效的创建简约美观的产品体验。
 
 ## 特性
@@ -16,11 +16,20 @@
 + 现代浏览器和IE9及以上
 + 支持服务端渲染
 
-## Installation
+## 安装
+```jsx
 npm install dbox-ui --save
+```
 
 ## 示例
 引入组件:
+```jsx
 import { Button } from 'dbox-ui';
+ReactDOM.render(<Button />, node);
+```
 
 引入样式:
+```jsx
+@import ~dbox-ui/dist/css/dbox-ui.main.css
+```
+

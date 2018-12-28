@@ -1,21 +1,27 @@
 {
-  "name": "idoll",
-  "version": "1.0.9",
+  "name": "dbox-ui",
+  "version": "0.0.2",
   "description": "react components",
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode development",
-    "npm": "node ./scripts/buildEs.js  && babel components -d lib && gulp --gulpfile ./scripts/buildStyle.js"
+    "npm": "node ./scripts/buildEs.js  && babel components -d lib && gulp --gulpfile ./scripts/buildStyle.js",
+    "doc": "NODE_ENV=development styleguidist server"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/PIdoll"
   },
   "keywords": [
-    "idoll",
-    "react"
+    "ui",
+    "design",
+    "react",
+    "react-component",
+    "component",
+    "components",
+    "dbox-ui"
   ],
   "license": "MIT",
   "private": false,
@@ -38,13 +44,18 @@
     "rc-checkbox": "^2.1.1",
     "rc-collapse": "^1.10.0",
     "rc-dialog": "^7.2.0",
+    "rc-drawer": "~1.7.6",
     "rc-dropdown": "^2.2.0",
+    "rc-editor-mention": "^1.1.7",
+    "rc-form": "^2.4.0",
     "rc-input-number": "^4.3.4",
     "rc-menu": "7.4.16",
     "rc-notification": "^3.3.0",
+    "rc-pagination": "~1.17.5",
     "rc-progress": "^2.2.5",
     "rc-scroll-anim": "^2.2.1",
     "rc-select": "^8.4.2",
+    "rc-slider": "~8.6.3",
     "rc-steps": "^3.3.0",
     "rc-switch": "^1.8.0",
     "rc-table": "^6.4.0",
@@ -80,7 +91,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^2.0.1",
-    "eslint": "^5.9.0",
+    "eslint": "4.12.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-friendly-formatter": "^3.0.0",
