@@ -35,7 +35,11 @@ class IconView extends React.Component {
   render() {
     return (
       icons1.map(function(val,index){
+<<<<<<< HEAD
       return <li key={val}><Icon type={val}  /><span>{val}</span></li>})
+=======
+      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
+>>>>>>> e25de5e3ce451b26df85375ba7fcc2aa29393c13
     )
   }
 }
@@ -54,7 +58,11 @@ class IconView extends React.Component {
   render() {
     return (
       icons2.map(function(val,index){
+<<<<<<< HEAD
       return <li key={val}><Icon type={val}  /><span>{val}</span></li>})
+=======
+      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
+>>>>>>> e25de5e3ce451b26df85375ba7fcc2aa29393c13
     )
   }
 }
@@ -71,7 +79,7 @@ class IconView extends React.Component {
   render() {
     return (
       icons4.map(function(val,index){
-      return <li key={val}><Icon type={val}  /><span>{val}</span></li>})
+      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
     )
   }
 }

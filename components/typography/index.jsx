@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from '../grid';
 import './style';
 import typographyImg from '../../assets/images/Font.png';
-import typographyData from './typography.jsx';
+import typographyData from './typography';
 
 class Typography extends React.Component {
   handelRender(item) {
@@ -38,11 +38,11 @@ class Typography extends React.Component {
       <React.Fragment>
         <img className='idoll-typography-img' src={typographyImg} />
         <div className='idoll-typography-title'>
-          <h3>字体代码</h3>
+          <h4 >字体代码</h4>
           <p>font-family: -apple-system, BlinkMacSystemFont, "PingFang SC" , "Hiragino Sans GB" , "Microsoft YaHei" , "Helvetica Neue" , Helvetica , Arial , sans-serif ;</p>
         </div>
         <div className='idoll-typography-title'>
-          <h3>推荐用法</h3>
+          <h5>推荐用法</h5>
           <p>DBox 提供了一套完整的标准字体，并提供建议用法，以帮助使用者更好的理解和使用本套系统。</p>
         </div>
         {typographyData.map((item, index) => {

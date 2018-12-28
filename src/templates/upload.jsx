@@ -154,14 +154,14 @@ const fileList = [{
   uid: -1,
   name: 'xxx.png',
   status: 'done',
-  url: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
-  thumbUrl: 'https://b-ssl.duitang.com/uploads/item/201606/30/20160630110629_YCBuz.thumb.700_0.png',
+  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
+  thumbUrl: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
 }, {
   uid: -2,
   name: 'yyy.png',
   status: 'error',
-  url: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
-  thumbUrl: 'https://b-ssl.duitang.com/uploads/item/201506/23/20150623212444_HaGjM.thumb.700_0.jpeg',
+  url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
+  thumbUrl: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
 }];
 
 const props3 = {

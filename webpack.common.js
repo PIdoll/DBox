@@ -2,7 +2,8 @@ const path = require('path');
 
 // 定义了一些文件夹的路径
 const ROOT_PATH = path.resolve(__dirname);
-const APP_PATH = path.resolve(ROOT_PATH, 'src');
+// const APP_PATH = path.resolve(ROOT_PATH, 'src');
+const APP_PATH = path.resolve(ROOT_PATH, 'components');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 
 module.exports = {

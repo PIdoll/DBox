@@ -8,8 +8,8 @@ export default [
         name: '基本属性',
         fontSize: 'Font-size : 38px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'color: #000000',
+        opacity: 'opacity: 0.8'
       }
     ],
     ui: [
@@ -71,8 +71,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 20px',
           fontWeight: 'Font-weight ： 500 / Medium',
-          color: '#000000',
-          opacity: '0.8'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.8'
         }
       ],
       ui: [
@@ -92,8 +92,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 16px',
           fontWeight: 'Font-weight ： 500 / Medium',
-          color: '#000000',
-          opacity: '0.8'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.8'
         }
       ],
       ui: [
@@ -113,8 +113,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 500 / Medium',
-          color: '#000000',
-          opacity: '0.8'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.8'
         }
       ],
       ui: [
@@ -134,8 +134,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 16px',
           fontWeight: 'Font-weight ： 400 / Regular',
-          color: '#000000',
-          opacity: '0.6'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.6'
         }
       ],
       ui: [
@@ -155,8 +155,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 400 / Regular',
-          color: '#000000',
-          opacity: '0.8'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.8'
         }
       ],
       ui: [
@@ -176,8 +176,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 12px',
           fontWeight: 'Font-weight ： 400 / Regular',
-          color: '#000000',
-          opacity: '0.6'
+          color: 'color: #000000',
+          opacity: 'opacity; 0.6'
         }
       ],
       ui: [
@@ -197,8 +197,8 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 400 / Regular',
-          color: '#000000',
-          opacity: '0.6'
+          color: 'color: #000000',
+          opacity: 'opacity: 0.6'
         }
       ],
       ui: [

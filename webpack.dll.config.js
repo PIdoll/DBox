@@ -8,13 +8,16 @@ const vendors = [];
 for (x in dependencies) {
 	vendors.push(x)
 }
-console.log(vendors);
 const library = '[name]_[chunkhash]'
 module.exports = {
 	entry: {
 		vendors: vendors
 	},
 	mode: 'production',
+	// node: {
+	// 	fs: 'empty',
+	// 	child_process: 'empty'
+	// },
 	output: {
 		filename: '[name].dll.js',
 		path: path.resolve(__dirname, 'dist/dll'),
