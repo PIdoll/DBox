@@ -2,7 +2,11 @@ body, html, ul, h1, p {
   margin: 0;
   padding: 0;
 }
-
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC" , "Hiragino Sans GB" , "Microsoft YaHei" , "Helvetica Neue" , Helvetica , Arial , sans-serif ;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
 ul {
   list-style: none;
 }
@@ -15,17 +19,26 @@ a {
 .home_page {
   width: 100%;
   height: 100vh;
+  font-family:PingFangSC-Medium;
   position: relative;
-  padding: 0 124px;
   box-sizing: border-box;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url('../assets/img/Illustration.png');
 }
+
 .warper {
 	width: 100%;
 	padding-bottom: 80px;
   box-sizing: border-box;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* position: relative; */
+  /* margin-top: 64px; */
 }
 .header-warper {
   position: fixed;
@@ -35,10 +48,10 @@ a {
   z-index:1;
   height: 64px;
   line-height:64px;
-  background-color: #ffffff;
+  background: #fff;
 }
 .header-warper-top {
-  max-width: 1200px;
+  max-width: 90%;
   height:64px;
   margin: 0 auto;
   display: flex;
@@ -56,13 +69,19 @@ a {
   font-size: 20px;
   color: rgba(0,0,0,1);
 }
+
+.noBg {
+  background: transparent;
+}
+
 .header-warper-navbar a{
   display: inline-block;
   width: 80px;
   font-size:14px;
   font-weight:400;
   text-align: center;
-  color:rgba(0,0,0,1);
+  background: #fff;
+  color:rgba(0,0,0,.6);
 }
 .header-warper-navbar a:hover {
   border-bottom: 3px solid #13b886;
@@ -77,9 +96,10 @@ a {
   color: #13b886;
 }
 .content_container {
-  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
-	margin-top: 136px;
+  margin-top: 120px;
+  overflow: hidden;
 }
 
 .content_container h1 {
@@ -121,8 +141,8 @@ a {
 }
 
 .design_source {
-	padding: 0 124px;
-	margin-top: 136px;
+  width: 90%;
+  margin: 120px auto 0 auto;
 	position: relative;
 }
 
@@ -148,7 +168,8 @@ a {
 
 .design_source_logo_container {
 	width: 282px;
-	height: 282px;
+  height: 282px;
+  position: relative;
 	text-align: center;
 	border: 1px solid #E2E2E2;
 }
@@ -176,28 +197,26 @@ a {
 
 .design_source_logo_container .operation {
 	display: flex;
-	justify-content: space-between;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 40px;
+  height: 39px;
 }
 
-.design_source_logo_container .operation button {
-	width: 50%;
-	outline: none;
+.design_source_logo_container .operation a {
+  width: 50%;
+  display: inline-block;
 	cursor: pointer;
 }
 
-.operation .download {
-	height: 40px;
+.design_source_logo_container .operation .download {
 	font-size: 14px;
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-	background-color: #fff;
 	color: rgba(0, 0, 0, .6);
 	border-top: 1px solid #E2E2E2;
 	font-family:PingFangSC-Regular;
 }
-.operation .getlink {
-	height: 41px;
+.design_source_logo_container .operation .getlink {
+	height: 40px;
 	border: none;
 	color: #FFF;
 	font-size: 14px;
@@ -208,10 +227,10 @@ a {
 
 .Happy_qrcode {
 	opacity: 0;
-	left: 266px;
+  left: 142px;
+  margin-top: 8px;
 	width: 141px;
 	height: 145px;
-	margin-top: 10px;
 	position: absolute;
 	box-sizing: border-box;
 	transition: opacity 0.4s;
@@ -278,13 +297,6 @@ a {
   margin-left: 8px;
 }
 
-.content {
-  width: 1200px;
-  margin: 0 auto;
-  /* position: relative; */
-  /* margin-top: 64px; */
-}
-
 .descript_container {
   position: absolute;
   top: 50%;
@@ -326,22 +338,19 @@ a {
   color: rgba(0, 0, 0, .6);
   font-family:PingFangSC-Medium;
 }
-
-.operation {
+.descript_container .operation {
   text-align: right;
 }
 
-.operation button {
-  width: 128px;
-  height: 40px;
-  outline:none;
-  border-radius: 3px;
-}
+
 
 .start_use {
+  display: inline-block;
   border: none;
   color: #fff;
+  line-height: 40px;
   margin-right: 20px;
+  padding:0 35px;
   background-color: #13B886;
 }
 
@@ -350,7 +359,10 @@ a {
 }
 
 .connect_us {
+  display: inline-block;
+  padding:0 35px;
   border-radius: 3px;
+  line-height: 40px;
   background-color: #fff;
   color: rgba(0, 0, 0, .6);
   border: 1px solid #E2E2E2;
@@ -359,12 +371,13 @@ a {
 .connect_us:hover {
   cursor: pointer;
   border: 1px solid #13B886;
+  color: #13B886;
 }
 
 .Happy {
-  right: -6px;
+  right: 0;
   opacity: 0;
-  margin-top: 10px;
+  margin-top: 8px;
   position: absolute;
   transition: opacity 0.4s;
   border: 1px solid #E2E2E2;
@@ -376,14 +389,15 @@ a {
 }
 
 .Happy img {
-  width: 100px;
-	height: 100px;
-	margin: 18px 18px 0;
+  box-sizing: border-box;
+  width: 126px;
+  padding: 4px 4px 0 ;
+  vertical-align: middle;
 }
-
 .scamQR {
+  display: block;
   font-size: 10px;
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   color: rgba(0, 0, 0, .6);
 }

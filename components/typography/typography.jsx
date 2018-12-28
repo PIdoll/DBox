@@ -20,7 +20,7 @@ export default [
       }
     ]
   },
-  {
+   {
     title: '标题文字H2',
     description: '建议用法：适用于空状态和功能介绍，顶级标题。',
     size: '30px',
@@ -29,8 +29,8 @@ export default [
         name: '基本属性',
         fontSize: 'Font-size : 30px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'color: #000000',
+        opacity: 'opacity: 0.8'
       }
     ],
     ui: [
@@ -50,8 +50,8 @@ export default [
         name: '基本属性',
         fontSize: 'Font-size : 24px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'color: #000000',
+        opacity: 'opacity: 0.8'
       }
     ],
     ui: [

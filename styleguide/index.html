@@ -10,12 +10,19 @@
 </head>
 <body>
   <div class="home_page">
-    <div class="header">
-      <div class="header_left">
-        <img src="./assets/img/logo.png" alt="Logo">
-        <span class="DBox">DBox</span>
-      </div>
-    </div>
+      <header class='header-warper noBg'>
+        <div class='header-warper-top'>
+          <div class='header-warper-logo'>
+              <img src='./assets/img/logo.png' alt='logo' />
+              <span>DBOX</span>
+          </div>
+          <nav class='header-warper-navbar'>
+            <a href='design.html'>设计原则</a>
+            <a href='doc.html'>组件文档</a>
+            <a href='resource.html'>设计资源</a>
+          </nav>
+        </div>
+      </header>
     <div class="content">
       <div class="descript_container">
         <div class="team">©2018 DBox Team</div>
@@ -23,11 +30,11 @@
         <div class="component_name2">SYSTEM</div>
         <div class="purpose">一套基于React实现的PC端UI组件库,致力于高效的创建简约美观的产品体验</div>
         <div class="operation">
-          <button class="start_use" onclick="handleStartUse()">开始使用</button>
-          <button class="connect_us" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">联系我们</button>
+          <a class="start_use" onclick="handleStartUse()">开始使用</a>
+          <a class="connect_us" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">联系我们</a>
           <div class="Happy" id="Happy">
             <img src="./assets/img/pingan.png" alt="快乐平安">
-            <div class="scamQR">使用快乐平安扫码加群</div>
+            <span class="scamQR">使用快乐平安扫码加群</span>
           </div>
         </div>
       </div>

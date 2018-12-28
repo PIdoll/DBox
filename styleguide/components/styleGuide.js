@@ -22,7 +22,7 @@ const styles = ({ color, font, base, light, link, mq }) => ({
     background: 'rgba(255,255,255,1)',
 	},
 	bar: {
-    maxWidth: '1200px',
+    width: '90%',
     margin: '0 auto',
 		display: 'flex',
 		alignItems: 'center',
@@ -38,13 +38,14 @@ const styles = ({ color, font, base, light, link, mq }) => ({
     },
   },
   mainCont: {
-    maxWidth: '1200px',
+    width: '90%',
     margin: '100px auto 0',
-    clear: 'both',
   },
   sidebar: {
     borderRight: '1px solid #eaeefb',
-    float: 'left',
+    position: 'fixed',
+    top: '0',
+    left: '5%',
     marginRight: '-240px',
     width: '240px',
     overflowY: 'scroll',

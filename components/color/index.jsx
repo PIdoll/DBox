@@ -1,12 +1,12 @@
 import React from 'react';
 import colorImg from '../../assets/images/Color.png';
-import './style';
 
 import PrimaryColor from './primaryColor';
 import FunctionColor from './functionColor';
 import NeutralColor from './neutralColor';
 import OtherColor from './otherColor';
 import ShadowColor from './shadowColor';
+import './style';
 
 class Color extends React.Component {
   render() {
