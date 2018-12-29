@@ -85,10 +85,10 @@ export default class Transfer extends React.Component {
         const newSourceSelectedKeys = [];
         const newTargetSelectedKeys = [];
         dataSource.forEach(({ key }) => {
-          if (sourceSelectedKeys.includes(key) && !targetKeys.includes(key)) {
+          if (sourceSelectedKeys.indexOf(key) >= 0 && !targetKeys.indexOf(key) >= 0) {
             newSourceSelectedKeys.push(key);
           }
-          if (targetSelectedKeys.includes(key) && targetKeys.includes(key)) {
+          if (targetSelectedKeys.indexOf(key) >= 0 && targetKeys.indexOf(key) >= 0) {
             newTargetSelectedKeys.push(key);
           }
         });
@@ -102,8 +102,8 @@ export default class Transfer extends React.Component {
     if (nextProps.selectedKeys) {
       const targetKeys = nextProps.targetKeys || [];
       this.setState({
-        sourceSelectedKeys: nextProps.selectedKeys.filter(key => !targetKeys.includes(key)),
-        targetSelectedKeys: nextProps.selectedKeys.filter(key => targetKeys.includes(key)),
+        sourceSelectedKeys: nextProps.selectedKeys.filter(key => !(targetKeys.indexOf(key) >= 0)),
+        targetSelectedKeys: nextProps.selectedKeys.filter(key => targetKeys.indexOf(key) >= 0),
       });
     }
   }
