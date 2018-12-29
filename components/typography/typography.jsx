@@ -16,7 +16,7 @@ export default [
       {
         name: 'UI属性',
         lineHeight: 'Line-height : 46px',
-        MarginTop: 'margin-top: 56px'
+        MarginTop: 'Margin-top: 56px'
       }
     ]
   },
