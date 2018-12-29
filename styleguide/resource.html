@@ -21,7 +21,7 @@
               <a href='index.html'>首页</a>
               <a href='design.html'>设计原则</a>
               <a href='doc.html'>组件文档</a>
-              <a href='resource.html'>设计资源</a>
+              <a id='resource' href='resource.html'>设计资源</a>
             </nav>
           </div>
         </header>
@@ -57,6 +57,11 @@ var Happy = document.getElementById('Happy_qrcode');
   }
   function handleHappyMouseOut() {
     Happy.classList.remove('show');
+  }
+  var url = window.location.pathname;
+  var designDOM = document.getElementById("resource");
+  if (url === '/resource.html') {
+    designDOM.style.cssText = "height: 61px; color: #13B866; border-bottom: 3px solid #13B866"
   }
   function handleStartUse() {
     location.pathname = 'index.html';

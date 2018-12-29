@@ -16,9 +16,9 @@
               <img src='./assets/img/logo.svg' alt='logo'/>
               <span>DBOX</span>
           </div>
-          <nav class='header-warper-navbar' id='navbar'>
+          <nav class='header-warper-navbar' >
             <a href='index.html'>首页</a>
-            <a href='design.html'>设计原则</a>
+            <a id='design' href='design.html'>设计原则</a>
             <a href='doc.html'>组件文档</a>
             <a href='resource.html'>设计资源</a>
           </nav>
@@ -56,6 +56,13 @@
         </div>
       </div>
     </div>
+    <script>
+      var url = window.location.pathname;
+      var designDOM = document.getElementById("design");
+      if (url === '/design.html') {
+        designDOM.style.cssText = "height: 61px; color: #13B866; border-bottom: 3px solid #13B866"
+      }
+    </script>
 </body>
 
 </html>
