@@ -1,6 +1,6 @@
 用户操作需要进一步确认，会在操作元素附近弹出浮层提示。
 
-#### **基本用法**
+##### **基本用法**
 最简单用法
 ```jsx
 import { Popconfirm } from 'dbox-ui';
@@ -35,7 +35,7 @@ class PopconfirmDemo extends React.Component {
 <PopconfirmDemo />
 ```
 
-#### **12个方向**
+##### **12个方向**
 弹出框位置有十二个方向。可通过设置 `placement` 属性控制。
 ```jsx
 import { Popconfirm,Button } from 'dbox-ui';
@@ -114,7 +114,7 @@ class PopconfirmDemo extends React.Component {
 
 ```
 
-#### **条件触发**
+##### **条件触发**
 可以判断是否需要弹出。
 ```jsx
 import { Popconfirm,Switch } from 'dbox-ui';
@@ -174,7 +174,7 @@ class PopconfirmDemo extends React.Component {
 }
 <PopconfirmDemo />
 ```
-#### **Popconfirm**
+##### **Popconfirm**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -188,7 +188,7 @@ class PopconfirmDemo extends React.Component {
 
 更多属性请参考 [Tooltip]。
 
-## 注意
+#### **注意**
 
 请确保 `Popconfirm` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
 

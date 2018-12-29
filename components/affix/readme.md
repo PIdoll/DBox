@@ -1,7 +1,7 @@
 
 将元素固定在特定区域，一般用于导航栏或反馈按钮。
 
-#### **固定在顶部**
+##### **固定在顶部**
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
@@ -22,7 +22,7 @@ class AffixView extends React.Component {
 }
 <AffixView />
 ```
-#### **固定在底部**
+##### **固定在底部**
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
@@ -36,7 +36,7 @@ const AffixView = () => {
 <AffixView />
 ```
 
-#### **固定在容器**
+##### **固定在容器**
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
@@ -57,7 +57,7 @@ class AffixView extends React.Component{
 }
 <AffixView />
 ```
-#### **API**
+##### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

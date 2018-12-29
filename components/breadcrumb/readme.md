@@ -1,7 +1,7 @@
 
 帮助用户查看当前所处的位置。
 
-#### **基本用法**
+##### **基本用法**
 ```jsx
 import { Breadcrumb } from 'dbox-ui';
 class BreadcrumbView extends React.Component {
@@ -18,7 +18,7 @@ class BreadcrumbView extends React.Component {
 <BreadcrumbView />
 ```
 
-#### **带图标的**
+##### **带图标的**
 ```jsx
 import { Breadcrumb, Icon } from 'dbox-ui';
 
@@ -43,7 +43,7 @@ class BreadcrumbView extends React.Component {
 <BreadcrumbView />
 ```
 
-#### **自定义分隔符**
+##### **自定义分隔符**
 ```jsx
 import { Breadcrumb } from 'dbox-ui';
 
@@ -62,13 +62,13 @@ class BreadcrumbView extends React.Component {
 
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | separator | 分隔符自定义 | string\ReactNode | '/' |
 
-#### **与browserHistory配合**
+##### **与browserHistory配合**
 ```html
 import { Link } from 'react-router';
 

@@ -13,7 +13,7 @@ const styles = () => ({
 	},
 	image: {
     width: '22px',
-    marginRight: '12px'
+    marginRight: '6px'
   },
   text: {
     fontSize: '20px',

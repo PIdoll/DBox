@@ -1,8 +1,7 @@
-#### **何时使用**
 
 页面局部处于等待异步数据或正在渲染过程时，可以适当的缓解用户因为等待页面渲染而带来的焦虑。
 
-#### **简单的加载中**
+##### **简单的加载中**
 
 ```jsx
 import { Spin } from 'dbox-ui';
@@ -10,7 +9,7 @@ import { Spin } from 'dbox-ui';
 <div style={{ marginTop: 51, marginLeft: 100 }}><Spin /></div>
 ```
 
-#### **三种不同大小的加载中**
+##### **三种不同大小的加载中**
 
 ```jsx
 import { Spin } from 'dbox-ui';
@@ -22,7 +21,7 @@ import { Spin } from 'dbox-ui';
 </div>
 ```
 
-#### **放在容器中**
+##### **放在容器中**
 
 ```jsx
 import { Spin } from 'dbox-ui';
@@ -51,7 +50,7 @@ class SpinView extends React.Component {
 <SpinView />
 ```
 
-#### **自定义描述文案**
+##### **自定义描述文案**
 
 ```jsx
 import { Spin, Alert } from 'dbox-ui';
@@ -65,7 +64,7 @@ import { Spin, Alert } from 'dbox-ui';
 </Spin>
 ```
 
-#### **卡片加载中**
+##### **卡片加载中**
 
 ```jsx
 import { Alert, Spin, Switch } from 'dbox-ui';
@@ -102,7 +101,7 @@ class SpinViewLoading extends React.Component {
 <SpinViewLoading />
 ```
 
-#### **自定义颜色**
+##### **自定义颜色**
 
 ```jsx
 const style = {
@@ -129,7 +128,7 @@ class SpinView extends React.Component {
 <SpinView />
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

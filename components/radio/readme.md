@@ -1,6 +1,3 @@
-
-#### **概述**
-
 在多个备选项中选中单个状态。
 
 ##### **基本样式展示**
@@ -277,9 +274,7 @@ const RadioButton = Radio.RadioButton;
 </div>
 ```
 
-## API
-
-### Radio
+#### **Radio**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- | --- |
@@ -287,7 +282,7 @@ const RadioButton = Radio.RadioButton;
 | defaultChecked | 初始是否选中 | boolean | false |
 | value | 根据 value 进行比较，判断是否选中 | any | 无 |
 
-### RadioGroup
+#### **RadioGroup**
 
 单选框组合，用于包裹一组 `Radio`。
 
@@ -302,9 +297,8 @@ const RadioButton = Radio.RadioButton;
 | onChange | 选项变化时的回调函数 | Function(e:Event) | 无 |
 | buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | 默认描边 \ `solid`填充 | 无 |
 
-## method
 
-### Radio method
+#### **Radio method**
 
 | 名称 | 描述 |
 | ---- | ----------- |

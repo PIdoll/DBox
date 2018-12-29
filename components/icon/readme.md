@@ -1,6 +1,6 @@
 有含义的矢量图形，每一个图标打倒一个敌人。
 
-#### **图标的命名规范**
+##### **图标的命名规范**
 
 我们为每个图标赋予了语义化的命名，命名规则如下:
 
@@ -8,7 +8,7 @@
 
 - 命名顺序：`[icon名]-[形状可选]-[描线与否]-[方向可选]`。
 
-#### **如何使用**
+##### **如何使用**
 
 使用 `<Icon />` 标签声明组件，指定图标对应的 type 属性，示例代码如下:
 
@@ -26,7 +26,7 @@
 #### **图标列表**
 
 
-#### **一. 方向性图标**
+##### **一. 方向性图标**
 
 ```jsx
 import {Icon} from 'dbox-ui';
@@ -35,18 +35,14 @@ class IconView extends React.Component {
   render() {
     return (
       icons1.map(function(val,index){
-<<<<<<< HEAD
-      return <li key={val}><Icon type={val}  /><span>{val}</span></li>})
-=======
       return <li key={val}><Icon type={val} /><span>{val}</span></li>})
->>>>>>> e25de5e3ce451b26df85375ba7fcc2aa29393c13
     )
   }
 }
 <IconView />
 ```
 
-#### **二. 提示建议性图标**
+##### **二. 提示建议性图标**
 
 ```jsx
 import {Icon} from 'dbox-ui';
@@ -58,18 +54,14 @@ class IconView extends React.Component {
   render() {
     return (
       icons2.map(function(val,index){
-<<<<<<< HEAD
-      return <li key={val}><Icon type={val}  /><span>{val}</span></li>})
-=======
       return <li key={val}><Icon type={val} /><span>{val}</span></li>})
->>>>>>> e25de5e3ce451b26df85375ba7fcc2aa29393c13
     )
   }
 }
 <IconView />
 ```
 
-#### **三. 网站通用图标**
+##### **三. 网站通用图标**
 
 ```jsx
 import {Icon} from 'dbox-ui';
@@ -108,7 +100,6 @@ li:hover span {
 li i,li span {
   display:block;
 }
-
 </style>
 
 ```jsx noeditor

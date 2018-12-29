@@ -1,7 +1,7 @@
 
 按照时间顺序进行排列信息时使用。
 
-#### **基本用法**
+##### **基本用法**
 基本的时间轴
 ```jsx
 import { Timeline } from 'dbox-ui';
@@ -13,7 +13,7 @@ import { Timeline } from 'dbox-ui';
 </Timeline>
 ```
 
-#### **进行中及排序**
+##### **进行中及排序**
 可通过设置 `pending` 属性展示幽灵节点。
 可通过设置`reverse` 属性用于控制节点排序，为 `false` 时按正序排列，为 `true` 时按倒序排列。
 ```jsx
@@ -48,7 +48,7 @@ class TimelineExample extends React.Component {
 
 ```
 
-#### **自定义图标**
+##### **自定义图标**
 可通过设置 `dot` 属性为`Icon`时添加自定义图标。
 ```jsx
 import { Timeline,Icon } from 'dbox-ui';
@@ -60,7 +60,7 @@ import { Timeline,Icon } from 'dbox-ui';
 </Timeline>
 ```
 
-#### **Timeline**
+##### **Timeline**
 时间轴。
 
 | 参数      | 说明                                     | 类型       | 默认值 |
@@ -69,7 +69,7 @@ import { Timeline,Icon } from 'dbox-ui';
 | pendingDot | 当最后一个幽灵节点存在时，指定其时间图点 | string/ReactNode | `<Icon type="loading" />` |
 | reverse | 节点排序 | boolean | false |
 
-#### **Timeline.Item**
+##### **Timeline.Item**
 
 时间轴的每一个节点。
 

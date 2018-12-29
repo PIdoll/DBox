@@ -21,7 +21,7 @@ dbox-ui是一套基于React实现的PC端UI组件库，致力于高效的创建�
 npm install dbox-ui --save
 ```
 
-## 示例
+#### **示例**
 引入组件:
 ```jsx static
 import { Button } from 'dbox-ui';

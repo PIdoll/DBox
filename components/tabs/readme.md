@@ -1,6 +1,6 @@
 
 
-#### **概述**
+##### **概述**
 
 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
 
@@ -10,7 +10,7 @@ DBox 依次提供了三级选项卡，分别用于不同的场景。
 - 标准线条式页签，用于容器内部的主功能切换，这是最常用的 Tabs。
 - RadioButton 可作为更次级的页签来使用。
 
-#### **基本用法和禁用**
+##### **基本用法和禁用**
 水平展示tab栏
 ```jsx
 import {Tabs} from 'dbox-ui';
@@ -31,7 +31,7 @@ class TabsView extends React.Component {
 <TabsView />
 
 ```
-#### **有图标的标签**
+##### **有图标的标签**
 在tab栏内添加图标
 ```jsx
 import {Tabs, Icon} from 'dbox-ui';
@@ -57,7 +57,7 @@ class TabsView extends React.Component {
 
 ```
 
-#### **tab页水平，垂直滑动**
+##### **tab页水平，垂直滑动**
 通过设置tabPosition为top和left来水平和垂直模式展示
 ```jsx
 import {Tabs, Radio} from 'dbox-ui';
@@ -106,7 +106,7 @@ class TabsView extends React.Component {
 <TabsView />
 ```
 
-#### **卡片式标签页容器**
+##### **卡片式标签页容器**
 设置type='card'来仿卡片式的tabs
 ```jsx
 import {Tabs} from 'dbox-ui';
@@ -137,7 +137,7 @@ class TabsView extends React.Component {
 <TabsView />
 ```
 
-#### **新增和关闭**
+##### **新增和关闭**
 动态添加和删除tabs分页
 ```jsx
 import {Tabs} from 'dbox-ui';
@@ -197,7 +197,7 @@ class TabsView extends React.Component {
 
 ```
 
-#### **卡片式容器**
+##### **卡片式容器**
 对容器设置背景使其更像是一个容器
 ```jsx
 import {Tabs} from 'dbox-ui';
@@ -227,7 +227,7 @@ class TabsView extends React.Component {
 <TabsView />
 ```
 
-#### **吸顶效果**
+##### **吸顶效果**
 页面滑动到一定距离固定tabs栏
 ```jsx
 import {Tabs} from 'dbox-ui';
@@ -270,7 +270,7 @@ class TabsView extends React.Component {
 
 
 
-#### **Tabs**
+##### **Tabs**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -289,7 +289,7 @@ class TabsView extends React.Component {
 | onPrevClick | prev 按钮被点击的回调 | Function | 无 |
 | onTabClick | tab 被点击的回调 | Function | 无 |
 
-#### **Tabs.TabPane**
+##### **Tabs.TabPane**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

@@ -1,7 +1,7 @@
 
 用于指导用户完成跨多个屏幕的流程和操作，或引导用户按照流程完成任务的导航。
 
-#### **基本用法**
+##### **基本用法**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -18,7 +18,7 @@ const StepsView = () => {
 <StepsView />
 ```
 
-#### **小尺寸**
+##### **小尺寸**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -35,7 +35,7 @@ const StepsView = () => {
 <StepsView />
 ```
 
-#### **点状步骤条**
+##### **点状步骤条**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -52,7 +52,7 @@ const StepsView = () => {
 <StepsView />
 ```
 
-#### **带popover点状步骤条**
+##### **带popover点状步骤条**
 ```jsx
 import { Steps, Popover } from 'dbox-ui';
 
@@ -76,7 +76,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-#### **可步骤切换**
+##### **可步骤切换**
 ```jsx
 import { Steps, Button } from 'dbox-ui';
 
@@ -140,7 +140,7 @@ class StepsView extends React.Component {
 
 ```
 
-#### **步骤运行错误**
+##### **步骤运行错误**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -160,7 +160,7 @@ class StepsView extends React.Component {
 
 ```
 
-#### **竖直方向步骤条**
+##### **竖直方向步骤条**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -179,7 +179,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-#### **竖直方向小尺寸步骤条**
+##### **竖直方向小尺寸步骤条**
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -198,7 +198,7 @@ class StepsView extends React.Component {
 <StepsView />
 ```
 
-#### **Steps**
+##### **Steps**
 
 整体步骤条
 
@@ -212,7 +212,7 @@ class StepsView extends React.Component {
 | status | 指定当前步骤的状态 | string | process |
 | initial | 起始序号，从0开始计数 | number| 0 |
 
-#### **Steps.Step**
+##### **Steps.Step**
 
 步骤条内的每一个步骤
 

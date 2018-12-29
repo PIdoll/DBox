@@ -1,8 +1,7 @@
-#### **何时使用**
-- 当需要向用户显示警告的信息时。
-- 非浮层的静态展现形式，始终展现，不会自动消失，用户可以选择点击关闭。
+当需要向用户显示警告的信息时。
+非浮层的静态展现形式，始终展现，不会自动消失，用户可以选择点击关闭。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -12,7 +11,7 @@ import { Alert } from 'dbox-ui';
   type='success' />
 ```
 
-#### **可关闭的警告提示**
+##### **可关闭的警告提示**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -35,7 +34,7 @@ onClose = (e) => {
 </div>
 ```
 
-#### **带有图标的警告提示**
+##### **带有图标的警告提示**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -84,7 +83,7 @@ import { Alert } from 'dbox-ui';
 </div>
 ```
 
-#### **四种样式**
+##### **四种样式**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -105,7 +104,7 @@ import { Alert } from 'dbox-ui';
  </div>
 ```
 
-#### **含有辅助性文字的文本**
+##### **含有辅助性文字的文本**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -142,7 +141,7 @@ import { Alert } from 'dbox-ui';
  </div>
 ```
 
-#### **自定义关闭**
+##### **自定义关闭**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -150,7 +149,7 @@ import { Alert } from 'dbox-ui';
 <Alert message='Info Text' type='info' closeText='Close Now' />
 ```
 
-#### **平滑的卸载**
+##### **平滑的卸载**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -189,7 +188,7 @@ class AlertView extends React.Component {
 
 ```
 
-#### **顶部公告**
+##### **顶部公告**
 
 ```jsx
 import { Alert } from 'dbox-ui';
@@ -202,7 +201,7 @@ import { Alert } from 'dbox-ui';
 </div>
 ```
 
-#### **API**
+##### **API**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | afterClose | 关闭动画结束后触发的回调函数 | () => void | - |

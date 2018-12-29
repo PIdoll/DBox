@@ -1,8 +1,7 @@
 
-#### **概述**
 当有大量结构化的数据需要展现，同时可对数据进行排序、搜索、分页、自定义操作等复杂行为时；
 
-#### **默认表格**
+##### **默认表格**
 设置columns,data来决定展示的内容
 ```jsx
 import {Table, Divider} from 'dbox-ui';
@@ -84,7 +83,7 @@ const data = [{
   }];
 <Table columns={columns} dataSource={data} />
 ```
-#### **三种尺寸**
+##### **三种尺寸**
 通过设置size设置为large,middle,small来控制表格的大小默认为large
 ```jsx
 import {Table, Divider} from 'dbox-ui';
@@ -170,7 +169,7 @@ const data = [{
 <Table columns={columns} dataSource={data} size='small' />
 </div>
 ```
-#### **边框表格**
+##### **边框表格**
 通过设置bordered来设置是否展示表格边框
 ```jsx
 import {Table, Divider} from 'dbox-ui';
@@ -252,7 +251,7 @@ const data = [{
   }];
 <Table columns={columns} dataSource={data} bordered />
 ```
-#### **带选择框**
+##### **带选择框**
 通过选择框来搜集选中单元格的信息
 ```jsx
 import {Table, Divider, Button, Checkbox} from 'dbox-ui';
@@ -380,7 +379,7 @@ class TableView extends React.Component {
 <TableView />
 ```
 
-#### **异步数据**
+##### **异步数据**
 通过ajax实时动态获取后台数据
 ```jsx
 import {Table} from 'dbox-ui';
@@ -465,7 +464,7 @@ class App extends React.Component {
 }
 <App />
 ```
-#### **内嵌表格**
+##### **内嵌表格**
 对于复杂表格的嵌套
 ```jsx
 import {Table, Divider, Badge} from 'dbox-ui';
@@ -578,7 +577,7 @@ const data = [{
 };
 <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />
 ```
-#### **行列合并**
+##### **行列合并**
 对于一些公共数据的合并
 ```jsx
 import {Table, Divider} from 'dbox-ui';

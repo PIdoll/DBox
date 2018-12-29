@@ -1,8 +1,6 @@
-#### **概述**
 提供导航的功能菜单。
 
-
-#### **顶部导航**
+##### **顶部导航**
 广泛适用的顶部导航。通过 theme 属性设置为 light dark 切换主题模式。
 
 ```jsx
@@ -48,7 +46,7 @@ class MenuView extends React.Component {
 <MenuView />
 ```
 
-#### **手风琴菜单**
+##### **手风琴菜单**
 每次只打开一个菜单，其他菜单自动收起，使菜单简洁聚焦，同时避免同时展开多个菜单，导致侧边导航文字溢出。
 ```jsx
 import {Menu, Icon} from 'dbox-ui';
@@ -105,7 +103,7 @@ class MenuView extends React.Component {
 ```
 
 
-#### **内嵌侧栏导航**
+##### **内嵌侧栏导航**
 垂直导航的基本使用，支持展开/收起。
 
 ```jsx
@@ -174,7 +172,7 @@ class MenuView extends React.Component {
 <MenuView />
 ```
 
-#### **动态侧栏导航**
+##### **动态侧栏导航**
 支持两种主题切换,垂直导航的基本使用，支持展开/收起。
 
 ```jsx
@@ -259,7 +257,7 @@ class MenuView extends React.Component {
 ```
 
 
-#### **Menu**
+##### **Menu**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -282,14 +280,14 @@ class MenuView extends React.Component {
 
 > More options in [rc-menu](https://github.com/react-component/menu#api)
 
-#### **Menu.Item**
+##### **Menu.Item**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | disabled | 是否禁用 | boolean | false |
 | key | item 的唯一标志 | string |  |
 
-#### **Menu.SubMenu**
+##### **Menu.SubMenu**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -299,14 +297,14 @@ class MenuView extends React.Component {
 | title | 子菜单项值 | string/ReactNode |  |
 | onTitleClick | 点击子菜单标题 | function({ key, domEvent }) |  |
 
-#### **Menu.ItemGroup**
+##### **Menu.ItemGroup**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | children | 分组的菜单项 | MenuItem\[] |  |
 | title | 分组标题 | string/ReactNode |  |
 
-#### **Menu.Divider**
+##### **Menu.Divider**
 
 菜单项分割线，只用在弹出菜单内。
 

@@ -1,4 +1,3 @@
-#### **概述**
 用来代表用户，支持图片、图标或字符展示。
 
 ##### **基本用法**
@@ -91,7 +90,7 @@ class AvatarView extends React.Component {
 <AvatarView />
 ```
 
-#### **Avatar**
+##### **Avatar**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

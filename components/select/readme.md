@@ -36,7 +36,7 @@ const {Option} = Select;
     </Select>
 </div>
 ```
-#### **搜索下拉框**
+##### **搜索下拉框**
 可通过设置`showSearch` 属性对选项进行搜索。
 ```jsx
 import { Select } from 'dbox-ui';
@@ -49,7 +49,7 @@ const {Option} = Select;
 </Select>
 ```
 
-#### **多选下拉框**
+##### **多选下拉框**
 可通过设置 `mode` 属性为 `multiple` 从已有条目中多选。设置 `mode` 属性为 `tags` 可随意输入内容。
 ```jsx
 import { Select } from 'dbox-ui';
@@ -71,7 +71,7 @@ const {Option} = Select;
 </div>
 ```
 
-#### **获得选项文本**
+##### **获得选项文本**
 
 ```jsx
 import { Select } from 'dbox-ui';
@@ -87,7 +87,7 @@ handleChange = (value) => {
 </Select>
 ```
 
-#### **搜索用户**
+##### **搜索用户**
 ```jsx
 import { Select,Spin } from 'dbox-ui';
 const {Option} = Select;
@@ -148,7 +148,7 @@ class SearchExample extends React.Component {
 ```
 
 
-#### **分组**
+##### **分组**
 使用 `Select.OptGroup` 进行选项分组。
 ```jsx
 import { Select } from 'dbox-ui';
@@ -168,7 +168,7 @@ const {Option, OptGroup} = Select;
     </OptGroup>
 </Select>
 ```
-#### **Select**
+##### **Select**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | allowClear | 支持清除 | boolean | false |
@@ -210,14 +210,14 @@ const {Option, OptGroup} = Select;
 | open | 是否展开下拉菜单 | boolean | - |
 | onDropdownVisibleChange | 展开下拉菜单的回调 | function(open) | - |
 
-#### **Select Methods**
+##### **Select Methods**
 
 | 名称 | 说明 |
 | --- | --- |
 | blur() | 取消焦点 |
 | focus() | 获取焦点 |
 
-#### **Option props**
+##### **Option props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -227,7 +227,7 @@ const {Option, OptGroup} = Select;
 | value | 默认根据此属性值进行筛选 | string\number | - |
 | className | Option 器类名 | string | - |
 
-#### **OptGroup props**
+##### **OptGroup props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

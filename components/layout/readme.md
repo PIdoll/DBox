@@ -1,8 +1,7 @@
-#### **概述**
 
--提供常用网页布局
+提供常用网页布局
 
-#### **基础布局**
+##### **基础布局**
 ```jsx
 import {Layout} from 'dbox-ui';
 const Header = Layout.Header;
@@ -36,7 +35,7 @@ const Sider = Layout.Sider;
 </div>
 ```
 
-#### **顶部导航**
+##### **顶部导航**
 顺应了从上至下的正常浏览顺序，方便浏览信息；适用于导航较少，页面篇幅较长的网站。
 
 ```jsx
@@ -98,7 +97,7 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **侧边导航-面包屑**
+##### **侧边导航-面包屑**
 搭配传统面包屑的侧边导航，提高导航可见性，方便页面之间切换，常用于中后台网站。
 
 ```jsx
@@ -245,7 +244,7 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **侧边导航-Tab页**
+##### **侧边导航-Tab页**
 用Tab页签代替面包屑的侧边导航，提高常用页面切换的灵活性。
 
 ```jsx
@@ -436,7 +435,7 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **API**
+##### **API**
 
 Layout
 

@@ -69,8 +69,9 @@ const styles = ({ color, font, base, light, link, mq }) => ({
       display: 'inline-block',
       color: 'rgba(0,0,0,.6)',
       width: '80px',
+      fontSize: '14px',
+      fontWeight: '400',
       textAlign: 'center',
-
 		},
 	'&:hover, &:active': {
       color: '#13B886',

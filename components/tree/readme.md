@@ -1,5 +1,7 @@
 
 可使用树组件用于表示层级关系的结构，具有收起展开等交互效果。
+
+
 ##### **基本使用**
 可选中，默认展开等功能。
 ```jsx
@@ -385,9 +387,8 @@ class TreeExample extends React.Component {
 }
 <TreeExample />
 ```
-## API
 
-### Tree props
+##### **Tree props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -417,7 +418,7 @@ class TreeExample extends React.Component {
 | onRightClick | 响应右键点击 | function({event, node}) | - |
 | onSelect | 点击树节点触发 | function(selectedKeys, e:{selected: bool, selectedNodes, node, event}) | - |
 
-### TreeNode props
+#### **TreeNode props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

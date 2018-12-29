@@ -1,6 +1,6 @@
 级联选择器，用于在同一浮层中从一组关联的数据中进行选择。
 
-#### **基本使用**
+##### **基本使用**
 可通过设置 `options` 属性来展示数据,其中 `disabled` 字段可设置是否禁用。
 
 ```jsx
@@ -49,7 +49,7 @@ function onChange(value) {
 ```
 
 
-#### **默认值**
+##### **默认值**
 可通过设置 `defaultValue` 属性用于展示默认值。
 ```jsx
 import { Cascader } from 'dbox-ui';
@@ -95,7 +95,7 @@ function onChange(value) {
  <Cascader defaultValue={['浙江', '杭州', '西湖']} options={basicDatas} onChange={onChange} />
 ```
 
-#### **移入展开**
+##### **移入展开**
 可通过设置 `expandTrigger` 属性为 `hover` 来移入展开下级菜单，点击完成选择。
 ```jsx
 import { Cascader } from 'dbox-ui';
@@ -150,7 +150,7 @@ function onChange(value) {
 />
 ```
 
-#### **尺寸**
+##### **尺寸**
 可通过设置 `size` 属性控制级联框的尺寸，默认为中。
 ```jsx
 import { Cascader } from 'dbox-ui';
@@ -198,7 +198,7 @@ function onChange(value) {
     <Cascader size='large' options={basicDatas} onChange={onChange} />
 </div>
 ```
-#### **动态加载选项**
+##### **动态加载选项**
 可通过设置 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
 ```jsx
 import { Cascader } from 'dbox-ui';
@@ -264,7 +264,7 @@ class CascaderExample extends React.Component {
 <CascaderExample />
 ```
 
-#### **搜索**
+##### **搜索**
 可设置 `showSearch` 属性实现级联框中内容的搜索。
 ```jsx
 import { Cascader } from 'dbox-ui';
@@ -308,7 +308,7 @@ function filter(inputValue, path) {
     showSearch={{ filter }}
 />
 ```
-#### **Cascader**
+##### **Cascader**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -344,7 +344,7 @@ function filter(inputValue, path) {
 | render | 用于渲染 filter 后的选项 | `function(inputValue, path): ReactNode` |  |
 | sort | 用于排序 filter 后的选项 | `function(a, b, inputValue)` |  |
 
-#### **方法**
+##### **方法**
 
 | 名称 | 描述 |
 | --- | --- |

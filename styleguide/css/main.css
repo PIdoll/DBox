@@ -63,7 +63,7 @@ a {
   vertical-align: middle;
   position: relative;
   top: -3px;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 .header-warper-logo span {
   font-size: 20px;
@@ -84,9 +84,7 @@ a {
   color:rgba(0,0,0,.6);
 }
 .header-warper-navbar a:hover {
-  border-bottom: 3px solid #13b886;
   cursor: pointer;
-  height: 61px;
   color: #13b886;
 }
 .active {

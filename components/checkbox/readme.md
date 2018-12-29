@@ -1,5 +1,4 @@
 
-#### **概述**
 在一组可选项中进行多项选择时；
 
 ##### **通用多选框**
@@ -114,7 +113,7 @@ import {Checkbox} from 'dbox-ui';
 ```
 
 
-### Checkbox
+##### **Checkbox**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -126,7 +125,7 @@ import {Checkbox} from 'dbox-ui';
 | onChange | 变化时回调函数 | Function(e:Event) | - |
 | onClick | 点击时回调函数 | Function(e:Event) | - |
 
-### CheckboxGroup
+#### **CheckboxGroup**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -135,9 +134,8 @@ import {Checkbox} from 'dbox-ui';
 | value | 指定选中的选项 | string\[] | \[] |
 | disabled | 整组失效 | boolean | false |
 | onChange | 变化时回调函数 | Function(checkedValue) | - |
-## 方法
 
-### Checkbox
+##### **方法**
 
 | 名称 | 描述 |
 | --- | --- |

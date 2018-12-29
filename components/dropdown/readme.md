@@ -1,7 +1,4 @@
 
-
-##### **概述**
-
 使用下拉菜单从一组选项中选择一个或多个选项，下拉菜单中的选项一般为5-15个
 
 ##### **基本用法**
@@ -289,7 +286,7 @@ function handleMenu1Click(e) {
 
 
 
-#### **API**
+##### **API**
 
 
 | 参数        | 说明        | 类型        | 默认值       |
@@ -301,7 +298,7 @@ function handleMenu1Click(e) {
 | visible     | 菜单是否显示 | Bool   | 无           |
 | onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
 
-#### **DropdownButton**
+##### **DropdownButton**
 
 | 参数        | 说明        | 类型        | 默认值       |
 |------------|------------|-------------|-------------|

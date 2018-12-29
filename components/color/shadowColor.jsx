@@ -12,7 +12,7 @@ class ShadowColor extends React.Component {
     return (
       <React.Fragment>
         <h2 className='idoll-color-h3'>阴影（Shadows）</h2>
-        <p className='idoll-color-p'>DBox 的影规范了 3 种场景，Small、Large、Button，根据实际情况分别取用，基本能满足所有场景。为减少样式冗余，没有按方向细分。</p>
+        <p className='idoll-color-p'>DBox 的投影规范了 3 种场景，Small、Large、Button，根据实际情况分别取用，基本能满足所有场景。为减少样式冗余，没有按方向细分。</p>
         <Row gutter={16}>
           {shadowColor.map((item, index) => {
             return (

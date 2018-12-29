@@ -1,4 +1,3 @@
-#### **概述**
 对复杂区域进行分组和隐藏，保持页面的整洁性。
 
 ##### **折叠面板**
@@ -125,7 +124,7 @@ function callback(key) {
 ```
 
 
-#### **Collapse**
+##### **Collapse**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -136,7 +135,7 @@ function callback(key) {
 | defaultActiveKey | 初始化选中面板的key | string | 无 |
 | onChange | 切换面板的回调 | Function | 无 |
 
-#### **Collapse.Panel**
+##### **Collapse.Panel**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

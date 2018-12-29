@@ -1,7 +1,6 @@
-#### **概述**
 上传是将信息（网页、文字、图片、视频等）通过网页或者上传工具发布到远程服务器上的过程。
 
-#### **基础上传**
+##### **基础上传**
 基本的上传操作
 ```jsx
 import {Upload, Message, Button} from 'dbox-ui';
@@ -45,7 +44,7 @@ const props1 = {
 
 ```
 
-#### **图片上传**
+##### **图片上传**
 仅限图片上传操作
 ```jsx
 import {Upload, Message, Button} from 'components';
@@ -102,7 +101,7 @@ const props1 = {
 </Upload>
 ```
 
-#### **拖拽上传**
+##### **拖拽上传**
 将文件拖拽到制定区域或者点击制定区域上传
 ```jsx
 import {Upload, Message, Icon} from 'dbox-ui';
@@ -158,7 +157,7 @@ const props2 = {
 </Dragger>
 ```
 
-#### **照片墙上传**
+##### **照片墙上传**
 将图片上传后展示为照片墙的上传模式
 ```jsx
 import {Upload, Message, Modal, Icon} from 'dbox-ui';
@@ -233,7 +232,7 @@ class PicturesWall extends React.Component {
 <PicturesWall />
 ```
 
-#### **图片列表上传**
+##### **图片列表上传**
 将上传后的图片展示为列表样式的上传模式
 ```jsx
 import {Upload, Message, Icon, Button} from 'dbox-ui';
@@ -284,7 +283,7 @@ const props3 = {
 </Upload>
 ```
 
-#### **手动上传**
+##### **手动上传**
 将上传操作拆分为选中文件和手动上传操作，确保上传文件的准确性
 ```jsx
 import reqwest from 'reqwest';
@@ -392,7 +391,7 @@ class Demo extends React.Component {
 
 
 
-#### **upload**
+##### **upload**
 
 | 参数   |   说明   |     类型        | 默认值 |
 |------------|------------| ----------- |-------|
@@ -413,7 +412,7 @@ class Demo extends React.Component {
 | supportServerRender | 服务端渲染时需要打开这个                           | Boolean | false    |
 | disabled | 是否禁用                           | Boolean | false    |
 
-#### **onChange**
+##### **onChange**
 上传中、完成、失败都会调用这个函数。
 
 文件状态改变的回调，返回为：
@@ -440,11 +439,11 @@ class Demo extends React.Component {
 2. `fileList` 当前的文件列表。
 3. `event` 上传中的服务端响应内容，包含了上传进度等信息，高级浏览器支持。
 
-#### **显示下载链接**
+##### **显示下载链接**
 
 请使用 fileList 属性设置数组项的 url 属性进行展示控制。
 
-#### **IE note**
+##### **IE note**
 
 - [https://github.com/react-component/upload#ie89-note](https://github.com/react-component/upload#ie89-note)
 

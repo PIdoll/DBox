@@ -1,7 +1,7 @@
-#### **何时使用**
+
 用于快速定位页面内容。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
 import { Anchor } from 'dbox-ui';
@@ -22,9 +22,7 @@ const { Link } = Anchor;
 </div>
 ```
 
-#### **API**
-
-#### **Anchor Props**
+##### **Anchor Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -34,7 +32,7 @@ const { Link } = Anchor;
 | offsetTop | 距离窗口顶部达到指定偏移量后触发 | number | - |
 | onClick | click 事件的 handler | Function(e: Event, link: Object) | - |
 
-#### **Link Props**
+##### **Link Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

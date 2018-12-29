@@ -1,7 +1,6 @@
-#### **何时使用**
 当用户需要在数值区间/自定义区间进行选择时，可为连续或离散值
 
-#### **基本使用**
+##### **基本使用**
 ```jsx
 import { Slider, Switch } from 'dbox-ui';
 
@@ -31,7 +30,7 @@ class SliderView extends React.Component {
 <SliderView />
 ```
 
-#### **带输入框的滑块**
+##### **带输入框的滑块**
 ```jsx
 import { Slider, InputNumber, Row, Col } from 'dbox-ui';
 class SliderView extends React.Component {
@@ -75,7 +74,7 @@ class SliderView extends React.Component {
 
 ```
 
-#### **自定义提示**
+##### **自定义提示**
 ```jsx
 import { Slider, Switch } from 'dbox-ui';
 
@@ -90,7 +89,7 @@ const SliderView = () => {
 <SliderView />
 ```
 
-#### **Slider**
+##### **Slider**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | defaultValue | 支持初始取值。当range为false时，使用number，否则用[number, number] | number\number[] | 0 or 0, 0 |
@@ -104,7 +103,7 @@ const SliderView = () => {
 | value | 设置当前取值。当range为false时，使用number，否则使用[number, number] | number\number[] |  |
 | onChange | 当slider的值发生改变时，会触发onChange事件，并把改变的值作为参数传入 | Function(value) | NOOP |
 
-#### **方法**
+##### **方法**
 | 名称 | 描述 |
 | --- | --- |
 | blur() | 移除焦点 |

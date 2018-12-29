@@ -1,7 +1,7 @@
 
 用于可配置校验规则的数据提交，输入数据包含输入框、单选框、多选框、日期选择框、下拉框等元素。
 
-#### **登录框**
+##### **登录框**
 ```jsx
 import { Form,Input,Icon,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -64,7 +64,7 @@ const WrappedLoginForm = Form.create()(LoginForm);
 <WrappedLoginForm />
 ```
 
-#### **注册**
+##### **注册**
 ```jsx
 import { Form,Select,Input,Cascader,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -275,7 +275,7 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 <WrappedRegistrationForm />
 ```
 
-#### **高级搜索**
+##### **高级搜索**
 ```jsx
 import { Form,Row,Col,DatePicker,Input,Cascader,Button,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -537,7 +537,7 @@ const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 
 ```
 
-#### **紧凑型表单**
+##### **紧凑型表单**
 ```jsx
 import { Form,Row,Col,Select,DatePicker,Input,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -706,7 +706,7 @@ const WrappedCompactSearchForm = Form.create()(CompactSearchForm);
 
 ```
 
-#### **弹出层中新建表单**
+##### **弹出层中新建表单**
 ```jsx
 import { Form,Row,Col,Button,Modal,Input,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -837,7 +837,7 @@ class ModalNewForm extends React.Component {
 <ModalNewForm />
 ```
 
-#### **表单联动**
+##### **表单联动**
 ```jsx
 import { Form,Row,Col,Input,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -910,7 +910,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 <WrappedFormDemo />
 ```
 
-#### **自定义校验**
+##### **自定义校验**
 ```jsx
 import { Form,Row,Col,Input,DatePicker,TimePicker,Cascader,InputNumber,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -1061,7 +1061,7 @@ class FormDemo extends React.Component {
 <FormDemo />
 ```
 
-#### **动态校验规则**
+##### **动态校验规则**
 ```jsx
 import { Form,Row,Col,Select,Input,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -1146,7 +1146,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 <WrappedFormDemo />
 ```
 
-#### **校验其他组件**
+##### **校验其他组件**
 ```jsx
 import { Form,Row,Col,Select,Radio,InputNumber,Switch,Slider,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -1278,7 +1278,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 ```
 
 
-#### **Form**
+##### **Form**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -1286,7 +1286,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 | hideRequiredMark | 隐藏所有表单项的必选标记 | Boolean | true |
 | onSubmit | 数据验证成功后回调事件 | Function(e:Event) |  |
 
-#### **Form.create(options)**
+##### **Form.create(options)**
 
 使用方式如下：
 
@@ -1334,7 +1334,7 @@ this.form // => The instance of CustomizedForm
 | validateFields | 校验并获取一组输入域的值与 Error，若 fieldNames 参数为空，则校验全部组件 | (\[fieldNames: string\[]], [options: object], callback: Function(errors, values)) => void |
 | validateFieldsAndScroll | 与 `validateFields` 相似，但校验完后，如果校验不通过的菜单域不在可见范围内，则自动滚动进可见范围 | 参考 `validateFields` |
 
-#### **validateFields/validateFieldsAndScroll**
+##### **validateFields/validateFieldsAndScroll**
 
 ```jsx static
 const { form: { validateFields } } = this.props;
@@ -1356,7 +1356,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 | options.force | 对已经校验过的表单域，在 validateTrigger 再次被触发时是否再次校验 | boolean | false |
 | options.scroll | 定义 validateFieldsAndScroll 的滚动行为 | Object | {} |
 
-#### ** validateFields 的 callback 参数示例**
+##### ** validateFields 的 callback 参数示例**
 
 - `errors`:
 
@@ -1390,11 +1390,11 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
    }
    ```
 
-#### **  Form.createFormField **
+##### **  Form.createFormField **
 
 用于标记 `mapPropsToFields` 返回的表单域数据。
 
-#### ** this.props.form.getFieldDecorator(id, options) **
+##### ** this.props.form.getFieldDecorator(id, options) **
 
 经过 `getFieldDecorator` 包装的控件，表单控件会自动添加 `value`（或 `valuePropName` 指定的其他属性） `onChange`（或 `trigger` 指定的其他属性），数据同步将被 Form 接管，这会导致以下结果：
 
@@ -1402,12 +1402,12 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 2. 你不能用控件的 `value` `defaultValue` 等属性来设置表单域的值，默认值可以用 `getFieldDecorator` 里的 `initialValue`。
 3. 你不应该用 `setState`，可以使用 `this.props.form.setFieldsValue` 来动态改变表单值。
 
-#### ** 特别注意 **
+##### ** 特别注意 **
 
 1. `getFieldDecorator` 不能用于装饰纯函数组件。
 2. 如果使用的是 `react@<15.3.0`，则 `getFieldDecorator` 调用不能位于纯函数组件中: <https://github.com/facebook/react/pull/6534>
 
-#### ** getFieldDecorator(id, options) 参数 **
+##### ** getFieldDecorator(id, options) 参数 **
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -1423,7 +1423,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 
 更多参数请查看 [rc-form option](https://github.com/react-component/form#option-object)。
 
-#### ** Form.Item  **
+##### ** Form.Item  **
 
 注意：
 
@@ -1443,7 +1443,7 @@ validateFields(['field1', 'field2'], options, (errors, values) => {
 | validateStatus | 校验状态，如不设置，则会根据校验规则自动生成，可选：'success' 'warning' 'error' 'validating' | string |  |
 | wrapperCol | 需要为输入控件设置布局样式时，使用该属性，用法同 labelCol | [object] |  |
 
-#### ** 校验规则 **
+##### **校验规则**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
