@@ -149,10 +149,12 @@ const ProgressView = () => {
 <style>.idoll-progress{margin:0 10px 10px 0}</style>
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import ProgressView from '../prevPage/progress';
+import
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <ProgressView />
 </div>
 ```
 

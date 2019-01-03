@@ -90,9 +90,10 @@ import {Switch} from 'dbox-ui';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import SwitchView from '../prevPage/switch';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <SwitchView />
 </div>
 ```

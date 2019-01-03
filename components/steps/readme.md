@@ -78,7 +78,7 @@ class StepsView extends React.Component {
 
 ##### **可步骤切换**
 ```jsx
-import { Steps, Button } from 'dbox-ui';
+import { Steps, Button, Message } from 'dbox-ui';
 
 const Step = Steps.Step;
 const steps = [
@@ -225,9 +225,10 @@ class StepsView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import StepsView from '../prevPage/steps';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <StepsView />
 </div>
 ```

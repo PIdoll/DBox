@@ -117,9 +117,10 @@ const InputNumberView = () => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import InputNumberView from '../prevPage/inputNumber';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <InputNumberView />
 </div>
 ```

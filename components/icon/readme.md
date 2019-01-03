@@ -100,9 +100,10 @@ class IconView extends React.Component {
 </style>
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import IconView from '../prevPage/icon';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <IconView />
 </div>
 ```

@@ -194,9 +194,10 @@ class PopconfirmDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import PopconfirmView from '../prevPage/popConfirm';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <PopconfirmView />
 </div>
 ```

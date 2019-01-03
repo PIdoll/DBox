@@ -62,9 +62,10 @@ import moment from 'moment';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TimePickerView from '../prevPage/timePicker';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TimePickerView />
 </div>
 ```

@@ -40,9 +40,10 @@ const { Link } = Anchor;
 | title | 文字内容 | string , ReactNode | - |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import AnchorView from '../prevPage/anchor';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AnchorView />
 </div>
 ```

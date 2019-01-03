@@ -216,9 +216,10 @@ import { Alert } from 'dbox-ui';
 | onClose | 关闭时触发的回调函数 | (e: MouseEvent) => void | 无 |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import AlertView from '../prevPage/alert';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AlertView />
 </div>
 ```

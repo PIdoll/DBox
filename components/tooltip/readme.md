@@ -108,9 +108,10 @@ const text = <span>提示文字</span>;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TooltipView from '../prevPage/tooltip';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TooltipView />
 </div>
 ```

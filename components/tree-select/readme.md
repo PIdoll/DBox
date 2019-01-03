@@ -282,9 +282,10 @@ class TreeSelectDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TreeSelectView from '../prevPage/treeSelect';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TreeSelectView />
 </div>
 ```

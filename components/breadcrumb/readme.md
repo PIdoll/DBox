@@ -92,9 +92,10 @@ return <Breadcrumb itemRender={itemRender} routes={routes}/>;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import BreadcrumbView from '../prevPage/breadcrumb';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <BreadcrumbView />
 </div>
 ```

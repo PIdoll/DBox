@@ -337,11 +337,10 @@ a {
   text-align: right;
 }
 
-
-
 .start_use {
   display: inline-block;
   border: none;
+  border-radius: 3px;
   color: #fff;
   line-height: 40px;
   margin-right: 20px;

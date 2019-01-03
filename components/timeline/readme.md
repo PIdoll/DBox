@@ -80,9 +80,10 @@ import { Timeline,Icon } from 'dbox-ui';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TimelineView from '../prevPage/timeline';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TimelineView />
 </div>
 ```

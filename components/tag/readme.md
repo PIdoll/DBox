@@ -89,9 +89,10 @@ import {TagGroup} from 'dbox-ui/tag';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TagView from '../prevPage/tag';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TagView />
 </div>
 ```

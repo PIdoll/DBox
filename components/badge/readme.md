@@ -189,3 +189,11 @@ class BadgeView extends React.Component {
 | offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   | - |
 
 
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import BadgeView from '../prevPage/badge';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <BadgeView />
+</div>
+```

@@ -115,11 +115,11 @@ class TransferView extends React.Component {
 return <Transfer rowKey={record => record.uid} />;
 ```
 
-
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TransferView from '../prevPage/transfer';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TransferView />
 </div>
 ```

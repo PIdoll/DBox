@@ -309,9 +309,10 @@ const RadioButton = Radio.RadioButton;
 <style>.idoll-steps{margin-bottom: 10px}</style>
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import RadioView from '../prevPage/radio';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <RadioView />
 </div>
 ```

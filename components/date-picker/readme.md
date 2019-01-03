@@ -307,9 +307,10 @@ disabledRangeTime = (_, type) => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import DataPickerView from '../prevPage/dataPicker';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <DataPickerView />
 </div>
 ```

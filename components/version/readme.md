@@ -10,3 +10,10 @@ import { Version } from 'dbox-ui';
 <Version />
 
 ```
+```jsx noeditor
+import {PrevPage, BackTop} from 'dbox-ui';
+<div>
+   <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <PrevPage />
+</div>
+```

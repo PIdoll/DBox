@@ -299,11 +299,11 @@ class TabsView extends React.Component {
 | tab | 选项卡头显示文字 | string / ReactNode | 无 |
 
 
-
 ```jsx noeditor
-import {PrevPage, BackTop} from 'dbox-ui';
+import {BackTop} from 'dbox-ui';
+import TabsView from '../prevPage/tabs';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TabsView />
 </div>
 ```
