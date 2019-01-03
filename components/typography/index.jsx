@@ -4,6 +4,10 @@ import './style';
 import typographyImg from '../../assets/images/Font.png';
 import typographyData from './typography';
 
+/**
+ *
+ * @visibleName 字体
+ */
 class Typography extends React.Component {
   handelRender(item) {
     const children = [];

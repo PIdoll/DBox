@@ -5,8 +5,17 @@ import Styled from 'rsg-components/Styled';
 import Data from '../data/componentsName';
 
 function SectionHeadingRenderer({ classes, children, }) {
-	const sectionNameClasses = cx(classes.sectionName);
-
+  const sectionNameClasses = cx(classes.sectionName);
+  const sectionNames = ['Install', 'GetStarted', 'Version', 'Color', 'Typography'];
+  for (const item of sectionNames.values()) {
+		if (children === item) {
+			return (
+        <div className={classes.wrapper}><h3 className={sectionNameClasses}>{Data[children]}
+				  </h3>
+		    </div>
+			);
+		}
+  }
 	return (<div className={classes.wrapper}><h3 className={sectionNameClasses}>{children} {Data[children]}
 				</h3>
 		</div>

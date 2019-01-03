@@ -2,6 +2,9 @@ import React from 'react';
 import Timeline from '../timeline';
 import './style';
 
+/**
+ * @visibleName 版本更新
+ */
 class Version extends React.Component {
   constructor (props) {
     super(props);

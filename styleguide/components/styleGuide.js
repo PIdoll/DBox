@@ -5,7 +5,7 @@ import Styled from 'rsg-components/Styled';
 
 const xsmall = '@media (max-width: 600px)';
 
-const styles = ({ color, font, base, light, link, mq }) => ({
+const styles = ({ mq }) => ({
 	root: {
 		minHeight: '100vh',
     backgroundColor: '#fff',
@@ -73,26 +73,25 @@ const styles = ({ color, font, base, light, link, mq }) => ({
       fontWeight: '400',
       textAlign: 'center',
 		},
-	'&:hover, &:active': {
-      color: '#13B886',
-      textAlign: 'center',
-      width: '80px',
-      cursor: 'pointer',
-      height: '61px',
-      display: 'inline-block',
-      borderBottom: '3px solid #13B886',
-		},
-  },
+    '&:hover, &:active': {
+        color: '#13B886',
+        textAlign: 'center',
+        width: '80px',
+        cursor: 'pointer',
+        height: '64px',
+        display: 'inline-block',
+      },
+    },
 });
 
 export function StyleGuideRenderer({ classes, title, children, toc }) {
-const active = {
-  color: '#13B886',
-  cursor: 'pointer',
-  height: '61px',
-  display: 'inline-block',
-  borderBottom: '3px solid #13B886',
-}
+  const active = {
+    color: '#13B886',
+    cursor: 'pointer',
+    height: '64px',
+    display: 'inline-block',
+    borderBottom: '3px solid #13B886',
+  }
 	return (<div className={classes.root}><header className={classes.header}><div className={classes.bar}><Logo>{title}</Logo>
   <nav className={classes.nav}><a className={classes.headerLink} href='index.html'>首页</a><a className={classes.headerLink} href='design.html'>设计原则</a><a className={classes.headerLink} href='doc.html' style={active}>组件文档</a><a className={classes.headerLink} href='resource.html'>设计资源</a></nav></div></header><div className={classes.mainCont}><aside className={classes.sidebar}>{toc}</aside><main className={classes.content}><div className={classes.innerCont}>{children}</div></main></div>
 </div>

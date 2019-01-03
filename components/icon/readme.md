@@ -1,6 +1,3 @@
-有含义的矢量图形，每一个图标打倒一个敌人。
-
-##### **图标的命名规范**
 
 我们为每个图标赋予了语义化的命名，命名规则如下:
 
@@ -35,7 +32,7 @@ class IconView extends React.Component {
   render() {
     return (
       icons1.map(function(val,index){
-      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
+      return <li key={val} className='iconList'><Icon type={val} /><span>{val}</span></li>})
     )
   }
 }
@@ -54,7 +51,7 @@ class IconView extends React.Component {
   render() {
     return (
       icons2.map(function(val,index){
-      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
+      return <li className='iconList' key={val}><Icon type={val} /><span>{val}</span></li>})
     )
   }
 }
@@ -71,7 +68,7 @@ class IconView extends React.Component {
   render() {
     return (
       icons4.map(function(val,index){
-      return <li key={val}><Icon type={val} /><span>{val}</span></li>})
+      return <li className='iconList' key={val}><Icon type={val} /><span>{val}</span></li>})
     )
   }
 }
@@ -79,7 +76,7 @@ class IconView extends React.Component {
 ```
 
 <style>
-li {
+.iconList {
   list-style:none;
   float:left;
   width: 25%;
@@ -88,16 +85,16 @@ li {
   text-align:center;
   transition: all .2s;
 }
-li:hover i {
+.iconList:hover i {
   color: #13B886;
   transition: all .2s;
   font-size:32px
 }
-li:hover span {
+.iconList:hover span {
   font-size:14px;
   transition: all .2s;
 }
-li i,li span {
+.iconList i,.iconList span {
   display:block;
 }
 </style>

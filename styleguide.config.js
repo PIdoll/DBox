@@ -1,6 +1,5 @@
 const path = require('path');
 const { version } = require('./package.json')
-const { camelCase, upperFirst } = require('lodash');
 const webpackConf = require('./webpack.common.js');
 
 const TITLE = `Dbox UI ${version}`;
@@ -12,10 +11,10 @@ module.exports = {
   exampleMode: 'collapse',
   usageMode: 'hide',
 	styleguideComponents: {
-  //  TabButtonRenderer: path.join(__dirname, 'styleguide/components/tabButton'),
+    TabButtonRenderer: path.join(__dirname, 'styleguide/components/tabButton'),
     PathlineRenderer: path.join(__dirname, 'styleguide/components/pathline'),
     LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
-    // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/Playground'),
+    PlaygroundRenderer: path.join(__dirname, 'styleguide/components/playground'),
     ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
     LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
     SectionHeadingRenderer: path.join(__dirname, 'styleguide/components/sectionHeading'),
@@ -37,21 +36,14 @@ module.exports = {
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
-        '& > div:nth-child(1)': {
-          flexGrow: '2',
-        },
-        '& button ': {
+        '& button': {
           display: 'block',
           width: '100%',
-          padding: '10px 20px ',
+          lineHeight: '40px',
           color: '#455a64',
           cursor: 'pointer',
-          float: 'right',
           textAlign: 'center',
         },
-         '& > div:nth-child(2)': {
-          display: 'none',
-        }
       },
     },
     Table: {
@@ -89,30 +81,31 @@ module.exports = {
     SectionHeading: {
       sectionName: {
         paddingBottom: '8px',
-        fontSize: '40px'
+        fontSize: '40px',
+        color: '#000',
       }
     },
-		Markdown: {
-			pre: {
-        border: 0,
-        padding: '0 10px',
-				background: 'none',
-			},
-			code: {
-				fontSize: 24,
-			},
-		},
-  },
-  getComponentPathLine: (componentPath) => {
-    const dirname = path.dirname(componentPath, '.jsx')
-    const name = dirname.split('/').slice(-1)[0]
-    const componentName = upperFirst(camelCase(name))
-    return `import {${componentName}} from Dbox`
   },
   sections: [
     {
-      name: 'Get Started',
-      content: 'components/getStarted.md'
+      name: 'Install',
+      content: 'components/getStarted.md',
+    },
+    {
+      name: 'GetStarted',
+      content: 'components/getStarted.md',
+    },
+    {
+      name: 'Version',
+      content: 'components/version/readme.md',
+    },
+    {
+      name: 'Color',
+      content: 'components/color/readme.md',
+    },
+    {
+      name: 'Typography',
+      content: 'components/typography/readme.md',
     },
     {
       name: 'Components',
@@ -121,11 +114,9 @@ module.exports = {
           name: 'General',
           components: () => ([
             path.resolve(__dirname, './components/button/index.jsx'),
-            path.resolve(__dirname, './components/color/index.jsx'),
-            path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/index.jsx'),
-            path.resolve(__dirname, './components/typography/index.jsx'),
           ])
         },
         {

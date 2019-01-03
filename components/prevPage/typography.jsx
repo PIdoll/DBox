@@ -8,14 +8,14 @@ class PageView extends React.Component {
     return (
       <Row type='flex' justify='space-between' align='middle' className='prevNextNav'>
         <Col>
-          <a className='prevPage' href='/#/Components/General/Button'>
+          <a className='prevPage' href='/doc.html#/Color'>
             <Icon type='left' className='prevIcon' />
-            <span>上一页</span>
+            <span>色彩</span>
           </a>
         </Col>
         <Col>
-          <a className='prevPage' href='/#/Components/General/Icon'>
-            <span>下一页</span>
+          <a className='prevPage' href='/doc.html#/Components/General/Button'>
+            <span>按钮</span>
             <Icon type='right' className='prevIcon prevNext' />
           </a>
         </Col>

@@ -130,11 +130,11 @@ module.exports = {
         }],
         include: path.resolve(__dirname, 'assets/fonts')
       },
-      {
+/*       {
         test: /\.(jsx|js)$/,
         use: 'eslint-loader',
         exclude: path.resolve(__dirname, 'node_modules')
-      }
+      } */
     ]
   },
   optimization: {
