@@ -75,7 +75,7 @@ import {Pagination} from 'components';
 | simple | 当添加该属性时，显示为简单分页 | boolean | - |
 | size | 当为`small`时，是小尺寸分页 | string | - |
 | total | 数据总数 | number | 0 |
-| showTitle | 展示页码hover时显示的title值 | boolean | true |
+| showTitle | 展示页码hover时显示的title值 | boolean | false |
 | showLessItems | 显示较少的页码项 | boolean | false |
 | onChange | 页码改变的回调，参数是改变后的页码及每页条数 | Function(page, pageSize) | noop |
 | onShowSizeChange | pageSize 变化的回调 | Function(current, size) | noop |
