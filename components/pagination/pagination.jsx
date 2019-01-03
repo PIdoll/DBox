@@ -45,6 +45,7 @@ export default class Pagination extends React.Component {
         }
         return (
           <RcPagination
+            showTitle={false}
             selectComponentClass={isSmall ? MiniSelect : Select}
             className={classNames(className, { mini: isSmall })}
             locale={locale}
