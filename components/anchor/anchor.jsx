@@ -110,7 +110,7 @@ export default class Anchor extends React.Component {
   getChildContext () {
     const idollAnchor = {
       registerLink: (link) => {
-        if (!this.links.includes(link)) {
+        if (!(this.links.indexOf(link) >= 0)) {
           this.links.push(link);
         }
       },
