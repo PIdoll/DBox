@@ -9,7 +9,13 @@ const styles = () => ({
 		alignItems: 'center',
 		margin: 0,
 		fontSize: 20,
-		color: '#000',
+    color: '#000',
+    cursor: 'pointer',
+    '&:hover span': {
+      color: '#000',
+      fontSize: 20,
+      cursor: 'pointer',
+    }
 	},
 	image: {
     width: '22px',
@@ -21,14 +27,13 @@ const styles = () => ({
   }
 });
 
-export function LogoRenderer({ classes, children }) {
-	return (<h1 className={classes.logo}><img className={classes.image} src={logo} /><span>DBOX</span></h1>
+export function LogoRenderer({ classes }) {
+	return (<a href='/' className={classes.logo}><img className={classes.image} src={logo} /><span>DBOX</span></a>
 	);
 }
 
 LogoRenderer.propTypes = {
 	classes: PropTypes.object.isRequired,
-	children: PropTypes.node,
 };
 
 export default Styled(styles)(LogoRenderer);

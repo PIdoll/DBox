@@ -12,15 +12,15 @@
   <div class="home_page">
       <header class='header-warper noBg'>
         <div class='header-warper-top'>
-          <div class='header-warper-logo'>
-              <img src='./assets/img/logo.svg' alt='logo' />
+          <a class='header-warper-logo' href='/'>
+              <img src='./assets/img/logo.png' alt='logo' />
               <span>DBOX</span>
-          </div>
-          <nav class='header-warper-navbar'>
+          </a>
+          <div class='header-warper-navbar'>
             <a href='/design.html'>设计原则</a>
             <a href='/doc.html'>组件文档</a>
             <a href='/resource.html'>设计资源</a>
-          </nav>
+          </div>
         </div>
       </header>
     <div class="content">
@@ -29,7 +29,7 @@
         <div class="component_name">DBOX UI</div>
         <div class="purpose">一套基于React实现的PC端UI组件库,致力于高效的创建简约美观的产品体验</div>
         <div class="operation">
-          <a class="start_use" onclick="handleStartUse()">开始使用</a>
+          <a class="start_use" href='/doc.html'>开始使用</a>
           <a class="connect_us" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">联系我们</a>
           <div class="Happy" id="Happy">
             <img src="./assets/img/pingan.png" alt="快乐平安">
@@ -47,9 +47,6 @@
   }
   function handleHappyMouseOut() {
     Happy.classList.remove('show');
-  }
-  function handleStartUse() {
-    window.location.pathname = '/doc.html';
   }
 </script>
 </html>

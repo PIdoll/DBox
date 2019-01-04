@@ -15,8 +15,8 @@ export const styles = ({ color, fontFamily, fontSize, buttonTextTransform }) => 
 		'&:hover, &:focus': {
 			isolate: false,
       outline: 0,
-      backgroundColor: '#f9fafc',
-      color: color.linkHover,
+      backgroundColor: '#d3dce6',
+      color: '#13b886',
 		},
 		'&:focus:not($isActive)': {
 			isolate: false,
@@ -43,7 +43,7 @@ export function TabButtonRenderer({ classes, name, className, onClick, active, c
 
 	return (
 		<button type="button" name={name} className={classNames} onClick={onClick}>
-			<i className={classes.caret}></i>
+			{/* <i className={classes.caret}></i> */} {children}
 		</button>
 	);
 }

@@ -14,7 +14,7 @@ module.exports = {
     TabButtonRenderer: path.join(__dirname, 'styleguide/components/tabButton'),
     PathlineRenderer: path.join(__dirname, 'styleguide/components/pathline'),
     LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
-    PlaygroundRenderer: path.join(__dirname, 'styleguide/components/playground'),
+  //  PlaygroundRenderer: path.join(__dirname, 'styleguide/components/playground'),
     ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
     LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
     SectionHeadingRenderer: path.join(__dirname, 'styleguide/components/sectionHeading'),
@@ -23,7 +23,7 @@ module.exports = {
   ignore: ['**/*-test.jsx'],
   pagePerSection: true,
   styles: {
-		 Playground: {
+    Playground: {
 			preview: {
 				padding: '40px 20px',
         borderRadius: 2,
@@ -36,14 +36,21 @@ module.exports = {
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
-        '& button': {
+        '& > div:nth-child(1)': {
+          flexGrow: '2',
+        },
+        '& button ': {
           display: 'block',
           width: '100%',
-          lineHeight: '40px',
+          padding: '10px 20px ',
           color: '#455a64',
           cursor: 'pointer',
+          float: 'right',
           textAlign: 'center',
         },
+         '& > div:nth-child(2)': {
+          display: 'none',
+        }
       },
     },
     Table: {
@@ -87,10 +94,6 @@ module.exports = {
     },
   },
   sections: [
-    {
-      name: 'Install',
-      content: 'components/getStarted.md',
-    },
     {
       name: 'GetStarted',
       content: 'components/getStarted.md',

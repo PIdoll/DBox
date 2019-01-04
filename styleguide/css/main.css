@@ -66,13 +66,19 @@ a {
   font-size: 20px;
   color: rgba(0,0,0,1);
 }
-
 .noBg {
   background: transparent;
 }
-
+.header-warper-navbar:after{
+  clear: both;
+  content: '.';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
 .header-warper-navbar a{
-  display: inline-block;
+  float:left;
   width: 80px;
   font-size:14px;
   font-weight:400;
@@ -161,16 +167,14 @@ a {
 }
 
 .design_source_logo_container {
-	width: 282px;
-  height: 282px;
+  text-align: center;
+  width: 300px;
   position: relative;
-	text-align: center;
 	border: 1px solid #E2E2E2;
 }
 
 .design_source_logo_container .design_source_logo {
 	width: 120px;
-	height: 120px;
 	margin: 0 auto;
 	margin-top: 32px;
 }
@@ -189,28 +193,22 @@ a {
 	font-family: PingFangSC-Regular;
 }
 
-.design_source_logo_container .operation {
-	display: flex;
-  justify-content: space-between;
-  text-align: center;
-  line-height: 40px;
-  height: 39px;
-}
-
 .design_source_logo_container .operation a {
-  width: 50%;
-  display: inline-block;
-	cursor: pointer;
+  line-height: 40px;
+  cursor: pointer;
+  display:inline-block;
+  width: 149px;
+  margin-right: -1px;
 }
-
 .design_source_logo_container .operation .download {
-	font-size: 14px;
-	color: rgba(0, 0, 0, .6);
-	border-top: 1px solid #E2E2E2;
+  font-size: 14px;
+  height: 39px;
+  color: rgba(0, 0, 0, .6);
 	font-family:PingFangSC-Regular;
 }
 .design_source_logo_container .operation .getlink {
-	height: 40px;
+  height: 40px;
+  font-size: 14px;
 	border: none;
 	color: #FFF;
 	font-size: 14px;
@@ -356,7 +354,7 @@ a {
   display: inline-block;
   padding:0 35px;
   border-radius: 3px;
-  line-height: 40px;
+  line-height: 38px;
   background-color: #fff;
   color: rgba(0, 0, 0, .6);
   border: 1px solid #E2E2E2;

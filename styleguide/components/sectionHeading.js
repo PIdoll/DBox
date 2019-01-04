@@ -6,7 +6,7 @@ import Data from '../data/componentsName';
 
 function SectionHeadingRenderer({ classes, children, }) {
   const sectionNameClasses = cx(classes.sectionName);
-  const sectionNames = ['Install', 'GetStarted', 'Version', 'Color', 'Typography'];
+  const sectionNames = ['GetStarted', 'Version', 'Color', 'Typography'];
   for (const item of sectionNames.values()) {
 		if (children === item) {
 			return (
