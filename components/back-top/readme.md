@@ -34,9 +34,9 @@
 
 ```jsx noeditor
 import {BackTop} from 'dbox-ui';
-import backTopView from '../prevPage/backTop';
+import BackTopView from '../prevPage/backTop';
 <div>
   <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
-  <backTopView />
+  <BackTopView />
 </div>
 ```

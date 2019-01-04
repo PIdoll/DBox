@@ -45,9 +45,9 @@ export function LinkRenderer({ classes, children, ...props }) {
 	for (const item of headline.values()) {
 		if (children === item) {
 			return (
-        <h3 className={cx(classes.h1, props.className)} >
-          {Data[children]}
-        </h3>
+  <h3 className={cx(classes.h1, props.className)} >
+    {Data[children]}
+  </h3>
 			);
 		}
   }
@@ -55,16 +55,16 @@ export function LinkRenderer({ classes, children, ...props }) {
   for (const item of chineseName.values()) {
 		if (children === item) {
 			return (
-        <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
-          {Data[children]}
-        </a>
+  <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
+    {Data[children]}
+  </a>
 			);
 		}
   }
 	return (
-    <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
-      {children}<span className={classes.chinese}>{Data[children]}</span>
-    </a>
+  <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
+    {children}<span className={classes.chinese}>{Data[children]}</span>
+  </a>
 	);
 }
 

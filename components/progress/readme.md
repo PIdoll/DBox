@@ -151,7 +151,6 @@ const ProgressView = () => {
 ```jsx noeditor
 import {BackTop} from 'dbox-ui';
 import ProgressView from '../prevPage/progress';
-import
 <div>
   <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
   <ProgressView />

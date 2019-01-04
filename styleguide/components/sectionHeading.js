@@ -10,9 +10,9 @@ function SectionHeadingRenderer({ classes, children, }) {
   for (const item of sectionNames.values()) {
 		if (children === item) {
 			return (
-        <div className={classes.wrapper}><h3 className={sectionNameClasses}>{Data[children]}
-				  </h3>
-		    </div>
+  <div className={classes.wrapper}><h3 className={sectionNameClasses}>{Data[children]}
+  </h3>
+  </div>
 			);
 		}
   }
