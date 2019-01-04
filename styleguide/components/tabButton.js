@@ -42,9 +42,9 @@ export function TabButtonRenderer({ classes, name, className, onClick, active, c
 	});
 
 	return (
-		<button type="button" name={name} className={classNames} onClick={onClick}>
-			<i className={classes.caret}></i>
-		</button>
+  <button type='button' name={name} className={classNames} onClick={onClick}>
+    <i className={classes.caret} />
+  </button>
 	);
 }
 
