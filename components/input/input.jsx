@@ -177,6 +177,7 @@ export default class Input extends Component {
   // 清除输入框
   onClear = () => {
     this.input.value = '';
+    console.log('清空后的', this.input.value)
     this.setState({
       isHover: false,
     })
@@ -265,14 +266,11 @@ export default class Input extends Component {
 
   onInput = (e) => {
     this.setState({
-      isHover: true
+      isHover: true,
     })
   }
 
   onBlur = (e) => {
-    if (this.input.value) {
-      this.setState({ active: true })
-    }
     this.setState({
       isHover: false,
     });
