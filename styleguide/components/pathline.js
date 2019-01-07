@@ -13,7 +13,8 @@ export const styles = ({ fontFamily, fontSize, color }) => ({
 });
 
 export function PathlineRenderer({ classes, children }) {
-	return (<div className={classes.pathline}>{children}</div>
+	return (
+  <div className={classes.pathline}>{children}</div>
 	);
 }
 

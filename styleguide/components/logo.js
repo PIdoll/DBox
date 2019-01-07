@@ -28,7 +28,11 @@ const styles = () => ({
 });
 
 export function LogoRenderer({ classes }) {
-	return (<a href='/' className={classes.logo}><img className={classes.image} src={logo} /><span>DBOX</span></a>
+	return (
+  <a href='/' className={classes.logo}>
+    <img className={classes.image} src={logo} />
+    <span>DBOX</span>
+  </a>
 	);
 }
 

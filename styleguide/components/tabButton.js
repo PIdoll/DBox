@@ -41,10 +41,7 @@ export function TabButtonRenderer({ classes, name, className, onClick, active, c
 		[classes.isActive]: active,
 	});
 
-	return (
-		<button type="button" name={name} className={classNames} onClick={onClick}>
-			{/* <i className={classes.caret}></i> */} {children}
-		</button>
+	return (<button type='button' name={name} className={classNames} onClick={onClick}>{ children }</button>
 	);
 }
 
