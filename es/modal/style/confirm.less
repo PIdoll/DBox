@@ -1,0 +1,71 @@
+@import "../../../style/theme/default/default.less";
+@confirm-prefix-cls: idoll-confirm;
+
+.@{confirm-prefix-cls} {
+  width: 408px !important;
+  .idoll-modal-header {
+    display: none;
+  }
+
+  .idoll-modal-body {
+    padding: 24px 24px 16px 24px;
+  }
+
+  &-body {
+    .@{confirm-prefix-cls}-title {
+      color: @text-color;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .@{confirm-prefix-cls}-content {
+      color: @text-color;
+      padding: 16px 0px 16px 40px;
+      p {
+      font-size: @font-size-base;
+      line-height: 22px;
+      }
+    }
+
+    > .idoll-icon {
+      font-size: 24px;
+      margin-right: 16px;
+      position: relative;
+    }
+  }
+
+  .@{confirm-prefix-cls}-btns {
+    margin-top: 16px;
+    float: right;
+
+    button {
+      margin-left: 8px;
+      margin-bottom: 0;
+    }
+  }
+
+  &-error &-body > .idoll-icon {
+    color: @error-color;
+  }
+
+  &-warning &-body >.idoll-icon {
+    color: @warning-color;
+  }
+
+  &-confirm &-body > .idoll-icon {
+    color: @primary-color;
+    &:before {
+      font-family: "idollicon" !important;
+      content: "\E70C";
+    }
+  }
+
+  &-info &-body > .idoll-icon {
+    color: @primary-color;
+  }
+
+  &-success &-body > .idoll-icon {
+    color: @success-color;
+  }
+}

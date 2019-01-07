@@ -1,0 +1,18 @@
+
+@sider-span: 20;
+@prefixCls: 'idoll';
+
+
+.make-sider-span() {
+  .span(@index) {
+    @item: ~".@{prefixCls}-layout-sider-@{index}";
+    .span(@index, @item);
+  }
+  .span(@index, @list) when (@index <= @sider-span) {
+    @{list} {
+      width: @layout-sider-basic-width + 12 * @index;
+    }
+    .span((@index + 1));
+  }
+  .span(1);
+}

@@ -1,0 +1,45 @@
+@import "../../../style/theme/default/index.less";
+@import "../../../style/mixins/index.less";
+
+@title-prefix-cls: idoll-title;
+
+.title-default {
+  .iconfont-mixin();
+  width: 3px;
+  height: 14px;
+  border-radius: 1.5px;
+  background: @primary-color;
+
+}
+// Title styles
+// ----------------------
+.@{title-prefix-cls} {
+  .reset-component;
+  font-size: @font-size-base + 2px;
+  color: @text-color;
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 20px;
+
+  > i {
+    margin-right: 8px;
+  }
+  &-default {
+    .title-default;
+  }
+  &-icon {
+    color: @primary-color;
+  }
+  &-background-ghost {
+    // 预留，防止后面有更改需求
+  }
+  &-sm {
+    font-size: @font-size-base;
+  }
+  &-lg {
+    font-size: @font-size-base + 4;
+  }
+
+
+}

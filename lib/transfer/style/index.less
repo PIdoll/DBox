@@ -1,0 +1,202 @@
+@import '../../../style/theme/default/default.less';
+@import '../../../style/mixins/index.less';
+@import '../../checkbox/style/mixin.less';
+
+@transfer-prefix-cls: ~"@{idoll-prefix}-transfer";
+
+.@{transfer-prefix-cls} {
+  .reset-component;
+  position: relative;
+
+  &-disabled {
+    .@{transfer-prefix-cls}-list {
+      background: @transfer-disabled-bg;
+    }
+  }
+
+  &-list {
+    border: @border-width-base @border-style-base @border-color-base;
+    display: inline-block;
+    border-radius: @border-radius-base;
+    vertical-align: middle;
+    position: relative;
+    width: 180px;
+    height: 200px;
+    padding-top: 40px;
+
+    &-with-footer {
+      padding-bottom: 34px;
+    }
+
+    &-search {
+      padding: 0 @control-padding-horizontal-sm;
+      &-action {
+        color: @disabled-color;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        width: 28px;
+        line-height: @input-height-base;
+        text-align: center;
+        .@{iconfont-css-prefix} {
+          transition: all .3s;
+          color: @disabled-color;
+          &:hover {
+            color: @text-color-secondary;
+          }
+        }
+        span& {
+          pointer-events: none;
+        }
+      }
+    }
+
+    &-header {
+      height: 40px;
+      // padding: 6px @control-padding-horizontal;
+      padding: 9px @padding-md;
+      border-radius: @border-radius-base @border-radius-base 0 0;
+      background: @component-background;
+      color: @text-color;
+      border-bottom: @border-width-base @border-style-base @border-color-split;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+
+      &-title {
+        position: absolute;
+        left: 40px;
+        font-size:14px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:@heading-color;
+      }
+
+      &-selected >:first-child {
+        position: absolute;
+        right: 16px;
+      }
+    }
+
+    &-body {
+      font-size: @font-size-base;
+      position: relative;
+      height: 100%;
+
+      &-search-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 4px;
+        width: 100%;
+      }
+    }
+
+    &-body-with-search {
+      padding-top: @input-height-base + 8px;
+    }
+
+    &-content {
+      height: 100%;
+      overflow: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      > .LazyLoad {
+        animation: transferHighlightIn 1s;
+      }
+
+      &-item {
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 9px @padding-md;
+        min-height: 32px;
+        transition: all .3s;
+        font-size:14px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color: @text-color;
+        > span {
+          padding-right: 0;
+        }
+      }
+
+      &-item:not(&-item-disabled):hover {
+        cursor: pointer;
+        background-color: @primary-LightBg;
+      }
+
+      &-item-disabled {
+        cursor: not-allowed;
+        color: @text-color-disable;
+      }
+    }
+
+    &-body-not-found {
+      padding-top: 0;
+      color: @disabled-color;
+      text-align: center;
+      display: none;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -10px;
+    }
+
+    &-content:empty + &-body-not-found {
+      display: block;
+    }
+
+    &-footer {
+      border-top: @border-width-base @border-style-base @border-color-split;
+      border-radius: 0 0 @border-radius-base @border-radius-base;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &-operation {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 32px;
+    vertical-align: middle;
+
+    .@{idoll-prefix}-btn {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 16px;
+      }
+
+      .@{iconfont-css-prefix} {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .disabled-icon {
+    .@{iconfont-css-prefix}-left {
+      color: @disabled-color;
+    }
+    .@{iconfont-css-prefix}-right {
+      color: @disabled-color;
+    }
+  }
+}
+
+@keyframes transferHighlightIn {
+  0% {
+    background: @primary-1;
+  }
+  100% {
+    background: transparent;
+  }
+}

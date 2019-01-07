@@ -1,0 +1,211 @@
+@import '../../../style/theme/default/index';
+@import '../../../style/mixins/index';
+
+@popover-prefix-cls: ~"@{idoll-prefix}-popover";
+
+.@{popover-prefix-cls} {
+  .reset-component;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zindex-popover;
+  cursor: auto;
+  user-select: text;
+  white-space: normal;
+  font-weight: normal;
+  text-align: left;
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  &-hidden {
+    display: none;
+  }
+  // 包裹层
+  &-inner {
+    background-color: @popover-bg;
+    // background-clip: padding-box;
+    border-radius: @border-radius-base;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 12px 16px;
+    min-width: 200px;
+  }
+  // 标题
+  &-title {
+    color: @heading-color;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+  // 内容
+  &-inner-content {
+    color: @popover-color;
+    line-height: 22px;
+  }
+
+  // popover箭头与popover的偏移
+  &-placement-top,
+  &-placement-topLeft,
+  &-placement-topRight {
+    padding-bottom: @popover-distance;
+  }
+
+  &-placement-right,
+  &-placement-rightTop,
+  &-placement-rightBottom {
+    padding-left: @popover-distance;
+  }
+
+  &-placement-bottom,
+  &-placement-bottomLeft,
+  &-placement-bottomRight {
+    padding-top: @popover-distance;
+  }
+
+  &-placement-left,
+  &-placement-leftTop,
+  &-placement-leftBottom {
+    padding-right: @popover-distance;
+  }
+
+  // 箭头
+  // 外层：.popover-arrow； 内层：.popover-arrow:after
+  &-arrow {
+  background: @popover-bg;
+  width: sqrt(@popover-arrow-width * @popover-arrow-width * 2);
+  height: sqrt(@popover-arrow-width * @popover-arrow-width * 2);
+  transform: rotate(45deg);
+  position: absolute;
+  display: block;
+  border-color: transparent;
+  border-style: solid;
+  box-shadow: 3px 3px 7px rgba(0,0,0,.07);
+  }
+
+  &-placement-top > &-content > &-arrow,
+  &-placement-topLeft > &-content >  &-arrow,
+  &-placement-topRight > &-content >  &-arrow {
+    bottom: @popover-distance - @popover-arrow-width + 2px;
+  }
+  &-placement-top > &-content >  &-arrow {
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &-placement-topLeft > &-content >  &-arrow {
+    left: 12px;
+  }
+  &-placement-topRight > &-content >  &-arrow {
+    right: 12px;
+  }
+
+  &-placement-right > &-content >  &-arrow,
+  &-placement-rightTop > &-content >  &-arrow,
+  &-placement-rightBottom > &-content >  &-arrow {
+    left: @popover-distance - @popover-arrow-width + 2px;
+  }
+  &-placement-right > &-content >  &-arrow {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
+  }
+  &-placement-rightTop > &-content >  &-arrow {
+    top: 12px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
+  }
+  &-placement-rightBottom > &-content >  &-arrow {
+    bottom: 12px;
+    box-shadow: -3px 3px 7px rgba(0,0,0,.07);
+  }
+
+  &-placement-bottom > &-content >  &-arrow,
+  &-placement-bottomLeft > &-content >  &-arrow,
+  &-placement-bottomRight > &-content >  &-arrow {
+    top: @popover-distance - @popover-arrow-width + 2px;
+  }
+  &-placement-bottom > &-content >  &-arrow {
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
+  }
+  &-placement-bottomLeft > &-content >  &-arrow {
+    left: 12px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
+  }
+  &-placement-bottomRight > &-content >  &-arrow {
+    right: 12px;
+    box-shadow: -2px -2px 5px rgba(0,0,0,.06);
+  }
+
+  &-placement-left > &-content >  &-arrow,
+  &-placement-leftTop > &-content >  &-arrow,
+  &-placement-leftBottom > &-content >  &-arrow {
+    right: @popover-distance - @popover-arrow-width + 2px;
+  }
+  &-placement-left > &-content >  &-arrow {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
+  }
+  &-placement-leftTop > &-content >  &-arrow {
+    top: 12px;
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
+  }
+  &-placement-leftBottom > &-content >  &-arrow {
+    bottom: 12px;
+    box-shadow: 3px -3px 7px rgba(0,0,0,.07);
+  }
+
+  &-message {
+    padding: 0px 0 16px;
+    font-size: @font-size-base;
+    color: @popover-color;
+    > .@{iconfont-css-prefix} {
+      color: @warning-color;
+      line-height: @line-height-base + 0.1;
+      position: absolute;
+    }
+    &-title {
+      padding-left: @font-size-base + 8px;
+    }
+  }
+
+  &-buttons {
+    text-align: right;
+    button {
+      margin-left: 8px;
+    }
+  }
+}
+
+.demo-popover div.placement {
+  margin-left: 150px;
+}
+
+
+#main-container {
+  #demoPopover.h1 {
+    margin-top: 50px;
+  }
+}
+
+
+#main-container {
+  #popconfirm a{
+    color: @error-color  
+  }
+
+  #popconfirm a:hover{
+    color: @error-Hover  
+  }
+
+  #popconfirm a:focus{
+    color: @error-Pressed  
+  }
+  #popconfirm a:active{
+    color: @error-Pressed   
+  }
+}
+

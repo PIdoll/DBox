@@ -1,10 +1,20 @@
 const path = require('path');
-// const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 // 定义了一些文件夹的路径
+const ROOT_PATH = path.resolve(__dirname);
+const APP_PATH = path.resolve(ROOT_PATH, 'src');
+const COMPONENTS_PATH = path.resolve(ROOT_PATH, 'components');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
+const ENTRY_PATH = process.env.NODE_ENV === 'development' ? APP_PATH : COMPONENTS_PATH;
 
 module.exports = {
   // 项目的文件夹 可以直接用文件夹名称 默认会找index.js 也可以确定是哪个文件名字
+  entry: ENTRY_PATH,
+  // 输出的文件名
+  output: {
+    path: BUILD_PATH,
+    filename: 'dbox-ui.js'
+  },
   resolve: {
     // 自动补全的拓展名
     extensions: ['.js', '.jsx', '.json', '.less'],
@@ -12,10 +22,20 @@ module.exports = {
     alias: {
       'assets': path.resolve(__dirname, 'assets'),
       'templates': path.resolve(__dirname, 'src/templates'),
-      'components': path.resolve(__dirname, 'components'),
-      'dbox-ui': path.resolve(__dirname, 'components'),
+      'components': path.resolve(__dirname, 'components')
     }
   },
+  // devserver 配置
+  devServer: {
+    historyApiFallback: true,
+    inline: true,
+    progress: true,
+    hot: true,
+  },
+  watchOptions: {
+    ignored: /node_modules/
+  },
+
   // css 处理
   module: {
     rules: [
@@ -25,21 +45,20 @@ module.exports = {
         use: 'babel-loader',
         exclude: path.resolve(__dirname, 'node_modules')
       },
-			{
-				test: /\.(less|css)$/,
-				use: [{
-					loader: MiniCssExtractPlugin.loader,
-				}, 'css-loader', {
-          loader: 'postcss-loader',
-          options: { // 如果没有options这个选项将会报错 No PostCSS Config found
-              plugins: (loader) => [
-                  require('autoprefixer')(), // CSS浏览器兼容
-              ]
+      {
+        test: /\.(css|less)$/,
+        use: [{
+          loader: 'style-loader',
+          options: {
+            singleton: true
           }
         }, {
-					loader: 'postcss-loader',
-				}, 'less-loader']
-			},
+          loader: 'css-loader'
+        }, {
+          loader: 'less-loader'
+        }],
+        // exclude: path.resolve(__dirname, 'node_modules')
+      },
       {
         test: /\.(png|svg|jpg|gif|webp|ico)$/,
         use: [
@@ -57,40 +76,11 @@ module.exports = {
         }],
         include: path.resolve(__dirname, 'assets/fonts')
       },
-     /*  {
+      {
         test: /\.(jsx|js)$/,
         use: 'eslint-loader',
         exclude: path.resolve(__dirname, 'node_modules')
-      } */
+      }
     ]
-  },
-  optimization: {
-    runtimeChunk: {
-        name: 'manifest'
-    },
-    splitChunks: {
-        cacheGroups: {
-          commons: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'node_modules',
-            chunks: 'all',
-            priority: 2,
-          },
-          vendors: {
-            name: 'reactBase',
-            test: (module) => {
-                return /array-tree-filter|classnames|create-react-class|enquire-js|gregorian-calendar|gregorian-calendar-format|moment|object.omit|omit|omit.js|prop-types|rc-animate|rc-calendar|rc-cascader|rc-checkbox|rc-collapse|rc-dialog|rc-drawer|rc-dropdown|rc-editor-mention|rc-form|rc-input-number|rc-menu|rc-notification|rc-pagination|rc-progress|rc-scroll-anim|rc-select|rc-slider|rc-steps|rc-switch|rc-table|rc-tabs|rc-time-picker|rc-tooltip|rc-tree|rc-tree-select|rc-trigger|rc-upload|react-lazy-load|shallowequal|uglifyjs-webpack-plugin|warning/.test(module.context);
-            },
-            chunks: 'all',
-            priority: 10,
-          },
-        }
-    }
-},
-  plugins: [
-		new MiniCssExtractPlugin({
-			filename: 'css/[name].css',
-			chunkFilename: 'css/[contenthash:12].css' // use contenthash *
-      }),
-    ],
+  }
 };

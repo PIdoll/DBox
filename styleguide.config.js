@@ -1,6 +1,6 @@
 const path = require('path');
 const { version } = require('./package.json')
-const webpackConf = require('./webpack.common.js');
+const webpackConf = require('./webpack.doc.js');
 
 const TITLE = `Dbox UI ${version}`;
 const PORT = parseInt(process.env.PROT || 9002, 10);
