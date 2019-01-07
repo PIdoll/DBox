@@ -1247,7 +1247,7 @@ class NumericInput extends React.Component {
 
 如果你的数据没有这个属性，务必使用 `rowKey` 来指定数据列的主键。若没有指定，控制台会出现以下的提示，表格组件也会出现各类奇怪的错误。
 
-```jsx
+```jsx static
 // 比如你的数据主键是 uid
 return <Table rowKey="uid" />;
 // 或

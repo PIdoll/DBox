@@ -58,6 +58,9 @@ const styles = ({ mq }) => ({
 			borderWidth: [[1, 0, 0, 0]],
 			paddingBottom: '20',
     },
+    '& search': {
+      marginTop: '64px'
+    }
   },
   content: {
     width: '100%',
@@ -130,6 +133,8 @@ export function StyleGuideRenderer({ classes, title, children, toc }) {
       </header>
       <div className={classes.mainCont}>
         <aside className={classes.sidebar}>
+          <Logo>{title}</Logo>
+          <Logo>{title}</Logo>
           {toc}
         </aside>
         <main className={classes.content}>
@@ -141,7 +146,7 @@ export function StyleGuideRenderer({ classes, title, children, toc }) {
         </main>
       </div>
     </div>
-	);
+  );
 }
 
 StyleGuideRenderer.propTypes = {
