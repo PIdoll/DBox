@@ -5,7 +5,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 
 
@@ -24,8 +23,7 @@ const common = require('./webpack.common.js');
 					loader: 'postcss-loader',
 						options: {
 							plugins: () => [
-								autoprefixer({add: true, remove: true, browsers: ['>0%']}),
-								cssnano()
+								autoprefixer({add: true, remove: true, browsers: ['>0%']})
 								]
 						}
 				}, 'less-loader']

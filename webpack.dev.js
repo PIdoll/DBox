@@ -14,8 +14,6 @@ module.exports = merge(common, {
 	},
 	// 添加我们的插件
 	plugins: [
-		// 清除dist文件夹，保证每次build的文件都是最新的
-		// new CleanWebpackPlugin(['dist']),
 		// 会自动生成一个html文件
 		new HtmlwebpackPlugin({
 			filename: 'index.html',
