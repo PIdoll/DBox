@@ -1,6 +1,7 @@
 const path = require('path');
 // const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // 定义了一些文件夹的路径
 
 module.exports = {
@@ -92,5 +93,11 @@ module.exports = {
 			filename: 'css/[name].css',
 			chunkFilename: 'css/[contenthash:12].css' // use contenthash *
       }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
+        canPrint: false
+      })
     ],
 };
