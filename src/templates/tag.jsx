@@ -11,6 +11,9 @@ export default class TagView extends React.Component {
     this.setState({visible: !this.state.visible})
   }
 
+  handleClose = () => {
+    console.log('关闭动画完成后的回调')
+  }
   render () {
     return (
       <div id='main-container'>
@@ -31,7 +34,7 @@ export default class TagView extends React.Component {
         <h1>可移除标签</h1>
         <p style={{marginBottom: '10px'}}>标签添加closable属性可移除</p>
         <Tag closable>可移除标签</Tag>
-        <Tag closable color='turquoise'>可移除标签</Tag>
+        <Tag closable color='turquoise' onClose={this.handleClose}>可移除标签</Tag>
         <h1>热门标签</h1>
         <p style={{marginBottom: '10px'}}>通过添加属性hot选择你感兴趣的话题</p>
         <span>热门话题:</span>
@@ -41,7 +44,7 @@ export default class TagView extends React.Component {
         <Tag hot>运动</Tag>
         <h1>动态添加和删除标签</h1>
         <p style={{marginBottom: '10px'}}>用数组生成一组标签，可以动态添加和删除</p>
-        <TagGroup />
+        <TagGroup afterClose={this.handleClose} />
       </div>
     )
   }

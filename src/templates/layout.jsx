@@ -69,6 +69,7 @@ class MainLayout extends Component {
     this.setState({
       modeMenu: !this.state.flag ? 'vertical' : 'inline',
       flag: !this.state.flag,
+      openKeys: [],
     })
   }
   onChange = (activeKey) => {
@@ -112,6 +113,122 @@ class MainLayout extends Component {
       activeKey,
       openKeys: [this.array[id]]
     });
+  }
+  inlineMenu = () => {
+    if (this.state.flag) {
+      return <Menu
+        onClick={this.handleClickBread}
+        defaultSelectedKeys={['7']}
+        mode={this.state.modeMenu}
+>
+        <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item key='8'>子菜单一</Menu.Item>
+          <Menu.Item key='9'>子菜单二</Menu.Item>
+          <Menu.Item key='10'>子菜单三</Menu.Item>
+          <Menu.Item key='11'>子菜单四</Menu.Item>
+        </SubMenu>
+        <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item key='12'>子菜单五</Menu.Item>
+          <Menu.Item key='13'>子菜单六</Menu.Item>
+          <Menu.Item key='14'>子菜单七</Menu.Item>
+          <Menu.Item key='15'>子菜单八</Menu.Item>
+        </SubMenu>
+        <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item key='16'>子菜单九</Menu.Item>
+          <Menu.Item key='17'>子菜单十</Menu.Item>
+          <Menu.Item key='18'>子菜单十一</Menu.Item>
+          <Menu.Item key='19'>子菜单十二</Menu.Item>
+        </SubMenu>
+      </Menu>
+    } else {
+      return <Menu
+        onClick={this.handleClickBread}
+        defaultSelectedKeys={['7']}
+        openKeys={this.state.openKeys}
+        onOpenChange={this.onOpenChange}
+        mode={this.state.modeMenu}
+>
+        <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item key='8'>子菜单一</Menu.Item>
+          <Menu.Item key='9'>子菜单二</Menu.Item>
+          <Menu.Item key='10'>子菜单三</Menu.Item>
+          <Menu.Item key='11'>子菜单四</Menu.Item>
+        </SubMenu>
+        <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item key='12'>子菜单五</Menu.Item>
+          <Menu.Item key='13'>子菜单六</Menu.Item>
+          <Menu.Item key='14'>子菜单七</Menu.Item>
+          <Menu.Item key='15'>子菜单八</Menu.Item>
+        </SubMenu>
+        <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item key='16'>子菜单九</Menu.Item>
+          <Menu.Item key='17'>子菜单十</Menu.Item>
+          <Menu.Item key='18'>子菜单十一</Menu.Item>
+          <Menu.Item key='19'>子菜单十二</Menu.Item>
+        </SubMenu>
+      </Menu>
+    }
+  }
+  tabsMenu = () => {
+    if (this.state.flag) {
+      return <Menu
+        onClick={this.handleClickTabs}
+        defaultSelectedKeys={['7']}
+        selectedKeys={[this.state.activeKey]}
+        mode={this.state.modeMenu}
+>
+        <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item title='子菜单一' key='28'>子菜单一</Menu.Item>
+          <Menu.Item title='子菜单二' key='29'>子菜单二</Menu.Item>
+          <Menu.Item title='子菜单三' key='30'>子菜单三</Menu.Item>
+          <Menu.Item title='子菜单四' key='31'>子菜单四</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item title='子菜单五' key='32'>子菜单五</Menu.Item>
+          <Menu.Item title='子菜单六' key='33'>子菜单六</Menu.Item>
+          <Menu.Item title='子菜单七' key='34'>子菜单七</Menu.Item>
+          <Menu.Item title='子菜单八' key='35'>子菜单八</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item title='子菜单九' key='36'>子菜单九</Menu.Item>
+          <Menu.Item title='子菜单十' key='37'>子菜单十</Menu.Item>
+          <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
+          <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
+        </SubMenu>
+      </Menu>
+    } else {
+      return <Menu
+        onClick={this.handleClickTabs}
+        defaultSelectedKeys={['7']}
+        selectedKeys={[this.state.activeKey]}
+        openKeys={this.state.openKeys}
+        onOpenChange={this.onOpenChange}
+        mode={this.state.modeMenu}
+>
+        <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+        <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+          <Menu.Item title='子菜单一' key='28'>子菜单一</Menu.Item>
+          <Menu.Item title='子菜单二' key='29'>子菜单二</Menu.Item>
+          <Menu.Item title='子菜单三' key='30'>子菜单三</Menu.Item>
+          <Menu.Item title='子菜单四' key='31'>子菜单四</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+          <Menu.Item title='子菜单五' key='32'>子菜单五</Menu.Item>
+          <Menu.Item title='子菜单六' key='33'>子菜单六</Menu.Item>
+          <Menu.Item title='子菜单七' key='34'>子菜单七</Menu.Item>
+          <Menu.Item title='子菜单八' key='35'>子菜单八</Menu.Item>
+        </SubMenu>
+        <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+          <Menu.Item title='子菜单九' key='36'>子菜单九</Menu.Item>
+          <Menu.Item title='子菜单十' key='37'>子菜单十</Menu.Item>
+          <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
+          <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
+        </SubMenu>
+      </Menu>
+    }
   }
   render () {
     return (
@@ -183,42 +300,16 @@ class MainLayout extends Component {
         <div className='layout-inlineNav'>
           <Layout>
             <Sider >
-              <div className={this.state.flag2 ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-              <Menu
-                onClick={this.handleClickBread}
-                defaultSelectedKeys={['8']}
-                openKeys={this.state.openKeys}
-                onOpenChange={this.onOpenChange}
-                mode={this.state.modeMenu2}
-        >
-                <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-                <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-                  <Menu.Item key='8'>子菜单一</Menu.Item>
-                  <Menu.Item key='9'>子菜单二</Menu.Item>
-                  <Menu.Item key='10'>子菜单三</Menu.Item>
-                  <Menu.Item key='11'>子菜单四</Menu.Item>
-                </SubMenu>
-                <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-                  <Menu.Item key='12'>子菜单五</Menu.Item>
-                  <Menu.Item key='13'>子菜单六</Menu.Item>
-                  <Menu.Item key='14'>子菜单七</Menu.Item>
-                  <Menu.Item key='15'>子菜单八</Menu.Item>
-                </SubMenu>
-                <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-                  <Menu.Item key='16'>子菜单九</Menu.Item>
-                  <Menu.Item key='17'>子菜单十</Menu.Item>
-                  <Menu.Item key='18'>子菜单十一</Menu.Item>
-                  <Menu.Item key='19'>子菜单十二</Menu.Item>
-                </SubMenu>
-              </Menu>
-              <Icon type={this.state.flag2 ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel2} />
+              <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+              {this.inlineMenu()}
+              <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
             </Sider>
             <Layout>
               <Header style={{height: '56px'}} >
                 <Icon type='message' />
                 <Avatar size='small' style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
                 <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
-                  Alvin
+              Alvin
                 </DropdownNormal>
               </Header>
               <Breadcrumb>
@@ -237,34 +328,7 @@ class MainLayout extends Component {
           <Layout>
             <Sider >
               <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-              <Menu
-                onClick={this.handleClickTabs}
-                defaultSelectedKeys={['7']}
-                selectedKeys={[this.state.activeKey]}
-                openKeys={this.state.openKeys}
-                onOpenChange={this.onOpenChange}
-                mode={this.state.modeMenu}
-        >
-                <Menu.Item title='首页' key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-                <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-                  <Menu.Item title='子菜单一' key='8'>子菜单一</Menu.Item>
-                  <Menu.Item title='子菜单二' key='9'>子菜单二</Menu.Item>
-                  <Menu.Item title='子菜单三' key='10'>子菜单三</Menu.Item>
-                  <Menu.Item title='子菜单四' key='11'>子菜单四</Menu.Item>
-                </SubMenu>
-                <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-                  <Menu.Item title='子菜单五' key='12'>子菜单五</Menu.Item>
-                  <Menu.Item title='子菜单六' key='13'>子菜单六</Menu.Item>
-                  <Menu.Item title='子菜单七' key='14'>子菜单七</Menu.Item>
-                  <Menu.Item title='子菜单八' key='15'>子菜单八</Menu.Item>
-                </SubMenu>
-                <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-                  <Menu.Item title='子菜单九' key='16'>子菜单九</Menu.Item>
-                  <Menu.Item title='子菜单十' key='17'>子菜单十</Menu.Item>
-                  <Menu.Item title='子菜单十一' key='18'>子菜单十一</Menu.Item>
-                  <Menu.Item title='子菜单十二' key='19'>子菜单十二</Menu.Item>
-                </SubMenu>
-              </Menu>
+              {this.tabsMenu()}
               <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
             </Sider>
             <Layout>
@@ -272,7 +336,7 @@ class MainLayout extends Component {
                 <Icon type='message' />
                 <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
                 <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
-                  Alvin
+              Alvin
                 </DropdownNormal>
               </Header>
               <Content>

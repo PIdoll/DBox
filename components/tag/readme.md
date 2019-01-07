@@ -10,7 +10,7 @@
 import {Tag} from 'components';
 <div>
 	<Tag>标签</Tag>
-  <Tag href='https://www.baidu.com'>链接</Tag>
+  <Tag href='http://dbox-dev.paic.com.cn'>链接</Tag>
 </div>
 ```
 
@@ -67,7 +67,6 @@ import {TagGroup} from 'components/tag';
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| afterClose | 关闭动画完成后的回调 | `() => void` | - |
 | closable | 标签是否可以关闭 | boolean | false |
 | color | 标签色 | string | - |
 | target | 链接跳转方式必须和href同时设置 | string可参照a链接的跳转方式 | - 默认本页面跳转 |
@@ -78,9 +77,9 @@ import {TagGroup} from 'components/tag';
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| tags | 热门话题的默认文本 | array | `['Movies', 'Books', 'Music']` |
+| tags | 热门话题的默认文本 | array | `['电影', '书籍', '音乐']` |
 | id | 默认不可移除的标签的下标值 | number | `0` |
-| text | 动态增加标签的文本内容 | string | `New Tag` |
+| text | 动态增加标签的文本内容 | string | `添加` |
 | iconType | 动态增加标签的Icon | string | `plus` |
 
 

@@ -1,4 +1,5 @@
 @import '../../../style/theme/default/index';
+@import '../../../style/theme/default/compoments/layout.less';
 @import './mixin';
 
 div.layout_temp {
@@ -13,7 +14,7 @@ div.layout_temp {
   flex-direction: column;
   flex: 1;
   height: 100vh;
-  font-size: 20px;
+  font-size: @font-size-lg + 4px ;
   font-weight: 500;
   overflow: hidden;
   background-color: @layout-backgound-color;
@@ -25,7 +26,7 @@ div.layout_temp {
 }
 
 .@{idoll-prefix}-layout-sider {
-  color: #fff;
+  color: @background-base ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +37,7 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
-  color: #fff;
+  color: @background-base;
   display: flex;
   height: @layout-header-base-height;
   text-align: center;
@@ -57,7 +58,7 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
-  color: #fff;
+  color: @background-base;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,22 +69,22 @@ div.layout_temp {
 .layout-horizontal {
   .@{idoll-prefix}-layout-header {
     width: 100%;
-    color: #fff;
+    color: @component-background;
     display: block;
-    height: 56px;
-    line-height: 56px;
-    background: #2F323B;
+    height: @layout-header-seat;
+    line-height: @layout-header-seat;
+    background: @navbar;
     div.logo {
       float: left;
-      padding: 12px 28px;
+      padding: @padding-sm @padding-lg + 4px ;
       div {
-        border-radius: 3px;
-        font-size: 24px;
-        line-height: 32px;
-        height: 32px;
-        padding: 0 21px;
-        color: rgba(245, 245, 245, 0.2);
-        background-color: rgba(245, 245, 245, 0.2);
+        border-radius: @border-radius-base;
+        font-size: @layout-font-size ;
+        line-height: @horizontal-light;
+        height: @horizontal-light;
+        padding: 0 @padding-lg - 3px ;
+        color: @layout-logo-color;
+        background-color: @layout-logo-color;
       }
     }
     .@{idoll-prefix}-menu-horizontal {
@@ -96,15 +97,15 @@ div.layout_temp {
   }
   .@{idoll-prefix}-breadcrumb {
     background-color: @background;
-    padding: 16px 24px 0 24px;
+    padding: @padding-md @padding-lg 0 @padding-lg;
   }
   .@{idoll-prefix}-layout-content {
-    padding: 24px;
+    padding: @padding-lg;
     background-color: @background;
     .content {
       width: 100%;
       height: 100%;
-      background-color: #fff;
+      background-color: @background-base;
       color: @text-color;
       display: flex;
       justify-content: center;
@@ -119,43 +120,43 @@ div.layout_temp {
       width: auto;
       display: block;
       position: relative;
-      background-color: #2F323B;
+      background-color: @Sider-Menu;
       div.logo {
-        padding: 12px 28px 44px 28px;
+        padding: @padding-sm @layout-logo-padding-top @layout-logo-padding-bottom @layout-logo-padding-top;
         div {
-          border-radius: 3px;
-          font-size: 24px;
-          line-height: 32px;
-          height: 32px;
-          padding: 0 21px;
-          color: rgba(245, 245, 245, 0.2);
-          background-color: rgba(245, 245, 245, 0.2);
+          border-radius: @border-radius-base;
+          font-size: @layout-font-size;
+          line-height: @horizontal-light;
+          height: @horizontal-light;
+          padding: 0 @padding-lg - 3px;
+          color: @layout-logo-color;
+          background-color: @layout-logo-color;
         }
       }
       div.miniLogo {
-        padding: 12px 12px 44px 12px;
+        padding: @padding-sm @padding-sm @layout-logo-padding-bottom @padding-sm;
         div {
-          border-radius: 3px;
-          font-size: 18px;
-          line-height: 32px;
-          height: 32px;
-          padding: 0 4px;
-          color: rgba(245, 245, 245, 0.2);
-          background-color: rgba(245, 245, 245, 0.2);
+          border-radius: @border-radius-base;
+          font-size: @font-size-base + 4px;
+          line-height: @horizontal-light;
+          height: @horizontal-light;
+          padding: 0 @padding-xs - 4px;
+          color: @layout-logo-color;
+          background-color: @layout-logo-color;
         }
       }
       > i:before {
         position: absolute;
-        left: 16px;
-        bottom: 16px;
+        left: @padding-md;
+        bottom: @padding-md;
         cursor: pointer;
         color: @text-color-secondary-dark;
-        transition: color .3s
+        transition: color @animation-duration-slow
       }
       > i:hover {
         &:before {
-          color: #fff;
-          transition: color .3s
+          color: @background-base;
+          transition: color @animation-duration-slow
         }
       }
      .@{idoll-prefix}-menu {
@@ -165,20 +166,20 @@ div.layout_temp {
     &-header {
       display: flex;
       justify-content: flex-end;
-      background-color: #fff;
-      padding-right: 24px;
-      line-height: 56px;
-      font-size: 14px;
-      border: 1px solid @background;
+      background-color: @background-base;
+      padding-right: @padding-lg;
+      line-height:@layout-header-seat;
+      font-size: @font-size-base;
+      border: @border-width-base @border-style-base @background;
       border-left: none;
       .@{idoll-prefix}-icon-message {
-        font-size: 16px;
+        font-size: @font-size-lg;
         color: @text-color;
         cursor: pointer;
       }
       .dbox-avatar {
-        margin-right: 8px !important;
-        margin-left: 24px;
+        margin-right: @margin-xs !important;
+        margin-left: @padding-lg;
         cursor: pointer;
       }
       > a{
@@ -186,7 +187,7 @@ div.layout_temp {
         i:before {
           content: "\E6DE";
           font-family: 'idollicon' !important;
-          color: #000;
+          color: @background-base-dark;
         } 
       }
       > a:hover {
@@ -195,15 +196,15 @@ div.layout_temp {
     }
     .@{idoll-prefix}-breadcrumb {
       background-color: @background;
-      padding: 16px 24px 16px 24px;
+      padding: @padding-md @padding-lg;
     }
     .@{idoll-prefix}-layout-content {
-      padding: 0 24px 24px 24px;
+      padding: 0 @padding-lg @padding-lg @padding-lg;
       background-color: @background;
       > div {
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        background-color: @background-base;
         color: @text-color;
         display: flex;
         justify-content: center;
@@ -217,21 +218,21 @@ div.layout_temp {
   .@{idoll-prefix}-layout {
     .@{idoll-prefix}-layout-content {
       padding: 0;
-      padding-bottom: 24px;
+      padding-bottom: @padding-lg ;
       > .@{idoll-prefix}-tabs {
         display: block;
         div.@{idoll-prefix}-tabs-bar {
           margin: 0;
-          border-right: 1px solid @background;
+          border-right: @border-width-base @border-style-base @background;
           div.@{idoll-prefix}-tabs-nav-container {
-            height: 40px;
+            height: @horizontal-light + 8px;
           }
         }
         div.@{idoll-prefix}-tabs-nav-scroll {
-          margin-left: 4px;
+          margin-left: @margin-xs / 2;
           div.@{idoll-prefix}-tabs-tab {
-            height: 40px;
-            line-height: 16px;
+            height: @horizontal-light + 8px;
+            line-height: @horizontal-light / 2;
             i {
               margin-right: 0;
             }
@@ -240,9 +241,9 @@ div.layout_temp {
         div.@{idoll-prefix}-tabs-content {
           height: 100%;
           background-color: @background;
-          padding: 24px 24px 48px 24px;
+          padding: @padding-lg @padding-lg @layout-tabs-content-padding @padding-lg;
           > div.@{idoll-prefix}-tabs-tabpane-active {
-            background-color: #fff;
+            background-color: @background-base;
             height: 100%;
             display: flex;
             justify-content: center;
