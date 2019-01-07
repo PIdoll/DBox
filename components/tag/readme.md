@@ -34,7 +34,10 @@ import {Tag} from 'components';
 标签可移除，支持动态删除
 ```jsx
 import {Tag} from 'components';
-<Tag closable>可移除标签</Tag>
+<div>
+  <Tag closable>可移除标签</Tag>
+  <Tag closable color='turquoise'>可移除标签</Tag>
+</div>
 ```
 
 #### **热门标签**

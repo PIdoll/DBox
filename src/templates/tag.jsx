@@ -31,6 +31,7 @@ export default class TagView extends React.Component {
         <h1>可移除标签</h1>
         <p style={{marginBottom: '10px'}}>标签添加closable属性可移除</p>
         <Tag closable>可移除标签</Tag>
+        <Tag closable color='turquoise'>可移除标签</Tag>
         <h1>热门标签</h1>
         <p style={{marginBottom: '10px'}}>通过添加属性hot选择你感兴趣的话题</p>
         <span>热门话题:</span>
