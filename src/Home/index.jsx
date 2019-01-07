@@ -1,7 +1,7 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import './style'
+import './style';
 
 function Home() {
   	return (
@@ -245,48 +245,6 @@ function Home() {
         <NavLink className='widget-wrap' to='/tree'>
           <div className='name'>树</div>
           <div className='info'>Tree</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/popconfirm'>
-          <div className='name'>气泡确认框</div>
-          <div className='info'>Popconfirm</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/notification'>
-          <div className='name'>通知确认框</div>
-          <div className='info'>Notification</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/slider'>
-          <div className='name'>滑动条</div>
-          <div className='info'>Slider</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/inputNumber'>
-          <div className='name'>数字输入框</div>
-          <div className='info'>Input-Number</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/grid'>
-          <div className='name'>栅格</div>
-          <div className='info'>Grid</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/back-top'>
-          <div className='name'>返回顶部</div>
-          <div className='info'>Back-Top</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/drawer'>
-          <div className='name'>抽屉</div>
-          <div className='info'>Drawer</div>
         </NavLink>
       </div>
     </div>
