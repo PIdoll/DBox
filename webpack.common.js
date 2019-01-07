@@ -32,6 +32,10 @@ module.exports = {
     progress: true,
     hot: true,
   },
+  watchOptions: {
+    ignored: /node_modules/
+  },
+
   // css 处理
   module: {
     rules: [
