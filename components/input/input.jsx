@@ -177,6 +177,7 @@ export default class Input extends Component {
   // 清除输入框
   onClear = () => {
     this.input.value = '';
+    console.log('清空后的', this.input.value)
     this.setState({
       isHover: false,
     })
@@ -216,7 +217,7 @@ export default class Input extends Component {
 
     const suffix =
       <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly) ? clearAfter : clearAfterNone}
+        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete) ? clearAfter : clearAfterNone}
         {props.suffix}
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
@@ -265,14 +266,11 @@ export default class Input extends Component {
 
   onInput = (e) => {
     this.setState({
-      isHover: true
+      isHover: true,
     })
   }
 
   onBlur = (e) => {
-    if (this.input.value) {
-      this.setState({ active: true })
-    }
     this.setState({
       isHover: false,
     });
