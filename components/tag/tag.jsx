@@ -79,11 +79,12 @@ export default class Tag extends Component {
         })
 
         const deletableTag = <div
+          style={{ borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
           data-show={this.state.closable}
           key={children}
           className={cls}
           onClick={this.handleClick}>
-          <div>{children}</div>
+          <div style={{ color: /blue|red|green|yellow/.test(color) ? color : color }}>{children}</div>
           {closeIcon}
         </div>
         const tag = !this.state.closable ? null : (deletableTag);
