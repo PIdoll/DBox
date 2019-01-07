@@ -65,7 +65,8 @@ export default class Input extends Component {
   constructor() {
     super();
     this.state = {
-      isHover: false
+      isHover: false,
+      isIconHover: false,
     }
   }
 
@@ -176,8 +177,9 @@ export default class Input extends Component {
   // 清除输入框
   onClear = () => {
     this.input.value = '';
+    console.log('清空后的', this.input.value)
     this.setState({
-      isHover: false
+      isHover: false,
     })
   }
 
@@ -195,12 +197,18 @@ export default class Input extends Component {
 
     const clearIcon = <Icon type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
     const clearSuffix = React.cloneElement(clearIcon, {
-      onClick: this.onClear,
+      onMouseDown: this.onClear,
       className: 'icon-hover',
     });
 
     let clearAfter = (
-      <span className={`${props.prefixCls}-clear-icon`}>{clearSuffix}</span>
+      <span
+        onMouseLeave={this.handleIconOnMouseLeave}
+        className={`${props.prefixCls}-clear-icon`}
+        onMouseEnter={this.handleIconOnMouseEnter}
+        >
+        {clearSuffix}
+      </span>
     )
 
     let clearAfterNone = (
@@ -209,7 +217,7 @@ export default class Input extends Component {
 
     const suffix =
       <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {(this.input && this.input.value && this.state.isHover && !this.props.disabled && !this.props.readOnly) ? clearAfter : clearAfterNone}
+        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete) ? clearAfter : clearAfterNone}
         {props.suffix}
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
@@ -232,7 +240,25 @@ export default class Input extends Component {
     );
   }
 
-  onMouseEnter = (e) => {
+  handleIconOnMouseEnter = () => {
+    this.setState({
+      isIconHover: true,
+    })
+  }
+
+  handleIconOnMouseLeave = () => {
+    this.setState({
+      isIconHover: false,
+    })
+  }
+
+  handleInputonMouseLeave = (e) => {
+    this.setState({
+      isHover: false,
+    })
+  }
+
+  handleInputonMouseEnter = (e) => {
     this.setState({
       isHover: true
     })
@@ -240,14 +266,14 @@ export default class Input extends Component {
 
   onInput = (e) => {
     this.setState({
-      isHover: true
+      isHover: true,
     })
   }
 
   onBlur = (e) => {
     this.setState({
-      isHover: false
-    })
+      isHover: false,
+    });
   }
 
   renderInput() {
@@ -274,10 +300,12 @@ export default class Input extends Component {
     return this.renderLaybeldIcon(
       <input
         {...otherProps}
+        clearable={toString(otherProps.clearable)}
         className={classNames(this.getInputClassName(), className)}
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
-        onMouseEnter={this.onMouseEnter}
+        onMouseEnter={this.handleInputonMouseEnter}
+        onMouseLeave={this.handleInputonMouseLeave}
         onInput={this.onInput}
         onBlur={this.onBlur}
         />

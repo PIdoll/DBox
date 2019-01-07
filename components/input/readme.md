@@ -172,10 +172,11 @@ class NumericInput extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
+
   onChange(e){
     const { value } = e.target;
     const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
-    if ((!Number.isNaN(value) && reg.test(value)) || value === '' || value === '-') {
+    if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
       this.props.onChange(value);
     }
   }

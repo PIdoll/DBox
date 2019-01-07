@@ -952,103 +952,120 @@ class TableView extends React.Component {
       city: '沈阳',
       Tel: '13262836283',
       address: '上海市浦东新区唐镇上丰路88号',
-    }]
+    }],
   };
-  this.columnss = [{
-    title: '姓名',
-    dataIndex: 'name',
-    key: 'name',
-    editable: true,
-    render: (text, record) => {
-      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
-      }
-  }, {
-    title: '年龄',
-    dataIndex: 'age',
-    key: 'age',
-    sorter: (a, b) => a.age - b.age,
-    editable: true,
-    render: (text, record) => {
-      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
-      }
-  }, {
-    title: '居住地',
-    dataIndex: 'city',
-    key: 'city',
-    editable: true,
-    render: (text, record) => {
-      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
-      }
-  }, {
-    title: '手机号',
-    dataIndex: 'Tel',
-    key: 'Tel',
-    editable: true,
-    render: (text, record) => {
-      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
-      }
-  }, {
-    title: '地址',
-    dataIndex: 'address',
-    key: 'address',
-    editable: true,
-    render: (text, record) => {
-      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
-      }
-  }, {
-    title: '操作',
-    dataIndex: 'action',
-    key: 'action',
-    render: (text, record) => {
-      const editable = this.isEditing(record);
-      return (
-        <div>
-          {editable ? (
-            <span>
-              <EditableContext.Consumer>
-                {form => (
-                  <a
-                    href='javascript:;'
-                    onClick={() => this.save(form, record.key)}
-                  >
-                    保存
-                  </a>
-                )}
-              </EditableContext.Consumer>
-              <Divider type='vertical' />
-              <a
-                href='javascript:;'
-                onClick={() => this.cancel(record.key)}
-                  >
-                    取消
-              </a>
-            </span>
-          ) : (
-            <span>
-              <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
-              <Divider type='vertical' />
-              <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
-                <a href='javascript:;'>删除</a>
-              </Popconfirm>
-            </span>
-          )}
-        </div>
-      );
-    },
-  }];
+  this.onMouseEnter = this.onMouseEnter.bind(this);
+  this.onMouseLeave = this.onMouseLeave.bind(this);
+  this.onChangeValue = this.onChangeValue.bind(this);
+  this.start = this.start.bind(this);
+  this.handleDelete = this.handleDelete.bind(this);
+  this.onSelectChange = this.onSelectChange.bind(this);
+  this.edit = this.edit.bind(this);
+  this.cancel = this.cancel.bind(this);
+  this.isEditing = this.isEditing.bind(this);
+  this.save = this.save.bind(this);
+  this.handleRendercolnmus = this.handleRendercolnmus.bind(this);
 }
+
+  handleRendercolnmus(flag) {
+    const columnss = [{
+      title: '姓名',
+      dataIndex: 'name',
+      key: 'name',
+      editable: true,
+      render: (text, record) => {
+        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        }
+    }, {
+      title: '年龄',
+      dataIndex: 'age',
+      key: 'age',
+      sorter: (a, b) => a.age - b.age,
+      editable: true,
+      render: (text, record) => {
+        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        }
+    }, {
+      title: '居住地',
+      dataIndex: 'city',
+      key: 'city',
+      editable: true,
+      render: (text, record) => {
+        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        }
+    }, {
+      title: '手机号',
+      dataIndex: 'Tel',
+      key: 'Tel',
+      editable: true,
+      render: (text, record) => {
+        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        }
+    }, {
+      title: '地址',
+      dataIndex: 'address',
+      key: 'address',
+      editable: true,
+      render: (text, record) => {
+        console.log(flag)
+        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        }
+    }, {
+      title: '操作',
+      dataIndex: 'action',
+      key: 'action',
+      render: (text, record) => {
+        const editable = this.isEditing(record);
+        return (
+          <div>
+            {editable ? (
+              <span>
+                <EditableContext.Consumer>
+                  {form => (
+                    <a
+                      href='javascript:;'
+                      onClick={() => this.save(form, record.key)}
+                    >
+                      保存
+                    </a>
+                  )}
+                </EditableContext.Consumer>
+                <Divider type='vertical' />
+                <a
+                  href='javascript:;'
+                  onClick={() => this.cancel(record.key)}
+                    >
+                      取消
+                </a>
+              </span>
+            ) : (
+              <span>
+                <a href='javascript:;' onClick={() => this.edit(record.key)}>编辑</a>
+                <Divider type='vertical' />
+                <Popconfirm title='您确定要删除吗?' onConfirm={() => this.handleDelete(record.key)}>
+                  <a href='javascript:;'>删除</a>
+                </Popconfirm>
+              </span>
+            )}
+          </div>
+        );
+      },
+    }];
+    return columnss;
+  }
   onMouseEnter (e) {
+    // debugger;
     const parentWidth = e.target.parentNode.offsetWidth
     const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
     const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
-    if (selfWdith < parentWidth - (parentPadding * 2)) {
+    if (!(selfWdith < parentWidth - (parentPadding * 2))) {
       this.setState({flag: true})
     }
   }
   onChangeValue () {
     this.setState({ value: this.props.value });
   }
-  onMouseLeave () {
+  onMouseLeave (e) {
     this.setState({flag: false})
   }
   start () {
@@ -1095,7 +1112,7 @@ class TableView extends React.Component {
     });
   }
   render () {
-    const { loading, selectedRowKeys } = this.state;
+    const { loading, selectedRowKeys, flag } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
@@ -1108,7 +1125,7 @@ class TableView extends React.Component {
         cell: EditableCell,
       },
     };
-    const columnn = this.columnss.map((col) => {
+    const columnn = this.handleRendercolnmus(flag).map((col) => {
       if (!col.editable) {
         return col;
       }

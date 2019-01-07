@@ -65,7 +65,7 @@ import { InputNumber } from 'dbox-ui';
 
 const InputNumberView = () => {
   return (
-    <InputNumber min={1} defaultValue={3} max={10} />
+    <InputNumber min={1} step={0.2} defaultValue={3} max={10} />
   )
 }
 <InputNumberView />

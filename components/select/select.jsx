@@ -52,7 +52,7 @@ export default class Select extends React.Component {
 
     const clearIcon = (
       <Icon
-        type='close-circle-o'
+        type='close-circle'
         className={`${prefixCls}-picker-clear`}
     />
     );

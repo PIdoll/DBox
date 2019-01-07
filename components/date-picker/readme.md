@@ -242,7 +242,99 @@ disabledRangeTime = (_, type) => {
 </div>
 ```
 
-##### **API**
+#### **自定义日期范围选择**
+
+```jsx
+import { DatePicker } from 'components';
+class DiyDatePickerView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startValue: null,
+      endValue: null,
+      endOpen: false,
+    }
+    this.disabledStartDate = this.disabledStartDate.bind(this);
+    this.disabledEndDate = this.disabledEndDate.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onStartChange = this.onStartChange.bind(this);
+    this.onEndChange = this.onEndChange.bind(this);
+    this.handleStartOpenChange = this.handleStartOpenChange.bind(this);
+    this.handleEndOpenChange = this.handleEndOpenChange.bind(this);
+  }
+
+  disabledStartDate(startValue) {
+    const endValue = this.state.endValue;
+    if (!startValue || !endValue) {
+      return false;
+    }
+    return startValue.valueOf() > endValue.valueOf();
+  }
+
+  disabledEndDate(endValue) {
+    const startValue = this.state.startValue;
+    if (!endValue || !startValue) {
+      return false;
+    }
+    return endValue.valueOf() <= startValue.valueOf();
+  }
+
+  onChange(field, value) {
+    this.setState({
+      [field]: value,
+    });
+  }
+
+  onStartChange(value) {
+    this.onChange('startValue', value);
+  }
+
+  onEndChange(value) {
+    this.onChange('endValue', value);
+  }
+
+  handleStartOpenChange(open) {
+    if (!open) {
+      this.setState({ endOpen: true });
+    }
+  }
+
+  handleEndOpenChange(open) {
+    this.setState({ endOpen: open });
+  }
+
+  render() {
+    const { startValue, endValue, endOpen } = this.state;
+    return (
+      <div>
+        <DatePicker
+          disabledDate={this.disabledStartDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={startValue}
+          placeholder="Start"
+          onChange={this.onStartChange}
+          onOpenChange={this.handleStartOpenChange}
+        />
+        <DatePicker
+          disabledDate={this.disabledEndDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={endValue}
+          placeholder="End"
+          onChange={this.onEndChange}
+          open={endOpen}
+          onOpenChange={this.handleEndOpenChange}
+        />
+      </div>
+    )
+  }
+
+}
+<DiyDatePickerView />
+```
+
+#### **API**
 
 以下API为DatePIcker、MonthPicker、RangePicker、WeekPicker共享API
 

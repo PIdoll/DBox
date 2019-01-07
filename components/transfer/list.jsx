@@ -74,8 +74,7 @@ export default class TransferList extends React.Component {
     if (!e.target.value) {
       return false;
     }
-    // Manually trigger scroll event from lazy search bug
-    // https://github.com/ant-design/ant-design/issues/5631
+
     this.triggerScrollTimer = window.setTimeout(() => {
       const transferNode = ReactDOM.findDOMNode(this);
       const listNode = transferNode.querySelectorAll('idoll-transfer-list-content')[0];
@@ -113,9 +112,6 @@ export default class TransferList extends React.Component {
     this.notFoundNode = node;
   }
 
-  // Fix IE/Edge repaint
-  // https://github.com/ant-design/ant-design/issues/9697
-  // https://stackoverflow.com/q/27947912/3040605
   fixIERepaint() {
     if (!isIEorEDGE()) {
       return false;
