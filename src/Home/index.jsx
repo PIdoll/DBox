@@ -16,7 +16,7 @@ function Home() {
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/alert'>
           <div className='name'>警示框</div>
-          <div className='info'>alert</div>
+          <div className='info'>Alert</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -28,7 +28,7 @@ function Home() {
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/autocomplete'>
           <div className='name'>自动完成</div>
-          <div className='info'>auto-complete</div>
+          <div className='info'>Auto-complete</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -52,25 +52,25 @@ function Home() {
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/breadcrumb'>
           <div className='name'>面包屑</div>
-          <div className='info'>breadcrumb</div>
+          <div className='info'>Breadcrumb</div>
         </NavLink>
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/button'>
           <div className='name'>按钮</div>
-          <div className='info'>button</div>
+          <div className='info'>Button</div>
         </NavLink>
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/calendar'>
           <div className='name'>日历</div>
-          <div className='info'>calendar</div>
+          <div className='info'>Calendar</div>
         </NavLink>
       </div>
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/card'>
           <div className='name'>card卡片</div>
-          <div className='info'>card</div>
+          <div className='info'>Card</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -94,7 +94,7 @@ function Home() {
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/datepicker'>
           <div className='name'>日期选择框</div>
-          <div className='info'>datepicker</div>
+          <div className='info'>Datepicker</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -106,7 +106,7 @@ function Home() {
       <div className='widget-item' >
         <NavLink className='widget-wrap' to='/dropdown'>
           <div className='name'>下拉菜单</div>
-          <div className='info'>dropdown</div>
+          <div className='info'>Dropdown</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -130,7 +130,7 @@ function Home() {
       <div className='widget-item'>
         <NavLink className='widget-wrap' to='/input'>
           <div className='name'>输入框</div>
-          <div className='info'>input</div>
+          <div className='info'>Input</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -143,12 +143,6 @@ function Home() {
         <NavLink className='widget-wrap' to='/layout'>
           <div className='name'>布局</div>
           <div className='info'>layout</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/list'>
-          <div className='name'>列表</div>
-          <div className='info'>List</div>
         </NavLink>
       </div>
       <div className='widget-item'>
@@ -263,12 +257,6 @@ function Home() {
         <NavLink className='widget-wrap' to='/timepicker'>
           <div className='name'>时间选择框</div>
           <div className='info'>timepicker</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/title'>
-          <div className='name'>标题</div>
-          <div className='info'>title</div>
         </NavLink>
       </div>
       <div className='widget-item'>
