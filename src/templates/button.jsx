@@ -7,7 +7,8 @@ const ButtonGroup = Button.Group;
 
 export default () => (
   <div id='main-container'>
-    <h1 className='h1'>基本按钮类型</h1>
+    <h1 className='h1'>1.基本按钮类型</h1>
+    <h2 className='h2'>123</h2>
     <Button type='default'>默认</Button>&nbsp;&nbsp;
     <Button type='primary'>主要</Button>&nbsp;&nbsp;
     <Button type='secondary'>次要</Button>&nbsp;&nbsp;
@@ -16,7 +17,7 @@ export default () => (
     <Button type='danger'>危险</Button>&nbsp;&nbsp;
     <br />
 
-    <h1 className='h1'>文字按钮</h1>
+    <h1 className='h1'>2.文字按钮</h1>
     <Button type='default' text>默认</Button>&nbsp;&nbsp;
     <Button type='secondary' text>主要</Button>&nbsp;&nbsp;
     <br />
