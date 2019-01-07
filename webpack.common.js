@@ -2,12 +2,14 @@ const path = require('path');
 
 // 定义了一些文件夹的路径
 const ROOT_PATH = path.resolve(__dirname);
-const APP_PATH = path.resolve(ROOT_PATH, 'components');
+const APP_PATH = path.resolve(ROOT_PATH, 'src');
+const COMPONENTS_PATH = path.resolve(ROOT_PATH, 'components');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
+const ENTRY_PATH = process.env.NODE_ENV === 'development' ? APP_PATH : COMPONENTS_PATH;
 
 module.exports = {
   // 项目的文件夹 可以直接用文件夹名称 默认会找index.js 也可以确定是哪个文件名字
-  entry: APP_PATH,
+  entry: ENTRY_PATH,
   // 输出的文件名
   output: {
     path: BUILD_PATH,
@@ -51,7 +53,7 @@ module.exports = {
         }, {
           loader: 'less-loader'
         }],
-        exclude: path.resolve(__dirname, 'node_modules')
+        // exclude: path.resolve(__dirname, 'node_modules')
       },
       {
         test: /\.(png|svg|jpg|gif|webp|ico)$/,
