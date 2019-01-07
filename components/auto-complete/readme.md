@@ -200,6 +200,7 @@ class AutoCompleteExamplDemo extends React.Component {
             dataSource={options}
             placeholder='请输入'
             optionLabelProp='value'
+            allowClear
             >
             <Input suffix={<Icon type='search' />} />
         </AutoComplete>

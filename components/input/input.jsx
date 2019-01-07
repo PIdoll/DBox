@@ -217,7 +217,7 @@ export default class Input extends Component {
 
     const suffix =
       <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly) ? clearAfter : clearAfterNone}
+        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete) ? clearAfter : clearAfterNone}
         {props.suffix}
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
