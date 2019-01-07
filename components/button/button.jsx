@@ -26,7 +26,8 @@ export default class Button extends React.Component {
 	    loading: PropTypes.bool,
 	    className: PropTypes.string,
 		icon: PropTypes.string,
-		block: PropTypes.bool
+		block: PropTypes.bool,
+		iconLocation: PropTypes.string,
 	}
 	componentWillUnmount() {
 		if (this.clickedTimeout) {
