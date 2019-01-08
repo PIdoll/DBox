@@ -56,18 +56,21 @@ export default class CheckboxView extends React.Component {
     });
   }
   render() {
-    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${this.state.disabled ? 'Disabled' : 'Enabled'}`
+    const label = `${this.state.checked ? '选中' : '非选中'}-${this.state.disabled ? '禁用' : '非禁用'}`
     return (
       <div id='main-container'>
         <h1 className='h1'>通用多选框</h1>
-        <Checkbox >
+        <h3>测试API autoFocus自动选中功能</h3>
+        <Checkbox autoFocus>
           多选框
         </Checkbox>
         <h1 className='h1'>受控多选框</h1>
+        <h3>测试API checked选中功能 disabled禁用功能 onChange切换选择的回调函数功能 onClick点击选择的回调函数功能</h3>
         <Checkbox onChange={this.onChangeState} checked={this.state.checked} disabled={this.state.disabled} >{label}</Checkbox>
         <br />
         <Button onClick={this.toggleChecked}>选中切换</Button>  <Button onClick={this.toggleDisabled}>禁用切换</Button>
         <h1 className='h1'>多选框全选</h1>
+        <h3>测试API indeterminate切换选中的样式 checked选中功能 options选择框的功能组 value选择框的绑定值 onChange切换选择的回调函数功能</h3>
         <div>
           <Checkbox indeterminate={this.state.indeterminate} checked={this.state.checkAll} onChange={this.onCheckAllChange}>
             选择所有选项
@@ -76,13 +79,15 @@ export default class CheckboxView extends React.Component {
         <br />
         <CheckboxGroup options={plainOptions} value={this.state.checkedList} onChange={this.onChange} />
         <h1 className='h1'>多选框组</h1>
+        <h3>测试API checked选中功能 options选择框的功能组 defaultValue选择框的默认绑定值</h3>
         <CheckboxGroup options={plainOptions} defaultValue={['苹果']} />
         <br />
         <CheckboxGroup options={options} defaultValue={['梨']} />
         <br />
         <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['梨']} />
         <h1 className='h1'>多选框不可用</h1>
-        <Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
+        <h3>测试API disabled禁用选择框 defaultValue选择框的默认绑定值</h3>
+        <Checkbox defaultChecked={false} disabled>不可操作</Checkbox>
         <Checkbox defaultChecked disabled >不允许操作</Checkbox>
       </div>
     )

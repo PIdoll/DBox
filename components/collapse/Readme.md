@@ -58,21 +58,24 @@ function callback(key) {
 <Collapse defaultActiveKey={['3']} onChange={callback}>
   <Panel header='标题一' key='1' >
     <Collapse accordion>
-      <Panel header='标题一' key='2' >
+      <Panel header='次标题一' key='2' >
+        <p>{text5}</p>
+      </Panel>
+      <Panel header='次标题二' key='22' >
         <p>{text5}</p>
       </Panel>
     </Collapse>
   </Panel>
   <Panel header='标题二' key='3'>
     <Collapse accordion defaultActiveKey={['4']}>
-      <Panel header='标题一' key='4' >
+      <Panel header='次标题一' key='4' >
         <p>{text5}</p>
       </Panel>
     </Collapse>
   </Panel>
   <Panel header='标题三' key='5'>
     <Collapse accordion>
-      <Panel header='标题一' key='6' >
+      <Panel header='次标题一' key='6' >
         <p>{text5}</p>
       </Panel>
     </Collapse>

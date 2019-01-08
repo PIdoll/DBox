@@ -14,6 +14,7 @@ const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
 const RadioGroup = Radio.RadioGroup;
 const Option = Select.Option;
+const Textarea = Input.Textarea
 
 const pStyle = {
   fontSize: 16,
@@ -93,6 +94,7 @@ class extends React.Component {
     this.setState({
       visible: false,
     });
+    console.log('遮罩层关闭')
   };
   onClose1 = () => {
     this.setState({
@@ -129,6 +131,7 @@ class extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>基本用法</h1>
+        <h3>测试API maskStyle遮罩层样式（string） destroyOnClose关闭遮罩层时销毁其内子元素（bool） title遮罩层的标题（string） placement遮罩层的出现位置（string） onClose遮罩层关闭的回调函数（function） maskClosable遮罩层是否关闭（bool） visible抽屉是否显示（bool）</h3>
         <div>
           <Button type='primary' onClick={this.showDrawer}>
             打开基础抽屉
@@ -136,7 +139,8 @@ class extends React.Component {
           <Drawer
             title='基础抽屉'
             placement='right'
-            closable={false}
+            maskStyle={{backgroundColor: '#fff'}}
+            destroyOnClose
             onClose={this.onClose}
             visible={this.state.visible}
           >
@@ -146,6 +150,7 @@ class extends React.Component {
           </Drawer>
         </div>
         <h1 className='h1'>表单抽屉</h1>
+        <h3>测试API style抽屉样式（object） mask遮罩层是否显示（bool） width遮罩层的宽度（bumber） title遮罩层的标题（string） placement遮罩层的出现位置（string） onClose遮罩层关闭的回调函数（function） closable显示遮罩层右上角的关闭图标（bool） visible抽屉是否显示（bool）</h3>
         <div>
           <Button type='primary' onClick={this.showDrawer1}>
           创建表单抽屉
@@ -153,6 +158,7 @@ class extends React.Component {
           <Drawer
             title='创建'
             width={720}
+            mask={false}
             placement='right'
             onClose={this.onClose1}
             visible={this.state.visible1}
@@ -240,6 +246,20 @@ class extends React.Component {
                   </FormItem>
                 </Col>
               </Row>
+              <Row gutter={16}>
+                <Col span={24}>
+                  <FormItem label='Description'>
+                    {getFieldDecorator('description', {
+                    rules: [
+                      {
+                        required: true,
+                        message: 'please enter url description',
+                      },
+                    ],
+                  })(<Textarea rows={23} placeholder='please enter url description' />)}
+                  </FormItem>
+                </Col>
+              </Row>
             </Form>
             <div
               style={{
@@ -267,6 +287,7 @@ class extends React.Component {
           </Drawer>
         </div>
         <h1 className='h1'>多层抽屉</h1>
+        <h3>测试API width遮罩层的宽度（bumber） title遮罩层的标题（string） placement遮罩层的出现位置（string） onClose遮罩层关闭的回调函数（function） closable显示遮罩层右上角的关闭图标（bool） visible抽屉是否显示（bool）</h3>
         <div>
           <Button type='primary' onClick={this.showDrawer2}>
           打开多层抽屉
@@ -318,10 +339,12 @@ class extends React.Component {
           </Drawer>
         </div>
         <h1 className='h1'>信息预览</h1>
+        <h3>测试API zindex抽屉的层级（number）width遮罩层的宽度（bumber） title遮罩层的标题（string） placement遮罩层的出现位置（string） onClose遮罩层关闭的回调函数（function） closable显示遮罩层右上角的关闭图标（bool） visible抽屉是否显示（bool）</h3>
         <div>
           <Button type='primary' href='javascript:;' onClick={this.showDrawer3}>查看个人信息</Button>
           <Drawer
             width={620}
+            zindex={9999}
             placement='right'
             closable={false}
             onClose={this.onClose3}
@@ -410,10 +433,11 @@ class extends React.Component {
           </Drawer>
         </div>
         <h1 className='h1'>四种方位</h1>
+        <h3>测试API className抽屉的类名（string） title遮罩层的标题（string） placement遮罩层的出现位置（string） onClose遮罩层关闭的回调函数（function） closable显示遮罩层右上角的关闭图标（bool） visible抽屉是否显示（bool）</h3>
         <div>
           <RadioGroup
             style={{ marginRight: 8 }}
-            initialValue={this.state.placement}
+            defaultValue={this.state.placement}
             onChange={this.onChange}
         >
             <Radio value='top'>上</Radio>
@@ -427,6 +451,7 @@ class extends React.Component {
           </Button>
           <Drawer
             title='基础抽屉'
+            className='Drawer'
             placement={this.state.placement}
             closable={false}
             onClose={this.onClose4}

@@ -32,7 +32,7 @@ initialState = {
   }
 
 <div>
-	<Checkbox onChange={this.onChangeState} checked={state.checked} disabled={state.disabled}>{`${state.checked ? 'Checked' : 'Unchecked'}-${state.disabled ? 'Disabled' : 'Enabled'}`}</Checkbox>
+	<Checkbox onChange={this.onChangeState} checked={state.checked} disabled={state.disabled}>{`${state.checked ? '选中' : '非选中'}-${state.disabled ? '禁用' : '非禁用'}`}</Checkbox>
 	<Button onClick={this.toggleChecked}>选中切换</Button>
 
 	<Button onClick={this.toggleDisabled}>禁用切换</Button>
@@ -74,6 +74,7 @@ onChange = (checkedList) => {
           <Checkbox indeterminate={state.indeterminate} checked={state.checkAll} onChange={this.onCheckAllChange}>
             选择所有选项
           </Checkbox>
+          <br />
           <CheckboxGroup options={plainOptions} value={state.checkedList} onChange={this.onChange} />
 </div>
 ```
@@ -118,7 +119,7 @@ import {Checkbox} from 'components';
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| autoFocus | 自动获取焦点 | boolean | false |
+| autoFocus | 自动获取焦点和disabled同时使用无效 | boolean | false |
 | checked | 指定当前是否选中 | boolean | false |
 | defaultChecked | 初始是否选中 | boolean | false |
 | disabled | 失效状态 | boolean | false |

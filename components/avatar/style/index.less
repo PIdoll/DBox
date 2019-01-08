@@ -1,31 +1,31 @@
 @import '../../../style/theme/default/index';
 @import '../../../style/index';
 
-@avatar-prefix-cls : ~'dbox-avatar';
+@avatar-prefix-cls : ~'@{idoll-prefix}-avatar';;
 
 .@{avatar-prefix-cls} {
     .reset-component;
     display: inline-block;
     text-align: center;
-    background: @avatar-bg;
-    color: @avatar-color;
+    background: @default-color;
+    color: @background-base;
     white-space: nowrap;
     position: relative;
     overflow: hidden;
     vertical-align: middle;
     .idoll-icon {
         transform: translateY(-15%);
-        color: #fff;
+        color: @background-base;
     }
     
     &-image {
         background: transparent;
     }
 
-    .avatar-size(@avatar-size-base, @avatar-font-size-base);
+    .avatar-size(@avatar-size-base, @font-size-lg);
         i:before {
-            width: @avatar-font-size-base;
-            height: @avatar-font-size-base;
+            width: @font-size-lg;
+            height: @font-size-lg;
         }
 
     &-lg {
@@ -37,15 +37,15 @@
     }
 
     &-sm {
-        .avatar-size(@avatar-size-sm, @avatar-font-size-sm);
+        .avatar-size(@avatar-size-sm, @font-size-base);
         i:before {
-            width: @avatar-font-size-sm;
-            height: @avatar-font-size-sm;
+            width: @font-size-base;
+            height: @font-size-base;
         }        
     }
 
     &-square {
-        border-radius: @avatar-border-radius;
+        border-radius: @border-radius-base;
     }
 
     & > img {

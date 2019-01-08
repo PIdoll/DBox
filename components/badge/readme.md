@@ -68,11 +68,11 @@ import {Badge, Icon} from 'components';
 	<Badge>
 	  <Icon type='phone' />
 	</Badge>
-	<Badge dot>
+	<Badge dot status='error'>
 	  <Icon type='phone' />
 	</Badge>
-	<Badge dot>
-	  <a href='https://www.baidu.com' target='_blank'>一些通知</a>
+	<Badge dot status='processing'>
+	  <a href='https://www.baidu.com' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
 	</Badge>
 </div>
 ```
@@ -92,8 +92,8 @@ import {Badge} from 'components';
 用dot控制消息的状态
 ```jsx
 import {Badge} from 'components';
-<div>
-	<div style={{ position: 'relative', marginLeft: '10px' }}>
+<div className='state'>
+	<div style={{ marginLeft: '10px' }}>
       <Badge dot status='success' />
       <Badge dot status='error' style={{ marginLeft: '20px' }} />
       <Badge dot status='default' style={{ marginLeft: '40px' }} />
@@ -101,7 +101,7 @@ import {Badge} from 'components';
       <Badge dot status='warning' style={{ marginLeft: '80px' }} />
     </div>
     <br />
-    <div style={{ position: 'relative', marginLeft: '10px' }}>
+    <div style={{ marginLeft: '10px' }}>
       <Badge dot status='success' text='成功' /><br />
       <Badge dot status='error' text='错误'  /><br />
       <Badge dot status='default' text='默认'  /><br />
@@ -183,8 +183,9 @@ class BadgeView extends React.Component {
 
 | 参数           | 说明                             | 类型 |默认值 |
 |----------------|--------------------------------|---------|--------|
-| overflowCount  | 展示封顶的数字值                 | Number | 99     |
+| overflowCount  | 展示封顶的数字值                 | Number/String | 99     |
 | showZero            | 当数值为0时，是否展示Badge       | boolean    |false  |
+| count            | 展示的数值和dot同时设置时无效       | Number    |  - |
 | dot            | 不展示数字，只有一个小红点       | boolean    |false  |
 | status            | 和dot搭配使用，在设置dot的前提下有效，设置Badge的状态点       | string(`success`,`processing`,`default`,`error`,`warning`)   |''  |
 | offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   | - |
