@@ -210,7 +210,7 @@ class extends React.Component {
                     {getFieldDecorator('type', {
                     rules: [{ required: true, message: '请选择类型' }],
                   })(
-                    <Select initialValue='private' placeholder='请选择类型'>
+                    <Select initialValue='public' placeholder='请选择类型'>
                       <Option value='private'>私密</Option>
                       <Option value='public'>公开</Option>
                     </Select>
