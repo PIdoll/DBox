@@ -1,11 +1,10 @@
-#### **何时使用**
 
 当用户需要一个日期(年、月、日、时、分、秒)，可以点击标准输入框，弹出日期面板进行选择。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 
 const RangePicker = DatePicker.RangePicker;
 const MonthPicker = DatePicker.MonthPicker;
@@ -33,10 +32,10 @@ onOk = () => {
 </div>
 ```
 
-#### **三种大小**
+##### **三种大小**
 
 ```jsx
-import { Radio, DatePicker } from 'components';
+import { Radio, DatePicker } from 'dbox-ui';
 
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -85,10 +84,10 @@ class DatePickerView extends React.Component {
 <DatePickerView />
 ```
 
-#### **禁用**
+##### **禁用**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -115,10 +114,10 @@ onOk = () => {
 </div>
 ```
 
-#### **日期格式**
+##### **日期格式**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -144,10 +143,10 @@ const monthFormat = 'YYYY/MM';
 </div>
 ```
 
-#### **日期时间选择**
+##### **日期时间选择**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 
 const RangePicker = DatePicker.RangePicker;
 const MonthPicker = DatePicker.MonthPicker;
@@ -181,10 +180,10 @@ onOk = () => {
 </div>
 ```
 
-#### **不可选择日期和时间**
+##### **不可选择日期和时间**
 
 ```jsx
-import { DatePicker } from 'components';
+import { DatePicker } from 'dbox-ui';
 import moment from 'moment';
 
 const RangePicker = DatePicker.RangePicker;
@@ -353,14 +352,14 @@ class DiyDatePickerView extends React.Component {
 | onOpenChange | 弹出日历和关闭日历的回调 | function(status) | 无 |
 | suffixIcon | 自定义的选择框后缀图标 | ReactNode | - |
 
-#### **共同的方法**
+##### **共同的方法**
 
 | 名称 | 描述 |
 | --- | --- | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
 
-#### **DatePicker**
+##### **DatePicker**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -374,7 +373,7 @@ class DiyDatePickerView extends React.Component {
 | onChange | 时间发生变化的回调 | function(date: moment, dateString: string) | 无 |
 | onPanelChange | 日期面板变化时的回调 | function(value, mode) | - |
 
-#### **MonthPicker**
+##### **MonthPicker**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -384,7 +383,7 @@ class DiyDatePickerView extends React.Component {
 | value | 日期 | moment | 无 |
 | onChange | 时间发生变化的回调，发生在用户选择时间时 | function(date: moment, dateString: string) | - |
 
-#### **RangePicker**
+##### **RangePicker**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -400,9 +399,10 @@ class DiyDatePickerView extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import DataPickerView from '../prevPage/dataPicker';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <DataPickerView />
 </div>
 ```

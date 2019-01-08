@@ -37,12 +37,12 @@
     border: @border-width-base @border-style-base @wait-icon-color;
     width: @steps-icon-size;
     height: @steps-icon-size;
-    line-height: 30px;
+    line-height: @steps-small-icon-size + 6;
     text-align: center;
     color: @primary-color;
     border-radius: @steps-icon-size;
     font-size: @font-size-lg;
-    margin-right: 8px;
+    margin-right: @steps-dot-size;
     transition: background-color 0.3s, border-color 0.3s;
     font-family: @font-family-no-number;
 
@@ -58,7 +58,7 @@
     left: 0;
     width: 100%;
     top: 16px;
-    padding: 0 10px;
+    padding: 0 @steps-current-dot-size;
 
     &:after {
       content: ' ';
@@ -88,7 +88,7 @@
     font-size: @font-size-lg;
     color: @text-color;
     display: inline-block;
-    padding-right: 16px;
+    padding-right: @padding-md ;
     position: relative;
     line-height: @steps-icon-size;
 
@@ -134,7 +134,7 @@
 
 .@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) {
   .@{steps-prefix-cls}-item {
-    margin-right: 16px;
+    margin-right: @steps-current-dot-size + 6;
     white-space: nowrap;
 
     &:last-child {

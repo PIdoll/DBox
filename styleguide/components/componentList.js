@@ -7,32 +7,31 @@ import { hasInHash, getHash } from '../../utils/handleHash';
 
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
-		margin: 0,
-		paddingLeft: space[2],
+    margin: 0,
+    paddingLeft: 0,
 	},
 	item: {
 		color: color.base,
 		display: 'block',
-		margin: [[space[1], 0, space[1], 0]],
 		fontFamily: fontFamily.base,
 		fontSize: fontSize.base,
 		listStyle: 'none',
 		overflow: 'hidden',
-		textOverflow: 'ellipsis',
+    textOverflow: 'ellipsis',
 	},
 	isChild: {
+    margin: 0,
+    height: '40px',
+    lineHeight: '40px',
 		[mq.small]: {
 			display: 'inline-block',
-		},
+    },
 	},
 	heading: {
 		color: '#999',
 		marginTop: space[1],
 		fontFamily: fontFamily.base,
-		fontWeight: 'bold',
-	},
-	isSelected: {
-		fontWeight: 'bold',
+    fontWeight: 'bold',
 	},
 });
 
@@ -44,28 +43,15 @@ export function ComponentsListRenderer({ classes, items }) {
 	}
 
 	const windowHash = window.location.pathname + getHash(window.location.hash);
-	return (
-		<ul className={classes.list}>
-			{items.map(({ heading, visibleName, href, content, external }) => {
-				const isItemSelected = hasInHash(windowHash, href);
-				return (
-					<li
-						className={cx(
+	return (<ul className={classes.list}>
+  {items.map(({ heading, visibleName, href, content, external }) => {
+    const isItemSelected = hasInHash(windowHash, href);
+      return (<li className={cx(
 							classes.item,
 							(!content || !content.props.items.length) && classes.isChild,
 							isItemSelected && classes.isSelected
-						)}
-						key={href}
-					>
-						<Link
-							className={cx(heading && classes.heading)}
-							href={href}
-							target={external ? '_blank' : undefined}
-						>
-							{visibleName}
-						</Link>
-						{content}
-					</li>
+						)}key={href}
+					><Link className={cx(heading && classes.heading)} href={href}target={external ? '_blank' : undefined}>{visibleName}</Link>{content}</li>
 				);
 			})}
 		</ul>

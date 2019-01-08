@@ -1,10 +1,10 @@
-#### **何时使用**
+
 用于快速定位页面内容。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
-import { Anchor } from 'components';
+import { Anchor } from 'dbox-ui';
 const { Link } = Anchor;
 
 <div>
@@ -22,9 +22,7 @@ const { Link } = Anchor;
 </div>
 ```
 
-#### **API**
-
-#### **Anchor Props**
+##### **Anchor Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -34,7 +32,7 @@ const { Link } = Anchor;
 | offsetTop | 距离窗口顶部达到指定偏移量后触发 | number | - |
 | onClick | click 事件的 handler | Function(e: Event, link: Object) | - |
 
-#### **Link Props**
+##### **Link Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -42,9 +40,10 @@ const { Link } = Anchor;
 | title | 文字内容 | string , ReactNode | - |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import AnchorView from '../prevPage/anchor';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AnchorView />
 </div>
 ```

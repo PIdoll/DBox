@@ -1,10 +1,11 @@
-#### **何时使用**
+
 需要自动完成时。
-#### **基本使用**
+
+##### **基本使用**
 通过 dataSource 设置自动完成的数据源。
 
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
@@ -43,10 +44,10 @@ class AutoCompleteDemo extends React.Component {
 <AutoCompleteDemo />
 ```
 
-#### **自定义选项**
+##### **自定义选项**
 可以直接传 `AutoComplete.Option` 作为 `AutoComplete` 的 `children`，而非使用 `dataSource`。
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 const Option = AutoComplete.Option;
 class AutoCompleteExamplDemo extends React.Component {
     constructor(){
@@ -90,10 +91,10 @@ class AutoCompleteExamplDemo extends React.Component {
 <AutoCompleteExamplDemo />
 ```
 
-#### **不区分大小写**
+##### **不区分大小写**
 不区分大小写的 `AutoComplete`。
 ```jsx
-import { AutoComplete } from 'components';
+import { AutoComplete } from 'dbox-ui';
 class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
@@ -123,10 +124,10 @@ class AutoCompleteExamplDemo extends React.Component {
 <AutoCompleteExamplDemo />
 ```
 
-#### **查询模式-确定类目**
+##### **查询模式-确定类目**
 查询模式: 确定类目 示例。
 ```jsx
-import { AutoComplete,Input,Icon } from 'components';
+import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 class AutoCompleteExamplDemo extends React.Component {
@@ -210,10 +211,10 @@ class AutoCompleteExamplDemo extends React.Component {
 <AutoCompleteExamplDemo />
 ```
 
-#### **查询模式-不确定类目**
+##### **查询模式-不确定类目**
 查询模式: 不确定类目 示例。
 ```jsx
-import { AutoComplete,Input,Icon } from 'components';
+import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 class AutoCompleteExamplDemo extends React.Component {
@@ -289,8 +290,7 @@ class AutoCompleteExamplDemo extends React.Component {
 <AutoCompleteExamplDemo />
 ```
 
-#### **AutoComplete**
-
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -311,7 +311,7 @@ class AutoCompleteExamplDemo extends React.Component {
 | onSearch | 搜索补全项的时候调用 | function(value) | 无 |
 | onSelect | 被选中时调用，参数为选中项的 value 值 | function(value, option) | 无 |
 
-#### **方法**
+##### **方法**
 
 | 名称 | 描述 |
 | ---- | ----------- |
@@ -320,9 +320,10 @@ class AutoCompleteExamplDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import AutoCompleteView from '../prevPage/autoComplete';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AutoCompleteView />
 </div>
 ```
