@@ -31,7 +31,6 @@
     "create-react-class": "^15.6.3",
     "css-animation": "^1.4.1",
     "enquire-js": "^0.1.1",
-    "express": "^4.16.4",
     "gregorian-calendar": "^4.1.0",
     "gregorian-calendar-format": "^4.1.0",
     "moment": "2.22.2",
