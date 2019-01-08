@@ -17,6 +17,7 @@ function fixControlledValue(value) {
 export default class Input extends Component {
   static defaultProps = {
     // intialValue: '',
+    search: false, // is search input
     disabled: false,
     prefixCls: 'idoll-input',
     type: 'text',
@@ -57,6 +58,7 @@ export default class Input extends Component {
     beforelength: PropTypes.string, // 前置的宽度
     afterlength: PropTypes.string, // 后置的宽度
     clearable: PropTypes.bool,
+    search: PropTypes.bool,
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
@@ -201,7 +203,8 @@ export default class Input extends Component {
       className: 'icon-hover',
     });
 
-    const clearIconDisplay = this.input && this.input.value && (this.state.isOnInput || this.state.isInputHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete;
+    const clearIconDisplay = this.input && this.input.value && (this.state.isOnInput || this.state.isInputHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete && !this.props.search;
+
     let clearAfter = (
       <span
         style={{display: clearIconDisplay ? '' : 'none'}}
@@ -209,12 +212,12 @@ export default class Input extends Component {
         >
         {clearSuffix}
       </span>
-    )
+    );
 
     const suffix =
       <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {(clearAfter)}
-        {props.suffix}
+        {clearIconDisplay ? null : props.suffix }
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
@@ -283,7 +286,8 @@ export default class Input extends Component {
       'addonBefore',
       'addonAfter',
       'prefix',
-      'suffix'
+      'suffix',
+      'search',
     ]);
 
 
