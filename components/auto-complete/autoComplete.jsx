@@ -25,7 +25,7 @@ export default class AutoComplete extends React.Component {
     const { children } = this.props;
     const element = children && React.isValidElement(children) && children.type !== Option ? React.Children.only(this.props.children) : <Input />;
 
-    const elementProps = { ...element.props };
+    const elementProps = { ...element.props, autoComplete: 'true' };
     delete elementProps.children;
     return (
       <InputElement {...elementProps}>{element}</InputElement>
@@ -53,7 +53,8 @@ export default class AutoComplete extends React.Component {
       [`${prefixCls}-sm`]: size === 'small',
       [className]: !!className,
       [`${prefixCls}-show-search`]: true,
-      [`${prefixCls}-auto-complete`]: true
+      [`${prefixCls}-auto-complete`]: true,
+      [`${prefixCls}-hasSearch`]: children,
     });
 
     let options;

@@ -16,7 +16,6 @@ import Layout from 'templates/layout'
 import Radio from 'templates/radio'
 import Icon from 'templates/icon'
 import Pagination from 'templates/pagination'
-import Index from './HomeIndex'
 import Modal from 'templates/modal'
 import Breadcrumb from 'templates/breadcrumb'
 import Tag from 'templates/tag';
@@ -28,7 +27,6 @@ import AutoComplete from 'templates/auto-complete';
 import Timeline from 'templates/timeline';
 import Spin from 'templates/spin';
 import Popover from 'templates/popover';
-import Title from 'templates/title';
 import Divider from 'templates/divider';
 import MenuDemo from 'templates/menu';
 import Steps from 'templates/steps';
@@ -38,7 +36,6 @@ import Upload from 'templates/upload';
 import Affix from 'templates/affix';
 import Card from 'templates/card';
 import Avatar from './templates/avatar';
-import List from 'templates/list';
 import Table from 'templates/table';
 import Anchor from 'templates/anchor';
 import Cascader from 'templates/cascader';
@@ -59,7 +56,7 @@ import './App.css';
 const App = () => (
   <Router>
     <div>
-      <Route exact path='/' component={Index} />
+      <Route exact path='/' component={Home} />
       <Route exact path='/home' component={Home} />
       <Route exact path='/collapse' component={Collapse} />
       <Route exact path='/progress' component={Progress} />
@@ -85,7 +82,6 @@ const App = () => (
       <Route exact path='/timeline' component={Timeline} />
       <Route exact path='/spin' component={Spin} />
       <Route exact path='/popover' component={Popover} />
-      <Route exact path='/title' component={Title} />
       <Route exact path='/divider' component={Divider} />
       <Route exact path='/menu' component={MenuDemo} />
       <Route exact path='/steps' component={Steps} />
@@ -96,7 +92,6 @@ const App = () => (
       <Route exact path='/card' component={Card} />
       <Route exact path='/avatar' component={Avatar} />
       <Route exact path='/pagination' component={Pagination} />
-      <Route exact path='/list' component={List} />
       <Route exact path='/table' component={Table} />
       <Route exact path='/cascader' component={Cascader} />
       <Route exact path='/anchor' component={Anchor} />
