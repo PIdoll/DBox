@@ -10,7 +10,7 @@ import shallowequal from 'shallowequal'
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import getScroll from '../_util/getScroll';
 
-import './style/index'
+import './style/index';
 
 // 用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
 function getTargetRect(target) {

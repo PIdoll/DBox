@@ -5,8 +5,16 @@
 
 #### **更新记录**
 ```jsx noeditor
-import { Version } from 'components';
+import { Version } from 'dbox-ui';
 
 <Version />
 
+```
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import VersionView from '../prevPage/version';
+<div>
+   <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <VersionView />
+</div>
 ```

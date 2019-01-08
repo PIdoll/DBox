@@ -1,11 +1,10 @@
-#### **何时使用**
 
 当用户需要一个准确的时间的时候，可以点击标准输入框，弹出时间面板进行选择准确的时间节点。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 onChange = (time, timeString) => {
     console.log(time, timeString);
@@ -13,10 +12,10 @@ onChange = (time, timeString) => {
 <TimePicker onChange={this.onChange} />
 ```
 
-#### **三种尺寸**
+##### **三种尺寸**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 
 <div style={{ display: 'flex' }}>
@@ -32,16 +31,16 @@ import moment from 'moment';
 </div>
 ```
 
-#### **禁用**
+##### **禁用**
 
 ```jsx
-import { TimePicker } from 'components';
+import { TimePicker } from 'dbox-ui';
 import moment from 'moment';
 
 <TimePicker defaultValue={moment('12:08:23', 'HH:mm:ss')} disabled />
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -63,9 +62,10 @@ import moment from 'moment';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import TimePickerView from '../prevPage/timePicker';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TimePickerView />
 </div>
 ```
