@@ -1,9 +1,10 @@
-#### **何时使用**
-
-一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。
+#### **概述**
+一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理数据。
 
 #### **基本徽标展示**
+通常配合avatar展示需要用户处理的数据量
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -17,7 +18,9 @@ const content = {
 ```
 
 #### **独立使用**
+将用户需要处理的数量单独抽离出来
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -33,7 +36,9 @@ const content = {
 ```
 
 #### **封顶数字**
+通过设置overflowCount来控制最大的消息数量值
 ```jsx
+import {Badge} from 'components';
 const content = {
   width: 64,
   height: 64,
@@ -56,7 +61,9 @@ const content = {
 
 
 #### **讨嫌的小红点**
+通过dot设置不显示待处理的消息数量
 ```jsx
+import {Badge, Icon} from 'components';
 <div>
 	<Badge>
 	  <Icon type='phone' />
@@ -71,7 +78,9 @@ const content = {
 ```
 
 #### **a标签包裹可点击**
+通过a链接包裹badge来控制点击跳转
 ```jsx
+import {Badge} from 'components';
 <a href='https://www.baidu.com'>
   <Badge count={8}>
     <span className='example' />
@@ -80,7 +89,9 @@ const content = {
 ```
 
 #### **用于表示状态的小圆点**
+用dot控制消息的状态
 ```jsx
+import {Badge} from 'components';
 <div>
 	<div style={{ position: 'relative', marginLeft: '10px' }}>
       <Badge dot status='success' />
@@ -92,16 +103,18 @@ const content = {
     <br />
     <div style={{ position: 'relative', marginLeft: '10px' }}>
       <Badge dot status='success' text='成功' /><br />
-      <Badge dot status='error' text='错误' style={{ top: '28px' }} /><br />
-      <Badge dot status='default' text='默认' style={{ top: '48px' }} /><br />
-      <Badge dot status='processing' text='进行中' style={{ top: '68px' }} /><br />
-      <Badge dot status='warning' text='警告' style={{ top: '88px' }} /><br />
+      <Badge dot status='error' text='错误'  /><br />
+      <Badge dot status='default' text='默认'  /><br />
+      <Badge dot status='processing' text='进行中'  /><br />
+      <Badge dot status='warning' text='警告'  /><br />
     </div>
 </div>
 ```
 
 #### **动态变化** 
+通过引入按钮或者开关控制消息的数量或者是否展示
 ```jsx
+import {Badge, Button, Switch, Icon} from 'components';
 const ButtonGroup = Button.Group;
 const content = {
   width: 64,

@@ -1,15 +1,10 @@
-<!-- # [cascader] (http://naotu.baidu.com/file/d1a03b70d870257010a976d9129552b6?token=17e98a49d802129c) -->
-
-
-#### **何时使用**
-- 需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。
-- 从一个较大的数据集合中进行选择时，用多级分类进行分隔，方便选择。
-- 比起 Select 组件，可以在同一个浮层中完成选择，有较好的体验。
+级联选择器，用于在同一浮层中从一组关联的数据中进行选择。
 
 #### **基本使用**
-省市区级联，通过指定 `options` 里的 `disabled` 字段可以设置禁用选项。
+可通过设置 `options` 属性来展示数据,其中 `disabled` 字段可设置是否禁用。
 
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -55,8 +50,9 @@ function onChange(value) {
 
 
 #### **默认值**
-通过数组的方式指定默认值。
+可通过设置 `defaultValue` 属性用于展示默认值。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -100,8 +96,9 @@ function onChange(value) {
 ```
 
 #### **移入展开**
-通过移入展开下级菜单，点击完成选择。
+可通过设置 `expandTrigger` 属性为 `hover` 来移入展开下级菜单，点击完成选择。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -154,8 +151,9 @@ function onChange(value) {
 ```
 
 #### **尺寸**
-不同大小的级联选择器。
+可通过设置 `size` 属性控制级联框的尺寸，默认为中。
 ```jsx
+import { Cascader } from 'components';
 const basicDatas = [{
     value: '浙江',
     label: '浙江',
@@ -201,8 +199,9 @@ function onChange(value) {
 </div>
 ```
 #### **动态加载选项**
-使用 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
+可通过设置 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
 ```jsx
+import { Cascader } from 'components';
 class CascaderExample extends React.Component {
     constructor(){
         super();
@@ -266,9 +265,9 @@ class CascaderExample extends React.Component {
 ```
 
 #### **搜索**
-可以直接搜索选项并选择（ `Cascader[showSearch]` 暂不支持服务端搜索）
+可设置 `showSearch` 属性实现级联框中内容的搜索。
 ```jsx
-
+import { Cascader } from 'components';
 const searchData = [{
     value: '上海',
     label: '上海',
@@ -351,3 +350,12 @@ function filter(inputValue, path) {
 | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

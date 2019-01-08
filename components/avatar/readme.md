@@ -1,9 +1,10 @@
-#### **何时使用**
-
-用来代表用户或事物，支持图片、图标或字符展示。
+#### **概述**
+用来代表用户，支持图片、图标或字符展示。
 
 ##### **基本用法**
+通过设置size的值为large,small来控制avatar大小不设置默认为正常大小
 ```jsx
+import {Avatar} from 'components';
 <div>
   <div>
     <Avatar style={{ marginRight: 47 }} size='large' icon='user' />
@@ -20,7 +21,9 @@
 ```
 
 ##### **基本类型**
+可在avatar内设置文字，图片或者背景颜色
 ```jsx
+import {Avatar} from 'components';
 <div>
   <Avatar style={{ marginRight: 47 }} icon='user' />
   <Avatar style={{ marginRight: 47 }}>USER</Avatar>
@@ -29,7 +32,9 @@
 </div>
 ```
 ##### **带徽标的头像**
+用badge包裹avatar，常用来展示用户的消息数量
 ```jsx
+import {Avatar, Badge} from 'components';
 <div>
   <span style={{ marginRight: 47 }}>
     <Badge count={2}><Avatar shape='square' icon='user' /></Badge>
@@ -41,16 +46,20 @@
 ```
 
 ##### **自动调整字符大小**
+固定avatar大小，自动调整avata内容文字大小
 ```jsx
+import {Avatar} from 'components';
 <div>
-   <Avatar style={{ marginRight: 47 }}>DBox</Avatar>
+  <Avatar style={{ marginRight: 47 }}>DBox</Avatar>
 	<Avatar style={{ marginRight: 47 }}>Alvin</Avatar>
 	<Avatar style={{ marginRight: 47 }}>react</Avatar>
 </div>
 ```
 
 ##### **按钮调整字符大小**
+通过按钮控制avata内容文字大小或者用来切换用户
 ```jsx
+import {Avatar, Button} from 'components';
 const UserList = ['Z', 'Alvin', 'Idoll', 'DBox'];
 class AvatarView extends React.Component {
   constructor(props) {
@@ -82,7 +91,7 @@ class AvatarView extends React.Component {
 <AvatarView />
 ```
 
-## API
+#### **Avatar**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -92,3 +101,12 @@ class AvatarView extends React.Component {
 | src | 图片类头像的资源地址 | string | - |
 | alt | 图片无法显示时的替代文本 | string | - |
 | onError | 给定src属性但未赋值的事件，返回false会关闭组件默认的fallback行为 | () => boolean | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

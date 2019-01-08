@@ -5,7 +5,7 @@
 /* eslint-disable func-call-spacing */
 import React from 'react';
 import moment from 'moment';
-import { polyfill } from 'react-lifecycles-compat';
+// import { polyfill } from 'react-lifecycles-compat';
 import RcTimePicker from 'rc-time-picker/lib/TimePicker';
 import classNames from 'classnames';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
@@ -33,18 +33,13 @@ function handleTimeFormat(timeValue) {
   return timeValue;
 }
 
-
-// const date = new Date();
-// const timeValue = handleTimeFormat(date.getHours()) + ':' + handleTimeFormat(date.getMinutes()) + ':' + handleTimeFormat(date.getSeconds());
-// const defaultOpenValue = moment(timeValue, 'HH:mm:ss')
-
 class TimePicker extends React.Component {
   static propTypes = {
     className: PropTypes.string,
     size: PropTypes.oneOf(['large', 'default', 'small']),
     open: PropTypes.bool,
     format: PropTypes.string,
-    omChange: PropTypes.func,
+    onChange: PropTypes.func,
     onOpenChange: PropTypes.func,
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
@@ -69,6 +64,7 @@ class TimePicker extends React.Component {
     align: PropTypes.object,
     placement: PropTypes.string,
     transitionName: PropTypes.string,
+    autoFocus: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -97,8 +93,7 @@ class TimePicker extends React.Component {
     const value = props.value || props.defaultValue;
     if (value && !interopDefault(moment).isMoment(value)) {
       throw new Error (
-        'The value/defaultValue of TimePicker must be a moment object after `antd@2.0`, ' +
-        'see: https://u.ant.design/time-picker-value',
+        '',
       );
     }
     this.state = {
@@ -229,6 +224,6 @@ class TimePicker extends React.Component {
     )
   }
 }
-polyfill(TimePicker);
+// polyfill(TimePicker);
 
 export default TimePicker;

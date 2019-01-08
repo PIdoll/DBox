@@ -1,16 +1,11 @@
-<!-- # [AutoComplete](http://naotu.baidu.com/file/b5c4369be0aba62f2e82ce2d5b24f6e8?token=5bea521474424ecb) -->
-
-
 #### **何时使用**
-
 需要自动完成时。
-
-
 #### **基本使用**
-基本使用。通过 dataSource 设置自动完成的数据源。
+通过 dataSource 设置自动完成的数据源。
 
 ```jsx
-class AutoCompleteExample extends React.Component {
+import { AutoComplete } from 'components';
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -29,7 +24,6 @@ class AutoCompleteExample extends React.Component {
         }
         this.setState({ dataSource });
    }
-
     onSelect(value){
         console.log('onSelect', value);
     }
@@ -46,14 +40,15 @@ class AutoCompleteExample extends React.Component {
         )
     }
 }
-<AutoCompleteExample />   
+<AutoCompleteDemo />
 ```
 
 #### **自定义选项**
 可以直接传 `AutoComplete.Option` 作为 `AutoComplete` 的 `children`，而非使用 `dataSource`。
 ```jsx
+import { AutoComplete } from 'components';
 const Option = AutoComplete.Option;
-class AutoCompleteExample extends React.Component {
+class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -92,14 +87,14 @@ class AutoCompleteExample extends React.Component {
         )
     }
 }
-<AutoCompleteExample />  
-``` 
+<AutoCompleteExamplDemo />
+```
 
 #### **不区分大小写**
 不区分大小写的 `AutoComplete`。
 ```jsx
-
-class AutoCompleteExample extends React.Component {
+import { AutoComplete } from 'components';
+class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -125,21 +120,20 @@ class AutoCompleteExample extends React.Component {
         )
     }
 }
-<AutoCompleteExample />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **查询模式-确定类目**
 查询模式: 确定类目 示例。
 ```jsx
+import { AutoComplete,Input,Icon } from 'components';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
-class AutoCompleteExample extends React.Component {
+class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
         this.renderTitle = this.renderTitle.bind(this);
     }
-
-
     renderTitle(title) {
       return (
         <span>
@@ -206,21 +200,23 @@ class AutoCompleteExample extends React.Component {
             dataSource={options}
             placeholder='请输入'
             optionLabelProp='value'
+            allowClear
             >
             <Input suffix={<Icon type='search' />} />
         </AutoComplete>
         )
     }
 }
-<AutoCompleteExample />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **查询模式-不确定类目**
 查询模式: 不确定类目 示例。
 ```jsx
+import { AutoComplete,Input,Icon } from 'components';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
-class AutoCompleteExample extends React.Component {
+class AutoCompleteExamplDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -238,7 +234,7 @@ class AutoCompleteExample extends React.Component {
             dataSource: value ? this.searchResult(value) : [],
         });
     }
-    
+
     onSelect(value){
         console.log('onSelect', value);
     }
@@ -290,7 +286,7 @@ class AutoCompleteExample extends React.Component {
         )
     }
 }
-<AutoCompleteExample />   
+<AutoCompleteExamplDemo />
 ```
 
 #### **AutoComplete**
@@ -301,8 +297,8 @@ class AutoCompleteExample extends React.Component {
 | allowClear | 支持清除, 单选模式有效 | boolean | false |
 | autoFocus | 自动获取焦点 | boolean | false |
 | backfill | 使用键盘选择选项的时候把选中项回填到输入框中 | boolean | false |
-| children (自动完成的数据源) | 自动完成的数据源 | React.ReactElement<OptionProps> / Array&lt;React.ReactElement<OptionProps>> | - |
-| children (自定义输入框) | 自定义输入框 | HTMLInputElement / HTMLTextAreaElement / React.ReactElement<InputProps> | `<Input />` |
+| children (自动完成的数据源) | 自动完成的数据源 | React.ReactElement / Array&lt;React.ReactElement | - |
+| children (自定义输入框) | 自定义输入框 | HTMLInputElement / HTMLTextAreaElement / React.ReactElement | `<Input />` |
 | dataSource | 自动完成的数据源 | [DataSourceItemType](https://git.io/vMMKF)\[] |  |
 | defaultActiveFirstOption | 是否默认高亮第一个选项。 | boolean | true |
 | defaultValue | 指定默认选中的条目 | string/string/[]/{ key: string, label: string/ReactNode }/Array&lt;{ key: string, label: string/ReactNode}> | 无 |
@@ -322,4 +318,11 @@ class AutoCompleteExample extends React.Component {
 | focus() | 获取焦点 |
 | blur() | 移除焦点 |
 
-<style> .idoll-select-dropdown-menu-item.show-all {text-align:center;cursor:default}</style> 
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

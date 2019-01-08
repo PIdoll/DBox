@@ -1,17 +1,14 @@
+用户操作需要进一步确认，会在操作元素附近弹出浮层提示。
 
-#### **何时使用**
-
-目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，询问用户。
-
-和 `confirm` 弹出的全屏居中模态对话框相比，交互形式更轻量。
 #### **基本用法**
 最简单用法
 ```jsx
-class PopconfirmExample extends React.Component {
+import { Popconfirm } from 'components';
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
-             visible: false,
+            visible: false,
         }
         this.confirm = this.confirm.bind(this);
         this.cancel = this.cancel.bind(this);
@@ -35,15 +32,16 @@ class PopconfirmExample extends React.Component {
     }
 }
 
-<PopconfirmExample />
+<PopconfirmDemo />
 ```
 
 #### **12个方向**
-位置有十二个方向。
+弹出框位置有十二个方向。可通过设置 `placement` 属性控制。
 ```jsx
+import { Popconfirm,Button } from 'components';
 const buttonWidth = '70px';
 const text = '确定要删除吗';
-class PopconfirmExample extends React.Component {
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -69,7 +67,7 @@ class PopconfirmExample extends React.Component {
                 <Button>TL</Button>
             </Popconfirm>
             <Popconfirm placement='top' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
-                <Button>Top</Button>
+                <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Top</Button>
             </Popconfirm>
             <Popconfirm placement='topRight' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
                 <Button>TR</Button>
@@ -102,7 +100,7 @@ class PopconfirmExample extends React.Component {
                 <Button>BL</Button>
             </Popconfirm>
             <Popconfirm placement='bottom' title={text} onConfirm={this.confirm} onCancel={this.cancel}  okText='确认删除' cancelText='取消'>
-                <Button>Bottom</Button>
+                <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Bottom</Button>
             </Popconfirm>
             <Popconfirm placement='bottomRight' title={text} onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
                 <Button>BR</Button>
@@ -112,14 +110,15 @@ class PopconfirmExample extends React.Component {
         )
     }
 }
-<PopconfirmExample />
+<PopconfirmDemo />
 
 ```
 
 #### **条件触发**
 可以判断是否需要弹出。
 ```jsx
-class PopconfirmExample extends React.Component {
+import { Popconfirm,Switch } from 'components';
+class PopconfirmDemo extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -144,7 +143,7 @@ class PopconfirmExample extends React.Component {
             this.setState({ visible });
             return;
         }
-       
+
         if (this.state.condition) {
             this.confirm(); // next step
         } else {
@@ -173,7 +172,7 @@ class PopconfirmExample extends React.Component {
         )
     }
 }
-<PopconfirmExample />
+<PopconfirmDemo />
 ```
 #### **Popconfirm**
 
@@ -192,3 +191,12 @@ class PopconfirmExample extends React.Component {
 ## 注意
 
 请确保 `Popconfirm` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

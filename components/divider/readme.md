@@ -1,7 +1,7 @@
 #### **何时使用**
 
-- 对不同章节的文本段落进行分割。
-- 对行内文字/链接进行分割，例如表格的操作列。
+- 对文本段落进行分割。
+- 对行内文字或者链接进行分割。
 
 #### **水平分割线**
 
@@ -34,3 +34,12 @@
 | type | 水平还是垂直类型 | enum: `horizontal` `vertical` | `horizontal` |
 | className | 分割线样式类 | string | - |
 | style | 分割线样式对象 | object | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

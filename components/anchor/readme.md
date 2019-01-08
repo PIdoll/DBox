@@ -1,10 +1,12 @@
 #### **何时使用**
-需要展现当前页面上可供跳转的锚点链接，以及快速在锚点之间跳转。
+用于快速定位页面内容。
 
 #### **基本用法**
 
 ```jsx
+import { Anchor } from 'components';
 const { Link } = Anchor;
+
 <div>
   <span className='demo-anchor'>
     <Anchor>
@@ -38,3 +40,11 @@ const { Link } = Anchor;
 | --- | --- | --- | --- |
 | href | 锚点链接 | string | - |
 | title | 文字内容 | string , ReactNode | - |
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

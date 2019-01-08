@@ -1,375 +1,284 @@
 @import "../theme/default/index.less";
 @import "../mixins/iconfont.less";
 
-// font-face
-@font-face {
-  font-family: 'idollicon';
-  src:  url('@{icon-url}/idollicon.eot?zfzssk');
-  src:  url('@{icon-url}/idollicon.eot?zfzssk#iefix') format('embedded-opentype'),
-    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('@{icon-url}/idollicon.ttf') format('truetype'),
-    /* chrome、firefox */
-    url('@{icon-url}/idollicon.woff?zfzssk') format('woff'),
-    /* iOS 4.1- */
-    url('@{icon-url}/idollicon.svg?zfzssk#idollicon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'idoll-icon-pro';
-  src:  url('@{icon-url}/idoll-icon-pro.eot?pevkht');
-  src:  url('@{icon-url}/idoll-icon-pro.eot?pevkht#iefix') format('embedded-opentype'),
-    url('@{icon-url}/idoll-icon-pro.ttf?pevkht') format('truetype'),
-    url('@{icon-url}/idoll-icon-pro.woff?pevkht') format('woff'),
-    url('@{icon-url}/idoll-icon-pro.svg?pevkht#idoll-icon-pro') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@font-face {font-family: "idollicon";
+  src: url('@{icon-url}.eot?t=1545655063167'); /* IE9*/
+  src: url('@{icon-url}.eot?t=1545655063167#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('@{icon-url}.ttf?t=1545655063167') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('@{icon-url}.svg?t=1545655063167#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 
-.@{iconfont-css-prefix} {
- .iconfont-mixin();
-}
-.@{iconfont-css-prefix}-check-circle:before {
-  content: "\e917";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-achievement:before {
-  content: "\e900";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-appstore-o:before {
-  content: "\e901";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-clock-o:before {
-  content: "\e902";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-home:before {
-  content: "\e903";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-platform:before {
-  content: "\e904";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-sound:before {
-  content: "\e905";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-tool:before {
-  content: "\e906";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-trophy:before {
-  content: "\e907";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-unlock:before {
-  content: "\e908";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-user-group:before {
-  content: "\e909";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-user:before {
-  content: "\e90a";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-bars:before {
-  content: "\e90b";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-calendar:before {
-  content: "\e90c";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-copy:before {
-  content: "\e90d";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-delete:before {
-  content: "\e90e";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-edit:before {
-  content: "\e90f";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-filter:before {
-  content: "\e910";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-logout:before {
-  content: "\e911";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-message:before {
-  content: "\e912";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-phone:before {
-  content: "\e913";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-search:before {
-  content: "\e914";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-tag:before {
-  content: "\e915";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-check-circle-o:before {
-  content: "\e916";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-check:before {
-  content: "\e919";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-close-circle-o:before {
-  content: "\e91a";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-close-circle:before {
-  content: "\e91b";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-close:before {
-  content: "\e91c";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-plus-circle-o:before {
-  content: "\e91d";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-plus-circle:before {
-  content: "\e91e";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-plus:before {
-  content: "\e91f";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-remove-circle-o:before {
-  content: "\e920";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-remove-circle:before {
-  content: "\e921";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-remove:before {
-  content: "\e922";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-warning-circle:before {
-  content: "\e923";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-arrows-alt:before {
-  content: "\e924";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-backward:before {
-  content: "\e925";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-caret-down:before {
-  content: "\e926";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-caret-left:before {
-  content: "\e927";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-caret-right:before {
-  content: "\e928";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-caret-up:before {
-  content: "\e929";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-down-circle-o:before {
-  content: "\e92a";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-down-circle:before {
-  content: "\e92b";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-down:before {
-  content: "\e92c";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-forward:before {
-  content: "\e92d";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-left-circle-o:before {
-  content: "\e92e";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-left-circle:before {
-  content: "\e92f";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-menu-fold:before {
-  content: "\e930";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-menu-unfold:before {
-  content: "\e931";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-right-circle-o:before {
-  content: "\e932";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-right-circle:before {
-  content: "\e933";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-shrink:before {
-  content: "\e934";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-swap:before {
-  content: "\e935";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-up-circle-o:before {
-  content: "\e936";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-up-circle:before {
-  content: "\e937";
-  font-family: 'idollicon' !important;
-}
-.@{iconfont-css-prefix}-up:before {
-  content: "\e938";
-  font-family: 'idollicon' !important;
-}
-
-// 5月7日pro新增
-[class^="idoll-icon-pro-"], [class*=" idoll-icon-pro-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'idoll-icon-pro' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
+.iconfont {
+  font-family:"idollicon" !important;
+  font-size:16px;
+  font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.idoll-icon-pro-chart:before {
-  content: "\e90e";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-clock-circle:before {
-  content: "\e90f";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-download:before {
-  content: "\e910";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-drag:before {
-  content: "\e911";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-info:before {
-  content: "\e912";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-left:before {
-  content: "\e913";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-phone-circle:before {
-  content: "\e914";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-right:before {
-  content: "\e915";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-rollback:before {
-  content: "\e916";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-safety:before {
-  content: "\e917";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-setting:before {
-  content: "\e918";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-sharealt:before {
-  content: "\e919";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-sync:before {
-  content: "\e91a";
-  font-family: 'idoll-icon-pro' !important;
-}
 
-.idoll-icon-pro-loading:before {
-  content: "\e91a";
-  font-family: 'idoll-icon-pro' !important;
-}
-.idoll-icon-pro-table:before {
-  content: "\e91b";
-  font-family: 'idoll-icon-pro' !important;
-}
+.@{iconfont-css-prefix} {
+  .iconfont-mixin();
+ }
+.@{iconfont-css-prefix}-achievement:before { font-family:"idollicon" !important;content: "\e6cc"; }
 
-// 5月14号新增图标
-@font-face {
-  font-family: 'idoll-icon-online';
-  src:  url('@{icon-url}/idoll-icon-online.eot?67rfls');
-  src:  url('@{icon-url}/idoll-icon-online.eot?67rfls#iefix') format('embedded-opentype'),
-    url('@{icon-url}/idoll-icon-online.ttf?67rfls') format('truetype'),
-    url('@{icon-url}/idoll-icon-online.woff?67rfls') format('woff'),
-    url('@{icon-url}/idoll-icon-online.svg?67rfls#idoll-icon-online') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+.@{iconfont-css-prefix}-backward:before { font-family:"idollicon" !important;content: "\e6cd";}
 
-.idoll-icon-arrowdown:before {
-  content: "\e939";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-arrowup:before {
-  content: "\e93a";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-book:before {
-  content: "\e93b";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-contacts:before {
-  content: "\e93c";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-detail:before {
-  content: "\e93d";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-flag:before {
-  content: "\e93e";
-  font-family: 'idoll-icon-online' !important;
-}
-.idoll-icon-help:before {
-  content: "\e93f";
-  font-family: 'idoll-icon-online' !important;
-}
+.@{iconfont-css-prefix}-arrows-alt:before { font-family:"idollicon" !important;content: "\e6ce"; }
+
+.@{iconfont-css-prefix}-copy:before { font-family:"idollicon" !important;content: "\e6cf"; }
+
+.@{iconfont-css-prefix}-forward:before { font-family:"idollicon" !important;content: "\e6d0"; }
+
+.@{iconfont-css-prefix}-shrink:before { font-family:"idollicon" !important;content: "\e6d1"; }
+
+.@{iconfont-css-prefix}-menu-fold:before { font-family:"idollicon" !important;content: "\e6d2"; }
+
+.@{iconfont-css-prefix}-menu-unfold:before { font-family:"idollicon" !important;content: "\e6d3"; }
+
+.@{iconfont-css-prefix}-account-circle-o:before { font-family:"idollicon" !important;content: "\e6d4"; }
+
+.@{iconfont-css-prefix}-account-circle:before { font-family:"idollicon" !important;content: "\e6d5"; }
+
+.@{iconfont-css-prefix}-appstore-o:before { font-family:"idollicon" !important;content: "\e6d6"; }
+
+.@{iconfont-css-prefix}-backspace:before { font-family:"idollicon" !important;content: "\e6d7"; }
+
+.@{iconfont-css-prefix}-bank:before { font-family:"idollicon" !important;content: "\e6d8"; }
+
+.@{iconfont-css-prefix}-assessment:before { font-family:"idollicon" !important;content: "\e6d9"; }
+
+.@{iconfont-css-prefix}-bank-o:before { font-family:"idollicon" !important;content: "\e6da"; }
+
+.@{iconfont-css-prefix}-block:before { font-family:"idollicon" !important;content: "\e6db"; }
+
+.@{iconfont-css-prefix}-bars:before { font-family:"idollicon" !important;content: "\e6dc"; }
+
+.@{iconfont-css-prefix}-book:before { font-family:"idollicon" !important;content: "\e6dd"; }
+
+.@{iconfont-css-prefix}-caret-down:before { font-family:"idollicon" !important;content: "\e6de"; }
+
+.@{iconfont-css-prefix}-calendar:before { font-family:"idollicon" !important;content: "\e6df"; }
+
+.@{iconfont-css-prefix}-caret-up:before { font-family:"idollicon" !important;content: "\e6e0"; }
+
+.@{iconfont-css-prefix}-caret-right:before {font-family:"idollicon" !important; content: "\e6e1"; }
+
+.@{iconfont-css-prefix}-caret-left:before { font-family:"idollicon" !important;content: "\e6e2"; }
+
+.@{iconfont-css-prefix}-chart:before { font-family:"idollicon" !important;content: "\e6e3"; }
+
+.@{iconfont-css-prefix}-check-circle-o:before { font-family:"idollicon" !important;content: "\e6e4"; }
+
+.@{iconfont-css-prefix}-check-circle:before { font-family:"idollicon" !important;content: "\e6e5"; }
+
+.@{iconfont-css-prefix}-checkbox-indeterminate:before { font-family:"idollicon" !important;content: "\e6e6"; }
+
+.@{iconfont-css-prefix}-checkbox-blank-o:before { font-family:"idollicon" !important;content: "\e6e7"; }
+
+.@{iconfont-css-prefix}-checkbox-checked:before { font-family:"idollicon" !important;content: "\e6e8"; }
+
+.@{iconfont-css-prefix}-clock-o:before { font-family:"idollicon" !important;content: "\e6e9"; }
+
+.@{iconfont-css-prefix}-close-circle-o:before { font-family:"idollicon" !important;content: "\e6ea"; }
+
+.@{iconfont-css-prefix}-clip:before { font-family:"idollicon" !important;content: "\e6eb"; }
+
+.@{iconfont-css-prefix}-close:before { font-family:"idollicon" !important;content: "\e6ec"; }
+
+.@{iconfont-css-prefix}-clear:before { font-family:"idollicon" !important;content: "\e6ed"; }
+
+.@{iconfont-css-prefix}-cloud-download:before {font-family:"idollicon" !important; content: "\e6ee"; }
+
+.@{iconfont-css-prefix}-computer:before { font-family:"idollicon" !important;content: "\e6ef"; }
+
+.@{iconfont-css-prefix}-cloud:before { font-family:"idollicon" !important;content: "\e6f0"; }
+
+.@{iconfont-css-prefix}-dashboard:before {font-family:"idollicon" !important; content: "\e6f1"; }
+
+.@{iconfont-css-prefix}-cloud-upload:before { font-family:"idollicon" !important;content: "\e6f2"; }
+
+.@{iconfont-css-prefix}-creditcard:before { font-family:"idollicon" !important;content: "\e6f3"; }
+
+.@{iconfont-css-prefix}-done:before {font-family:"idollicon" !important; content: "\e6f4"; }
+
+.@{iconfont-css-prefix}-down:before {font-family:"idollicon" !important; content: "\e6f5"; }
+
+.@{iconfont-css-prefix}-delete:before { font-family:"idollicon" !important;content: "\e6f6"; }
+
+.@{iconfont-css-prefix}-copyright:before { font-family:"idollicon" !important;content: "\e6f7"; }
+
+.@{iconfont-css-prefix}-download:before {font-family:"idollicon" !important; content: "\e6f8"; }
+
+.@{iconfont-css-prefix}-edit:before { font-family:"idollicon" !important;content: "\e6f9"; }
+
+.@{iconfont-css-prefix}-email:before {font-family:"idollicon" !important; content: "\e6fa"; }
+
+.@{iconfont-css-prefix}-error-circle:before {font-family:"idollicon" !important; content: "\e6fb"; }
+
+.@{iconfont-css-prefix}-filter:before { font-family:"idollicon" !important;content: "\e6fc"; }
+
+.@{iconfont-css-prefix}-error-circle-o:before {font-family:"idollicon" !important; content: "\e6fd"; }
+
+.@{iconfont-css-prefix}-equalizer:before { font-family:"idollicon" !important;content: "\e6fe"; }
+
+.@{iconfont-css-prefix}-explore:before { font-family:"idollicon" !important;content: "\e6ff"; }
+
+.@{iconfont-css-prefix}-eye:before { font-family:"idollicon" !important;content: "\e700"; }
+
+.@{iconfont-css-prefix}-file:before {font-family:"idollicon" !important; content: "\e701"; }
+
+.@{iconfont-css-prefix}-eye_close:before { font-family:"idollicon" !important;content: "\e702"; }
+
+.@{iconfont-css-prefix}-folder:before {font-family:"idollicon" !important; content: "\e703"; }
+
+.@{iconfont-css-prefix}-flag:before { font-family:"idollicon" !important;content: "\e704"; }
+
+.@{iconfont-css-prefix}-help-circle-o:before {font-family:"idollicon" !important; content: "\e705"; }
+
+.@{iconfont-css-prefix}-fullscreen-exit:before {font-family:"idollicon" !important; content: "\e706"; }
+
+.@{iconfont-css-prefix}-fullscreen:before { font-family:"idollicon" !important;content: "\e707"; }
+
+.@{iconfont-css-prefix}-help-circle:before { font-family:"idollicon" !important;content: "\e708"; }
+
+.@{iconfont-css-prefix}-home:before {font-family:"idollicon" !important; content: "\e709"; }
+
+.@{iconfont-css-prefix}-history:before {font-family:"idollicon" !important; content: "\e70a"; }
+
+.@{iconfont-css-prefix}-hourglass:before { font-family:"idollicon" !important;content: "\e70b"; }
+
+.@{iconfont-css-prefix}-info-circle-o:before { font-family:"idollicon" !important;content: "\e70c"; }
+
+.@{iconfont-css-prefix}-image:before {font-family:"idollicon" !important; content: "\e70d"; }
+
+.@{iconfont-css-prefix}-link-off:before { font-family:"idollicon" !important;content: "\e70e"; }
+
+.@{iconfont-css-prefix}-left:before {font-family:"idollicon" !important; content: "\e70f"; }
+
+.@{iconfont-css-prefix}-info-circle:before { font-family:"idollicon" !important;content: "\e710"; }
+
+.@{iconfont-css-prefix}-list:before { font-family:"idollicon" !important;content: "\e711"; }
+
+.@{iconfont-css-prefix}-loading:before { font-family:"idollicon" !important;content: "\e712"; }
+
+.@{iconfont-css-prefix}-link:before {font-family:"idollicon" !important; content: "\e713"; }
+
+.@{iconfont-css-prefix}-menu:before {font-family:"idollicon" !important; content: "\e714"; }
+
+.@{iconfont-css-prefix}-logout:before { font-family:"idollicon" !important;content: "\e715"; }
+
+.@{iconfont-css-prefix}-notifications:before {font-family:"idollicon" !important; content: "\e716"; }
+
+.@{iconfont-css-prefix}-message:before { font-family:"idollicon" !important;content: "\e717"; }
+
+.@{iconfont-css-prefix}-more:before {font-family:"idollicon" !important; content: "\e718"; }
+
+.@{iconfont-css-prefix}-lock:before {font-family:"idollicon" !important; content: "\e719"; }
+
+.@{iconfont-css-prefix}-plus_box:before {font-family:"idollicon" !important; content: "\e71a"; }
+
+.@{iconfont-css-prefix}-phone:before { font-family:"idollicon" !important;content: "\e71b"; }
+
+.@{iconfont-css-prefix}-plus:before {font-family:"idollicon" !important; content: "\e71c"; }
+
+.@{iconfont-css-prefix}-platform:before {font-family:"idollicon" !important; content: "\e71d"; }
+
+.@{iconfont-css-prefix}-plus-circle-o:before { font-family:"idollicon" !important;content: "\e71e"; }
+
+.@{iconfont-css-prefix}-plus-circle:before {font-family:"idollicon" !important; content: "\e71f"; }
+
+.@{iconfont-css-prefix}-redo:before { font-family:"idollicon" !important;content: "\e720"; }
+
+.@{iconfont-css-prefix}-radio-checked:before { font-family:"idollicon" !important;content: "\e721"; }
+
+.@{iconfont-css-prefix}-remove-circle:before { font-family:"idollicon" !important;content: "\e722"; }
+
+.@{iconfont-css-prefix}-remove-circle-o:before { font-family:"idollicon" !important;content: "\e723"; }
+
+.@{iconfont-css-prefix}-refresh:before { font-family:"idollicon" !important;content: "\e724"; }
+
+.@{iconfont-css-prefix}-radio-unchecked:before { font-family:"idollicon" !important;content: "\e725"; }
+
+.@{iconfont-css-prefix}-remove:before {font-family:"idollicon" !important; content: "\e726"; }
+
+.@{iconfont-css-prefix}-reply:before { font-family:"idollicon" !important;content: "\e727"; }
+
+.@{iconfont-css-prefix}-reply-all:before {font-family:"idollicon" !important; content: "\e728"; }
+
+.@{iconfont-css-prefix}-search:before { font-family:"idollicon" !important;content: "\e729"; }
+
+.@{iconfont-css-prefix}-right:before { font-family:"idollicon" !important;content: "\e72a"; }
+
+.@{iconfont-css-prefix}-smile:before {font-family:"idollicon" !important; content: "\e72b"; }
+
+.@{iconfont-css-prefix}-star-half:before {font-family:"idollicon" !important; content: "\e72c"; }
+
+.@{iconfont-css-prefix}-sad:before { font-family:"idollicon" !important;content: "\e72d"; }
+
+.@{iconfont-css-prefix}-share:before { font-family:"idollicon" !important;content: "\e72e"; }
+
+.@{iconfont-css-prefix}-setting:before { font-family:"idollicon" !important;content: "\e72f"; }
+
+.@{iconfont-css-prefix}-star:before {font-family:"idollicon" !important; content: "\e730"; }
+
+.@{iconfont-css-prefix}-star-o:before { font-family:"idollicon" !important;content: "\e731"; }
+
+.@{iconfont-css-prefix}-swap-vert:before { font-family:"idollicon" !important;content: "\e732"; }
+
+.@{iconfont-css-prefix}-swap-horiz:before {font-family:"idollicon" !important; content: "\e733"; }
+
+.@{iconfont-css-prefix}-tag:before {font-family:"idollicon" !important; content: "\e734"; }
+
+.@{iconfont-css-prefix}-tool:before { font-family:"idollicon" !important;content: "\e735"; }
+
+.@{iconfont-css-prefix}-thumb-down:before {font-family:"idollicon" !important; content: "\e736"; }
+
+.@{iconfont-css-prefix}-thumb-up:before {font-family:"idollicon" !important; content: "\e737"; }
+
+.@{iconfont-css-prefix}-undo:before { font-family:"idollicon" !important;content: "\e738"; }
+
+.@{iconfont-css-prefix}-unlock:before { font-family:"idollicon" !important;content: "\e739"; }
+
+.@{iconfont-css-prefix}-up:before {font-family:"idollicon" !important; content: "\e73a"; }
+
+.@{iconfont-css-prefix}-voice:before {font-family:"idollicon" !important; content: "\e73b"; }
+
+.@{iconfont-css-prefix}-user-group:before {font-family:"idollicon" !important; content: "\e73c"; }
+
+.@{iconfont-css-prefix}-upload:before { font-family:"idollicon" !important;content: "\e73d"; }
+
+.@{iconfont-css-prefix}-user-add:before { font-family:"idollicon" !important;content: "\e73e"; }
+
+.@{iconfont-css-prefix}-verified:before { font-family:"idollicon" !important;content: "\e73f"; }
+
+.@{iconfont-css-prefix}-volume-off:before {font-family:"idollicon" !important; content: "\e740"; }
+
+.@{iconfont-css-prefix}-volume-down:before { font-family:"idollicon" !important;content: "\e741"; }
+
+.@{iconfont-css-prefix}-warning-o:before { font-family:"idollicon" !important;content: "\e742"; }
+
+.@{iconfont-css-prefix}-volume-mute:before {font-family:"idollicon" !important; content: "\e743"; }
+
+.@{iconfont-css-prefix}-volume-up:before { font-family:"idollicon" !important;content: "\e744"; }
+
+.@{iconfont-css-prefix}-wallet:before { font-family:"idollicon" !important;content: "\e745"; }
+
+.@{iconfont-css-prefix}-widgets:before { font-family:"idollicon" !important;content: "\e746"; }
+
+.@{iconfont-css-prefix}-zoom-out:before {font-family:"idollicon" !important; content: "\e747"; }
+
+.@{iconfont-css-prefix}-user:before { font-family:"idollicon" !important;content: "\e748"; }
+
+.@{iconfont-css-prefix}-warning:before { font-family:"idollicon" !important;content: "\e749"; }
+
+.@{iconfont-css-prefix}-trophy:before { font-family:"idollicon" !important;content: "\e74a"; }
+
+.@{iconfont-css-prefix}-left-circle-o:before { font-family:"idollicon" !important;content: "\e74b"; }
+
+.@{iconfont-css-prefix}-right-circle-o:before { font-family:"idollicon" !important;content: "\e74c"; }
+
+.@{iconfont-css-prefix}-close-circle:before { font-family:"idollicon" !important;content: "\e74d"; }
+
+.@{iconfont-css-prefix}-check:before { font-family:"idollicon" !important;content: "\e74e"; }

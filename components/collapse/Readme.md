@@ -1,10 +1,10 @@
-#### **何时使用**
-
-- 对复杂区域进行分组和隐藏，保持页面的整洁。
-- `手风琴` 是一种特殊的折叠面板，只允许单个内容区域展开。
+#### **概述**
+对复杂区域进行分组和隐藏，保持页面的整洁性。
 
 ##### **折叠面板**
+同时折叠或展开多个面板，通过defaultActiveKey设置默认展开项
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text1 = `可以同时展开多个面板，这个例子默认展开了第一个。`
 function callback(key) {
@@ -24,7 +24,9 @@ function callback(key) {
 ```
 
 ##### **手风琴**
+特殊的折叠面板，只允许单个内容区域展开，通过添加accordion属性
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text2 = `同时只能展开一个面板，这个例子默认展开了第二个。`
 function callback(key) {
@@ -45,7 +47,9 @@ function callback(key) {
 
 
 ##### **嵌套面板**
+对复杂层级面板进行嵌套
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text5 = `这里是嵌套折叠面板。`
 function callback(key) {
@@ -77,7 +81,9 @@ function callback(key) {
 ```
 
 ##### **简洁风格**
+一套没有过多样式的折叠面板可通过设置bordered={false}属性值来去掉多余边框
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text3 = `一套没有边框的简洁样式。`
 function callback(key) {
@@ -97,7 +103,9 @@ function callback(key) {
 ```
 
 ##### **底纹样式**
+为面板内容区域增加底纹区分层次
 ```jsx
+import {Collapse} from 'components';
 const Panel = Collapse.Panel;
 const text4 = `一套拥有底纹的折叠样式。`
 function callback(key) {
@@ -136,3 +144,12 @@ function callback(key) {
 | header | 面板头内容 | string/ReactNode | 无|
 | forceRender | 被隐藏时是否渲染DOM结构 | bool | false|
 | key | 对应activeKey | string | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

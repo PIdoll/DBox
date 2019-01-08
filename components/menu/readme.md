@@ -1,12 +1,12 @@
-#### **何时使用**
+#### **概述**
+提供导航的功能菜单。
 
-导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。
-
-更多布局和导航的使用可以参考：[通用布局]。
 
 #### **顶部导航**
+广泛适用的顶部导航。通过 theme 属性设置为 light dark 切换主题模式。
 
 ```jsx
+import {Menu} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class MenuView extends React.Component {
 	  this.state = {
 	    current: 'home'
 	  }
-    this.handleClick = this.handleClick.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
@@ -47,9 +47,75 @@ class MenuView extends React.Component {
 }
 <MenuView />
 ```
+
+#### **手风琴菜单**
+每次只打开一个菜单，其他菜单自动收起，使菜单简洁聚焦，同时避免同时展开多个菜单，导致侧边导航文字溢出。
+```jsx
+import {Menu, Icon} from 'components';
+const SubMenu = Menu.SubMenu;
+const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
+class MenuView extends React.Component {
+  constructor(props) {
+    super(props);
+	  this.state = {
+      openKeys: ['sub_1'],
+	    current: 'home'
+	  }
+	  this.onOpenChange = this.onOpenChange.bind(this)
+  };
+  onOpenChange (value) {
+    // 解决IE浏览器不支持find()
+    if(!Array.prototype.find){
+      Array.prototype.find = function(callback) {
+          return callback && (this.filter(callback)|| [])[0];
+      };
+    }
+    const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+  }
+  render() {
+  return (
+        <Menu
+          onClick={this.handleClick}
+          defaultSelectedKeys={['55']}
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
+          mode='inline'
+        >
+          <Menu.Item key='55'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <SubMenu key='sub_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <Menu.Item key='56'>子菜单一</Menu.Item>
+            <Menu.Item key='57'>子菜单二</Menu.Item>
+            <Menu.Item key='58'>子菜单三</Menu.Item>
+            <Menu.Item key='59'>子菜单四</Menu.Item>
+          </SubMenu>
+          <SubMenu key='sub_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <Menu.Item key='60'>子菜单五</Menu.Item>
+            <Menu.Item key='61'>子菜单六</Menu.Item>
+            <Menu.Item key='62'>子菜单七</Menu.Item>
+            <Menu.Item key='63'>子菜单八</Menu.Item>
+          </SubMenu>
+          <SubMenu key='sub_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <Menu.Item key='64'>子菜单九</Menu.Item>
+            <Menu.Item key='65'>子菜单十</Menu.Item>
+            <Menu.Item key='66'>子菜单十一</Menu.Item>
+            <Menu.Item key='67'>子菜单十二</Menu.Item>
+          </SubMenu>
+        </Menu>
+  )
+}
+}
+<MenuView />
+```
+
+
 #### **内嵌侧栏导航**
+垂直导航的基本使用，支持展开/收起。
 
 ```jsx
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -58,8 +124,8 @@ class MenuView extends React.Component {
       current: 'home',
       mode: 'inline',
 	  }
-    this.handleClick = this.handleClick.bind(this)
-    this.changeMode = this.changeMode.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
   };
   handleClick (e) {
     console.log('click ', e);
@@ -100,7 +166,7 @@ class MenuView extends React.Component {
         <Menu.Item key='12'>子菜单七</Menu.Item>
         <Menu.Item key='13'>子菜单八</Menu.Item>
       </SubMenu>
-      <SubMenu key='sub5' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+      <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
         <Menu.Item key='14'>子菜单九</Menu.Item>
         <Menu.Item key='15'>子菜单十</Menu.Item>
         <Menu.Item key='16'>子菜单十一</Menu.Item>
@@ -115,8 +181,10 @@ class MenuView extends React.Component {
 ```
 
 #### **动态侧栏导航**
+支持两种主题切换,垂直导航的基本使用，支持展开/收起。
 
 ```jsx
+import {Menu, Switch, Icon} from 'components';
 const SubMenu = Menu.SubMenu;
 class MenuView extends React.Component {
   constructor(props) {
@@ -126,9 +194,9 @@ class MenuView extends React.Component {
       theme: 'light',
 	    mode: 'inline',
 	  }
-    this.changeMode = this.changeMode.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-    this.changeTheme = this.changeTheme.bind(this)
+	  this.handleClick = this.handleClick.bind(this)
+	  this.changeMode = this.changeMode.bind(this)
+	  this.changeTheme = this.changeTheme.bind(this)
   };
    handleClick (e) {
     console.log('click ', e);
@@ -167,22 +235,22 @@ class MenuView extends React.Component {
         onClick={this.handleClick}
         mode={this.state.mode}
         defaultSelectedKeys={['21']}
-        defaultOpenKeys={['sub1']}
+        defaultOpenKeys={['sub11']}
       >
         <Menu.Item key='21'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-        <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+        <SubMenu key='sub11' title={<div><Icon type='platform' /><span>工作台</span></div>}>
           <Menu.Item key='22'>子菜单五</Menu.Item>
           <Menu.Item key='23'>子菜单六</Menu.Item>
           <Menu.Item key='24'>子菜单七</Menu.Item>
           <Menu.Item key='25'>子菜单八</Menu.Item>
         </SubMenu>
-        <SubMenu key='sub2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+        <SubMenu key='sub12' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
           <Menu.Item key='26'>子菜单九</Menu.Item>
           <Menu.Item key='27'>子菜单十</Menu.Item>
           <Menu.Item key='28'>子菜单十一</Menu.Item>
           <Menu.Item key='29'>子菜单十二</Menu.Item>
         </SubMenu>
-        <SubMenu key='sub3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+        <SubMenu key='sub13' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
           <Menu.Item key='30'>子菜单九</Menu.Item>
           <Menu.Item key='31'>子菜单十</Menu.Item>
           <Menu.Item key='32'>子菜单十一</Menu.Item>
@@ -204,7 +272,6 @@ class MenuView extends React.Component {
 | defaultOpenKeys | 初始展开的 SubMenu 菜单项 key 数组 |  |  |
 | defaultSelectedKeys | 初始选中的菜单项 key 数组 | string\[] |  |
 | forceSubMenuRender | 在子菜单展示之前就渲染进 DOM | boolean | false |
-| inlineIndent | inline 模式的菜单缩进宽度 | number | 24 |
 | mode | 菜单类型，现在支持垂直、水平、和内嵌模式三种 | string: `vertical` `vertical-right` `horizontal` `inline` | `vertical` |
 | multiple | 是否允许多选 | boolean | false |
 | openKeys | 当前展开的 SubMenu 菜单项 key 数组 | string\[] |  |
@@ -248,3 +315,12 @@ class MenuView extends React.Component {
 #### **Menu.Divider**
 
 菜单项分割线，只用在弹出菜单内。
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

@@ -51,10 +51,10 @@ function notice (content, duration = defaultDuration, type, onClose, icon, norma
     icon = '';
   }
   const iconType = ({
-    info: 'warning-circle',
+    info: 'info-circle',
     success: 'check-circle',
-    error: 'close-circle',
-    warning: 'warning-circle',
+    error: 'error-circle',
+    warning: 'warning',
     // loading: 'warning-circle' // 加载中....loading图标
   })[type];
 

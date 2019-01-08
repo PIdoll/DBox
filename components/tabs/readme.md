@@ -1,6 +1,6 @@
 
 
-#### **何时使用**
+#### **概述**
 
 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
 
@@ -11,8 +11,10 @@ DBox 依次提供了三级选项卡，分别用于不同的场景。
 - RadioButton 可作为更次级的页签来使用。
 
 #### **基本用法和禁用**
+水平展示tab栏
 ```jsx
-const TabPane = Tabs.TabPane; 
+import {Tabs} from 'components';
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -22,16 +24,18 @@ class TabsView extends React.Component {
         <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
         <TabPane tab='选项三' key='3'>选项三</TabPane>
       </Tabs>
-    </div>		
+    </div>
     )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 #### **有图标的标签**
+在tab栏内添加图标
 ```jsx
-const TabPane = Tabs.TabPane; 
+import {Tabs, Icon} from 'components';
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -49,12 +53,14 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 
 #### **tab页水平，垂直滑动**
+通过设置tabPosition为top和left来水平和垂直模式展示
 ```jsx
+import {Tabs, Radio} from 'components';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
@@ -97,12 +103,14 @@ class TabsView extends React.Component {
   )
 }
 }
-<TabsView />   
+<TabsView />
 ```
 
 #### **卡片式标签页容器**
+设置type='card'来仿卡片式的tabs
 ```jsx
-const TabPane = Tabs.TabPane; 
+import {Tabs} from 'components';
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -126,11 +134,13 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 #### **新增和关闭**
+动态添加和删除tabs分页
 ```jsx
+import {Tabs} from 'components';
 const TabPane = Tabs.TabPane;
 const panes = [
   { title: '分页一', content: '分页内容一', key: '1' },
@@ -183,13 +193,15 @@ class TabsView extends React.Component {
      )
   }
 }
-<TabsView />   
-   
+<TabsView />
+
 ```
 
 #### **卡片式容器**
+对容器设置背景使其更像是一个容器
 ```jsx
-const TabPane = Tabs.TabPane; 
+import {Tabs} from 'components';
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
@@ -212,13 +224,14 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 #### **吸顶效果**
+页面滑动到一定距离固定tabs栏
 ```jsx
-const TabPane = Tabs.TabPane; 
-const {ReactDOM} = require('./index');
+import {Tabs} from 'components';
+import {TabPane, ReactDOM} from 'components/tabs';
 class TabsView extends React.Component {
 	componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
@@ -252,7 +265,7 @@ class TabsView extends React.Component {
     )
   }
 }
-<TabsView /> 
+<TabsView />
 ```
 
 
@@ -284,3 +297,13 @@ class TabsView extends React.Component {
 | key | 对应 activeKey | string | 无 |
 | closable | 在type="editable-card"模式下使用阻止卡片关闭 | boolean | `true` |
 | tab | 选项卡头显示文字 | string / ReactNode | 无 |
+
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

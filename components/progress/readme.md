@@ -1,7 +1,4 @@
 
-
-#### **何时使用**
-
 在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。
 
 - 当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过2秒时；
@@ -10,6 +7,8 @@
 
 #### **线条型进度条**
 ```jsx
+import { Progress } from 'components';
+
 class ProgressView  extends React.Component {
   render() {
     return (
@@ -28,7 +27,9 @@ class ProgressView  extends React.Component {
 
 #### **迷你线条进度条**
 ```jsx
-class ProgressView  extends React.Component {
+import { Progress } from 'components';
+
+class ProgressView extends React.Component {
   render() {
     return (
       <div style={{ width: '600px' }}>
@@ -46,38 +47,40 @@ class ProgressView  extends React.Component {
 
 #### **圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
-      <div >
-        <Progress type='circle' percent={50} />
-        <Progress type='circle' percent={70} status='exception' />
-        <Progress type='circle' percent={100} />
-      </div>
-    )
-  }
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
+    <div >
+      <Progress type='circle' percent={50} />
+      <Progress type='circle' percent={70} status='exception' />
+      <Progress type='circle' percent={100} />
+    </div>
+  )
 }
 <ProgressView />
 ```
 
 #### **迷你圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
-      <div >
-        <Progress type='circle' width={80} percent={50} />
-        <Progress type='circle' width={80} percent={70} status='exception' />
-        <Progress type='circle' width={80} percent={100} />
-      </div>
-    )
-  }
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
+    <div >
+      <Progress type='circle' width={80} percent={50} />
+      <Progress type='circle' width={80} percent={70} status='exception' />
+      <Progress type='circle' width={80} percent={100} />
+    </div>
+  )
 }
 <ProgressView />
 ```
 
 #### **动态进度条**
 ```jsx
+import { Progress, Button } from 'components';
+
 const ButtonGroup = Button.Group;
 class ProgressView  extends React.Component {
   constructor(props) {
@@ -119,15 +122,15 @@ class ProgressView  extends React.Component {
 ```
 #### **自定义圆形进度条**
 ```jsx
-class ProgressView  extends React.Component {
-  render() {
-    return (
+import { Progress } from 'components';
+
+const ProgressView = () => {
+  return (
       <div>
         <Progress type='circle' percent={50} format={(percent) => `${percent}Day`} />
         <Progress type='circle' percent={100} format={() => 'Finish'} />
       </div>
     )
-  }
 }
 <ProgressView />
 ```
@@ -145,3 +148,12 @@ class ProgressView  extends React.Component {
 | type | 类型，可选 `line` `circle` | string | line |
 | width `(type=circle)` | 圆形进度条画布宽度，单位 px | number | 132 |
 <style>.idoll-progress{margin:0 10px 10px 0}</style>
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```
+

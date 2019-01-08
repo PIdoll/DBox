@@ -105,8 +105,9 @@ span.example {
     background-color: @success-color;
     width: 6px;
     height: 6px;
-    top: 8px;
-    left: -10px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 0px;
     position: absolute;
     border-radius: 100%;
   }
@@ -116,8 +117,9 @@ span.example {
     background-color: @error-color;
     width: 6px;
     height: 6px;
-    top: 8px;
-    left: -10px;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%,-50%);
     position: absolute;
     border-radius: 100%;
   }
@@ -125,8 +127,9 @@ span.example {
     background-color: @default-color;
     width: 6px;
     height: 6px;
-    top: 8px;
-    left: -10px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 0;
     position: absolute;
     border-radius: 100%;
   }
@@ -134,8 +137,9 @@ span.example {
     background-color: @processing-color;
     width: 6px;
     height: 6px;
-    top: 8px;
-    left: -10px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 0;
     position: absolute;
     border-radius: 100%;
     overflow: visible;
@@ -155,8 +159,9 @@ span.example {
     background-color: @warning-color;
     width: 6px;
     height: 6px;
-    top: 8px;
-    left: -10px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 0;
     position: absolute;
     border-radius: 100%;
   }
@@ -177,6 +182,10 @@ span.example {
     opacity: 1;
   }
 }
+.@{badge-prefix-cls}-success.@{badge-prefix-cls}-success-not-a-wrapper,.@{badge-prefix-cls}-error.@{badge-prefix-cls}-error-not-a-wrapper,.@{badge-prefix-cls}-default.@{badge-prefix-cls}-default-not-a-wrapper,.@{badge-prefix-cls}-processing.@{badge-prefix-cls}-processing-not-a-wrapper,.@{badge-prefix-cls}-warning.@{badge-prefix-cls}-warning-not-a-wrapper {
+  padding-left: 6px;
+  position: relative;
+}
 
 @keyframes enterIn {
   0% {
@@ -190,13 +199,3 @@ span.example {
     transform: scale(0) translateX(-50%);
   }
 }
-
-// @keyframes enterOut {
-//   100% {
-//     transform: scale(1);
-//   }
-//   0% {
-//     opacity: 0;
-//     transform: scale(0);
-//   }
-// }

@@ -20,6 +20,7 @@
     background-color: @primary-color;
 
     &-left, &-right {
+      font-size: 20px;
       color: #fff;
       margin-top: 6px;
     }
@@ -37,8 +38,8 @@
   }
 
   &-header {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     padding: 11px 24px 11px 24px;
     text-align: right;
 
@@ -72,7 +73,7 @@
   }
 
   &-calendar-body {
-    padding: 24px 24px;
+    padding: 8px;
   }
 
   table {
@@ -225,9 +226,9 @@
       cursor: pointer;
     }
 
-    &:active {
-      background: @primary-2;
-    }
+    // &:active {
+    //   background: @primary-2;
+    // }
   }
 
   &-fullscreen &-column-header {
@@ -298,7 +299,8 @@
   &-disabled-cell &-value {
     color: @disabled-color;
     border-radius: 0;
-    width: auto;
+    // width: auto;
+    border-radius: @border-radius-sm;
     cursor: not-allowed;
   }
 }

@@ -1,31 +1,28 @@
 const path = require('path');
 const { version } = require('./package.json')
-const {camelCase, upperFirst} = require('lodash');
+const { camelCase, upperFirst } = require('lodash');
 
-
+const TITLE = `Dbox UI ${version}`;
+const PORT = parseInt(process.env.PROT || 9002, 10);
 
 module.exports = {
-  title: `Dbox UI ${version}`,
-  serverPort: 9002,
+  title: TITLE,
+  serverPort: PORT,
   exampleMode: 'collapse',
-  usageMode: 'hidden',
-  ribbon: {
-    url: 'https://github.com/PIdoll/DBox',
-    text: 'Folk me on Github'
-  },
-  template: {
-    index: path.resolve(__dirname, 'styleguide/index.html')
-},
-  theme: {
-    baseBackground: '#fdfdfc',
-		link: '#274e75',
-		linkHover: '#90a7bf',
-		border: '#e0d2de',
-    font: ['Helvetica', 'sans-serif'],
-    sidebarWidth: 240
-  },
+  usageMode: 'hide',
+  // Override Styleguidist components
+	styleguideComponents: {
+    LinkRenderer: path.join(__dirname, 'styleguide/components/link'),
+    // PlaygroundRenderer: path.join(__dirname, 'styleguide/components/PlaygroundRenderer'),
+    ComponentListRenderer: path.join(__dirname, 'styleguide/components/componentList'),
+    LogoRenderer: path.join(__dirname, 'styleguide/components/logo'),
+  // SectionsRenderer: path.join(__dirname, 'styleguide/components/sectionRenderer'),
+    StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide'),
+	},
+  ignore: ['**/*-test.jsx'],
+  pagePerSection: true,
   styles: {
-		Playground: {
+		 Playground: {
 			preview: {
 				padding: '40px 20px',
         borderRadius: 2,
@@ -38,28 +35,22 @@ module.exports = {
         borderRadius: 2,
         border: '1px solid #eaeefd',
         borderTop: 'none',
-        backgroundColor: '#e1e1e1',
         '& > div:nth-child(1)': {
           flexGrow: '2',
         },
         '& button ': {
           display: 'block',
+          width: '100%',
           padding: '10px 20px ',
           color: '#455a64',
           cursor: 'pointer',
           float: 'right',
-          backgroundColor: '#e1e1e1',
+          textAlign: 'center',
         },
          '& > div:nth-child(2)': {
           display: 'none',
         }
       },
-      logo: {
-        fontSize: '18px'
-      },
-      mq: {
-        small: '@media(max-width:600px)'
-      }
     },
     Table: {
       table: {
@@ -93,43 +84,11 @@ module.exports = {
         },
       }
     },
-    ReactComponent: {
-      tabButtons: {
-        display: 'none'
-      }
-    },
     SectionHeading: {
       sectionName: {
         paddingBottom: '8px',
         fontSize: '40px'
       }
-    },
-    ComponentsList: {
-      heading: {
-        fontWeight: '700 !important',
-        fontSize: '16px',
-        color: '#455a64 !important',
-      }
-    },
-    Heading: {
-      heading1: {
-        display: 'block',
-        position: 'relative',
-        fontWeight: 600,
-        fontSize: '40px',
-        '& > a': {
-          fontWeight: '700 !important'
-        }
-      },
-      heading2: {
-        display: 'none'
-      },
-      heading3: {
-        fontSize: '30px',
-        width: '100%',
-        lineHeight: '80px',
-        fontWeight: '600 !important',
-      },
     },
 		Markdown: {
 			pre: {
@@ -138,7 +97,7 @@ module.exports = {
 				background: 'none',
 			},
 			code: {
-				fontSize: 14,
+				fontSize: 24,
 			},
 		},
   },
@@ -148,49 +107,38 @@ module.exports = {
     const componentName = upperFirst(camelCase(name))
     return `import {${componentName}} from Dbox`
   },
-  pagePerSection: true,
   sections: [
     {
-      sections: [
-        {
-          content: ''
-        },
-      ]
+      name: 'Get Started',
+      content: 'components/getStarted.md'
     },
     {
       name: 'Components',
       sections: [
         {
-          name: 'Basic',
+          name: 'General',
           components: () => ([
+            path.resolve(__dirname, './components/button/index.jsx'),
+            path.resolve(__dirname, './components/icon/index.jsx'),
+            path.resolve(__dirname, './components/color/index.jsx'),
+            path.resolve(__dirname, './components/typography/index.jsx'),
             path.resolve(__dirname, './components/grid/index.jsx'),
             path.resolve(__dirname, './components/layout/index.jsx'),
           ])
         },
         {
-          name: 'General',
-          components: () => ([
-            path.resolve(__dirname, './components/button/index.jsx'),
-            path.resolve(__dirname, './components/icon/index.jsx'),
-          ])
-        },
-        {
           name: 'Navigation',
-          codeSamples: 'hide',
-          propsMethods: 'hide',
           components: () => ([
-            // path.resolve(__dirname, './components/affix/index.jsx'),
+            path.resolve(__dirname, './components/affix/index.jsx'),
             path.resolve(__dirname, './components/dropdown/index.jsx'),
             path.resolve(__dirname, './components/pagination/index.jsx'),
             path.resolve(__dirname, './components/breadcrumb/index.jsx'),
-            path.resolve(__dirname, './components/steps/steps.jsx'),
-        //    path.resolve(__dirname, './components/pagination/pagination.jsx'),
-        //    path.resolve(__dirname, './components/anchor/index.jsx'),
-           path.resolve(__dirname, './components/menu/index.jsx'),
+            path.resolve(__dirname, './components/steps/index.jsx'),
+            path.resolve(__dirname, './components/menu/index.jsx'),
           ])
         },
         {
-          name: 'Data Entry',
+          name: 'DataEntry',
           components: () => ([
            path.resolve(__dirname, './components/auto-complete/index.jsx'),
            path.resolve(__dirname, './components/cascader/index.jsx'),
@@ -200,58 +148,58 @@ module.exports = {
            path.resolve(__dirname, './components/tree-select/index.jsx'),
            path.resolve(__dirname, './components/date-picker/index.jsx'),
            path.resolve(__dirname, './components/time-picker/index.jsx'),
-           path.resolve(__dirname, './components/radio/radio.jsx'),
-           path.resolve(__dirname, './components/checkbox/checkbox.jsx'),
+           path.resolve(__dirname, './components/radio/index.jsx'),
+           path.resolve(__dirname, './components/checkbox/index.jsx'),
            path.resolve(__dirname, './components/form/index.jsx'),
-           path.resolve(__dirname, './components/switch/switch.jsx'),
+           path.resolve(__dirname, './components/switch/index.jsx'),
         //    path.resolve(__dirname, './components/skeleton/skeleton.jsx'),
            path.resolve(__dirname, './components/slider/index.jsx'),
         //    path.resolve(__dirname, './components/rate/rate.jsx'),
            path.resolve(__dirname, './components/transfer/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
+            path.resolve(__dirname, './components/upload/index.jsx'),
           ])
         },
         {
-          name: 'Data Display',
+          name: 'DataDisplay',
           components: () => ([
             path.resolve(__dirname, './components/avatar/avatar.jsx'),
             path.resolve(__dirname, './components/badge/index.jsx'),
-         //   path.resolve(__dirname, './components/card/card.jsx'),
+          //   path.resolve(__dirname, './components/card/card.jsx'),
             path.resolve(__dirname, './components/calendar/index.jsx'),
             path.resolve(__dirname, './components/collapse/index.jsx'),
-         //   path.resolve(__dirname, './components/list/list.jsx'),
+          //  path.resolve(__dirname, './components/list/list.jsx'),
             path.resolve(__dirname, './components/popover/index.jsx'),
             path.resolve(__dirname, './components/tree/index.jsx'),
             path.resolve(__dirname, './components/tooltip/index.jsx'),
-            path.resolve(__dirname, './components/table/table.jsx'),
+            path.resolve(__dirname, './components/table/index.jsx'),
             path.resolve(__dirname, './components/tabs/index.jsx'),
             path.resolve(__dirname, './components/timeline/index.jsx'),
             path.resolve(__dirname, './components/tag/index.jsx'),
-            path.resolve(__dirname, './components/upload/upload.jsx'),
           ])
         },
         {
           name: 'Feedback',
           components: () => ([
           path.resolve(__dirname, './components/alert/index.jsx'),
-         path.resolve(__dirname, './components/modal/index.jsx'),
-         path.resolve(__dirname, './components/message/index.jsx'),
+          path.resolve(__dirname, './components/modal/index.jsx'),
+          path.resolve(__dirname, './components/message/index.jsx'),
         //  path.resolve(__dirname, './components/notification/notification.jsx'),
-        //  path.resolve(__dirname, './components/drawer/drawer.jsx'),
+         path.resolve(__dirname, './components/drawer/index.jsx'),
           path.resolve(__dirname, './components/progress/progress.jsx'),
          path.resolve(__dirname, './components/popconfirm/index.jsx'),
           path.resolve(__dirname, './components/spin/index.jsx'),
           ])
         },
         {
-          name: 'Other',
+          name: 'Others',
           components: () => ([
-          path.resolve(__dirname, './components/back-top/index.jsx'),
-          path.resolve(__dirname, './components/anchor/index.jsx'),
-          path.resolve(__dirname, './components/divider/index.jsx'),
+            path.resolve(__dirname, './components/anchor/index.jsx'),
+            path.resolve(__dirname, './components/back-top/index.jsx'),
+            path.resolve(__dirname, './components/divider/index.jsx'),
           ])
         },
-      ]
+      ],
+       sectionDepth: 2
     },
   ],
   webpackConfig: {
@@ -266,8 +214,16 @@ module.exports = {
           ]
         },
         {
-          test: /\.jsx$/,
-          loaders: 'babel-loader'
+          test: /\.(jsx|js|mb)$/,
+          loaders: 'babel-loader',
+          exclude: path.resolve(__dirname, 'node_modules'),
+        },
+        {
+          test: /\.(png|svg|jpg|gif|webp|ico)$/,
+          use: [
+             'file-loader'
+           ],
+           exclude: path.resolve(__dirname, 'node_modules')
         },
       ]
     },
@@ -280,6 +236,6 @@ module.exports = {
         'templates': path.resolve(__dirname, 'src/templates'),
         'components': path.resolve(__dirname, 'components')
       }
-    },
+    }
   }
 }

@@ -1,11 +1,10 @@
 
-#### **概述**
-
-安全使用Flex布局，该组件有两个部分，一个是Row，一个是Col，采用Row包裹Col的方法来实现栅格布局，并且栅格布局遵从Boostrap3的标准。
+为在屏幕上和谐一致的定位元素提供依据，24栅格系统有助于提升页面的秩序感和体验。
 
 ####  **基本栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import { Row, Col } from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -20,11 +19,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={12}>
             <div style={RowDemoStyle} >col-12</div>
           </Col>
@@ -32,7 +34,7 @@ class GridView extends React.Component {
             <div style={evenColor} >col-12</div>
           </Col>
         </Row>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={8}>
             <div style={RowDemoStyle} >col-8</div>
           </Col>
@@ -65,7 +67,8 @@ class GridView extends React.Component {
 ```
 #### **拥有间隔的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -83,22 +86,20 @@ const evenColor = {
 class GridView extends React.Component {
   render() {
     return (
-      <div>
-        <Row gutter={16}>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-        </Row>
-      </div>
+      <Row gutter={16}>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+      </Row>
     )
   }
 }
@@ -106,7 +107,8 @@ class GridView extends React.Component {
 ```
 #### **可以左右偏移的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -121,11 +123,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={6} offset={6}>
             <div style={RowDemoStyle}>col-6 col-offset-6</div>
           </Col>
@@ -149,7 +154,8 @@ class GridView extends React.Component {
 ```
 #### **可排序的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -185,7 +191,7 @@ class GridView extends React.Component {
 ```
 #### **Flex布局水平对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -294,7 +300,8 @@ class GridView extends React.Component {
 ```
 #### **Flex布局垂直对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -373,7 +380,8 @@ class GridView extends React.Component {
 ```
 #### **Flex排序**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -419,7 +427,8 @@ class GridView extends React.Component {
 
 #### **自定义栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'components';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -479,4 +488,10 @@ class GridView extends React.Component {
 | md       | `≥992px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object | - |
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
-<style>.idoll-row{margin-bottom:10px;}</style>
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

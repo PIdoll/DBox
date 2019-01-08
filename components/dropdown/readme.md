@@ -1,21 +1,25 @@
 
 
-##### **何时使用**
+##### **概述**
 
-当页面上的操作命令过多时，用此组件可以收纳操作元素。点击或移入触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。
+使用下拉菜单从一组选项中选择一个或多个选项，下拉菜单中的选项一般为5-15个
 
 ##### **基本用法**
+只允许用户选择单个选项，其中按钮提供文字按钮和默认按钮两种样式。触发对象可以是链接、按钮等各种元素。
 ```jsx
-const { Menu, MenuItem, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
-      <Menu onClick={handleMenu1Click}>
+      <Menu theme = 'light' onClick={handleMenu1Click}>
         <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
         <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
       </Menu>
     );
 const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -40,24 +44,28 @@ function handleMenu1Click(e) {
 ```
 
 ##### **常用类型**
+通过 type 属性可设置下拉菜单按钮的样式。
 ```jsx
-const { Menu, MenuItem, DropdownButton, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu4 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -95,11 +103,13 @@ function handleMenu1Click(e) {
 ```
 
 ##### **组合使用**
+在一组按钮中可放置一个Dropdown按钮，常置于最右侧。
 ```jsx
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const ButtonGroup = Button.Group;
-const { Menu, MenuItem, DropdownButton } = require('./index');
-const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+const DropdownButton = Dropdown.DropdownButton;const menu1 = (
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -109,23 +119,27 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 
-<ButtonGroup className='buttonGroup'>  <DropdownButton overlay={menu1} trigger={['hover']}>
-  操作三
-  </DropdownButton>
-  <Button>
-    操作二
-  </Button>
+<ButtonGroup className='ButtonGroup'>
   <Button>
     操作一
   </Button>
+  <Button>
+    操作二
+  </Button>
+  <DropdownButton style={{float: 'none'}} overlay={menu1} trigger={['hover']}>
+  操作三
+  </DropdownButton>
 </ButtonGroup>
 ```
 
 ##### **三种尺寸**
+通过 size 属性设置为 large small 来控制大、小尺寸，默认尺寸为中。
 ```jsx
-const { Menu, MenuItem, DropdownButton } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownButton = Dropdown.DropdownButton;
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -148,10 +162,12 @@ function handleMenu1Click(e) {
 ```
 
 ##### **弹出位置**
+通过 placement 属性来设置弹框弹出位置，支持6个方向。
 ```jsx
-const { Menu, MenuItem } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -165,35 +181,38 @@ function handleMenu1Click(e) {
       <Button>上左</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='topCenter'>
-      <Button>上中</Button>
+      <Button  style={{marginLeft: 25, marginRight: 25}}>上中</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='topRight'>
       <Button>上右</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomLeft'>
-      <Button>下左</Button>
+      <Button  style={{marginLeft: 25, marginRight: 25}}>下左</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomCenter'>
       <Button>下中</Button>
     </Dropdown>
     <Dropdown overlay={menu} placement='bottomRight'>
-      <Button>下右</Button>
+      <Button style={{marginLeft: 25}}>下右</Button>
     </Dropdown>
 </div>
 ```
 
 ##### **触发方式**
+通过 trigger 属性设置为 hover click 来控制触发方式，默认鼠标移入触发弹框。
 ```jsx
-const { Menu, MenuItem, DropdownNormal } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
+const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light'onClick={handleMenu1Click}>
     <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -218,10 +237,12 @@ function handleButtonClick(e) {
 ```
 
 ##### **触发事件**
+点击菜单触发相应事件，用户可以通过相应的菜单项 key 进行不同的操作。
 ```jsx
-const { Menu, MenuItem } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
@@ -244,10 +265,12 @@ function handleButtonClick(e) {
 ```
 
 ##### **多级菜单**
+弹出框里的菜单支持多级传入。
 ```jsx
-const { Menu, MenuItem, SubMenu  } = require('./index');
+import {Icon, Button, Dropdown, Menu} from 'components'
+import { MenuItem, SubMenu} from 'components/menu';
 const menu1 = (
-  <Menu onClick={handleMenu1Click}>
+  <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
     <SubMenu title='子菜单'>
@@ -275,7 +298,6 @@ function handleMenu1Click(e) {
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | overlay     | 菜单  | Menu | - |
 | disabled     | 菜单是否禁用搭配按钮一起使用并放置于按钮身上 | `boolean` | false    |
-| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位| Function(triggerNode) () => document.body |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
 
@@ -291,3 +313,12 @@ function handleMenu1Click(e) {
 | visible     | 菜单是否显示 | Bool   | 无           |
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | size     | 按钮菜单大小和Button一致 | string (`large` `small`) | - |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

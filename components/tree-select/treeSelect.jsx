@@ -18,10 +18,6 @@ export default class TreeSelect extends React.Component {
     dropdownClassName: 'idoll-select-tree-dropdown',
   }
 
-//   static contextTypes = {
-//     antLocale: React.PropTypes.object,
-//   }
-
   render() {
     const props = this.props;
     let {
@@ -49,7 +45,7 @@ export default class TreeSelect extends React.Component {
     }
     const clearIcon = (
       <Icon
-        type='close-circle'
+        type='close-circle-o'
         className={`${prefixCls}-picker-clear`}
       />
     );

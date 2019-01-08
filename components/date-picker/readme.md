@@ -1,11 +1,16 @@
 #### **何时使用**
 
-当用户需要输入一个日期，可以点击标准输入框，弹出日期面板进行选择。
+当用户需要一个日期(年、月、日、时、分、秒)，可以点击标准输入框，弹出日期面板进行选择。
 
 #### **基本用法**
 
 ```jsx
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+import { DatePicker } from 'components';
+
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
+
 onPanelChange = (value, mode) => {
   console.log('onPanelChange', value, mode);
 }
@@ -31,9 +36,14 @@ onOk = () => {
 #### **三种大小**
 
 ```jsx
+import { Radio, DatePicker } from 'components';
+
 const RadioGroup = Radio.RadioGroup;
 const RadioButton = Radio.RadioButton;
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
+
 class DatePickerView extends React.Component {
   constructor(props) {
     super(props);
@@ -78,9 +88,14 @@ class DatePickerView extends React.Component {
 #### **禁用**
 
 ```jsx
-const moment = require('../../node_modules/moment');
+import { DatePicker } from 'components';
+import moment from 'moment';
+
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
 const dateFormat = 'YYYY-MM-DD';
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+
 onOk = () => {
   console.log('OK')
 }
@@ -103,11 +118,16 @@ onOk = () => {
 #### **日期格式**
 
 ```jsx
+import { DatePicker } from 'components';
+import moment from 'moment';
+
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
 const dateFormat1 = 'YYYY/MM/DD';
 const dateFormat = 'YYYY-MM-DD';
 const monthFormat = 'YYYY/MM';
-const moment = require('../../node_modules/moment');
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+
 <div>
   <div style={{ marginBottom: 15 }}>
     <DatePicker defaultValue={moment('2015/01/01', dateFormat1)} format={dateFormat1} />
@@ -127,7 +147,12 @@ const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
 #### **日期时间选择**
 
 ```jsx
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
+import { DatePicker } from 'components';
+
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
+
 onChange = (date, dateString) => {
   console.log('onChange', date, dateString);
 }
@@ -159,8 +184,13 @@ onOk = () => {
 #### **不可选择日期和时间**
 
 ```jsx
-const { RangePicker, MonthPicker, WeekPicker } = DatePicker;
-const moment = require('../../node_modules/moment');
+import { DatePicker } from 'components';
+import moment from 'moment';
+
+const RangePicker = DatePicker.RangePicker;
+const MonthPicker = DatePicker.MonthPicker;
+const WeekPicker = DatePicker.WeekPicker;
+
 disabledDate = (current) => {
   // Can not select days before today and today
   return current && current < moment().endOf('day');
@@ -211,6 +241,98 @@ disabledRangeTime = (_, type) => {
     />
   </div>
 </div>
+```
+
+#### **自定义日期范围选择**
+
+```jsx
+import { DatePicker } from 'components';
+class DiyDatePickerView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startValue: null,
+      endValue: null,
+      endOpen: false,
+    }
+    this.disabledStartDate = this.disabledStartDate.bind(this);
+    this.disabledEndDate = this.disabledEndDate.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onStartChange = this.onStartChange.bind(this);
+    this.onEndChange = this.onEndChange.bind(this);
+    this.handleStartOpenChange = this.handleStartOpenChange.bind(this);
+    this.handleEndOpenChange = this.handleEndOpenChange.bind(this);
+  }
+
+  disabledStartDate(startValue) {
+    const endValue = this.state.endValue;
+    if (!startValue || !endValue) {
+      return false;
+    }
+    return startValue.valueOf() > endValue.valueOf();
+  }
+
+  disabledEndDate(endValue) {
+    const startValue = this.state.startValue;
+    if (!endValue || !startValue) {
+      return false;
+    }
+    return endValue.valueOf() <= startValue.valueOf();
+  }
+
+  onChange(field, value) {
+    this.setState({
+      [field]: value,
+    });
+  }
+
+  onStartChange(value) {
+    this.onChange('startValue', value);
+  }
+
+  onEndChange(value) {
+    this.onChange('endValue', value);
+  }
+
+  handleStartOpenChange(open) {
+    if (!open) {
+      this.setState({ endOpen: true });
+    }
+  }
+
+  handleEndOpenChange(open) {
+    this.setState({ endOpen: open });
+  }
+
+  render() {
+    const { startValue, endValue, endOpen } = this.state;
+    return (
+      <div>
+        <DatePicker
+          disabledDate={this.disabledStartDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={startValue}
+          placeholder="Start"
+          onChange={this.onStartChange}
+          onOpenChange={this.handleStartOpenChange}
+        />
+        <DatePicker
+          disabledDate={this.disabledEndDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={endValue}
+          placeholder="End"
+          onChange={this.onEndChange}
+          open={endOpen}
+          onOpenChange={this.handleEndOpenChange}
+        />
+      </div>
+    )
+  }
+
+}
+<DiyDatePickerView />
 ```
 
 #### **API**
@@ -275,3 +397,12 @@ disabledRangeTime = (_, type) => {
 | value | 日期 | moment[] | 无 |
 | onCalendarChange | 待选日期发生变化的回调 | function(dates: moment, moment, dateStrings: string, string) | 无 |
 | onChange | 日期范围发生变化的回调 | function(dates: moment, moment, dateStrings: string, string) | 无 |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'components';
+<div>
+  <BackTop visibilityHeight={20}/>
+  <PrevPage />
+</div>
+```

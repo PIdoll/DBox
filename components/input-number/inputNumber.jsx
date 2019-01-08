@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import RcInputNumber from 'rc-input-number';
 import Icon from '../icon';
 

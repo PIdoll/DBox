@@ -127,6 +127,6 @@ ul.iconlist li .icon-class .icon-name {
 }
 .demo-affix .scrollable-container {
   height: 100px;
-  background: url(../assets/images/affix-bg.jpg);
+  /* background: url(../assets/images/affix-bg.jpg); */
 }
 

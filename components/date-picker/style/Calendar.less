@@ -52,9 +52,25 @@
   .@{calendar-prefix-cls}-prev-decade-btn,
   .@{calendar-prefix-cls}-prev-year-btn {
     left: 32px;
+    top: -1px;
 
     &:after {
-      content: '«'
+      font-size: 22px;
+      content: '«';
+    }
+  }
+
+  .@{calendar-prefix-cls}-prev-century-btn {
+    &:after {
+      font-size: 22px;
+      content: '‹';
+    }
+  }
+
+  .@{calendar-prefix-cls}-prev-decade-btn {
+    &:after {
+      font-size: 22px;
+      content: '‹';
     }
   }
 
@@ -68,10 +84,26 @@
   .@{calendar-prefix-cls}-next-decade-btn,
   .@{calendar-prefix-cls}-next-year-btn {
     right: 32px;
+    top: -1px;
 
     &:after {
+      font-size: 22px;
       content: '»';
     }
+  }
+
+  .@{calendar-prefix-cls}-next-century-btn {
+    &:after {
+      font-size: 22px;
+      content: '›';
+    }
+  }
+
+  .@{calendar-prefix-cls}-next-decade-btn {
+    &:after {
+      font-size: 22px;
+      content: '›'
+    };
   }
 
   .@{calendar-prefix-cls}-next-year-btn {
@@ -83,8 +115,10 @@
   .@{calendar-prefix-cls}-prev-month-btn {
     // left: 29px;
     left: 32px;
+    top: -1px;
 
     &:after {
+      font-size: 22px;
       content: '‹';
     }
   }
@@ -92,8 +126,10 @@
   .@{calendar-prefix-cls}-next-month-btn {
     // right: 29px;
     right: 32px;
+    top: -1px;
 
     &:after {
+      font-size: 22px;
       content: '›';
     }
   }
@@ -142,11 +178,8 @@
     .calendarPanelHeader(@calendar-prefix-cls);
   }
 
-  // &-body {
-  //   padding: 8px 12px;
-  // }
   &-body {
-    padding: 0px 12px;
+    padding: 0px 16px 12px;
   }
 
   table {
@@ -217,7 +250,7 @@
 
     &:active {
       color: #fff;
-      background: @primary-5;
+      background: @primary-color;
     }
   }
 

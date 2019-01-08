@@ -1,7 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-export default (props) => {
+import './style/index';
+
+const Divider = (props) => {
   const { prefixCls = 'idoll', type = 'horizontal', orientation = '', className, children, dashed, ...restProps } = props;
   const orientationPrefix = (orientation.length > 0) ? '-' + orientation : orientation;
   const classString = classNames(
@@ -16,3 +19,11 @@ export default (props) => {
     </div>
   )
 }
+Divider.propTypes = {
+  prefixCls: PropTypes.string,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  dashed: PropTypes.bool,
+  style: PropTypes.object
+}
+export default Divider;

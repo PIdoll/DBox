@@ -1,10 +1,14 @@
 import React from 'react'
 import { Item } from 'rc-menu'
-import Tooltip from '../../components/tooltip';
+import Tooltip from '../tooltip';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class MenuItem extends React.Component {
+  static propTypes = {
+    disabled: PropTypes.bool,
+    indexkey: PropTypes.string,
+}
   static contextTypes = {
     mode: PropTypes.string,
     idollMenuTheme: PropTypes.string,

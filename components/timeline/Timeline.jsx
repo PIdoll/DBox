@@ -33,7 +33,7 @@ export default class Timeline extends React.Component {
     const pendingItem = pending ? (
       <TimelineItem
         pending={!!pending}
-        dot={pendingDot || <Icon type='pro-loading' />}
+        dot={pendingDot || <Icon type='loading' />}
       >
         {pendingNode}
       </TimelineItem>

@@ -14,7 +14,7 @@ function noop() { };
 export default class Alert extends React.Component {
   static propTypes = {
     closable: PropTypes.bool,
-    description: PropTypes.node,
+    description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     type: PropTypes.oneOf(['success', 'info', 'warning', 'error']),
     message: PropTypes.node,
     closeText: PropTypes.node,
@@ -70,16 +70,16 @@ export default class Alert extends React.Component {
     if (!iconType) {
       switch (type) {
         case 'success':
-          iconType = 'check-circle';
+          iconType = 'check';
           break;
         case 'info':
-          iconType = 'warning-circle';// info-circle
+          iconType = 'info-circle';// info-circle
           break;
         case 'error':
-          iconType = 'close-circle';// cross-circle
+          iconType = 'error-circle';// cross-circle
           break;
         case 'warning':
-          iconType = 'warning-circle';
+          iconType = 'warning';
           break;
         default:
           iconType = 'default';

@@ -2,7 +2,7 @@ import React from 'react'
 import RcCollapse from 'rc-collapse'
 import classNames from 'classnames'
 
-import animation from '../_util/openAnimation.jsx'
+import animation from '../_util/openAnimation'
 import './style/index.js'
 
 export default class Collapse extends React.Component {

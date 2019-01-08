@@ -1,0 +1,94 @@
+.resource_container {
+  position: relative;
+  width: 100%;
+  // height: 100vh;
+  background-color: #fff;
+  padding-bottom: 160px;
+  box-sizing: border-box;
+
+  .header {
+    position: fixed;
+    background-color: #fff;
+    padding: 0 120px;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 2px 8px 0px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+  }
+
+  .clearfix_fixed {
+    width: 100%;
+    height: 80px;
+  }
+
+  h1 {
+    font-size:30px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:#000;
+    margin-bottom: 24px;
+  }
+
+  .design_resource {
+    padding: 56px 120px 0; 
+  }
+
+  p {
+    margin-bottom: 64px;
+  }
+
+  .sketch_icon {
+    position: relative;
+    width: 282px;
+    height: 282px;
+    border: 1px solid #E2E2E2;
+
+    .sketch {
+      width: 94px;
+      height: 85px;
+      margin: 32px 0 14px 90px;
+    }
+
+    p {
+      margin-left: 74px;
+    }
+
+    .download_operation {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+
+      div {
+        width: 140px;
+      }
+    }
+  }
+
+  .relation {
+    width: 117px;
+    height: 120px;
+    position: absolute;
+    bottom: -130px;
+    right: 18px;
+    opacity: 0;
+    transition: opacity .5s;
+    border: 1px solid #E2E2E2;
+
+    .qrcode {
+      width: 100px;
+      height: 100px;
+      margin-left: 8px;
+      margin-top: 2px;
+    }
+  }
+
+  .isShow {
+    opacity: 1;
+    transition: opacity .5s;
+  }
+
+  .scamQR {
+    font-size: 10px;
+    text-align: center;
+  }
+}
