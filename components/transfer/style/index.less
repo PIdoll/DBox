@@ -24,38 +24,10 @@
     height: 200px;
     padding-top: 40px;
 
-    &-with-footer {
-      padding-bottom: 34px;
-    }
-
-    &-search {
-      padding: 0 @control-padding-horizontal-sm;
-      &-action {
-        color: @disabled-color;
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        bottom: 4px;
-        width: 28px;
-        line-height: @input-height-base;
-        text-align: center;
-        .@{iconfont-css-prefix} {
-          transition: all .3s;
-          color: @disabled-color;
-          &:hover {
-            color: @text-color-secondary;
-          }
-        }
-        span& {
-          pointer-events: none;
-        }
-      }
-    }
-
     &-header {
       height: 40px;
-      // padding: 6px @control-padding-horizontal;
-      padding: 9px @padding-md;
+      padding: 0 @padding-md;
+      line-height: 40px;
       border-radius: @border-radius-base @border-radius-base 0 0;
       background: @component-background;
       color: @text-color;
@@ -70,7 +42,7 @@
       &-title {
         position: absolute;
         left: 40px;
-        font-size:14px;
+        font-size:@font-size-base;
         font-family:PingFangSC-Medium;
         font-weight:500;
         color:@heading-color;
@@ -86,18 +58,6 @@
       font-size: @font-size-base;
       position: relative;
       height: 100%;
-
-      &-search-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 4px;
-        width: 100%;
-      }
-    }
-
-    &-body-with-search {
-      padding-top: @input-height-base + 8px;
     }
 
     &-content {
@@ -118,7 +78,7 @@
         padding: 9px @padding-md;
         min-height: 32px;
         transition: all .3s;
-        font-size:14px;
+        font-size:@font-size-base;
         font-family:PingFangSC-Regular;
         font-weight:400;
         color: @text-color;
@@ -152,15 +112,6 @@
     &-content:empty + &-body-not-found {
       display: block;
     }
-
-    &-footer {
-      border-top: @border-width-base @border-style-base @border-color-split;
-      border-radius: 0 0 @border-radius-base @border-radius-base;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
   }
 
   &-operation {
@@ -176,8 +127,12 @@
         margin-bottom: 16px;
       }
 
+      span {
+        margin: 0;
+      }
+
       .@{iconfont-css-prefix} {
-        font-size: 16px;
+        font-size: 12px;
       }
     }
   }
@@ -194,7 +149,7 @@
 
 @keyframes transferHighlightIn {
   0% {
-    background: @primary-1;
+    background: @primary-color;
   }
   100% {
     background: transparent;
