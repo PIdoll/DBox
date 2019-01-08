@@ -2,6 +2,8 @@
 @import "../../../style/mixins/index.less";
 
 @message-prefix-cls: ~"@{idoll-prefix}-message";
+@pseudo-width: 16px;
+@pseudo-height: 16px;
 
 .@{message-prefix-cls} {
   .reset-component;
@@ -13,7 +15,7 @@
   pointer-events: none;
 
   &-notice {
-    padding: 8px;
+    padding: @padding-xs;
     text-align: center;
     &:first-child {
       margin-top: -8px;
@@ -21,35 +23,35 @@
   }
 
   &-notice-content &-custom-content {
-    padding: 9px 16px;
+    padding: @padding-xs @padding-md;
     background: @component-background;
     box-shadow: @Shadow-large;
-    border-radius: 4px;
+    border-radius: @border-radius-base;
     display: inline-block;
     pointer-events: all;
-    font-size: 14px;
+    font-size: @font-size-base;
     height: 40px;
     box-sizing: border-box;
   }
 
   .content-success {
     background-color: @success-color;
-    color: #fff;
+    color: @white;
   }
 
   .content-error {
     background-color: @error-color;
-    color: #fff;
+    color: @white;
   }
 
   .content-info {
     background-color: @primary-color;
-    color: #fff;
+    color: @white;
   }
 
   .content-loading {
     background-color: @warning-color;
-    color: #fff;
+    color: @white;
   }
 
   .content-load::before {
@@ -58,11 +60,11 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid;
-    margin-right: 8px;
-    border-color: #13B886 transparent transparent transparent;
+    width: @pseudo-width;
+    height: @pseudo-height;
+    border: @border-width-base @border-style-base;
+    margin-right: @margin-xs;
+    border-color: @primary-border-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -73,7 +75,7 @@
 
   .content-warning, .content-warning {
     background-color: @warning-color;
-    color: #fff;
+    color: @white;
   }
 
   &-success .@{iconfont-css-prefix} {
@@ -102,11 +104,11 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid;
-    margin-right: 8px;
-    border-color: #13B886 transparent transparent transparent;
+    width: @pseudo-width;
+    height: @pseudo-height;
+    border: @border-width-base @border-style-base;
+    margin-right: @margin-xs;
+    border-color: @primary-border-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -119,7 +121,7 @@
   }
 
   .@{iconfont-css-prefix} {
-    margin-right: 8px;
+    margin-right: @margin-xs;
     font-size: @font-size-lg;
     top: -1px;
     position: relative;
@@ -136,7 +138,7 @@
   0% {
     opacity: 1;
     max-height: 150px;
-    padding: 8px;
+    padding: @padding-xs;
   }
   100% {
     opacity: 0;
