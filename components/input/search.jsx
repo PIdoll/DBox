@@ -61,6 +61,7 @@ export default class Search extends Component {
         prefixCls={inputPrefixCls}
         suffix={searchSuffix}
         ref={this.saveInput}
+        search
         />
     )
   }
