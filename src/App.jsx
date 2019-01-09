@@ -34,14 +34,12 @@ import Form from 'templates/form';
 import Badge from 'templates/badge';
 import Upload from 'templates/upload';
 import Affix from 'templates/affix';
-import Card from 'templates/card';
 import Avatar from './templates/avatar';
 import Table from 'templates/table';
 import Anchor from 'templates/anchor';
 import Cascader from 'templates/cascader';
 import Tree from 'templates/tree';
 import Popconfirm from 'templates/popconfirm';
-import Notification from 'templates/notification';
 import InputNumber from 'templates/inputNumber';
 import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
@@ -89,7 +87,6 @@ const App = () => (
       <Route exact path='/upload' component={Upload} />
       <Route exact path='/affix' component={Affix} />
       <Route exact path='/form' component={Form} />
-      <Route exact path='/card' component={Card} />
       <Route exact path='/avatar' component={Avatar} />
       <Route exact path='/pagination' component={Pagination} />
       <Route exact path='/table' component={Table} />
@@ -99,7 +96,6 @@ const App = () => (
       <Route exact path='/slider' component={Slider} />
       <Route exact path='/inputNumner' component={InputNumber} />
       <Route exact path='/popconfirm' component={Popconfirm} />
-      <Route exact path='/notification' component={Notification} />
       <Route exact path='/slider' component={Slider} />
       <Route exact path='/inputNumber' component={InputNumber} />
       <Route exact path='/back-top' component={BackTop} />

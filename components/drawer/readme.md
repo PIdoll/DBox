@@ -1,11 +1,11 @@
-#### **概述**
+##### **概述**
 在需要时呼出一个附加的面板来控制父窗体内容；
 在当前任务流中插入临时任务，创建或预览附加内容。比如展示协议条款，创建子对象。
 
-#### **基本用法**
+##### **基本用法**
 较简单的用法
 ```jsx
-import {Button, Drawer} from 'components';
+import {Button, Drawer} from 'dbox-ui';
 class DrawerView extends React.Component {
   constructor(props) {
     super(props);
@@ -49,10 +49,10 @@ class DrawerView extends React.Component {
 <DrawerView />
 ```
 
-#### **四种方位**
+##### **四种方位**
 控制placement为top,bottom,left,right来确定抽屉展示位置
 ```jsx
-import {Button, Radio, Drawer} from 'components';
+import {Button, Radio, Drawer} from 'dbox-ui';
 const RadioGroup = Radio.RadioGroup;
 class DrawerView extends React.Component {
   constructor(props) {
@@ -115,10 +115,10 @@ class DrawerView extends React.Component {
 <DrawerView />
 ```
 
-#### **信息预览**
+##### **信息预览**
 展示一些基本信息
 ```jsx
-import {Button, Row, Drawer, Col, Divider} from 'components';
+import {Button, Row, Drawer, Col, Divider} from 'dbox-ui';
 const pStyle = {
   fontSize: 16,
   color: 'rgba(0,0,0,0.85)',
@@ -265,10 +265,10 @@ class DrawerView extends React.Component {
 <DrawerView />
 ```
 
-#### **多层抽屉**
+##### **多层抽屉**
 可在父抽屉中创建子抽屉
 ```jsx
-import {Button, Drawer} from 'components';
+import {Button, Drawer} from 'dbox-ui';
 class DrawerView extends React.Component {
   constructor(props) {
     super(props);
@@ -360,11 +360,11 @@ class DrawerView extends React.Component {
 <DrawerView />
 ```
 
-#### **表单抽屉**
+##### **表单抽屉**
 在新抽屉中提交一些表单数据
 ```jsx
-import {Button, Divider, DatePicker, Form, Input, Select} from 'components';
-import {Row, Col} from 'components/grid';
+import {Button, Divider, DatePicker, Form, Input, Select} from 'dbox-ui';
+import {Row, Col} from 'dbox-ui/grid';
 const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
 const {Option} = Select;
@@ -520,7 +520,7 @@ const DrawerView = Form.create()(DrawerDemo);
 
 
 
-#### **Drawer**
+##### **Drawer**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -542,9 +542,10 @@ const DrawerView = Form.create()(DrawerDemo);
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import DrawerView from '../prevPage/drawer';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <DrawerView />
 </div>
 ```
