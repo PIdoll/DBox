@@ -1,21 +1,20 @@
-#### **何时使用**
-- 当需要向用户显示警告的信息时。
-- 非浮层的静态展现形式，始终展现，不会自动消失，用户可以选择点击关闭。
+当需要向用户显示警告的信息时。
+非浮层的静态展现形式，始终展现，不会自动消失，用户可以选择点击关闭。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <Alert
   message='成功提示'
   type='success' />
 ```
 
-#### **可关闭的警告提示**
+##### **可关闭的警告提示**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 onClose = (e) => {
   console.log(e, 'I was closed.');
@@ -35,10 +34,10 @@ onClose = (e) => {
 </div>
 ```
 
-#### **带有图标的警告提示**
+##### **带有图标的警告提示**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <div>
   <div style={{ marginBottom: 15 }}>
@@ -84,10 +83,10 @@ import { Alert } from 'components';
 </div>
 ```
 
-#### **四种样式**
+##### **四种样式**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
  <div>
   <div style={{ marginBottom: 15 }}>
@@ -105,10 +104,10 @@ import { Alert } from 'components';
  </div>
 ```
 
-#### **含有辅助性文字的文本**
+##### **含有辅助性文字的文本**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
  <div>
   <div style={{ marginBottom: 15 }}>
@@ -142,18 +141,18 @@ import { Alert } from 'components';
  </div>
 ```
 
-#### **自定义关闭**
+##### **自定义关闭**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <Alert message='Info Text' type='info' closeText='Close Now' />
 ```
 
-#### **平滑的卸载**
+##### **平滑的卸载**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 class AlertView extends React.Component {
   constructor(props) {
@@ -189,10 +188,10 @@ class AlertView extends React.Component {
 
 ```
 
-#### **顶部公告**
+##### **顶部公告**
 
 ```jsx
-import { Alert } from 'components';
+import { Alert } from 'dbox-ui';
 
 <div>
  <Alert message='警告文本' banner />
@@ -202,7 +201,7 @@ import { Alert } from 'components';
 </div>
 ```
 
-#### **API**
+##### **API**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | afterClose | 关闭动画结束后触发的回调函数 | () => void | - |
@@ -217,9 +216,10 @@ import { Alert } from 'components';
 | onClose | 关闭时触发的回调函数 | (e: MouseEvent) => void | 无 |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import AlertView from '../prevPage/alert';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AlertView />
 </div>
 ```

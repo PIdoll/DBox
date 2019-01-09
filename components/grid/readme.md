@@ -1,9 +1,9 @@
 
 为在屏幕上和谐一致的定位元素提供依据，24栅格系统有助于提升页面的秩序感和体验。
 
-####  **基本栅格布局**
+#####  **基本栅格布局**
 ```jsx
-import { Row, Col } from 'components';
+import { Row, Col } from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -65,9 +65,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **拥有间隔的栅格**
+##### **拥有间隔的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -105,9 +105,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **可以左右偏移的栅格**
+##### **可以左右偏移的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -152,9 +152,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **可排序的栅格**
+##### **可排序的栅格**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -189,9 +189,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex布局水平对齐**
+##### **Flex布局水平对齐**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -298,9 +298,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex布局垂直对齐**
+##### **Flex布局垂直对齐**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -378,9 +378,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex排序**
+##### **Flex排序**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -425,9 +425,9 @@ class GridView extends React.Component {
 <GridView />
 ```
 
-#### **自定义栅格布局**
+##### **自定义栅格布局**
 ```jsx
-import {Row, Col} from 'components';
+import {Row, Col} from 'dbox-ui';
 
 const RowDemoStyle = {
   backgroundColor: '#13B886',
@@ -466,7 +466,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 
-#### **Row**
+##### **Row**
 | 参数       | 说明             | 类型               | 默认值       |
 |-----------|-----------------|--------------------|-------------|
 | gutter    | 栅格间隔   | number | 0        |
@@ -474,7 +474,7 @@ class GridView extends React.Component {
 | align     | flex 布局下的垂直对齐方式：`top` `middle` `bottom`  | string | `top` |
 | justify   | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between`   | string | `start`  |
 
-#### **Col**
+##### **Col**
 
 | 参数      | 说明             | 类型               | 默认值       |
 |----------|-----------------|--------------------|-------------|
@@ -489,9 +489,10 @@ class GridView extends React.Component {
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import GridView from '../prevPage/grid';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <GridView />
 </div>
 ```
