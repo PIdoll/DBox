@@ -46,7 +46,7 @@ class select extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>基本使用</h1>
-        <Select size='small' placeholder='请选择' style={{ width: 200 }}>
+        <Select size='small' placeholder='请选择'>
           <Option value='beijing'>北京</Option>
           <Option value='shanghai'>上海</Option>
           <Option value='guangzhou'>广州</Option>

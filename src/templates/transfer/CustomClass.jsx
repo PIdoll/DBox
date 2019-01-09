@@ -1,6 +1,8 @@
 import React from 'react';
 import Transfer from 'components/transfer/index';
 
+import './style/transfer.less';
+
 const mockData = [];
 for (let i = 0; i < 20; i++) {
   mockData.push({
@@ -15,14 +17,12 @@ const oriTargetKeys = mockData
   .filter(item => +item.key % 3 > 1)
   .map(item => item.key);
 
-
-export default class CustomTransferStyle extends React.Component {
+export default class CustomClass extends React.Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
     disabled: true,
   }
-
   handleChange = (nextTargetKeys, direction, moveKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
 
@@ -48,18 +48,13 @@ export default class CustomTransferStyle extends React.Component {
   };
   render() {
     const { targetKeys, selectedKeys, disabled } = this.state;
-    const listStyle = {
-      width: 300
-    }
     return (
-      <div style={{ marginTop: 40 }}>
-        <h1 className='h1'>自定义两个穿梭框的样式</h1>
-        <h2 className='h2'>如果默认的穿梭框的样式不能满足UI，则通过listStyle配置</h2>
+      <div>
         <Transfer
+          className='container-style'
           titles={['显示字段', '隐藏字段']}
           dataSource={mockData}
           targetKeys={targetKeys}
-          listStyle={listStyle}
           selectedKeys={selectedKeys}
           onChange={this.handleChange}
           onSelectChange={this.handleSelectChange}

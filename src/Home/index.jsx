@@ -68,12 +68,6 @@ function Home() {
         </NavLink>
       </div>
       <div className='widget-item'>
-        <NavLink className='widget-wrap' to='/card'>
-          <div className='name'>card卡片</div>
-          <div className='info'>Card</div>
-        </NavLink>
-      </div>
-      <div className='widget-item'>
         <NavLink className='widget-wrap' to='/cascader'>
           <div className='name'>级联选择</div>
           <div className='info'>Cascader</div>
@@ -101,6 +95,12 @@ function Home() {
         <NavLink className='widget-wrap' to='/divider'>
           <div className='name'>分割线</div>
           <div className='info'>Divider</div>
+        </NavLink>
+      </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/drawer'>
+          <div className='name'>抽屉</div>
+          <div className='info'>Drawer</div>
         </NavLink>
       </div>
       <div className='widget-item' >
