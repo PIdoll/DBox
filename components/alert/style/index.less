@@ -1,20 +1,22 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/index.less";
 @import "../../../style/mixins/index.less";
 
 @alert-prefix-cls: ~"@{idoll-prefix}-alert";
-@alert-message-color: @heading-color;
+@alert-message-color: @title;
 @alert-text-color: @text-color;
 
 .@{alert-prefix-cls} {
   .reset-component;
   position: relative;
-  padding: 8px 15px 8px 37px;
+  // padding: 8px 15px 8px 37px;
+  padding: @padding-xs @padding-md;
   font-size: @font-size-base;
-  color: @text-color;
+  color: @alert-text-color;
   border-radius: @border-radius-base;
 
   &&-no-icon {
-    padding: 8px 15px;
+    // padding: 8px 15px;
+    padding: @padding-xs @padding-md;
   }
 
   &-icon {
@@ -29,8 +31,13 @@
     display: none;
   }
 
+  &&-hasicon {
+    .@{alert-prefix-cls}-message {
+      left: 22px;
+    }
+  }
+
   &-success {
-    // border: @border-width-base @border-style-base ~`colorPalette("@{success-color}", 3)`;
     background-color: @success-LightBg;
     color: @success-color;
     .@{alert-prefix-cls}-icon {
@@ -43,16 +50,14 @@
   }
 
   &-info {
-    // border: @border-width-base @border-style-base ~`colorPalette("@{info-color}", 3)`;
     background-color: @primary-LightBg;
-    color: @processing-color;
+    color: @primary-color;
     .@{alert-prefix-cls}-icon {
-      color: @info-color;
+      color: @primary-color;
     }
   }
 
   &-warning {
-    // border: @border-width-base @border-style-base ~`colorPalette("@{warning-color}", 3)`;
     background-color: @warning-LightBg;
     color: @warning-color;
     .@{alert-prefix-cls}-icon {
@@ -61,7 +66,6 @@
   }
 
   &-error {
-    // border: @border-width-base @border-style-base ~`colorPalette("@{error-color}", 3)`;
     background-color: @error-LightBg;
     color: @error-color;
     .@{alert-prefix-cls}-icon {
@@ -96,16 +100,16 @@
   }
 
   &-with-description {
-    // padding: 15px 15px 15px 64px;
-    padding: 8px 15px 8px 64px;
+    padding: @padding-xs @padding-lg;
     position: relative;
     border-radius: @border-radius-base;
-    color: @text-color;
+    color: @alert-text-color;
     line-height: @line-height-base;
   }
 
   &-with-description&-no-icon {
-    padding: 15px;
+    // padding: 15px;
+    padding: @padding-md;
   }
 
   &-with-description &-icon {
@@ -130,6 +134,10 @@
     margin-bottom: 8px;
   }
 
+  &-hasicon-description &-message {
+    margin-left: 40px;
+  }
+
   &-message {
     position: relative;
     top: 1px;
@@ -137,6 +145,10 @@
 
   &-with-description &-description {
     display: block;
+  }
+
+  &-hasicon-description &-description {
+    margin-left: 40px;
   }
 
   &&-close {

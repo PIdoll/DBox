@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './Home'
-import {Button} from './templates/index';
+import {Button, Alert, Transfer} from './templates/index';
 
 import Dropdown from 'templates/dropdown'
 import Checkbox from 'templates/checkbox'
@@ -10,7 +10,6 @@ import Collapse from 'templates/collapse'
 import Progress from 'templates/progress'
 import Select from 'templates/select'
 import Switch from 'templates/switch'
-import Alert from 'templates/alert'
 import Input from 'templates/input'
 import message from 'templates/message'
 import Layout from 'templates/layout'
@@ -46,7 +45,6 @@ import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
 import Calendar from 'templates/calendar';
-import Transfer from './templates/transfer/index.jsx';
 import Drawer from 'templates/drawer';
 
 

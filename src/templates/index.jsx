@@ -1,2 +1,4 @@
 import Button from './button';
-export { Button };
+import Alert from './alert';
+import Transfer from './transfer';
+export { Button, Alert, Transfer };

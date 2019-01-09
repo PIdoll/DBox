@@ -1,6 +1,5 @@
 import React from 'react';
 import Transfer from 'components/transfer/index';
-import Switch from '../../../components/switch/index';
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -17,7 +16,7 @@ const oriTargetKeys = mockData
   .map(item => item.key);
 
 
-export default class BasicDemo extends React.Component {
+export default class CustomTransferStyle extends React.Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
@@ -49,20 +48,16 @@ export default class BasicDemo extends React.Component {
   };
   render() {
     const { targetKeys, selectedKeys, disabled } = this.state;
+    const listStyle = {
+      width: 300
+    }
     return (
       <div>
-        <h1 className='h1'>基本使用</h1>
-        <h2 className='h2'>最基本的用法，展示了disabled、titles、 dataSource、targetKeys、每行的渲染函数 render 以及回调函数 onChange onSelectChange onScroll 的用法。</h2>
-        <div style={{marginBottom: 15}}>
-          <Switch
-            checked={disabled}
-            onChange={this.handleDisable}
-          />
-        </div>
         <Transfer
           titles={['显示字段', '隐藏字段']}
           dataSource={mockData}
           targetKeys={targetKeys}
+          listStyle={listStyle}
           selectedKeys={selectedKeys}
           onChange={this.handleChange}
           onSelectChange={this.handleSelectChange}
