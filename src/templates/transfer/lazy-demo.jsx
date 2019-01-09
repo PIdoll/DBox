@@ -1,6 +1,5 @@
 import React from 'react';
 import Transfer from 'components/transfer/index';
-import Switch from '../../components/switch/index';
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -16,14 +15,12 @@ const oriTargetKeys = mockData
   .filter(item => +item.key % 3 > 1)
   .map(item => item.key);
 
-
-export default class TransferView extends React.Component {
+export default class LazyDemo extends React.Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
     disabled: true,
   }
-
   handleChange = (nextTargetKeys, direction, moveKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
 
@@ -49,18 +46,15 @@ export default class TransferView extends React.Component {
   };
   render() {
     const { targetKeys, selectedKeys, disabled } = this.state;
+    const lazy = {height: 80, offset: 900};
     return (
-      <div id='main-container'>
-        <h1 className='h1'>基本使用</h1>
-        <div style={{marginBottom: 15}}>
-          <Switch
-            checked={disabled}
-            onChange={this.handleDisable}
-          />
-        </div>
+      <div style={{ marginTop: 40 }}>
+        <h1 className='h1'>懒加载</h1>
+        <h2 className='h2'>Transfer 使用了 react-lazy-load 优化性能，这里可以设置相关参数。设为 false 可以关闭懒加载。</h2>
         <Transfer
           titles={['显示字段', '隐藏字段']}
           dataSource={mockData}
+          lazy={lazy}
           targetKeys={targetKeys}
           selectedKeys={selectedKeys}
           onChange={this.handleChange}
