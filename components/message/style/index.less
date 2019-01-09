@@ -1,9 +1,10 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/index.less";
 @import "../../../style/mixins/index.less";
 
 @message-prefix-cls: ~"@{idoll-prefix}-message";
 @pseudo-width: 16px;
 @pseudo-height: 16px;
+@zindex-message: 1010;
 
 .@{message-prefix-cls} {
   .reset-component;
@@ -24,7 +25,7 @@
 
   &-notice-content &-custom-content {
     padding: @padding-xs @padding-md;
-    background: @component-background;
+    background: @white;
     box-shadow: @Shadow-large;
     border-radius: @border-radius-base;
     display: inline-block;
@@ -63,8 +64,8 @@
     width: @pseudo-width;
     height: @pseudo-height;
     border: @border-width-base @border-style-base;
-    margin-right: @margin-xs;
-    border-color: @primary-border-color transparent transparent transparent;
+    margin-right: 8px;
+    border-color: @primary-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -107,8 +108,8 @@
     width: @pseudo-width;
     height: @pseudo-height;
     border: @border-width-base @border-style-base;
-    margin-right: @margin-xs;
-    border-color: @primary-border-color transparent transparent transparent;
+    margin-right: 8px;
+    border-color: @primary-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -121,7 +122,7 @@
   }
 
   .@{iconfont-css-prefix} {
-    margin-right: @margin-xs;
+    margin-right: 8px;
     font-size: @font-size-lg;
     top: -1px;
     position: relative;

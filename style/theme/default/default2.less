@@ -211,13 +211,12 @@
 @disabled-color-dark    : text-color-disable-dark;
 
 // Shadow
-@shadow-color           : @shadow;                                                              //修改为具体数值     #14
-@box-shadow-base        : @shadow-1-down;                                                       //#1401
+@shadow-color           : rgba(0,0,0,0.10);                                                              //修改为具体数值     #14
+@box-shadow-base        : 0 0 8px @shadow-color;                                                       //#1401
 // @todo
-@shadow-1-up            : 0 2px 8px @shadow-color;                                              //#1402
-@shadow-1-down          : 0 2px 8px @shadow-color;                                              //#1404
-@shadow-1-left          : -2px 0 8px @shadow-color;                                             //#1405
-@shadow-1-right         : 2px 0 8px @shadow-color;                                              //#1403
+@shadow-small-up            : 0 -2px 8px @shadow-color;                                              //#1402                                              //#1404                                            //#1405
+@shadow-small-right         : 2px 0 8px @shadow-color;                                              //#1403
+@shadow-small-left         : -2px 0 8px @shadow-color;
 // @shadow-2               : 0 4px 12px @shadow-color;
 @Shadow-large               : 0 8px 16px 0 @shadow-color;                                       //#1406
 @Shadow-small           : 0 2px 8px 0 @shadow-color;

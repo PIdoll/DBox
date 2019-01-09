@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './Home'
-import {Button} from './templates/index';
+import {Button, Message} from './templates/index';
 
 import Dropdown from 'templates/dropdown'
 import Checkbox from 'templates/checkbox'
@@ -12,7 +12,6 @@ import Select from 'templates/select'
 import Switch from 'templates/switch'
 import Alert from 'templates/alert'
 import Input from 'templates/input'
-import message from 'templates/message'
 import Layout from 'templates/layout'
 import Radio from 'templates/radio'
 import Icon from 'templates/icon'
@@ -64,7 +63,7 @@ const App = () => (
       <Route exact path='/alert' component={Alert} />
       <Route exact path='/button' component={Button} />
       <Route exact path='/input' component={Input} />
-      <Route exact path='/message' component={message} />
+      <Route exact path='/message' component={Message} />
       <Route exact path='/layout' component={Layout} />
       <Route exact path='/radio' component={Radio} />
       <Route exact path='/icon' component={Icon} />
