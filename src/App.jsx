@@ -2,52 +2,53 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './Home'
-import {Button, Message} from './templates/index';
-
-import Dropdown from 'templates/dropdown'
-import Checkbox from 'templates/checkbox'
-import Collapse from 'templates/collapse'
-import Progress from 'templates/progress'
-import Select from 'templates/select'
-import Switch from 'templates/switch'
-import Alert from 'templates/alert'
-import Input from 'templates/input'
-import Layout from 'templates/layout'
-import Radio from 'templates/radio'
-import Icon from 'templates/icon'
-import Pagination from 'templates/pagination'
-import Modal from 'templates/modal'
-import Breadcrumb from 'templates/breadcrumb'
-import Tag from 'templates/tag';
-import Tabs from 'templates/tabs';
-import Tooltip from 'templates/tooltip';
-import TimePicker from 'templates/timepicker';
-import DatePicker from 'templates/date-picker';
-import AutoComplete from 'templates/auto-complete';
-import Timeline from 'templates/timeline';
-import Spin from 'templates/spin';
-import Popover from 'templates/popover';
-import Divider from 'templates/divider';
-import MenuDemo from 'templates/menu';
-import Steps from 'templates/steps';
-import Form from 'templates/form';
-import Badge from 'templates/badge';
-import Upload from 'templates/upload';
-import Affix from 'templates/affix';
-import Avatar from './templates/avatar';
-import Table from 'templates/table';
-import Anchor from 'templates/anchor';
-import Cascader from 'templates/cascader';
-import Tree from 'templates/tree';
-import Popconfirm from 'templates/popconfirm';
-import InputNumber from 'templates/inputNumber';
-import Slider from 'templates/slider';
-import BackTop from 'templates/back-top';
-import Grid from 'templates/grid';
-import Calendar from 'templates/calendar';
-import Transfer from './templates/transfer/index.jsx';
-import Drawer from 'templates/drawer';
-
+import {
+  Button,
+  Dropdown,
+  Checkbox,
+  Affix,
+  Breadcrumb,
+  Steps,
+  InputNumber,
+  Slider,
+  Progress,
+  Grid,
+  Collapse,
+  Select,
+  Cascader,
+  Switch,
+  Alert,
+  Input,
+  Message,
+  Layout,
+  Radio,
+  Icon,
+  Pagination,
+  Modal,
+  Tag,
+  Tabs,
+  Tooltip,
+  TimePicker,
+  DatePicker,
+  AutoComplete,
+  Timeline,
+  Spin,
+  Popover,
+  Divider,
+  MenuDemo,
+  Form,
+  Badge,
+  Upload,
+  Avatar,
+  Table,
+  Anchor,
+  Tree,
+  Popconfirm,
+  BackTop,
+  Calendar,
+  Transfer,
+  Drawer
+} from './templates/index';
 
 import './App.css';
 

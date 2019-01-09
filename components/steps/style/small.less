@@ -1,6 +1,6 @@
 .@{steps-prefix-cls}-small {
   &.@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) .@{steps-prefix-cls}-item {
-    margin-right: 12px;
+    margin-right: @steps-current-dot-size + 2;
     &:last-child {
       margin-right: 0;
     }
@@ -18,7 +18,7 @@
   .@{steps-prefix-cls}-item-title {
     font-size: @font-size-base;
     line-height: @steps-small-icon-size;
-    padding-right: 12px;
+    padding-right: @padding-sm;
 
     &:after {
       top: @steps-small-icon-size / 2;
@@ -32,7 +32,7 @@
 
   .@{steps-prefix-cls}-item-tail {
     top: 8px;
-    padding: 0 8px;
+    padding: 0 @steps-dot-size;
   }
 
   .@{steps-prefix-cls}-item-custom .@{steps-prefix-cls}-item-icon {
