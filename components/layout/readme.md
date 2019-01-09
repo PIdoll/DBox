@@ -1,10 +1,9 @@
-#### **概述**
 
--提供常用网页布局
+提供常用网页布局
 
-#### **基础布局**
+##### **基础布局**
 ```jsx
-import {Layout} from 'components';
+import {Layout} from 'dbox-ui';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -36,12 +35,12 @@ const Sider = Layout.Sider;
 </div>
 ```
 
-#### **顶部导航**
+##### **顶部导航**
 顺应了从上至下的正常浏览顺序，方便浏览信息；适用于导航较少，页面篇幅较长的网站。
 
 ```jsx
-import{Menu, Breadcrumb, Layout} from 'components';
-import{SubMenu, MenuItem} from 'components/menu';
+import{Menu, Breadcrumb, Layout} from 'dbox-ui';
+import{SubMenu, MenuItem} from 'dbox-ui/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -98,12 +97,12 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **侧边导航-面包屑**
+##### **侧边导航-面包屑**
 搭配传统面包屑的侧边导航，提高导航可见性，方便页面之间切换，常用于中后台网站。
 
 ```jsx
-import{Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'components';
-import{SubMenu, MenuItem} from 'components/menu';
+import{Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'dbox-ui';
+import{SubMenu, MenuItem} from 'dbox-ui/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
@@ -245,12 +244,12 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **侧边导航-Tab页**
+##### **侧边导航-Tab页**
 用Tab页签代替面包屑的侧边导航，提高常用页面切换的灵活性。
 
 ```jsx
-import{Menu, Breadcrumb, Avatar, Tabs, Icon, Dropdown, Layout} from 'components';
-import{SubMenu, MenuItem} from 'components/menu';
+import{Menu, Breadcrumb, Avatar, Tabs, Icon, Dropdown, Layout} from 'dbox-ui';
+import{SubMenu, MenuItem} from 'dbox-ui/menu';
 const TabPane = Tabs.TabPane;
 const Header = Layout.Header;
 const Content = Layout.Content;
@@ -436,7 +435,7 @@ class LayoutView extends React.Component {
 <LayoutView />
 ```
 
-#### **API**
+##### **API**
 
 Layout
 
@@ -449,9 +448,10 @@ Layout
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import LayoutView from '../prevPage/layout';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <LayoutView />
 </div>
 ```

@@ -1,23 +1,20 @@
-
-#### **概述**
 用于标记事物的属性和维度，同时亦可进行分类。
 
-
-#### **基本用法**
+##### **基本用法**
 通过添加href属性区别链接状态
 ```jsx
 
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<Tag>标签</Tag>
   <Tag href='https://www.baidu.com'>链接</Tag>
 </div>
 ```
 
-#### **多彩标签**
+##### **多彩标签**
 通过添加颜色进行分类
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<Tag color='peru'>peru</Tag>
     <Tag color='coral'>coral</Tag>
@@ -30,17 +27,17 @@ import {Tag} from 'components';
 </div>
 ```
 
-#### **可移除标签**
+##### **可移除标签**
 标签可移除，支持动态删除
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <Tag closable>可移除标签</Tag>
 ```
 
-#### **热门标签**
+##### **热门标签**
 通过添加hot属性进行分类
 ```jsx
-import {Tag} from 'components';
+import {Tag} from 'dbox-ui';
 <div>
 	<span>热门话题:</span>
 	<Tag hot>电影</Tag>
@@ -50,17 +47,17 @@ import {Tag} from 'components';
 </div>
 ```
 
-#### **动态添加和删除标签**
+##### **动态添加和删除标签**
 动态添加和删除标签
 ```jsx
-import {Tag} from 'components';
-import {TagGroup} from 'components/tag';
+import {Tag} from 'dbox-ui';
+import {TagGroup} from 'dbox-ui/tag';
 <TagGroup></TagGroup>
 ```
 
 
 
-#### **Tag**
+##### **Tag**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -71,7 +68,7 @@ import {TagGroup} from 'components/tag';
 | href | 链接跳转路径 | string | -  |
 | checked | 设置标签的选中状态仅适用于hot和基本状态下 | boolean | false |
 
-#### **tagGroup**
+##### **tagGroup**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -81,7 +78,7 @@ import {TagGroup} from 'components/tag';
 | iconType | 动态增加标签的Icon | string | `plus` |
 
 
-#### **Tag 方法**
+##### **Tag 方法**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -92,9 +89,10 @@ import {TagGroup} from 'components/tag';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import TagView from '../prevPage/tag';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TagView />
 </div>
 ```

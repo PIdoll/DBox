@@ -1,9 +1,9 @@
 
 将元素固定在特定区域，一般用于导航栏或反馈按钮。
 
-#### **固定在顶部**
+##### **固定在顶部**
 ```jsx
-import { Affix, Button } from 'components';
+import { Affix, Button } from 'dbox-ui';
 
 class AffixView extends React.Component {
   constructor(props) {
@@ -22,9 +22,9 @@ class AffixView extends React.Component {
 }
 <AffixView />
 ```
-#### **固定在底部**
+##### **固定在底部**
 ```jsx
-import { Affix, Button } from 'components';
+import { Affix, Button } from 'dbox-ui';
 
 const AffixView = () => {
   return (
@@ -36,9 +36,9 @@ const AffixView = () => {
 <AffixView />
 ```
 
-#### **固定在容器**
+##### **固定在容器**
 ```jsx
-import { Affix, Button } from 'components';
+import { Affix, Button } from 'dbox-ui';
 
 class AffixView extends React.Component{
   render() {
@@ -57,7 +57,7 @@ class AffixView extends React.Component{
 }
 <AffixView />
 ```
-#### **API**
+##### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -69,9 +69,10 @@ class AffixView extends React.Component{
 **注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import AffixView from '../prevPage/affix';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AffixView />
 </div>
 ```

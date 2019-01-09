@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './Home'
+import {Button} from './templates/index';
+
 import Dropdown from 'templates/dropdown'
 import Checkbox from 'templates/checkbox'
 import Collapse from 'templates/collapse'
@@ -9,7 +11,6 @@ import Progress from 'templates/progress'
 import Select from 'templates/select'
 import Switch from 'templates/switch'
 import Alert from 'templates/alert'
-import Button from 'templates/button'
 import Input from 'templates/input'
 import message from 'templates/message'
 import Layout from 'templates/layout'
@@ -27,7 +28,6 @@ import AutoComplete from 'templates/auto-complete';
 import Timeline from 'templates/timeline';
 import Spin from 'templates/spin';
 import Popover from 'templates/popover';
-import Title from 'templates/title';
 import Divider from 'templates/divider';
 import MenuDemo from 'templates/menu';
 import Steps from 'templates/steps';
@@ -35,21 +35,18 @@ import Form from 'templates/form';
 import Badge from 'templates/badge';
 import Upload from 'templates/upload';
 import Affix from 'templates/affix';
-import Card from 'templates/card';
 import Avatar from './templates/avatar';
-import List from 'templates/list';
 import Table from 'templates/table';
 import Anchor from 'templates/anchor';
 import Cascader from 'templates/cascader';
 import Tree from 'templates/tree';
 import Popconfirm from 'templates/popconfirm';
-import Notification from 'templates/notification';
 import InputNumber from 'templates/inputNumber';
 import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
 import Calendar from 'templates/calendar';
-import Transfer from 'templates/transfer';
+import Transfer from './templates/transfer/index.jsx';
 import Drawer from 'templates/drawer';
 
 
@@ -84,7 +81,6 @@ const App = () => (
       <Route exact path='/timeline' component={Timeline} />
       <Route exact path='/spin' component={Spin} />
       <Route exact path='/popover' component={Popover} />
-      <Route exact path='/title' component={Title} />
       <Route exact path='/divider' component={Divider} />
       <Route exact path='/menu' component={MenuDemo} />
       <Route exact path='/steps' component={Steps} />
@@ -92,10 +88,8 @@ const App = () => (
       <Route exact path='/upload' component={Upload} />
       <Route exact path='/affix' component={Affix} />
       <Route exact path='/form' component={Form} />
-      <Route exact path='/card' component={Card} />
       <Route exact path='/avatar' component={Avatar} />
       <Route exact path='/pagination' component={Pagination} />
-      <Route exact path='/list' component={List} />
       <Route exact path='/table' component={Table} />
       <Route exact path='/cascader' component={Cascader} />
       <Route exact path='/anchor' component={Anchor} />
@@ -103,7 +97,6 @@ const App = () => (
       <Route exact path='/slider' component={Slider} />
       <Route exact path='/inputNumner' component={InputNumber} />
       <Route exact path='/popconfirm' component={Popconfirm} />
-      <Route exact path='/notification' component={Notification} />
       <Route exact path='/slider' component={Slider} />
       <Route exact path='/inputNumber' component={InputNumber} />
       <Route exact path='/back-top' component={BackTop} />

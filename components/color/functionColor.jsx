@@ -5,7 +5,7 @@ import './style';
 const functionColor = [
   { title: 'Success', value: '#3CCB69', description: '用于成功状态和信息提示和反馈。', color: '#ffffff' },
   { title: 'Warning', value: '#F9AA29', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', color: '#ffffff' },
-  { title: 'Error', value: '#F44336', description: '用于主要操作和按钮，链接，重要信息突出显示、以及进度指示和身份验证等场景。', color: '#ffffff' },
+  { title: 'Error', value: '#F44336', description: '用于字体颜色、卡片背景等不需要有色彩进行区分的场景，支持以不透明度进行层级区分。', color: '#ffffff' },
 ]
 class FunctionColor extends React.Component {
   render() {

@@ -4,7 +4,7 @@ import './style';
 
 
 const otherColor = [
-  { title: 'Disabled', value: '#F8F9FC', description: '用于不可用状态组件的颜色（白底）。', color: '#000000' },
+  { title: 'Disabled', value: '#F8F9FC', description: '用于不可用状态组件的颜色（白底）。', color: '#000000', rightColor: 'rgba(0,0,0,0.6)' },
   { title: 'Navbar', value: '#2F323B', description: '用于导航栏的默认背景色。', color: '#ffffff' },
 ]
 class OthersColor extends React.Component {
@@ -20,7 +20,7 @@ class OthersColor extends React.Component {
                 <dl className='idoll-color-item '>
                   <dt className='idoll-color-item-title' style={{backgroundColor: item.value, color: item.color}}>
                     {item.title}
-                    <span className='idoll-color-item-title-value'>{item.value}</span>
+                    <span className='idoll-color-item-title-value'style={{color: item.rightColor}}>{item.value}</span>
                   </dt>
                   <dd className='idoll-color-item-desc'>
                     {item.description}

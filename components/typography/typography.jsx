@@ -8,19 +8,19 @@ export default [
         name: '基本属性',
         fontSize: 'Font-size : 38px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'Color: #000000',
+        opacity: 'Opacity: 0.8'
       }
     ],
     ui: [
       {
         name: 'UI属性',
         lineHeight: 'Line-height : 46px',
-        MarginTop: 'margin-top: 56px'
+        MarginTop: 'Margin-top: 56px'
       }
     ]
   },
-  {
+   {
     title: '标题文字H2',
     description: '建议用法：适用于空状态和功能介绍，顶级标题。',
     size: '30px',
@@ -29,15 +29,15 @@ export default [
         name: '基本属性',
         fontSize: 'Font-size : 30px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'Color: #000000',
+        opacity: 'Opacity: 0.8'
       }
     ],
     ui: [
       {
         'name': 'UI属性',
         'lineHeight': 'Line-height : 38px',
-        'MarginTop': 'margin-top: 48px'
+        'MarginTop': 'Margin-top: 48px'
       }
     ]
   },
@@ -48,17 +48,17 @@ export default [
     basic: [
       {
         name: '基本属性',
-        fontSize: 'Font-size : 38px',
+        fontSize: 'Font-size : 24px',
         fontWeight: 'Font-weight ： 500 / Medium',
-        color: '#000000',
-        opacity: '0.8'
+        color: 'Color: #000000',
+        opacity: 'Opacity: 0.8'
       }
     ],
     ui: [
       {
         name: 'UI属性',
-        lineHeight: '32px',
-        MarginTop: 'margin-top: 40px'
+        lineHeight: 'Line-height : 32px',
+        MarginTop: 'Margin-top: 40px'
         }
       ]
     },
@@ -69,17 +69,17 @@ export default [
       basic: [
         {
           name: '基本属性',
-          fontSize: 'Font-size : 38px',
+          fontSize: 'Font-size : 20px',
           fontWeight: 'Font-weight ： 500 / Medium',
-           color: '#000000',
-           opacity: '0.8'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.8'
         }
       ],
       ui: [
         {
           name: 'UI属性',
           lineHeight: '28px',
-          MarginTop: 'margin-top: 32px'
+          MarginTop: 'Margin-top: 32px'
         }
       ]
     },
@@ -92,15 +92,15 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 16px',
           fontWeight: 'Font-weight ： 500 / Medium',
-           color: '#000000',
-           opacity: '0.8'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.8'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '24px',
-          MarginTop: 'margin-top: 24px'
+          lineHeight: 'Line-height : 24px',
+          MarginTop: 'Margin-top: 24px'
         }
       ]
     },
@@ -113,15 +113,15 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 500 / Medium',
-           color: '#000000',
-           opacity: '0.8'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.8'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '22px',
-          MarginTop: 'margin-top: 24px'
+          lineHeight: 'Line-height : 22px',
+          MarginTop: 'Margin-top: 24px'
         }
       ]
     },
@@ -134,15 +134,15 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 16px',
           fontWeight: 'Font-weight ： 400 / Regular',
-           color: '#000000',
-           opacity: '0.6'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.6'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '22px',
-          MarginTop: 'margin-top: 16px'
+          lineHeight: 'Line-height : 22px',
+          MarginTop: 'Margin-top: 16px'
         }
       ]
     },
@@ -155,15 +155,15 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 400 / Regular',
-           color: '#000000',
-           opacity: '0.8'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.8'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '22px',
-          MarginTop: 'margin-top: 24px'
+          lineHeight: 'Line-height : 22px',
+          MarginTop: 'Margin-top: 24px'
         }
       ]
     },
@@ -176,15 +176,15 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 12px',
           fontWeight: 'Font-weight ： 400 / Regular',
-           color: '#000000',
-           opacity: '0.6'
+          color: 'Color: #000000',
+          opacity: 'Opacity; 0.6'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '20px',
-          MarginTop: 'margin-top: 8px'
+          lineHeight: 'Line-height : 20px',
+          MarginTop: 'Margin-top: 8px'
         }
       ]
     },
@@ -197,16 +197,16 @@ export default [
           name: '基本属性',
           fontSize: 'Font-size : 14px',
           fontWeight: 'Font-weight ： 400 / Regular',
-           color: '#000000',
-           opacity: '0.6'
+          color: 'Color: #000000',
+          opacity: 'Opacity: 0.6'
         }
       ],
       ui: [
         {
           name: 'UI属性',
-          lineHeight: '22px',
-          MarginTop: 'margin-top: 24px',
-          LetterSpacing: '0.5px'
+          lineHeight: 'Line-height : 22px',
+          MarginTop: 'Margin-top: 24px',
+          LetterSpacing: 'Letter-spacing: 0.5px'
         }
       ]
     },

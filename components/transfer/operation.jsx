@@ -22,7 +22,7 @@ export default class Operation extends React.Component {
             type='primary'
             disabled={disabled || !rightActive}
             onClick={moveToRight}
-            icon='right'>
+            icon={!rightArrowText ? 'right' : rightArrowText}>
             {rightArrowText}
           </Button>
         </div>
@@ -32,7 +32,7 @@ export default class Operation extends React.Component {
             type='primary'
             disabled={disabled || !leftActive}
             onClick={moveToLeft}
-            icon='left'>
+            icon={!leftArrowText ? 'left' : leftArrowText}>
             {leftArrowText}
           </Button>
         </div>
