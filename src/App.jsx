@@ -47,7 +47,7 @@ import Slider from 'templates/slider';
 import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
 import Calendar from 'templates/calendar';
-import Transfer from 'templates/transfer';
+import Transfer from './templates/transfer/index.jsx';
 import Drawer from 'templates/drawer';
 
 

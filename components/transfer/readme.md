@@ -104,7 +104,6 @@ class TransferView extends React.Component {
 | onChange | 选项在两栏之间转移时的回调函数 | (targetKeys, direction, moveKeys): void |  |
 | onScroll | 选项列表滚动时的回调函数 | (direction, event): void |  |
 | onSelectChange | 选中项发生改变时的回调函数 | (sourceSelectedKeys, targetSelectedKeys): void |  |
-| operations | 操作文案集合，顺序从上至下 | string[] | ['>', '<'] |
 
 #### **注意**
 按照 React 的规范，所有的组件数组必须绑定 key。在 Transfer 中，dataSource里的数据值需要指定 key 值。对于 dataSource 默认将每列数据的 key 属性作为唯一的标识。
