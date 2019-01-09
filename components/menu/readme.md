@@ -286,7 +286,6 @@ class MenuView extends React.Component {
 | onOpenChange | SubMenu 展开/关闭的回调 | function(openKeys: string\[]) | noop |
 | onSelect | 被选中时调用 | function({ item, key, selectedKeys }) | 无   |
 
-> More options in [rc-menu](https://github.com/react-component/menu#api)
 
 #### **Menu.Item**
 
@@ -303,14 +302,6 @@ class MenuView extends React.Component {
 | disabled | 是否禁用 | boolean | false |
 | key | 唯一标志 | string |  |
 | title | 子菜单项值 | string/ReactNode |  |
-| onTitleClick | 点击子菜单标题 | function({ key, domEvent }) |  |
-
-#### **Menu.ItemGroup**
-
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| children | 分组的菜单项 | MenuItem\[] |  |
-| title | 分组标题 | string/ReactNode |  |
 
 #### **Menu.Divider**
 

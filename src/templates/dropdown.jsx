@@ -68,17 +68,17 @@ export default class DropView extends React.Component {
     return (
       <div id='main-container' className='dropdown'>
         <h1 className='h1'>1.基本用法</h1>
-        <h3>测试用到的API overlay type trigger visible onClick</h3>
-        <DropdownNormal visible overlay={menu2} type='caret-down' trigger={['hover']} >
+        <h3>测试用到的API overlay下拉菜单（Menu） type下拉图标（string） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
+        <DropdownNormal visible overlay={menu2} type='caret-down' trigger={['click']} >
           下拉菜单
         </DropdownNormal>
-        <Dropdown visible overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
+        <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
           <Button>
           默认菜单
           </Button>
         </Dropdown>
         <h1 className='h1'>2.常用类型</h1>
-        <h3>测试用到的API overlay type trigger  disabled visible onClick</h3>
+        <h3>测试用到的API overlay下拉菜单（Menu）disabled用在按钮身上禁用菜单（bool） type下拉图标（string） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
         <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
           <Button>
             默认菜单
@@ -89,19 +89,19 @@ export default class DropView extends React.Component {
             主要菜单
           </Button>
         </Dropdown>
-        <Dropdown overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+        <Dropdown overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
           <Button type='secondary'>
             次要菜单
           </Button>
         </Dropdown>
-        <DropdownButton disabled overlay={menu4} trigger={['hover']} onClick={handleButtonClick}>
+        <DropdownButton disabled overlay={menu4} trigger={['click']} onClick={handleButtonClick}>
           禁用菜单
         </DropdownButton>
         <DropdownNormal visible overlay={menu2} type='caret-down' trigger={['hover']} >
           文本菜单
         </DropdownNormal>
         <h1 className='h1'>3.组合使用</h1>
-        <h3>测试用到的API overlay trigger visible onClick</h3>
+        <h3>测试用到的API overlay下拉菜单（Menu） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
         <ButtonGroup className='buttonGroup'>
           <Button>
             操作一
@@ -114,18 +114,18 @@ export default class DropView extends React.Component {
           </DropdownButton>
         </ButtonGroup>
         <h1 className='h1'>4.三种尺寸</h1>
-        <h3>测试用到的API size overlay trigger visible onClick</h3>
+        <h3>测试用到的API size下拉菜单大小（string） overlay下拉菜单（Menu） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
         <DropdownButton size='small' overlay={menu2} trigger={['hover']}>
           默认菜单
         </DropdownButton>
-        <DropdownButton overlay={menu2} trigger={['hover']} onClick={handleButtonClick}>
+        <DropdownButton overlay={menu2} trigger={['click']} onClick={handleButtonClick}>
           默认菜单
         </DropdownButton>
         <DropdownButton visible size='large' overlay={menu2} trigger={['hover']}>
           默认菜单
         </DropdownButton>
         <h1 className='h1'>5.弹出位置</h1>
-        <h3>测试用到的API size overlay placement trigger visible onClick</h3>
+        <h3>测试用到的API placement下拉菜单的弹出位置（string） overlay下拉菜单（Menu） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
         <Dropdown overlay={menu} placement='topLeft'>
           <Button>上左</Button>
         </Dropdown>
@@ -146,7 +146,7 @@ export default class DropView extends React.Component {
           <Button>下右</Button>
         </Dropdown>
         <h1 className='h1'>6.触发方式</h1>
-        <h3>测试用到的API overlay type trigger onClick onVisibleChange</h3>
+        <h3>测试用到的API placement下拉菜单的弹出位置（string）type下拉菜单图标（string） overlay下拉菜单（Menu） onVisibleChange菜单显示状态改变时回调函数（function） trigger触发方式（array） visible下拉菜单是否可见（bool） onClick点击回调函数（function）</h3>
         <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
           点击下拉菜单
         </DropdownNormal>
@@ -156,13 +156,14 @@ export default class DropView extends React.Component {
           </Button>
         </Dropdown>
         <h1 className='h1'>7.触发事件</h1>
-        <h3>测试用到的API overlay type trigger onClick onVisibleChange</h3>
+        <h3>测试用到的API onVisibleChange菜单显示状态改变时回调函数（function） overlay下拉菜单（Menu） trigger触发方式（array） onClick点击回调函数（function）</h3>
         <Dropdown overlay={menu} trigger={['hover']} onVisibleChange={this.onVisibleChangeBtn} onClick={handleButtonClick}>
           <Button>
           hover默认菜单
           </Button>
         </Dropdown>
         <h1 className='h1'>8.多级菜单</h1>
+        <h3>测试用到的API placement下拉菜单的弹出位置（string）overlay下拉菜单（Menu） trigger触发方式（array）</h3>
         <DropdownButton placement='bottomLeft' overlay={menu1} trigger={['hover']}>
           默认菜单
         </DropdownButton>

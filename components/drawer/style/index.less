@@ -1,5 +1,6 @@
 @import "../../../style/mixins/index";
 @import "../../../style/theme/default/index";
+@import "../../../style/theme/default/compoments/drawer.less";
 
 @dawer-prefix-cls: ~"@{idoll-prefix}-drawer";
 
@@ -10,7 +11,7 @@
   height: 100%;
   z-index: @zindex-modal;
   > * {
-    transition:transform .3s cubic-bezier(.7,.3,.1,1);
+    transition:transform @animation-duration-slow cubic-bezier(.7,.3,.1,1);
   }
 
   &-content-wrapper {
@@ -92,7 +93,7 @@
       &-mask {
         opacity: 0.3;
         height: 100%;
-        animation: idollDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
+        animation: idollDrawerFadeIn @animation-duration-slow cubic-bezier(.7,.3,.1,1);
         transition: none;
       }
     }
@@ -101,7 +102,7 @@
   &-title {
     margin: 0;
     font-size: @font-size-lg;
-    line-height: 22px;
+    line-height: @drawer-title-line-height;
     font-weight: 500;
     color: @heading-color;
   }
@@ -125,7 +126,7 @@
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    transition: color .3s;
+    transition: color @animation-duration-slow;
     color: @text-color-secondary;
     outline: 0;
     padding: 0;
@@ -136,21 +137,21 @@
       text-align: center;
       text-transform: none;
       text-rendering: auto;
-      width: 56px;
-      height: 56px;
-      line-height: 56px;
+      width: @drawer-close-width;
+      height: @drawer-close-height;
+      line-height: @drawer-close-line-height;
       font-size: @font-size-lg;
     }
 
     &:focus,
     &:hover {
-      color: #444;
+      color: @hover-icon;
       text-decoration: none;
     }
   }
 
   &-header {
-    padding: 16px 24px;
+    padding: @padding-md @padding-lg;
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: @component-background;
     color: @text-color;
@@ -158,7 +159,7 @@
   }
 
   &-body {
-    padding: 24px;
+    padding: @padding-lg;
     font-size: @font-size-base;
     line-height: @line-height-base;
     word-wrap: break-word;
@@ -171,12 +172,12 @@
     opacity: 0;
     background-color: @modal-mask-bg;
     filter: ~"alpha(opacity=50)";
-    transition: opacity .3s linear, height 0s ease .3s;
+    transition: opacity @animation-duration-slow linear, height 0s ease @animation-duration-slow;
   }
   &-open {
-    transition: transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform @animation-duration-slow cubic-bezier(.7,.3,.1,1);
     &-content {
-      box-shadow: -2px 0 8px rgba(0,0,0,.15);
+      box-shadow: @shadow-1-left;
     }
   }
 }

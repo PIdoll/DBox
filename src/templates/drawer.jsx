@@ -198,7 +198,7 @@ class extends React.Component {
                     {getFieldDecorator('owner', {
                     rules: [{ required: true, message: '请选择' }],
                   })(
-                    <Select initialValue='liu' placeholder='请选择'>
+                    <Select placeholder='请选择'>
                       <Option value='liu'>劉岳然</Option>
                       <Option value='li'>李欣桐</Option>
                     </Select>
@@ -210,7 +210,7 @@ class extends React.Component {
                     {getFieldDecorator('type', {
                     rules: [{ required: true, message: '请选择类型' }],
                   })(
-                    <Select initialValue='public' placeholder='请选择类型'>
+                    <Select placeholder='请选择类型'>
                       <Option value='private'>私密</Option>
                       <Option value='public'>公开</Option>
                     </Select>
@@ -224,7 +224,7 @@ class extends React.Component {
                     {getFieldDecorator('approver', {
                     rules: [{ required: true, message: '请选择批复人' }],
                   })(
-                    <Select initialValue='jack' placeholder='请选择批复人'>
+                    <Select placeholder='请选择批复人'>
                       <Option value='jack'>杰瑞</Option>
                       <Option value='tom'>汤姆</Option>
                     </Select>
@@ -248,15 +248,15 @@ class extends React.Component {
               </Row>
               <Row gutter={16}>
                 <Col span={24}>
-                  <FormItem label='Description'>
+                  <FormItem label='描述'>
                     {getFieldDecorator('description', {
                     rules: [
                       {
                         required: true,
-                        message: 'please enter url description',
+                        message: '请输入描述',
                       },
                     ],
-                  })(<Textarea rows={23} placeholder='please enter url description' />)}
+                  })(<Textarea rows={23} placeholder='请输入描述' />)}
                   </FormItem>
                 </Col>
               </Row>
@@ -373,7 +373,7 @@ class extends React.Component {
                 <DescriptionItem title='生日' content='2018-8-8' />
               </Col>
               <Col span={12}>
-                <DescriptionItem title='个人博客' content={<a href='http://www.Dbox.com'>http://www.Dbox.com</a>} />
+                <DescriptionItem title='个人博客' content={<a href='http://github.com'>http://github.com</a>} />
               </Col>
             </Row>
             <Row>

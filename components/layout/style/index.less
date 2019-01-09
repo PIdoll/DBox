@@ -177,7 +177,7 @@ div.layout_temp {
         color: @text-color;
         cursor: pointer;
       }
-      .dbox-avatar {
+      .@{idoll-prefix}-avatar {
         margin-right: @margin-xs !important;
         margin-left: @padding-lg;
         cursor: pointer;
@@ -216,6 +216,12 @@ div.layout_temp {
 
 .layout-inlineNav.inlineTabs {
   .@{idoll-prefix}-layout {
+    &-header {
+      >span {
+        margin-left: @padding-lg;
+        margin-right: @padding-xs;
+      }
+    }
     .@{idoll-prefix}-layout-content {
       padding: 0;
       padding-bottom: @padding-lg ;

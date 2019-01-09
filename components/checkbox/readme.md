@@ -6,37 +6,48 @@
 可在选中和非选中之间切换
 ```jsx
 import {Checkbox} from 'components';
-<Checkbox >
-  多选框
-</Checkbox>
+<Checkbox >多选框</Checkbox>
 ```
 
 ##### **受控多选框**
 通过按钮控制多选框的属性
 ```jsx
 import {Checkbox, Button} from 'components';
-initialState = {
+class CheckboxView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       checked: false,
       disabled: false
     }
-  toggleChecked = (checked) => {
-    setState({ checked: !state.checked });
+    this.toggleChecked = this.toggleChecked.bind(this)
+    this.toggleDisabled = this.toggleDisabled.bind(this)
+    this.onChangeState = this.onChangeState.bind(this)
+  };
+  toggleChecked (checked) {
+    this.setState({ checked: !this.state.checked });
   }
-  toggleDisabled = (disabled) => {
-    setState({ disabled: !state.disabled });
+  toggleDisabled (disabled) {
+    this.setState({ disabled: !this.state.disabled });
   }
-  onChangeState = (e) => {
-    setState({
-      checked: !state.checked
+  onChangeState (e) {
+    this.setState({
+      checked: !this.state.checked
     });
   }
+  render() {
+    return (
+      <div>
+        <Checkbox onChange={this.onChangeState} checked={this.state.checked} disabled={this.state.disabled}>{`${this.state.checked ? '选中' : '非选中'}-${this.state.disabled ? '禁用' : '非禁用'}`}</Checkbox>
+        <Button onClick={this.toggleChecked}>选中切换</Button>
 
-<div>
-	<Checkbox onChange={this.onChangeState} checked={state.checked} disabled={state.disabled}>{`${state.checked ? '选中' : '非选中'}-${state.disabled ? '禁用' : '非禁用'}`}</Checkbox>
-	<Button onClick={this.toggleChecked}>选中切换</Button>
+        <Button onClick={this.toggleDisabled}>禁用切换</Button>
+      </div>
+    )
+  }
+}
+<CheckboxView />
 
-	<Button onClick={this.toggleDisabled}>禁用切换</Button>
-</div>
 ```
 
 ##### **多选框全选**
@@ -51,32 +62,44 @@ const options = [
   { label: '梨', value: '梨' },
   { label: '桔子', value: '桔子' },
 ];
-initialState = {
+class CheckboxView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       checkedList: defaultCheckedList,
       indeterminate: true,
       checkAll: false,
+    }
+    this.onChange = this.onChange.bind(this)
+    this.onCheckAllChange = this.onCheckAllChange.bind(this)
+  };
+  onChange (checkedList) {
+      this.setState({
+        checkedList,
+        indeterminate: !!checkedList.length && (checkedList.length < plainOptions.length),
+        checkAll: checkedList.length === plainOptions.length
+      })
+    }
+  onCheckAllChange (e) {
+      this.setState({
+        checkedList: e.target.checked ? plainOptions : [],
+        indeterminate: false,
+        checkAll: e.target.checked
+      })
+    }
+  render() {
+    return (
+      <div>
+        <Checkbox indeterminate={this.state.indeterminate} checked={this.state.checkAll} onChange={this.onCheckAllChange}>
+          选择所有选项
+        </Checkbox>
+        <br />
+        <CheckboxGroup options={plainOptions} value={this.state.checkedList} onChange={this.onChange} />
+      </div>
+    )
+  }
 }
-onChange = (checkedList) => {
-    setState({
-      checkedList,
-      indeterminate: !!state.checkedList.length && (state.checkedList.length < plainOptions.length),
-      checkAll: state.checkedList.length === plainOptions.length
-    })
-  }
- onCheckAllChange = (e) => {
-    setState({
-      checkedList: e.target.checked ? plainOptions : [],
-      indeterminate: false,
-      checkAll: e.target.checked
-    })
-  }
-<div>
-          <Checkbox indeterminate={state.indeterminate} checked={state.checkAll} onChange={this.onCheckAllChange}>
-            选择所有选项
-          </Checkbox>
-          <br />
-          <CheckboxGroup options={plainOptions} value={state.checkedList} onChange={this.onChange} />
-</div>
+<CheckboxView />
 ```
 
 ##### **多选框组**
@@ -96,11 +119,11 @@ const options = [
 const plainOptions = ['苹果', '梨', '桔子'];
 const CheckboxGroup = Checkbox.CheckboxGroup;
 <div>
-	<CheckboxGroup options={plainOptions} defaultValue={['苹果']} />
-   <br />
-   <CheckboxGroup options={options} defaultValue={['梨']} />
-   <br />
-   <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['梨']} />
+  <CheckboxGroup options={plainOptions} defaultValue={['苹果']} />
+  <br />
+  <CheckboxGroup options={options} defaultValue={['梨']} />
+  <br />
+  <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['梨']} />
 </div>
 ```
 
@@ -109,8 +132,8 @@ const CheckboxGroup = Checkbox.CheckboxGroup;
 ```jsx
 import {Checkbox} from 'components';
 <div>
-	<Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
-   <Checkbox defaultChecked disabled >不允许操作</Checkbox>
+  <Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
+  <Checkbox defaultChecked disabled >不允许操作</Checkbox>
 </div>
 ```
 
