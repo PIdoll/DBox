@@ -1,8 +1,7 @@
-#### **何时使用**
 
-- 当页面内容区域比较长时,给与触发让用户快速回到页面的顶部。
+当页面内容区域比较长时,给与触发让用户快速回到页面的顶部。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
 <div>
@@ -13,7 +12,7 @@
 </div>
 ```
 
-#### **自定义样式**
+##### **自定义样式**
 
 ```jsx
 <div>
@@ -25,7 +24,7 @@
 </div>
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -34,9 +33,10 @@
 | onClick | 点击按钮的回调函数 | Function | - |
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import BackTopView from '../prevPage/backTop';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <BackTopView />
 </div>
 ```

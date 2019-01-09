@@ -1,18 +1,19 @@
 
-#### **概述**
 在一组可选项中进行多项选择时；
 
 ##### **通用多选框**
 可在选中和非选中之间切换
 ```jsx
-import {Checkbox} from 'components';
-<Checkbox >多选框</Checkbox>
+import {Checkbox} from 'dbox-ui';
+<Checkbox >
+  多选框
+</Checkbox>
 ```
 
 ##### **受控多选框**
 通过按钮控制多选框的属性
 ```jsx
-import {Checkbox, Button} from 'components';
+import {Checkbox, Button} from 'dbox-ui';
 class CheckboxView extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +54,7 @@ class CheckboxView extends React.Component {
 ##### **多选框全选**
 通过一个多选框来控制另一组多选框的选中状态
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 const CheckboxGroup = Checkbox.CheckboxGroup;
 const plainOptions = ['苹果', '梨', '桔子'];
 const defaultCheckedList = ['苹果', '桔子'];
@@ -105,7 +106,7 @@ class CheckboxView extends React.Component {
 ##### **多选框组**
 多个多选框形成的多选框组合
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 const optionsWithDisabled = [
   { label: '苹果', value: '苹果' },
   { label: '梨', value: '梨' },
@@ -130,7 +131,7 @@ const CheckboxGroup = Checkbox.CheckboxGroup;
 ##### **多选框不可用**
 通过disabled控制多选框的可操作属性
 ```jsx
-import {Checkbox} from 'components';
+import {Checkbox} from 'dbox-ui';
 <div>
   <Checkbox defaultChecked={false} disabled >不可操作</Checkbox>
   <Checkbox defaultChecked disabled >不允许操作</Checkbox>
@@ -138,7 +139,7 @@ import {Checkbox} from 'components';
 ```
 
 
-### Checkbox
+##### **Checkbox**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -150,7 +151,7 @@ import {Checkbox} from 'components';
 | onChange | 变化时回调函数 | Function(e:Event) | - |
 | onClick | 点击时回调函数 | Function(e:Event) | - |
 
-### CheckboxGroup
+#### **CheckboxGroup**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -159,9 +160,8 @@ import {Checkbox} from 'components';
 | value | 指定选中的选项 | string\[] | \[] |
 | disabled | 整组失效 | boolean | false |
 | onChange | 变化时回调函数 | Function(checkedValue) | - |
-## 方法
 
-### Checkbox
+##### **方法**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -173,9 +173,10 @@ import {Checkbox} from 'components';
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import CheckboxView from '../prevPage/checkbox';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <CheckboxView />
 </div>
 ```

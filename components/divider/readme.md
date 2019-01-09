@@ -1,9 +1,8 @@
-#### **何时使用**
 
-- 对文本段落进行分割。
-- 对行内文字或者链接进行分割。
+文本段落进行分割。
+对行内文字或者链接进行分割。
 
-#### **水平分割线**
+##### **水平分割线**
 
 ```jsx
 <div>
@@ -14,7 +13,7 @@
 </div>
 ```
 
-#### **竖分割线**
+##### **竖分割线**
 
 ```jsx
 <div>
@@ -26,7 +25,7 @@
 </div>
 ```
 
-## API
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -37,9 +36,10 @@
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import DividerView from '../prevPage/divider';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <DividerView />
 </div>
 ```

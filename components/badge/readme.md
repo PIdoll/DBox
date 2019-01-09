@@ -1,10 +1,9 @@
-#### **概述**
 一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理数据。
 
-#### **基本徽标展示**
+##### **基本徽标展示**
 通常配合avatar展示需要用户处理的数据量
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -17,10 +16,10 @@ const content = {
 </Badge>
 ```
 
-#### **独立使用**
+##### **独立使用**
 将用户需要处理的数量单独抽离出来
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -35,10 +34,10 @@ const content = {
 </div>
 ```
 
-#### **封顶数字**
+##### **封顶数字**
 通过设置overflowCount来控制最大的消息数量值
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 const content = {
   width: 64,
   height: 64,
@@ -60,10 +59,10 @@ const content = {
 ```
 
 
-#### **讨嫌的小红点**
+##### **讨嫌的小红点**
 通过dot设置不显示待处理的消息数量
 ```jsx
-import {Badge, Icon} from 'components';
+import {Badge, Icon} from 'dbox-ui';
 <div>
 	<Badge>
 	  <Icon type='phone' />
@@ -77,10 +76,10 @@ import {Badge, Icon} from 'components';
 </div>
 ```
 
-#### **a标签包裹可点击**
+##### **a标签包裹可点击**
 通过a链接包裹badge来控制点击跳转
 ```jsx
-import {Badge} from 'components';
+import {Badge} from 'dbox-ui';
 <a href='https://www.baidu.com'>
   <Badge count={8}>
     <span className='example' />
@@ -88,11 +87,11 @@ import {Badge} from 'components';
 </a>
 ```
 
-#### **用于表示状态的小圆点**
+##### **用于表示状态的小圆点**
 用dot控制消息的状态
 ```jsx
-import {Badge} from 'components';
-<div className='state'>
+import {Badge} from 'dbox-ui';
+<div>
 	<div style={{ marginLeft: '10px' }}>
       <Badge dot status='success' />
       <Badge dot status='error' style={{ marginLeft: '20px' }} />
@@ -111,10 +110,10 @@ import {Badge} from 'components';
 </div>
 ```
 
-#### **动态变化** 
+##### **动态变化**
 通过引入按钮或者开关控制消息的数量或者是否展示
 ```jsx
-import {Badge, Button, Switch, Icon} from 'components';
+import {Badge, Button, Switch, Icon} from 'dbox-ui';
 const ButtonGroup = Button.Group;
 const content = {
   width: 64,
@@ -179,7 +178,7 @@ class BadgeView extends React.Component {
 <BadgeView />
 ```
 
-#### **Badge**
+##### **Badge**
 
 | 参数           | 说明                             | 类型 |默认值 |
 |----------------|--------------------------------|---------|--------|
@@ -191,3 +190,11 @@ class BadgeView extends React.Component {
 | offset            | 设置状态点的位置偏移，格式为 [x, y]      | `[number, number]`   | - |
 
 
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import BadgeView from '../prevPage/badge';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <BadgeView />
+</div>
+```

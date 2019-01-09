@@ -1,9 +1,9 @@
 
 类似 `Select` 的选择控件，可选择的数据结构是一个树形结构。
 
-#### **基本用法**
+##### **基本用法**
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 
 class TreeSelectDemo extends React.Component {
@@ -48,10 +48,10 @@ class TreeSelectDemo extends React.Component {
 <TreeSelectDemo />
 ```
 
-#### **从数据直接生成**
+##### **从数据直接生成**
 可通过设置 `treeData` 属性将 `JSON` 数据直接生成树结构。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -105,10 +105,10 @@ class TreeSelectDemo extends React.Component {
 <TreeSelectDemo />
 ```
 
-#### **多选**
+##### **多选**
 可通过设置 `multiple` 属性可多选。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -163,10 +163,10 @@ class TreeSelectDemo extends React.Component {
 <TreeSelectDemo />
 ```
 
-#### **可勾选**
+##### **可勾选**
 可通过设置 `treeCheckable` 属性实现勾选框多选功能。
 ```jsx
-import { TreeSelect } from 'components';
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -220,7 +220,7 @@ class TreeSelectDemo extends React.Component {
     }
 <TreeSelectDemo />
 ```
-#### **Tree**
+##### **Tree**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | allowClear | 显示清除按钮 | boolean | false |
@@ -259,14 +259,14 @@ class TreeSelectDemo extends React.Component {
 | onSelect | 被选中时调用 | function(value, node, extra) | - |
 | onTreeExpand | 展示节点时调用 | function(expandedKeys) | - |
 
-#### **Tree 方法**
+##### **Tree 方法**
 
 | 名称 | 描述 |
 | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
 
-#### **TreeNode props**
+##### **TreeNode props**
 
 > 建议使用 treeData 来代替 TreeNode，免去手工构造麻烦
 
@@ -282,9 +282,10 @@ class TreeSelectDemo extends React.Component {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import TreeSelectView from '../prevPage/treeSelect';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TreeSelectView />
 </div>
 ```
