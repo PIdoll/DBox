@@ -1,11 +1,10 @@
-#### **何时使用**
 
-- 当您需要选择时间，包括年、月、日的时候。
+当您需要选择时间，包括年、月、日的时候。
 
-#### **基本用法**
+##### **基本用法**
 
 ```jsx
-import { Calendar } from 'components';
+import { Calendar } from 'dbox-ui';
 import moment from 'moment';
 
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
@@ -13,10 +12,10 @@ import moment from 'moment';
 </div>
 ```
 
-#### **带有背景色头部选择**
+##### **带有背景色头部选择**
 
 ```jsx
-import { Calendar } from 'components';
+import { Calendar } from 'dbox-ui';
 import moment from 'moment';
 
 disabledDate = (current) => {
@@ -46,7 +45,7 @@ onChange = (date) => {
 </div>
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -61,9 +60,10 @@ onChange = (date) => {
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import CalendarView from '../prevPage/calendar';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <CalendarView />
 </div>
 ```

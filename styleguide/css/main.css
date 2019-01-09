@@ -1,0 +1,395 @@
+body, html, ul, h1, p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC" , "Hiragino Sans GB" , "Microsoft YaHei" , "Helvetica Neue" , Helvetica , Arial , sans-serif ;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+ul {
+  list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, .4);
+}
+.home_page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../assets/img/index.png');
+}
+.warper {
+	width: 100%;
+	padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* position: relative; */
+  /* margin-top: 64px; */
+}
+.header-warper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index:1;
+  height: 64px;
+  line-height:64px;
+  background: #fff;
+}
+.header-warper-top {
+  max-width: 90%;
+  height:64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-warper-logo img {
+  width: 22px;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  margin-right: 6px;
+}
+.header-warper-logo span {
+  font-size: 20px;
+  color: rgba(0,0,0,1);
+}
+.noBg {
+  background: transparent;
+}
+.header-warper-navbar:after{
+  clear: both;
+  content: '.';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.header-warper-navbar a{
+  float:left;
+  width: 80px;
+  font-size:14px;
+  font-weight:400;
+  text-align: center;
+  color:rgba(0,0,0,.6);
+}
+.header-warper-navbar a:hover {
+  cursor: pointer;
+  color: #13b886;
+}
+.active {
+  border-bottom: 3px solid #13b886;
+  cursor: pointer;
+  height: 61px;
+  color: #13b886;
+}
+.content_container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 120px;
+  overflow: hidden;
+}
+
+.content_container h1 {
+	font-size: 38px;
+	font-weight: 500px;
+	margin-bottom: 24px;
+	color: rgba(0, 0, 0, .8);
+}
+
+.content_container p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+	margin-bottom: 24px;
+	letter-spacing: 1px;
+	color: rgba(0, 0, 0, .6);
+}
+
+.content_container p:last-child {
+	margin-bottom: 56px;
+}
+
+.tent_container strong {
+	color: #000;
+	font-size: 14px;
+	margin-right: 48px;
+	font-family:PingFangSC-Regular;
+}
+
+.content_container .principle {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.principle img {
+	width: 100%;
+	height: 100%;
+}
+
+.design_source {
+  width: 90%;
+  margin: 120px auto 0 auto;
+	position: relative;
+}
+
+.design_source h1 {
+	font-size: 38px;
+	font-weight: 500px;
+	margin-bottom: 24px;
+	color: rgba(0, 0, 0, .8);
+	font-family:PingFangSC-Regular;
+}
+
+.design_source p {
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 64px;
+	color: rgba(0, 0, 0, .6);
+	font-family:PingFangSC-Regular;
+}
+
+.design_source a {
+	color: rgba(19, 184, 134, 1);
+}
+
+.design_source_logo_container {
+  text-align: center;
+  width: 300px;
+  position: relative;
+	border: 1px solid #E2E2E2;
+}
+
+.design_source_logo_container .design_source_logo {
+	width: 120px;
+	margin: 0 auto;
+	margin-top: 32px;
+}
+
+.design_source_logo_container .design_source_logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.design_source_logo_container p {
+	color: #000;
+	font-size: 20px;
+	margin-top: 14px;
+	font-weight: 500;
+	margin-bottom: 48px;
+	font-family: PingFangSC-Regular;
+}
+
+.design_source_logo_container .operation a {
+  line-height: 40px;
+  cursor: pointer;
+  display:inline-block;
+  width: 149px;
+  margin-right: -1px;
+}
+.design_source_logo_container .operation .download {
+  font-size: 14px;
+  height: 39px;
+  color: rgba(0, 0, 0, .6);
+	font-family:PingFangSC-Regular;
+}
+.design_source_logo_container .operation .getlink {
+  height: 40px;
+  font-size: 14px;
+	border: none;
+	color: #FFF;
+	font-size: 14px;
+	border-top-color: #13B886;
+	background-color: #13B886;
+	font-family:PingFangSC-Regular;
+}
+
+.Happy_qrcode {
+	opacity: 0;
+  left: 142px;
+  margin-top: 8px;
+	width: 141px;
+	height: 145px;
+	position: absolute;
+	box-sizing: border-box;
+	transition: opacity 0.4s;
+	border: 1px solid #E2E2E2;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.Happy_qrcode img {
+	width: 115px;
+	height: 100px;
+	margin: 12px;
+}
+
+.Happy_qrcode .scamQR {
+	font-size: 10px;
+	text-align: center;
+	margin-top: -7px;
+  color: rgba(0, 0, 0, .6);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+}
+
+.header_container {
+  max-width: 1200px;
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clearfix_fixed {
+  height: 64px;
+}
+
+.header_left {
+  width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  line-height: 64px;
+}
+
+.header img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.DBox {
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.descript_container {
+  position: absolute;
+  top: 50%;
+  right: 120px;
+  transform: translateY(-60%);
+}
+
+.descript_container .team {
+  font-size:14px;
+  font-weight:400;
+  text-align: right;
+  margin-bottom: 32px;
+  color: rgba(0, 0, 0, .4);
+  font-family:PingFangSC-Regular;
+}
+
+.descript_container .component_name {
+  color:#000;
+  font-size: 80px;
+  font-weight:500;
+  text-align: right;
+  margin-bottom: 40px;
+  font-family:PingFangSC-Medium;
+}
+
+.descript_container .component_name2 {
+  color:#000;
+  font-size: 80px;
+  font-weight:500;
+  text-align: right;
+  margin-bottom: 32px;
+  font-family:PingFangSC-Medium;
+}
+
+.descript_container .purpose {
+  font-size:14px;
+  font-weight:400;
+  text-align: right;
+  margin-bottom: 72px;
+  color: rgba(0, 0, 0, .6);
+  font-family:PingFangSC-Medium;
+}
+.descript_container .operation {
+  text-align: right;
+}
+
+.start_use {
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  line-height: 40px;
+  margin-right: 20px;
+  padding:0 35px;
+  background-color: #13B886;
+}
+
+.start_use:hover {
+  cursor: pointer;
+}
+
+.connect_us {
+  display: inline-block;
+  padding:0 35px;
+  border-radius: 3px;
+  line-height: 38px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, .6);
+  border: 1px solid #E2E2E2;
+}
+
+.connect_us:hover {
+  cursor: pointer;
+  border: 1px solid #13B886;
+  color: #13B886;
+}
+
+.Happy {
+  right: 0;
+  opacity: 0;
+  margin-top: 8px;
+  position: absolute;
+  transition: opacity 0.4s;
+  border: 1px solid #E2E2E2;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.Happy img {
+  box-sizing: border-box;
+  width: 126px;
+  padding: 4px 4px 0 ;
+  vertical-align: middle;
+}
+.scamQR {
+  display: block;
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, .6);
+}

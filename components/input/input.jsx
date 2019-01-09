@@ -17,6 +17,7 @@ function fixControlledValue(value) {
 export default class Input extends Component {
   static defaultProps = {
     // intialValue: '',
+    search: false, // is search input
     disabled: false,
     prefixCls: 'idoll-input',
     type: 'text',
@@ -57,6 +58,7 @@ export default class Input extends Component {
     beforelength: PropTypes.string, // 前置的宽度
     afterlength: PropTypes.string, // 后置的宽度
     clearable: PropTypes.bool,
+    search: PropTypes.bool,
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
@@ -65,7 +67,8 @@ export default class Input extends Component {
   constructor() {
     super();
     this.state = {
-      isHover: false,
+      isOnInput: false,
+      isInputHover: false,
       isIconHover: false,
     }
   }
@@ -177,7 +180,6 @@ export default class Input extends Component {
   // 清除输入框
   onClear = () => {
     this.input.value = '';
-    console.log('清空后的', this.input.value)
     this.setState({
       isHover: false,
     })
@@ -195,30 +197,27 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const clearIcon = <Icon type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
+    const clearIcon = <Icon onMouseLeave={this.handleIconOnMouseLeave} onMouseEnter={this.handleIconOnMouseEnter} type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
     const clearSuffix = React.cloneElement(clearIcon, {
       onMouseDown: this.onClear,
       className: 'icon-hover',
     });
 
+    const clearIconDisplay = this.input && this.input.value && (this.state.isOnInput || this.state.isInputHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete && !this.props.search;
+
     let clearAfter = (
       <span
-        onMouseLeave={this.handleIconOnMouseLeave}
+        style={{display: clearIconDisplay ? '' : 'none'}}
         className={`${props.prefixCls}-clear-icon`}
-        onMouseEnter={this.handleIconOnMouseEnter}
         >
         {clearSuffix}
       </span>
-    )
-
-    let clearAfterNone = (
-      <span style={{display: 'none'}} className={`${props.prefixCls}-clear-icon`}>{clearSuffix}</span>
-    )
+    );
 
     const suffix =
       <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {(this.input && this.input.value && (this.state.isHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete) ? clearAfter : clearAfterNone}
-        {props.suffix}
+        {(clearAfter)}
+        {clearIconDisplay ? null : props.suffix }
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
@@ -254,30 +253,31 @@ export default class Input extends Component {
 
   handleInputonMouseLeave = (e) => {
     this.setState({
-      isHover: false,
+      isInputHover: false,
     })
   }
 
   handleInputonMouseEnter = (e) => {
     this.setState({
-      isHover: true
+      isInputHover: true
     })
   }
 
   onInput = (e) => {
     this.setState({
-      isHover: true,
+      isOnInput: true,
     })
   }
 
   onBlur = (e) => {
     this.setState({
-      isHover: false,
+      isOnInput: false,
     });
   }
 
   renderInput() {
     const { value, className } = this.props;
+    // console.log('isOnInput', 'isInputHover', 'isIconHover', this.state.isOnInput, this.state.isInputHover, this.state.isIconHover)
 
     // Fix https://fb.me/react-unknown-prop
     const otherProps = omit(this.props, [
@@ -286,7 +286,8 @@ export default class Input extends Component {
       'addonBefore',
       'addonAfter',
       'prefix',
-      'suffix'
+      'suffix',
+      'search',
     ]);
 
 
