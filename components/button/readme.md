@@ -160,7 +160,7 @@ const ButtonGroup = Button.Group;
 | href | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 | string | - |
 | icon | 设置按钮的图标类型 | string | - |
 | iconLocation | 设置按钮的图标位置，可设置为 `right` | string | - |
-| loading | 设置图标是否为加载中 | boolean | `false` |
+| loading | 设置图标是否为加载中,设置后则icon设置无效 | boolean | `false` |
 | shape | 设置按钮形状，可选值为 `circle` 、`square` 或者不设 | string | - |
 | size | 设置按钮大小，可选值为 `small`、`large` 或者不设 | string | `default` |
 | target | 相当于 a 链接的 target 属性，href 存在时生效 | string | - |
