@@ -209,7 +209,7 @@ class StepsView extends React.Component {
 | labelPlacement | 指定标签放置位置，可选（vertical）放图标放图标下面 | string | horizontal |
 | progressDot |  |  |  |
 | size | 指定大小，可选（default 、small）| string | default |
-| status | 指定当前步骤的状态 | string | process |
+| status | 指定当前步骤的状态,可选wait、process、finish、error | string | process |
 | initial | 起始序号，从0开始计数 | number| 0 |
 
 ##### **Steps.Step**
