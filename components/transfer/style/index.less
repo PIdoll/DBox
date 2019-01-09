@@ -1,8 +1,9 @@
-@import '../../../style/theme/default/default2.less';
+@import '../../../style/theme/default/index.less';
 @import '../../../style/mixins/index.less';
 @import '../../checkbox/style/mixin.less';
 
 @transfer-prefix-cls: ~"@{idoll-prefix}-transfer";
+@transfer-disabled-bg: @disabled;
 
 .@{transfer-prefix-cls} {
   .reset-component;
@@ -15,7 +16,7 @@
   }
 
   &-list {
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     display: inline-block;
     border-radius: @border-radius-base;
     vertical-align: middle;
@@ -29,9 +30,9 @@
       padding: 0 @padding-md;
       line-height: 40px;
       border-radius: @border-radius-base @border-radius-base 0 0;
-      background: @component-background;
+      background: @white;
       color: @text-color;
-      border-bottom: @border-width-base @border-style-base @border-color-split;
+      border-bottom: @border-width-base @border-style-base @border;
       overflow: hidden;
       position: absolute;
       top: 0;
@@ -45,7 +46,7 @@
         font-size:@font-size-base;
         font-family:PingFangSC-Medium;
         font-weight:500;
-        color:@heading-color;
+        color:@title;
       }
 
       &-selected >:first-child {
@@ -100,7 +101,7 @@
 
     &-body-not-found {
       padding-top: 0;
-      color: @disabled-color;
+      color: @text-color-disable;
       text-align: center;
       display: none;
       position: absolute;
@@ -132,17 +133,17 @@
       }
 
       .@{iconfont-css-prefix} {
-        font-size: 12px;
+        font-size: @font-size-sm;
       }
     }
   }
 
   .disabled-icon {
     .@{iconfont-css-prefix}-left {
-      color: @disabled-color;
+      color: @text-color-disable;
     }
     .@{iconfont-css-prefix}-right {
-      color: @disabled-color;
+      color: @text-color-disable;
     }
   }
 }

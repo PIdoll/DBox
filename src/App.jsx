@@ -48,8 +48,7 @@ import {
   Calendar,
   Transfer,
   Drawer
-}
-  from './templates/index';
+} from './templates/index';
 
 import './App.css';
 

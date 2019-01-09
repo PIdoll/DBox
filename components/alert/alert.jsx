@@ -91,7 +91,9 @@ export default class Alert extends React.Component {
       [`${prefixCls}-with-description`]: !!description,
       [`${prefixCls}-no-description`]: !description,
       [`${prefixCls}-no-icon`]: !showIcon,
-      [`${prefixCls}-banner`]: !!banner
+      [`${prefixCls}-banner`]: !!banner,
+      [`${prefixCls}-hasicon`]: showIcon && !description,
+      [`${prefixCls}-hasicon-description`]: showIcon && description,
     }, className);
 
     if (closeText) {
