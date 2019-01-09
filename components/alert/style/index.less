@@ -1,8 +1,8 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/index.less";
 @import "../../../style/mixins/index.less";
 
 @alert-prefix-cls: ~"@{idoll-prefix}-alert";
-@alert-message-color: @heading-color;
+@alert-message-color: @title;
 @alert-text-color: @text-color;
 
 .@{alert-prefix-cls} {
@@ -11,7 +11,7 @@
   // padding: 8px 15px 8px 37px;
   padding: @padding-xs @padding-md;
   font-size: @font-size-base;
-  color: @text-color;
+  color: @alert-text-color;
   border-radius: @border-radius-base;
 
   &&-no-icon {
@@ -51,9 +51,9 @@
 
   &-info {
     background-color: @primary-LightBg;
-    color: @processing-color;
+    color: @primary-color;
     .@{alert-prefix-cls}-icon {
-      color: @info-color;
+      color: @primary-color;
     }
   }
 
@@ -103,7 +103,7 @@
     padding: @padding-xs @padding-lg;
     position: relative;
     border-radius: @border-radius-base;
-    color: @text-color;
+    color: @alert-text-color;
     line-height: @line-height-base;
   }
 

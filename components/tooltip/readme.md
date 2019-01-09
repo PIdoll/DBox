@@ -1,19 +1,19 @@
 
 鼠标移入则显示提示，移出消失，用于提示等场景。
 
-#### **基本用法**
+##### **基本用法**
 简单用法
 ```jsx
-import { Tooltip } from 'components';
+import { Tooltip } from 'dbox-ui';
 <Tooltip title='提示文字'>
     <span>当鼠标移入时会出现文字提示</span>
 </Tooltip>
 ```
 
-#### **12个方向**
+##### **12个方向**
 可通过设置 `placement` 属性控制位置，有12个方向
 ```jsx
-import { Tooltip,Button } from 'components';
+import { Tooltip,Button } from 'dbox-ui';
 const buttonWidth = 70;
 const text = <span>提示文字</span>;
 <div>
@@ -64,9 +64,9 @@ const text = <span>提示文字</span>;
 </div>
 ```
 
-#### **箭头指向**
+##### **箭头指向**
 ```jsx
-import { Tooltip,Button } from 'components';
+import { Tooltip,Button } from 'dbox-ui';
 const text = <span>提示文字</span>;
 <div className='arrow'>
     <Tooltip placement='topLeft' title={text} >
@@ -78,13 +78,13 @@ const text = <span>提示文字</span>;
 </div>
 ```
 
-#### **Tooltip**
+##### **Tooltip**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | title | 提示文字 | string/ReactNode/() => ReactNode | 无 |
 
-#### **Tooltip、Popconfirm、Popover共同的API**
+##### **Tooltip、Popconfirm、Popover共同的API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -102,15 +102,16 @@ const text = <span>提示文字</span>;
 | onVisibleChange | 显示隐藏的回调 | (visible) => void | 无 |
 
 
-#### **注意**
+##### **注意**
 
 请确保 `Tooltip` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import TooltipView from '../prevPage/tooltip';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TooltipView />
 </div>
 ```

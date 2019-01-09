@@ -2,6 +2,9 @@ import React from 'react';
 import Timeline from '../timeline';
 import './style';
 
+/**
+ * @visibleName 版本更新
+ */
 class Version extends React.Component {
   constructor (props) {
     super(props);
@@ -18,10 +21,6 @@ class Version extends React.Component {
             <p >2018-10-12</p>
             <p>🐞 修复 Avatar 图标不能垂直居中的问题。</p>
             <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
           </Timeline.Item>
           <Timeline.Item>
             <h2>主要变化</h2>
@@ -37,10 +36,6 @@ class Version extends React.Component {
             <h2>1.0.0</h2>
             <p >2018-10-12</p>
             <p>🐞 修复 Avatar 图标不能垂直居中的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
             <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p></Timeline.Item>
         </Timeline>
       </div>

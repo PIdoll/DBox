@@ -1,11 +1,10 @@
 
-#### **概述**
 当有大量结构化的数据需要展现，同时可对数据进行排序、搜索、分页、自定义操作等复杂行为时；
 
-#### **默认表格**
+##### **默认表格**
 设置columns,data来决定展示的内容
 ```jsx
-import {Table, Divider} from 'components';
+import {Table, Divider} from 'dbox-ui';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -84,10 +83,10 @@ const data = [{
   }];
 <Table columns={columns} dataSource={data} />
 ```
-#### **三种尺寸**
+##### **三种尺寸**
 通过设置size设置为large,middle,small来控制表格的大小默认为large
 ```jsx
-import {Table, Divider} from 'components';
+import {Table, Divider} from 'dbox-ui';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -170,10 +169,10 @@ const data = [{
 <Table columns={columns} dataSource={data} size='small' />
 </div>
 ```
-#### **边框表格**
+##### **边框表格**
 通过设置bordered来设置是否展示表格边框
 ```jsx
-import {Table, Divider} from 'components';
+import {Table, Divider} from 'dbox-ui';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -252,10 +251,10 @@ const data = [{
   }];
 <Table columns={columns} dataSource={data} bordered />
 ```
-#### **带选择框**
+##### **带选择框**
 通过选择框来搜集选中单元格的信息
 ```jsx
-import {Table, Divider, Button, Checkbox} from 'components';
+import {Table, Divider, Button, Checkbox} from 'dbox-ui';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -380,10 +379,10 @@ class TableView extends React.Component {
 <TableView />
 ```
 
-#### **异步数据**
+##### **异步数据**
 通过ajax实时动态获取后台数据
 ```jsx
-import {Table} from 'components';
+import {Table} from 'dbox-ui';
 import reqwest from 'reqwest'
 const columns = [{
   title: 'Name',
@@ -465,10 +464,10 @@ class App extends React.Component {
 }
 <App />
 ```
-#### **内嵌表格**
+##### **内嵌表格**
 对于复杂表格的嵌套
 ```jsx
-import {Table, Divider, Badge} from 'components';
+import {Table, Divider, Badge} from 'dbox-ui';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -578,10 +577,10 @@ const data = [{
 };
 <Table columns={columns} expandedRowRender={expandedRowRender} dataSource={data} />
 ```
-#### **行列合并**
+##### **行列合并**
 对于一些公共数据的合并
 ```jsx
-import {Table, Divider} from 'components';
+import {Table, Divider} from 'dbox-ui';
 const renderContent = function (value, row, index) {
   const obj = {
     children: value,
@@ -680,7 +679,7 @@ const dataCol = [{
 #### **固定行列**
 对某些特殊列进行固定，方便操作
 ```jsx
-import {Table, Divider} from 'components';
+import {Table, Divider} from 'dbox-ui';
 const columnsFixRow = [{
   title: '姓名',
   width: 100,
@@ -827,7 +826,7 @@ const dataFixdRow = [{
 #### **可编辑表格**
 对表格内数据进行复杂操作
 ```jsx
-import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'components';
+import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'dbox-ui';
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
 
@@ -1261,7 +1260,7 @@ class NumericInput extends React.Component {
 
 ## 注意
 
-按照 React 的[规范](http://facebook.github.io/react/docs/multiple-components.html#dynamic-children)，所有的组件数组必须绑定 key。在 Table 中，`dataSource` 和 `columns` 里的数据值都需要指定 `key` 值。对于 `dataSource` 默认将每列数据的 `key` 属性作为唯一的标识。
+按照 React 的[规范](http://facebook.github.io/react/docs/multiple-dbox-ui.html#dynamic-children)，所有的组件数组必须绑定 key。在 Table 中，`dataSource` 和 `columns` 里的数据值都需要指定 `key` 值。对于 `dataSource` 默认将每列数据的 `key` 属性作为唯一的标识。
 
 如果你的数据没有这个属性，务必使用 `rowKey` 来指定数据列的主键。若没有指定，控制台会出现以下的提示，表格组件也会出现各类奇怪的错误。
 
@@ -1274,9 +1273,10 @@ return <Table rowKey={record => record.uid} />;
 
 
 ```jsx noeditor
-import {PrevPage, BackTop} from 'components';
+import {BackTop} from 'dbox-ui';
+import TableView from '../prevPage/table';
 <div>
-  <BackTop visibilityHeight={20}/>
-  <PrevPage />
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TableView />
 </div>
 ```

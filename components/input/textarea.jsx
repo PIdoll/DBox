@@ -23,7 +23,7 @@ function clearNextFrameAction(nextFrameId) {
 
 export default class TextArea extends Component {
   static defaultProps = {
-    defaultValue: '',
+    // defaultValue: '',
     disabled: false,
     prefixCls: 'idoll-input',
     onKeyDown() {},
