@@ -19,7 +19,7 @@ import {
   Switch,
   Alert,
   Input,
-  message,
+  Message,
   Layout,
   Radio,
   Icon,
@@ -64,7 +64,7 @@ const App = () => (
       <Route exact path='/alert' component={Alert} />
       <Route exact path='/button' component={Button} />
       <Route exact path='/input' component={Input} />
-      <Route exact path='/message' component={message} />
+      <Route exact path='/message' component={Message} />
       <Route exact path='/layout' component={Layout} />
       <Route exact path='/radio' component={Radio} />
       <Route exact path='/icon' component={Icon} />
