@@ -51,7 +51,6 @@ class MenuView extends React.Component {
 ```jsx
 import {Menu, Icon} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
-const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
 class MenuView extends React.Component {
   constructor(props) {
     super(props);
@@ -62,12 +61,6 @@ class MenuView extends React.Component {
 	  this.onOpenChange = this.onOpenChange.bind(this)
   };
   onOpenChange (value) {
-    // 解决IE浏览器不支持find()
-    if(!Array.prototype.find){
-      Array.prototype.find = function(callback) {
-          return callback && (this.filter(callback)|| [])[0];
-      };
-    }
     const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
       this.setState({
         openKeys: latestOpenKey ? [latestOpenKey] : [],

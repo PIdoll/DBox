@@ -120,7 +120,7 @@
     cursor: not-allowed;
     &,
     &:hover {
-      color: @disabled-color;
+      color: @text-color-disable;
     }
   }
 
@@ -174,20 +174,20 @@
 
     .@{tab-prefix-cls}-tab-disabled {
       cursor: default;
-      color: @disabled-color;
+      color: @text-color-disable;
       span {
         i:before {
-          color: @disabled-color
+          color: @text-color-disable
         }
       }
     }
 
     .@{tab-prefix-cls}-tab.@{tab-prefix-cls}-tab-disabled:hover {
       cursor: not-allowed;
-      color: @disabled-color;
+      color: @text-color-disable;
       span {
         i:before {
-          color: @disabled-color
+          color: @text-color-disable
         }
       }
     }

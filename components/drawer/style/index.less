@@ -9,7 +9,7 @@
   top: 0;
   width: 0%;
   height: 100%;
-  z-index: @zindex-modal;
+  z-index: 1000;
   > * {
     transition:transform @animation-duration-slow cubic-bezier(.7,.3,.1,1);
   }
@@ -109,7 +109,7 @@
 
   &-content {
     position: relative;
-    background-color: @component-background;
+    background-color: @white;
     border: 0;
     background-clip: padding-box;
     z-index: 1;
@@ -153,7 +153,7 @@
   &-header {
     padding: @padding-md @padding-lg;
     border-radius: @border-radius-base @border-radius-base 0 0;
-    background: @component-background;
+    background: @white;
     color: @text-color;
     border-bottom: @border-width-base @border-style-base @border-color-split;
   }

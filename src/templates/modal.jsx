@@ -31,6 +31,7 @@ export default class ModalView extends React.Component {
 
   // 点击取消关闭
   handleCancel = (e) => {
+    console.log('点击了取消');
     this.setState({
       visible: false
     });
@@ -106,6 +107,8 @@ export default class ModalView extends React.Component {
       iconType: 'close-circle',
       title: '我是一个确认对话模态框',
       content: <div><p>这里是描述文字…</p><p>这里是描述文字…</p></div>,
+      okText: '确定按钮',
+      cancelText: '取消按钮',
       onOk: function() {
         console.log('确定');
       },
@@ -134,9 +137,10 @@ export default class ModalView extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>普通弹出框(可用于展示和提交)</h1>
+        <h3>测试API wrapClassName对话框外层容器的类名（string）maskClosable点击蒙层是否允许关闭（bool）title标题（string） visible对话框是否可见（bool） onOk点击确定回调（function） onCancel取消回调（function）</h3>
         <Button type='primary' onClick={this.showModal}>显示对话框</Button>
-        <Modal title='我是标题' visible={this.state.visible}
-          onOk={this.handleOk} onCancel={this.handleCancel}>
+        <Modal title='我是标题' visible={this.state.visible} maskClosable={false}
+          onOk={this.handleOk} onCancel={this.handleCancel} wrapClassName='MODAL'>
           <p>这里是一句话</p>
           <p>或者一段文字</p>
           <p>或者表格</p>
@@ -146,6 +150,7 @@ export default class ModalView extends React.Component {
         </Modal>
 
         <h1 className='h1'>异步关闭弹出框</h1>
+        <h3>测试API confirmLoading确定按钮loading（bool）title标题（string） visible对话框是否可见（bool） onOk点击确定回调（function） onCancel取消回调（function）</h3>
         <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
         <Modal confirmLoading={this.state.confirmLoading} title='我是标题' visible={this.state.asyncvisible}
           onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
@@ -153,11 +158,13 @@ export default class ModalView extends React.Component {
         </Modal>
 
         <h1 className='h1'>信息提示</h1>
+        <h3>测试API content内容（React.Element or String）title标题（string） onOk点击确定回调（function） onCancel取消回调（function）</h3>
         <Button onClick={this.info}>信息提示</Button>
         <Button style={{marginLeft: '20px', marginRight: '20px'}} onClick={this.success}>成功提示</Button>
         <Button onClick={this.error}>失败提示</Button>
 
         <h1 className='h1'>确认对话框</h1>
+        <h3>测试API content内容（React.Element or String）iconType图标Icon类型（string） title标题（string） okText确认按钮文字（string） cancelText取消按钮文字（string） onOk点击确定回调（function） onCancel取消回调（function）</h3>
         <Button onClick={this.showConfirm}>确认对话框</Button>
 
 

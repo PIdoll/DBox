@@ -36,11 +36,11 @@ function showTotal(total) {
   return `总 ${total} 条`;
 }
 <div>
-	<Pagination size='small' total={50}></Pagination>
-	<br />
-   <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
-   <br />
-   <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
+  <Pagination size='small' total={50}></Pagination>
+  <br />
+  <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
+  <br />
+  <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
 </div>
 ```
 
@@ -65,7 +65,6 @@ import {Pagination} from 'dbox-ui';
 | current | 当前页数与defaultCurrent同时存在会覆盖defaultCurrent | number | - |
 | defaultCurrent | 默认的当前页数 | number | 1|
 | defaultPageSize | 默认的每页条数 | number | 10 |
-| itemRender | 用于自定义页码的结构，可用于优化SEO | (page，type:'page'/'prev'/'next', originalElement) => React.ReactNode | - |
 | pageSize | 每页条数与defaultPageSize同时存在会覆盖defaultPageSize | number | - |
 | showQuickJumper | 是否可以快速跳转至某页 | boolean | false |
 | showSizeChanger | 是否可以改变pageSize | boolean | false|

@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './Home'
 import {Button} from './templates/index';
 
-import Dropdown from 'templates/dropdown'
-import Checkbox from 'templates/checkbox'
-import Collapse from 'templates/collapse'
+import Dropdown from 'templates/dropdown/index'
+import Checkbox from 'templates/checkbox/index'
+import Collapse from 'templates/collapse/index'
 import Progress from 'templates/progress'
 import Select from 'templates/select'
 import Switch from 'templates/switch'
 import Alert from 'templates/alert'
 import Input from 'templates/input'
 import message from 'templates/message'
-import Layout from 'templates/layout'
+import Layout from 'templates/layout/index'
 import Radio from 'templates/radio'
 import Icon from 'templates/icon'
 import Pagination from 'templates/pagination'
@@ -29,13 +29,13 @@ import Timeline from 'templates/timeline';
 import Spin from 'templates/spin';
 import Popover from 'templates/popover';
 import Divider from 'templates/divider';
-import MenuDemo from 'templates/menu';
+import MenuDemo from 'templates/menu/index';
 import Steps from 'templates/steps';
 import Form from 'templates/form';
-import Badge from 'templates/badge';
+import Badge from 'templates/badge/index';
 import Upload from 'templates/upload';
 import Affix from 'templates/affix';
-import Avatar from './templates/avatar';
+import Avatar from './templates/avatar/index';
 import Table from 'templates/table';
 import Anchor from 'templates/anchor';
 import Cascader from 'templates/cascader';
@@ -47,7 +47,7 @@ import BackTop from 'templates/back-top';
 import Grid from 'templates/grid';
 import Calendar from 'templates/calendar';
 import Transfer from './templates/transfer/index.jsx';
-import Drawer from 'templates/drawer';
+import Drawer from 'templates/drawer/index';
 
 
 import './App.css';

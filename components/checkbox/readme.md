@@ -161,14 +161,6 @@ import {Checkbox} from 'dbox-ui';
 | disabled | 整组失效 | boolean | false |
 | onChange | 变化时回调函数 | Function(checkedValue) | - |
 
-##### **方法**
-
-| 名称 | 描述 |
-| --- | --- |
-| blur() | 移除焦点 |
-| focus() | 获取焦点 |
-
-
 <style>.idoll-steps{margin-bottom: 10px}</style>
 
 

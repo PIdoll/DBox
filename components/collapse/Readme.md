@@ -91,7 +91,7 @@ const text3 = `一套没有边框的简洁样式。`
 function callback(key) {
   console.log(key);
 }
-<Collapse defaultActiveKey={['2']} bordered={false}>
+<Collapse defaultActiveKey={['2']} bordered={false} onChange={callback}>
   <Panel header='标题一' key='1'>
     {text3}
   </Panel>
@@ -113,7 +113,7 @@ const text4 = `一套拥有底纹的折叠样式。`
 function callback(key) {
   console.log(key);
 }
-<Collapse bgColor>
+<Collapse bgColor onChange={callback}>
   <Panel header='标题一' key='1'>
     <p>{text4}</p>
   </Panel>

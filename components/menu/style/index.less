@@ -112,7 +112,7 @@
   &-horizontal > &-submenu &-submenu-title[aria-expanded='true']:hover {
     background-color: transparent;
     i {
-      color: @component-background;
+      color: @white;
     }
   }
 
@@ -192,7 +192,7 @@
     &-popup {
       position: absolute;
       border-radius: @border-radius-base;
-      z-index: @zindex-dropdown;
+      z-index: 1050;
     }
 
     > .@{menu-prefix-cls} {
@@ -281,9 +281,9 @@
     }
   }
   &-horizontal&-dark {
-    border-bottom-color: @Sider-Menu !important;
+    border-bottom-color: @navbar !important;
     li.@{menu-prefix-cls}-submenu-active {
-      color: @component-background;
+      color: @white;
     }
     li.@{menu-prefix-cls}-submenu-horizontal:hover {
       color: @text-color-secondary-dark !important;
@@ -443,32 +443,32 @@
   // 设置不可用状态的字体颜色、边框颜色以及鼠标手势提醒，并且取消 hover/tab 的影响
   &-item-disabled:hover {
     i {
-      color: @disabled-color !important;
+      color: @text-color-disable !important;
     }
   }
   &-item-disabled,
   &-submenu-disabled {
-    color: @disabled-color !important;
+    color: @text-color-disable !important;
     cursor: not-allowed;
     background: none;
     border-color: transparent !important;
     > a {
-      color: @disabled-color !important;
+      color: @text-color-disable !important;
       pointer-events: none;
     }
     > .@{menu-prefix-cls}-submenu-title {
-      color: @disabled-color !important;
+      color: @text-color-disable !important;
       cursor: not-allowed;
     }
     i {
-      color: @disabled-color !important;
+      color: @text-color-disable !important;
     }
   }
   &-dark&-root&-vertical {
     width: 88px !important;
     >.@{menu-prefix-cls}-item-selected {
       i {
-        color: @background-base ;
+        color: @white ;
       }
     }
     >.@{menu-prefix-cls}-item {
@@ -485,7 +485,7 @@
     }
     >.@{menu-prefix-cls}-item:hover {
       i {
-        color: @component-background;
+        color: @white;
       }
     }
     >.@{menu-prefix-cls}-submenu-vertical {
@@ -635,16 +635,16 @@
   &-dark&-inline {
     >.@{menu-prefix-cls}-item-selected {
       i {
-        color: @component-background;
+        color: @white;
       }
     }
   }
   &-theme-light {
     .idoll-tooltip-arrow {
-      border-right-color: @component-background;
+      border-right-color: @white;
     }
     .idoll-tooltip-inner {
-      background: @component-background;
+      background: @white;
       span {
         color:@text-color-secondary;
       }

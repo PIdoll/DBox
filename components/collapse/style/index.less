@@ -62,7 +62,7 @@
 		overflow: hidden;
 		color: @text-color;
 		padding: 0 @padding-lg;
-		background-color: @component-background;
+		background-color: @white;
 		border-width: 0;
 
 		& > &-box {
@@ -99,7 +99,7 @@
 	}
 
 	&-borderless {
-		background-color: @component-background;
+		background-color: @white;
 		border: 0;
 	}
 
@@ -110,7 +110,7 @@
 
 	&-borderless > &-item >&-header {
 		padding: @padding-sm 0;
-		background-color: @component-background;
+		background-color: @white;
 		.arrow {
 			right: 0;
 		}
@@ -136,7 +136,7 @@
 		&,
 		& > .arrow {
 			cursor: not-allowed;
-			color: @disabled-color;
+			color: @text-color-disable;
 		}
 	}
 	&-bgColor {

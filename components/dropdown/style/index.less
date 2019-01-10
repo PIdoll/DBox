@@ -5,9 +5,9 @@
 
 .@{dropdown-prefix-cls} {
   position: absolute;
-  left: @zindex-dropdown;
-  top: @zindex-dropdown;
-  z-index: @zindex-dropdown;
+  left: 1050;
+  top: 1050;
+  z-index: 1050;
   display: block;
   font-size: @font-size-sm;
   font-weight: normal;
@@ -68,7 +68,7 @@
     padding: 0;
     margin: 0;
     text-align: left;
-    background-color: @component-background;
+    background-color: @white;
     border-radius: @border-radius-base;
     box-shadow: @box-shadow-base;
     background-clip: padding-box;
@@ -117,11 +117,11 @@
       }
 
       &-disabled {
-        color: @disabled-color;
+        color: @text-color-disable;
         cursor: not-allowed;
         &:hover {
-          color: @disabled-color;
-          background-color: @component-background;
+          color: @text-color-disable;
+          background-color: @white;
           cursor: not-allowed;
         }
       }
@@ -185,7 +185,7 @@
     &-submenu&-submenu-disabled .@{dropdown-prefix-cls}-menu-submenu-title {
       &,
       .@{dropdown-prefix-cls}-menu-submenu-arrow:after {
-        color: @disabled-color;
+        color: @text-color-disable;
       }
     }
 
@@ -210,12 +210,12 @@
   white-space: nowrap;
   &-disabled {
     i:before {
-      color:@disabled-color
+      color:@text-color-disable
     }
   }
   &-disabled:hover {
     i:before {
-      color: @disabled-color;
+      color: @text-color-disable;
     }
   }
 
@@ -288,7 +288,7 @@
     }
 
     &:hover {
-      color: @component-background;
+      color: @white;
       background: transparent;
     }
   }
@@ -298,7 +298,7 @@
     &:hover,
     > a {
       background: @primary-color;
-      color: @component-background;
+      color: @white;
     }
   }
 }

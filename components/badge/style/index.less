@@ -1,5 +1,4 @@
-@import '../../../style/theme/default/default.less';
-@import '../../../style/theme/default/compoments/badge';
+@import '../../../style/theme/default/index.less';
 
 @badge-prefix-cls: ~'@{idoll-prefix}-badge';
 @number-prefix-cls: ~'@{idoll-prefix}-scroll-number';
@@ -18,7 +17,7 @@
     border-radius: @badge-radius;
     min-width: @badge-height;
     background: @error-color;
-    color: @background-base;
+    color: @white;
     line-height: @badge-height;
     text-align: center;
     padding: 0 @padding-xs - 3px;
@@ -27,10 +26,10 @@
     transform-origin: -10% center;
     z-index: @zindex-affix;
     font-family: @font-family;
-    box-shadow: 0 0 0 @border-width-base @background-base ;
+    box-shadow: 0 0 0 @border-width-base @white ;
     a,
     a:hover {
-      color: @background-base ;
+      color: @white ;
     }
   }
 
@@ -48,7 +47,7 @@
     border-radius: 100%;
     background: @error-color;
     z-index: @zindex-affix;
-    box-shadow: 0 0 0 @border-width-base @background-base;
+    box-shadow: 0 0 0 @border-width-base @white;
   }
   &-zoom-appear,
   &-zoom-enter {
@@ -110,13 +109,13 @@ a & {
     background-color: @error-color;
   }
   &.@{badge-prefix-cls}-default-dot {
-    background-color: @default-color;
+    background-color: @badge-default-color;
   }
   &.@{badge-prefix-cls}-warning-dot {
     background-color: @warning-color;
   }
   &.@{badge-prefix-cls}-processing-dot {
-    background-color: @processing-color;
+    background-color: @badge-processing-color;
     overflow: visible;
     &:after {
       content: '';
@@ -125,7 +124,7 @@ a & {
       left: 0;
       top: 0;
       position: absolute;
-      border: @border-width-base @border-style-base @processing-color;
+      border: @border-width-base @border-style-base @primary-color;
       border-radius: 100%;
       animation: enterEffect 1.2s infinite;
     }

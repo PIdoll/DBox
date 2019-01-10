@@ -26,7 +26,7 @@ div.layout_temp {
 }
 
 .@{idoll-prefix}-layout-sider {
-  color: @background-base ;
+  color: @white ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,7 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
-  color: @background-base;
+  color: @white;
   display: flex;
   height: @layout-header-base-height;
   text-align: center;
@@ -58,7 +58,7 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
-  color: @background-base;
+  color: @white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@ div.layout_temp {
 .layout-horizontal {
   .@{idoll-prefix}-layout-header {
     width: 100%;
-    color: @component-background;
+    color: @white;
     display: block;
     height: @layout-header-seat;
     line-height: @layout-header-seat;
@@ -96,16 +96,16 @@ div.layout_temp {
     }
   }
   .@{idoll-prefix}-breadcrumb {
-    background-color: @background;
+    background-color: @layout-backgound;
     padding: @padding-md @padding-lg 0 @padding-lg;
   }
   .@{idoll-prefix}-layout-content {
     padding: @padding-lg;
-    background-color: @background;
+    background-color: @layout-backgound;
     .content {
       width: 100%;
       height: 100%;
-      background-color: @background-base;
+      background-color: @white;
       color: @text-color;
       display: flex;
       justify-content: center;
@@ -120,7 +120,7 @@ div.layout_temp {
       width: auto;
       display: block;
       position: relative;
-      background-color: @Sider-Menu;
+      background-color: @navbar;
       div.logo {
         padding: @padding-sm @layout-logo-padding-top @layout-logo-padding-bottom @layout-logo-padding-top;
         div {
@@ -155,7 +155,7 @@ div.layout_temp {
       }
       > i:hover {
         &:before {
-          color: @background-base;
+          color: @white;
           transition: color @animation-duration-slow
         }
       }
@@ -166,11 +166,11 @@ div.layout_temp {
     &-header {
       display: flex;
       justify-content: flex-end;
-      background-color: @background-base;
+      background-color: @white;
       padding-right: @padding-lg;
       line-height:@layout-header-seat;
       font-size: @font-size-base;
-      border: @border-width-base @border-style-base @background;
+      border: @border-width-base @border-style-base @layout-backgound;
       border-left: none;
       .@{idoll-prefix}-icon-message {
         font-size: @font-size-lg;
@@ -187,7 +187,7 @@ div.layout_temp {
         i:before {
           content: "\E6DE";
           font-family: 'idollicon' !important;
-          color: @background-base-dark;
+          color: @text-color;
         } 
       }
       > a:hover {
@@ -195,16 +195,16 @@ div.layout_temp {
       }
     }
     .@{idoll-prefix}-breadcrumb {
-      background-color: @background;
+      background-color: @layout-backgound;
       padding: @padding-md @padding-lg;
     }
     .@{idoll-prefix}-layout-content {
       padding: 0 @padding-lg @padding-lg @padding-lg;
-      background-color: @background;
+      background-color: @layout-backgound;
       > div {
         width: 100%;
         height: 100%;
-        background-color: @background-base;
+        background-color: @white;
         color: @text-color;
         display: flex;
         justify-content: center;
@@ -229,7 +229,7 @@ div.layout_temp {
         display: block;
         div.@{idoll-prefix}-tabs-bar {
           margin: 0;
-          border-right: @border-width-base @border-style-base @background;
+          border-right: @border-width-base @border-style-base @layout-backgound;
           div.@{idoll-prefix}-tabs-nav-container {
             height: @horizontal-light + 8px;
           }
@@ -246,10 +246,10 @@ div.layout_temp {
         }
         div.@{idoll-prefix}-tabs-content {
           height: 100%;
-          background-color: @background;
+          background-color: @layout-backgound;
           padding: @padding-lg @padding-lg @layout-tabs-content-padding @padding-lg;
           > div.@{idoll-prefix}-tabs-tabpane-active {
-            background-color: @background-base;
+            background-color: @white;
             height: 100%;
             display: flex;
             justify-content: center;

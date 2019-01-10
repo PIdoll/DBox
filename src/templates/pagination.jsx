@@ -19,27 +19,27 @@ export default class PaginationView extends React.Component {
     return (
       <div id='main-container'>
         <h1 className='h1'>1.基础分页</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型</p>
-        <Pagination defaultCurrent={1} total={50} />
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型;showLessItems显示较小分页的布尔值</h3>
+        <Pagination defaultCurrent={1} total={500} showLessItems />
         <h1 className='h1'>2.更多分页</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型</p>
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型</h3>
         <Pagination defaultCurrent={6} total={500} />
         <h1 className='h1'>3.改变每页显示条数目</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型showSizeChanger为布尔值可控制显示改变每页显示条数目</p>
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型showSizeChanger为布尔值可控制显示改变每页显示条数目</h3>
         <Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger />
         <h1 className='h1'>4.跳转分页</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，showQuickJumper为布尔值可控制跳转分页显示</p>
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，showQuickJumper为布尔值可控制跳转分页显示</h3>
         <Pagination defaultCurrent={2} total={500} showQuickJumper />
         <h1 className='h1'>5.迷你分页</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，defaultCurrent不传参默认选中第一个，total为必写，通过size='small'控制迷你版；通过设置函数showTotal传参total来显示总条数其他参数同上</p>
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型，defaultCurrent不传参默认选中第一个，total为必写，通过size='small'控制迷你版；通过设置函数showTotal传参total来显示总条数其他参数同上</h3>
         <Pagination size='small' total={50} /><br />
         <Pagination size='small' total={50} showSizeChanger showQuickJumper /><br />
         <Pagination size='small' total={50} showTotal={showTotal} /><br />
         <h1 className='h1'>6.简洁翻页</h1>
-        <p>依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型;通过设置simple布尔值来控制简洁模式</p>
+        <h3>测试API 依据默认选中页defaultCurrent和总条数total来控制,其值均为number类型;通过设置simple布尔值来控制简洁模式</h3>
         <Pagination simple defaultCurrent={2} total={500} />
         <h1 className='h1'>7.包含总数</h1>
-        <p>依据默认选中页defaultCurrent，总条数total和每页数pageSize来控制,其值均为number类型；通过设置函数showTotal传参total来显示总条数</p>
+        <h3>测试API 依据默认选中页defaultCurrent，总条数total和每页数pageSize来控制,其值均为number类型；通过设置函数showTotal传参total来显示总条数</h3>
         <Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
 
 

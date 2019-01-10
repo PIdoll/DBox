@@ -363,7 +363,7 @@ class DrawerView extends React.Component {
 ##### **表单抽屉**
 在新抽屉中提交一些表单数据
 ```jsx
-import {Button, Divider, DatePicker, Form, Input, Select} from 'dbox-ui';
+import {Button, DatePicker, Form, Input, Select} from 'dbox-ui';
 import {Row, Col} from 'dbox-ui/grid';
 const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
