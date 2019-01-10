@@ -26,13 +26,17 @@
   &-notice-content &-custom-content {
     padding: @padding-xs @padding-md;
     background: @white;
-    box-shadow: @Shadow-large;
+    box-shadow: @shadow-large;
     border-radius: @border-radius-base;
     display: inline-block;
     pointer-events: all;
     font-size: @font-size-base;
     height: 40px;
     box-sizing: border-box;
+    span {
+      position: relative;
+      top: 1px;
+    }
   }
 
   .content-success {
