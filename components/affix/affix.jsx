@@ -5,8 +5,7 @@ import classNames from 'classnames';
 import omit from 'omit.js';
 import warning from 'warning';
 import shallowequal from 'shallowequal'
-// 判断两个数组是否浅相等
-// https : //github.com/moroshko/shallow-equal
+
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import getScroll from '../_util/getScroll';
 
@@ -43,15 +42,15 @@ function getDefaultTarget() {
 
 export default class Affix extends React.Component {
   static propTypes = {
-    offsetTop: PropTypes.number, // 距离窗口顶部达到指定偏移量后触发
-    offsetBottom: PropTypes.number, // 距离窗口底部达到指定偏移量后触发
-    target: PropTypes.func, // 设置 Affix 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数
+    offsetTop: PropTypes.number,
+    offsetBottom: PropTypes.number,
+    target: PropTypes.func,
   }
   static defaultProps = {
     target() {
       return window;
     },
-    onChange() {}, // 固定状态改变时触发的回调函数
+    onChange() {},
   }
   constructor(props) {
     super(props);
@@ -84,15 +83,18 @@ export default class Affix extends React.Component {
       this.clearEventListeners();
       this.setTargetEventListeners(nextProps.target);
 
-      // 模拟Event对象
       this.updatePosition({});
+    }
+    if (
+      this.props.offsetTop !== nextProps.offsetTop || this.props.offsetBottom !== nextProps.offsetBottom
+    ) {
+      this.updatePosition();
     }
   };
 
   componentWillUnmount () {
     this.clearEventListeners();
     clearTimeout(this.timeout);
-    this.updatePosition.cancel();
   }
 
 

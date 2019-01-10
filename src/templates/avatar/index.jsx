@@ -5,7 +5,7 @@ import BasicAvatar from './BasicAvatar';
 import ButtonAvatar from './ButtonAvatar';
 import TypeAvatar from './TypeAvatar';
 
-export default class AvatarView extends React.Component {
+export default class Avatar extends React.Component {
   render () {
     return (
       <div id='main-container'>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Transfer from 'components/transfer/index';
-
-import './style/transfer.less';
+import Switch from '../../../components/switch/index';
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -17,12 +16,14 @@ const oriTargetKeys = mockData
   .filter(item => +item.key % 3 > 1)
   .map(item => item.key);
 
-export default class CustomClass extends React.Component {
+
+export default class BasicDemo extends React.Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
     disabled: true,
   }
+
   handleChange = (nextTargetKeys, direction, moveKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
 
@@ -49,11 +50,14 @@ export default class CustomClass extends React.Component {
   render() {
     const { targetKeys, selectedKeys, disabled } = this.state;
     return (
-      <div style={{ marginTop: 40 }}>
-        <h1 className='h1'>自定义类</h1>
-        <h2 className='h2'>可自定义类，控制容器的样式</h2>
+      <div>
+        <div style={{marginBottom: 15}}>
+          <Switch
+            checked={disabled}
+            onChange={this.handleDisable}
+          />
+        </div>
         <Transfer
-          className='container-style'
           titles={['显示字段', '隐藏字段']}
           dataSource={mockData}
           targetKeys={targetKeys}

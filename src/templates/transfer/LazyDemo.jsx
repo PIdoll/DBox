@@ -48,9 +48,7 @@ export default class LazyDemo extends React.Component {
     const { targetKeys, selectedKeys, disabled } = this.state;
     const lazy = {height: 80, offset: 900};
     return (
-      <div style={{ marginTop: 40 }}>
-        <h1 className='h1'>懒加载</h1>
-        <h2 className='h2'>Transfer 使用了 react-lazy-load 优化性能，这里可以设置相关参数。设为 false 可以关闭懒加载。</h2>
+      <div>
         <Transfer
           titles={['显示字段', '隐藏字段']}
           dataSource={mockData}

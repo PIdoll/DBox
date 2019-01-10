@@ -4,6 +4,7 @@ import Steps from 'components/steps';
 import Popover from 'components/popover';
 import Button from 'components/button';
 import Message from 'components/message';
+import Icon from 'components/icon';
 
 
 const Step = Steps.Step;
@@ -117,6 +118,26 @@ export default class StepsView extends React.Component {
           <Step title='步骤二' description='这里是一段描述性文字' />
           <Step title='步骤三' description='这里是一段描述性文字' />
         </Steps>
+
+        <h1 className='h1'>9.当前步骤的状态</h1>
+        <Steps status='wait' >
+          <Step title='步骤一' description='这里是一段描述性文字' />
+          <Step title='步骤二' description='这里是一段描述性文字' />
+          <Step title='步骤三' description='这里是一段描述性文字' />
+        </Steps>
+        <Steps status='finish' >
+          <Step title='步骤一' description='这里是一段描述性文字' />
+          <Step title='步骤二' description='这里是一段描述性文字' />
+          <Step title='步骤三' description='这里是一段描述性文字' />
+        </Steps>
+
+        <h1 className='h1'>10.步骤图标更换</h1>
+        <Steps status='wait' >
+          <Step title='加载中' description='步骤加载中' icon={<Icon type='loading' />} />
+          <Step title='用户' description='到达用户步骤' icon={<Icon type='account-circle' />} />
+          <Step title='任务' description='这里是任务步骤' icon={<Icon type='assessment' />} />
+        </Steps>
+
       </div>
     )
   }
