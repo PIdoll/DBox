@@ -1,4 +1,5 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/index.less";
+@import "../../../style/theme/default/compoments/message.less";
 @import "../../../style/mixins/index.less";
 
 @message-prefix-cls: ~"@{idoll-prefix}-message";
@@ -13,7 +14,7 @@
   pointer-events: none;
 
   &-notice {
-    padding: 8px;
+    padding: @padding-xs;
     text-align: center;
     &:first-child {
       margin-top: -8px;
@@ -21,35 +22,39 @@
   }
 
   &-notice-content &-custom-content {
-    padding: 9px 16px;
-    background: @component-background;
-    box-shadow: @Shadow-large;
-    border-radius: 4px;
+    padding: @padding-xs @padding-md;
+    background: @message-base-bg;
+    box-shadow: @shadow-large;
+    border-radius: @border-radius-base;
     display: inline-block;
     pointer-events: all;
-    font-size: 14px;
+    font-size: @font-size-base;
     height: 40px;
     box-sizing: border-box;
+    span {
+      position: relative;
+      top: 1px;
+    }
   }
 
   .content-success {
     background-color: @success-color;
-    color: #fff;
+    color: @message-base-bg;
   }
 
   .content-error {
     background-color: @error-color;
-    color: #fff;
+    color: @message-base-bg;
   }
 
   .content-info {
     background-color: @primary-color;
-    color: #fff;
+    color: @message-base-bg;
   }
 
   .content-loading {
     background-color: @warning-color;
-    color: #fff;
+    color: @message-base-bg;
   }
 
   .content-load::before {
@@ -58,11 +63,11 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid;
+    width: @message-pseudo-width;
+    height: @message-pseudo-height;
+    border: @border-width-base @border-style-base;
     margin-right: 8px;
-    border-color: #13B886 transparent transparent transparent;
+    border-color: @primary-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -73,7 +78,7 @@
 
   .content-warning, .content-warning {
     background-color: @warning-color;
-    color: #fff;
+    color: @message-base-bg;
   }
 
   &-success .@{iconfont-css-prefix} {
@@ -102,11 +107,11 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid;
+    width: @message-pseudo-width;
+    height: @message-pseudo-height;
+    border: @border-width-base @border-style-base;
     margin-right: 8px;
-    border-color: #13B886 transparent transparent transparent;
+    border-color: @primary-color transparent transparent transparent;
     border-radius: 50%;
     box-sizing: border-box;
     /*动画时间1s，线性变化，无限循环*/
@@ -136,7 +141,7 @@
   0% {
     opacity: 1;
     max-height: 150px;
-    padding: 8px;
+    padding: @padding-xs;
   }
   100% {
     opacity: 0;
