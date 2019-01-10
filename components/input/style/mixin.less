@@ -22,14 +22,14 @@
   border-color: @color;
   outline: 0;
   // box-shadow: 0 0 0 2px fade(@color, 20%);
-  border-right-width: 1px !important;
+  border-right-width: @border-width-base !important;
 }
 
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
   // border-color: tint(@color, 20%);
   border-color: @color;
-  border-right-width: 1px !important;
+  border-right-width: @border-width-base !important;
 }
 
 .disabled() {
