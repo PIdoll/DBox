@@ -163,7 +163,6 @@
 }
 
 // 按钮的基本样式
-// --------------------------------------------------
 .btn() {
   display: inline-block;
   margin-bottom: 0;
@@ -229,7 +228,7 @@
 .btn-primary() {
   .button-variant-primary(@btn-primary-color; @btn-primary-bg);
   .idoll-icon {
-    color: #fff;
+    color: @background-base;
   }
 }
 
@@ -268,7 +267,7 @@
   &:focus,
   &:active,
   &.active {
-    background: #fff;
+    background: @background-base;
   }
 }
 
@@ -358,18 +357,14 @@
   > .@{btnClassName}:first-child {
     margin-left: 0;
     &:not(:last-child) {
-      // border-bottom-right-radius: 0;
-      // border-top-right-radius: 0;
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
+      border-bottom-left-radius: @border-radius-base;
+      border-top-left-radius: @border-radius-base;
     }
   }
 
   > .@{btnClassName}:last-child:not(:first-child) {
-    // border-bottom-left-radius: 0;
-    // border-top-left-radius: 0;
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
+    border-bottom-right-radius: @border-radius-base;
+    border-top-right-radius: @border-radius-base;
   }
 
   & > & {
@@ -384,13 +379,13 @@
     > .@{btnClassName}:last-child {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
-      padding-right: 8px;
+      padding-right: @padding-xs;
     }
   }
 
   & > &:last-child:not(:first-child) > .@{btnClassName}:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-    padding-left: 8px;
+    padding-left: @padding-xs;
   }
 }
