@@ -2,7 +2,7 @@
 @import "../../../style/mixins/index.less";
 
 @alert-prefix-cls: ~"@{idoll-prefix}-alert";
-@alert-message-color: @title;
+@alert-message-color: @title-color;
 @alert-text-color: @text-color;
 
 .@{alert-prefix-cls} {
@@ -11,7 +11,7 @@
   // padding: 8px 15px 8px 37px;
   padding: @padding-xs @padding-md;
   font-size: @font-size-base;
-  color: @alert-text-color;
+  // color: @alert-text-color;
   border-radius: @border-radius-base;
 
   &&-no-icon {
@@ -89,7 +89,7 @@
       height: 16px;
       line-height: 16px;
       &:hover {
-        color: #404040;
+        color: @text-color;
       }
     }
   }
