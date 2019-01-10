@@ -1,10 +1,8 @@
 @import "../../../style/theme/default/index.less";
+@import "../../../style/theme/default/compoments/message.less";
 @import "../../../style/mixins/index.less";
 
 @message-prefix-cls: ~"@{idoll-prefix}-message";
-@pseudo-width: 16px;
-@pseudo-height: 16px;
-@zindex-message: 1010;
 
 .@{message-prefix-cls} {
   .reset-component;
@@ -25,7 +23,7 @@
 
   &-notice-content &-custom-content {
     padding: @padding-xs @padding-md;
-    background: @white;
+    background: @message-base-bg;
     box-shadow: @shadow-large;
     border-radius: @border-radius-base;
     display: inline-block;
@@ -41,22 +39,22 @@
 
   .content-success {
     background-color: @success-color;
-    color: @white;
+    color: @message-base-bg;
   }
 
   .content-error {
     background-color: @error-color;
-    color: @white;
+    color: @message-base-bg;
   }
 
   .content-info {
     background-color: @primary-color;
-    color: @white;
+    color: @message-base-bg;
   }
 
   .content-loading {
     background-color: @warning-color;
-    color: @white;
+    color: @message-base-bg;
   }
 
   .content-load::before {
@@ -65,8 +63,8 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: @pseudo-width;
-    height: @pseudo-height;
+    width: @message-pseudo-width;
+    height: @message-pseudo-height;
     border: @border-width-base @border-style-base;
     margin-right: 8px;
     border-color: @primary-color transparent transparent transparent;
@@ -80,7 +78,7 @@
 
   .content-warning, .content-warning {
     background-color: @warning-color;
-    color: @white;
+    color: @message-base-bg;
   }
 
   &-success .@{iconfont-css-prefix} {
@@ -109,8 +107,8 @@
     top: 2px;
     display: inline-block;
     content: '';
-    width: @pseudo-width;
-    height: @pseudo-height;
+    width: @message-pseudo-width;
+    height: @message-pseudo-height;
     border: @border-width-base @border-style-base;
     margin-right: 8px;
     border-color: @primary-color transparent transparent transparent;
