@@ -56,8 +56,7 @@
   color: @input-color;
   background-color: @input-bg;
   background-image: none;
-  border: 1px solid @border;
-  // border: 1px solid @input-border-color;
+  border: @border-width-base @border-style-base @border;
   border-radius: @border-radius-base;
   .placeholder(); // Reset placeholder
   // transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
@@ -94,9 +93,9 @@
   }
 
   &-clear-icon {
-    color: #ccc;
+    color: @icon-default;
     :hover {
-      color: #999;
+      color: @icon-hover;
     }
   }
 }
@@ -107,7 +106,7 @@
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid @border;
+    border: @border-width-base @border-style-base @border;
     box-shadow: none;
   }
 }
@@ -122,7 +121,7 @@
     right: 0;
     z-index: 2;
     .square(@height);
-    font-size: 14px;
+    font-size: @font-size-base ;
     line-height: @height;
     text-align: center;
     pointer-events: none;
@@ -147,7 +146,7 @@
   }
 
   > [class*="col-"] {
-    padding-right: 8px;
+    padding-right: @padding-xs;
   }
   
   &:hover {
@@ -181,7 +180,7 @@
     float: left;
     width: 100%;
     margin-bottom: 0;
-    border: 1px solid @input-border-color;
+    border: @border-width-base @border-style-base @input-border-color;
     &:hover {
       z-index: 1;
       .hover();
@@ -201,7 +200,7 @@
     color: @input-color;
     text-align: center;
     background-color: @input-addon-bg;
-    border: 1px solid @input-border-color;
+    border: @border-width-base @border-style-base @input-border-color;
     border-radius: @border-radius-base;
 
     // Reset Select's style in addon
@@ -211,7 +210,7 @@
       .idoll-select-selection {
         background-color: inherit;
         margin: -1px;
-        border: 1px solid transparent;
+        border: @border-width-base @border-style-base transparent;
         box-shadow: none;
       }
     }
@@ -271,7 +270,7 @@
     &-wrap,
     > .@{inputClass} {
       &:not(:first-child):not(:last-child) {
-        border-right-width: 1px;
+        border-right-width: @border-width-base;
         border-right-color: transparent;
         &:hover {
           .hover();
@@ -308,7 +307,7 @@
     & > .@{idoll-prefix}-mention-wrapper .@{idoll-prefix}-mention-editor,
     & > .@{idoll-prefix}-time-picker .@{idoll-prefix}-time-picker-input {
       border-radius: 0;
-      border-right-width: 1px;
+      border-right-width: @border-width-base;
       border-right-color: transparent;
       &:hover {
         .hover();

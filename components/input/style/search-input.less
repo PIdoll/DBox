@@ -8,14 +8,12 @@
 
 .@{search-prefix} {
   &-large {
-    // 图标大小
     > .@{idoll-prefix}-input-suffix {
       font-size: @font-size-base + 2px;
     }
   }
 
   &-small {
-    // 图标大小
     > .@{idoll-prefix}-input-suffix {
       font-size: @font-size-base - 2px;
     }
@@ -26,9 +24,6 @@
     color: @text-color-secondary;
   }
 
-  // &:not(&-small) > .@{idoll-prefix}-input-suffix {
-  //   right: @control-padding-horizontal;
-  // }
   & > .@{idoll-prefix}-input-suffix {
     right: @control-padding-horizontal;
   }
@@ -50,7 +45,7 @@
     border-bottom-left-radius: 0;
 
     > .@{idoll-prefix}-icon-search {
-      color: #fff;  // 图标颜色
+      color: @input-bg;  // 图标颜色
     }
   }
 
