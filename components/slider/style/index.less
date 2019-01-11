@@ -1,5 +1,5 @@
-@import "../../../style/theme/default/index.less";
-@import "../../../style/theme/default/compoments/slider.less";
+@import "../../../style/theme/default/index";
+@import "../../../style/theme/default/compoments/slider";
 @import "../../../style/mixins/index";
 
 @slider-prefix-cls: ~"@{idoll-prefix}-slider";
@@ -44,7 +44,6 @@
     border-radius: 50%;
     border: solid 2px @slider-handle-color;
     background-color: @component-background;
-
     transition: border-color .3s, transform .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
     &:focus {
@@ -52,8 +51,8 @@
       height:16px;
       width:16px;
       margin-top: -6px;
-      box-shadow: 0 0 0  2px #81deb9;
-      border: 2px solid #13B886;
+      box-shadow: 0 0 0 2px @slider-track-background-color-hover;
+      border: 2px solid @slider-handle-color-focus;
       outline: none;
     }
 

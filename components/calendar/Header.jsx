@@ -15,7 +15,7 @@ export default class Header extends React.Component {
     super(props);
     this.state = {
       monthValue: null,
-      yearValue: null
+      yearValue: null,
     }
   }
   static propTypes = {
@@ -38,10 +38,13 @@ export default class Header extends React.Component {
   }
 
   componentDidMount() {
+    const { value } = this.props;
+    const defaultValue = moment(value).format('YYYY-MM').split('-');
     this.setState({
       monthNumber: moment().month(),
       monthValue: MonthFormat(moment().month()),
-      yearValue: moment().year()
+      yearValue: moment().year(),
+      defaultValue: defaultValue,
     })
   }
 
@@ -54,16 +57,15 @@ export default class Header extends React.Component {
     month = monthNumber;
     year = yearValue;
     month++;
-    if (month >= 12) {
+    if (month === 12) {
       month = 0;
       // 若将次函数放入setState的第二个函数参数内，次函数的执行结果将会是12月的数据
-      this.onMonthChange(month);
       this.setState({
         monthValue: MonthFormat(month),
-        monthNumber: month,
+        monthNumber: 0,
         yearValue: year + 1
       }, () => {
-        this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
+        this.onYearChange(this.state.yearValue, 0);
       });
       return false;
     }
@@ -87,13 +89,13 @@ export default class Header extends React.Component {
     month--;
     if (month < 0) {
       month = 11;
-      this.onMonthChange(month);
+      // this.onMonthChange(month);
       this.setState({
         monthValue: MonthFormat(month),
-        monthNumber: month,
+        monthNumber: 11,
         yearValue: year - 1
       }, () => {
-        this.state.yearValue !== year && this.onYearChange(this.state.yearValue)
+        this.onYearChange(this.state.yearValue, 11);
       });
       return false;
     }
@@ -182,10 +184,11 @@ export default class Header extends React.Component {
     );
   }
 
-  onYearChange = (year) => {
+  onYearChange = (year, month) => {
     const { value, validRange } = this.props;
     const newValue = moment(value).clone();
     newValue.year(parseInt(year, 10));
+    newValue.month(parseInt(month, 10));
     if (validRange) {
       const [start, end] = validRange;
       const newYear = moment(newValue).get('year');

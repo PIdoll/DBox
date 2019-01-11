@@ -95,10 +95,9 @@ const App = () => (
       <Route exact path='/anchor' component={Anchor} />
       <Route exact path='/tree' component={Tree} />
       <Route exact path='/slider' component={Slider} />
-      <Route exact path='/inputNumner' component={InputNumber} />
+      <Route exact path='/inputNumber' component={InputNumber} />
       <Route exact path='/popconfirm' component={Popconfirm} />
       <Route exact path='/slider' component={Slider} />
-      <Route exact path='/inputNumber' component={InputNumber} />
       <Route exact path='/back-top' component={BackTop} />
       <Route exact path='/grid' component={Grid} />
       <Route exact path='/calendar' component={Calendar} />
