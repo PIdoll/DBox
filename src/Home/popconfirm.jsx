@@ -42,7 +42,7 @@ export default class PopconfirmDemo extends React.Component {
         <h1 className='h1'>基本用法</h1>
         <h1 className='h1' />
         <div id='popconfirm' style={{marginLeft: '100px'}}>
-          <Popconfirm title='确定删除当前信息?' onConfirm={this.confirm} onCancel={cancel} okText='确认删除' cancelText='取消'>
+          <Popconfirm title='确定删除当前信息?' onConfirm={this.confirm} onCancel={this.cancel} okText='确认删除' cancelText='取消'>
             <a href='#'>删除</a>
           </Popconfirm>
         </div>
@@ -119,7 +119,7 @@ const confirm = (e) => {
   message.success('Click on Yes');
 }
 
-const cancel = (e) => {
-  console.log(e);
-  // message.error('Click on No');
-}
+// const cancel = (e) => {
+//   console.log(e);
+//   // message.error('Click on No');
+// }
