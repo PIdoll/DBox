@@ -1,10 +1,8 @@
-@import '../../../style/theme/default/default.less';
-@import '../../../style//theme//default//compoments//timePicker.less';
+@import '../../../style/theme/default/index.less';
 @import '../../../style/mixins/index.less';
 @import '../../input/style/mixin.less';
 
 @timepicker-prefix-cls: idoll-time-picker;
-@timepicker-item-height: 32px;
 
 .@{timepicker-prefix-cls}-panel {
   // max-width: 168px;
@@ -18,7 +16,7 @@
     list-style: none;
     font-size: @font-size-base;
     text-align: left;
-    background-color: @component-background;
+    background-color: @time-picker-inner-bg;
     border-radius: @border-radius-base;
     box-shadow: @box-shadow-base;
     background-clip: padding-box;
@@ -29,7 +27,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    max-width:  @time-picker-panel-column-width * 3 - @control-padding-horizontal - 2px;
+    max-width:  @time-picker-panel-column-width * 3 - @padding-sm - 2px;
     cursor: auto;
     line-height: normal;
     outline: 0;
@@ -39,14 +37,12 @@
     &-wrap {
       box-sizing: border-box;
       position: relative;
-      // padding: 6px;
-      padding: 7px 2px 7px @control-padding-horizontal;
-      // border-bottom: 1px solid @border-color-split;
-      border-bottom: @border-width-base @border-style-base @border-color-split;
+      padding: 7px @padding-sm;
+      border-bottom: @border-width-base @border-style-base @border;
     }
 
     &-invalid {
-      border-color: red;
+      border-color: @error-color;
     }
   }
 
@@ -55,10 +51,10 @@
     right: 8px;
     cursor: pointer;
     overflow: hidden;
-    width: 20px;
-    height: 20px;
+    width: @time-clear-btn-width;
+    height: @time-clear-btn-height;
     text-align: center;
-    line-height: 20px;
+    line-height: @time-clear-btn-line-height;
     top: 10px;
     margin: 0;
 
@@ -89,7 +85,7 @@
     font-size: @font-size-base;
     border-left: @border-width-base @border-style-base @border-color-split;
     box-sizing: border-box;
-    border-color: #f5f5f5;
+    border-color: @border;
     width: @time-picker-panel-column-width;
     overflow: hidden;
     position: relative; // Fix chrome weird render bug
@@ -135,8 +131,7 @@
     }
 
     li:hover {
-      // background: @item-hover-bg;
-      background: @primary-LightBg;
+      background: @primary-lightBg;
     }
 
     li&-option-selected {
@@ -148,7 +143,7 @@
     }
 
     li&-option-disabled {
-      color: @btn-disable-color;
+      color: @text-color-disable;
       &:hover {
         background: transparent;
         cursor: not-allowed;
@@ -162,7 +157,7 @@
   }
 
   &-addon {
-    padding: 8px;
+    padding: 8px @padding-xs;
     border-top: @border-width-base @border-style-base @border-color-split;
   }
 
@@ -170,24 +165,24 @@
   &.slide-up-enter.slide-up-enter-active&-placement-topRight,
   &.slide-up-appear.slide-up-appear-active&-placement-topLeft,
   &.slide-up-appear.slide-up-appear-active&-placement-topRight {
-    animation-name: antSlideDownIn;
+    animation-name: idollSlideDownIn;
   }
 
   &.slide-up-enter.slide-up-enter-active&-placement-bottomLeft,
   &.slide-up-enter.slide-up-enter-active&-placement-bottomRight,
   &.slide-up-appear.slide-up-appear-active&-placement-bottomLeft,
   &.slide-up-appear.slide-up-appear-active&-placement-bottomRight {
-    animation-name: antSlideUpIn;
+    animation-name: idollSlideUpIn;
   }
 
   &.slide-up-leave.slide-up-leave-active&-placement-topLeft,
   &.slide-up-leave.slide-up-leave-active&-placement-topRight {
-    animation-name: antSlideDownOut;
+    animation-name: idollSlideDownOut;
   }
 
   &.slide-up-leave.slide-up-leave-active&-placement-bottomLeft,
   &.slide-up-leave.slide-up-leave-active&-placement-bottomRight {
-    animation-name: antSlideUpOut;
+    animation-name: idollSlideUpOut;
   }
 }
 
@@ -214,9 +209,9 @@
     position: absolute;
     user-select: none;
     transition: all .3s @ease-in-out;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
+    width: @time-icon-width;
+    height: @time-icon-height;
+    line-height: @time-icon-line-height;
     right: @control-padding-horizontal - 1px;
     color: @disabled-color;
     top: 50%;
@@ -224,7 +219,7 @@
     .@{timepicker-prefix-cls}-clock-icon {
       color: @disabled-color;
       display: block;
-      line-height: 1;
+      line-height: @time-clock-icon-line-height;
     }
   }
 
@@ -237,6 +232,6 @@
   }
 
   &-small &-icon {
-    right: @control-padding-horizontal-sm - 1px;
+    right: @padding-xs - 1px;
   }
 }
