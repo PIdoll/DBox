@@ -15,21 +15,21 @@
     position: absolute;
     right: 8px;
     z-index: 1;
-    background: #fff;
+    background: @select-bg;
     top: 50%;
-    font-size: 14px;
-    color: #ccc;
+    font-size: @select-font-size;
+    color: @select-color;
     width: 14px;
     height: 14px;
     margin-top: -8px;
-    line-height: 14px;
+    line-height: @select-font-size;
     cursor: pointer;
     transition: color 0.3s ease, opacity 0.15s ease;
     &:before {
       display: block;
     }
     &:hover {
-      color: #999;
+      color: @option-hover-bg;
     }
 }
 
@@ -47,7 +47,7 @@
 
   > ul > li > a {
       padding: 0;
-      background-color: #fff;
+      background-color: @white;
   }
 
   &-remove-icon {
@@ -86,9 +86,9 @@
     box-sizing: border-box;
     display: block;
 
-    background-color: #fff;
+    background-color: @select-bg;
     border-radius: @border-radius-base;
-    border: 1px solid @border-color-base;
+    border: @border-width-base @border-style-base @border-color-base;
     transition: all .3s @ease-in-out;
 
     &:hover {
@@ -112,11 +112,10 @@
   }
 
   &-disabled {
-    color: #ccc;
+    color: @text-color-disable;
   }
 
   &-disabled &-selection {
-    // background: #f7f7f7;
     background: @disabled;
     cursor: not-allowed;
     &:hover,
@@ -134,8 +133,8 @@
   }
 
   &-disabled &-selection--multiple &-selection__choice {
-    background: #e9e9e9;
-    color: #aaa;
+    background: @border-color-dark;
+    color: @text-color-disable;
     padding-right: 10px;
     &__remove {
       display: none;
@@ -153,38 +152,53 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding: 4px 11px ;
-      line-height: @select-height-base - 10px;
+      padding: 0 11px ;
+      line-height: @select-height-base - 2px;
       &:focus {
         outline: none;
       }
     }
   }
 
+  .@{select-prefix-cls}-selection-selected-value {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    padding-right: 20px;
+  }
+
   &-sm {
     // 搜索下拉框点击后的显示
     .@{select-prefix-cls}-selection-selected-value {
-      position: absolute;
-      left: 7px !important;
-      top: 2px !important;
+      float: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+      padding-right: 20px;
     }
   }
 
   &-lg {
     .@{select-prefix-cls}-selection-selected-value {
-      position: absolute;
-      left: 11px !important;
-      top: 7px !important;
+      float: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+      padding-right: 20px;
     }
   }
 
-  &-show-search {
-    .@{select-prefix-cls}-selection-selected-value {
-      position: absolute;
-      left: 11px;
-      top: 4px;
-    }
-  }
+  // &-show-search {
+  //   .@{select-prefix-cls}-selection-selected-value {
+  //     position: absolute;
+  //     left: 11px;
+  //     top: 4px;
+  //   }
+  // }
 
   &-hasSearch {
     .@{select-prefix-cls}-selection__clear {
@@ -198,10 +212,10 @@
       position: absolute;
       right: 28px;
       z-index: 1;
-      background: #fff;
+      background: @select-bg;
       top: 50%;
       font-size: 14px;
-      color: #ccc;
+      color: @select-color;
       width: 14px;
       height: 14px;
       margin-top: -8px;
@@ -212,7 +226,7 @@
         display: block;
       }
       &:hover {
-        color: #999;
+        color: @option-hover-bg;
       }
   }
   }
@@ -259,12 +273,6 @@
     }
   }
 
-  &-combobox&-allow-clear &-selection:hover &-selection__rendered {
-    // margin-right: 20px; // In case that clear button will overlap content
-  }
-
-
-
   &-lg {
     .@{select-prefix-cls}-selection--single {
       height: @select-height-lg;
@@ -272,11 +280,7 @@
         height: @select-height-lg - 2px;
         line-height: @select-height-lg - 16px;
         padding: 7px 11px;
-        // font-size: 16px;
       }
-      // .@{select-prefix-cls}-arrow {
-      //   font-size: 16px;
-      // }
     }
 
     .@{select-prefix-cls}-selection--multiple {
@@ -324,9 +328,6 @@
         }
       }
     }
-
-
-
   }
 
   &-search__field__mirror {
@@ -339,10 +340,10 @@
   }
 
   &-disabled &-selection__choice__remove {
-    color: #ccc;
+    color: @option-hover-bg;
     cursor: default;
     &:hover {
-      color: #ccc;
+      color: @option-hover-bg;
     }
   }
 
@@ -355,15 +356,12 @@
   &-search__field__placeholder { // for TreeSelect compatibility
     position: absolute;
     top: 50%;
-    // left: @select-padding-vertical + 1px;
-    // right: @select-padding-vertical + 1px;;
     left: @select-padding-vertical - 2px;
     right: @select-padding-vertical - 2px;;
-    color: #ccc;
+    color: @text-color-disable;
     line-height: 20px;
     height: 20px;
     max-width: 100%;
-    // z-index: 2;
     margin-top: -10px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -424,7 +422,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       padding-left: 4px;
-      // padding-bottom: 4px;
     }
 
     ul {
@@ -443,8 +440,8 @@
     }
 
     .@{select-prefix-cls}-selection__choice {
-      border: 1px solid @border;
-      border-radius: 3px;
+      border: @border-width-base  @border-style-base @border;
+      border-radius: @border-radius-base;
       cursor: default;
       float: left;
       padding: 0 @select-option-padding-horizontal;
@@ -488,9 +485,6 @@
       &:hover {
         color: @text-color-secondary;
       }
-      // &:before {
-      //   content: "\e91c";
-      // }
     }
   }
 
@@ -550,7 +544,7 @@
       }
 
       &-item-group-title {
-        color: #999;
+        color: @text-color-secondary;
         line-height: 1.5;
         padding: 8px 12px;
       }
@@ -562,7 +556,7 @@
         display: block;
         padding: 0px @select-option-padding-vertical - 8px;
         font-weight: normal;
-        color: #666;
+        color: @text-color;
         white-space: nowrap;
         cursor: pointer;
         white-space: nowrap;
@@ -577,12 +571,12 @@
         }
 
         &-disabled {
-          color: #ccc;
+          color: @border;
           cursor: not-allowed;
 
           &:hover {
-            color: #ccc;
-            background-color: #fff;
+            color: @border;
+            background-color: @select-bg;
             cursor: not-allowed;
           }
         }
@@ -590,7 +584,7 @@
         &-selected {
           &,
           &:hover {
-            background-color: #fff;
+            background-color: @select-bg;
             color: @primary-color;
           }
         }
@@ -599,7 +593,7 @@
           height: 1px;
           margin: 1px 0;
           overflow: hidden;
-          background-color: #e5e5e5;
+          background-color: @divider-color;
           line-height: 0;
         }
       }
@@ -619,7 +613,7 @@
         }
 
         &:hover:after {
-          color: #ddd;
+          color: @background;
         }
 
         &-disabled:after {
@@ -652,7 +646,7 @@
         padding-right: @select-padding-vertical + 14px;
         width: 100%;
         box-sizing: border-box;
-        border: 1px solid @border-color-base;
+        border: @border-width-base @border-style-base @border-color-base;
         border-radius: 4px;
         outline: none;
       }
