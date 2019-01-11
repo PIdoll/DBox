@@ -39,7 +39,6 @@ onChange = (date) => {
     mold='backdrop'
     disabledDate={this.disabledDate}
     onPanelChange={this.onPanelChange}
-    onSelect={this.onSelect}
     onChange={this.onChange} />
 </div>
 ```
@@ -54,8 +53,8 @@ onChange = (date) => {
 | disabledDate | 不可选择的日期 | (currentDate: moment) => boolean | 无 |
 | onPanelChange | 日期面板变化回调 | function(date: moment, mode: string) | 无 |
 | onChange | 日期变化回调 | function(date: moment) | 无 |
-| onSelect | 点击选择日期回调 | function(date: moment) | 无 |
-| validRange | 设置可以显示的日期 | [moment, moment] | 无 |
+| onSelect | 点击选择日期回调(不支持mold='backdrop') | function(date: moment) | 无 |
+| validRange | 设置可以显示的日期(不支持mold='backdrop') | [moment, moment] | 无 |
 
 
 ```jsx noeditor
