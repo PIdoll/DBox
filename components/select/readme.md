@@ -55,15 +55,15 @@ const {Option} = Select;
 import { Select } from 'dbox-ui';
 const {Option} = Select;
 <div>
-    <Select mode='multiple' style={{ width: 200 }} placeholder='多选' >
+    <Select mode='multiple' style={{ width: 200 }} defaultValue='beijing' placeholder='多选' disabled >
         <Option value='beijing'>北京</Option>
         <Option value='shanghai'>上海</Option>
         <Option value='guangzhou'>广州</Option>
         <Option value='shenzhen'>深圳</Option>
     </Select>
     <br /><br />
-    <Select mode='tags' style={{ width: 200 }} placeholder='可随意输入内容' >
-        <Option value='beijing'>北京</Option>
+    <Select mode='tags' style={{ width: 200 }} placeholder='可随意输入内容' disabled>
+        <Option value='beijing' >北京</Option>
         <Option value='shanghai'>上海</Option>
         <Option value='guangzhou'>广州</Option>
         <Option value='shenzhen'>深圳</Option>
@@ -72,7 +72,7 @@ const {Option} = Select;
 ```
 
 ##### **获得选项文本**
-
+默认情况下onChange只能获取value值，如果需要获取选中节点的文本，可以使用labelInValue属性。
 ```jsx
 import { Select } from 'dbox-ui';
 const {Option} = Select;
@@ -88,6 +88,7 @@ handleChange = (value) => {
 ```
 
 ##### **搜索用户**
+可以通过调用接口获取下拉框内容。
 ```jsx
 import { Select,Spin } from 'dbox-ui';
 const {Option} = Select;

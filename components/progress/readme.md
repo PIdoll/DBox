@@ -143,7 +143,7 @@ const ProgressView = () => {
 | showInfo | 是否显示进度数值或状态图标 | boolean | true |
 | status | 状态，可选：`success` `exception` `active` | string | - |
 | strokeWidth `(type=line)` | 进度条线的宽度，单位 px | number | 8 |
-| strokeWidth `(type=circle)` | 圆形进度条线的宽度，单位是进度条画布宽度的百分比 | number | 8 |
+| strokeWidth `(type=circle)` | 圆形进度条线的宽度，单位是进度条画布宽度的百分比 | number | 6 |
 | type | 类型，可选 `line` `circle` | string | line |
 | width `(type=circle)` | 圆形进度条画布宽度，单位 px | number | 132 |
 <style>.idoll-progress{margin:0 10px 10px 0}</style>

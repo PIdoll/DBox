@@ -1,8 +1,7 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/index.less";
 @import "../../../style/mixins/index.less";
 
 @spin-prefix-cls: ~"@{idoll-prefix}-spin";
-@spin-dot-default: @text-color-secondary;
 
 .@{spin-prefix-cls} {
   .reset-component;
@@ -28,7 +27,7 @@
       height: 100%;
       max-height: 360px;
       width: 100%;
-      z-index: 4;
+      z-index: @spin-zindex;
       .@{spin-prefix-cls}-dot {
         position: absolute;
         top: 50%;
@@ -43,7 +42,7 @@
         top: 50%;
         width: 100%;
         padding-top: (@spin-dot-size - @font-size-base) / 2 + 2px;
-        text-shadow: 0 1px 2px #fff;
+        text-shadow: @spin-text-shadow;
       }
       &.@{spin-prefix-cls}-show-text .@{spin-prefix-cls}-dot {
         margin-top: -@spin-dot-size / 2 - 20px;
@@ -100,7 +99,7 @@
       right: 0;
       top: 0;
       bottom: 0;
-      background: #fff;
+      background: @spin-background;
       opacity: 0.3;
       transition: all .3s;
       z-index: 10;
@@ -122,18 +121,18 @@
     font-size: @spin-dot-size;
 
     // .square(@spin-dot-size);
-    width: 32px;
-    height: 32px;
+    width: @spin-base-width;
+    height: @spin-base-height;
 
     i {
       display: inline-block;
       content: '';
-      width: 32px;
-      height: 32px;
-      border: 1px solid;
+      width: @spin-base-width;
+      height: @spin-base-height;
+      border: @border-width-base @border-style-base;
       margin-right: 8px;
-      border-color: @primary-color @Black5 @Black5 @Black5;
-      border-width: 3px;
+      border-color: @primary-color @spin-border-color @spin-border-color @spin-border-color;
+      border-width: @spin-base-width-default;
       border-radius: 50%;
       box-sizing: border-box;
       /*动画时间1s，线性变化，无限循环*/
@@ -155,12 +154,12 @@
     font-size: @spin-dot-size-sm;
 
     // .square(@spin-dot-size-sm);
-    width: 16px;
-    height: 16px;
+    width: @spin-width-sm;
+    height: @spin-height-sm;
     i {
-      border-width: 1px;
-      width: 16px;
-      height: 16px;
+      border-width: @spin-border-width-sm;
+      width: @spin-width-sm;
+      height: @spin-height-sm;
     }
   }
 
@@ -169,12 +168,12 @@
     font-size: @spin-dot-size-lg;
 
     // .square(@spin-dot-size-lg);
-    width: 48px;
-    height: 48px;
+    width: @spin-width-lg;
+    height: @spin-height-lg;
     i {
-      border-width: 4px;
-      width: 48px;
-      height: 48px;
+      border-width: @spin-border-width-lg;
+      width: @spin-width-lg;
+      height: @spin-height-lg;
     }
   }
 
@@ -186,7 +185,7 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ */
   .@{spin-prefix-cls}-blur {
-    background: @component-background;
+    background: @spin-blur-background;
     opacity: 0.5;
   }
 }

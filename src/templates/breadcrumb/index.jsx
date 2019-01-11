@@ -2,7 +2,7 @@ import React from 'react';
 import BasicBreadcrumb from './BasicBreadcrumb';
 import CustomizeBreadcrumb from './CustomizeBreadcrumb';
 import IconBreadcrumb from './IconBreadcrumb';
-import RoutetBreadcrumb from './RouterBreadcrumb';
+import RouterBreadcrumb from './RouterBreadcrumb';
 
 export default class Breadcrumb extends React.Component {
   render () {
@@ -27,7 +27,7 @@ export default class Breadcrumb extends React.Component {
         <h2 className='h2'>
           测试场景:<br />
         </h2>
-        <RoutetBreadcrumb />
+        <RouterBreadcrumb />
       </div>
     )
   }

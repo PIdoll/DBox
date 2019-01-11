@@ -22,7 +22,7 @@ function zerofixed(v) {
 export default class Calendar extends React.Component {
   static defaultProps = {
     locale: {},
-    fullscreen: true,
+    fullscreen: false,
     prefixCls: PREFIX_CLS,
     mode: 'month',
     onSelect: noop,
