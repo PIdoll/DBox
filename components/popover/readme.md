@@ -120,11 +120,7 @@ const text = <span>标题</span>;
 可从弹出层内关闭弹出层
 ```jsx
 import {Popover, Button} from 'dbox-ui';
-const content = (
-  <div>
-    <p>这是是内容文本内容文本</p>
-  </div>
-);
+
 class PopoverView extends React.Component {
   constructor(props) {
     super(props);

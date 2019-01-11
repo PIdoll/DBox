@@ -6,8 +6,8 @@
 
 import {Tag} from 'dbox-ui';
 <div>
-	<Tag>标签</Tag>
-  <Tag href='http://dbox-dev.paic.com.cn'>链接</Tag>
+  <Tag>标签</Tag>
+  <Tag href='http://dbox-dev.paic.com.cn' target='_black'>链接</Tag>
 </div>
 ```
 
@@ -16,14 +16,14 @@ import {Tag} from 'dbox-ui';
 ```jsx
 import {Tag} from 'dbox-ui';
 <div>
-	<Tag color='peru'>peru</Tag>
-    <Tag color='coral'>coral</Tag>
-    <Tag color='hotpink'>hotpink</Tag>
-    <Tag color='orange'>orang</Tag>
-    <Tag color='limegreen'>limegreen</Tag>
-    <Tag checked color='deepskyblue'>deepskyblue</Tag>
-    <Tag color='mediumslateblue'>mediumslateblue</Tag>
-    <Tag color='turquoise'>turquoise</Tag>
+  <Tag color='peru'>peru</Tag>
+  <Tag color='coral'>coral</Tag>
+  <Tag color='hotpink'>hotpink</Tag>
+  <Tag color='orange'>orang</Tag>
+  <Tag color='limegreen'>limegreen</Tag>
+  <Tag color='deepskyblue'>deepskyblue</Tag>
+  <Tag color='mediumslateblue'>mediumslateblue</Tag>
+  <Tag color='turquoise'>turquoise</Tag>
 </div>
 ```
 
@@ -54,7 +54,7 @@ import {Tag} from 'dbox-ui';
 动态添加和删除标签
 ```jsx
 import {Tag} from 'dbox-ui';
-import {TagGroup} from 'dbox-ui/tag';
+const TagGroup = Tag.Group;
 <TagGroup></TagGroup>
 ```
 
@@ -68,6 +68,7 @@ import {TagGroup} from 'dbox-ui/tag';
 | color | 标签色 | string | - |
 | target | 链接跳转方式必须和href同时设置 | string可参照a链接的跳转方式 | - 默认本页面跳转 |
 | href | 链接跳转路径 | string | -  |
+| hot | 设置热门标签 | bool | false |
 | checked | 设置标签的选中状态仅适用于hot和基本状态下 | boolean | false |
 
 ##### **tagGroup**
@@ -85,8 +86,6 @@ import {TagGroup} from 'dbox-ui/tag';
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | onClose | 关闭时的回调 | (e) => void | - |
-| --- | --- | --- | --- |
-| onChange | 点击标签时触发的回调 | (checked) => void | - |
 
 
 

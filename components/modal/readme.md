@@ -108,9 +108,6 @@ class ModalView extends React.Component {
 ```jsx
 import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
-  constructor(props) {
-    super(props)
-  };
   info () {
     Modal.info({
       title: '这是一条通知信息',
@@ -149,9 +146,6 @@ class ModalView extends React.Component {
 ```jsx
 import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
-  constructor(props) {
-    super(props)
-  };
   showConfirm () {
     Modal.confirm({
       iconType: 'close-circle',

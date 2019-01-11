@@ -130,6 +130,12 @@
   &-small&-loading:before {
     animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
     font-weight: bold;
+    cursor: pointer
+  }
+
+  &-disabled&-loading:before {
+    animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
+    font-weight: bold;
     cursor: not-allowed
   }
 
@@ -153,7 +159,6 @@
     }
   }
 
-  &-loading,
   &-disabled {
     cursor: not-allowed;
     opacity: @switch-disabled-opacity;

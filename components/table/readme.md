@@ -40,42 +40,42 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   address: '北京',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
   }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
   }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
   }, {
   key: '6',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   address: '沈阳',
   Tel: '13262836283',
@@ -122,42 +122,42 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   address: '北京',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
   }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
   }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
   }, {
   key: '6',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   address: '沈阳',
   Tel: '13262836283',
@@ -208,42 +208,42 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   address: '北京',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
   }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
   }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
   }, {
   key: '6',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   address: '沈阳',
   Tel: '13262836283',
@@ -290,42 +290,42 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   address: '北京',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
   }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
   }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
   }, {
   key: '6',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   address: '沈阳',
   Tel: '13262836283',
@@ -503,42 +503,42 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   address: '北京',
   Tel: '13943250086',
   state: '审核未通过',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   address: '南京',
   Tel: '13262717838',
   state: '审核通过',
   }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   address: '上海',
   Tel: '13950035537',
   state: '审核未通过',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   address: '合肥',
   Tel: '13947766628',
   state: '审核通过',
   }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   address: '郑州',
   Tel: '13964507501',
   state: '审核未通过',
   }, {
   key: '6',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   address: '沈阳',
   Tel: '13262836283',
@@ -548,7 +548,7 @@ const data = [{
   const columnsSubmenu = [
     { title: '操作日期', dataIndex: 'date', key: 'date' },
     { title: '操作人员', dataIndex: 'name', key: 'name' },
-    { title: '操作状态', key: 'state', render: () => <span style={{position: 'relative'}}><Badge dot status='success' text='成功' /></span> },
+    { title: '操作状态', key: 'state', render: () => <span className='state' style={{position: 'relative'}}><Badge dot status='success' text='成功' /></span> },
     { title: '操作次数', dataIndex: 'upgradeNum', key: 'upgradeNum' },
     {
       title: '异常状态',
@@ -580,7 +580,7 @@ const data = [{
 ##### **行列合并**
 对于一些公共数据的合并
 ```jsx
-import {Table, Divider} from 'dbox-ui';
+import {Table} from 'dbox-ui';
 const renderContent = function (value, row, index) {
   const obj = {
     children: value,
@@ -640,35 +640,35 @@ const columnsCol = [{
 
 const dataCol = [{
   key: '1',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   tel: '0571-22098909',
   phone: 13943250086,
   address: '浦东新区唐镇',
 }, {
   key: '2',
-  name: '李鷽釁',
+  name: '李佳欣',
   tel: '0571-22098333',
   phone: 13262717838,
   age: 24,
   address: '浦东新区唐镇',
 }, {
   key: '3',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   tel: '0575-22098909',
   phone: 13950035537,
   address: '浦东新区唐镇',
 }, {
   key: '4',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   tel: '0575-22098909',
   phone: 13947766628,
   address: '浦东新区唐镇',
 }, {
   key: '5',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   tel: '0575-22098909',
   phone: 13964507501,
@@ -749,7 +749,7 @@ const columnsFixRow = [{
 
 const dataFixdRow = [{
   key: '11',
-  name: '劉岳然',
+  name: '刘乐冉',
   age: 26,
   city: '北京',
   sex: '男',
@@ -761,7 +761,7 @@ const dataFixdRow = [{
   state: '审核未通过',
 }, {
   key: '12',
-  name: '李鷽釁',
+  name: '李佳欣',
   age: 24,
   city: '南京',
   sex: '女',
@@ -773,7 +773,7 @@ const dataFixdRow = [{
   state: '审核通过',
 }, {
   key: '13',
-  name: '彭柔群',
+  name: '孙柔佳',
   age: 22,
   city: '上海',
   sex: '女',
@@ -785,7 +785,7 @@ const dataFixdRow = [{
   state: '审核未通过',
 }, {
   key: '14',
-  name: '顏仁豪',
+  name: '张仁士',
   age: 28,
   city: '合肥',
   sex: '男',
@@ -797,7 +797,7 @@ const dataFixdRow = [{
   state: '审核通过',
 }, {
   key: '15',
-  name: '王郁弘',
+  name: '王子琪',
   age: 32,
   city: '郑州',
   sex: '男',
@@ -809,7 +809,7 @@ const dataFixdRow = [{
   state: '审核未通过',
 }, {
   key: '16',
-  name: '陳柏萱',
+  name: '陈卜宣',
   age: 27,
   city: '沈阳',
   sex: '女',
@@ -912,42 +912,42 @@ class TableView extends React.Component {
     editingKey: '',
     data: [{
       key: '1',
-      name: '劉岳然',
+      name: '刘乐冉',
       age: 26,
       city: '北京',
       Tel: '13943250086',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '2',
-      name: '李鷽釁',
+      name: '李佳欣',
       age: 24,
       city: '南京',
       Tel: '13262717838',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '3',
-      name: '彭柔群',
+      name: '孙柔佳',
       age: 22,
       city: '上海',
       Tel: '13950035537',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '4',
-      name: '顏仁豪',
+      name: '张仁士',
       age: 28,
       city: '合肥',
       Tel: '13947766628',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '5',
-      name: '王郁弘',
+      name: '王子琪',
       age: 32,
       city: '郑州',
       Tel: '13964507501',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '6',
-      name: '陳柏萱',
+      name: '陈卜宣',
       age: 27,
       city: '沈阳',
       Tel: '13262836283',
@@ -1202,21 +1202,18 @@ class NumericInput extends React.Component {
 | 参数           | 说明                     | 类型             | 默认值   |
 |---------------|--------------------------|-----------------|---------|
 | rowSelection  | 列表项是否可选择，配置项 | Object  | null  |
-| pagination    | 分页器，配置项参考 pagination，设为 false 时不显示分页 | Object |  |
+| pagination    | 分页器，配置项参考 pagination，设为 false 时不显示分页 | Object/bool |  |
 | size          | 正常或迷你类型，`large` `middle` or `small`  | String | `large` |
 | dataSource    | 数据数组 | Array |            |
 | columns       | 表格列的配置描述，具体项见下表 | Array | - |
-| rowKey        | 表格行 key 的取值，可以是字符串或一个函数 | String or Function(record, index):string | 'key' |
 | rowClassName  | 表格行的类名      | Function(record, index):string | - |
 | expandedRowRender  | 额外的展开行 | Function | - |
 | defaultExpandedRowKeys | 默认展开的行 | Array | - |
 | expandedRowKeys | 展开的行，控制属性 | Array | - |
 | onChange      | 分页、排序、筛选变化时触发 | Function(pagination, filters, sorter) |  |
 | loading       | 页面是否加载中 | Boolean | false |
-| locale        | 默认文案设置，目前包括排序、过滤、空数据文案 | Object | filterConfirm: '确定' <br> filterReset: '重置' <br> emptyText: '暂无数据' <br> [默认值] |
-| indentSize    | 展示树形数据时，每层缩进的宽度，以 px 为单位 | Number   | 15 |
+| locale        | 默认文案设置，目前包括排序、过滤、空数据文案 | Object | filterConfirm: '确定' <br> filterReset: '重置' <br> emptyText: '暂无数据' <br> |
 | onRowClick    | 处理行点击事件 | Function(record, index)   | - |
-| useFixedHeader  | 是否固定表头 | Boolean | false      |
 | bordered  | 是否展示外边框和列边框 | Boolean | false      |
 | showHeader  | 是否显示表头 | Boolean          | true      |
 | footer  | 表格底部自定义渲染函数         | Function(currentPageData)   | |
@@ -1234,15 +1231,11 @@ class NumericInput extends React.Component {
 | dataIndex  | 列数据在数据项中对应的 key，支持 `a.b.c` 的嵌套写法 | String | - |
 | render     | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return里面可以设置表格行/列合并 | Function(text, record, index) {} | - |
 | filters    | 表头的筛选菜单项           | Array           | - |
-| onFilter   | 本地模式下，确定筛选的运行函数 | Function    | - |
 | filterMultiple | 是否多选 | Boolean    | true    |
-| filterDropdown | 可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互 | React.Element | - |
-| sorter     | 排序函数，本地排序使用一个函数，需要服务端排序可设为 true | Function or Boolean | - |
 | colSpan    | 表头列合并,设置为 0 时，不渲染 | Number      |         |
 | width      | 列宽度 | String or Number | -  |
 | className  | 列的 className             | String          |  -      |
 | fixed      | 列是否固定，可选 `true`(等效于 left) `'left'` `'right'` | Boolean or String | false |
-| filteredValue | 筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组 | Array | - |
 | sortOrder | 排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` `false` | Boolean or String | - |
 
 #### **rowSelection**
@@ -1254,7 +1247,6 @@ class NumericInput extends React.Component {
 | type | 多选/单选，`checkbox` or `radio` | String | `checkbox`  |
 | selectedRowKeys | 指定选中项的 key 数组，需要和 onChange 进行配合 | Array | []  |
 | onChange | 选中项发生变化的时的回调 | Function(selectedRowKeys, selectedRows) | -   |
-| getCheckboxProps | 选择框的默认属性配置        | Function(record) |  -   |
 | onSelect | 用户手动选择/取消选择某列的回调         | Function(record, selected, selectedRows) |   -   |
 | onSelectAll | 用户手动选择/取消选择所有列的回调    | Function(selected, selectedRows, changeRows) |   -   |
 

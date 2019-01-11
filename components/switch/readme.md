@@ -72,21 +72,14 @@ import {Switch} from 'dbox-ui';
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | checked | 指定当前是否选中 | boolean | false |
-| checkedChildren | 选中时的内容 | string\|ReactNode |  |
+| checkedChildren | 选中时的内容 | string/ReactNode | - |
 | defaultChecked | 初始是否选中 | boolean | false |
 | size | 开关大小，可选值：`default` `small` | string | default |
-| unCheckedChildren | 非选中时的内容 | string\|ReactNode |  |
-| onChange | 变化时回调函数 | Function(checked:Boolean) |  |
-| onClick | 点击时回调函数 | Function |  |
+| unCheckedChildren | 非选中时的内容 | string/ReactNode | - |
+| onChange | 变化时回调函数 | Function(checked:Boolean) | - |
+| onClick | 点击时回调函数 | Function | - |
 | loading | 加载中的开关 | boolean | false |
 | disabled | 失效状态 | boolean | false |
-
-##### **method**
-
-| 名称 | 描述 |
-| --- | --- |
-| blur() | 移除焦点 |
-| focus() | 获取焦点 |
 
 
 ```jsx noeditor
