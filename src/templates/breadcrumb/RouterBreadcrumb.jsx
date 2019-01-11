@@ -3,7 +3,7 @@ import Breadcrumb from 'components/breadcrumb';
 import Alert from 'components/alert';
 import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
 
-export default class BasicBreadcrumb extends React.Component {
+export default class RouterBreadcrumb extends React.Component {
   render() {
     const Apps = () => (
       <ul className='app-list'>
