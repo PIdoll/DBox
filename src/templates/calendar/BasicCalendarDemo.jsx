@@ -18,6 +18,7 @@ export default class BasicCalendarDemo extends React.Component {
     return (
       <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
         <Calendar
+          value={moment('2019-2')}
           onPanelChange={this.onPanelChange}
           onSelect={this.onSelect}
           onChange={this.onChange}

@@ -8,7 +8,7 @@ import { Calendar } from 'dbox-ui';
 import moment from 'moment';
 
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
-  <Calendar fullscreen={false} validRange={[moment('2018-01'), moment('2028-12')]} />
+  <Calendar validRange={[moment('2018-01'), moment('2028-12')]} />
 </div>
 ```
 
@@ -24,19 +24,18 @@ disabledDate = (current) => {
 }
 
 onPanelChange = (value, mode) => {
-  console.log('onPanelChange', value, mode);
+  console.log('onPanelChange', moment(value).format('YYYY-MM-DD'));
 }
 
 onSelect = (date) => {
-  console.log('onSelect', date);
+  console.log('onSelect', moment(date).format('YYYY-MM-DD'));
 }
 
 onChange = (date) => {
-  console.log('onChange', date);
+  console.log('onChange', moment(date).format('YYYY-MM-DD'));
 }
 <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
   <Calendar
-    fullscreen={false}
     mold='backdrop'
     disabledDate={this.disabledDate}
     onPanelChange={this.onPanelChange}
@@ -50,7 +49,7 @@ onChange = (date) => {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | mold | 不同选择时间的方式('backdrop') | string | 无 |
-| value | 展示日期 | moment | 当前日期 |
+| value | 展示日期(不支持mold='backdrop') | moment | 当前日期 |
 | defaultValue | 默认展示的日期 | moment | 默认日期 |
 | disabledDate | 不可选择的日期 | (currentDate: moment) => boolean | 无 |
 | onPanelChange | 日期面板变化回调 | function(date: moment, mode: string) | 无 |

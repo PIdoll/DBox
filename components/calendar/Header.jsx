@@ -15,7 +15,7 @@ export default class Header extends React.Component {
     super(props);
     this.state = {
       monthValue: null,
-      yearValue: null
+      yearValue: null,
     }
   }
   static propTypes = {
@@ -38,10 +38,13 @@ export default class Header extends React.Component {
   }
 
   componentDidMount() {
+    const { value } = this.props;
+    const defaultValue = moment(value).format('YYYY-MM').split('-');
     this.setState({
       monthNumber: moment().month(),
       monthValue: MonthFormat(moment().month()),
-      yearValue: moment().year()
+      yearValue: moment().year(),
+      defaultValue: defaultValue,
     })
   }
 
