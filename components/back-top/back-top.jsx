@@ -13,9 +13,9 @@ const easeInOutCubic = (t, b, c, d) => {
   const cc = c - b;
   t /= d / 2;
   if (t < 1) {
-    return cc / 2 * t * t * t + b;
+    return (cc / 2) * t * t * t + b;
   } else {
-    return cc / 2 * ((t -= 2) * t * t + 2) + b;
+    return (cc / 2) * ((t -= 2) * t * t + 2) + b;
   }
 };
 
@@ -31,7 +31,7 @@ export default class BackTop extends React.Component {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.node,
-    target: PropTypes.element,
+    target: PropTypes.func,
     onClick: PropTypes.func,
   }
 
@@ -79,7 +79,7 @@ export default class BackTop extends React.Component {
       document.body.scrollTop = value;
       document.documentElement.scrollTop = value;
     } else {
-      targetNode.scroll = value
+      targetNode.scrollTop = value;
     }
   }
 
@@ -87,8 +87,8 @@ export default class BackTop extends React.Component {
     const { visibilityHeight, target = getDefaultTarget } = this.props;
     const scrollTop = getScroll(target(), true);
     this.setState({
-      visible: scrollTop > visibilityHeight
-    })
+      visible: scrollTop > visibilityHeight,
+    });
   }
 
   componentDidMount () {
@@ -119,6 +119,7 @@ export default class BackTop extends React.Component {
       'children',
       'visibilityHeight',
       'target',
+      'visible',
     ]);
 
     const backTopBtn = this.state.visible ? (
