@@ -11,7 +11,7 @@ import Calendar from './calendar';
 import Cascader from './cascader';
 import Checkbox from './checkbox';
 import Collapse from './collapse';
-import DatePicker from './date-picker';
+import DatePicker from './datepicker';
 import Divider from './divider';
 import Dropdown from './dropdown';
 import Drawer from './drawer';
