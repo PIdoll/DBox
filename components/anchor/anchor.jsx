@@ -19,23 +19,24 @@ function getOffsetTop(element, container) {
   if (!element) {
     return 0;
   }
+
   if (!element.getClientRects().length) {
     return 0;
   }
-  // 获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+
   const rect = element.getBoundingClientRect();
+
   if (rect.width || rect.height) {
     if (container === window) {
       container = element.ownerDocument.documentElement;
       return rect.top - container.clientTop;
     }
-    // 判断 container 是否是HTMLElement
-    if (container && container.nodeType === 1) {
-      return rect.top - container.getBoundingClientRect().top;
-    }
+    return rect.top - container.getBoundingClientRect().top;
   }
+
   return rect.top;
 }
+
 function easeInOutCubic(t, b, c, d) {
   const cc = c - b;
   t /= d / 2;
@@ -44,16 +45,16 @@ function easeInOutCubic(t, b, c, d) {
   }
   return cc / 2 * ((t -= 2) * t * t + 2) + b;
 }
-// 匹配以#开头，后面不含#的字符串
+
 const sharpMatcherRegx = /#([^#]+)$/;
-function scrollTo (href, offsetTop = 0, getContainer, callback) {
+function scrollTo(href, offsetTop = 0, getContainer, callback) {
   const container = getContainer();
   const scrollTop = getScroll(container, true);
   const sharpLinkMatch = sharpMatcherRegx.exec(href);
-  if (!sharpLinkMatch) { return false };
+  if (!sharpLinkMatch) { return; }
   const targetElement = document.getElementById(sharpLinkMatch[1]);
   if (!targetElement) {
-    return false;
+    return;
   }
   const eleOffsetTop = getOffsetTop(targetElement, container);
   const targetScrollTop = scrollTop + eleOffsetTop - offsetTop;
@@ -75,8 +76,9 @@ function scrollTo (href, offsetTop = 0, getContainer, callback) {
   };
   raf(frameFunc);
 }
+
 export default class Anchor extends React.Component {
-  static Link = AnchorLink;
+    static Link = AnchorLink;
 
   static propTypes = {
     prefixCls: PropTypes.string,
@@ -98,18 +100,19 @@ export default class Anchor extends React.Component {
   static childContextTypes = {
     idollAnchor: PropTypes.object,
   };
+
   constructor(props) {
     super(props);
-    this.state = {
+      this.state = {
       activeLink: null,
     };
     this.links = [];
   }
 
-  getChildContext () {
+  getChildContext() {
     const idollAnchor = {
       registerLink: (link) => {
-        if (!(this.links.indexOf(link) >= 0)) {
+        if (!this.links.includes(link)) {
           this.links.push(link);
         }
       },
@@ -125,37 +128,37 @@ export default class Anchor extends React.Component {
     };
     return { idollAnchor };
   }
+
   componentDidMount() {
     const { getContainer } = this.props;
     this.scrollEvent = addEventListener(getContainer(), 'scroll', this.handleScroll);
     this.handleScroll();
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     if (this.scrollEvent) {
       this.scrollEvent.remove();
     }
   }
-  componentDidUpdate () {
+
+  componentDidUpdate() {
     this.updateInk();
   }
 
   handleScroll = () => {
     if (this.animating) {
-      return false;
+      return;
     }
     const { offsetTop, bounds } = this.props;
     this.setState({
-      activeLink: this.getCurrentAnchor(offsetTop, bounds)
+      activeLink: this.getCurrentAnchor(offsetTop, bounds),
     });
   }
 
   handleScrollTo = (link) => {
     const { offsetTop, getContainer } = this.props;
-    this.animting = true;
-    this.setState({
-      activeLink: link
-    });
+    this.animating = true;
+    this.setState({ activeLink: link });
     scrollTo(link, offsetTop, getContainer, () => {
       this.animating = false;
     });
@@ -166,19 +169,20 @@ export default class Anchor extends React.Component {
     if (typeof document === 'undefined') {
       return activeLink;
     }
+
     const linkSections = [];
     const { getContainer } = this.props;
     const container = getContainer();
     this.links.forEach(link => {
       const sharpLinkMatch = sharpMatcherRegx.exec(link.toString());
-      if (!sharpLinkMatch) { return; };
+      if (!sharpLinkMatch) { return; }
       const target = document.getElementById(sharpLinkMatch[1]);
       if (target) {
         const top = getOffsetTop(target, container);
         if (top < offsetTop + bounds) {
           linkSections.push({
             link,
-            top
+            top,
           });
         }
       }
@@ -190,7 +194,6 @@ export default class Anchor extends React.Component {
     }
     return '';
   }
-
 
   updateInk = () => {
     if (typeof document === 'undefined') {
@@ -207,44 +210,53 @@ export default class Anchor extends React.Component {
   saveInkNode = (node) => {
     this.inkNode = node;
   }
+
   render() {
-    const { prefixCls,
+    const {
+      prefixCls,
       className = '',
       style,
       offsetTop,
       affix,
       showInkInFixed,
       children,
-      getContainer
-     } = this.props;
+      getContainer,
+    } = this.props;
     const { activeLink } = this.state;
+
     const inkClass = classNames(`${prefixCls}-ink-ball`, {
-      visible: activeLink
+      visible: activeLink,
     });
+
     const wrapperClass = classNames(className, `${prefixCls}-wrapper`);
 
     const anchorClass = classNames(prefixCls, {
       'fixed': !affix && !showInkInFixed,
-    })
+    });
 
     const wrapperStyle = {
       maxHeight: offsetTop ? `calc(100vh - ${offsetTop}px)` : '100vh',
       ...style,
     };
+
     const anchorContent = (
-      <div className={wrapperClass} style={wrapperStyle}>
+      <div
+        className={wrapperClass}
+        style={wrapperStyle}
+      >
         <div className={anchorClass}>
-          <div className={`${prefixCls}-ink`}>
+          <div className={`${prefixCls}-ink`} >
             <span className={inkClass} ref={this.saveInkNode} />
           </div>
           {children}
         </div>
       </div>
-    )
+    );
+
     return !affix ? anchorContent : (
       <Affix offsetTop={offsetTop} target={getContainer}>
         {anchorContent}
       </Affix>
-    )
+    );
   }
 }
