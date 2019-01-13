@@ -1,11 +1,11 @@
 
-#### **何时使用**
-文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用`树控件`可以完整展现其中的层级关系，并具有展开收起选择等交互功能。
+可使用树组件用于表示层级关系的结构，具有收起展开等交互效果。
 
 
 ##### **基本使用**
-最简单的用法，可选中，默认展开等功能。
+可选中，默认展开等功能。
 ```jsx
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -41,8 +41,9 @@ onCheck = (checkedKeys, info) => {
 ```
 
 ##### **多选树**
-有多选框可选择，可禁用。
+可通过设置`checkable`为多选框可选择，设置`disabled`和`disableCheckbox`可分别禁用整个节点和选择框。
 ```jsx
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 onSelect = (selectedKeys, info) => {
 	console.log('selected', selectedKeys, info);
@@ -79,7 +80,9 @@ onCheck = (checkedKeys, info) => {
 ```
 
 ##### **可拖动**
+可通过设置`draggable`属性为可拖动。
 ```jsx
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 
 const gData = [{
@@ -218,7 +221,9 @@ class TreeExample extends React.Component {
 ```
 
 ##### **点击展开节点，异步加载数据**
+可通过设置 `loadData` 属性异步加载数据。
 ```jsx
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -280,6 +285,7 @@ class TreeExample extends React.Component {
 ##### **受控操作示例**
 展示选择树节点，展开/收起节点，选择复选框和默认展开节点等操作示例。
 ```jsx
+import { Tree } from 'dbox-ui';
 const TreeNode = Tree.TreeNode;
 class TreeExample extends React.Component {
    constructor(){
@@ -381,9 +387,8 @@ class TreeExample extends React.Component {
 }
 <TreeExample />
 ```
-## API
 
-### Tree props
+##### **Tree props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -413,7 +418,7 @@ class TreeExample extends React.Component {
 | onRightClick | 响应右键点击 | function({event, node}) | - |
 | onSelect | 点击树节点触发 | function(selectedKeys, e:{selected: bool, selectedNodes, node, event}) | - |
 
-### TreeNode props
+#### **TreeNode props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -423,3 +428,13 @@ class TreeExample extends React.Component {
 | key | 被树的 (default)ExpandedKeys / (default)CheckedKeys / (default)SelectedKeys 属性所用。注意：整个树范围内的所有节点的 key 值不能重复！ | string | 内部计算出的节点位置 |
 | selectable | 设置节点是否可被选中 | boolean | true |
 | title | 标题 | string/ReactNode | '---' |
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import TreeView from '../prevPage/tree';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TreeView />
+</div>
+```

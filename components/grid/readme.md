@@ -1,11 +1,10 @@
 
-#### **概述**
+为在屏幕上和谐一致的定位元素提供依据，24栅格系统有助于提升页面的秩序感和体验。
 
-安全使用Flex布局，该组件有两个部分，一个是Row，一个是Col，采用Row包裹Col的方法来实现栅格布局，并且栅格布局遵从Boostrap3的标准。
-
-####  **基本栅格布局**
+#####  **基本栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import { Row, Col } from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -20,11 +19,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={12}>
             <div style={RowDemoStyle} >col-12</div>
           </Col>
@@ -32,7 +34,7 @@ class GridView extends React.Component {
             <div style={evenColor} >col-12</div>
           </Col>
         </Row>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={8}>
             <div style={RowDemoStyle} >col-8</div>
           </Col>
@@ -63,9 +65,10 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **拥有间隔的栅格**
+##### **拥有间隔的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -83,30 +86,29 @@ const evenColor = {
 class GridView extends React.Component {
   render() {
     return (
-      <div>
-        <Row gutter={16}>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={RowDemoStyle} >col-6</div>
-          </Col>
-          <Col span={6}>
-            <div style={evenColor} >col-6</div>
-          </Col>
-        </Row>
-      </div>
+      <Row gutter={16}>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={RowDemoStyle} >col-6</div>
+        </Col>
+        <Col span={6}>
+          <div style={evenColor} >col-6</div>
+        </Col>
+      </Row>
     )
   }
 }
 <GridView />
 ```
-#### **可以左右偏移的栅格**
+##### **可以左右偏移的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -121,11 +123,14 @@ const evenColor = {
   fontSize: '16px',
   color: '#fff'
 }
+const RowSpace = {
+  marginBottom: '20px'
+}
 class GridView extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={RowSpace}>
           <Col span={6} offset={6}>
             <div style={RowDemoStyle}>col-6 col-offset-6</div>
           </Col>
@@ -147,9 +152,10 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **可排序的栅格**
+##### **可排序的栅格**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -183,9 +189,9 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex布局水平对齐**
+##### **Flex布局水平对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -292,9 +298,10 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex布局垂直对齐**
+##### **Flex布局垂直对齐**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -371,9 +378,10 @@ class GridView extends React.Component {
 }
 <GridView />
 ```
-#### **Flex排序**
+##### **Flex排序**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -417,9 +425,10 @@ class GridView extends React.Component {
 <GridView />
 ```
 
-#### **自定义栅格布局**
+##### **自定义栅格布局**
 ```jsx
-const {Row, Col} = require('../grid');
+import {Row, Col} from 'dbox-ui';
+
 const RowDemoStyle = {
   backgroundColor: '#13B886',
   padding: '10px 0',
@@ -457,7 +466,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 
-#### **Row**
+##### **Row**
 | 参数       | 说明             | 类型               | 默认值       |
 |-----------|-----------------|--------------------|-------------|
 | gutter    | 栅格间隔   | number | 0        |
@@ -465,7 +474,7 @@ class GridView extends React.Component {
 | align     | flex 布局下的垂直对齐方式：`top` `middle` `bottom`  | string | `top` |
 | justify   | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between`   | string | `start`  |
 
-#### **Col**
+##### **Col**
 
 | 参数      | 说明             | 类型               | 默认值       |
 |----------|-----------------|--------------------|-------------|
@@ -479,4 +488,11 @@ class GridView extends React.Component {
 | md       | `≥992px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object | - |
 | lg       | `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | number or object|-|
 
-<style>.idoll-row{margin-bottom:10px;}</style>
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import GridView from '../prevPage/grid';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <GridView />
+</div>
+```

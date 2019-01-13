@@ -5,15 +5,11 @@
 @btn-prefix-cls: idoll-btn;
 
 // Button styles
-// -----------------------------
 .@{btn-prefix-cls} {
   .reset-component;
   .btn;
   .btn-default;
 
-  // Make sure that the target of Button's click event always be `button`
-  // 保证子元素不会成为鼠标事件的target
-  // Ref: https://github.com/ant-design/ant-design/issues/7034
   > i,
   > span {
     pointer-events: none;
@@ -92,7 +88,7 @@
     left: -1px;
     bottom: -1px;
     right: -1px;
-    background: #fff;
+    background: @btn-default-bg;
     opacity: 0.35;
     content: '';
     border-radius: inherit;
@@ -113,26 +109,6 @@
     }
   }
 
-  // &&-loading:before {
-  //   display: block;
-  // }
-
-  // &&-loading:not(&-circle):not(&-circle-outline):not(&-icon-only) {
-  //   padding-left: 29px;
-  //   pointer-events: none;
-  //   position: relative;
-  //   .@{iconfont-css-prefix} {
-  //     margin-left: -14px;
-  //   }
-  // }
-
-  // &-sm&-loading:not(&-circle):not(&-circle-outline):not(&-icon-only) {
-  //   padding-left: 24px;
-  //   .@{iconfont-css-prefix} {
-  //     margin-left: -17px;
-  //   }
-  // }
-
   &-group {
     .btn-group(@btn-prefix-cls);
   }
@@ -140,12 +116,6 @@
   &-block {
     width: 100%;
   }
-
-  // &:not(&-circle):not(&-circle-outline)&-icon-only {
-  //   padding-left: 8px;
-  //   padding-right: 8px;
-  //   color: red;
-  // }
 
   // http://stackoverflow.com/a/21281554/3040605
   &:focus > span,
@@ -167,35 +137,13 @@
   &-sm  &-loading {
     .loading(@btn-font-size-sm);
   }
-  
-
-  // 点击后的效果
-  // &-clicked:after {
-    // content: '';
-    // position: absolute;
-    // top: -1px;
-    // left: -1px;
-    // bottom: -1px;
-    // right: -1px;
-    // border-radius: inherit;
-    // border: 0 solid @primary-color;
-    // opacity: 0.4;
-    // animation: buttonEffect .4s;
-    // display: block;
-    // background-color:@primary-Pressed;
-    // color: #fff;
-  // }
-
-  // &-danger&-clicked:after {
-    // border-color: @btn-danger-color;
-  // }
 
   // 幽灵按钮
   &-background-ghost {
     background: transparent !important;
-    border-color: #fff;
-    color: #fff;
-    .button-variant-ghost(#fff);
+    border-color: @btn-default-bg;
+    color: @btn-default-bg;
+    .button-variant-ghost(@btn-default-bg);
   }
 
   &-background-ghost&-primary {

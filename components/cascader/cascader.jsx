@@ -41,7 +41,7 @@ function defaultSortFilteredOption(a, b, inputValue) {
 const defaultDisplayRender = (label) => label.join(' / ');
 
 export default class Cascader extends React.Component {
-  static PropTypes = {
+  static propTypes = {
       defaultValue: PropTypes.array,
       filter: PropTypes.bool,
       matchInputWidth: PropTypes.number,
@@ -316,7 +316,7 @@ export default class Cascader extends React.Component {
 
     const loadingIcon = (
       <span className={`${prefixCls}-menu-item-loading-icon`}>
-        <Icon type='pro-loading' />
+        <Icon type='loading' />
       </span>
     );
 

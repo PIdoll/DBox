@@ -1,0 +1,509 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+// @import "../colors/index.less";
+@import "../colors/colors.less";
+// The prefix to use on all css classes from idoll.
+@idoll-prefix             : idoll;
+
+// --------------font colors(文字色) ------------------
+
+// 浅色背景/白色
+@title-color          : fade(#000, 80%);     // #15
+@text-color           : fade(#000, 60%);     // #16
+@text-color-secondary : fade(#000, 40%);     // #17
+@text-color-disable   : fade(#000, 20%);      // #18
+
+
+// 深色背景/黑色
+@title-color-dark           : fade(#FFF, 100%);    // #19
+@text-color-dark            : fade(#FFF,80%);      // #20
+@text-color-secondary-dark  : fade(#FFF, 60%);    // #21
+@text-color-disable-dark    : fade(#FFF, 40%);    // #22
+
+
+// ----------------- status colors(状态色) -------------------
+
+// 品牌色/主色
+@primary-color             : #13B886;            // #01
+@primary-hover             : #42C69E;            // #0101
+@primary-pressed           : #0F9A70;
+@primary-focus             : @primary-hover;       // #0102
+@primary-lightBg           : #E7F8F3;           // #0103
+
+// 成功色
+@success-color             : #3CCB69;           // #02
+@success-hover             : #63D587;           // #0201
+@success-pressed           : #32AA58;           // #0202
+@success-focus             : @success-hover;      // #0203
+@success-lightBg           : #EAF9EF;           // #0204
+
+// 警告色
+@warning-color             : #F9AA29;           // #03
+@warning-hover             : #FABB53;           // #0301
+@warning-pressed           : #D08E22;           // #0302
+@warning-focus             : @warning-hover;      // #0304
+@warning-lightBg           : #FDF6E9;           // #0305
+
+// 危险/出错色
+@error-color               : #F44336;          // #04
+@error-hover               : #F6685E;          // #0401
+@error-pressed             : #CC382D;          // #0402
+@error-focus               : @error-hover;       // #0403
+@error-lightBg             : #FCECEA;          // #0404
+
+
+// ----------------- neutral colors(中性色) ------------------------
+
+@black                     : #000000;          // #05
+@white                     : #FFFFFF;          // #06
+@background                : #F8F8F8;          // #07
+@table-header-color        : #FAFAFA;          // #08
+@divider-color             : #F5F5F5;          // #09
+@border                    : #E2E2E2;          // #10
+@border-color-dark         : fade(#E2E2E2, 40%);  // #11
+
+
+// ----------------- others(其他) -------------------------------
+
+@disabled                  : #F8F9FC;          // #12
+@navbar                    : #2F323B;          // #13
+
+
+// ----------------- shadow(阴影) --------------------------------
+
+// 阴影颜色
+@shadow-color              : rgba(0,0,0,0.10);  // #14
+
+// 基础阴影
+@box-shadow-base           : 0 0 8px @shadow-color;;  // #1401
+
+//较小阴影
+@shadow-small-up           : 0 -2px 8px @shadow-color; // #1402
+@shadow-small-right        : 2px 0 8px @shadow-color;  // #1403
+@shadow-small              : 0 2px 8px @shadow-color;  // #1404
+@shadow-small-left         : -2px 0 8px @shadow-color; // #1405
+
+// 较大阴影
+@shadow-large              : 0 8px 16px 0 @shadow-color; // #1406
+
+
+// ------------------- icon color(图标颜色) ----------------------------
+
+// 浅色背景/白色
+@icon-default              : @text-color-secondary;      // #17
+@icon-hover                : @text-color;                // #16
+@icon-pressed              : @title-color;               // #15
+@icon-focus                : @text-color;                // 16
+@icon-disabled             : @text-color-disable;        // #18
+
+// 深色背景/黑色
+@icon-default-dark         : @text-color-secondary-dark; // #21
+@icon-hover-dark           : @text-color-dark;           // #20
+@icon-pressed-dark         : @title-color-dark;          // #19
+@icon-focus-dark           : @text-color-dark;           // #20
+@icon-disabled-dark        : @text-color-disable-dark;   // #22
+
+
+// ------------------- link colors(链接颜色) ----------------------------
+
+@link-color                : @primary-color;             // #23
+@link-hover-color          : @primary-hover;             // #24
+@link-pressed-color        : @primary-pressed;           // #25
+@link-focus-color          : @primary-focus;             // #26
+
+// ------------------ font(字体) -----------------------------------
+
+// 主字体
+@font-family               : -apple-system, BlinkMacSystemFont, "PingFang SC" , "Hiragino Sans GB" , "Microsoft YaHei" , "Helvetica Neue" , Helvetica , Arial , sans-serif ;   // #27
+
+// 数字
+@font-family-number        : "Helvetica Neue For Number", @font-family-no-number;  // #28
+
+// 代码
+@code-family               : 'Lucida Console',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace ;   // #29
+
+
+// ------------------- font size(字体大小) ----------------------------
+@font-size-base            : 14px;                       // #30
+@font-size-lg              : @font-size-base + 2px;      // #3001
+@font-size-sm              : @font-size-base - 2px;      // #3002
+
+
+// ------------------- padding(内边距) ------------------------------
+@padding-lg                : 24px;                       // #31
+@padding-md                : 16px;                       // #32
+@padding-sm                : 12px;                       // #33
+@padding-xs                : 8px;                        // #34
+
+// ------------------- border style(边框样式) -------------------------
+@border-radius-base        : 3px;                        // #35
+@border-width-base         : 1px;                        // #36
+@border-style-base         : solid;                      // #37
+
+// Animation(动画)
+@ease-out                  : cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in                   : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out               : cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back             : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back              : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back          : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ             : cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ              : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ          : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint            : cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint             : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint         : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Animation speed
+@animation-duration-slow   : .3s; // Modal
+@animation-duration-base   : .2s;
+@animation-duration-fast   : .1s; // Tooltip
+
+
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs                 : 480px;
+@screen-xs-min             : @screen-xs;
+
+// Small screen / tablet
+@screen-sm                 : 576px;
+@screen-sm-min             : @screen-sm;
+
+// Medium screen / desktop
+@screen-md                 : 768px;
+@screen-md-min             : @screen-md;
+
+// Large screen / wide desktop
+@screen-lg                : 992px;
+@screen-lg-min            : @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl                : 1200px;
+@screen-xl-min            : @screen-xl;
+
+// Extra extra large screen / large descktop
+@screen-xxl               : 1600px;
+@screen-xxl-min           : @screen-xxl;
+
+// provide a maximum
+@screen-xs-max            : (@screen-sm-min - 1px);
+@screen-sm-max            : (@screen-md-min - 1px);
+@screen-md-max            : (@screen-lg-min - 1px);
+@screen-lg-max            : (@screen-xl-min - 1px);
+@screen-xl-max            : (@screen-xxl-min - 1px);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // -------- Colors -----------
+// // default colors
+// @primary-color          : #13B886;                                                 //修改为具体色值#01
+// @success-color          : #3CCB69;                                                //#02
+// @warning-color          : #F9AA29;                                                //#03
+// @error-color            : #F44336;                                                //#04
+// @default-color          : #E2E2E2;                                             
+// @processing-color       : #13B886;
+
+// // hover colors
+// @primary-Hover          : #42C69E;                                                 //#0101
+// @success-Hover          : #63D587;                                                 //#0201
+// @warning-Hover          : #F9AA29;                                                 //#0301
+// @error-Hover            : #F44336;                                                 //#0401
+
+// // Pressed colors
+// @primary-Pressed          : #42C69E;                                               //#0102
+// @success-Pressed          : #3CCB69;                                               //#0202
+// @warning-Pressed          : #FABB53;                                               //#0302
+// @error-Pressed            : #F6685E;                                               //#0402
+
+// // LightBg
+// @primary-LightBg          : #E7F8F3;                                               //#0104
+// @success-LightBg          : #EBF9F0;                                               //#0204
+// @warning-LightBg          : #FEF6EA;                                               //#0304
+// @error-LightBg            : #FDECEB;                                               //#0404
+
+
+// // 中性色
+// @Sider-Menu        : #2F323B;
+// @Black             : #000000;                                                       //#05
+// @Black5            : fade(#000, 5%);
+// @background        : #F5F5F5;                                                       //#07
+// @disabled          : #F8F9FC;                                                       //#12
+// @border-color-dark : fade(#E2E2E2, 40%);                                            //#11
+// @navbar            : #2F323B;                                                       //#13
+// @white             : #FFFFFF;                                                       //#06
+// @white5           : fade(#FFF, 5%);
+// @shadow            : rgba(0,0,0,0.10); 
+// @shadow-button     : rgba(9, 184, 134, 0.20);
+// @border            : #E2E2E2;                                                       //#10
+
+// // 后期可能需要删除的颜色
+// @primary-spread-color   : @primary-Pressed;
+// @info-color             : @primary-color;
+// @highlight-color        : @primary-Hover;
+// @processing-color       : @primary-color;
+// @normal-color           : #d9d9d9;
+
+// // 链接颜色
+// @link-color             : @primary-color;                                             //#23
+// @link-hover-color       : @primary-spread-color;                                      //#24
+// @link-active-color      : @primary-color;                                             //#25
+
+// // Color used by default to control hover and active backgrounds and for
+// // alert info backgrounds.
+// @primary-1: @primary-LightBg;  // replace tint(@primary-color, 90%)
+
+// // Base Scaffolding Variables
+// // ---
+
+// // Background color for `<body>`
+// @body-background        : #fff;
+// // Base background color for most components
+// @component-background   : #fff;
+
+// @section-background-dark: #f1f2f7;
+// @section-background-light: #F8F9FC;
+
+// // Transfer
+// @transfer-disabled-bg: @disabled-bg;
+
+
+// @font-family-no-number  : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;        //#27
+// @font-family            : "Helvetica Neue For Number", @font-family-no-number;                                                                                                                //#28
+// @code-family            : Consolas, Menlo, Courier, monospace;                                                                                                                                //#29
+
+// // 白色背景
+// @background-base        : #FFFFFF;                                             
+// @background             : #F8F8F8;
+// @body-background        : fade(#000, 60%);
+
+// // 白色背景字体颜色
+// @heading-color          : fade(#000, 80%);
+// @text-color             : fade(#000, 60%);                                          //#16
+// @text-color-secondary   : fade(#000, 40%);                                          //#17
+// @text-color-disable     : fade(#000, 20%);                                          //#18
+// @title-color            : fade(#000, 80%);                                          //#15
+
+// // 白色背景字体图标颜色
+// @default-icon           : fade(#000, 40%);                                          //#17
+// @disabled-icon          : fade(#000, 20%);                                          //#18
+// @hover-icon             : fade(#000, 60%);                                          //#16
+// @pressed-icon           : fade(#000, 80%);                                          //#15
+
+// // 深色背景
+// @background-base-dark   : #000000;
+// @body-background-dark   : fade(#FFFFFF, 80%);
+
+// // 深色背景字体图标颜色
+// @default-icon-dark           : fade(#FFFFFF, 60%);                                   //#21                               
+// @disabled-icon-dark          : fade(#FFFFFF, 40%);                                   //#22
+// @hover-icon-dark             : fade(#FFFFFF, 80%);                                   //#20
+// @pressed-icon-dark           : #FFFFFF;                                              //#19
+
+// // 深色背景字体颜色
+// @heading-color-dark     : fade(#fff, 100%); 
+// @text-color-dark        : fade(#fff,80%);                                            //#20
+// @text-color-secondary-dark : fade(#fff, 60%);                                        //#21
+// @text-color-disable-dark   : fade(#fff, 40%);                                        //#22
+// @title                     : #FFFFFF;                                                //#19
+
+
+
+// @font-size-base         : 14px;                                                        //#30
+// @font-size-lg           : @font-size-base + 2px;                                       //#3001
+// @font-size-sm           : @font-size-base - 2px;                                       //#3002
+
+// @line-height-base       : 1.5;
+// @footer-height: 60px; //Modal footer height
+// @title-height: 52px; //Modal title height
+
+
+
+// // vertical paddings
+// @padding-lg    : 24px;                                                                // containers   #31
+// @padding-md    : 16px;                                                                // small containers and buttons    #32                 
+// @padding-sm    : 12px;                                                                // Form controls and items  #33
+// @padding-xs    : 8px;                                                                 // small items、文字   #34
+// @message-notice-content-padding: 10px 16px; // message
+
+// // inline margins
+// @margin-xs    : 8px;  // 图标文字间距
+
+// // vertical padding for all form controls
+// @control-padding-horizontal: @padding-sm;
+// @control-padding-horizontal-sm: @padding-xs;
+
+// // The background colors for active and hover states for things like
+// // list items or table cells.
+// @item-active-bg         : @primary-1;
+// @item-hover-bg          : @primary-1;
+
+// // ICONFONT
+// @iconfont-css-prefix    : idoll-icon;
+// @icon-url               : "/assets/fonts";
+
+// // LINK
+// @link-decoration        : none;
+// @link-hover-decoration  : none;
+
+// // ------------ table ------------------
+
+// @table-header-color                 : #FAFAFA;                                                //#08
+
+// // ------------ divider -----------------
+
+// @divider-color                      : #F5F5F5;                                                //#09
+
+// // Animation
+// @ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+// @ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+// @ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+// @ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+// @ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+// @ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+// @ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+// @ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+// @ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+// @ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+// @ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+// @ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+// // Animation speed
+// @animation-duration-slow: .3s; // Modal
+// @animation-duration-base: .2s;
+// @animation-duration-fast: .1s; // Tooltip
+
+// // Border
+// @border-radius-base     : 3px;                                                                  //#35
+// @border-radius-sm       : 2px;  
+// @border-color-base      : @border;  // base border outline a component
+// @border-color-split     : @border;  // split border inside a component
+// @border-width-base      : 1px;                                                                  // width of the border for a component    #36
+// @border-style-base      : solid;                                                                // style of a components border           #37
+// @border-style-split     : dash;          // style of a components border
+
+// // Border Colors
+// @primary-border-color   : @primary-color;
+// @success-border-color   : @success-color;
+// @warning-border-color   : @warning-color;
+// @error-border-color     : @error-color;
+
+// // Outline
+// @outline-blur-size      : 0;
+// @outline-width          : 2px;
+// @outline-color          : @primary-color;
+
+// @background-color-light : hsv(0, 0, 98%);  // background of header and selected item
+// @background-color-base  : hsv(0, 0, 96%);  // Default grey background color
+
+// // Disabled states
+// @disabled-color         : @text-color-disable;
+// @disabled-bg            : @disabled;
+// @disabled-color-dark    : text-color-disable-dark;
+
+// // Shadow
+// @shadow-color           : @shadow;                                                              //修改为具体数值     #14
+// @box-shadow-base        : @shadow-1-down;                                                       //#1401
+// // @todo
+// @shadow-1-up            : 0 2px 8px @shadow-color;                                              //#1402
+// @shadow-1-down          : 0 2px 8px @shadow-color;                                              //#1404
+// @shadow-1-left          : -2px 0 8px @shadow-color;                                             //#1405
+// @shadow-1-right         : 2px 0 8px @shadow-color;                                              //#1403
+// // @shadow-2               : 0 4px 12px @shadow-color;
+// @Shadow-large               : 0 8px 16px 0 @shadow-color;                                       //#1406
+// @Shadow-small           : 0 2px 8px 0 @shadow-color;
+// // @shadow-button          : 0 2px 8px 0 @shadow-button;
+
+// // z-index list
+// @zindex-affix           : 10;
+// @zindex-back-top        : 10;
+// @zindex-modal-mask      : 1000;
+// @zindex-modal           : 1000;
+// @zindex-notification    : 1010;
+// @zindex-message         : 1010;
+// @zindex-popover         : 1030;
+// @zindex-picker          : 1050;
+// @zindex-dropdown        : 1050;
+// @zindex-tooltip         : 1060;
+
+// // Disabled cursor for form controls and buttons.
+// @cursor-disabled        : not-allowed;
+
+// //-----------------------------------------------------ALL Control End--------------------------------------------------------------------------
+
+// // Media queries breakpoints
+// // Extra small screen / phone
+// @screen-xs              : 480px;
+// @screen-xs-min          : @screen-xs;
+
+// // Small screen / tablet
+// @screen-sm              : 576px;
+// @screen-sm-min          : @screen-sm;
+
+// // Medium screen / desktop
+// @screen-md              : 768px;
+// @screen-md-min          : @screen-md;
+
+// // Large screen / wide desktop
+// @screen-lg              : 992px;
+// @screen-lg-min          : @screen-lg;
+
+// // Extra large screen / full hd
+// @screen-xl              : 1200px;
+// @screen-xl-min          : @screen-xl;
+
+// // Extra extra large screen / large descktop
+// @screen-xxl              : 1600px;
+// @screen-xxl-min          : @screen-xxl;
+
+// // provide a maximum
+// @screen-xs-max          : (@screen-sm-min - 1px);
+// @screen-sm-max          : (@screen-md-min - 1px);
+// @screen-md-max          : (@screen-lg-min - 1px);
+// @screen-lg-max          : (@screen-xl-min - 1px);
+// @screen-xl-max          : (@screen-xxl-min - 1px);
+
+// //loading
+// .loading(@size:14px,@color:#13B886) {
+//   &:before {
+//     content: "\E914";
+//     font-family: idollicon;
+    
+//     animation: loadingCircle 1s infinite linear;
+//     text-align: center;
+//     display: inline-block;
+//     color: @color;
+//     z-index: 1;
+//     font-size: @size;
+//     // border:1px solid;
+//     // border-left:1px solid transparent;
+//     // border-radius: 50%;
+//     // width: @size;
+//     // height: @size;
+//     opacity: 1;
+//     background: none;
+//   }
+// }
+
+// @keyframes loadingCircle {
+//   0% {
+//     // transform-origin: 50% 50%;
+//     transform: rotate(0deg) scale(1);
+//   }
+//   100% {
+//     // transform-origin:50% 50%;
+//     transform: rotate(360deg) scale(1);
+//   }
+// }

@@ -1,11 +1,10 @@
-<!-- # [Select](http://naotu.baidu.com/file/8d654ac25a8b27c4e3ece259370aae2e?token=f63e1566705c1ce6) -->
 
-#### **何时使用**
-需要应用到下拉选项时，用于替换原生的选择器。
+可进行单选、多选、分组选择等场景。
 
 ##### **基本使用**
-通过设置 `size`属性控制大小, `disabled` 设置为禁用。
+可通过设置 `size` 属性控制大小, `disabled` 属性可设置为禁用。
 ```jsx
+import { Select } from 'dbox-ui';
 const {Option} = Select;
 <div>
     <Select size='small' placeholder='请选择' style={{ width: 200 }}>
@@ -37,9 +36,10 @@ const {Option} = Select;
     </Select>
 </div>
 ```
-#### **搜索下拉框**
-展开后可对选项进行搜索。
+##### **搜索下拉框**
+可通过设置`showSearch` 属性对选项进行搜索。
 ```jsx
+import { Select } from 'dbox-ui';
 const {Option} = Select;
 <Select showSearch style={{ width: 200 }} placeholder='请选择' >
     <Option value='beijing'>北京</Option>
@@ -49,20 +49,21 @@ const {Option} = Select;
 </Select>
 ```
 
-#### **多选下拉框**
-多选，从已有条目中选择。设置 `mode` 属性为 `tags` 可随意输入内容。
+##### **多选下拉框**
+可通过设置 `mode` 属性为 `multiple` 从已有条目中多选。设置 `mode` 属性为 `tags` 可随意输入内容。
 ```jsx
+import { Select } from 'dbox-ui';
 const {Option} = Select;
 <div>
-    <Select mode='multiple' style={{ width: 200 }} placeholder='多选' >
+    <Select mode='multiple' style={{ width: 200 }} defaultValue='beijing' placeholder='多选' disabled >
         <Option value='beijing'>北京</Option>
         <Option value='shanghai'>上海</Option>
         <Option value='guangzhou'>广州</Option>
         <Option value='shenzhen'>深圳</Option>
     </Select>
     <br /><br />
-    <Select mode='tags' style={{ width: 200 }} placeholder='可随意输入内容' >
-        <Option value='beijing'>北京</Option>
+    <Select mode='tags' style={{ width: 200 }} placeholder='可随意输入内容' disabled>
+        <Option value='beijing' >北京</Option>
         <Option value='shanghai'>上海</Option>
         <Option value='guangzhou'>广州</Option>
         <Option value='shenzhen'>深圳</Option>
@@ -70,12 +71,13 @@ const {Option} = Select;
 </div>
 ```
 
-#### **获得选项文本**
-
+##### **获得选项文本**
+默认情况下onChange只能获取value值，如果需要获取选中节点的文本，可以使用labelInValue属性。
 ```jsx
+import { Select } from 'dbox-ui';
 const {Option} = Select;
 handleChange = (value) => {
-    console.log(value); 
+    console.log(value);
 }
 <Select labelInValue defaultValue={{ key: 'beijing' }} style={{ width: 200 }} onChange={this.handleChange}>
     <Option value='beijing'>北京</Option>
@@ -85,8 +87,10 @@ handleChange = (value) => {
 </Select>
 ```
 
-#### **搜索用户**
+##### **搜索用户**
+可以通过调用接口获取下拉框内容。
 ```jsx
+import { Select,Spin } from 'dbox-ui';
 const {Option} = Select;
 class SearchExample extends React.Component {
     constructor() {
@@ -145,9 +149,10 @@ class SearchExample extends React.Component {
 ```
 
 
-#### **分组**
-使用用 `OptGroup` 进行选项分组。
+##### **分组**
+使用 `Select.OptGroup` 进行选项分组。
 ```jsx
+import { Select } from 'dbox-ui';
 const {Option, OptGroup} = Select;
 <Select
     defaultValue='hefei'
@@ -164,7 +169,7 @@ const {Option, OptGroup} = Select;
     </OptGroup>
 </Select>
 ```
-#### **Select**
+##### **Select**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | allowClear | 支持清除 | boolean | false |
@@ -206,14 +211,14 @@ const {Option, OptGroup} = Select;
 | open | 是否展开下拉菜单 | boolean | - |
 | onDropdownVisibleChange | 展开下拉菜单的回调 | function(open) | - |
 
-#### **Select Methods**
+##### **Select Methods**
 
 | 名称 | 说明 |
 | --- | --- |
 | blur() | 取消焦点 |
 | focus() | 获取焦点 |
 
-#### **Option props**
+##### **Option props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -223,9 +228,19 @@ const {Option, OptGroup} = Select;
 | value | 默认根据此属性值进行筛选 | string\number | - |
 | className | Option 器类名 | string | - |
 
-#### **OptGroup props**
+##### **OptGroup props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | key |  | string | - |
 | label | 组名 | string\React.Element | 无 |
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import SelectView from '../prevPage/select';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <SelectView />
+</div>
+```

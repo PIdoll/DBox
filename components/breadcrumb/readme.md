@@ -1,12 +1,9 @@
 
-#### **何时使用**
-- 当系统拥有超过两级以上的层级结构时；
-- 当需要告知用户『你在哪里』时；
-- 当需要向上导航的功能时。
+帮助用户查看当前所处的位置。
 
-
-#### **基本的面包屑**
+##### **基本用法**
 ```jsx
+import { Breadcrumb } from 'dbox-ui';
 class BreadcrumbView extends React.Component {
   render() {
     return (
@@ -21,8 +18,10 @@ class BreadcrumbView extends React.Component {
 <BreadcrumbView />
 ```
 
-#### **带图标的面包屑**
+##### **带图标的**
 ```jsx
+import { Breadcrumb, Icon } from 'dbox-ui';
+
 class BreadcrumbView extends React.Component {
   render() {
     return (
@@ -44,14 +43,16 @@ class BreadcrumbView extends React.Component {
 <BreadcrumbView />
 ```
 
-#### **自定义分隔符的面包屑**
+##### **自定义分隔符**
 ```jsx
+import { Breadcrumb } from 'dbox-ui';
+
 class BreadcrumbView extends React.Component {
   render() {
     return (
       <Breadcrumb separator='>'>
         <Breadcrumb.Item>首页</Breadcrumb.Item>
-        <Breadcrumb.Item><a href='javascript:void(0);'>个人中心     </a></Breadcrumb.Item>
+        <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
         <Breadcrumb.Item>设置</Breadcrumb.Item>
       </Breadcrumb>
     )
@@ -61,13 +62,13 @@ class BreadcrumbView extends React.Component {
 
 ```
 
-#### **API**
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | separator | 分隔符自定义 | string\ReactNode | '/' |
 
-#### **与browserHistory配合**
+##### **与browserHistory配合**
 ```html
 import { Link } from 'react-router';
 
@@ -87,4 +88,14 @@ function itemRender(route, params, routes, paths) {
 }
 
 return <Breadcrumb itemRender={itemRender} routes={routes}/>;
+```
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import BreadcrumbView from '../prevPage/breadcrumb';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <BreadcrumbView />
+</div>
 ```

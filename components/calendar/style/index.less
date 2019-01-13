@@ -1,4 +1,4 @@
-@import '../../../style/theme/default/default.less';
+@import '../../../style/theme/default/index.less';
 @import '../../../style/mixins/index.less';
 
 @full-calendar-prefix-cls: ~'@{idoll-prefix}-fullcalendar';
@@ -6,21 +6,22 @@
 .@{full-calendar-prefix-cls} {
   .reset-component;
   outline: none;
-  border-top: @border-width-base @border-style-base @border-color-base;
+  border-top: @border-width-base @border-style-base @border;
 
   &-month-select {
     margin-left: 8px;
   }
 
   &-backdrop-header {
-    padding: 12px 24px 12px 24px;
+    padding: @padding-sm @padding-lg;
     display: flex;
-    border-radius: 4px 4px 0 0;
+    border-radius: @border-radius-base @border-radius-base 0 0;
     justify-content: space-between;
     background-color: @primary-color;
 
     &-left, &-right {
-      color: #fff;
+      font-size: @calendar-choose-icon-size;
+      color: @calendar-choose-icon-color;
       margin-top: 6px;
     }
 
@@ -29,40 +30,27 @@
     }
 
     &-time {
-      font-size:16px;
+      font-size:@font-size-lg;
       font-family:PingFangSC-Medium;
       font-weight:500;
-      color: #fff;
+      color: @calendar-time-color;
     }
   }
 
   &-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 11px 24px 11px 24px;
+    padding: @padding-sm @padding-lg;
     text-align: right;
 
     .title {
-      font-size:16px;
+      font-size:@font-size-lg;
       font-family:PingFangSC-Regular;
       font-weight:400;
       color:rgba(0,0,0,0.85);
-      line-height:24px;
+      line-height:@calendar-text-line-height;
     }
 
     .@{idoll-prefix}-select-dropdown {
       text-align: left;
-    }
-
-    .@{idoll-prefix}-radio-group {
-      margin-left: 8px;
-      text-align: left;
-    }
-
-    label.@{idoll-prefix}-radio-button {
-      height: 22px;
-      line-height: 20px;
-      padding: 0 10px;
     }
   }
 
@@ -72,7 +60,7 @@
   }
 
   &-calendar-body {
-    padding: 24px 24px;
+    padding: @padding-xs;
   }
 
   table {
@@ -130,21 +118,21 @@
     margin: 0 auto;
     color: @text-color;
     border-radius: @border-radius-sm;
-    width: 24px;
-    height: 24px;
+    width: @calendar-text-width;
+    height: @calendar-text-height;
     padding: 0;
     background: transparent;
-    line-height: 24px;
+    line-height: @calendar-text-line-height;
     transition: all .3s;
 
     &:hover {
-      background: @primary-LightBg;
+      background: @primary-lightBg;
       cursor: pointer;
     }
 
     &:active {
       background-color: @primary-color;
-      color: #fff;
+      color: @calendar-active-color;
     }
   }
 
@@ -154,13 +142,13 @@
 
   &-today &-value,
   &-month-panel-current-cell &-value {
-    box-shadow: 0 0 0 1px @primary-color inset;
+    box-shadow: @calendar-box-shadow inset;
   }
 
   &-selected-day &-value,
   &-month-panel-selected-cell &-value {
     background: @primary-color;
-    color: #fff;
+    color: @calendar-month-value-color;
   }
 
   &-disabled-cell-first-of-row &-value {
@@ -216,23 +204,19 @@
     display: block;
     color: @text-color;
     height: 116px;
-    padding: 4px 8px;
-    border-top: 2px solid @border-color-split;
+    padding: 4px @padding-xs;
+    border-top: 2px @border-style-base @border;
     transition: background .3s;
 
     &:hover {
-      background: @item-hover-bg;
+      background: @primary-lightBg;
       cursor: pointer;
-    }
-
-    &:active {
-      background: @primary-2;
     }
   }
 
   &-fullscreen &-column-header {
     text-align: right;
-    padding-right: 12px;
+    padding-right: @padding-sm;
     padding-bottom: 5px;
   }
 
@@ -269,7 +253,7 @@
 
   &-fullscreen &-last-month-cell &-date,
   &-fullscreen &-next-month-btn-day &-date {
-    color: @disabled-color;
+    color: @text-color-disable;
   }
 
   &-fullscreen &-content {
@@ -296,9 +280,10 @@
   }
 
   &-disabled-cell &-value {
-    color: @disabled-color;
+    color: @text-color-disable;
     border-radius: 0;
-    width: auto;
+    // width: auto;
+    border-radius: @border-width-base+1;
     cursor: not-allowed;
   }
 }

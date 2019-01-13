@@ -1,8 +1,9 @@
 // object.omit github.com/jonschlinkert/object.omit
-import React, { Component } from 'react'
-import classNames from 'classnames'
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import omit from 'object.omit';
+import Icon from '../icon';
 
 import './style'
 
@@ -16,6 +17,7 @@ function fixControlledValue(value) {
 export default class Input extends Component {
   static defaultProps = {
     // intialValue: '',
+    search: false, // is search input
     disabled: false,
     prefixCls: 'idoll-input',
     type: 'text',
@@ -55,10 +57,21 @@ export default class Input extends Component {
     onChange: PropTypes.func,
     beforelength: PropTypes.string, // 前置的宽度
     afterlength: PropTypes.string, // 后置的宽度
+    clearable: PropTypes.bool,
+    search: PropTypes.bool,
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
   };
+
+  constructor() {
+    super();
+    this.state = {
+      isOnInput: false,
+      isInputHover: false,
+      isIconHover: false,
+    }
+  }
 
   handleKeyDown = (e) => {
     const { onPressEnter, onKeyDown } = this.props;
@@ -66,7 +79,7 @@ export default class Input extends Component {
       onPressEnter(e);
     }
     if (onKeyDown) {
-      onKeyDown(e)
+      onKeyDown(e);
     }
   }
 
@@ -131,10 +144,6 @@ export default class Input extends Component {
         )
     ) : null;
 
-    // const className = classNames({
-    //   [`${props.prefixCls}-wrap`]: true,
-    //   [wrapperClassName]: (addonBefore || addonAfter)
-    // });
     const className = classNames(`${props.prefixCls}-wrapper`, {
       [wrapperClassName]: (addonBefore || addonAfter),
     });
@@ -168,10 +177,18 @@ export default class Input extends Component {
     );
   }
 
+  // 清除输入框
+  onClear = () => {
+    this.input.value = '';
+    this.setState({
+      isHover: false,
+    })
+  }
+
   renderLaybeldIcon = (children) => {
     const { props } = this;
 
-    if (!('prefix' in props || 'suffix' in props)) {
+    if (!('prefix' in props || 'suffix' in props || 'clearable' in props)) {
       return children;
     }
     const prefix = props.prefix ? (
@@ -180,14 +197,34 @@ export default class Input extends Component {
       </span>
     ) : null;
 
+    const clearIcon = <Icon onMouseLeave={this.handleIconOnMouseLeave} onMouseEnter={this.handleIconOnMouseEnter} type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
+    const clearSuffix = React.cloneElement(clearIcon, {
+      onMouseDown: this.onClear,
+      className: 'icon-hover',
+    });
+
+    const clearIconDisplay = this.input && this.input.value && (this.state.isOnInput || this.state.isInputHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete && !this.props.search;
+
+    let clearAfter = (
+      <span
+        style={{display: clearIconDisplay ? '' : 'none'}}
+        className={`${props.prefixCls}-clear-icon`}
+        >
+        {clearSuffix}
+      </span>
+    );
+
     const suffix =
-      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {props.suffix}
+      <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
+        {(clearAfter)}
+        {clearIconDisplay ? null : props.suffix }
       </span>
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
     });
+
+
 
     return (
       <span
@@ -202,8 +239,45 @@ export default class Input extends Component {
     );
   }
 
+  handleIconOnMouseEnter = () => {
+    this.setState({
+      isIconHover: true,
+    })
+  }
+
+  handleIconOnMouseLeave = () => {
+    this.setState({
+      isIconHover: false,
+    })
+  }
+
+  handleInputonMouseLeave = (e) => {
+    this.setState({
+      isInputHover: false,
+    })
+  }
+
+  handleInputonMouseEnter = (e) => {
+    this.setState({
+      isInputHover: true
+    })
+  }
+
+  onInput = (e) => {
+    this.setState({
+      isOnInput: true,
+    })
+  }
+
+  onBlur = (e) => {
+    this.setState({
+      isOnInput: false,
+    });
+  }
+
   renderInput() {
     const { value, className } = this.props;
+    // console.log('isOnInput', 'isInputHover', 'isIconHover', this.state.isOnInput, this.state.isInputHover, this.state.isIconHover)
 
     // Fix https://fb.me/react-unknown-prop
     const otherProps = omit(this.props, [
@@ -212,15 +286,10 @@ export default class Input extends Component {
       'addonBefore',
       'addonAfter',
       'prefix',
-      'suffix'
+      'suffix',
+      'search',
     ]);
 
-
-    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
-    // const clearSuffix = React.cloneElement(node, {
-    //   onClick: this.onClear,
-    //   className: 'icon-hover',
-    // });
 
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);
@@ -228,14 +297,20 @@ export default class Input extends Component {
       // specify either the value prop, or the defaultValue props, but no both
       delete otherProps.defaultValue;
     }
+
     return this.renderLaybeldIcon(
       <input
         {...otherProps}
+        clearable={toString(otherProps.clearable)}
         className={classNames(this.getInputClassName(), className)}
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
-      />
-    );
+        onMouseEnter={this.handleInputonMouseEnter}
+        onMouseLeave={this.handleInputonMouseLeave}
+        onInput={this.onInput}
+        onBlur={this.onBlur}
+        />
+    )
   }
 
   render() {

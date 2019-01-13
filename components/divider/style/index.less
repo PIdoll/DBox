@@ -5,7 +5,7 @@
 
 .@{divider-prefix-cls} {
   .reset-component;
-  background: @border-color-base;
+  background: @divider-base-bg;
 
   &,// 兼容性
   &-vertical {
@@ -32,7 +32,7 @@
     text-align: center;
     background: transparent;
     font-weight: 500;
-    color: @heading-color;
+    color: @title-color;
     font-size: @font-size-lg;
     margin: 16px 0;
 
@@ -43,47 +43,47 @@
       position: relative;
       top: 50%;
       width: 50%;
-      border-top: 1px solid @border-color-base;
+      border-top: @border-width-base @border-style-base @border;
       transform: translateY(50%);
     }
   }
-  &-horizontal&-with-text-left,
-  &-horizontal&-with-text-right {
-    .@{divider-prefix-cls}-inner-text {
-      display: inline-block;
-      padding: 0 10px;
-    }
-  }
+  // &-horizontal&-with-text-left,
+  // &-horizontal&-with-text-right {
+  //   .@{divider-prefix-cls}-inner-text {
+  //     display: inline-block;
+  //     padding: 0 10px;
+  //   }
+  // }
 
-  &-horizontal&-with-text-left {
-    &::before {
-      top: 50%;
-      width: 5%
-    }
-    &::after {
-      top: 50%;
-      width: 95%;
-    }
-  }
+  // &-horizontal&-with-text-left {
+  //   &::before {
+  //     top: 50%;
+  //     width: 5%
+  //   }
+  //   &::after {
+  //     top: 50%;
+  //     width: 95%;
+  //   }
+  // }
 
-  &-horizontal&-with-text-right {
-    &::before {
-      top: 50%;
-      width: 95%
-    }
-    &::after {
-      top: 50%;
-      width: 5%;
-    }
-  }
+  // &-horizontal&-with-text-right {
+  //   &::before {
+  //     top: 50%;
+  //     width: 95%
+  //   }
+  //   &::after {
+  //     top: 50%;
+  //     width: 5%;
+  //   }
+  // }
 
   &-inner-text {
     display: inline-block;
-    padding: 0 24px;
+    padding: 0 @padding-lg;
   }
   &-dashed {
     background: none;
-    border-top: 1px dashed @border-color-base;
+    border-top: @border-width-base dashed @border;
   }
   &-horizontal&-with-text&-dashed,
   &-horizontal&-with-text-left&-dashed,

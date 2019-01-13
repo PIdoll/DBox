@@ -115,8 +115,7 @@ class RangePicker extends React.Component {
       (value[1] && !interopDefault(moment).isMoment(value[1]))
     ) {
       throw new Error(
-        'The value/defaultValue of RangePicker must be a moment object array after `antd@2.0`, ' +
-        'see: https://u.ant.design/date-picker-value',
+        '',
       );
     }
     const pickerValue = !value || isEmptyArray(value) ? props.defaultPickerValue : value;

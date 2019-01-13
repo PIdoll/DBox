@@ -1,11 +1,10 @@
-#### **何时使用**
+当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现；可以承载更复杂的内容，比如链接或按钮等
 
-- 当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。
 
-- 和 `Tooltip` 的区别是，用户可以对浮层上的元素进行操作，因此它可以承载更复杂的内容，比如链接或按钮等。
-
-#### **基本用法**
+##### **基本用法**
+基本内容展示，通常用于操作的再次确认
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -16,8 +15,10 @@ const content = (
 </Popover>
 ```
 
-#### **三种触发方式**
+##### **三种触发方式**
+通过设置trigger为hover,focus,click来控制触发的方式
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -28,7 +29,7 @@ const content = (
     <Button>鼠标移入</Button>
   </Popover>
   <Popover content={content} title='标题' trigger='focus'>
-    <Button>鼠标聚焦</Button>
+    <Button  style={{marginLeft: 25, marginRight: 25}}>鼠标聚焦</Button>
   </Popover>
   <Popover content={content} title='标题' trigger='click'>
     <Button>单击鼠标</Button>
@@ -36,8 +37,10 @@ const content = (
 </div>
 ```
 
-#### **12个方向**
+##### **12个方向**
+通过设置placement来设置气泡卡片的显示位置
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -51,7 +54,7 @@ const text = <span>标题</span>;
       <Button> T L </Button>
     </Popover>
     <Popover placement='top' title={text} content={content} trigger='click'>
-      <Button>Top</Button>
+      <Button style={{marginLeft: 25, marginRight: 25}}>Top</Button>
     </Popover>
     <Popover placement='topRight' title={text} content={content} trigger='click'>
       <Button>T R</Button>
@@ -84,7 +87,7 @@ const text = <span>标题</span>;
       <Button>B L</Button>
     </Popover>
     <Popover placement='bottom' title={text} content={content} trigger='click'>
-      <Button>Bottom</Button>
+      <Button style={{marginLeft: 15, marginRight: 15}}>Bottom</Button>
     </Popover>
     <Popover placement='bottomRight' title={text} content={content} trigger='click'>
       <Button> B R </Button>
@@ -93,8 +96,10 @@ const text = <span>标题</span>;
 </div>
 ```
 
-#### **箭头指向**
+##### **箭头指向**
+通过arrowPointAtCenter控制箭头指向中心，默认指向left
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -106,13 +111,15 @@ const text = <span>标题</span>;
     <Button>边缘对齐</Button>
   </Popover>
   <Popover placement='topLeft' title={text} content={content} arrowPointAtCenter>
-    <Button>箭头指向中心</Button>
+    <Button style={{marginLeft: 25}}>箭头指向中心</Button>
   </Popover>
 </div>
 ```
 
-#### **从浮层内关闭**
+##### **从浮层内关闭**
+可从弹出层内关闭弹出层
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const content = (
   <div>
     <p>这是是内容文本内容文本</p>
@@ -153,8 +160,10 @@ class PopoverView extends React.Component {
 ```
 
 
-#### **悬停点击弹出层**
+##### **悬停点击弹出层**
+设置悬浮和点击不同触发内容
 ```jsx
+import {Popover, Button} from 'dbox-ui';
 const clickContent = (
   <div>
     这是点击内容
@@ -225,13 +234,10 @@ class PopoverView extends React.Component {
 <PopoverView />
 
 
-
-
-
 ```
 
 
-#### **Popover**
+##### **Popover**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -239,6 +245,16 @@ class PopoverView extends React.Component {
 | overlayClassName | 卡片类名 | string | 无 |
 更多属性请参考 [Tooltip]
 
-#### **Action**
+##### **Action**
 
 请确保 `Popover` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import PopoverView from '../prevPage/popover';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <PopoverView />
+</div>
+```

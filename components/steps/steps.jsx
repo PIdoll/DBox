@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RcSteps from 'rc-steps';
-import './style/index.jsx';
+import './style/index';
 import Icon from '../icon';
 
 export default class Steps extends React.Component {
@@ -19,7 +19,7 @@ export default class Steps extends React.Component {
   render() {
     const {prefixCls} = this.props;
     const iconType = {
-      finish: <Icon type='check' className={`${prefixCls}-finish-icon`} />,
+      finish: <Icon type='done' className={`${prefixCls}-finish-icon`} />,
       error: <Icon type='close' className={`${prefixCls}-error-icon`} />
     }
     return (

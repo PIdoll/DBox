@@ -1,7 +1,7 @@
 import React from 'react';
 import Timeline from 'components/timeline/index';
 import Icon from '../../components/icon/index';
-import Button from 'components/Button';
+import Button from 'components/button';
 
 export default class TimeLineView extends React.Component {
   state = {

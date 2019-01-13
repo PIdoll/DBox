@@ -1,23 +1,19 @@
 
-<!-- # [Tooltip](http://naotu.baidu.com/file/31da15d78e14d807c75299d5f34fcbae?token=2da0729ca523eb90) -->
+鼠标移入则显示提示，移出消失，用于提示等场景。
 
-#### **何时使用**
-
-鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。
-
-可用来代替系统默认的 `title` 提示，提供一个`按钮/文字/操作`的文案解释。
-
-#### **基本用法**
+##### **基本用法**
 简单用法
 ```jsx
+import { Tooltip } from 'dbox-ui';
 <Tooltip title='提示文字'>
     <span>当鼠标移入时会出现文字提示</span>
 </Tooltip>
 ```
 
-#### **12个方向**
-位置有12个方向
+##### **12个方向**
+可通过设置 `placement` 属性控制位置，有12个方向
 ```jsx
+import { Tooltip,Button } from 'dbox-ui';
 const buttonWidth = 70;
 const text = <span>提示文字</span>;
 <div>
@@ -26,7 +22,7 @@ const text = <span>提示文字</span>;
         <Button>TL</Button>
     </Tooltip>
     <Tooltip placement='top' title={text} >
-        <Button>Top</Button>
+        <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Top</Button>
     </Tooltip>
     <Tooltip placement='topRight' title={text}>
         <Button>TR</Button>
@@ -59,7 +55,7 @@ const text = <span>提示文字</span>;
         <Button>BL</Button>
     </Tooltip>
     <Tooltip placement='bottom' title={text} >
-        <Button>Bottom</Button>
+        <Button style={{ marginLeft: '10px', marginRight: '10px' }}>Bottom</Button>
     </Tooltip>
     <Tooltip placement='bottomRight' title={text}>
         <Button>BR</Button>
@@ -68,8 +64,9 @@ const text = <span>提示文字</span>;
 </div>
 ```
 
-#### **箭头指向**
+##### **箭头指向**
 ```jsx
+import { Tooltip,Button } from 'dbox-ui';
 const text = <span>提示文字</span>;
 <div className='arrow'>
     <Tooltip placement='topLeft' title={text} >
@@ -81,13 +78,13 @@ const text = <span>提示文字</span>;
 </div>
 ```
 
-#### **Tooltip**
+##### **Tooltip**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | title | 提示文字 | string/ReactNode/() => ReactNode | 无 |
 
-#### **Tooltip、Popconfirm、Popover共同的API**
+##### **Tooltip、Popconfirm、Popover共同的API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -105,6 +102,16 @@ const text = <span>提示文字</span>;
 | onVisibleChange | 显示隐藏的回调 | (visible) => void | 无 |
 
 
-#### **注意**
+##### **注意**
 
 请确保 `Tooltip` 的子元素能接受 `onMouseEnter`、`onMouseLeave`、`onFocus`、`onClick` 事件。
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import TooltipView from '../prevPage/tooltip';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TooltipView />
+</div>
+```

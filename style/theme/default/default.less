@@ -34,10 +34,15 @@
 // 中性色
 @Sider-Menu        : #2F323B;
 @Black             : #000000;
+@Black5            : fade(#000, 5%);
 @background        : #F5F5F5;
 @disabled          : #F8F9FC;
+@border-color-dark : fade(#E2E2E2, 40%);
+@navbar            : #2F323B;
 @white             : #FFFFFF;
-@shadow            : rgba(18,34,29,0.10);
+@white5           : fade(#FFF, 5%);
+@shadow            : rgba(0,0,0,0.10);
+@shadow-button     : rgba(9, 184, 134, 0.20);
 @border            : #E2E2E2;
 
 // 后期可能需要删除的颜色
@@ -54,16 +59,7 @@
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: #E6F7FF;  // replace tint(@primary-color, 90%)
-@primary-2: #BAE7FF;  // replace tint(@primary-color, 80%)
-@primary-3: #91D5FF;  // unused
-@primary-4: #69C0FF;  // unused
-@primary-5: #40A9FF;  // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
-@primary-6: @primary-color;                                 // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: #096DD9;  // replace shade(@primary-color, 5%)
-@primary-8: #0050B3;  // unused
-@primary-9: #003A8C;  // unused
-@primary-10: #002766;  // unused
+@primary-1: @primary-LightBg;  // replace tint(@primary-color, 90%)
 
 // Base Scaffolding Variables
 // ---
@@ -84,17 +80,41 @@
 @font-family            : "Helvetica Neue For Number", @font-family-no-number;
 @code-family            : Consolas, Menlo, Courier, monospace;
 
+// 白色背景
+@background-base        : #FFFFFF;
+@background             : #F8F8F8;
+@body-background        : fade(#000, 60%);
+
 // 白色背景字体颜色
-@heading-color          : fade(#000, 85%);
-@text-color             : fade(#000, 65%);
-@text-color-secondary   : fade(#000, 45%);
-@text-color-disable     : fade(#000, 25%);
+@heading-color          : fade(#000, 80%);
+@text-color             : fade(#000, 60%);
+@text-color-secondary   : fade(#000, 40%);
+@text-color-disable     : fade(#000, 20%);
+@title                  : fade(#000, 80%);
+
+// 白色背景字体图标颜色
+@default-icon           : fade(#000, 40%);
+@disabled-icon          : fade(#000, 20%);
+@hover-icon             : fade(#000, 60%);
+@pressed-icon           : fade(#000, 80%);
+
+// 深色背景
+@background-base-dark   : #000000;
+@body-background-dark   : fade(#FFFFFF, 80%);
+
+// 深色背景字体图标颜色
+@default-icon-dark           : fade(#FFFFFF, 60%);
+@disabled-icon-dark          : fade(#FFFFFF, 40%);
+@hover-icon-dark             : fade(#FFFFFF, 80%);
+@pressed-icon-dark           : #FFFFFF;
 
 // 深色背景字体颜色
 @heading-color-dark     : fade(#fff, 100%);
-@text-color-dark        : fade(#fff,85%);
-@text-color-secondary-dark: fade(#fff, 65%);
-@text-color-disable-dark: fade(#fff, 45%);
+@text-color-dark        : fade(#fff,80%);
+@text-color-secondary-dark : fade(#fff, 60%);
+@text-color-disable-dark   : fade(#fff, 40%);
+@title                     : #FFFFFF;
+
 
 
 @font-size-base         : 14px;
@@ -134,6 +154,14 @@
 @link-decoration        : none;
 @link-hover-decoration  : none;
 
+// ------------ table ------------------
+
+@table-header-color                 : #FAFAFA;
+
+// ------------ divider -----------------
+
+@divider-color                      : #F5F5F5;
+
 // Animation
 @ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
 @ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -162,6 +190,12 @@
 @border-style-base      : solid;          // style of a components border
 @border-style-split     : dash;          // style of a components border
 
+// Border Colors
+@primary-border-color   : @primary-color;
+@success-border-color   : @success-color;
+@warning-border-color   : @warning-color;
+@error-border-color     : @error-color;
+
 // Outline
 @outline-blur-size      : 0;
 @outline-width          : 2px;
@@ -185,6 +219,8 @@
 @shadow-1-right         : 2px 0 8px @shadow-color;
 // @shadow-2               : 0 4px 12px @shadow-color;
 @Shadow-large               : 0 8px 16px 0 @shadow-color;
+@Shadow-small           : 0 2px 8px 0 @shadow-color;
+// @shadow-button          : 0 2px 8px 0 @shadow-button;
 
 // z-index list
 @zindex-affix           : 10;

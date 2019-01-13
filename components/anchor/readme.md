@@ -1,10 +1,12 @@
-#### **何时使用**
-需要展现当前页面上可供跳转的锚点链接，以及快速在锚点之间跳转。
 
-#### **基本用法**
+用于快速定位页面内容。
+
+##### **基本用法**
 
 ```jsx
+import { Anchor } from 'dbox-ui';
 const { Link } = Anchor;
+
 <div>
   <span className='demo-anchor'>
     <Anchor>
@@ -20,9 +22,7 @@ const { Link } = Anchor;
 </div>
 ```
 
-#### **API**
-
-#### **Anchor Props**
+##### **Anchor Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -32,9 +32,18 @@ const { Link } = Anchor;
 | offsetTop | 距离窗口顶部达到指定偏移量后触发 | number | - |
 | onClick | click 事件的 handler | Function(e: Event, link: Object) | - |
 
-#### **Link Props**
+##### **Link Props**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | href | 锚点链接 | string | - |
 | title | 文字内容 | string , ReactNode | - |
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import AnchorView from '../prevPage/anchor';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AnchorView />
+</div>
+```

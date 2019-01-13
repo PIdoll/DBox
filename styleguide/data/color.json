@@ -1,0 +1,62 @@
+[
+  {
+  "title": "TableHeader",
+  "value": "#FAFAFA",
+  "description": "用于表格的标题行背景。"
+  },
+  {
+    "title": "Background",
+    "value": "#F8F8F8",
+    "description": "用于页面级的背景。"
+  },
+  {
+    "title": "Divider",
+    "value": "#F5F5F5",
+    "description": "用于分割线。"
+  },
+  {
+    "title": "Border",
+    "value": "#E2E2E2",
+    "description": "用于边框，含实线和虚线。"
+  },
+  {
+    "title": "Disable_Text",
+    "value": "#000000 20%",
+    "description": "用于禁用文字的颜色，图标置灰。"
+  },
+  {
+    "title": "Secondary_Text",
+    "value": "#000000 40%",
+    "description": "用于次要文字颜色，图标默认颜色。（注：图标默认颜色比文字默认颜色低一个层级，弱化装饰元素）"
+  },
+  {
+    "title": "Body_Text",
+    "value": "#000000 60%",
+    "description": "用于默认文字颜色，图标Hover颜色。"
+  },
+  {
+    "title": "Title_Text",
+    "value": "#000000 80%",
+    "description": "用于标题文字的颜色，图标Pressed颜色。"
+  },
+  {
+    "title": "DisableText",
+    "value": "#FFFFFF 40%",
+    "description": "用于禁用文字颜色，图标置灰。"
+  },
+  {
+    "title": "Secondary",
+    "value": "#FFFFFF 60%",
+    "description": "用于次要文字颜色，图标默认颜色。"
+  },
+  {
+    "title": "Body",
+    "value": "#FFFFFF 80%",
+    "description": "用于主要（默认）文字颜色，图标Hover颜色。"
+  },
+  {
+    "title": "Title",
+    "value": "#FFFFFF",
+    "description": "用于标题文字颜色，图标Pressed颜色。"
+  }
+]

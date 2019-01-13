@@ -1,0 +1,67 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.idoll-confirm {
+  width: 408px !important;
+}
+.idoll-confirm .idoll-modal-header {
+  display: none;
+}
+.idoll-confirm .idoll-modal-body {
+  padding: 24px 24px 16px 24px;
+}
+.idoll-confirm-body .idoll-confirm-title {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+.idoll-confirm-body .idoll-confirm-content {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 16px 0px 16px 40px;
+}
+.idoll-confirm-body .idoll-confirm-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+.idoll-confirm-body > .idoll-icon {
+  font-size: 24px;
+  margin-right: 16px;
+  position: relative;
+}
+.idoll-confirm .idoll-confirm-btns {
+  margin-top: 16px;
+  float: right;
+}
+.idoll-confirm .idoll-confirm-btns button {
+  margin-left: 8px;
+  margin-bottom: 0;
+}
+.idoll-confirm-error .idoll-confirm-body > .idoll-icon {
+  color: #F44336;
+}
+.idoll-confirm-warning .idoll-confirm-body > .idoll-icon {
+  color: #F9AA29;
+}
+.idoll-confirm-confirm .idoll-confirm-body > .idoll-icon {
+  color: #13B886;
+}
+.idoll-confirm-confirm .idoll-confirm-body > .idoll-icon:before {
+  font-family: "idollicon" !important;
+  content: "\E70C";
+}
+.idoll-confirm-info .idoll-confirm-body > .idoll-icon {
+  color: #13B886;
+}
+.idoll-confirm-success .idoll-confirm-body > .idoll-icon {
+  color: #3CCB69;
+}

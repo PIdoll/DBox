@@ -6,7 +6,7 @@ import TabContent from 'rc-tabs/lib/TabContent';
 import classNames from 'classnames';
 import Icon from '../icon';
 import isFlexSupported from '../_util/isFlexSupported';
-import './style/index.jsx'
+import './style/index'
 
 export default class Tabs extends React.Component {
   static TabPane = TabPane;

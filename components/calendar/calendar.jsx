@@ -6,7 +6,7 @@ import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import { PREFIX_CLS } from './Constants';
 import Header from './Header';
 import interopDefault from '../_util/interopDefault';
-import zhCN from './locale/zh_CN.jsx';
+import zhCN from './locale/zh_CN';
 
 import './style/index'
 
@@ -22,7 +22,7 @@ function zerofixed(v) {
 export default class Calendar extends React.Component {
   static defaultProps = {
     locale: {},
-    fullscreen: true,
+    fullscreen: false,
     prefixCls: PREFIX_CLS,
     mode: 'month',
     onSelect: noop,
@@ -53,8 +53,7 @@ export default class Calendar extends React.Component {
     const value = props.value || props.defaultValue || interopDefault(moment)();
     if (!interopDefault(moment).isMoment(value)) {
       throw new Error(
-        'The value/defaultValue of Calendar must be a moment object after `antd@2.0`, ' +
-        'see: https://u.ant.design/calendar-value',
+        '',
       );
     }
     this.state = {
@@ -152,7 +151,7 @@ export default class Calendar extends React.Component {
       return false;
     }
     const [startDate, endDate] = validRange;
-    const inRange = current.isBetween(startDate, endDate, 'days', '[]');
+    const inRange = !current.isBetween(startDate, endDate, 'days', '[]');
     if (disabledDate) {
       return (disabledDate(current) || inRange);
     }

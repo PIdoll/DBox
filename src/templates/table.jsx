@@ -1,14 +1,15 @@
 import React from 'react'
 import CreateReactClass from 'create-react-class';
 import Table from 'components/table';
-import Button from '../../components/button/index';
-import Badge from '../../components/badge/index';
-import Divider from '../../components/divider/index';
-import Form from '../../components/form/index';
-import Input from '../../components/input/index';
-import InputNumber from '../../components/input-number/index';
-import Popconfirm from '../../components/popconfirm/index';
-import Select from '../../components/select/index';
+import Button from 'components/button';
+import Badge from 'components/badge';
+import Divider from 'components/divider';
+import Form from 'components/form';
+import Input from 'components/input';
+import InputNumber from 'components/input-number';
+import Popconfirm from 'components/popconfirm';
+import Select from 'components/select';
+import Tooltip from 'components/tooltip';
 import reqwest from 'reqwest'
 const {Option} = Select;
 
@@ -294,7 +295,7 @@ const expandedRowRender = () => {
   for (let i = 0; i < 2; ++i) {
     datasubmenu.push({
       key: i,
-      date: new Date().toLocaleString(),
+      date: '2018-8-8',
       name: 'Admin',
       operation: '正常',
       upgradeNum: Math.ceil(Math.random() * 10),
@@ -482,15 +483,15 @@ class EditableCell extends React.Component {
       </Select>;
     }
     if (this.props.inputtype === 'address') {
-      return <Input style={{ width: 200 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 200 }} />;
     }
     if (this.props.inputtype === 'name') {
-      return <Input style={{ width: 70 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'Tel') {
-      return <Input style={{ width: 130 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 130 }} />;
     }
-    return <Input />;
+    return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
   };
 
   render() {
@@ -532,6 +533,8 @@ class table extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
+    flag: false,
+    value: '',
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
@@ -583,36 +586,45 @@ class table extends React.Component {
     title: '姓名',
     dataIndex: 'name',
     key: 'name',
-    width: 70,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
-    width: 70,
     sorter: (a, b) => a.age - b.age,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '居住地',
     dataIndex: 'city',
-    width: 70,
     key: 'city',
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '手机号',
     dataIndex: 'Tel',
-    width: 130,
     key: 'Tel',
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
-    width: 200,
     editable: true,
+    render: (text, record) => {
+      return !this.state.flag ? (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>) : (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>)
+      }
   }, {
     title: '操作',
-    width: 70,
     dataIndex: 'action',
     key: 'action',
     render: (text, record) => {
@@ -653,9 +665,23 @@ class table extends React.Component {
     },
   }];
 }
- onChange = (pagination, filters, sorter) => {
-  console.log('params', pagination, filters, sorter);
-}
+  onMouseEnter = (e) => {
+    const parentWidth = e.target.parentNode.offsetWidth
+    const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
+    const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
+    if (selfWdith < parentWidth - (parentPadding * 2)) {
+      this.setState({flag: true})
+    }
+  }
+  onChangeValue = () => {
+    this.setState({ value: this.props.value });
+  }
+  onMouseLeave = () => {
+    this.setState({flag: false})
+  }
+  onChange = (pagination, filters, sorter) => {
+    console.log('params', pagination, filters, sorter);
+  }
   start = () => {
     this.setState({ loading: true });
     setTimeout(() => {
@@ -774,6 +800,42 @@ class table extends React.Component {
         <Table columns={columnsFixRow} dataSource={dataFixdRow} scroll={{ x: 1500, y: 200 }} />
       </div>
     )
+  }
+}
+
+class NumericInput extends React.Component {
+  onChange = (e) => {
+    const { value } = e.target;
+      this.props.onChange(value);
+  }
+  onBlur = () => {
+    const { value, onBlur, onChange } = this.props;
+    if (value.charAt(value.length - 1) === '.' || value === '-') {
+      onChange({ value: value.slice(0, -1) });
+    }
+    if (onBlur) {
+      onBlur();
+    }
+  }
+
+
+  render() {
+    const { value } = this.props;
+    const title = value;
+    return (
+      <Tooltip
+        trigger={['focus']}
+        title={title}
+        placement='topLeft'
+      >
+        <Input
+          {...this.props}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          placeholder='Input here'
+        />
+      </Tooltip>
+    );
   }
 }
 

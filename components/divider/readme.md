@@ -1,9 +1,8 @@
-#### **何时使用**
 
-- 对不同章节的文本段落进行分割。
-- 对行内文字/链接进行分割，例如表格的操作列。
+文本段落进行分割。
+对行内文字或者链接进行分割。
 
-#### **水平分割线**
+##### **水平分割线**
 
 ```jsx
 <div>
@@ -14,7 +13,7 @@
 </div>
 ```
 
-#### **竖分割线**
+##### **竖分割线**
 
 ```jsx
 <div>
@@ -26,7 +25,7 @@
 </div>
 ```
 
-## API
+##### **API**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -34,3 +33,13 @@
 | type | 水平还是垂直类型 | enum: `horizontal` `vertical` | `horizontal` |
 | className | 分割线样式类 | string | - |
 | style | 分割线样式对象 | object | - |
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import DividerView from '../prevPage/divider';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <DividerView />
+</div>
+```

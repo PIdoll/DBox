@@ -1,11 +1,12 @@
-#### **何时使用**
-类似 Select 的选择控件，可选择的数据结构是一个树形结构时，可以使用 TreeSelect，例如公司层级、学科系统、分类目录等等。
 
-#### **基本用法**
+类似 `Select` 的选择控件，可选择的数据结构是一个树形结构。
+
+##### **基本用法**
 ```jsx
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -44,12 +45,13 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
-#### **从数据直接生成**
-使用treeData把JSON数据直接生成树结构
+##### **从数据直接生成**
+可通过设置 `treeData` 属性将 `JSON` 数据直接生成树结构。
 ```jsx
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -69,7 +71,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -100,12 +102,13 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
-#### **多选**
-多选的树选择
+##### **多选**
+可通过设置 `multiple` 属性可多选。
 ```jsx
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -125,7 +128,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -157,12 +160,13 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
 
-#### **可勾选**
-使用勾选框实现多选功能。
+##### **可勾选**
+可通过设置 `treeCheckable` 属性实现勾选框多选功能。
 ```jsx
+import { TreeSelect } from 'dbox-ui';
 const TreeNode = TreeSelect.TreeNode;
 const treeData = [{
   title: '上海',
@@ -182,7 +186,7 @@ const treeData = [{
   value: 'anhui',
   key: '0-1',
 }];
-class TreeSelectExample extends React.Component {
+class TreeSelectDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -214,9 +218,9 @@ class TreeSelectExample extends React.Component {
             );
         }
     }
-    <TreeSelectExample />
+<TreeSelectDemo />
 ```
-#### **Tree**
+##### **Tree**
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | allowClear | 显示清除按钮 | boolean | false |
@@ -255,14 +259,14 @@ class TreeSelectExample extends React.Component {
 | onSelect | 被选中时调用 | function(value, node, extra) | - |
 | onTreeExpand | 展示节点时调用 | function(expandedKeys) | - |
 
-#### **Tree 方法**
+##### **Tree 方法**
 
 | 名称 | 描述 |
 | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
 
-#### **TreeNode props**
+##### **TreeNode props**
 
 > 建议使用 treeData 来代替 TreeNode，免去手工构造麻烦
 
@@ -275,3 +279,13 @@ class TreeSelectExample extends React.Component {
 | key | 此项必须设置（其值在整个树范围内唯一） | string | - |
 | title | 树节点显示的内容 | string/ReactNode | '---' |
 | value | 默认根据此属性值进行筛选（其值在整个树范围内唯一） | string | - |
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import TreeSelectView from '../prevPage/treeSelect';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <TreeSelectView />
+</div>
+```

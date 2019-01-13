@@ -2,8 +2,9 @@
 @import "../../../style/mixins/index";
 @import "../../input/style/mixin";
 
-@input-number-prefix-cls: ~"@{idoll-prefix}-input-number";
 
+
+@input-number-prefix-cls: ~"@{idoll-prefix}-input-number";
 .@{input-number-prefix-cls} {
   .reset-component;
   .input;
@@ -26,11 +27,11 @@
     width: 100%;
     font-weight: bold;
     &:active {
-      background: #f4f4f4;
+      background: @InputNumber-active-color;
     }
     &:hover &-up-inner,
     &:hover &-down-inner {
-      color: @primary-5;
+      color: red;
     }
   }
 
