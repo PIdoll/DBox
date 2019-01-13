@@ -81,7 +81,6 @@ export default class Anchor extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     getContainer: PropTypes.func,
-    type: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object,
     children: PropTypes.node,
@@ -123,7 +122,6 @@ export default class Anchor extends React.Component {
       activeLink: this.state.activeLink,
       scrollTo: this.handleScrollTo,
       onClick: this.props.onClick,
-      type: this.props.type
     };
     return { idollAnchor };
   }
@@ -198,19 +196,11 @@ export default class Anchor extends React.Component {
     if (typeof document === 'undefined') {
       return;
     }
-    const { prefixCls, type } = this.props;
+    const { prefixCls } = this.props;
     const anchorNode = ReactDOM.findDOMNode(this);
     const linkNode = anchorNode.getElementsByClassName(`${prefixCls}-link-title-active`)[0];
     if (linkNode) {
-      if (type === 'inline' || type === 'bookmark') {
-        this.inkNode.style.left = `${linkNode.offsetLeft + linkNode.clientWidth / 2}px`;
-        return;
-      }
-      // if (type === 'bookmark') {
-      //   return;
-      // }
       this.inkNode.style.top = `${linkNode.offsetTop + linkNode.clientHeight / 2 - 4.5}px`;
-      // console.log(this.inkNode.style.top = '50px');
     }
   }
 
@@ -218,31 +208,35 @@ export default class Anchor extends React.Component {
     this.inkNode = node;
   }
   render() {
-    const { prefixCls, className = '', style, offsetTop, affix, showInkInFixed, children, getContainer, type } = this.props;
+    const { prefixCls,
+      className = '',
+      style,
+      offsetTop,
+      affix,
+      showInkInFixed,
+      children,
+      getContainer
+     } = this.props;
     const { activeLink } = this.state;
     const inkClass = classNames(`${prefixCls}-ink-ball`, {
       visible: activeLink
     });
     const wrapperClass = classNames(className, `${prefixCls}-wrapper`);
-    // 书签类型锚点时去掉白色背景
-    const bookmarkWrapperClassName = (`${prefixCls}-bookmark-wrapper`);
+
     const anchorClass = classNames(prefixCls, {
       'fixed': !affix && !showInkInFixed,
     })
-    const inlineAnchorClass = classNames(`${prefixCls}-anchor-line-link`);
-    const inlineAnimatingClass = classNames(`${prefixCls}-anchor-line-link-ball`, {
-      visible: activeLink
-    });
+
     const wrapperStyle = {
       maxHeight: offsetTop ? `calc(100vh - ${offsetTop}px)` : '100vh',
       ...style,
     };
     const anchorContent = (
-      <div className={type !== 'bookmark' ? wrapperClass : bookmarkWrapperClassName} style={wrapperStyle}>
+      <div className={wrapperClass} style={wrapperStyle}>
         <div className={anchorClass}>
-          {
-          type !== 'bookmark' ? <div className={type === 'vertical' || !type || type === 'bookmark' ? `${prefixCls}-ink` : inlineAnchorClass}><span className={type === 'vertical' || !type ? inkClass : inlineAnimatingClass} ref={this.saveInkNode} /></div> : null
-        }
+          <div className={`${prefixCls}-ink`}>
+            <span className={inkClass} ref={this.saveInkNode} />
+          </div>
           {children}
         </div>
       </div>
