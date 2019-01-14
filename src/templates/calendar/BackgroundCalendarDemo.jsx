@@ -1,9 +1,10 @@
 import React from 'react';
 import Calendar from 'components/calendar/index';
+import moment from 'moment';
 
 export default class BackgroundCalendarDemo extends React.Component {
   onChange = (date) => {
-    console.log('onChange', date);
+    console.log('onChange', moment(date).format('YYYY-MM-DD'));
   }
 
   onPanelChange = (value, mode) => {
