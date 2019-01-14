@@ -2,7 +2,7 @@ import cssAnimation from 'css-animation';
 
 function animate(node, show, done) {
   let height;
-  return cssAnimation(node, 'ant-motion-collapse', {
+  return cssAnimation(node, 'idoll-motion-collapse', {
     start() {
       if (!show) {
         node.style.height = `${node.offsetHeight}px`;

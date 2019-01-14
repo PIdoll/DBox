@@ -15,6 +15,7 @@ export default class Calendar extends React.Component {
         <div style={styleObj}>
           <h1 className='h1'>一、基本用法</h1>
           <h2 className='h2'>可以通过选择相应的年份月份展示日历面板,且可为其设置value值</h2>
+          <h2 className='h2'>注意：设置了value属性之后，组件将变为受控组件，需结合onChange方法一起使用</h2>
 
           <BasicCalendarDemo />
         </div>

@@ -3,7 +3,7 @@
   top: 1px;
   bottom: 0;
   right: 0;
-  background: @component-background;
+  background: @calendar-base-bg;
   z-index: 10;
   position: absolute;
   outline: none;
@@ -53,7 +53,7 @@
     &:hover {
       cursor: not-allowed;
       color: #bcbcbc;
-      background: @disabled-bg;
+      background: @disabled;
     }
   }
 }
@@ -64,14 +64,14 @@
   color: @text-color;
   background: transparent;
   text-align: center;
-  height: 24px;
-  line-height: 24px;
-  padding: 0 8px;
-  border-radius: @border-radius-sm;
+  height: @calendar-month-panel-height;
+  line-height: @calendar-month-panel-height;
+  padding: 0 @padding-xs;
+  border-radius: @border-radius-base - 1;
   transition: background 0.3s ease;
 
   &:hover {
-    background: @primary-LightBg;
+    background: @primary-lightBg;
     cursor: pointer;
   }
 }

@@ -1,6 +1,6 @@
 .calendarPanelHeader(@calendar-prefix-cls) {
-  height: 54px;
-  line-height: 54px;
+  height: @calendarPanelHeader-height;
+  line-height: @calendarPanelHeader-height;
   text-align: center;
   user-select: none;
   // border-bottom: @border-width-base @border-style-base @border-color-split;
@@ -15,12 +15,12 @@
   .@{calendar-prefix-cls}-decade-select,
   .@{calendar-prefix-cls}-year-select,
   .@{calendar-prefix-cls}-month-select {
-    padding: 0 2px;
+    padding: 0 @calendar-select-padding;
     font-weight: 500;
     display: inline-block;
-    color: @heading-color;
-    line-height: 54px;
-    font-size: 14px;
+    color: @title-color;
+    line-height: @calendarPanelHeader-height;
+    font-size: @font-size-base;
   }
 
   .@{calendar-prefix-cls}-century-select-arrow,
@@ -41,11 +41,11 @@
     position: absolute;
     top: 0;
     color: @text-color-secondary;
-    font-family: Arial, 'Hiragino Sans GB', 'Microsoft Yahei', 'Microsoft San Serif', sans-serif;
-    padding: 0 5px;
-    font-size: 16px;
+    font-family: @font-family;
+    padding: 0 @calendar-btn-padding;
+    font-size: @font-size-lg;
     display: inline-block;
-    line-height: 54px;
+    line-height: @calendarPanelHeader-height;
   }
 
   .@{calendar-prefix-cls}-prev-century-btn,
@@ -55,21 +55,21 @@
     top: -1px;
 
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '«';
     }
   }
 
   .@{calendar-prefix-cls}-prev-century-btn {
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '‹';
     }
   }
 
   .@{calendar-prefix-cls}-prev-decade-btn {
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '‹';
     }
   }
@@ -87,21 +87,21 @@
     top: -1px;
 
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '»';
     }
   }
 
   .@{calendar-prefix-cls}-next-century-btn {
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '›';
     }
   }
 
   .@{calendar-prefix-cls}-next-decade-btn {
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '›'
     };
   }
@@ -118,7 +118,7 @@
     top: -1px;
 
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '‹';
     }
   }
@@ -129,7 +129,7 @@
     top: -1px;
 
     &:after {
-      font-size: 22px;
+      font-size: @calendarPanelHeader-icon-font-size;
       content: '›';
     }
   }
@@ -143,16 +143,16 @@
   list-style: none;
   font-size: @font-size-base;
   text-align: left;
-  background-color: @component-background;
+  background-color: @calendar-base-bg;
   border-radius: @border-radius-base;
-  box-shadow: @box-shadow-base;
+  box-shadow: @shadow-small;
   background-clip: padding-box;
-  line-height: @line-height-base;
+  line-height: @calendar-line-height-base;
 
   &-input-wrap {
     height: 34px;
-    padding: 6px @control-padding-horizontal - 2px;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    padding: 6px @padding-sm - 2px;
+    border-bottom: @border-width-base @border-style-base @border;
   }
 
   &-input {
@@ -161,7 +161,7 @@
     cursor: auto;
     outline: 0;
     color: @input-color;
-    height: 22px;
+    height: @calendar-input-height;
     background: @input-bg;
     .placeholder;
   }
@@ -179,7 +179,7 @@
   }
 
   &-body {
-    padding: 0px 16px 12px;
+    padding: 0px @padding-md @padding-sm;
   }
 
   table {
@@ -202,7 +202,7 @@
   }
 
   &-column-header {
-    line-height: 18px;
+    line-height: @calendar-column-header-line-height;
     width: 33px;
     padding: 6px 0;
     text-align: center;
@@ -244,12 +244,12 @@
 
     &:hover {
       // background: @item-hover-bg;
-      background: @primary-LightBg;
+      background: @primary-lightBg;
       cursor: pointer;
     }
 
     &:active {
-      color: #fff;
+      color: @calendarPanelHeader-active-color;
       background: @primary-color;
     }
   }
@@ -262,7 +262,7 @@
 
   &-last-month-cell &-date,
   &-next-month-btn-day &-date {
-   color: @disabled-color;
+   color: @text-color-disable;
   }
 
   &-selected-day &-date {
@@ -272,7 +272,7 @@
   &-selected-date, &-selected-start-date, &-selected-end-date {
     .@{calendar-prefix-cls}-date {
       background: @primary-color;
-      color: #fff;
+      color: @calendarPanelHeader-active-color;
       border: @border-width-base @border-style-base transparent;
 
       &:hover {
@@ -284,13 +284,13 @@
   &-disabled-cell &-date {
     cursor: not-allowed;
     color: #bcbcbc;
-    background: @disabled-bg;
+    background: @disabled;
     border-radius: 0;
     width: auto;
     border: @border-width-base @border-style-base transparent;
 
     &:hover {
-      background: @disabled-bg;
+      background: @disabled;
     }
   }
 
@@ -306,24 +306,24 @@
       width: 24px;
       height: 24px;
       border: @border-width-base @border-style-base #bcbcbc;
-      border-radius: @border-radius-sm;
+      border-radius: @border-radius-base - 1;
     }
   }
 
   &-disabled-cell-first-of-row &-date {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: @border-radius-base + 1;
+    border-bottom-left-radius: @border-radius-base + 1;
   }
 
   &-disabled-cell-last-of-row &-date {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
   }
 
   &-footer {
-    padding: 0 12px;
+    padding: 0 @padding-sm;
     line-height: 38px;
-    border-top: @border-width-base @border-style-base @border-color-split;
+    border-top: @border-width-base @border-style-base @border;
     &:empty {
       border-top: 0;
     }
@@ -356,10 +356,10 @@
     right: 5px;
     text-indent: -76px;
     overflow: hidden;
-    width: 20px;
-    height: 20px;
+    width: @calendar-clear-btn-width;
+    height: @calendar-clear-btn-height;
     text-align: center;
-    line-height: 20px;
+    line-height: @calendar-clear-btn-height;
     top: 7px;
     margin: 0;
   }

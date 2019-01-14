@@ -3,7 +3,7 @@
   position: absolute;
   width: 100%;
   top: 40px;
-  background-color: @component-background;
+  background-color: @time-picker-inner-bg;
 
   &-panel {
     z-index: @zindex-picker;
@@ -18,9 +18,9 @@
     list-style: none;
     font-size: @font-size-base;
     text-align: left;
-    background-color: @component-background;
+    background-color: @time-picker-inner-bg;
     background-clip: padding-box;
-    line-height: 1.5;
+    line-height: @calendar-line-height-base;
     overflow: hidden;
     width: 100%;
   }
@@ -49,7 +49,7 @@
   &-select {
     float: left;
     font-size: @font-size-base;
-    border-right: @border-width-base @border-style-base @border-color-split;
+    border-right: @border-width-base @border-style-base @border;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -78,13 +78,13 @@
     }
 
     li {
-      padding-left: 32px;
+      padding-left: @time-picker-inner-padding;
       list-style: none;
       box-sizing: content-box;
       margin: 0;
       width: 100%;
-      height: 24px;
-      line-height: 24px;
+      height: @time-picker-inner-height;
+      line-height: @time-picker-inner-height;
       cursor: pointer;
       user-select: none;
       transition: background 0.3s ease;
@@ -97,7 +97,7 @@
     }
 
     li:hover {
-      background: @primary-LightBg;
+      background: @primary-lightBg;
     }
 
     li&-option-selected {
@@ -117,10 +117,10 @@
 
 .@{calendar-prefix-cls}-time {
   .@{calendar-prefix-cls}-day-select {
-    padding: 0 2px;
+    padding: 0 @calendar-day-select-padding-xs;
     font-weight: 500;
     display: inline-block;
-    color: @heading-color;
+    color: @title-color;
     line-height: 34px;
   }
 
@@ -142,7 +142,7 @@
       margin-right: 8px;
 
       &-disabled {
-        color: @disabled-color;
+        color: @text-color-disable;
       }
     }
   }

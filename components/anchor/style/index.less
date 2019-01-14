@@ -2,85 +2,17 @@
 @import '../../../style/theme/default/index';
 
 
-@anchor-border-width: 2px;
-
 .@{idoll-prefix}-anchor {
   .reset-component;
   position: relative;
   padding-left: @anchor-border-width;
-  // box-sizing:border-box;
   overflow: hidden;
 
   &-wrapper {
-    background-color: @component-background;
+    background-color: @anchor-base-bg;
     overflow: auto;
-    padding-left: 4px;
+    padding-left: @anchor-wrapper-padding;
     margin-left: -4px;
-  }
-
-  &-bookmark-wrapper {
-    overflow: auto;
-    padding-left: 4px;
-    margin-left: -4px;
-  }
-
-  &-anchor-line-link {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-
-    &:before {
-      content: ' ';
-      position: relative;
-      height: 2px;
-      display: block;
-      background-color: @border-color-split;
-      margin: 0 auto;
-    }
-    &-ball {
-      display: none;
-      position: absolute;
-      width: 80px;
-      border-bottom: 2px solid @primary-color;
-      background-color: @primary-color;
-      // top: 50%;
-      top: 0.8px;
-      left: 0;
-      transform: translate(-50%, -50%);
-      transition: left .3s ease-in-out;
-      &.visible {
-        display: inline-block;
-      }
-    }
-  }
-
-  // 书签类型
-  &-bookmark {
-    width: 40px;
-    padding: 16px 12px;
-    color: rgba(0,0,0,0.45);
-    font-size:16px;
-    font-family:PingFangSC-Regular;
-    font-weight:400;  
-    background-color: #fff;
-    margin-bottom: 2px;
-    border-radius:3px 0px 0px 3px;
-
-    &-active {
-      background-color: @primary-color;
-    }
-  }
-
-  // 书签类型
-  &-bookmark-title {
-    color: @text-color;
-
-    &-active {
-      color: #fff;
-      &:hover {
-        color: #fff;
-      }
-    }
   }
 
   &-ink {
@@ -94,15 +26,14 @@
       width: @anchor-border-width;
       height: 100%;
       display: block;
-      background-color: @border-color-split;
+      background-color: @border;
       margin: 0 auto;
     }
     &-ball {
       display: none;
       position: absolute;
       height: 38px;
-      // border-radius: 8px;
-      border-left: 2px solid @primary-color;
+      border-left: 2px @border-style-base @primary-color;
       background-color: @primary-color;
       top: 51%;
       left: 50%;
@@ -119,7 +50,7 @@
   }
 
   &-link {
-    padding: 7px 0 7px 16px;
+    padding: 7px 0 7px @padding-md;
     line-height: 1.143;
 
     &-title {
@@ -144,7 +75,7 @@
 
   &-line-link {
     display: inline-block;
-    padding: 12px 23px;
+    padding: 12px @padding-lg - 1;
   }
 
   &-link &-link {
