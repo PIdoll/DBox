@@ -3,6 +3,9 @@ import Calendar from 'components/calendar/index';
 import moment from 'moment';
 
 export default class BasicCalendarDemo extends React.Component {
+  state = {
+    time: moment('2019-2'),
+  }
   onPanelChange = (value, mode) => {
     console.log('onPanelChange', value, mode);
   }
@@ -12,13 +15,16 @@ export default class BasicCalendarDemo extends React.Component {
   }
 
   onChange = (date) => {
+    this.setState({
+      time: moment(date),
+    })
     console.log('onChange', date);
   }
   render() {
     return (
       <div style={{ width: 300, border: '1px solid rgba(226,226,226,1)', borderRadius: 4 }}>
         <Calendar
-          value={moment('2019-2')}
+          value={this.state.time}
           onPanelChange={this.onPanelChange}
           onSelect={this.onSelect}
           onChange={this.onChange}

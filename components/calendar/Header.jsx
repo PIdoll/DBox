@@ -188,7 +188,7 @@ export default class Header extends React.Component {
     const { value, validRange } = this.props;
     const newValue = moment(value).clone();
     newValue.year(parseInt(year, 10));
-    newValue.month(parseInt(month, 10));
+    typeof month === 'number' && newValue.month(parseInt(month, 10));
     if (validRange) {
       const [start, end] = validRange;
       const newYear = moment(newValue).get('year');
