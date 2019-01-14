@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class AnchorLink extends React.Component {
-  state = {
-    type: 'vertical'
-  }
   static propTypes = {
     prefixCls: PropTypes.string,
     href: PropTypes.string,
@@ -21,23 +18,12 @@ export default class AnchorLink extends React.Component {
   }
   componentDidMount = () => {
     this.context.idollAnchor.registerLink(this.props.href);
-    if (this.context.idollAnchor.type || this.context.idollAnchor.type !== 'vertical') {
-      this.setState({
-        type: this.context.idollAnchor.type
-      })
-    }
   }
   componentWillReceiveProps(nextProps) {
     const { href } = nextProps;
-    const { type } = this.state;
     if (this.props.href !== href) {
       this.context.idollAnchor.unregisterLink(this.props.href);
       this.context.idollAnchor.registerLink(href);
-    }
-    if (type !== this.context.idollAnchor.type) {
-      this.setState({
-        type: this.context.idollAnchor.type
-      })
     }
   }
   componentWillUnmount = () => {
@@ -55,28 +41,23 @@ export default class AnchorLink extends React.Component {
   }
   render() {
     const { prefixCls, href, title, children } = this.props;
-    const { type } = this.state;
     const active = this.context.idollAnchor.activeLink === href;
     const wrapperClassName = classNames(`${prefixCls}-link`,
       { [`${prefixCls}-link-active`]: active }
     )
-    const inlineClassName = classNames(`${prefixCls}-line-link`, {
-      [`${prefixCls}-link-active`]: active
-    });
     const titleClassName = classNames(
       `${prefixCls}-link-title`,
       { [`${prefixCls}-link-title-active`]: active, }
     );
-    // 书签类型样式
-    const bookmarkAnchorClassName = classNames(`${prefixCls}-bookmark`, {
-      [`${prefixCls}-bookmark-active`]: active
-    });
-    const bookmarkTitleClassName = classNames(`${prefixCls}-bookmark-title`, {
-      [`${prefixCls}-bookmark-title-active`]: active
-    })
     return (
-      <div className={type === 'vertical' || !type ? wrapperClassName : type === 'bookmark' ? bookmarkAnchorClassName : inlineClassName}>
-        <a className={type !== 'bookmark' ? titleClassName : bookmarkTitleClassName} href={href} title={typeof title === 'string' ? title : ''} onClick={this.handleClick}>{title}</a>
+      <div className={wrapperClassName}>
+        <a
+          className={titleClassName}
+          href={href}
+          title={typeof title === 'string' ? title : ''}
+          onClick={this.handleClick}>
+          {title}
+        </a>
         {children}
       </div>
     )

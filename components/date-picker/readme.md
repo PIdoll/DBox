@@ -336,7 +336,7 @@ class DiyDatePickerView extends React.Component {
 
 #### **API**
 
-以下API为DatePIcker、MonthPicker、RangePicker、WeekPicker共享API
+以下API为DatePIcker、MonthPicker、RangePicker共享API
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

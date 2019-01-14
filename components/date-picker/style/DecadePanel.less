@@ -40,26 +40,26 @@
   color: @text-color;
   background: transparent;
   text-align: center;
-  height: 24px;
-  line-height: 24px;
-  padding: 0 6px;
-  border-radius: @border-radius-sm;
+  height: @calendar-decade-height;
+  line-height: @calendar-decade-height;
+  // padding: 0 6px;
+  padding: 0 @padding-xs;
+  border-radius: @border-radius-base;
   transition: background 0.3s ease;
 
   &:hover {
-    background: @primary-LightBg;
-    // background: @primary-color;
+    background: @primary-lightBg;
     cursor: pointer;
   }
 }
 
 .@{calendar-prefix-cls}-decade-panel-selected-cell .@{calendar-prefix-cls}-decade-panel-decade {
   background: @primary-color;
-  color: #fff;
+  color: @calendar-hover-color;
 
   &:hover {
     background: @primary-color;
-    color: #fff;
+    color: @calendar-hover-color;
   }
 }
 
@@ -67,6 +67,6 @@
 .@{calendar-prefix-cls}-decade-panel-next-century-cell {
   .@{calendar-prefix-cls}-decade-panel-decade {
     user-select: none;
-    color: @disabled-color;
+    color: @text-color-disable;
   }
 }

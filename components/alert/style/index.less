@@ -2,32 +2,27 @@
 @import "../../../style/mixins/index.less";
 
 @alert-prefix-cls: ~"@{idoll-prefix}-alert";
-@alert-message-color: @title-color;
-@alert-text-color: @text-color;
 
 .@{alert-prefix-cls} {
   .reset-component;
   position: relative;
-  // padding: 8px 15px 8px 37px;
   padding: @padding-xs @padding-md;
   font-size: @font-size-base;
-  // color: @alert-text-color;
   border-radius: @border-radius-base;
 
   &&-no-icon {
-    // padding: 8px 15px;
     padding: @padding-xs @padding-md;
   }
 
   &-icon {
-    top: 8px + @font-size-base * @line-height-base / 2 - @font-size-base / 2 + 1px;
+    top: 8px + @font-size-base * @alert-line-height-base / 2 - @font-size-base / 2 + 1px;
     left: 16px;
     position: absolute;
   }
 
   &-description {
     font-size: @font-size-base;
-    line-height: 22px;
+    line-height: @alert-line-height;
     display: none;
   }
 
@@ -38,7 +33,7 @@
   }
 
   &-success {
-    background-color: @success-LightBg;
+    background-color: @success-lightBg;
     color: @success-color;
     .@{alert-prefix-cls}-icon {
       color: @success-color;
@@ -46,11 +41,11 @@
   }
 
   &-no-description {
-    height: 40px;
+    height: @aletr-no-description-height;
   }
 
   &-info {
-    background-color: @primary-LightBg;
+    background-color: @primary-lightBg;
     color: @primary-color;
     .@{alert-prefix-cls}-icon {
       color: @primary-color;
@@ -58,7 +53,7 @@
   }
 
   &-warning {
-    background-color: @warning-LightBg;
+    background-color: @warning-lightBg;
     color: @warning-color;
     .@{alert-prefix-cls}-icon {
       color: @warning-color;
@@ -66,7 +61,7 @@
   }
 
   &-error {
-    background-color: @error-LightBg;
+    background-color: @error-lightBg;
     color: @error-color;
     .@{alert-prefix-cls}-icon {
       color: @error-color;
@@ -78,16 +73,16 @@
     position: absolute;
     right: 16px;
     top: 8px;
-    line-height: 22px;
+    line-height: @alert-line-height;
     overflow: hidden;
     cursor: pointer;
 
     .@{iconfont-css-prefix}-close {
       color: @text-color-secondary;
       transition: color .3s;
-      width: 16px;
-      height: 16px;
-      line-height: 16px;
+      width: @alser-icon-width;
+      height: @alser-icon-height;
+      line-height: @alert-line-height-sm;
       &:hover {
         color: @text-color;
       }
@@ -104,11 +99,10 @@
     position: relative;
     border-radius: @border-radius-base;
     color: @alert-text-color;
-    line-height: @line-height-base;
+    line-height: @alert-line-height-base;
   }
 
   &-with-description&-no-icon {
-    // padding: 15px;
     padding: @padding-md;
   }
 
@@ -116,7 +110,7 @@
     position: absolute;
     top: 10px;
     left: 24px;
-    font-size: 24px;
+    font-size: @alert-icon-font-size;
   }
 
   &-with-description &-close-icon {

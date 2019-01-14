@@ -3,7 +3,6 @@
 @import '../../checkbox/style/mixin.less';
 
 @transfer-prefix-cls: ~"@{idoll-prefix}-transfer";
-@transfer-disabled-bg: @disabled;
 
 .@{transfer-prefix-cls} {
   .reset-component;
@@ -21,16 +20,16 @@
     border-radius: @border-radius-base;
     vertical-align: middle;
     position: relative;
-    width: 180px;
-    height: 200px;
+    width: @transfer-list-width;
+    height: @transfer-list-height;
     padding-top: 40px;
 
     &-header {
-      height: 40px;
+      height: @transfer-header-height;
       padding: 0 @padding-md;
-      line-height: 40px;
+      line-height: @transfer-line-height;
       border-radius: @border-radius-base @border-radius-base 0 0;
-      background: @white;
+      background: @transfer-base-bg;
       color: @text-color;
       border-bottom: @border-width-base @border-style-base @border;
       overflow: hidden;
@@ -90,7 +89,7 @@
 
       &-item:not(&-item-disabled):hover {
         cursor: pointer;
-        background-color: @primary-LightBg;
+        background-color: @primary-lightBg;
       }
 
       &-item-disabled {

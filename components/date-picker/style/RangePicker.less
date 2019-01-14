@@ -1,12 +1,11 @@
-@input-box-height: 34px;
 
 .@{idoll-prefix}-input-disabled {
-  background-color: #F8F9FC;
+  background-color: @disabled;
   opacity: 1;
   cursor: not-allowed;
-  color: rgba(0, 0, 0, 0.25);
+  color: @text-color-disable;
   &:hover {
-    border-color: #E2E2E2;
+    border-color: @border;
   }
 }
 
@@ -57,7 +56,7 @@
     float: left;
     .@{calendar-prefix-cls} {
       &-time-picker-inner {
-        border-right: 1px solid @border-color-split;
+        border-right: 1px solid @border;
       }
     }
   }
@@ -66,7 +65,7 @@
     float: right;
     .@{calendar-prefix-cls} {
       &-time-picker-inner {
-        border-left: 1px solid @border-color-split;
+        border-left: @border-width-base @border-style-base @border;
       }
     }
   }
@@ -150,7 +149,7 @@
     &:before {
       content: '';
       display: block;
-      background: @primary-LightBg;
+      background: @primary-lightBg;
       border-radius: 0;
       border: 0;
       position: absolute;
@@ -204,8 +203,8 @@
       &-combobx {
         display: inline-block;
         height: 100%;
-        background-color: @component-background;
-        border-top: @border-width-base @border-style-base @border-color-split;
+        background-color: @calendar-combobx-bg;
+        border-top: @border-width-base @border-style-base @border;
       }
       &-select {
         height: 100%;
@@ -219,8 +218,8 @@
     }
     .@{calendar-prefix-cls}-today-btn {
       margin: 8px 12px;
-      height: 22px;
-      line-height: 22px;
+      height: @calendar-rangepicker-tobody-btn;
+      line-height: @calendar-rangepicker-tobody-btn;
     }
   }
   &-with-ranges.@{calendar-prefix-cls}-time .@{calendar-timepicker-prefix-cls} {
