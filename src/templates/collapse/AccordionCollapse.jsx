@@ -8,7 +8,7 @@ function callback(key) {
 export default class AccordionCollapse extends React.Component {
   render() {
     return (
-      <Collapse accordion activeKey={['1']} defaultActiveKey={['2']} onChange={callback}>
+      <Collapse accordion defaultActiveKey={['2']} onChange={callback}>
         <Panel header='标题一' key='1' >
           <p>{text2}</p>
         </Panel>

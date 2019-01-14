@@ -298,13 +298,6 @@ const RadioButton = Radio.RadioButton;
 | buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | 默认描边 \ `solid`填充 | 无 |
 
 
-#### **Radio method**
-
-| 名称 | 描述 |
-| ---- | ----------- |
-| focus() | 获取焦点 |
-| blur() | 移除焦点 |
-
 
 <style>.idoll-steps{margin-bottom: 10px}</style>
 

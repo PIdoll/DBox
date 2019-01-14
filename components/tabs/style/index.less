@@ -9,8 +9,8 @@
 @tab-horizontal-margin: 0 0 0 16px;
 @tab-vertical-margin: 0 0 16px 0;
 
-@tab-horizontal-padding: 12px 16px;
-@tab-vertical-padding: 12px 24px;
+@tab-horizontal-padding: @padding-sm @padding-md;
+@tab-vertical-padding: @padding-sm @padding-lg ;
 
 // The width (or height for vertical) of the scrolling arrow
 @tab-scrolling-size: 32px;
@@ -84,7 +84,7 @@
       height: 100%;
       pointer-events: auto;
       span:before {
-        font-size:16px;
+        font-size:@font-size-lg;
       }
     }
 
@@ -104,8 +104,8 @@
       transform: translate(-50%, -50%);
       text-align: center;
       text-transform: none;
-      height: 16px;
-      line-height: 16px;
+      height: @font-size-lg;
+      line-height: @font-size-lg;
 
       &:before {
         display: block;
@@ -195,7 +195,7 @@
     .@{tab-prefix-cls}-tab {
       display: inline-block;
       height: 100%;
-      font-size: 14px;
+      font-size: @font-size-sm;
       line-height: 22px;
       margin: @tab-horizontal-margin;
       padding: @tab-horizontal-padding;
@@ -273,7 +273,7 @@
   }
 
   &-small &-tab {
-    padding: 8px 16px;
+    padding: @padding-xs @padding-md;
   }
 
   &:not(&-vertical) {
@@ -413,7 +413,7 @@
       }
     }
     > .@{tab-prefix-cls}-content {
-      padding-left: 24px;
+      padding-left: @padding-lg;
       border-left: @border-width-base @border-style-base @border-color-split;
     }
   }
@@ -435,7 +435,7 @@
       }
     }
     > .@{tab-prefix-cls}-content {
-      padding-right: 24px;
+      padding-right: @padding-lg;
       border-right: @border-width-base @border-style-base @border-color-split;
     }
   }
@@ -447,32 +447,32 @@
 }
 
 .@{tab-prefix-cls}-cardTabs {
-  background-color: #f5f5f5;
-  padding:24px;
+  background-color: @tabs-cardRabs-bg;
+  padding:@padding-lg;
   border: none;
   .@{tab-prefix-cls}-bar {
     margin: 0;
     .@{tab-prefix-cls}-nav-container {
-      background-color: #f5f5f5;
+      background-color: @tabs-cardRabs-bg;
       .@{tab-prefix-cls}-nav {
         div.@{tab-prefix-cls}-tab {
           margin-right: 0;
-          background-color: #f5f5f5;
+          background-color: @tabs-cardRabs-bg;
           line-height: 22px;
-          padding: 12px 16px;
+          padding: @padding-sm @padding-md;
           border: none;
           margin-right: 4px;
         }
         div.@{tab-prefix-cls}-tab-active {
-          background-color: #fff;
+          background-color: @tabs-contentbg;
           user-select: none;
         }
       }
     }
   }
   .@{tab-prefix-cls}-content {
-    background-color: #fff;
-    padding: 15px;
+    background-color: @tabs-contentbg;
+    padding: @padding-md - 1px;
   } 
 }
 

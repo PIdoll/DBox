@@ -1,5 +1,4 @@
 @import "../../../style/theme/default/index.less";
-@import "../../../style/theme/default/compoments/collapse.less";
 @import "../../../style/mixins/index.less";
 
 @collapse-prefix-cls: ~"@{idoll-prefix}-collapse";
@@ -62,7 +61,7 @@
 		overflow: hidden;
 		color: @text-color;
 		padding: 0 @padding-lg;
-		background-color: @white;
+		background-color: @collapse-color;
 		border-width: 0;
 
 		& > &-box {
@@ -99,7 +98,7 @@
 	}
 
 	&-borderless {
-		background-color: @white;
+		background-color: @collapse-color;
 		border: 0;
 	}
 
@@ -110,7 +109,7 @@
 
 	&-borderless > &-item >&-header {
 		padding: @padding-sm 0;
-		background-color: @white;
+		background-color: @collapse-color;
 		.arrow {
 			right: 0;
 		}

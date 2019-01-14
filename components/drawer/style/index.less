@@ -1,6 +1,5 @@
 @import "../../../style/mixins/index";
 @import "../../../style/theme/default/index";
-@import "../../../style/theme/default/compoments/drawer.less";
 
 @dawer-prefix-cls: ~"@{idoll-prefix}-drawer";
 
@@ -11,7 +10,7 @@
   height: 100%;
   z-index: 1000;
   > * {
-    transition:transform @animation-duration-slow cubic-bezier(.7,.3,.1,1);
+    transition:transform .3s cubic-bezier(.7,.3,.1,1);
   }
 
   &-content-wrapper {
@@ -38,7 +37,7 @@
   &-left {
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-right;
+        box-shadow: @shadow-small-right;
       }
     }
   }
@@ -50,7 +49,7 @@
     }
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-left;
+        box-shadow: @shadow-small-left;
       }
     }
   }
@@ -72,7 +71,7 @@
   &-top {
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-down;
+        box-shadow: @shadow-small;
       }
     }
   }
@@ -84,7 +83,7 @@
     }
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-up;
+        box-shadow: @shadow-small;
       }
     }
   }
@@ -93,7 +92,7 @@
       &-mask {
         opacity: 0.3;
         height: 100%;
-        animation: idollDrawerFadeIn @animation-duration-slow cubic-bezier(.7,.3,.1,1);
+        animation: idollDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
         transition: none;
       }
     }
@@ -109,7 +108,7 @@
 
   &-content {
     position: relative;
-    background-color: @white;
+    background-color: @drawer-clolor;
     border: 0;
     background-clip: padding-box;
     z-index: 1;
@@ -126,7 +125,7 @@
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    transition: color @animation-duration-slow;
+    transition: color .3s;
     color: @text-color-secondary;
     outline: 0;
     padding: 0;
@@ -153,7 +152,7 @@
   &-header {
     padding: @padding-md @padding-lg;
     border-radius: @border-radius-base @border-radius-base 0 0;
-    background: @white;
+    background: @drawer-clolor;
     color: @text-color;
     border-bottom: @border-width-base @border-style-base @border-color-split;
   }
@@ -172,12 +171,12 @@
     opacity: 0;
     background-color: @modal-mask-bg;
     filter: ~"alpha(opacity=50)";
-    transition: opacity @animation-duration-slow linear, height 0s ease @animation-duration-slow;
+    transition: opacity .3s linear, height 0s ease .3s;
   }
   &-open {
-    transition: transform @animation-duration-slow cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1);
     &-content {
-      box-shadow: @shadow-1-left;
+      box-shadow: @shadow-small-left;
     }
   }
 }

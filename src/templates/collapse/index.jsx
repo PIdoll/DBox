@@ -4,6 +4,7 @@ import BasicCollapse from './BasicCollapse';
 import ConciseCollapse from './ConciseCollapse';
 import NestedCollapse from './NestedCollapse';
 import ShadingCollapse from './ShadingCollapse';
+import CurrentCollapse from './CurrentCollapse';
 
 
 export default () => (
@@ -19,6 +20,16 @@ export default () => (
     </h2>
     <BasicCollapse />
     <br />
+    <h1 className='h1'>演示冲突</h1>
+    <h2 className='h2'>
+    测试场景: <br />
+      1）测试API defaultActiveKey默认展开的面板 (array)<br />
+      3）测试API header面板头部内容 (string)<br />
+      4）测试API key面板的唯一值 (string)<br />
+      6）测试API activeKey默认展开的面板和defaultActiveKey同时存在的情况下activeKey的权重高,会发生不可点击的情况 (array)<br />
+    </h2>
+    <CurrentCollapse />
+    <br />
     <h1 className='h1'>手风琴</h1>
     <h2 className='h2'>
     测试场景: <br />
@@ -27,7 +38,6 @@ export default () => (
       3）测试API header面板头部内容 (string)<br />
       4）测试API key面板的唯一值 (string)<br />
       5）测试API accordion添加手风琴效果 (bool)<br />
-      6）测试API activeKey默认展开的面板和defaultActiveKey同时存在的情况下activeKey的权重高 (array)<br />
     </h2>
     <AccordionCollapse />
     <br />

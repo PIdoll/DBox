@@ -17,19 +17,19 @@
     border-radius: @badge-radius;
     min-width: @badge-height;
     background: @error-color;
-    color: @white;
+    color: @badge-color;
     line-height: @badge-height;
     text-align: center;
     padding: 0 @padding-xs - 3px;
     font-size: @font-size-sm;
     white-space: nowrap;
     transform-origin: -10% center;
-    z-index: @zindex-affix;
+    z-index: 10;
     font-family: @font-family;
-    box-shadow: 0 0 0 @border-width-base @white ;
+    box-shadow: 0 0 0 @border-width-base @badge-color ;
     a,
     a:hover {
-      color: @white ;
+      color: @badge-color ;
     }
   }
 
@@ -46,8 +46,8 @@
     width: @badge-dot-size;
     border-radius: 100%;
     background: @error-color;
-    z-index: @zindex-affix;
-    box-shadow: 0 0 0 @border-width-base @white;
+    z-index: 10;
+    box-shadow: 0 0 0 @border-width-base @badge-color;
   }
   &-zoom-appear,
   &-zoom-enter {

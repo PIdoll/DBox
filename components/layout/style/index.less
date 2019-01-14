@@ -1,5 +1,4 @@
 @import '../../../style/theme/default/index';
-@import '../../../style/theme/default/compoments/layout.less';
 @import './mixin';
 
 div.layout_temp {
@@ -26,7 +25,7 @@ div.layout_temp {
 }
 
 .@{idoll-prefix}-layout-sider {
-  color: @white ;
+  color: @layout-backgound-color ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +36,7 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
-  color: @white;
+  color: @layout-backgound-color;
   display: flex;
   height: @layout-header-base-height;
   text-align: center;
@@ -52,13 +51,13 @@ div.layout_temp {
    display: flex;
    align-items: center;
    justify-content: center;
-   color: #fff;
+   color: @layout-bg;
    background-color: @layout-content-background;
 }
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
-  color: @white;
+  color: @layout-backgound-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +68,7 @@ div.layout_temp {
 .layout-horizontal {
   .@{idoll-prefix}-layout-header {
     width: 100%;
-    color: @white;
+    color: @layout-backgound-color;
     display: block;
     height: @layout-header-seat;
     line-height: @layout-header-seat;
@@ -105,7 +104,7 @@ div.layout_temp {
     .content {
       width: 100%;
       height: 100%;
-      background-color: @white;
+      background-color: @layout-backgound-color;
       color: @text-color;
       display: flex;
       justify-content: center;
@@ -151,12 +150,12 @@ div.layout_temp {
         bottom: @padding-md;
         cursor: pointer;
         color: @text-color-secondary-dark;
-        transition: color @animation-duration-slow
+        transition: color .3s
       }
       > i:hover {
         &:before {
-          color: @white;
-          transition: color @animation-duration-slow
+          color: @layout-backgound-color;
+          transition: color .3s
         }
       }
      .@{idoll-prefix}-menu {
@@ -166,7 +165,7 @@ div.layout_temp {
     &-header {
       display: flex;
       justify-content: flex-end;
-      background-color: @white;
+      background-color: @layout-backgound-color;
       padding-right: @padding-lg;
       line-height:@layout-header-seat;
       font-size: @font-size-base;
@@ -204,7 +203,7 @@ div.layout_temp {
       > div {
         width: 100%;
         height: 100%;
-        background-color: @white;
+        background-color: @layout-backgound-color;
         color: @text-color;
         display: flex;
         justify-content: center;
@@ -249,7 +248,7 @@ div.layout_temp {
           background-color: @layout-backgound;
           padding: @padding-lg @padding-lg @layout-tabs-content-padding @padding-lg;
           > div.@{idoll-prefix}-tabs-tabpane-active {
-            background-color: @white;
+            background-color: @layout-backgound-color;
             height: 100%;
             display: flex;
             justify-content: center;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import RcMenu, { Divider, ItemGroup } from 'rc-menu';
 import Item from './MenuItem';
 import SubMenu from './SubMenu';
-import animation from '../_util/openAnimation';
 import warning from '../_util/warning';
 
 import './style/index';
@@ -101,9 +100,6 @@ export default class Menu extends React.Component {
             } else {
               openAnimation = 'zoom-big';
             }
-            break;
-          case 'inline':
-            openAnimation = animation;
             break;
           default:
         }

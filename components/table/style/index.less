@@ -78,7 +78,7 @@
     td {
       .clearfix {
         margin: -16px 0 -16px -16px;
-        border-bottom: 1px solid #FAFAFA;
+        border-bottom: @border-width-base @border-style-base @table-header-color;
         .@{table-prefix-cls}-tbody {
           tr:last-child {
             td {
@@ -165,14 +165,14 @@
 
   &-thead > tr > th,
   &-tbody > tr > td {
-    padding: 16px;
+    padding: @padding-md;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap
   }
 
   &-thead > tr > th.@{table-prefix-cls}-selection-column-custom {
-    padding-left: 16px;
+    padding-left: @padding-md;
     padding-right: 0;
   }
 
@@ -198,7 +198,7 @@
   &-loading {
     position: relative;
     .@{table-prefix-cls}-body {
-      background: @white;
+      background:  @table-bg;
       opacity: 0.5;
     }
     .@{table-prefix-cls}-spin-holder {
@@ -321,7 +321,7 @@
   &-placeholder {
     position: relative;
     padding: @table-padding-vertical @table-padding-horizontal;
-    background: @white;
+    background:  @table-bg;
     border-bottom: @border-width-base @border-style-base @border-color-split;
     text-align: center;
     font-size: @font-size-base;
@@ -339,7 +339,7 @@
 
   &-filter-dropdown {
     margin-left: -8px;
-    background: @white;
+    background:  @table-bg;
     border-radius: @border-radius-base;
     box-shadow: @box-shadow-base;
 
@@ -381,7 +381,7 @@
 
     &-btns {
       overflow: hidden;
-      padding: 7px 8px;
+      padding: (@padding-xs - 1px) @padding-xs;
       border-top: @border-width-base @border-style-base @border-color-split;
     }
 
@@ -415,7 +415,7 @@
     &-menu {
       margin-top: 5px;
       margin-left: -30px;
-      background: @white;
+      background:  @table-bg;
       border-radius: @border-radius-base;
       box-shadow: @box-shadow-base;
 
@@ -430,7 +430,7 @@
       display: inline-block;
       line-height: 1;
       &:hover .@{iconfont-css-prefix}-down {
-        color: #666;
+        color: @text-color;
       }
     }
   }
@@ -445,7 +445,7 @@
       line-height: 14px;
       border: @border-width-base @border-style-base @border-color-split;
       user-select: none;
-      background: @white;
+      background:  @table-bg;
     }
 
     &-expanded:after {
@@ -471,7 +471,7 @@
   tr&-expanded-row {
     &,
     &:hover {
-      background: #fbfbfb;
+      background: @text-color-disable-dark ;
     }
   }
 
@@ -493,7 +493,7 @@
 
   &-fixed-header > &-content > &-scroll > &-body {
     position: relative;
-    background: @white;
+    background:  @table-bg;
   }
 
   &-fixed-header &-body-inner {
@@ -515,7 +515,7 @@
     border-radius: 0;
     table {
       width: auto;
-      background: @white;
+      background:  @table-bg;
     }
   }
 
@@ -565,6 +565,16 @@
   }
 }
 
-  // .@{idoll-prefix}-spin-nested-loading > div > .@{idoll-prefix}-spin {
-  //   top:50%;
-  // }
+.@{table-prefix-cls}-middle {
+  .@{table-prefix-cls}-thead > tr > th,
+  .@{table-prefix-cls}-tbody > tr > td {
+    padding: @padding-sm @padding-md;
+  }
+}
+
+.@{table-prefix-cls}-small {
+  .@{table-prefix-cls}-thead > tr > th,
+  .@{table-prefix-cls}-tbody > tr > td {
+    padding: @padding-xs;
+  }
+}

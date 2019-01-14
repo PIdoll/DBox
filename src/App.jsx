@@ -35,7 +35,7 @@ import {
   Spin,
   Popover,
   Divider,
-  MenuDemo,
+  Menu,
   Form,
   Badge,
   Upload,
@@ -82,7 +82,7 @@ const App = () => (
       <Route exact path='/spin' component={Spin} />
       <Route exact path='/popover' component={Popover} />
       <Route exact path='/divider' component={Divider} />
-      <Route exact path='/menu' component={MenuDemo} />
+      <Route exact path='/menu' component={Menu} />
       <Route exact path='/steps' component={Steps} />
       <Route exact path='/badge' component={Badge} />
       <Route exact path='/upload' component={Upload} />

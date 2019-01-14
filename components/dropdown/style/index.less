@@ -68,15 +68,15 @@
     padding: 0;
     margin: 0;
     text-align: left;
-    background-color: @white;
+    background-color: @dropdown-color;
     border-radius: @border-radius-base;
-    box-shadow: @box-shadow-base;
+    box-shadow: @shadow-small;
     background-clip: padding-box;
 
     &-item-group-title {
       color: @text-color-secondary;
       padding: @dropdown-padding @control-padding-horizontal;
-      transition: all @animation-duration-slow;
+      transition: all .3s;
     }
 
     &-submenu-popup {
@@ -121,7 +121,7 @@
         cursor: not-allowed;
         &:hover {
           color: @text-color-disable;
-          background-color: @white;
+          background-color: @dropdown-color;
           cursor: not-allowed;
         }
       }
@@ -288,7 +288,7 @@
     }
 
     &:hover {
-      color: @white;
+      color: @dropdown-color;
       background: transparent;
     }
   }
@@ -298,7 +298,7 @@
     &:hover,
     > a {
       background: @primary-color;
-      color: @white;
+      color: @dropdown-color;
     }
   }
 }

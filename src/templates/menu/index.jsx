@@ -5,7 +5,7 @@ import EmbeddedSideNav from './EmbeddedSideNav';
 import TopMenu from './TopMenu';
 
 
-export default class MenuDemo extends React.Component {
+export default class Menu extends React.Component {
   render () {
     return (
       <div id='main-container'>

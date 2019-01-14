@@ -13,7 +13,6 @@
     }
     .@{menu-prefix-cls}-submenu-title {
       i{
-        transition: all .3s;
         color: @text-color-disable-dark;
       }
     }
@@ -24,8 +23,8 @@
     .@{menu-prefix-cls}-vertical {
       li.@{menu-prefix-cls}-item {
         padding: 9px 7px 9px 12px;
-        font-size: 14px;
-        line-height: 22px;
+        font-size: @font-size-base;
+        line-height: @menu-base-line-height;
         min-width: 128px;
       }
     }
@@ -50,7 +49,6 @@
   &-dark &-item {
     i {
       color: @text-color-disable-dark;
-      transition: all .3s;
     }
   }
 
@@ -92,7 +90,6 @@
     }
     i {
       color: @heading-color-dark ;
-      transition: all .3s;
     }
     > .@{menu-prefix-cls}-submenu-title {
       color: @menu-dark-highlight-color;//**
