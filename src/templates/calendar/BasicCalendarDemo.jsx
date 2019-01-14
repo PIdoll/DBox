@@ -4,7 +4,7 @@ import moment from 'moment';
 
 export default class BasicCalendarDemo extends React.Component {
   state = {
-    time: moment('2019-2'),
+    time: moment('2019-02'),
   }
   onPanelChange = (value, mode) => {
     console.log('onPanelChange', value, mode);
