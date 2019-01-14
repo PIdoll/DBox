@@ -1,5 +1,5 @@
 export default {
-
+  Components: '组件',
   Button: '按钮',
   Icon: '图标',
   Grid: '栅格',

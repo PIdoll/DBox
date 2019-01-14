@@ -7,9 +7,8 @@ import Data from '../data/componentsName.jsx';
 const styles = ({ color }) => ({
 	link: {
 		display: 'block',
-		height: '30px',
 		color: '#333',
-		lineHeight: '30px',
+		lineHeight: '32px',
 		overflow: 'hidden',
 		fontWeight: '400',
 		fontSize: '14px',
@@ -18,7 +17,8 @@ const styles = ({ color }) => ({
 	},
 	h1: {
 		fontSize: '12px',
-		color: '#99a9bf',
+    color: '#aaa',
+    padding: '5px 0',
   },
   chinese: {
 		fontSize: '12px',
@@ -51,7 +51,7 @@ export function LinkRenderer({ classes, children, ...props }) {
 			);
 		}
   }
-  const chineseName = ['Install', 'GetStarted', 'Version', 'Color', 'Typography'];
+  const chineseName = ['GetStarted', 'Version', 'Color', 'Typography'];
   for (const item of chineseName.values()) {
 		if (children === item) {
 			return (
