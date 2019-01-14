@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from 'rsg-components/Link';
 import Styled from 'rsg-components/Styled';
-import { hasInHash, getHash } from '../../utils/handleHash';
+import { hasInHash, getHash } from '../utils/handleHash';
 
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
@@ -21,8 +21,8 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	},
 	isChild: {
     margin: 0,
-    height: '40px',
-    lineHeight: '40px',
+    height: '32px',
+    lineHeight: '32px',
 		[mq.small]: {
 			display: 'inline-block',
     },
