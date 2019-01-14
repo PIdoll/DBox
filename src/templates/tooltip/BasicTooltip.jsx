@@ -7,10 +7,6 @@ export default class BasicInput extends React.Component {
     handleChange = (visible) => {
         console.log('tooltip', visible);
     }
-
-    handleVisibleChange = (visible) => {
-        console.log('tooltip2', visible);
-    }
     render() {
         return (
           <div>
