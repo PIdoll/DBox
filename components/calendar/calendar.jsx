@@ -105,7 +105,9 @@ export default class Calendar extends React.Component {
 
   setValue = (value, way) => {
     if (!('value' in this.props)) {
-      this.setState({ value });
+      this.setState({ value }, () => {
+        console.log('value', this.state.value)
+      });
     }
     if (way === 'select') {
       if (this.props.onSelect) {
