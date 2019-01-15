@@ -1,8 +1,6 @@
 import React from 'react';
 import Timeline from 'components/timeline';
 import Button from 'components/button';
-
-
 export default class SortTimeline extends React.Component {
     constructor() {
         super();
