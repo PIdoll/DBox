@@ -55,7 +55,11 @@ export default class Cascader extends React.Component {
       popupVisible: PropTypes.bool,
       changeOnSelect: PropTypes.bool,
       loadData: PropTypes.func,
-      onChange: PropTypes.func
+      onChange: PropTypes.func,
+      showSearch: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+      ])
   }
   static defaultProps = {
     prefixCls: 'idoll-cascader',
