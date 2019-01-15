@@ -140,7 +140,7 @@
       display: block;
     }
   }
-  li&-treenode-disabled {
+  li &-treenode-disabled {
     > span:not(.@{select-tree-prefix-cls}-switcher),
     > .@{select-tree-prefix-cls}-node-content-wrapper,
     > .@{select-tree-prefix-cls}-node-content-wrapper span {
@@ -187,7 +187,7 @@
   .@{select-prefix-cls}-not-found {
     cursor: not-allowed;
     color: @disabled-color;
-    padding: 7px 16px;
+    padding: 7px @padding-md;
     display: block;
   }
 }

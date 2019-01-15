@@ -42,7 +42,7 @@ import Timeline from './timeline';
 import Tooltip from './tooltip';
 import Tree from './tree';
 import Transfer from './transfer';
-// import TreeSelect from './tree-select';
+import TreeSelect from './treeSelect';
 import Upload from './upload';
 
 
@@ -91,6 +91,6 @@ export { Timeline };
 export { Tooltip };
 export { Tree };
 export { Transfer };
-// export { TreeSelect };
+export { TreeSelect };
 export { Upload };
 
