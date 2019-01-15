@@ -168,7 +168,12 @@
     padding: @padding-md;
     overflow:hidden;
     text-overflow:ellipsis;
-    white-space:nowrap
+    white-space:nowrap;
+    div {
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
   }
 
   &-thead > tr > th.@{table-prefix-cls}-selection-column-custom {

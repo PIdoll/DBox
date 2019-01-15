@@ -3,7 +3,6 @@ import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} f
 const {Option} = Select;
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
-
 const EditableRow = ({ form, index, ...props }) => (
   <EditableContext.Provider value={form}>
     <tr {...props} />
@@ -18,7 +17,7 @@ class EditableCell extends React.Component {
       return <InputNumber style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'city') {
-      return <Select showSearch style={{ width: 70 }} placeholder='请选择' >
+      return <Select style={{ width: 70 }} placeholder='请选择' >
         <Option value='北京'>北京</Option>
         <Option value='上海'>上海</Option>
         <Option value='广州'>广州</Option>
@@ -35,7 +34,7 @@ class EditableCell extends React.Component {
     if (this.props.inputtype === 'name') {
       return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 70 }} />;
     }
-    if (this.props.inputtype === 'Tel') {
+    if (this.props.inputtype === 'Phone') {
       return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 130 }} />;
     }
     return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
@@ -89,42 +88,42 @@ export default class EditTable extends React.Component {
       name: '刘乐冉',
       age: 26,
       city: '北京',
-      Tel: '13943250086',
+      Phone: '13943250086',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '2',
       name: '李佳欣',
       age: 24,
       city: '南京',
-      Tel: '13262717838',
+      Phone: '13262717838',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '3',
       name: '孙柔佳',
       age: 22,
       city: '上海',
-      Tel: '13950035537',
+      Phone: '13950035537',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '4',
       name: '张仁士',
       age: 28,
       city: '合肥',
-      Tel: '13947766628',
+      Phone: '13947766628',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '5',
       name: '王子琪',
       age: 32,
       city: '郑州',
-      Tel: '13964507501',
+      Phone: '13964507501',
       address: '上海市浦东新区唐镇上丰路88号',
     }, {
       key: '6',
       name: '陈卜宣',
       age: 27,
       city: '沈阳',
-      Tel: '13262836283',
+      Phone: '13262836283',
       address: '上海市浦东新区唐镇上丰路88号',
     }],
   };
@@ -140,15 +139,14 @@ export default class EditTable extends React.Component {
   this.save = this.save.bind(this);
   this.handleRendercolnmus = this.handleRendercolnmus.bind(this);
 }
-
-  handleRendercolnmus(flag) {
+  handleRendercolnmus() {
     const columnss = [{
       title: '姓名',
       dataIndex: 'name',
       key: 'name',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '年龄',
@@ -157,7 +155,7 @@ export default class EditTable extends React.Component {
       sorter: (a, b) => a.age - b.age,
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '居住地',
@@ -165,15 +163,15 @@ export default class EditTable extends React.Component {
       key: 'city',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '手机号',
-      dataIndex: 'Tel',
-      key: 'Tel',
+      dataIndex: 'Phone',
+      key: 'Phone',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return <Tooltip placement='topLeft' title={this.state.flag ? text : ''}><div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</div></Tooltip>
         }
     }, {
       title: '地址',
@@ -181,8 +179,7 @@ export default class EditTable extends React.Component {
       key: 'address',
       editable: true,
       render: (text, record) => {
-        console.log(flag)
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return <Tooltip placement='topLeft' title={this.state.flag ? text : ''}><div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</div></Tooltip>
         }
     }, {
       title: '操作',
@@ -231,15 +228,20 @@ export default class EditTable extends React.Component {
     const parentWidth = e.target.parentNode.offsetWidth
     const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
     const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
-    if (!(selfWdith < parentWidth - (parentPadding * 2))) {
-      this.setState({flag: true})
+    if ((selfWdith > parentWidth - (parentPadding * 2))) {
+      this.setState({flag: true});
+    console.log(`onMouseEnter${this.state.flag}`)
+    }
+  }
+  onMouseLeave () {
+    if (this.state.flag === true) {
+    this.setState((preState, props) => ({
+      flag: preState.flag
+    }))
     }
   }
   onChangeValue () {
     this.setState({ value: this.props.value });
-  }
-  onMouseLeave (e) {
-    this.setState({flag: false})
   }
   start () {
     this.setState({ loading: true });
@@ -315,8 +317,8 @@ export default class EditTable extends React.Component {
               return 'name'
             } else if (col.dataIndex === 'address') {
               return 'address'
-            } else if (col.dataIndex === 'Tel') {
-              return 'Tel'
+            } else if (col.dataIndex === 'Phone') {
+              return 'Phone'
             } else {
               return 'text'
             }
@@ -334,6 +336,11 @@ export default class EditTable extends React.Component {
 }
 
 class NumericInput extends React.Component {
+  constructor(props) {
+  super(props);
+  this.onChange = this.onChange.bind(this)
+  this.onBlur = this.onBlur.bind(this)
+  }
   onChange (e) {
     const { value } = e.target;
       this.props.onChange(value);
@@ -353,7 +360,7 @@ class NumericInput extends React.Component {
     const { value } = this.props;
     return (
       <Tooltip
-        trigger={['focus']}
+        trigger='focus'
         title={value}
         placement='topLeft'
       >
