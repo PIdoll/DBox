@@ -39,12 +39,10 @@ const Sider = Layout.Sider;
 顺应了从上至下的正常浏览顺序，方便浏览信息；适用于导航较少，页面篇幅较长的网站。
 
 ```jsx
-import{Menu, Breadcrumb, Layout} from 'dbox-ui';
-import{SubMenu, MenuItem} from 'dbox-ui/menu';
+import {Menu, Breadcrumb, Layout} from 'dbox-ui';
+import {SubMenu} from 'dbox-ui/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
-const Footer = Layout.Footer;
-const Sider = Layout.Sider;
 class LayoutView extends React.Component {
   constructor(props) {
     super(props);
@@ -101,11 +99,10 @@ class LayoutView extends React.Component {
 搭配传统面包屑的侧边导航，提高导航可见性，方便页面之间切换，常用于中后台网站。
 
 ```jsx
-import{Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'dbox-ui';
-import{SubMenu, MenuItem} from 'dbox-ui/menu';
+import {Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'dbox-ui';
+import {SubMenu} from 'dbox-ui/menu';
 const Header = Layout.Header;
 const Content = Layout.Content;
-const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
@@ -248,12 +245,11 @@ class LayoutView extends React.Component {
 用Tab页签代替面包屑的侧边导航，提高常用页面切换的灵活性。
 
 ```jsx
-import{Menu, Breadcrumb, Avatar, Tabs, Icon, Dropdown, Layout} from 'dbox-ui';
-import{SubMenu, MenuItem} from 'dbox-ui/menu';
+import{Menu, Avatar, Tabs, Icon, Dropdown, Layout} from 'dbox-ui';
+import{SubMenu} from 'dbox-ui/menu';
 const TabPane = Tabs.TabPane;
 const Header = Layout.Header;
 const Content = Layout.Content;
-const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
@@ -442,7 +438,6 @@ Layout
 | 参数       | 说明                   | 类型               | 默认值       |
 |-----------|-------------------------------------|--------------------|-------------|
 | className      | 容器 className | string | - |
-| hasSider    | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动    | boolean             |  - |
 | style    | 样式    | object             |  - |
 -具体API可参考使用的组件API
 

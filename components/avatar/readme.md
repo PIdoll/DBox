@@ -95,11 +95,10 @@ class AvatarView extends React.Component {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | icon | 设置头像的图标类型，参考 `Icon` 组件 | string | - |
-| shape | 指定头像的形状 | Enum{ 'circle', 'square' } | `circle` |
-| size | 设置头像的大小 | Enum{ 'large', 'default','small', 'tiny' } | `default` |
+| shape | 指定头像的形状 | string | `circle` |
+| size | 设置头像的大小 | sring('large', 'default','small') | `default` |
 | src | 图片类头像的资源地址 | string | - |
 | alt | 图片无法显示时的替代文本 | string | - |
-| onError | 给定src属性但未赋值的事件，返回false会关闭组件默认的fallback行为 | () => boolean | - |
 
 
 ```jsx noeditor

@@ -1,7 +1,7 @@
-
+#### **概述**
 需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 `Modal` 在当前页面正中打开一个浮层，承载相应的操作
 
-##### **普通弹出框(可用于展示和提交)**
+#### **普通弹出框(可用于展示和提交)**
 通常用于展示和提交数据
 ```jsx
 import {Modal, Button} from 'dbox-ui';
@@ -50,7 +50,7 @@ class ModalView extends React.Component {
 <ModalView />
 ```
 
-##### **异步关闭弹出框**
+#### **异步关闭弹出框**
 在浮层内提交数据不影响当前页面的操作
 ```jsx
 import {Modal, Button} from 'dbox-ui';
@@ -103,14 +103,11 @@ class ModalView extends React.Component {
 }
 <ModalView />
 ```
-##### **信息提示**
+#### **信息提示**
 通过设置info，success，error来设置信息提示的类型
 ```jsx
 import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
-  constructor(props) {
-    super(props)
-  };
   info () {
     Modal.info({
       title: '这是一条通知信息',
@@ -149,9 +146,6 @@ class ModalView extends React.Component {
 ```jsx
 import {Modal, Button} from 'dbox-ui';
 class ModalView extends React.Component {
-  constructor(props) {
-    super(props)
-  };
   showConfirm () {
     Modal.confirm({
       iconType: 'close-circle',
@@ -184,7 +178,6 @@ class ModalView extends React.Component {
 | onOk       | 点击确定回调       | function     | 无           |
 | onCancel   | 点击遮罩层或右上角叉或取消按钮的回调  | function(e)  | 无         |
 | width      | 宽度           | String or Number | 560           |
-| footer     | 底部内容       | React.Element    | 确定取消按钮 |
 | okText     | 确认按钮文字    | String           | 确定       |
 | cancelText | 取消按钮文字    | String           | 取消       |
 | maskClosable | 点击蒙层是否允许关闭 | Boolean   | true       |

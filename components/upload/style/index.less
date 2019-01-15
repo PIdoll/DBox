@@ -33,7 +33,7 @@
         position: absolute;
         top: 50px;
         left: 0;
-        font-size: 12px;
+        font-size: @font-size-sm;
         color: @text-color-secondary;
         user-select: none;
         pointer-events: none;
@@ -65,18 +65,18 @@
       display: table-cell;
       text-align: center;
       vertical-align: middle;
-      padding: 8px;
+      padding: @padding-xs;
     }
 
     .@{iconfont-css-prefix}-plus {
       font-size: 30px;
       transition: all .3s;
-      color: @disabled-color;
+      color: @text-color-disable;
     }
     .@{upload-prefix-cls}-text {
       margin-top: 14px;
       color: @text-color-secondary;
-      line-height: 22px;
+      line-height: @upload-basic-height;
     }
   }
   
@@ -126,12 +126,12 @@
       font-size: @font-size-base;
       margin: 0 0 8px 0;
       color: @text-color;
-      line-height: 22px;
+      line-height: @upload-basic-height;
     }
     p.@{upload-prefix-cls}-limit {
       font-size: @font-size-sm;
       color: @text-color-secondary;
-      line-height: 20px;
+      line-height: @upload-basic-height - 2px;
     }
   }
 }
@@ -141,7 +141,7 @@
   cursor: not-allowed;
   .@{idoll-prefix}-btn {
     background-color: @disabled;
-    border: 1px solid @default-color;
+    border: @border-width-base @border-style-base @default-color;
     cursor: not-allowed;
     i,span {
       color: @text-color-disable
@@ -176,7 +176,7 @@
     margin-top: 8px;
     font-size: @font-size-base;
     position: relative;
-    height: 22px;
+    height: @upload-basic-height;
     &-name {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -188,17 +188,17 @@
       }
       p > i:last-child {
         position: absolute;
-        right: 4px;
+        right: @upload-position-size;
         top:0;
-        line-height: 22px;
-        font-size:12px;
+        line-height: @upload-basic-height;
+        font-size:@font-size-sm;
         cursor: pointer; 
       }
     }
 
     &-info {
       height: 100%;
-      padding: 0 12px 0 0;
+      padding: 0 @padding-sm 0 0;
       transition: background-color .3s;
 
       > span {
@@ -215,14 +215,14 @@
     }
 
     .@{iconfont-css-prefix}-close {
-      font-size: 14px;
+      font-size: @font-size-base;
       opacity: 0;
       cursor: pointer;
       position: absolute;
       top: 0;
-      right: 4px;
+      right: @upload-position-size;
       color: @text-color-secondary;
-      line-height: 22px;
+      line-height: @upload-basic-height;
       &:hover {
         color: @text-color;
       }
@@ -264,19 +264,19 @@
     cursor: pointer;
     .@{upload-item}-info a {
       .@{iconfont-css-prefix}-check {
-        font-size: 14px;
+        font-size: @font-size-base;
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: @upload-position-size;
+        right: @upload-position-size;
       }
     }
     .@{upload-item}-info span {
       color: @primary-color;
       .@{iconfont-css-prefix}-check {
-        font-size: 14px;
+        font-size: @font-size-base;
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: @upload-position-size;
+        right: @upload-position-size;
       }
     }
   }
@@ -293,7 +293,7 @@
   &-picture,
   &-picture-card {
     .@{upload-item} {
-      padding: 8px;
+      padding: @padding-xs;
       border-radius: @border-radius-base;
       border: @border-width-base @border-style-base @border-color-base;
       height: 66px;
@@ -331,10 +331,10 @@
     }
 
     .@{iconfont-css-prefix}-close {
-      font-size: 14px !important;
+      font-size: @font-size-base !important;
       position: absolute;
-      right: 4px;
-      top: 4px;
+      right: @upload-position-size;
+      top: @upload-position-size;
       line-height: 1;
     }
   }
@@ -371,7 +371,7 @@
         color: @hover-icon-dark;
       }
       a:active i {
-        color: #fff;
+        color: @white;
       }
     }
 
@@ -392,7 +392,7 @@
         content: ' ';
         position: absolute;
         z-index: 1;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: @text-color;
         transition: all .3s;
         width: 100%;
         height: 100%;
@@ -419,12 +419,12 @@
         z-index: 10;
         transition: all .3s;
         cursor: pointer;
-        font-size: 16px;
+        font-size: @font-size-lg;
         width: 16px;
         color: @text-color-dark;
         margin: 0 8px;
         &:hover {
-          color: #fff;
+          color: @white;
         }
       }
     }
@@ -470,7 +470,7 @@
         .@{idoll-prefix}-progress-inner {
           .@{idoll-prefix}-progress-text {
             opacity: 1;
-            line-height: 24px;
+            line-height: @upload-basic-height + 2px;
           }
           .idoll-progress-circle {
             .idoll-progress-circle-path {
@@ -487,10 +487,10 @@
         .@{upload-item}-info {
           a {
             .@{iconfont-css-prefix}-check {
-              font-size: 14px;
+              font-size: @font-size-base;
               position: absolute;
-              top: 4px;
-              right: 4px;
+              top: @upload-position-size;
+              right: @upload-position-size;
             }
              span {
               opacity: 1;
@@ -503,29 +503,29 @@
           .@{idoll-prefix}-progress-inner {
             .@{idoll-prefix}-progress-text {
               opacity: 1;
-              line-height: 24px;
+              line-height: @upload-basic-height + 2px;
             }
           }
         }
       }
     } 
     .@{upload-item}-thumbnail {
-      width: 48px;
-      height: 48px;
+      width: @upload-picture-card-size;
+      height: @upload-picture-card-size;
       position: absolute;
       top: 8px;
       left: 8px;
     }
 
     .@{upload-item}-thumbnail img {
-      width: 48px;
-      height: 48px;
+      width: @upload-picture-card-size;
+      height: @upload-picture-card-size;
       overflow: hidden;
       display: block;
     }
 
     .@{upload-item}-thumbnail.@{iconfont-css-prefix}:before {
-      line-height: 48px;
+      line-height: @upload-picture-card-size;
       font-size: 24px;
       color: @text-color-secondary;
     }
@@ -536,17 +536,17 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       margin: 0 0 0 8px;
-      line-height: 44px;
+      line-height: @upload-picture-card-size - 4px;
       transition: all .3s;
-      padding-left: 48px;
-      padding-right: 8px;
+      padding-left: @upload-picture-card-size;
+      padding-right: @padding-xs;
       max-width: 100%;
       display: inline-block;
       box-sizing: border-box;
     }
 
     .@{upload-item}-uploading .@{upload-item}-name {
-      line-height: 28px;
+      line-height: @upload-basic-height + 6px;
     }
   }
 

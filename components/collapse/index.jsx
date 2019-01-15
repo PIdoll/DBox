@@ -2,7 +2,6 @@ import React from 'react'
 import RcCollapse from 'rc-collapse'
 import classNames from 'classnames'
 
-import animation from '../_util/openAnimation'
 import './style/index.js'
 
 export default class Collapse extends React.Component {
@@ -11,7 +10,6 @@ export default class Collapse extends React.Component {
 	static defaultProps = {
 		prefixCls: 'idoll-collapse',
 		bordered: true,
-		openAnimation: { ...animation, appear() {} }
 	};
 
 	render() {

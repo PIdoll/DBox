@@ -2,7 +2,7 @@
 @import "../../../style/mixins/index.less";
 
 @collapse-prefix-cls: ~"@{idoll-prefix}-collapse";
-@collapse-header-bg: #FAFAFA;
+@collapse-header-bg: @table-header-color;
 
 .collapse-close() {
   transform: rotate(0);
@@ -28,12 +28,12 @@
 		}
 
 		> .@{collapse-prefix-cls}-header {
-			line-height: 22px;
-			padding: 12px 24px;
+			line-height: @collapse-header-line-height;
+			padding: @padding-sm @padding-lg;
 			color: @heading-color;
 			cursor: pointer;
 			position: relative;
-			transition: all .3s;
+			transition: all @animation-duration-slow;
 
 			.arrow {
 				.iconfont-mixin();
@@ -41,11 +41,11 @@
 				font-size: @font-size-sm;
 				position: absolute;
 				display: inline-block;
-				line-height: 46px;
+				line-height: @collapse-item-line-height;
 				vertical-align: top;
-				transition: transform 0.24s;
+				transition: transform @animation-duration-slow;
 				top: 0;
-				right: 24px;
+				right: @padding-lg;
 				&:before {
 					content: "\E6F5";
 				}
@@ -54,16 +54,15 @@
 	}
 
 	&-anim-active {
-		transition: height .2s @ease-out;
+		transition: height @animation-duration-base @ease-out;
 	}
 
 	&-content {
 		overflow: hidden;
 		color: @text-color;
-		padding: 0 24px;
-		background-color: @component-background;
+		padding: 0 @padding-lg;
+		background-color: @collapse-color;
 		border-width: 0;
-		// border-bottom: 1px solid @border-color-base;
 
 		& > &-box {
 			padding-top: @padding-md;
@@ -79,7 +78,6 @@
 	&-item:last-child {
 		> .@{collapse-prefix-cls}-content {
 			border-radius: 0 0 @border-radius-base @border-radius-base;
-			// border-bottom: 1px solid @border-color-base;
 		}
 	}
 
@@ -100,13 +98,9 @@
 	}
 
 	&-borderless {
-		background-color: @component-background;
+		background-color: @collapse-color;
 		border: 0;
 	}
-
-	// &-borderless > &-item {
-	// 	border-bottom: 1px solid @border-color-base;
-	// }
 
 	&-borderless > &-item:last-child,
 	&-borderless > &-item:last-child &-header {
@@ -114,8 +108,8 @@
 	}
 
 	&-borderless > &-item >&-header {
-		padding: 12px 0;
-		background-color: #fff;
+		padding: @padding-sm 0;
+		background-color: @collapse-color;
 		.arrow {
 			right: 0;
 		}
@@ -133,7 +127,7 @@
 	}
 
 	&-borderless > &-item > &-content > &-content-box {
-		padding-top: 4px;
+		padding-top: @margin-xs - 4px;
 		border-bottom: 0;
 	}
 
@@ -141,14 +135,14 @@
 		&,
 		& > .arrow {
 			cursor: not-allowed;
-			color: @disabled-color;
+			color: @text-color-disable;
 		}
 	}
 	&-bgColor {
 		border: none;
 		.@{collapse-prefix-cls}-item {
 			border-bottom: 0;
-			margin-bottom: 24px;
+			margin-bottom: @padding-lg;
 			.@{collapse-prefix-cls}-content {
 				background-color: #FCFCFC;
 				border-bottom: 0;

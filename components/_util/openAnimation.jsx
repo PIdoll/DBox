@@ -9,6 +9,7 @@ function animate(node, show, done) {
       } else {
         height = node.offsetHeight;
         node.style.height = 0;
+        node.style.duration = `.3s`
       }
     },
     active() {

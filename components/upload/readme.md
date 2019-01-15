@@ -346,7 +346,7 @@ class Demo extends React.Component {
     });
   };
   render() {
-    const { uploading, fileList } = this.state;
+    const { fileList } = this.state;
     const props4 = {
       onRemove: (file) => {
         this.setState((state) => {
@@ -359,10 +359,22 @@ class Demo extends React.Component {
         });
       },
       beforeUpload: (file) => {
-        this.setState(state => ({
-          fileList: [...state.fileList, file],
+        const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+        const isLt1M = file.size / 1024 / 1024 < 1;
+        if (isJPG || isLt1M) {
+          if (!isJPG) {
+            Message.error('您只能上传 JPG或PNG 文件!')
+        }
+          if (!isLt1M) {
+            Message.error('上传图片文件必须小于 1024KB!')
+         }
+         return isJPG && isLt1M;
+        }else {
+          this.setState(state => ({
+            fileList: [...state.fileList, file],
         }));
-        return false;
+          return false;
+        }
       },
       fileList,
     };
@@ -406,10 +418,9 @@ class Demo extends React.Component {
 | accept     | 可选参数, 接受上传的文件类型, 详见 [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-accept)    | String      | 无    |
 | beforeUpload | 可选参数, 上传文件之前的钩子，参数为上传的文件，若返回 `false` 或者 Promise 则停止上传。**注意：该方法不支持老 IE**。 | Function    | 无    |
 | onChange   | 可选参数, 上传文件改变时的状态，详见 onChange                | Function    | 无    |
-| listType   | 上传列表的内建样式，支持两种基本样式 `text` or `picture`     | String      | 'text'|
+| listType   | 上传列表的内建样式，支持3种基本样式 `text` / `picture`/`picture-card`     | String      | 'text'|
 | onPreview  | 点击文件链接时的回调                                       | Function(file) | 无    |
 | onRemove   | 点击移除文件时的回调                                       | Function(file) | 无    |
-| supportServerRender | 服务端渲染时需要打开这个                           | Boolean | false    |
 | disabled | 是否禁用                           | Boolean | false    |
 
 ##### **onChange**

@@ -19,7 +19,7 @@ class TabsView extends React.Component {
   render() {
     return(
     <div>
-      <Tabs defaultActiveKey='5' onChange={this.callBack}>
+      <Tabs defaultActiveKey='5'>
         <TabPane tab='选项一' key='5'>选项一</TabPane>
         <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
         <TabPane tab='选项三' key='3'>选项三</TabPane>
@@ -230,13 +230,14 @@ class TabsView extends React.Component {
 ##### **吸顶效果**
 页面滑动到一定距离固定tabs栏
 ```jsx
+import ReactDOM from 'react-dom';
 import {Tabs} from 'dbox-ui';
-import {TabPane, ReactDOM} from 'dbox-ui/tabs';
+const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
 	componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
     const currentHeight = element.offsetTop - element.offsetHeight;
-    const left = `${element.offsetLeft-21}px`;
+    const left = `${element.offsetLeft -21}px`;
     window.addEventListener('scroll', this.onScroll = () => {
       if (window.scrollY >= currentHeight && window.scrollY < element.offsetTop) {
         element.style.position = 'fixed';
@@ -278,7 +279,6 @@ class TabsView extends React.Component {
 | animated | 是否使用动画切换 Tabs，在 `tabPosition=top/bottom` 时有效 | boolean/{inkBar:boolean, tabPane:boolean} | true, 当 type="card" 时为 false |
 | defaultActiveKey | 初始化选中面板的 key，如果没有设置 activeKey | string | 第一个面板 |
 | hideAdd | 是否隐藏加号图标，在 `type="editable-card"` 时有效 | boolean | false |
-| size | 大小，提供 `default` 和 `small` 两种大小，仅当 `type="line"` 时生效。 | string |`default` |
 | tabBarExtraContent | tab bar 上额外的元素 | React.ReactNode | 无 |
 | tabBarStyle | tab bar 的样式对象 | object | - |
 | tabPosition | 页签位置，可选值有 `top` `right` `bottom` `left` | string | `top` |
@@ -297,6 +297,7 @@ class TabsView extends React.Component {
 | key | 对应 activeKey | string | 无 |
 | closable | 在type="editable-card"模式下使用阻止卡片关闭 | boolean | `true` |
 | tab | 选项卡头显示文字 | string / ReactNode | 无 |
+| disabled |  禁用当前面板 | bool | 无 |
 
 
 ```jsx noeditor

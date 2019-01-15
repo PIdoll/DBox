@@ -65,7 +65,7 @@ class RadioView extends React.Component {
   return (
 	<RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
 		<Radio value='1'>A</Radio>
-		<Radio value='2'>B</Radio>
+		<Radio disabled value='2'>B</Radio>
 		<Radio value='3'>C</Radio>
 		<Radio value='4'>D</Radio>
 	</RadioGroup>
@@ -279,6 +279,7 @@ const RadioButton = Radio.RadioButton;
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- | --- |
 | checked | 指定当前是否选中 | boolean | false |
+| disabled | 禁用 | boolean | false |
 | defaultChecked | 初始是否选中 | boolean | false |
 | value | 根据 value 进行比较，判断是否选中 | any | 无 |
 
@@ -291,19 +292,11 @@ const RadioButton = Radio.RadioButton;
 | defaultValue | 默认选中的值 | string | 无 |
 | direction | 组合的垂直(vertical)与水平排列方式(默认无传参) | string | 无 |
 | name | RadioGroup 下所有 `input[type="radio"]` 的 `name` 属性 | string | 无 |
-| options | 以配置形式设置子元素 | string\[]\ Array&lt;{ label: string value: string disabled?: boolean }> | 无 |
 | size | 大小，只对按钮样式生效 | `large` \ `default` \ `small` |`default`|
 | value | 用于设置当前选中的值 | any | 1 |
 | onChange | 选项变化时的回调函数 | Function(e:Event) | 无 |
 | buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | 默认描边 \ `solid`填充 | 无 |
 
-
-#### **Radio method**
-
-| 名称 | 描述 |
-| ---- | ----------- |
-| focus() | 获取焦点 |
-| blur() | 移除焦点 |
 
 
 <style>.idoll-steps{margin-bottom: 10px}</style>

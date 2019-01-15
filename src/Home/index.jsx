@@ -104,6 +104,12 @@ function Home() {
         </NavLink>
       </div>
       <div className='widget-item' >
+        <NavLink className='widget-wrap' to='/drawer'>
+          <div className='name'>抽 屉</div>
+          <div className='info'>Drawer</div>
+        </NavLink>
+      </div>
+      <div className='widget-item' >
         <NavLink className='widget-wrap' to='/dropdown'>
           <div className='name'>下拉菜单</div>
           <div className='info'>Dropdown</div>

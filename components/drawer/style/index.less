@@ -8,7 +8,7 @@
   top: 0;
   width: 0%;
   height: 100%;
-  z-index: @zindex-modal;
+  z-index: 1000;
   > * {
     transition:transform .3s cubic-bezier(.7,.3,.1,1);
   }
@@ -37,7 +37,7 @@
   &-left {
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-right;
+        box-shadow: @shadow-small-right;
       }
     }
   }
@@ -49,7 +49,7 @@
     }
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-left;
+        box-shadow: @shadow-small-left;
       }
     }
   }
@@ -71,7 +71,7 @@
   &-top {
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-down;
+        box-shadow: @shadow-small;
       }
     }
   }
@@ -83,7 +83,7 @@
     }
     &.@{dawer-prefix-cls}-open {
       .@{dawer-prefix-cls}-content-wrapper {
-        box-shadow: @shadow-1-up;
+        box-shadow: @shadow-small;
       }
     }
   }
@@ -101,14 +101,14 @@
   &-title {
     margin: 0;
     font-size: @font-size-lg;
-    line-height: 22px;
+    line-height: @drawer-title-line-height;
     font-weight: 500;
     color: @heading-color;
   }
 
   &-content {
     position: relative;
-    background-color: @component-background;
+    background-color: @drawer-clolor;
     border: 0;
     background-clip: padding-box;
     z-index: 1;
@@ -136,29 +136,29 @@
       text-align: center;
       text-transform: none;
       text-rendering: auto;
-      width: 56px;
-      height: 56px;
-      line-height: 56px;
+      width: @drawer-close-width;
+      height: @drawer-close-height;
+      line-height: @drawer-close-line-height;
       font-size: @font-size-lg;
     }
 
     &:focus,
     &:hover {
-      color: #444;
+      color: @hover-icon;
       text-decoration: none;
     }
   }
 
   &-header {
-    padding: 16px 24px;
+    padding: @padding-md @padding-lg;
     border-radius: @border-radius-base @border-radius-base 0 0;
-    background: @component-background;
+    background: @drawer-clolor;
     color: @text-color;
     border-bottom: @border-width-base @border-style-base @border-color-split;
   }
 
   &-body {
-    padding: 24px;
+    padding: @padding-lg;
     font-size: @font-size-base;
     line-height: @line-height-base;
     word-wrap: break-word;
@@ -176,7 +176,7 @@
   &-open {
     transition: transform .3s cubic-bezier(.7,.3,.1,1);
     &-content {
-      box-shadow: -2px 0 8px rgba(0,0,0,.15);
+      box-shadow: @shadow-small-left;
     }
   }
 }

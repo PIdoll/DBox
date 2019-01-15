@@ -1,46 +1,46 @@
-@import "../../../style/theme/default/default.less";
+@import "../../../style/theme/default/default2.less";
 @confirm-prefix-cls: idoll-confirm;
 
 .@{confirm-prefix-cls} {
-  width: 408px !important;
+  width: @modal-width !important;
   .idoll-modal-header {
     display: none;
   }
 
   .idoll-modal-body {
-    padding: 24px 24px 16px 24px;
+    padding: @padding-lg @padding-lg @padding-md @padding-lg;
   }
 
   &-body {
     .@{confirm-prefix-cls}-title {
       color: @text-color;
       font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: @padding-md;
+      line-height: @padding-lg;
     }
 
     .@{confirm-prefix-cls}-content {
       color: @text-color;
-      padding: 16px 0px 16px 40px;
+      padding: @padding-md 0px @padding-md (@padding-md + @padding-lg);
       p {
       font-size: @font-size-base;
-      line-height: 22px;
+      line-height: @modal-line-height;
       }
     }
 
     > .idoll-icon {
-      font-size: 24px;
-      margin-right: 16px;
+      font-size: @modal-font-size;
+      margin-right:@padding-md;
       position: relative;
     }
   }
 
   .@{confirm-prefix-cls}-btns {
-    margin-top: 16px;
+    margin-top: @padding-md;
     float: right;
 
     button {
-      margin-left: 8px;
+      margin-left: @margin-xs;
       margin-bottom: 0;
     }
   }

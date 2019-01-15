@@ -1,18 +1,17 @@
 @import "../../../style/theme/default/index";
-@import "../../../style/mixins/index";
+@import "../../../style/theme/default/compoments/dropdown.less";
 @dropdown-prefix-cls: ~"@{idoll-prefix}-dropdown";
 @submenu-prefix-cls: ~"idoll-dropdown-menu-submenu";
 
 .@{dropdown-prefix-cls} {
-  .reset-component;
   position: absolute;
-  left: -9999px;
-  top: -9999px;
-  z-index: @zindex-dropdown;
+  left: 1050;
+  top: 1050;
+  z-index: 1050;
   display: block;
-  font-size: 12px;
+  font-size: @font-size-sm;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: @line-height-base;
 
   .idoll-icon,
   .idoll-icon:hover,
@@ -23,20 +22,20 @@
   }
 
   &-normal {
-    margin-right: 50px;
+    margin-right: @dropdown-margin;
     text-decoration: none;
     color: @text-color;
     i:before {
-      margin-left: 4px;
+      margin-left: @margin-xs - 4px;
       color: @text-color-disable
     }
   }
   &-normal:hover {
     color: @primary-color;
-    margin-right: 50px;
+    margin-right: @dropdown-margin;
     text-decoration: none;
     i:before {
-      margin-left: 4px;
+      margin-left: @margin-xs - 4px;
       color: @primary-color;
     }
   }
@@ -46,7 +45,7 @@
     position: relative;
 
     .@{idoll-prefix}-btn > .@{iconfont-css-prefix}-down {
-      .iconfont-size-under-12px(10px;)
+      font-size: @font-size-sm - 2px;
     }
   }
 
@@ -60,8 +59,6 @@
   &-menu-submenu-hidden {
     opacity: 0;
     pointer-events: none;
-    // animation-name: idollSlideUpOut !important;
-    // animation-duration: 0.01s !important;
   }
 
   &-menu {
@@ -71,15 +68,15 @@
     padding: 0;
     margin: 0;
     text-align: left;
-    background-color: @component-background;
+    background-color: @dropdown-color;
     border-radius: @border-radius-base;
-    box-shadow: @box-shadow-base;
+    box-shadow: @shadow-small;
     background-clip: padding-box;
 
     &-item-group-title {
       color: @text-color-secondary;
-      padding: 5px @control-padding-horizontal;
-      transition: all 0.3s;
+      padding: @dropdown-padding @control-padding-horizontal;
+      transition: all .3s;
     }
 
     &-submenu-popup {
@@ -88,7 +85,7 @@
 
     &-item,
     &-submenu-title {
-      padding: 5px @control-padding-horizontal + 4px;
+      padding: @dropdown-padding @control-padding-horizontal + 4px;
       margin: 0;
       clear: both;
       font-size: @font-size-base;
@@ -96,13 +93,13 @@
       color: @text-color;
       white-space: nowrap;
       cursor: pointer;;
-      line-height: 22px;
+      line-height: @dropdown-base-line-height;
 
       > a {
         color: @text-color;
         display: block;
-        padding: 5px @control-padding-horizontal;
-        margin: -5px -@control-padding-horizontal;
+        padding: @dropdown-padding @control-padding-horizontal;
+        margin: -@dropdown-padding -@control-padding-horizontal;
         &:focus {
           text-decoration: none;
         }
@@ -120,11 +117,11 @@
       }
 
       &-disabled {
-        color: @disabled-color;
+        color: @text-color-disable;
         cursor: not-allowed;
         &:hover {
-          color: @disabled-color;
-          background-color: @component-background;
+          color: @text-color-disable;
+          background-color: @dropdown-color;
           cursor: not-allowed;
         }
       }
@@ -159,13 +156,13 @@
           font-style: normal;
           content: "\E72A";
           color: @text-color-secondary;
-          font-size: 14px;
+          font-size: @font-size-base;
         }
       }
     }
 
     &-submenu-title {
-      padding-right: 26px;
+      padding-right: @padding-lg + 2px;
       &:first-child,
       &:last-child {
         border-radius: 0;
@@ -181,14 +178,14 @@
       left: 100%;
       position: absolute;;
       min-width: 100%;
-      margin-left: 4px;
+      margin-left: @margin-xs - 4px;
       transform-origin: 0 0;
     }
 
     &-submenu&-submenu-disabled .@{dropdown-prefix-cls}-menu-submenu-title {
       &,
       .@{dropdown-prefix-cls}-menu-submenu-arrow:after {
-        color: @disabled-color;
+        color: @text-color-disable;
       }
     }
 
@@ -200,16 +197,12 @@
       border-radius: 0 0 @border-radius-base @border-radius-base;
     }
   }
-  // &,&-menu-submenu {
-  //   // animation-name: idollSlideUpIn;
-  //   // animation-duration: 0.2s;
-  // }
 }
 
 .@{dropdown-prefix-cls}-trigger,
 .@{dropdown-prefix-cls}-link {
   .@{iconfont-css-prefix}-down {
-    .iconfont-size-under-12px(10px);
+    font-size: @font-size-sm - 2px;
   }
 }
 
@@ -217,12 +210,12 @@
   white-space: nowrap;
   &-disabled {
     i:before {
-      color:@disabled-color
+      color:@text-color-disable
     }
   }
   &-disabled:hover {
     i:before {
-      color: @disabled-color;
+      color: @text-color-disable;
     }
   }
 
@@ -237,15 +230,15 @@
     padding-right: @padding-xs;
   }
   .@{iconfont-css-prefix}-down {
-    font-size: 14px;
+    font-size: @font-size-base;
     color: @text-color-disable;
   }
   .idoll-btn-sm {
-    font-size: 12px;
+    font-size: @font-size-sm ;
     .idoll-icon.idoll-icon-down {
-      margin-left: 4px;
+      margin-left: @margin-xs - 4px;
       &:before {
-        font-size: 12px;
+        font-size: @font-size-sm ;
         color: @text-color-disable;
       }
     }
@@ -258,9 +251,9 @@
     }
   }
   .idoll-btn-lg {
-    font-size: 16px;
+    font-size: @font-size-lg;
     i:before {
-      font-size: 16px;
+      font-size: @font-size-lg;
       color: @text-color-disable;
     }
   }
@@ -295,7 +288,7 @@
     }
 
     &:hover {
-      color: #fff;
+      color: @dropdown-color;
       background: transparent;
     }
   }
@@ -305,7 +298,7 @@
     &:hover,
     > a {
       background: @primary-color;
-      color: #fff;
+      color: @dropdown-color;
     }
   }
 }
@@ -333,6 +326,13 @@ h1.h1:first-child {
   >.idoll-btn-group {
     float: none !important;
   }
+}
+
+.idoll-icon-a,
+.idoll-icon-a:active,
+.idoll-icon-a:focus {
+  text-decoration: none;
+  color: @text-color-secondary;
 }
 
 @keyframes idollSlideUpIn {

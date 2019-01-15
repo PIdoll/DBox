@@ -4,7 +4,7 @@
 较简单的基础用法，不设置 defaultPageSize 时默认为每页10条数据；通过 total 可以设置总条数。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination defaultCurrent={1} total={50}></Pagination>
+<Pagination defaultCurrent={5} total={500} showLessItems></Pagination>
 ```
 
 ##### **更多分页**
@@ -19,7 +19,13 @@ import {Pagination} from 'dbox-ui';
 通过 defaultPageSize 设置每页显示的条数。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
+function onShowSizeChange(current, pageSize) {
+  console.log(current, pageSize);
+};
+function onChange(pageNumber) {
+  console.log('Page: ', pageNumber);
+};
+<Pagination onChange={onChange} onShowSizeChange={onShowSizeChange} defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
 ```
 ##### **跳转分页**
 添加 showQuickJumper 设置快速页面跳转。
@@ -36,11 +42,11 @@ function showTotal(total) {
   return `总 ${total} 条`;
 }
 <div>
-	<Pagination size='small' total={50}></Pagination>
-	<br />
-   <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
-   <br />
-   <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
+  <Pagination size='small' total={50}></Pagination>
+  <br />
+  <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
+  <br />
+  <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
 </div>
 ```
 
@@ -62,10 +68,9 @@ import {Pagination} from 'dbox-ui';
 
 | 参数 | 说明 | 类型 | 默认值|
 | --- | --- | --- | --- |
-| current | 当前页数与defaultCurrent同时存在会覆盖defaultCurrent | number | - |
+| current | 当前页数与defaultCurrent同时存在会覆盖defaultCurrent且current和defaultCurrent同时使用会无法切换分页！！！！！ | number | - |
 | defaultCurrent | 默认的当前页数 | number | 1|
 | defaultPageSize | 默认的每页条数 | number | 10 |
-| itemRender | 用于自定义页码的结构，可用于优化SEO | (page，type:'page'/'prev'/'next', originalElement) => React.ReactNode | - |
 | pageSize | 每页条数与defaultPageSize同时存在会覆盖defaultPageSize | number | - |
 | showQuickJumper | 是否可以快速跳转至某页 | boolean | false |
 | showSizeChanger | 是否可以改变pageSize | boolean | false|
@@ -74,7 +79,6 @@ import {Pagination} from 'dbox-ui';
 | simple | 当添加该属性时，显示为简单分页 | boolean | - |
 | size | 当为`small`时，是小尺寸分页 | string | - |
 | total | 数据总数 | number | 0 |
-| showTitle | 展示页码hover时显示的title值 | boolean | false |
 | showLessItems | 显示较少的页码项 | boolean | false |
 | onChange | 页码改变的回调，参数是改变后的页码及每页条数 | Function(page, pageSize) | noop |
 | onShowSizeChange | pageSize 变化的回调 | Function(current, size) | noop |

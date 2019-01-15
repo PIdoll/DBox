@@ -51,7 +51,6 @@ class MenuView extends React.Component {
 ```jsx
 import {Menu, Icon} from 'dbox-ui';
 const SubMenu = Menu.SubMenu;
-const	rootSubmenuKeys = ['sub_1', 'sub_2', 'sub3_'];
 class MenuView extends React.Component {
   constructor(props) {
     super(props);
@@ -62,12 +61,6 @@ class MenuView extends React.Component {
 	  this.onOpenChange = this.onOpenChange.bind(this)
   };
   onOpenChange (value) {
-    // 解决IE浏览器不支持find()
-    if(!Array.prototype.find){
-      Array.prototype.find = function(callback) {
-          return callback && (this.filter(callback)|| [])[0];
-      };
-    }
     const latestOpenKey = value.find(key => this.state.openKeys.indexOf(key) === -1);
       this.setState({
         openKeys: latestOpenKey ? [latestOpenKey] : [],
@@ -284,7 +277,6 @@ class MenuView extends React.Component {
 | onOpenChange | SubMenu 展开/关闭的回调 | function(openKeys: string\[]) | noop |
 | onSelect | 被选中时调用 | function({ item, key, selectedKeys }) | 无   |
 
-> More options in [rc-menu](https://github.com/react-component/menu#api)
 
 ##### **Menu.Item**
 
@@ -301,7 +293,6 @@ class MenuView extends React.Component {
 | disabled | 是否禁用 | boolean | false |
 | key | 唯一标志 | string |  |
 | title | 子菜单项值 | string/ReactNode |  |
-| onTitleClick | 点击子菜单标题 | function({ key, domEvent }) |  |
 
 ##### **Menu.ItemGroup**
 
