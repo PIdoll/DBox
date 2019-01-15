@@ -52,10 +52,11 @@ export default class TagGroup extends React.Component {
 
   render() {
     const { tags, inputVisible, inputValue } = this.state;
+    const {color} = this.props;
     return (
       <div className='group'>
         {tags.map((tag, index) => {
-           return <Tag key={tag} closable={index !== this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
+           return <Tag color={color || ''} key={tag} closable={index !== this.state.id} afterClose={() => this.handleClose(tag)}>{tag}</Tag>
         })}
         {inputVisible && (
           <Input
@@ -74,8 +75,9 @@ export default class TagGroup extends React.Component {
             className='sdfsf'
             style={{borderStyle: 'dashed'}}
             onClick={this.showInput}
+            color={color || ''}
           >
-            <Icon type={this.state.iconType} /><div style={{ marginLeft: '4px' }}>{this.state.text}</div>
+            <Icon style={{color: color || ''}} type={this.state.iconType} /><div style={{ marginLeft: '4px' }}>{this.state.text}</div>
           </Tag>
         )}
       </div>

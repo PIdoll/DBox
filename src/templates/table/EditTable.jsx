@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'components';
+import {Table, Divider, Tooltip, Input, Form, Select, Popconfirm, InputNumber} from 'components';
 const {Option} = Select;
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
@@ -17,7 +17,7 @@ class EditableCell extends React.Component {
       return <InputNumber style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'city') {
-      return <Select style={{ width: 70 }} placeholder='请选择' >
+      return <Select style={{ width: 80 }} placeholder='请选择' >
         <Option value='北京'>北京</Option>
         <Option value='上海'>上海</Option>
         <Option value='广州'>广州</Option>
@@ -29,22 +29,19 @@ class EditableCell extends React.Component {
       </Select>;
     }
     if (this.props.inputtype === 'address') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 200 }} />;
-    }
-    if (this.props.inputtype === 'name') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 70 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
     }
     if (this.props.inputtype === 'Phone') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 130 }} />;
+      return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
     }
-    return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
+    return <Input />;
   };
 
   render() {
     const {
       editing,
       dataIndex,
-      title,
+      // title,
       // inputtype,
       record,
       // index,
@@ -59,10 +56,6 @@ class EditableCell extends React.Component {
               {editing ? (
                 <FormItem style={{ margin: 0 }}>
                   {getFieldDecorator(dataIndex, {
-                    rules: [{
-                      required: true,
-                      message: `Please Input ${title}!`,
-                    }],
                     initialValue: record[dataIndex],
                   })(this.getInput())}
                 </FormItem>
@@ -230,7 +223,6 @@ export default class EditTable extends React.Component {
     const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
     if ((selfWdith > parentWidth - (parentPadding * 2))) {
       this.setState({flag: true});
-    console.log(`onMouseEnter${this.state.flag}`)
     }
   }
   onMouseLeave () {
@@ -288,12 +280,6 @@ export default class EditTable extends React.Component {
   }
   render () {
     const { flag } = this.state;
-    // const rowSelection = {
-    //   selectedRowKeys,
-    //   onChange: this.onSelectChange,
-    // };
-    // const hasSelected = selectedRowKeys.length > 0;
-    // edit
     const components = {
       body: {
         row: EditableFormRow,
@@ -313,8 +299,6 @@ export default class EditTable extends React.Component {
               return 'number'
             } else if (col.dataIndex === 'city') {
               return 'city'
-            } else if (col.dataIndex === 'name') {
-              return 'name'
             } else if (col.dataIndex === 'address') {
               return 'address'
             } else if (col.dataIndex === 'Phone') {
@@ -339,38 +323,24 @@ class NumericInput extends React.Component {
   constructor(props) {
   super(props);
   this.onChange = this.onChange.bind(this)
-  this.onBlur = this.onBlur.bind(this)
   }
   onChange (e) {
-    const { value } = e.target;
-      this.props.onChange(value);
+      this.props.onChange(e.target.value);
   }
-  onBlur () {
-    const { value, onBlur, onChange } = this.props;
-    if (value.charAt(value.length - 1) === '.' || value === '-') {
-      onChange({ value: value.slice(0, -1) });
-    }
-    if (onBlur) {
-      onBlur();
-    }
-  }
-
-
   render() {
-    const { value } = this.props;
     return (
       <Tooltip
-        trigger='focus'
-        title={value}
+        trigger='click'
+        title={this.props.value}
         placement='topLeft'
       >
         <Input
           {...this.props}
           onChange={this.onChange}
-          onBlur={this.onBlur}
           placeholder='Input here'
         />
       </Tooltip>
     );
   }
 }
+

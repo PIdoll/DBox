@@ -38,6 +38,14 @@ export default class UploadList extends React.Component {
     e.preventDefault();
     return onPreview(file);
   }
+  handlePre = (file, e) => {
+    const { onPreview } = this.props;
+    if (!onPreview) {
+      return;
+    }
+    // e.preventDefault();
+    return onPreview(file);
+  }
 
   componentDidUpdate() {
     if (this.props.listType !== 'picture' && this.props.listType !== 'picture-card') {
@@ -98,11 +106,11 @@ export default class UploadList extends React.Component {
       const preview = file.url ? (
         <a
           {...file.linkProps}
-          href={file.url}
+          href={file.url || file.thumbUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={`${prefixCls}-list-item-name`}
-          onClick={e => this.handlePreview(file, e)}
+          onClick={e => this.handlePre(file, e)}
           title={file.name}
         >
           <Icon type={listType === 'picture' || listType === 'picture-card' ? null : 'clip'} /><span>{listType === 'picture-card' ? null : file.name}</span><Icon type={file.status === 'done' ? 'check' : ''} />

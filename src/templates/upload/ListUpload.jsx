@@ -2,8 +2,10 @@ import React from 'react';
 import {Upload, Message, Icon, Button} from 'components';
 
 
-function onPreview () {
+function onPreview (e) {
   console.log('onPreview点击文件链接时的回调')
+  console.log(e.url)
+  return e.url
 };
 function onRemove () {
   console.log('onRemove点击文件链接时的回调')
