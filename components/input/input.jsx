@@ -207,7 +207,7 @@ export default class Input extends Component {
 
     let clearAfter = (
       <span
-        style={{display: clearIconDisplay ? '' : 'none'}}
+        style={{display: clearIconDisplay ? 'block' : 'none'}}
         className={`${props.prefixCls}-clear-icon`}
         >
         {clearSuffix}
@@ -215,10 +215,11 @@ export default class Input extends Component {
     );
 
     const suffix =
-      <span style={{display: (props.suffix || props.clearable) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
+      <span style={{display: (props.suffix || (props.clearable && clearIconDisplay)) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
         {(clearAfter)}
         {clearIconDisplay ? null : props.suffix }
       </span>
+
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
@@ -228,7 +229,6 @@ export default class Input extends Component {
 
     return (
       <span
-        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
         className={affixWrapperCls}
         style={props.style}
       >
@@ -248,6 +248,7 @@ export default class Input extends Component {
   handleIconOnMouseLeave = () => {
     this.setState({
       isIconHover: false,
+      isInputHover: true
     })
   }
 
@@ -277,7 +278,6 @@ export default class Input extends Component {
 
   renderInput() {
     const { value, className } = this.props;
-    // console.log('isOnInput', 'isInputHover', 'isIconHover', this.state.isOnInput, this.state.isInputHover, this.state.isIconHover)
 
     // Fix https://fb.me/react-unknown-prop
     const otherProps = omit(this.props, [
