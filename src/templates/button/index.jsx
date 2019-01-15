@@ -75,7 +75,7 @@ export default class Button extends React.Component {
         <h1 className='h1'>8.组合按钮</h1>
         <h2 className='h2'>
           测试场景: <br />
-          1)多个Button按钮被ButtonGroup包裹，测试按钮是否正确组合，注意想接处的不要有border-radius
+          1)多个Button按钮被ButtonGroup包裹，测试按钮是否正确组合，注意相接处不要有border-radius
         </h2>
         <GroupButton />
 
