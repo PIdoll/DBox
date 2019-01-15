@@ -79,6 +79,7 @@ const TagGroup = Tag.Group;
 | id | 默认不可移除的标签的下标值 | number | `0` |
 | text | 动态增加标签的文本内容 | string | `添加` |
 | iconType | 动态增加标签的Icon | string | `plus` |
+| color | 动态标签的颜色 | string |  |
 
 
 ##### **Tag 方法**

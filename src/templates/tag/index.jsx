@@ -48,6 +48,7 @@ export default class SwitchView extends React.Component {
           1）测试API id默认不可移除的标签的下标值(number)<br />
           1）测试API text动态增加标签的文本内容(string)<br />
           1）测试API iconType动态增加标签的Icon(string)<br />
+          1）测试API color 动态标签的颜色(string)<br />
         </h2>
         <DynTag />
         <br />

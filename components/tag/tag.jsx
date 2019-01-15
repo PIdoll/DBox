@@ -66,7 +66,8 @@ export default class Tag extends Component {
         const {children, prefixCls, target, color, href, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
-            marginLeft: 4
+            marginLeft: 4,
+            color: color
         }
         const closeIcon = closable ? <Icon style={iconStyle} type='close' onClick={this.close} /> : null;
         const cls = classNames(prefixCls, {
