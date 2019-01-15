@@ -47,7 +47,8 @@ import {
   BackTop,
   Calendar,
   Transfer,
-  Drawer
+  Drawer,
+  TreeSelect,
 } from './templates/index';
 
 import './App.css';
@@ -103,6 +104,7 @@ const App = () => (
       <Route exact path='/calendar' component={Calendar} />
       <Route exact path='/drawer' component={Drawer} />
       <Route exact path='/transfer' component={Transfer} />
+      <Route exact path='/treeSelect' component={TreeSelect} />
     </div>
   </Router>
 )

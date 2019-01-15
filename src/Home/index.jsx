@@ -278,6 +278,12 @@ function Home() {
         </NavLink>
       </div>
       <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/treeSelect'>
+          <div className='name'>树选择</div>
+          <div className='info'>TreeSelect</div>
+        </NavLink>
+      </div>
+      <div className='widget-item'>
         <NavLink className='widget-wrap' to='/tooltip'>
           <div className='name'>文字提示</div>
           <div className='info'>tooltip</div>
