@@ -42,9 +42,9 @@ export default class Select extends React.Component {
         <h2 className='h2'>
           测试场景: <br />
           1)设置mode属性为multiple,测试选择内容是否为多选<br />
-          2)设置mode属性为tag,测试选择内容是否可以随意输入同时可多选
-          3)设置maxTagCount属性，测试显示tag的最大值
-          4)设置maxTagPlaceholder为超过maxTagCount时显示的内容
+          2)设置mode属性为tag,测试选择内容是否可以随意输入同时可多选<br />
+          3)设置maxTagCount属性，测试显示tag的最大值<br />
+          4)设置maxTagPlaceholder为超过maxTagCount时显示的内容<br />
           5)设置autoClearSearchValue属性为false,测试选则后搜索框是否不会清空
         </h2>
         <MultipleSelect />
