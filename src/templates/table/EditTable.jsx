@@ -72,6 +72,7 @@ export default class EditTable extends React.Component {
   super(props);
   this.state = {
     flag: false,
+    visible: false,
     value: '',
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
