@@ -6,7 +6,7 @@ export default class Tooltip extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: !!props.visible || !!props.defaultVisible,
+      visible: !!props.visible || !!props.defaultVisible || false,
     };
   }
   static defaultProps = {
