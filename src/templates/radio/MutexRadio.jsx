@@ -5,7 +5,7 @@ export default class MutexRadio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '1'
+      value: '2'
     }
     this.onChange = this.onChange.bind(this)
   };

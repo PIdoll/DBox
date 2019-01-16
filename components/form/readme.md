@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
           )}
         </FormItem>
         <FormItem>
-          {getFieldDecorator('password', {
+          {getFieldDecorator('Password', {
             rules: [{ required: true, message: '请输入密码!' }],
           })(
             <Input prefix={<Icon type="unlock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
@@ -179,7 +179,7 @@ class RegistrationForm extends React.Component {
           {...formItemLayout}
           label="邮箱"
         >
-          {getFieldDecorator('email', {
+          {getFieldDecorator('Email', {
             rules: [{
               type: 'email', message: '输入项不符合邮箱格式!',
             }, {
@@ -249,7 +249,7 @@ class RegistrationForm extends React.Component {
           {...formItemLayout}
           label="手机号码"
         >
-          {getFieldDecorator('phone', {
+          {getFieldDecorator('telPhone', {
             rules: [{ required: true, message: '请输入您的手机号码!' }],
           })(
             <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
@@ -605,7 +605,7 @@ class CompactSearchForm extends React.Component {
               formType='compact'
               label='姓名'
             >
-              {getFieldDecorator('name', {
+              {getFieldDecorator('user', {
                 rules: [{
                   required: true, message: '不能为空!',
                 }],
@@ -621,7 +621,7 @@ class CompactSearchForm extends React.Component {
               formType='compact'
               label='手机号码'
             >
-              {getFieldDecorator('phone', {
+              {getFieldDecorator('Telphone', {
                 rules: [{
                   required: true, message: '不能为空!',
                 }],
@@ -637,7 +637,7 @@ class CompactSearchForm extends React.Component {
               formType='compact'
               label='邮箱'
             >
-              {getFieldDecorator('email', {
+              {getFieldDecorator('e-mail', {
                 rules: [{
                   type: 'email', message: '输入项不符合邮箱格式!',
                 },{
@@ -755,7 +755,7 @@ class modalForm extends React.Component {
             )}
           </FormItem>
           <FormItem label='密码' {...formItemLayout}>
-            {getFieldDecorator('password', {
+            {getFieldDecorator('passWord', {
               rules: [{ required: true, message: '不能为空!' }],
             })(
               <Input prefix={<Icon type="unlock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
@@ -971,7 +971,7 @@ class FormDemo extends React.Component {
           hasFeedback
           validateStatus="warning"
         >
-          <Input placeholder="警告" id="warning" />
+          <Input placeholder="警告" id="Warning" />
         </FormItem>
 
         <FormItem
@@ -981,7 +981,7 @@ class FormDemo extends React.Component {
           validateStatus="error"
           help="输入数字和字母组合"
         >
-          <Input placeholder="错误输入" id="error" />
+          <Input placeholder="错误输入" id="Error" />
         </FormItem>
 
         <FormItem
@@ -1116,7 +1116,7 @@ class FormDemo extends React.Component {
           )}
         </FormItem>
         <FormItem {...formItemLayout} label="手机号">
-          {getFieldDecorator('phone', {
+          {getFieldDecorator('Tel', {
             rules: [{
               required: this.state.phone,
               message: '不能为空',

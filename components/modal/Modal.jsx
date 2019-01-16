@@ -56,7 +56,6 @@ export default class Modal extends React.Component {
   }
 
   componentDidMount() {
-    console.log(mousePositionEventBinded)
     if (mousePositionEventBinded) {
       return;
     }

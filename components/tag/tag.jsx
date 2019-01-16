@@ -28,14 +28,6 @@ export default class Tag extends Component {
         closable: false,
         hover: false
     }
-    componentWillUnmount() {
-		if (this.clickedTimeout) {
-			clearTimeout(this.clickedTimeout);
-		}
-		if (this.timeout) {
-			clearTimeout(this.timeout);
-		}
-	}
     clearButton = (button) => {
 		button.className = button.className.replace(`${this.props.prefixCls}-clicked`, '');
     }

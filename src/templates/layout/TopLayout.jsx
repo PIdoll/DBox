@@ -1,6 +1,6 @@
 import React from 'react';
 import {Menu, Breadcrumb, Layout} from 'components';
-import {SubMenu} from 'components/menu';
+const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
 const Content = Layout.Content;
 export default class TopLayout extends React.Component {

@@ -277,8 +277,8 @@ span.@{radio-prefix-cls} + * {
   }
 
   &-disabled&-checked {
-    color: @radio-bg ;
-    background-color: @radio-disabled-bg;
+    color: @radio-checked-disabled;
+    background-color: @radio-disabled-checked-bg;
     border-color: @border-color-base;
     box-shadow: none;
     cursor: not-allowed;
@@ -406,8 +406,8 @@ span.@{radio-prefix-cls} + * {
       }
     }
     &-disabled&-checked {
-      color: @radio-bg ;
-      background-color: @radio-checked-disabled;
+      color: @radio-checked-disabled;
+      background-color: @radio-disabled-checked-bg;
       border-color: @border-color-base;
       box-shadow: none;
       cursor: not-allowed;
@@ -650,8 +650,8 @@ span.@{radio-prefix-cls} + * {
       }
     }
     &-disabled&-checked {
-      color: @radio-bg ;
-      background-color: @radio-checked-disabled;
+      color: @radio-checked-disabled;
+      background-color: @radio-disabled-checked-bg;
       border-color: @border-color-base;
       box-shadow: none;
       cursor: not-allowed;
@@ -661,11 +661,18 @@ span.@{radio-prefix-cls} + * {
 
 .@{radio-solid-prefix-cls} {
   .@{radio-prefix-cls}-button-wrapper-disabled-checked,.@{radio-prefix-cls}-button-wrapper-disabled-checked:hover {
-    color: @radio-bg ;
-      background-color: @radio-checked-disabled;
-      border-color: @border-color-base;
-      box-shadow: none;
-      cursor: not-allowed;
+    color: @radio-checked-disabled;
+    background-color: @radio-disabled-checked-bg;
+    border-color: @border-color-base;
+    box-shadow: none;
+    cursor: not-allowed;
   }
 }
 
+.@{radio-prefix-cls}.@{radio-prefix-cls}-checked.@{radio-prefix-cls}-disabled {
+  .@{radio-inner-prefix-cls} {
+    &:after {
+      background-color: @border
+    }
+  }
+}
