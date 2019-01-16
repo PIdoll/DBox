@@ -77,7 +77,6 @@ export { Layout };
 export { Menu };
 export { Message };
 export { Modal };
-export { Notification };
 export { Pagination };
 export { Popconfirm };
 export { Popover };

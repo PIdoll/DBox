@@ -94,13 +94,13 @@ export default class Tooltip extends React.Component {
     })
     return (
       <RcTooltip
+        {...this.props}
         ref={this.saveTooltip}
         overlay={overlay || title || ''}
         visible={visible}
         onVisibleChange={this.onVisibleChange}
         getTooltipContainer={getPopupContainer || getTooltipContainer}
         builtinPlacements={this.getPlacements()}
-        {...this.props}
         >
         {visible ? cloneElement(child, {className: childCls}) : child}
       </RcTooltip>

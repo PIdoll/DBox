@@ -49,7 +49,7 @@ class AutoCompleteDemo extends React.Component {
 ```jsx
 import { AutoComplete } from 'dbox-ui';
 const Option = AutoComplete.Option;
-class AutoCompleteExamplDemo extends React.Component {
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -88,14 +88,14 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />
+<AutoCompleteDemo />
 ```
 
 ##### **不区分大小写**
 不区分大小写的 `AutoComplete`。
 ```jsx
 import { AutoComplete } from 'dbox-ui';
-class AutoCompleteExamplDemo extends React.Component {
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -121,7 +121,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />
+<AutoCompleteDemo />
 ```
 
 ##### **查询模式-确定类目**
@@ -130,7 +130,7 @@ class AutoCompleteExamplDemo extends React.Component {
 import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
-class AutoCompleteExamplDemo extends React.Component {
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.renderTitle = this.renderTitle.bind(this);
@@ -208,7 +208,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />
+<AutoCompleteDemo />
 ```
 
 ##### **查询模式-不确定类目**
@@ -217,7 +217,7 @@ class AutoCompleteExamplDemo extends React.Component {
 import { AutoComplete,Input,Icon } from 'dbox-ui';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
-class AutoCompleteExamplDemo extends React.Component {
+class AutoCompleteDemo extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -287,7 +287,7 @@ class AutoCompleteExamplDemo extends React.Component {
         )
     }
 }
-<AutoCompleteExamplDemo />
+<AutoCompleteDemo />
 ```
 
 ##### **API**

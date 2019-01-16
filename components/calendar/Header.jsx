@@ -48,6 +48,17 @@ export default class Header extends React.Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { yearValue, monthValue } = this.state;
+    if (!nextProps.value) { return; };
+    if (moment(nextProps.value).year() !== yearValue) {
+      this.setState({ yearValue: moment(nextProps.value).year() });
+    }
+    if (moment(nextProps.value).month() !== monthValue) {
+      this.setState({ monthValue: MonthFormat(moment(nextProps.value).month()) });
+    }
+  }
+
   // 右边 > 图标
   handleProIncreaseMonth = () => {
     // debugger;
@@ -109,7 +120,7 @@ export default class Header extends React.Component {
     });
   }
 
-  getYearSelectElement(year) {
+   getYearSelectElement(year) {
     const {
       yearSelectOffset,
       yearSelectTotal,

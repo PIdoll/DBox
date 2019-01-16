@@ -1,9 +1,15 @@
 import React from 'react';
 import Message from 'components/message';
 import Popconfirm from 'components/popconfirm';
-import Icon from '../../../components/icon';
+import Icon from 'components/icon';
 
 export default class BasicPopconfirm extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            visible: false,
+        }
+    }
     confirm = () => {
         this.setState({ visible: false });
         Message.success('删除成功');

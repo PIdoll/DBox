@@ -181,7 +181,7 @@
     padding: 0;
     border-right: @border-width-base @border-style-base @background;
     overflow: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar; 
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     &:first-child {
       border-radius: @border-radius-base 0 0 @border-radius-base;
     }
@@ -218,9 +218,9 @@
     &-active:not(&-disabled) {
       &,
       &:hover {
-        background-color: #fff;
+        background-color: @white;
         color: @primary-color ;
-      
+
       }
     }
     &-expand {
@@ -244,7 +244,7 @@
     }
 
     & &-keyword {
-      color: @highlight-color;
+      color: @primary-hover;
     }
   }
 }

@@ -10,9 +10,9 @@ export default class Popconfirm extends React.Component {
             <h1 className='h1'>1.基本用法</h1>
             <h2 className='h2'>
                 测试场景: <br />
-                1）设置onConfirm、onCancel函数,title、okText和cancelText，测试是否正常
-                2）设置okType为text,测试按钮是否正常显示
-                3) 设置icon属性，测试提示框icon是否变化
+                1）设置onConfirm、onCancel函数,title、okText和cancelText，测试是否正常 <br />
+                2）设置okType为text,测试按钮是否正常显示 <br />
+                3) 设置icon属性，测试提示框icon是否变化 <br />
             </h2>
             <div id='popconfirm' style={{marginLeft: '100px'}}>
               <BasicPopconfirm />

@@ -9,7 +9,7 @@
   z-index: @zindex-tooltip;
   display: block;
   visibility: visible;
-  color: @Black;
+  color: @black;
   // box-shadow: @Shadow-default;
 
   &-hidden {
@@ -19,14 +19,14 @@
   // tooltip的内容容器
   &-inner {
     max-width: @tooltip-max-width;
-    padding: 6px 8px;
+    padding: @tooltip-inner-padding-topbottom @tooltip-inner-padding-leftright;
     color: @tooltip-color;
     text-align: left;
     text-decoration: none;
     background-color: @tooltip-bg;
     border-radius: @border-radius-base;
     box-shadow: @box-shadow-base;
-    min-height: 32px;
+    min-height: @tooltip-height-base;
   }
   // tooltip与弹出载体之间的距离
   &-placement-top,

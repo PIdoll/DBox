@@ -36,8 +36,8 @@ export default class GroupInput extends React.Component {
         </InputGroup>
         <br /><br />
         <InputGroup compact>
-          <Input style={{width: '160px'}} defaultValue='请输入' />
-          <DatePicker style={{width: '100px'}} />
+          <Input style={{width: '160px'}} placeholder='请输入' />
+          <DatePicker style={{width: '200px'}} />
         </InputGroup>
       </div>
     )
