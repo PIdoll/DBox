@@ -8,7 +8,8 @@ import './style';
 const statusColorMap = {
   normal: '#13B886',
   exception: '#F44336',
-  success: '#3CCB69'
+  success: '#3CCB69',
+  active: '#42c69e',
 }
 
 const validProgress = (progress) => {
@@ -68,9 +69,9 @@ export default class Progress extends React.Component {
       if (format || (progressStatus !== 'exception' && progressStatus !== 'success')) {
         text = textFormatter(validProgress(percent), validProgress(successPercent));
       } else if (progressStatus === 'exception') {
-        text = <Icon type={`close${iconType}`} theme={type === 'line' ? 'filled' : 'outlined'} />;
+        text = <Icon className='idoll-progress-error-icon' type={`close${iconType}`} theme={type === 'line' ? 'filled' : 'outlined'} />;
       } else if (progressStatus === 'success') {
-        text = <Icon type={`check${iconType}`} theme={type === 'line' ? 'filled' : 'outlined'} />;
+        text = <Icon className='idoll-progress-success-icon' type={`check${iconType}`} theme={type === 'line' ? 'filled' : 'outlined'} />;
       }
       progressInfo = (
         <span

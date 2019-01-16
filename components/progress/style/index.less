@@ -13,7 +13,12 @@
     font-size: @font-size-base;
     position: relative;
   }
-
+  .@{progress-prefix-cls}-error-icon {
+    color: @progress-error-icon-color;
+  }
+  .@{progress-prefix-cls}-success-icon {
+    color: @progress-success-icon-color;
+  }
   &-small&-line,
   &-small&-line &-text .@{iconfont-css-prefix} {
     font-size: @font-size-sm;
@@ -70,7 +75,6 @@
       font-size: @font-size-base;
     }
   }
-
   &-import {
     display: inline-block;
     color: @highlight-color;
@@ -145,7 +149,6 @@
       color: @error-color;
     }
   }
-
   &-circle&-status-success {
     .@{progress-prefix-cls}-text {
       color: @success-color;

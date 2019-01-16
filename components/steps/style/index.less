@@ -17,7 +17,12 @@
   flex: 1;
   min-height: 70px;
   overflow: hidden;
-
+  .@{steps-prefix-cls}-finish-icon {
+    color: @finish-icon-color;
+  }
+  .@{steps-prefix-cls}-error-icon {
+    color: @error-icon-color;
+  }
   &:last-child {
     flex: none;
   }
@@ -33,7 +38,7 @@
     vertical-align: top;
   }
 
-  &-icon {
+  .@{steps-prefix-cls}  &-icon {
     border: @border-width-base @border-style-base @wait-icon-color;
     width: @steps-icon-size;
     height: @steps-icon-size;
@@ -73,8 +78,8 @@
 
   &-error {
   .@{steps-prefix-cls}-item-icon {
-  border-color: @error-icon-color;
-  color: @error-icon-color;
+    border-color: @error-icon-color;
+    color: @error-icon-color;
   }
  .@{steps-prefix-cls}-item-content {
   .@{steps-prefix-cls}-item-title,

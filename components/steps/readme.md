@@ -2,6 +2,7 @@
 用于指导用户完成跨多个屏幕的流程和操作，或引导用户按照流程完成任务的导航。
 
 ##### **基本用法**
+最基本的步骤条
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -19,6 +20,7 @@ const StepsView = () => {
 ```
 
 ##### **小尺寸**
+迷你版的步骤条，通过设置size=“small”启用
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -36,6 +38,7 @@ const StepsView = () => {
 ```
 
 ##### **点状步骤条**
+通过progressDot实现包含步骤点的步骤条
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -53,11 +56,12 @@ const StepsView = () => {
 ```
 
 ##### **带popover点状步骤条**
+自定义progressDot指定一个回调函数，添加popover效果。
 ```jsx
 import { Steps, Popover } from 'dbox-ui';
 
 const customDot = (dot, {status, index}) => (
-  <Popover content={<span>步骤： {index} 状态: {status}</span>}>{dot}</Popover>
+  <Popover placement='top' content={<span>步骤： {index} 状态: {status}</span>}>{dot}</Popover>
 );
 class StepsView extends React.Component {
   render() {
@@ -77,6 +81,7 @@ class StepsView extends React.Component {
 ```
 
 ##### **可步骤切换**
+点击按钮可表示一个流程的处理进度
 ```jsx
 import { Steps, Button, Message } from 'dbox-ui';
 
@@ -141,6 +146,7 @@ class StepsView extends React.Component {
 ```
 
 ##### **步骤运行错误**
+使用Steps的status 属性来指定当前步骤的状态
 ```jsx
 import { Steps } from 'dbox-ui';
 
@@ -161,6 +167,7 @@ class StepsView extends React.Component {
 ```
 
 ##### **竖直方向步骤条**
+通过direaction='vertical'来实现竖直的步骤条
 ```jsx
 import { Steps } from 'dbox-ui';
 

@@ -4,7 +4,6 @@ import Icon from 'components/icon';
 import Input from 'components/input';
 import Button from 'components/button';
 import Checkbox from 'components/checkbox';
-import './form.css';
 const FormItem = Form.Item;
 class FormView extends React.Component {
   handleSubmit = (e) => {

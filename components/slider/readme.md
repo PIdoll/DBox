@@ -1,6 +1,7 @@
 当用户需要在数值区间/自定义区间进行选择时，可为连续或离散值
 
 ##### **基本使用**
+点击按钮可切换禁用状态；当range为true时可是实现双滑条
 ```jsx
 import { Slider, Switch } from 'dbox-ui';
 
@@ -19,7 +20,6 @@ class SliderView extends React.Component {
     const {disabled} = this.state;
     return (
       <div>
-        <Slider defaultValue={30}  />
         <Slider defaultValue={20} disabled={disabled} />
         <Slider range disabled={disabled} defaultValue={[10, 30]} />
         Disabled: <Switch size='small' checked={disabled} onClick={this.handleDisabledChange} />
@@ -31,6 +31,7 @@ class SliderView extends React.Component {
 ```
 
 ##### **带输入框的滑块**
+和数字输入框组件保持同步更改，最大可输入为20
 ```jsx
 import { Slider, InputNumber, Row, Col } from 'dbox-ui';
 class SliderView extends React.Component {
@@ -75,6 +76,7 @@ class SliderView extends React.Component {
 ```
 
 ##### **自定义提示**
+使用tipFormatter可以格式化Tooltip的内容，设置tipFormatter={null}可隐藏Tooltip
 ```jsx
 import { Slider, Switch } from 'dbox-ui';
 

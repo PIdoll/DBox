@@ -2,6 +2,7 @@
 为在屏幕上和谐一致的定位元素提供依据，24栅格系统有助于提升页面的秩序感和体验。
 
 #####  **基本栅格布局**
+使用Row、Col进行基本的布局操作
 ```jsx
 import { Row, Col } from 'dbox-ui';
 
@@ -66,6 +67,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **拥有间隔的栅格**
+指定Gutter字段可实现有间隔的Col
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
@@ -106,6 +108,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **可以左右偏移的栅格**
+指定offset可以偏移单元格Col
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
@@ -153,6 +156,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **可排序的栅格**
+通过pull和push改变Col的顺序
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
@@ -190,6 +194,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **Flex布局水平对齐**
+通过给Row指定flex类型，指定justify为‘start’，‘end’，‘center’，‘space-between’,'space-around'等值实现水平对齐。
 ```jsx
 import {Row, Col} from 'dbox-ui';
 const RowDemoStyle = {
@@ -299,6 +304,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **Flex布局垂直对齐**
+指定flex类型，通过指定algin为‘top’，‘middle’,'bottom'实现上、中、下对齐。
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
@@ -379,6 +385,7 @@ class GridView extends React.Component {
 <GridView />
 ```
 ##### **Flex排序**
+通过order可以对col进行排序
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
@@ -426,6 +433,7 @@ class GridView extends React.Component {
 ```
 
 ##### **自定义栅格布局**
+指定xs，sm，md，lg和xl进行相应的响应式操作
 ```jsx
 import {Row, Col} from 'dbox-ui';
 
