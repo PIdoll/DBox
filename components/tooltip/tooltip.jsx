@@ -18,7 +18,6 @@ export default class Tooltip extends React.Component {
     autoAdjustOverflow: true,
   }
   onVisibleChange = (visible) => {
-    console.log('====', visible)
     const { onVisibleChange } = this.props;
     if (!('visible' in this.props)) {
       this.setState({visible});
@@ -86,7 +85,6 @@ export default class Tooltip extends React.Component {
     // if (!('visible' in this.props) && this.isNoTitle()) {
     //   visible = false;
     // }
-    console.log('======', visible)
     const child = this.getDisabledCompatibleChildren(React.isValidElement(children) ? children : <span>{children}</span>)
     const childProps = child.props;
     const childCls = classNames(childProps.className, {
@@ -97,12 +95,12 @@ export default class Tooltip extends React.Component {
         {...this.props}
         ref={this.saveTooltip}
         overlay={overlay || title || ''}
-        visible={visible}
+        visible={visible || this.state.visible}
         onVisibleChange={this.onVisibleChange}
         getTooltipContainer={getPopupContainer || getTooltipContainer}
         builtinPlacements={this.getPlacements()}
         >
-        {visible ? cloneElement(child, {className: childCls}) : child}
+        {visible || this.state.visible || this.state.visible ? cloneElement(child, {className: childCls}) : child}
       </RcTooltip>
     );
   }

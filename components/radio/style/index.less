@@ -669,3 +669,10 @@ span.@{radio-prefix-cls} + * {
   }
 }
 
+.@{radio-prefix-cls}.@{radio-prefix-cls}-checked.@{radio-prefix-cls}-disabled {
+  .@{radio-inner-prefix-cls} {
+    &:after {
+      background-color: @border
+    }
+  }
+}
