@@ -112,9 +112,13 @@ export default class Anchor extends React.Component {
   getChildContext() {
     const idollAnchor = {
       registerLink: (link) => {
-        if (!this.links.includes(link)) {
+        // 后续优化  判断NaN和数组中有空值的方法
+        if (!(this.links.indexOf(link) === -1)) {
           this.links.push(link);
         }
+        // if (!this.links.includes(link)) {
+        //   this.links.push(link);
+        // }
       },
       unregisterLink: (link) => {
         const index = this.links.indexOf(link);
