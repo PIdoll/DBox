@@ -32,7 +32,7 @@ export default class TopMenu extends React.Component {
         <Menu.Item key='4'>子菜单四</Menu.Item>
       </SubMenu>
       <Menu.Item key='tool'>
-        <a href='https://www.baidu.com' target='_blank' rel='noopener noreferrer'>配置管理</a>
+        <a href='javascript:;' target='_blank' rel='noopener noreferrer'>配置管理</a>
       </Menu.Item>
     </Menu>
   )

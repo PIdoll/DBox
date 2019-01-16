@@ -1,19 +1,19 @@
 import React from 'react';
-import { Button, Dropdown, Menu } from 'components'
-import { MenuItem } from 'components/menu';
+import { Button, Dropdown, Menu } from 'components';
+const MenuItem = Menu.MenuItem;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
   <Menu theme='light' onClick={handleMenu1Click}>
-    <MenuItem key='2.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {

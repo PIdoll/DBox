@@ -40,7 +40,7 @@ const Sider = Layout.Sider;
 
 ```jsx
 import {Menu, Breadcrumb, Layout} from 'dbox-ui';
-import {SubMenu} from 'dbox-ui/menu';
+const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
 const Content = Layout.Content;
 class LayoutView extends React.Component {
@@ -100,7 +100,7 @@ class LayoutView extends React.Component {
 
 ```jsx
 import {Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'dbox-ui';
-import {SubMenu} from 'dbox-ui/menu';
+const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Sider = Layout.Sider;
@@ -246,7 +246,7 @@ class LayoutView extends React.Component {
 
 ```jsx
 import{Menu, Avatar, Tabs, Icon, Dropdown, Layout} from 'dbox-ui';
-import{SubMenu} from 'dbox-ui/menu';
+const SubMenu = Menu.SubMenu;
 const TabPane = Tabs.TabPane;
 const Header = Layout.Header;
 const Content = Layout.Content;

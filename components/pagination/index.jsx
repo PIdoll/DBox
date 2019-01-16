@@ -1,4 +1,4 @@
 import Pagination from './pagination';
 import MiniSelect from './MiniSelect';
-export {MiniSelect};
+Pagination.MiniSelect = MiniSelect
 export default Pagination;
