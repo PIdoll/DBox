@@ -6,7 +6,7 @@ export default class BasicTag extends React.Component {
     return (
       <div>
         <Tag>标签</Tag>
-        <Tag href='http://dbox-dev.paic.com.cn' target='_black'>链接</Tag>
+        <Tag href='javascript:;' target='_black'>链接</Tag>
       </div>
     )
   }

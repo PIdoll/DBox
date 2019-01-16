@@ -244,6 +244,9 @@
     &-error &-name {
       cursor: pointer;
       color: @error-color;
+      i {
+        color: @error-color;
+      }
     }
 
     &-error .@{iconfont-css-prefix}-close {
@@ -272,6 +275,9 @@
     }
     .@{upload-item}-info span {
       color: @primary-color;
+      i {
+        color: @primary-color; 
+      }
       .@{iconfont-css-prefix}-check {
         font-size: @font-size-base;
         position: absolute;
@@ -580,6 +586,9 @@
   }
 }
 .manual {
+  .@{iconfont-css-prefix}-file {
+    color: @primary-color
+  }
   position: relative;
   .beginUpload {
    position: absolute;

@@ -1,13 +1,14 @@
 import React from 'react';
-import {Dropdown, Menu} from 'components'
-import { MenuItem, SubMenu } from 'components/menu';
+import {Dropdown, Menu} from 'components';
+const MenuItem = Menu.MenuItem;
+const SubMenu = Menu.SubMenu;
 const menu1 = (
   <Menu theme='light' onClick={handleMenu1Click}>
-    <MenuItem key='1.1'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='1.2'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
     <SubMenu title='子菜单'>
-      <MenuItem key='2.3'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
-      <MenuItem key='2.4'><a href='https://www.baidu.com' target='_blank'>操作选项</a></MenuItem>
+      <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+      <MenuItem key='2.4'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
     </SubMenu>
   </Menu>
 )

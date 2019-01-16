@@ -1,6 +1,6 @@
 import React from 'react';
 import {Menu, Avatar, Tabs, Icon, Dropdown, Layout} from 'components';
-import {SubMenu} from 'components/menu';
+const SubMenu = Menu.SubMenu;
 const TabPane = Tabs.TabPane;
 const Header = Layout.Header;
 const Content = Layout.Content;
