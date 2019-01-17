@@ -36,7 +36,7 @@ export default class TopLayout extends React.Component {
             <Menu.Item key='6'>子菜单四</Menu.Item>
           </SubMenu>
           <Menu.Item indexkey='tool'>
-            <a href='https://www.baidu.com' target='_blank'><div>配置管理</div></a>
+            <a href='javascript:;' target='_blank'><div>配置管理</div></a>
           </Menu.Item>
         </Menu>
       </Header>

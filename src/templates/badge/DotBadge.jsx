@@ -12,7 +12,7 @@ export default class BasicBadge extends React.Component {
           <Icon type='phone' />
         </Badge>
         <Badge dot status='processing'>
-          <a href='https://www.baidu.com' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
+          <a href='javascript:;' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
         </Badge>
       </div>
     )

@@ -9,16 +9,16 @@ const MenuItem = Menu.MenuItem;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
       <Menu theme = 'light' onClick={handleMenu1Click}>
-        <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-        <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-        <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+        <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+        <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+        <MenuItem key='2.3'><a >操作选项</a></MenuItem>
       </Menu>
     );
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2'><a >操作选项</a></MenuItem>
+    <MenuItem key='3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleButtonClick(e) {
@@ -48,16 +48,16 @@ const DropdownButton = Dropdown.DropdownButton;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu4 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='1'><a ><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='2'><a ><Icon type='bars' />操作选项</a></MenuItem>
+    <MenuItem key='3'><a ><Icon type='bars' />操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleButtonClick(e) {
@@ -100,9 +100,9 @@ const ButtonGroup = Button.Group;
 const DropdownButton = Dropdown.DropdownButton;
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2'><a >操作选项</a></MenuItem>
+    <MenuItem key='3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {
@@ -130,9 +130,9 @@ const MenuItem = Menu.MenuItem;
 const DropdownButton = Dropdown.DropdownButton;
 const menu2 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {
@@ -158,9 +158,9 @@ import {Button, Dropdown, Menu} from 'dbox-ui';
 const MenuItem = Menu.MenuItem;
 const menu = (
   <Menu theme='light' onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2'><a >操作选项</a></MenuItem>
+    <MenuItem key='3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {
@@ -196,16 +196,16 @@ const MenuItem = Menu.MenuItem;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2'><a >操作选项</a></MenuItem>
+    <MenuItem key='3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 const menu2 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {
@@ -233,9 +233,9 @@ import {Button, Dropdown, Menu} from 'dbox-ui';
 const MenuItem = Menu.MenuItem;
 const menu = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='2.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {
@@ -259,13 +259,14 @@ function handleButtonClick(e) {
 ```jsx
 import {Icon, Button, Dropdown, Menu} from 'dbox-ui';
 const MenuItem = Menu.MenuItem;
+const SubMenu = Menu.SubMenu;
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
-    <MenuItem key='1.1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='1.2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='1.2'><a >操作选项</a></MenuItem>
     <SubMenu title='子菜单'>
-      <MenuItem key='2.3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-      <MenuItem key='2.4'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+      <MenuItem key='2.3'><a >操作选项</a></MenuItem>
+      <MenuItem key='2.4'><a >操作选项</a></MenuItem>
     </SubMenu>
   </Menu>
 )

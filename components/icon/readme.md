@@ -83,19 +83,20 @@ class IconView extends React.Component {
   font-size:18px;
   height: 100px;
   text-align:center;
-  transition: all .2s;
+  transition: all .3s;
 }
 .iconList:hover i {
   color: #13B886;
-  transition: all .2s;
+  transition: all .3s;
   font-size:32px
 }
 .iconList:hover span {
   font-size:14px;
-  transition: all .2s;
+  transition: all .3s;
 }
 .iconList i,.iconList span {
   display:block;
+  transition: all .3s;
 }
 </style>
 

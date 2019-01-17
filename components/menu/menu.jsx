@@ -87,23 +87,6 @@ export default class Menu extends React.Component {
       }
     }
     render() {
-      let openAnimation = this.props.openAnimation || this.props.openTransitionName;
-      if (!openAnimation) {
-        switch (this.props.mode) {
-          case 'horizontal':
-            openAnimation = 'slide-up';
-            break;
-          case 'vertical':
-            if (this.switchModeFromInline) {
-              openAnimation = '';
-              this.switchModeFromInline = false;
-            } else {
-              openAnimation = 'zoom-big';
-            }
-            break;
-          default:
-        }
-      }
       let props = {}
       const className = `${this.props.className} ${this.props.prefixCls}-${this.props.theme}`;
       if (this.props.mode !== 'inline') {
@@ -112,13 +95,11 @@ export default class Menu extends React.Component {
           onOpenChange: this.handleOpenChange,
           onClick: this.handleClick,
           onClose: this.handleCloseKeys,
-          openTransitionName: openAnimation,
           className,
         }
       } else {
         props = {
           className,
-          openAnimation,
         }
       }
       return (

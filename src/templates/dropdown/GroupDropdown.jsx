@@ -5,9 +5,9 @@ const ButtonGroup = Button.Group;
 const DropdownButton = Dropdown.DropdownButton;
 const menu1 = (
   <Menu theme='light' onClick={handleMenu1Click}>
-    <MenuItem key='1'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='2'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
-    <MenuItem key='3'><a href='javascript:;' target='_blank'>操作选项</a></MenuItem>
+    <MenuItem key='1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2'><a >操作选项</a></MenuItem>
+    <MenuItem key='3'><a >操作选项</a></MenuItem>
   </Menu>
 );
 function handleMenu1Click(e) {

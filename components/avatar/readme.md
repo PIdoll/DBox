@@ -45,7 +45,7 @@ import {Avatar, Badge} from 'dbox-ui';
 ```
 
 ##### **自动调整字符大小**
-固定avatar大小，自动调整avata内容文字大小
+固定avatar大小，自动调整avatar内容文字大小
 ```jsx
 import {Avatar} from 'dbox-ui';
 <div>
@@ -56,7 +56,7 @@ import {Avatar} from 'dbox-ui';
 ```
 
 ##### **按钮调整字符大小**
-通过按钮控制avata内容文字大小或者用来切换用户
+通过按钮控制avatar内容文字大小或者用来切换用户
 ```jsx
 import {Avatar, Button} from 'dbox-ui';
 const UserList = ['Z', 'Alvin', 'Idoll', 'DBox'];

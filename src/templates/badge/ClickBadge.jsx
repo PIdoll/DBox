@@ -11,7 +11,7 @@ export default class BasicBadge extends React.Component {
       display: 'inline-block',
     }
     return (
-      <a href='https://www.baidu.com'>
+      <a href='javascript:;'>
         <Badge count={8}>
           <span style={content} />
         </Badge>

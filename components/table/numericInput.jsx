@@ -26,7 +26,7 @@ export default class NumericInput extends React.Component {
     const { value } = this.props;
     return (
       <Tooltip
-        trigger='focus'
+        trigger='click'
         title={value}
         placement='topLeft'
       >
