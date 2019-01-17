@@ -107,9 +107,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'>
-    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
-    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
-    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
+    <Menu.Item key='2'><a href='javascript:;' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='javascript:;' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='javascript:;' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 class LayoutView extends React.Component {
@@ -254,9 +254,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'>
-    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
-    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
-    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
+    <Menu.Item key='2'><a href='javascript:;' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='javascript:;' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='javascript:;' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 const array = [];
@@ -269,7 +269,6 @@ class LayoutView extends React.Component {
     this.state = {
       openKeys: ['sub1'],
       flag: false,
-      current: 'platform',
       modeMenu: 'inline',
       mode: 'top',
       panes,
@@ -291,6 +290,7 @@ class LayoutView extends React.Component {
       });
   }
   handleClickTabs (e) {
+    // console.log(e.key)
     array.push(...e.keyPath)
     this.setState({
       current: e.key,
@@ -301,7 +301,6 @@ class LayoutView extends React.Component {
     } else {
       this.add(e.key, e.item.props.title)
     }
-    console.log(array)
   }
   changeModel () {
     this.setState({

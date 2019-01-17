@@ -7,9 +7,9 @@ const Sider = Layout.Sider;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu = (
   <Menu theme='light'>
-    <Menu.Item key='2'><a href='https://www.baidu.com' target='_blank'>Alvin</a></Menu.Item>
-    <Menu.Item key='3'><a href='https://www.baidu.com' target='_blank'>Dbox</a></Menu.Item>
-    <Menu.Item key='4'><a href='https://www.baidu.com' target='_blank'>Idoll</a></Menu.Item>
+    <Menu.Item key='2'><a href='javascript:;' target='_blank'>Alvin</a></Menu.Item>
+    <Menu.Item key='3'><a href='javascript:;' target='_blank'>Dbox</a></Menu.Item>
+    <Menu.Item key='4'><a href='javascript:;' target='_blank'>Idoll</a></Menu.Item>
   </Menu>
 )
 export default class BreadLayout extends React.Component {

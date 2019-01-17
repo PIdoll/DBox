@@ -71,7 +71,7 @@ import {Badge, Icon} from 'dbox-ui';
 	  <Icon type='phone' />
 	</Badge>
 	<Badge dot status='processing'>
-	  <a href='https://www.baidu.com' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
+	  <a href='javascript:;' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
 	</Badge>
 </div>
 ```
@@ -80,7 +80,7 @@ import {Badge, Icon} from 'dbox-ui';
 通过a链接包裹badge来控制点击跳转
 ```jsx
 import {Badge} from 'dbox-ui';
-<a href='https://www.baidu.com'>
+<a href='javascript:;'>
   <Badge count={8}>
     <span className='example' />
   </Badge>

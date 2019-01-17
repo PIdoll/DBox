@@ -37,7 +37,7 @@ export default class LimitUpload extends React.Component {
         uid: -1,
         name: 'zzz.png',
         status: 'done',
-        url: 'http://www.baidu.com/zzz.png',
+        url: 'http://www.google.com/zzz.png',
       }, {
         uid: -2,
         name: 'yyy.video',

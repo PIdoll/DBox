@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table, Divider, Tooltip, Input, Form, Select, Popconfirm, InputNumber} from 'components';
+const NumericInput = Table.NumericInput;
 const {Option} = Select;
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
@@ -8,6 +9,49 @@ const EditableRow = ({ form, index, ...props }) => (
     <tr {...props} />
   </EditableContext.Provider>
 );
+let dataSorce = [{
+  key: '1',
+  name: '刘乐冉',
+  age: 26,
+  city: '北京',
+  Phone: '13943250086',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '2',
+  name: '李佳欣',
+  age: 24,
+  city: '南京',
+  Phone: '13262717838',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '3',
+  name: '孙柔佳',
+  age: 22,
+  city: '上海',
+  Phone: '13950035537',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '4',
+  name: '张仁士',
+  age: 28,
+  city: '合肥',
+  Phone: '13947766628',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '5',
+  name: '王子琪',
+  age: 32,
+  city: '郑州',
+  Phone: '13964507501',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '6',
+  name: '陈卜宣',
+  age: 27,
+  city: '沈阳',
+  Phone: '13262836283',
+  address: '上海市浦东新区唐镇上丰路88号',
+}];
 
 const EditableFormRow = Form.create()(EditableRow);
 
@@ -29,10 +73,10 @@ class EditableCell extends React.Component {
       </Select>;
     }
     if (this.props.inputtype === 'address') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
+      return <NumericInput initialvalue={this.props.value} onChange={this.onChangeValue} />;
     }
     if (this.props.inputtype === 'Phone') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
+      return <NumericInput initialvalue={this.props.value} onChange={this.onChangeValue} />;
     }
     return <Input />;
   };
@@ -67,6 +111,7 @@ class EditableCell extends React.Component {
     );
   }
 }
+
 export default class EditTable extends React.Component {
   constructor(props) {
   super(props);
@@ -77,49 +122,6 @@ export default class EditTable extends React.Component {
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
-    data: [{
-      key: '1',
-      name: '刘乐冉',
-      age: 26,
-      city: '北京',
-      Phone: '13943250086',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '2',
-      name: '李佳欣',
-      age: 24,
-      city: '南京',
-      Phone: '13262717838',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '3',
-      name: '孙柔佳',
-      age: 22,
-      city: '上海',
-      Phone: '13950035537',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '4',
-      name: '张仁士',
-      age: 28,
-      city: '合肥',
-      Phone: '13947766628',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '5',
-      name: '王子琪',
-      age: 32,
-      city: '郑州',
-      Phone: '13964507501',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '6',
-      name: '陈卜宣',
-      age: 27,
-      city: '沈阳',
-      Phone: '13262836283',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }],
   };
   this.onMouseEnter = this.onMouseEnter.bind(this);
   this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -233,9 +235,7 @@ export default class EditTable extends React.Component {
     }))
     }
   }
-  onChangeValue () {
-    this.setState({ value: this.props.value });
-  }
+  onChangeValue () { this.setState({ value: this.props.value }) }
   start () {
     this.setState({ loading: true });
     setTimeout(() => {
@@ -245,49 +245,38 @@ export default class EditTable extends React.Component {
       });
     }, 1000);
   }
-  handleDelete (key) {
-    const data = [...this.state.data];
-    this.setState({ data: data.filter(item => item.key !== key) });
-  }
-  onSelectChange (selectedRowKeys) {
-    this.setState({ selectedRowKeys });
-  }
-  edit(key) {
-    this.setState({ editingKey: key });
-  }
-  cancel () {
-    this.setState({ editingKey: '' });
-  };
+  handleDelete (key) { dataSorce = dataSorce.filter(item => item.key !== key); this.setState({loading: false}) }
+  onSelectChange (selectedRowKeys) { this.setState({ selectedRowKeys }) }
+  edit(key) { this.setState({ editingKey: key }) };
+  cancel () { this.setState({ editingKey: '' }) };
   isEditing (record) { return record.key === this.state.editingKey };
   save(form, key) {
     form.validateFields((error, row) => {
       if (error) {
         return;
       }
-      const newData = [...this.state.data];
-      const index = newData.findIndex(item => key === item.key);
+      const index = dataSorce.findIndex(item => key === item.key);
       if (index > -1) {
-        const item = newData[index];
-        newData.splice(index, 1, {
+        const item = dataSorce[index];
+        dataSorce.splice(index, 1, {
           ...item,
           ...row,
         });
-        this.setState({ data: newData, editingKey: '' });
+        this.setState({ editingKey: '' });
       } else {
-        newData.push(row);
-        this.setState({ data: newData, editingKey: '' });
+        dataSorce.push(row);
+        this.setState({ editingKey: '' });
       }
     });
   }
   render () {
-    const { flag } = this.state;
     const components = {
       body: {
         row: EditableFormRow,
         cell: EditableCell,
       },
     };
-    const columnn = this.handleRendercolnmus(flag).map((col) => {
+    const columnn = this.handleRendercolnmus(this.state.flag).map((col) => {
       if (!col.editable) {
         return col;
       }
@@ -315,33 +304,7 @@ export default class EditTable extends React.Component {
       };
     });
     return (
-      <Table components={components} bordered dataSource={this.state.data} columns={columnn} />
+      <Table components={components} bordered dataSource={dataSorce} columns={columnn} />
      )
   }
 }
-
-class NumericInput extends React.Component {
-  constructor(props) {
-  super(props);
-  this.onChange = this.onChange.bind(this)
-  }
-  onChange (e) {
-      this.props.onChange(e.target.value);
-  }
-  render() {
-    return (
-      <Tooltip
-        trigger='click'
-        title={this.props.value}
-        placement='topLeft'
-      >
-        <Input
-          {...this.props}
-          onChange={this.onChange}
-          placeholder='Input here'
-        />
-      </Tooltip>
-    );
-  }
-}
-

@@ -11,18 +11,18 @@ const commonFileList = [{
   uid: -1,
   name: 'xxx.jpg',
   status: 'done',
-  url: 'http://www.baidu.com/xxx.jpg',
+  url: 'http://www.google.com/xxx.jpg',
 }, {
   uid: -2,
   name: 'yyy.png',
   status: 'done',
-  url: 'http://www.baidu.com/yyy.png',
+  url: 'http://www.google.com/yyy.png',
 }, {
   uid: -3,
   name: 'zzz.png',
   status: 'error',
   response: 'Server Error 500',
-  url: 'http://www.baidu.com/zzz.png',
+  url: 'http://www.google.com/zzz.png',
 }];
 const props = {
   name: 'file',

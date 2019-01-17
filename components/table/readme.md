@@ -827,14 +827,58 @@ const dataFixdRow = [{
 对表格内数据进行复杂操作
 ```jsx
 import {Table, Divider, Tooltip, Input, Form, Popconfirm, Select, InputNumber} from 'dbox-ui';
+const NumericInput = Table.NumericInput;
+const {Option} = Select;
 const FormItem = Form.Item;
 const EditableContext = React.createContext();
-
 const EditableRow = ({ form, index, ...props }) => (
   <EditableContext.Provider value={form}>
     <tr {...props} />
   </EditableContext.Provider>
 );
+let dataSorce = [{
+  key: '1',
+  name: '刘乐冉',
+  age: 26,
+  city: '北京',
+  Phone: '13943250086',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '2',
+  name: '李佳欣',
+  age: 24,
+  city: '南京',
+  Phone: '13262717838',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '3',
+  name: '孙柔佳',
+  age: 22,
+  city: '上海',
+  Phone: '13950035537',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '4',
+  name: '张仁士',
+  age: 28,
+  city: '合肥',
+  Phone: '13947766628',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '5',
+  name: '王子琪',
+  age: 32,
+  city: '郑州',
+  Phone: '13964507501',
+  address: '上海市浦东新区唐镇上丰路88号',
+}, {
+  key: '6',
+  name: '陈卜宣',
+  age: 27,
+  city: '沈阳',
+  Phone: '13262836283',
+  address: '上海市浦东新区唐镇上丰路88号',
+}];
 
 const EditableFormRow = Form.create()(EditableRow);
 
@@ -844,7 +888,7 @@ class EditableCell extends React.Component {
       return <InputNumber style={{ width: 70 }} />;
     }
     if (this.props.inputtype === 'city') {
-      return <Select showSearch style={{ width: 70 }} placeholder='请选择' >
+      return <Select style={{ width: 80 }} placeholder='请选择' >
         <Option value='北京'>北京</Option>
         <Option value='上海'>上海</Option>
         <Option value='广州'>广州</Option>
@@ -856,22 +900,19 @@ class EditableCell extends React.Component {
       </Select>;
     }
     if (this.props.inputtype === 'address') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 200 }} />;
+      return <NumericInput initialvalue={this.props.value} onChange={this.onChangeValue} />;
     }
-    if (this.props.inputtype === 'name') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 70 }} />;
+    if (this.props.inputtype === 'Phone') {
+      return <NumericInput initialvalue={this.props.value} onChange={this.onChangeValue} />;
     }
-    if (this.props.inputtype === 'Tel') {
-      return <NumericInput value={this.props.value} onChange={this.onChangeValue} style={{ width: 130 }} />;
-    }
-    return <NumericInput value={this.props.value} onChange={this.onChangeValue} />;
+    return <Input />;
   };
 
   render() {
     const {
       editing,
       dataIndex,
-      title,
+      // title,
       // inputtype,
       record,
       // index,
@@ -886,10 +927,6 @@ class EditableCell extends React.Component {
               {editing ? (
                 <FormItem style={{ margin: 0 }}>
                   {getFieldDecorator(dataIndex, {
-                    rules: [{
-                      required: true,
-                      message: `Please Input ${title}!`,
-                    }],
                     initialValue: record[dataIndex],
                   })(this.getInput())}
                 </FormItem>
@@ -901,58 +938,17 @@ class EditableCell extends React.Component {
     );
   }
 }
+
 class TableView extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
     flag: false,
+    visible: false,
     value: '',
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
     editingKey: '',
-    data: [{
-      key: '1',
-      name: '刘乐冉',
-      age: 26,
-      city: '北京',
-      Tel: '13943250086',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '2',
-      name: '李佳欣',
-      age: 24,
-      city: '南京',
-      Tel: '13262717838',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '3',
-      name: '孙柔佳',
-      age: 22,
-      city: '上海',
-      Tel: '13950035537',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '4',
-      name: '张仁士',
-      age: 28,
-      city: '合肥',
-      Tel: '13947766628',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '5',
-      name: '王子琪',
-      age: 32,
-      city: '郑州',
-      Tel: '13964507501',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }, {
-      key: '6',
-      name: '陈卜宣',
-      age: 27,
-      city: '沈阳',
-      Tel: '13262836283',
-      address: '上海市浦东新区唐镇上丰路88号',
-    }],
   };
   this.onMouseEnter = this.onMouseEnter.bind(this);
   this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -966,15 +962,14 @@ class TableView extends React.Component {
   this.save = this.save.bind(this);
   this.handleRendercolnmus = this.handleRendercolnmus.bind(this);
 }
-
-  handleRendercolnmus(flag) {
+  handleRendercolnmus() {
     const columnss = [{
       title: '姓名',
       dataIndex: 'name',
       key: 'name',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '年龄',
@@ -983,7 +978,7 @@ class TableView extends React.Component {
       sorter: (a, b) => a.age - b.age,
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '居住地',
@@ -991,15 +986,15 @@ class TableView extends React.Component {
       key: 'city',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return text
         }
     }, {
       title: '手机号',
-      dataIndex: 'Tel',
-      key: 'Tel',
+      dataIndex: 'Phone',
+      key: 'Phone',
       editable: true,
       render: (text, record) => {
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return <Tooltip placement='topLeft' title={this.state.flag ? text : ''}><div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</div></Tooltip>
         }
     }, {
       title: '地址',
@@ -1007,8 +1002,7 @@ class TableView extends React.Component {
       key: 'address',
       editable: true,
       render: (text, record) => {
-        console.log(flag)
-        return !flag ? (<span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span>) : (<Tooltip placement='topLeft' title={text}><span onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</span></Tooltip>)
+        return <Tooltip placement='topLeft' title={this.state.flag ? text : ''}><div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>{text}</div></Tooltip>
         }
     }, {
       title: '操作',
@@ -1054,20 +1048,21 @@ class TableView extends React.Component {
     return columnss;
   }
   onMouseEnter (e) {
-    // debugger;
     const parentWidth = e.target.parentNode.offsetWidth
     const selfWdith = e.target.parentNode.lastElementChild.offsetWidth + 2
     const parentPadding = e.target.parentNode.lastElementChild.offsetLeft
-    if (!(selfWdith < parentWidth - (parentPadding * 2))) {
-      this.setState({flag: true})
+    if ((selfWdith > parentWidth - (parentPadding * 2))) {
+      this.setState({flag: true});
     }
   }
-  onChangeValue () {
-    this.setState({ value: this.props.value });
+  onMouseLeave () {
+    if (this.state.flag === true) {
+    this.setState((preState, props) => ({
+      flag: preState.flag
+    }))
+    }
   }
-  onMouseLeave (e) {
-    this.setState({flag: false})
-  }
+  onChangeValue () { this.setState({ value: this.props.value }) }
   start () {
     this.setState({ loading: true });
     setTimeout(() => {
@@ -1077,55 +1072,38 @@ class TableView extends React.Component {
       });
     }, 1000);
   }
-  handleDelete (key) {
-    const data = [...this.state.data];
-    this.setState({ data: data.filter(item => item.key !== key) });
-  }
-  onSelectChange (selectedRowKeys) {
-    this.setState({ selectedRowKeys });
-  }
-  edit(key) {
-    this.setState({ editingKey: key });
-  }
-  cancel () {
-    this.setState({ editingKey: '' });
-  };
-  isEditing (record) { return record.key === this.state.editingKey};
+  handleDelete (key) { dataSorce = dataSorce.filter(item => item.key !== key); this.setState({loading: false}) }
+  onSelectChange (selectedRowKeys) { this.setState({ selectedRowKeys }) }
+  edit(key) { this.setState({ editingKey: key }) };
+  cancel () { this.setState({ editingKey: '' }) };
+  isEditing (record) { return record.key === this.state.editingKey };
   save(form, key) {
     form.validateFields((error, row) => {
       if (error) {
         return;
       }
-      const newData = [...this.state.data];
-      const index = newData.findIndex(item => key === item.key);
+      const index = dataSorce.findIndex(item => key === item.key);
       if (index > -1) {
-        const item = newData[index];
-        newData.splice(index, 1, {
+        const item = dataSorce[index];
+        dataSorce.splice(index, 1, {
           ...item,
           ...row,
         });
-        this.setState({ data: newData, editingKey: '' });
+        this.setState({ editingKey: '' });
       } else {
-        newData.push(row);
-        this.setState({ data: newData, editingKey: '' });
+        dataSorce.push(row);
+        this.setState({ editingKey: '' });
       }
     });
   }
   render () {
-    const { loading, selectedRowKeys, flag } = this.state;
-    const rowSelection = {
-      selectedRowKeys,
-      onChange: this.onSelectChange,
-    };
-    const hasSelected = selectedRowKeys.length > 0;
-    // edit
     const components = {
       body: {
         row: EditableFormRow,
         cell: EditableCell,
       },
     };
-    const columnn = this.handleRendercolnmus(flag).map((col) => {
+    const columnn = this.handleRendercolnmus(this.state.flag).map((col) => {
       if (!col.editable) {
         return col;
       }
@@ -1138,12 +1116,10 @@ class TableView extends React.Component {
               return 'number'
             } else if (col.dataIndex === 'city') {
               return 'city'
-            } else if (col.dataIndex === 'name') {
-              return 'name'
             } else if (col.dataIndex === 'address') {
               return 'address'
-            } else if (col.dataIndex === 'Tel') {
-              return 'Tel'
+            } else if (col.dataIndex === 'Phone') {
+              return 'Phone'
             } else {
               return 'text'
             }
@@ -1155,44 +1131,11 @@ class TableView extends React.Component {
       };
     });
     return (
-        <Table components={components} bordered dataSource={this.state.data} columns={columnn} />
+      <Table components={components} bordered dataSource={dataSorce} columns={columnn} />
      )
   }
 }
 
-class NumericInput extends React.Component {
-  onChange (e) {
-    const { value } = e.target;
-      this.props.onChange(value);
-  }
-  onBlur () {
-    const { value, onBlur, onChange } = this.props;
-    if (value.charAt(value.length - 1) === '.' || value === '-') {
-      onChange({ value: value.slice(0, -1) });
-    }
-    if (onBlur) {
-      onBlur();
-    }
-  }
-
-
-  render() {
-    const { value } = this.props;    return (
-      <Tooltip
-        trigger={['focus']}
-        title={value}
-        placement='topLeft'
-      >
-        <Input
-          {...this.props}
-          onChange={this.onChange}
-          onBlur={this.onBlur}
-          placeholder='Input here'
-        />
-      </Tooltip>
-    );
-  }
-}
 <TableView />
 ```
 

@@ -466,14 +466,14 @@
     }
   }
   &-dark&-root&-vertical {
-    width: 88px !important;
+    width: 88px;
     >.@{menu-prefix-cls}-item-selected {
       i {
         color: @menu-color ;
       }
     }
     >.@{menu-prefix-cls}-item {
-      padding: 0 @padding-lg + 8px ; 
+      padding: 0 @padding-lg + 6px ; 
       span {
         display: block;
         transition: none;
@@ -675,6 +675,7 @@
     }
   }
 }
+
 li.@{menu-prefix-cls}-item-disabled {
   color:@menu-dark-color !important;
   div {
