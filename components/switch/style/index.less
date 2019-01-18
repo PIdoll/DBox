@@ -1,7 +1,7 @@
 @import '../../../style/theme/default/index';
-@import '../../../style/index';
+@import "../../../style/mixins/index.less";
 
-@switch-prefix-cls: ~"dbox-switch";
+@switch-prefix-cls:  ~"@{idoll-prefix}-switch";
 
 .@{switch-prefix-cls} {
   .reset-component;
@@ -13,7 +13,7 @@
   line-height: @switch-height - 2px;
   vertical-align: middle;
   border-radius: 100px;
-  border: 1px solid transparent;
+  border: @border-width-base @border-style-base transparent;
   background-color: @text-color-disable;
   cursor: pointer;
   transition: all @switch-duration;
@@ -21,7 +21,7 @@
   margin-bottom: 5px;
 
   &-inner {
-    color: #fff;
+    color: @white;
     font-size: @font-size-sm;
     margin-left: 24px;
     margin-right: 6px;

@@ -37,7 +37,7 @@ export default class Switch extends Component {
   }
 
   static defaultProps = {
-    prefixCls: 'dbox-switch',
+    prefixCls: 'idoll-switch',
     checkedChildren: null,
     unCheckedChildren: null,
     className: '',

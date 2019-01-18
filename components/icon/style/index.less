@@ -1,0 +1,24 @@
+@import "../../../style/mixins/index.less";
+
+.iconList {
+  list-style:none;
+  float:left;
+  width: 25%;
+  font-size: @font-size-base + 4px;
+  height: 100px;
+  text-align:center;
+  transition: all .3s;
+  i,span {
+    display:block;
+    transition: all .3s;
+  }
+  &:hover i {
+  color: @primary-color;
+  transition: all .3s;
+  font-size: (@font-size-lg * 2)
+  }
+  &:hover span {
+  font-size: @font-size-base;
+  transition: all .3s;
+  }
+}
