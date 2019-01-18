@@ -92,7 +92,7 @@ input[type="checkbox"] {
   }
 
   &-with-help {
-    margin-bottom: @form-item-margin-bottom - @font-size-base * @line-height-base - @form-help-margin-top;
+    margin-bottom: @form-item-margin-bottom - @font-size-base * 1.5 - @form-help-margin-top;
     transition: none;
   }
 
@@ -161,7 +161,7 @@ input[type="checkbox"] {
 .@{form-prefix-cls}-explain,
 .@{form-prefix-cls}-extra {
   color: @text-color-secondary;
-  line-height: @line-height-base;
+  line-height: 1.5;
   transition: color .15s @ease-out;
   margin-top: @form-help-margin-top;
 }
@@ -306,7 +306,7 @@ form {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     &:hover {
-      border-color: @border-color-base;
+      border-color: @border;
     }
   }
 
@@ -322,7 +322,7 @@ form {
   }
 
   .@{idoll-prefix}-select-open .@{idoll-prefix}-select-selection {
-    border-color: @border-color-base;
+    border-color: @border;
     box-shadow: none;
   }
 }
@@ -334,7 +334,7 @@ form {
   margin: @form-vertical-label-margin;
   display: block;
   text-align: left;
-  line-height: @line-height-base;
+  line-height: 1.5;
 
   label:after {
     display: none;

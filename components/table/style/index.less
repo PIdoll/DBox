@@ -35,9 +35,9 @@
     background: @table-header-bg;
     transition: background .3s ease;
     text-align: left;
-    color: @heading-color;
+    color: @title-color;
     font-weight: 500;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
 
     &[colspan] {
       text-align: center;
@@ -91,7 +91,7 @@
   }
 
   &-tbody > tr > td {
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
     transition: all .3s;
   }
 
@@ -99,7 +99,7 @@
     transition: all .3s;
     &.@{table-prefix-cls}-row-hover,
     &:hover {
-        background: @primary-LightBg;
+        background: @primary-lightBg;
         transition: all .3s
     }
   }
@@ -113,7 +113,7 @@
     background: @table-header-bg;
     border-radius: 0 0 @border-radius-base @border-radius-base;
     position: relative;
-    border-top: @border-width-base @border-style-base @border-color-split;
+    border-top: @border-width-base @border-style-base @border;
     &:before {
       content: '';
       height: 1px;
@@ -126,7 +126,7 @@
   }
 
   &.@{table-prefix-cls}-bordered &-footer {
-    border: @border-width-base @border-style-base @border-color-split;
+    border: @border-width-base @border-style-base @border;
   }
 
   &-title {
@@ -137,7 +137,7 @@
   }
 
   &.@{table-prefix-cls}-bordered &-title {
-    border: @border-width-base @border-style-base @border-color-split;
+    border: @border-width-base @border-style-base @border;
     padding-left: @table-padding-horizontal;
     padding-right: @table-padding-horizontal;
   }
@@ -281,15 +281,15 @@
     .@{table-prefix-cls}-body > table,
     .@{table-prefix-cls}-fixed-left table,
     .@{table-prefix-cls}-fixed-right table {
-      border: @border-width-base @border-style-base @border-color-split;
+      border: @border-width-base @border-style-base @border;
       border-right: 0;
       border-bottom: 0;
     }
 
     &.@{table-prefix-cls}-empty {
       .@{table-prefix-cls}-placeholder {
-        border-left: @border-width-base @border-style-base @border-color-split;
-        border-right: @border-width-base @border-style-base @border-color-split;
+        border-left: @border-width-base @border-style-base @border;
+        border-right: @border-width-base @border-style-base @border;
       }
     }
 
@@ -314,12 +314,12 @@
     }
 
     .@{table-prefix-cls}-thead > tr > th {
-      border-bottom: @border-width-base @border-style-base @border-color-split;
+      border-bottom: @border-width-base @border-style-base @border;
     }
 
     .@{table-prefix-cls}-thead > tr > th,
     .@{table-prefix-cls}-tbody > tr > td {
-      border-right: @border-width-base @border-style-base @border-color-split;
+      border-right: @border-width-base @border-style-base @border;
     }
   }
 
@@ -327,7 +327,7 @@
     position: relative;
     padding: @table-padding-vertical @table-padding-horizontal;
     background:  @table-bg;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
     text-align: center;
     font-size: @font-size-base;
     color: @text-color-secondary;
@@ -387,7 +387,7 @@
     &-btns {
       overflow: hidden;
       padding: (@padding-xs - 1px) @padding-xs;
-      border-top: @border-width-base @border-style-base @border-color-split;
+      border-top: @border-width-base @border-style-base @border;
     }
 
     &-link {
@@ -396,7 +396,7 @@
         color: @link-hover-color;
       }
       &:active {
-        color: @link-active-color;
+        color: @primary-color;
       }
       &.confirm {
         float: left;
@@ -448,7 +448,7 @@
       height: 17px;
       text-align: center;
       line-height: 14px;
-      border: @border-width-base @border-style-base @border-color-split;
+      border: @border-width-base @border-style-base @border;
       user-select: none;
       background:  @table-bg;
     }

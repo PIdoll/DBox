@@ -15,7 +15,7 @@
 
   &&-card > &-bar &-tab {
     margin: 0;
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: @tabs-card-head-background;
     margin-right: 4px;
@@ -26,14 +26,14 @@
 
   &&-card > &-bar &-tab-active {
     background: @white;
-    border-color: @border-color-split;
+    border-color: @border;
     color: @primary-color;
     border-bottom-color: @tabs-contentbg;
     user-select: none;
   }
 
   &&-card > &-bar &-tab-active:hover {
-    color: @primary-Hover;
+    color: @primary-hover;
   }
 
   &&-card > &-bar &-tab-inactive {
@@ -55,7 +55,7 @@
     height: 16px;
     line-height: 14px;
     &:hover {
-      color: @heading-color;
+      color: @title-color;
       transition: color .3s;
     }
   }
@@ -81,8 +81,8 @@
       line-height: @tabs-line-height;
       text-align: center;
       cursor: pointer;
-      border-radius: @border-radius-sm;
-      border: @border-width-base @border-style-base @border-color-split;
+      border-radius: 2px;
+      border: @border-width-base @border-style-base @border;
       font-size: @font-size-lg;
       color: @text-color;
       transition: all 0.3s;
@@ -99,7 +99,7 @@
     }
 
     .@{tab-prefix-cls}-tab {
-      border-bottom: @border-width-base @border-style-base @border-color-split;
+      border-bottom: @border-width-base @border-style-base @border;
       margin-bottom: 8px;
       &-active {
         padding-bottom: 4px;

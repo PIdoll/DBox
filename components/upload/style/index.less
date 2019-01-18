@@ -42,11 +42,11 @@
   }
 
   &&-select-picture-card {
-    border: @border-width-base dashed @border-color-base;
+    border: @border-width-base dashed @border;
     width: @upload-pictrue-card-size;
     height: @upload-pictrue-card-size;
     border-radius: @border-radius-base;
-    background-color: @background-color-light;
+    background-color: hsv(0, 0, 98%);
     text-align: center;
     cursor: pointer;
     transition: border-color 0.3s ease;
@@ -81,11 +81,11 @@
   }
   
   &&-select-picture-card.@{idoll-prefix}-upload-disabled:hover {
-    border-color: @default-color;
+    border-color:@border;
   }
 
   &&-drag {
-    border: @border-width-base dashed @border-color-base;
+    border: @border-width-base dashed @border;
     transition: border-color .3s;
     cursor: pointer;
     border-radius: @border-radius-base;
@@ -93,7 +93,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background: @background-color-light;
+    background: hsv(0, 0, 98%);
 
     &.@{upload-prefix-cls}-disabled {
       cursor: not-allowed;
@@ -141,7 +141,7 @@
   cursor: not-allowed;
   .@{idoll-prefix}-btn {
     background-color: @disabled;
-    border: @border-width-base @border-style-base @default-color;
+    border: @border-width-base @border-style-base@border;
     cursor: not-allowed;
     i,span {
       color: @text-color-disable
@@ -229,7 +229,7 @@
     }
 
     &:hover &-info {
-      background-color: @primary-LightBg;
+      background-color: @primary-lightBg;
     }
 
     &:hover .@{iconfont-css-prefix}-check {
@@ -301,7 +301,7 @@
     .@{upload-item} {
       padding: @padding-xs;
       border-radius: @border-radius-base;
-      border: @border-width-base @border-style-base @border-color-base;
+      border: @border-width-base @border-style-base @border;
       height: 66px;
       position: relative;
       &:hover {
@@ -349,7 +349,7 @@
     display: inline;
     .@{upload-prefix-cls}-disabled,.@{upload-prefix-cls}-disabled:hover {
       cursor: not-allowed;
-      border-color: @default-color;
+      border-color:@border;
     }
 
     .@{upload-item}-done,.@{upload-item}-error {
@@ -370,11 +370,11 @@
       a {
         margin-right: 8px;
         i {
-        color: @default-icon-dark ;
+        color: @text-color-secondary-dark ;
         }
       }
       a:hover i {
-        color: @hover-icon-dark;
+        color:@text-color-dark;
       }
       a:active i {
         color: @white;
@@ -454,7 +454,7 @@
 
     .@{upload-item}-uploading {
       &.@{upload-item} {
-        background-color: @background-color-light;
+        background-color: hsv(0, 0, 98%);
       }
 
       .@{upload-item}-info {

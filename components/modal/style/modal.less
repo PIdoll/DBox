@@ -1,7 +1,7 @@
-@import "../../../style/theme/default/default2.less";
-@import "../../../style/mixins/index.less";
+@import "../../../style/mixins/index";
+@import "../../../style/theme/default/index";
 
-@dialog-prefix-cls: idoll-modal;
+@dialog-prefix-cls:  ~"@{idoll-prefix}-modal";
 
 .@{dialog-prefix-cls} {
   position: relative;
@@ -47,7 +47,7 @@
     line-height: 1;
     text-decoration: none;
     transition: color @animation-duration-slow ease;
-    color: @default-icon;
+    color: @text-color-secondary;
     outline: 0;
 
     &-x {
@@ -68,7 +68,7 @@
 
     &:focus,
     &-hover {
-      color: @hover-icon;
+      color: @text-color;
       text-decoration: none;
     }
   }
@@ -87,7 +87,7 @@
     content: '';
     width: 560 - (@padding-md+8) - (@padding-md+8);
     height: 1px;
-    background-color: @border-color-split;
+    background-color: @border;
   }
 
   &-body {
@@ -103,7 +103,7 @@
     text-align: right;
     border-radius: 0 0 @border-radius-base @border-radius-base;
     button {
-      margin-left:@margin-xs;
+      margin-left:8px;
     }
 
   }

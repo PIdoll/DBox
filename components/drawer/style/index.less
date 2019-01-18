@@ -103,7 +103,7 @@
     font-size: @font-size-lg;
     line-height: @drawer-title-line-height;
     font-weight: 500;
-    color: @heading-color;
+    color: @title-color;
   }
 
   &-content {
@@ -144,7 +144,7 @@
 
     &:focus,
     &:hover {
-      color: @hover-icon;
+      color: @text-color;
       text-decoration: none;
     }
   }
@@ -154,13 +154,13 @@
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: @drawer-clolor;
     color: @text-color;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
   }
 
   &-body {
     padding: @padding-lg;
     font-size: @font-size-base;
-    line-height: @line-height-base;
+    line-height: 1.5;
     word-wrap: break-word;
   }
 
