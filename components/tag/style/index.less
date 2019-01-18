@@ -13,8 +13,8 @@
     padding: 0 @padding-xs;
     box-sizing: border-box;
     text-align: center;
-    margin-right: @margin-xs;
-    margin-bottom: @margin-xs;
+    margin-right: 8px;
+    margin-bottom: 8px;
 
     div {
         display: inline-block;
@@ -50,13 +50,13 @@
     &-checked {
         border-radius: @border-radius-base ;
         background-color: @primary-color;
-        color: @background-color-base;
+        color: hsv(0, 0, 96%);
         border:@border-width-base @border-style-base @primary-color;
     }
     &-checked:hover {
-        background-color: @primary-Hover;
-        border-color: @primary-Hover;
-        border:@border-width-base @border-style-base @primary-Hover;
+        background-color: @primary-hover;
+        border-color: @primary-hover;
+        border:@border-width-base @border-style-base @primary-hover;
         color: @white !important;
     }
     }

@@ -10,7 +10,7 @@
   display: block;
   font-size: @font-size-sm;
   font-weight: normal;
-  line-height: @line-height-base;
+  line-height: 1.5;
 
   .idoll-icon,
   .idoll-icon:hover,
@@ -25,7 +25,7 @@
     text-decoration: none;
     color: @text-color;
     i:before {
-      margin-left: @margin-xs - 4px;
+      margin-left: 8px - 4px;
       color: @text-color-disable
     }
   }
@@ -34,7 +34,7 @@
     margin-right: @dropdown-margin;
     text-decoration: none;
     i:before {
-      margin-left: @margin-xs - 4px;
+      margin-left: 8px - 4px;
       color: @primary-color;
     }
   }
@@ -74,7 +74,7 @@
 
     &-item-group-title {
       color: @text-color-secondary;
-      padding: @dropdown-padding @control-padding-horizontal;
+      padding: @dropdown-padding @padding-sm;
       transition: all .3s;
     }
 
@@ -84,7 +84,7 @@
 
     &-item,
     &-submenu-title {
-      padding: @dropdown-padding @control-padding-horizontal + 4px;
+      padding: @dropdown-padding @padding-sm + 4px;
       margin: 0;
       clear: both;
       font-size: @font-size-base;
@@ -97,8 +97,8 @@
       > a {
         color: @text-color;
         display: block;
-        padding: @dropdown-padding @control-padding-horizontal;
-        margin: -@dropdown-padding -@control-padding-horizontal;
+        padding: @dropdown-padding @padding-sm;
+        margin: -@dropdown-padding -@padding-sm;
         &:focus {
           text-decoration: none;
         }
@@ -109,7 +109,7 @@
       }
 
       &:hover {
-        background-color: @primary-LightBg;
+        background-color: @primary-lightBg;
         a {
           color: @text-color;
         }
@@ -143,7 +143,7 @@
       &-divider {
         height: 1px;
         overflow: hidden;
-        background-color: @border-color-split;
+        background-color: @border;
         line-height: 0;
       }
 
@@ -177,7 +177,7 @@
       left: 100%;
       position: absolute;;
       min-width: 100%;
-      margin-left: @margin-xs - 4px;
+      margin-left: 8px - 4px;
       transform-origin: 0 0;
     }
 
@@ -235,7 +235,7 @@
   .idoll-btn-sm {
     font-size: @font-size-sm ;
     .idoll-icon.idoll-icon-down {
-      margin-left: @margin-xs - 4px;
+      margin-left: 8px - 4px;
       &:before {
         font-size: @font-size-sm ;
         color: @text-color-disable;

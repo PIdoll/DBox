@@ -16,7 +16,7 @@
     &:focus,
     &:active,
     &.active {
-      .button-color(@btn-disable-color; @btn-disable-bg; @btn-disable-border);
+      .button-color(@btn-disable-border; @btn-disable-bg; @btn-disable-border);
     }
   }
 }
@@ -48,16 +48,16 @@
   .button-color(@color; @background; @background);
   &:hover,
   &:focus {
-    // .button-color(@color; @primary-spread-color; @primary-spread-color);
+    // .button-color(@color; @primary-hover; @primary-hover);
     > .@{iconfont-css-prefix} {
       color: @color;
     }
-    .button-color(@color; @primary-Hover; @primary-Hover);
+    .button-color(@color; @primary-hover; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(@color;  ~`colorPalette("@{primary-Pressed}", 7)`; ~`colorPalette("@{primary-Pressed}", 7)`;);
+    .button-color(@color;  ~`colorPalette("@{primary-hover}", 7)`; ~`colorPalette("@{primary-hover}", 7)`;);
   }
 
   .button-disabled();
@@ -77,7 +77,7 @@
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-Pressed}", 7)`; @background; ~`colorPalette("@{primary-Pressed}", 7)`;);
+    .button-color(~`colorPalette("@{primary-hover}", 7)`; @background; ~`colorPalette("@{primary-hover}", 7)`;);
   }
 
   .button-disabled();
@@ -91,12 +91,12 @@
     .button-color(@background; @color;  @color);
   }
   &:focus {
-    .button-color(@color; @background; @error-Pressed);
+    .button-color(@color; @background; @error-hover);
   }
 
   &:active,
   &.active {
-    .button-color(@background; ~`colorPalette("@{error-Pressed}", 7)`; ~`colorPalette("@{error-Pressed}", 7)`);
+    .button-color(@background; ~`colorPalette("@{error-hover}", 7)`; ~`colorPalette("@{error-hover}", 7)`);
   }
 
   .button-disabled();
@@ -238,12 +238,12 @@
 
   &:hover,
   &:focus {
-    .button-color(@primary-spread-color;@btn-primary-color; @primary-spread-color);
+    .button-color(@primary-hover;@btn-primary-color; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-Pressed}", 7)`; @btn-primary-color; ~`colorPalette("@{primary-Pressed}", 7)`);
+    .button-color(~`colorPalette("@{primary-hover}", 7)`; @btn-primary-color; ~`colorPalette("@{primary-hover}", 7)`);
   }
 
   .button-disabled();
@@ -387,5 +387,26 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     padding-left: @padding-xs;
+  }
+}
+
+.loading(@size:14px,@color:#13B886) {
+  &:before {
+    content: "\E914";
+    font-family: idollicon;
+    
+    animation: loadingCircle 1s infinite linear;
+    text-align: center;
+    display: inline-block;
+    color: @color;
+    z-index: 1;
+    font-size: @size;
+    // border:1px solid;
+    // border-left:1px solid transparent;
+    // border-radius: 50%;
+    // width: @size;
+    // height: @size;
+    opacity: 1;
+    background: none;
   }
 }

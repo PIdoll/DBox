@@ -11,7 +11,7 @@
 .input-sm() {
   padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
   height: @input-height-sm;
-  border-radius: @border-radius-sm;
+  border-radius: 2px;
   font-size: @font-size-sm;
 }
 
@@ -35,7 +35,7 @@
 .disabled() {
   background-color: @input-disabled-bg;
   opacity: 1;
-  cursor: @cursor-disabled;
+  cursor: not-allowed;
   color: @text-color-disable;
   &:hover {
     .hover(@input-border-color);
@@ -52,7 +52,7 @@
   height: @input-height-base;
   cursor: text;
   font-size: @font-size-base;
-  line-height: @line-height-base;
+  line-height: 1.5;
   color: @input-color;
   background-color: @input-bg;
   background-image: none;

@@ -14,11 +14,11 @@
 .@{collapse-prefix-cls} {
 	.reset-component;
 	border-radius: @border-radius-base;
-	border: @border-width-base @border-style-base @border-color-base;
+	border: @border-width-base @border-style-base @border;
 	border-bottom: 0;
 
 	& > &-item {
-		border-bottom: @border-width-base @border-style-base @border-color-base;
+		border-bottom: @border-width-base @border-style-base @border;
 
 		&:last-child {
 			&,
@@ -30,7 +30,7 @@
 		> .@{collapse-prefix-cls}-header {
 			line-height: @collapse-header-line-height;
 			padding: @padding-sm @padding-lg;
-			color: @heading-color;
+			color: @title-color;
 			cursor: pointer;
 			position: relative;
 			transition: all @animation-duration-slow;
@@ -127,7 +127,7 @@
 	}
 
 	&-borderless > &-item > &-content > &-content-box {
-		padding-top: @margin-xs - 4px;
+		padding-top: 4px;
 		border-bottom: 0;
 	}
 

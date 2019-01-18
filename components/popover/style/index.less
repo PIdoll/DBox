@@ -35,7 +35,7 @@
   }
   // 标题
   &-title {
-    color: @heading-color;
+    color: @title-color;
     font-weight: 500;
     line-height: @popover-line-height;
     margin-bottom: 8px;
@@ -164,7 +164,7 @@
     color: @popover-color;
     > .@{iconfont-css-prefix} {
       color: @warning-color;
-      line-height: @line-height-base + 0.1;
+      line-height: 1.5 + 0.1;
       position: absolute;
     }
     &-title {
@@ -198,14 +198,14 @@
   }
 
   #popconfirm a:hover{
-    color: @error-Hover  
+    color: @error-hover  
   }
 
   #popconfirm a:focus{
-    color: @error-Pressed  
+    color: @error-hover  
   }
   #popconfirm a:active{
-    color: @error-Pressed   
+    color: @error-hover   
   }
 }
 
