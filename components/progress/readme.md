@@ -3,8 +3,8 @@
 当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过2秒时；
 当需要显示一个操作完成的百分比时。
 
-
 ##### **线条型进度条**
+指定status，默认是default，也可给active，exception和success
 ```jsx
 import { Progress } from 'dbox-ui';
 
@@ -25,6 +25,7 @@ class ProgressView  extends React.Component {
 ```
 
 ##### **迷你线条进度条**
+指定size为small可实现较小进度条
 ```jsx
 import { Progress } from 'dbox-ui';
 
@@ -45,6 +46,7 @@ class ProgressView extends React.Component {
 ```
 
 ##### **圆形进度条**
+指定type为circle可实现圆形进度条
 ```jsx
 import { Progress } from 'dbox-ui';
 
@@ -61,6 +63,7 @@ const ProgressView = () => {
 ```
 
 ##### **迷你圆形进度条**
+给出宽度可实现迷你的圆形进度条
 ```jsx
 import { Progress } from 'dbox-ui';
 
@@ -77,6 +80,7 @@ const ProgressView = () => {
 ```
 
 ##### **动态进度条**
+点击按钮可动态显示进度
 ```jsx
 import { Progress, Button } from 'dbox-ui';
 
@@ -120,6 +124,7 @@ class ProgressView  extends React.Component {
 <ProgressView />
 ```
 ##### **自定义圆形进度条**
+指定format字段定义一个函数，返回需要的格式。
 ```jsx
 import { Progress } from 'dbox-ui';
 

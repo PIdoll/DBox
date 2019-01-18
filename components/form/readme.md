@@ -2,6 +2,7 @@
 用于可配置校验规则的数据提交，输入数据包含输入框、单选框、多选框、日期选择框、下拉框等元素。
 
 ##### **登录框**
+普通的登录框，可以容纳更多的元素
 ```jsx
 import { Form,Input,Icon,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -65,6 +66,7 @@ const WrappedLoginForm = Form.create()(LoginForm);
 ```
 
 ##### **注册**
+注册新用户需要填写的信息
 ```jsx
 import { Form,Select,Input,Cascader,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -276,6 +278,7 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 ```
 
 ##### **高级搜索**
+常用于数据变表格的高级搜索
 ```jsx
 import { Form,Row,Col,DatePicker,Input,Cascader,Button,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -538,6 +541,7 @@ const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 ```
 
 ##### **紧凑型表单**
+使用formType实现紧凑型表单样式
 ```jsx
 import { Form,Row,Col,Select,DatePicker,Input,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -707,6 +711,7 @@ const WrappedCompactSearchForm = Form.create()(CompactSearchForm);
 ```
 
 ##### **弹出层中新建表单**
+可以动态增加或者减少表单项
 ```jsx
 import { Form,Row,Col,Button,Modal,Input,Icon } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -838,6 +843,7 @@ class ModalNewForm extends React.Component {
 ```
 
 ##### **表单联动**
+使用setFieldValue来动态设置其他控件的值
 ```jsx
 import { Form,Row,Col,Input,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -911,6 +917,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 ```
 
 ##### **自定义校验**
+自定义一些表单空间的校验规则
 ```jsx
 import { Form,Row,Col,Input,DatePicker,TimePicker,Cascader,InputNumber,Select,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -1062,6 +1069,7 @@ class FormDemo extends React.Component {
 ```
 
 ##### **动态校验规则**
+根据不同的情况执行不同的校验规则
 ```jsx
 import { Form,Row,Col,Select,Input,Checkbox,Button } from 'dbox-ui';
 const FormItem = Form.Item;
@@ -1147,6 +1155,7 @@ const WrappedFormDemo = Form.create()(FormDemo);
 ```
 
 ##### **校验其他组件**
+校验其他的表单控件
 ```jsx
 import { Form,Row,Col,Select,Radio,InputNumber,Switch,Slider,Button } from 'dbox-ui';
 const FormItem = Form.Item;

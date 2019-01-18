@@ -1,6 +1,7 @@
  当需要获取标准数值时。
 
  ##### **基本使用**
+数字输入框
  ```jsx
 import { InputNumber } from 'dbox-ui';
 
@@ -13,6 +14,7 @@ const InputNumberView = () => {
  ```
 
  ##### **三种尺寸**
+默认size为default，也可设置size的大小为small，large。
  ```jsx
 import { InputNumber } from 'dbox-ui';
 
@@ -29,6 +31,7 @@ const InputNumberView = () => {
  ```
 
  ##### **不可用切换**
+点击按钮切换可用状态
 ```jsx
 import { Button, InputNumber } from 'dbox-ui';
 
@@ -60,6 +63,7 @@ class InputNumberView extends React.Component {
 ```
 
 ##### **小数**
+通过设置step设置每次点击上下箭头所改变的数值
 ```jsx
 import { InputNumber } from 'dbox-ui';
 
@@ -72,6 +76,7 @@ const InputNumberView = () => {
 ```
 
 ##### **格式化展示**
+通过设置formatter格式化数字，以展示具体函数的数据
 ```jsx
 import { InputNumber } from 'dbox-ui';
 
