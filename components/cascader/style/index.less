@@ -74,13 +74,13 @@
       text-overflow: ellipsis;
       overflow: hidden;
       width: 100%;
-      padding: 0 @control-padding-horizontal;
+      padding: 0 @padding-sm;
     }
 
     &-clear {
       opacity: 0;
       position: absolute;
-      right: @control-padding-horizontal;
+      right: @padding-sm;
       z-index: 2;
       background: @component-background;
       top: 50%;
@@ -106,7 +106,7 @@
       position: absolute;
       z-index: 1;
       top: 50%;
-      right: @control-padding-horizontal;
+      right: @padding-sm;
       width: 14px;
       height: 14px;
       font-size: 14px;
@@ -195,13 +195,13 @@
     }
   }
   &-menu-item {
-    padding: 5px @control-padding-horizontal;
+    padding: 5px @padding-sm;
     line-height: 22px;
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.3s;
     &:hover {
-      background-color: @primary-LightBg;
+      background-color: @primary-lightBg;
       color: @select-hover-color;
     }
     &-disabled {
@@ -234,7 +234,7 @@
       font-size: 14px !important;
       color: @text-color-secondary;
       position: absolute;
-      right: @control-padding-horizontal;
+      right: @padding-sm;
     }
 
     &-loading-icon {

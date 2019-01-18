@@ -67,7 +67,7 @@
   &-item-divider {
     height: 1px;
     overflow: hidden;
-    background-color: @border-color-split;
+    background-color: @border;
     line-height: 0;
   }
 
@@ -126,16 +126,16 @@
   }
 
   &:not(&-horizontal) &-item-selected {
-    background-color: @primary-LightBg;
+    background-color: @primary-lightBg;
   }
 
   &-inline,
   &-vertical,
   &-vertical-left {
-    border-right: @border-width-base @border-style-base @border-color-split;
+    border-right: @border-width-base @border-style-base @border;
   }
   &-vertical-right {
-    border-left: @border-width-base @border-style-base @border-color-split;
+    border-left: @border-width-base @border-style-base @border;
   }
 
   &-vertical&-sub,
@@ -186,7 +186,7 @@
     overflow: hidden;
     padding: 0;
     line-height: 0;
-    background-color: @border-color-split;
+    background-color: @border;
   }
 
   &-submenu {
@@ -250,7 +250,7 @@
 
   &-horizontal {
     border: 0;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
     box-shadow: none;
     line-height: (@menu-base-line-height + 2px);
 
@@ -259,13 +259,13 @@
       position: relative;
       top: 1px;
       float: left;
-      border-bottom: @border-radius-sm @border-style-base transparent;
+      border-bottom: 2px @border-style-base transparent;
 
       &:hover,
       &-active,
       &-open,
       &-selected {
-        border-bottom: @border-radius-sm @border-style-base @menu-highlight-color;
+        border-bottom: 2px @border-style-base @menu-highlight-color;
         color: @menu-highlight-color;
         i {
           color: @menu-highlight-color;
@@ -534,7 +534,7 @@
       &-title:hover {
         div {
           i {
-            color: @heading-color-dark;
+            color: @title-color-dark;
           }
         }
       }
@@ -543,7 +543,7 @@
       .@{menu-prefix-cls}-submenu-title {
         div {
           i {
-            color: @heading-color-dark;
+            color: @title-color-dark;
           }
         }
       }

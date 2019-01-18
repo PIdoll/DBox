@@ -40,7 +40,7 @@
   }
 
   &-bar {
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: @border-width-base @border-style-base @border;
     margin: @tab-bar-margin;
     outline: none;
     transition: padding .3s @ease-in-out;
@@ -49,7 +49,7 @@
   &-nav-container {
     overflow: hidden;
     font-size: @tabs-title-font-size;
-    line-height: @line-height-base;
+    line-height: 1.5;
     box-sizing: border-box;
     position: relative;
     white-space: nowrap;
@@ -236,9 +236,9 @@
       }
     }
     .@{tab-prefix-cls}-tab-active:hover {
-      color: @primary-Hover;
+      color: @primary-hover;
       i:before {
-        color: @primary-Hover;
+        color: @primary-hover;
       }
     }
   }
@@ -396,7 +396,7 @@
   &-vertical&-left {
     > .@{tab-prefix-cls}-bar {
       float: left;
-      border-right: @border-width-base @border-style-base @border-color-split;
+      border-right: @border-width-base @border-style-base @border;
       margin-right: -1px;
       margin-bottom: 0;
       .@{tab-prefix-cls}-tab {
@@ -414,14 +414,14 @@
     }
     > .@{tab-prefix-cls}-content {
       padding-left: @padding-lg;
-      border-left: @border-width-base @border-style-base @border-color-split;
+      border-left: @border-width-base @border-style-base @border;
     }
   }
 
   &-vertical&-right {
     > .@{tab-prefix-cls}-bar {
       float: right;
-      border-left: @border-width-base @border-style-base @border-color-split;
+      border-left: @border-width-base @border-style-base @border;
       margin-left: -1px;
       margin-bottom: 0;
       .@{tab-prefix-cls}-nav-container {
@@ -436,7 +436,7 @@
     }
     > .@{tab-prefix-cls}-content {
       padding-right: @padding-lg;
-      border-right: @border-width-base @border-style-base @border-color-split;
+      border-right: @border-width-base @border-style-base @border;
     }
   }
 

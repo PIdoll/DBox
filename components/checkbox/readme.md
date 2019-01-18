@@ -40,9 +40,10 @@ class CheckboxView extends React.Component {
     return (
       <div>
         <Checkbox onChange={this.onChangeState} checked={this.state.checked} disabled={this.state.disabled}>{`${this.state.checked ? '选中' : '非选中'}-${this.state.disabled ? '禁用' : '非禁用'}`}</Checkbox>
+        <br />
+        <br />
         <Button onClick={this.toggleChecked}>选中切换</Button>
-
-        <Button onClick={this.toggleDisabled}>禁用切换</Button>
+        <Button style={{marginLeft: 10}} onClick={this.toggleDisabled}>禁用切换</Button>
       </div>
     )
   }

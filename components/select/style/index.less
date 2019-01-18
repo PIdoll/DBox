@@ -88,7 +88,7 @@
 
     background-color: @select-bg;
     border-radius: @border-radius-base;
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     transition: all .3s @ease-in-out;
 
     &:hover {
@@ -121,7 +121,7 @@
     &:hover,
     &:focus,
     &:active {
-      border-color: @border-color-base;
+      border-color: @border;
       box-shadow: none;
     }
 
@@ -300,7 +300,7 @@
 
     .@{select-prefix-cls}-selection {
       height: @select-height-sm;
-      border-radius: @border-radius-sm;
+      border-radius: 2px;
       font-size: @select-font-size -2px;
     }
     .@{select-prefix-cls}-selection--single {
@@ -517,7 +517,7 @@
     box-shadow: @box-shadow-base;
     border-radius: @border-radius-base;
     box-sizing: border-box;
-    z-index: @zindex-dropdown;
+    z-index: 1050;
     left: -9999px;
     top: -9999px;
     position: absolute;
@@ -566,7 +566,7 @@
 
         &:hover,
         &-active {
-          background-color: @primary-LightBg;
+          background-color: @primary-lightBg;
           color: @select-hover-color;
         }
 
@@ -646,7 +646,7 @@
         padding-right: @select-padding-vertical + 14px;
         width: 100%;
         box-sizing: border-box;
-        border: @border-width-base @border-style-base @border-color-base;
+        border: @border-width-base @border-style-base @border;
         border-radius: 4px;
         outline: none;
       }
