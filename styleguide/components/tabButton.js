@@ -15,7 +15,7 @@ export const styles = ({ color, fontFamily, fontSize, buttonTextTransform }) => 
 		'&:hover, &:focus': {
 			isolate: false,
       outline: 0,
-      backgroundColor: '#d3dce6',
+      backgroundColor: 'rgba(19,184,134,.1)',
       color: '#13b886',
 		},
 		'&:focus:not($isActive)': {

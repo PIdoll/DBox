@@ -59,5 +59,5 @@ export default {
   Others: '其它',
   Install: '安装',
   GetStarted: ' 快速上手',
-  Version: '版本更新',
+  Version: '版本记录',
 }
