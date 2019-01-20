@@ -232,44 +232,6 @@
     font-size: @font-size-base;
     color: @text-color-disable;
   }
-  .idoll-btn-sm {
-    font-size: @font-size-sm ;
-    .idoll-icon.idoll-icon-down {
-      margin-left: 8px - 4px;
-      &:before {
-        font-size: @font-size-sm ;
-        color: @text-color-disable;
-      }
-    }
-  }
-  .idoll-btn-sm:hover {
-    .idoll-icon.idoll-icon-down{
-      &:before {
-        color :@primary-color
-      }
-    }
-  }
-  .idoll-btn-lg {
-    font-size: @font-size-lg;
-    i:before {
-      font-size: @font-size-lg;
-      color: @text-color-disable;
-    }
-  }
-  .idoll-btn-lg:hover {
-    .idoll-icon.idoll-icon-down{
-      &:before {
-        color :@primary-color
-      }
-    }
-  }
-}
-
-
-.idoll-btn:focus {
-  .idoll-icon.idoll-icon-down:before {
-    color:@primary-color;
-  }
 }
 
 .@{dropdown-prefix-cls}-menu-dark {
@@ -302,34 +264,28 @@
   }
 }
 
-h1.h1 {
-  margin-top: 95px;
-}
 h1.h1:first-child {
   margin-top: 0;
 }
 
 .dropdown {
-  .idoll-btn.disabled, .idoll-btn[disabled] {
-    pointer-events: none;
-  }
   button {
     margin-right: 10px;
     margin-bottom: 10px;
   }
 }
-.idoll-btn-group.buttonGroup {
+.@{idoll-prefix}-btn-group.buttonGroup {
   button {
     margin-right: 0;
   }
-  >.idoll-btn-group {
+  >.@{idoll-prefix}-btn-group {
     float: none !important;
   }
 }
 
-.idoll-icon-a,
-.idoll-icon-a:active,
-.idoll-icon-a:focus {
+.@{idoll-prefix}-icon-a,
+.@{idoll-prefix}-icon-a:active,
+.@{idoll-prefix}-icon-a:focus {
   text-decoration: none;
   color: @text-color-secondary;
 }
