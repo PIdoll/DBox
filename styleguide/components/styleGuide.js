@@ -34,20 +34,21 @@ const styles = ({ mq }) => ({
 	},
 	nav: {
 		marginLeft: 'auto',
-		[xsmall]: {
-			margin: [[10, 0, 0]],
-    },
   },
   mainCont: {
     width: '90%',
     margin: '100px auto 0',
+    minWidth: '640px',
   },
   sidebar: {
     borderRight: '1px solid #eaeefb',
+    minWidth: '120px',
     position: 'fixed',
     top: '0',
     left: '5%',
     marginRight: '-16%',
+    marginTop: '72px',
+    paddingBottom: '100px',
     width: '16%',
     overflowY: 'scroll',
     height: '100%',
@@ -133,8 +134,6 @@ export function StyleGuideRenderer({ classes, title, children, toc }) {
     </header>
     <div className={classes.mainCont}>
       <aside className={classes.sidebar}>
-        <Logo>{title}</Logo>
-        <Logo>{title}</Logo>
         {toc}
       </aside>
       <main className={classes.content}>

@@ -7,7 +7,7 @@ import { hasInHash, getHash } from '../utils/handleHash';
 
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
-    margin: 0,
+    margin: '0 0 8px 0',
     paddingLeft: 0,
 	},
 	item: {

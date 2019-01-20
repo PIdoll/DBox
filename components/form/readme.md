@@ -1035,21 +1035,19 @@ class FormDemo extends React.Component {
           label="内联"
           {...formItemLayout}
         >
-          <Col span={11}>
-            <FormItem validateStatus="error" help="请选择正确的日期">
-              <DatePicker />
-            </FormItem>
-          </Col>
-          <Col span={2}>
-            <span style={{ display: 'inline-block', width: '100%', textAlign: 'center' }}>
-              -
-            </span>
-          </Col>
-          <Col span={11}>
-            <FormItem>
-              <DatePicker />
-            </FormItem>
-          </Col>
+          <Form.Item
+            validateStatus='error'
+            help='请输入正确的日期'
+            style={{ display: 'inline-block', }}
+          >
+            <DatePicker />
+          </Form.Item>
+          <span style={{ display: 'inline-block', width: '24px', textAlign: 'center' }}>
+          -
+          </span>
+          <Form.Item style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}>
+            <DatePicker />
+          </Form.Item>
         </FormItem>
 
         <FormItem
