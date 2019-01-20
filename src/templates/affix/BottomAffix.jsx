@@ -6,7 +6,7 @@ export default class BottomAffix extends React.Component {
   render() {
     return (
       <Affix>
-        <Button type='primary'>固定在顶部</Button>
+        <Button type='primary'>固定在底部</Button>
       </Affix>
     )
   };

@@ -6,7 +6,7 @@
 .@{message-prefix-cls} {
   .reset-component;
   position: fixed;
-  z-index: @zindex-message;
+  z-index: 1010;
   width: 100%;
   top: 16px;
   left: 0;
@@ -23,7 +23,7 @@
   &-notice-content &-custom-content {
     padding: @padding-xs @padding-md;
     background: @message-base-bg;
-    box-shadow: @shadow-large;
+    box-shadow: 0 8px 16px 0 @shadow-color;
     border-radius: @border-radius-base;
     display: inline-block;
     pointer-events: all;

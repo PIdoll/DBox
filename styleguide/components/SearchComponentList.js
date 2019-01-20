@@ -4,7 +4,7 @@ import Styled from 'rsg-components/Styled';
 
 const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 	search: {
-		padding: space[2],
+		padding: '24px 16px 8px 0',
 	},
 	input: {
 		display: 'block',

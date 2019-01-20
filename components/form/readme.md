@@ -240,7 +240,6 @@ class RegistrationForm extends React.Component {
           label="地址"
         >
           {getFieldDecorator('residence', {
-            initialValue: ['shanghai', 'pudongxinqu', 'dongfangminzhu'],
             rules: [{ type: 'array', required: true, message: '请选择地址!' }],
           })(
             <Cascader options={residences} />
@@ -1029,7 +1028,7 @@ class FormDemo extends React.Component {
           validateStatus="validating"
           help="信息正在验证..."
         >
-          <Cascader defaultValue={['1']} options={[]} />
+          <Cascader defaultValue={['1']} options={['zhangjiang']} />
         </FormItem>
 
         <FormItem

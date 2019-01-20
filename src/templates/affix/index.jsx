@@ -23,7 +23,7 @@ export default class Affix extends React.Component {
         <h1 className='h1'>在容器中固定</h1>
         <h2 className='h2'>
           测试场景:<br />
-          1）添加API中的onChange参数，将子元素固定在底部
+          1）测试target字段，给定固定容器，让其在顶部固定。
         </h2>
         <ContainerAffix />
         <h1 className='h1'>触发回调函数</h1>

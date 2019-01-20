@@ -2,7 +2,9 @@
 将元素固定在特定区域，一般用于导航栏或反馈按钮。
 
 ##### **固定在顶部**
+
 最简单的用法
+
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
@@ -23,8 +25,11 @@ class AffixView extends React.Component {
 }
 <AffixView />
 ```
+
 ##### **固定在底部**
+
 固定状态改变时的回调
+
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
@@ -39,15 +44,17 @@ const AffixView = () => {
 ```
 
 ##### **固定在容器**
+
 使用target设置Affix需要监听其滚动事件的元素
+
 ```jsx
 import { Affix, Button } from 'dbox-ui';
 
 class AffixView extends React.Component{
   render() {
     return (
-      <div ref={(node) => { this.container = node; }}>
-        <div style={{backgroundColor: '#dedede', padding: '10px 0'}}>
+      <div ref={(node) => { this.div = node; }} style={{height: '100px', overflow: 'scroll'}}>
+        <div style={{backgroundColor: '#dedede', paddingTop: '30px', height: '300px'}}>
           <Affix target={() => this.container}>
             <Button type="primary">
                 固定在容器的顶部
@@ -59,7 +66,9 @@ class AffixView extends React.Component{
   }
 }
 <AffixView />
+
 ```
+
 ##### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
