@@ -55,7 +55,7 @@ module.exports = {
         }, {
           loader: 'css-loader'
         }, {
-          loader: 'less-loader'
+          loader: 'less-loader',
         }],
         // exclude: path.resolve(__dirname, 'node_modules')
       },
