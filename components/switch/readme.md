@@ -4,7 +4,7 @@
 切换开关状态
 ```jsx
 import {Switch} from 'dbox-ui';
-<Switch defaultChecked></Switch>
+<Switch defaultChecked />
 ```
 
 ##### **按钮操作**
@@ -26,12 +26,13 @@ class SwitchView extends React.Component {
     })
   };
   render() {
-  return (
-	<div>
-		<Switch disabled={this.state.disabled}></Switch>		<Button onClick={this.toggle} >改变禁用状态</Button>
-	</div>
-  )
-}
+    return (
+    <div>
+      <Switch disabled={this.state.disabled} />
+      <Button onClick={this.toggle}>改变禁用状态</Button>
+    </div>
+    )
+  }
 }
 <SwitchView />
 ```
@@ -41,9 +42,9 @@ class SwitchView extends React.Component {
 ```jsx
 import {Switch} from 'dbox-ui';
 <div>
-	<Switch defaultChecked />
-	<br />
-	<Switch size='small' />
+  <Switch defaultChecked />
+  <br />
+  <Switch size='small' />
 </div>
 ```
 
@@ -60,9 +61,9 @@ import {Switch} from 'dbox-ui';
 ```jsx
 import {Switch} from 'dbox-ui';
 <div>
-	<Switch disabled loading defaultChecked />
-    <br />
-    <Switch disabled size='small' loading />
+  <Switch disabled loading defaultChecked />
+  <br />
+  <Switch disabled size='small' loading />
 </div>
 ```
 

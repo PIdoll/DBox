@@ -31,21 +31,21 @@ class ModalView extends React.Component {
     });
   };
   render() {
-  return (
-    <div>
-      <Button type='primary' onClick={this.showModal}>显示对话框</Button>
-      <Modal title='我是标题' visible={this.state.visible}
-        onOk={this.handleOk} onCancel={this.handleCancel}>
-        <p>这里是一句话</p>
-        <p>或者一段文字</p>
-        <p>或者表格</p>
-        <p>或者其他嵌套组件</p>
-        <p>…………</p>
-        <p>最后一行</p>
-      </Modal>
-    </div>
-  )
-}
+    return (
+      <div>
+        <Button type='primary' onClick={this.showModal}>显示对话框</Button>
+        <Modal title='我是标题' visible={this.state.visible}
+          onOk={this.handleOk} onCancel={this.handleCancel}>
+          <p>这里是一句话</p>
+          <p>或者一段文字</p>
+          <p>或者表格</p>
+          <p>或者其他嵌套组件</p>
+          <p>…………</p>
+          <p>最后一行</p>
+        </Modal>
+      </div>
+    )
+  }
 }
 <ModalView />
 ```
@@ -90,16 +90,16 @@ class ModalView extends React.Component {
     });
   }
   render() {
-  return (
-    <div>
-      <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
-      <Modal confirmLoading={this.state.confirmLoading} title='我是标题' visible={this.state.asyncvisible}
-        onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
-        <p>{this.state.ModalText}</p>
-      </Modal>
-    </div>
-  )
-}
+    return (
+      <div>
+        <Button type='primary' onClick={this.asyncshowModal}>显示对话框</Button>
+        <Modal confirmLoading={this.state.confirmLoading} title='我是标题' visible={this.state.asyncvisible}
+          onOk={this.asynchandleOk} onCancel={this.asynchandleCancel}>
+          <p>{this.state.ModalText}</p>
+        </Modal>
+      </div>
+    )
+  }
 }
 <ModalView />
 ```
@@ -130,14 +130,14 @@ class ModalView extends React.Component {
     });
   }
   render() {
-  return (
-    <div>
-      <Button onClick={this.info}>信息提示</Button>
-      <Button style={{marginLeft: 20, marginRight: 20}} onClick={this.success}>成功提示</Button>
-      <Button onClick={this.error}>失败提示</Button>
-    </div>
-  )
-}
+    return (
+      <div>
+        <Button onClick={this.info}>信息提示</Button>
+        <Button style={{marginLeft: 20, marginRight: 20}} onClick={this.success}>成功提示</Button>
+        <Button onClick={this.error}>失败提示</Button>
+      </div>
+    )
+  }
 }
 <ModalView />
 ```
@@ -158,10 +158,10 @@ class ModalView extends React.Component {
     });
   }
   render() {
-  return (
-    <Button onClick={this.showConfirm}>确认对话框</Button>
-  )
-}
+    return (
+      <Button onClick={this.showConfirm}>确认对话框</Button>
+    )
+  }
 }
 <ModalView />
 ```

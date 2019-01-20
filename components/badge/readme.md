@@ -28,9 +28,9 @@ const content = {
   display: 'inline-block',
 };
 <div>
-	<Badge count={55}></Badge>
-    <Badge count={8} style={{ backgroundColor: '#13B886' }}></Badge>
-    <Badge count={999} style={{ backgroundColor: '#87d068' }}></Badge>
+  <Badge count={55} />
+  <Badge count={8} style={{ backgroundColor: '#13B886' }} />
+  <Badge count={999} style={{ backgroundColor: '#87d068' }} />
 </div>
 ```
 
@@ -46,15 +46,15 @@ const content = {
   display: 'inline-block',
 };
 <div>
-	<Badge count={9} overflowCount='10'>
-      <a href='javascript:;' style={content} />
-    </Badge>
-    <Badge count={200}>
-      <a href='javascript:;' style={content} />
-    </Badge>
-    <Badge count={1000} overflowCount='999'>
-      <a href='javascript:;' style={content} />
-    </Badge>
+  <Badge count={9} overflowCount='10'>
+    <a href='javascript:;' style={content} />
+  </Badge>
+  <Badge count={200}>
+    <a href='javascript:;' style={content} />
+  </Badge>
+  <Badge count={1000} overflowCount='999'>
+    <a href='javascript:;' style={content} />
+  </Badge>
 </div>
 ```
 
@@ -64,15 +64,15 @@ const content = {
 ```jsx
 import {Badge, Icon} from 'dbox-ui';
 <div>
-	<Badge>
-	  <Icon type='phone' />
-	</Badge>
-	<Badge dot status='error'>
-	  <Icon type='phone' />
-	</Badge>
-	<Badge dot status='processing'>
-	  <a href='javascript:;' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
-	</Badge>
+  <Badge>
+    <Icon type='phone' />
+  </Badge>
+  <Badge dot status='error'>
+    <Icon type='phone' />
+  </Badge>
+  <Badge dot status='processing'>
+    <a href='javascript:;' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
+  </Badge>
 </div>
 ```
 
@@ -148,29 +148,29 @@ class BadgeView extends React.Component {
     this.setState({show})
   };
   render() {
-  return (
-	<div>
-        <div style={{ marginBottom: '10px' }}>
-            <Badge count={this.state.count}>
-              <a href='javascript:;' style={content} />
-            </Badge>
-            <ButtonGroup>
-              <Button onClick={this.decline}>
-              <Icon type='remove' />
-              </Button>
-              <Button onClick={this.increase}>
-                <Icon type='plus' />
-              </Button>
-            </ButtonGroup>
-            </div>
-            <br />
-            <div>
+    return (
+      <div>
+        <div style={{ marginBottom: 10 }}>
+          <Badge count={this.state.count}>
+            <a href='javascript:;' style={content} />
+          </Badge>
+          <ButtonGroup>
+            <Button onClick={this.decline}>
+            <Icon type='remove' />
+            </Button>
+            <Button onClick={this.increase}>
+              <Icon type='plus' />
+            </Button>
+          </ButtonGroup>
+        </div>
+        <br />
+        <div>
           <Badge dot={this.state.show}>
-              <a href='javascript:;' style={content} />
+            <a href='javascript:;' style={content} />
           </Badge>
           <Switch checked={this.state.show} onChange={this.onChange} />
-          </div>
         </div>
+      </div>
     )
   }
 }

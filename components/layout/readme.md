@@ -9,12 +9,12 @@ const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 <div className='layout_temp'>
-	<Layout>
-		<Header>头部</Header>
-		<Content>内容</Content>
-		<Footer>底部</Footer>
-	</Layout>
-	<br />
+  <Layout>
+    <Header>头部</Header>
+    <Content>内容</Content>
+    <Footer>底部</Footer>
+  </Layout>
+  <br />
   <Layout>
     <Header>头部</Header>
     <Layout>
@@ -23,8 +23,8 @@ const Sider = Layout.Sider;
     </Layout>
     <Footer>底部</Footer>
   </Layout>
-	<br />
-   <Layout>
+  <br />
+  <Layout>
     <Sider>侧边栏</Sider>
     <Layout>
       <Header>头部</Header>
@@ -57,40 +57,39 @@ class LayoutView extends React.Component {
     })
   }
   render() {
-  return (
-	<Layout className='layout-horizontal'>
-	  <Header>
-	    <div className='logo'><div>LOGO</div></div>
-	    <Menu
-	      onClick={this.handleClick}
-	      selectedKeys={[this.state.current]}
-	      mode='horizontal'
-	      theme='dark'
-	>
-	      <Menu.Item key='1'><div>首页</div></Menu.Item>
-	      <Menu.Item key='2'><div>工作台</div></Menu.Item>
-	      <SubMenu key='sub1' title={<div>订单中心</div>}>
-	        <Menu.Item key='3'>子菜单一</Menu.Item>
-	        <Menu.Item key='4'>子菜单二</Menu.Item>
-	        <Menu.Item key='5'>子菜单三</Menu.Item>
-	        <Menu.Item key='6'>子菜单四</Menu.Item>
-	      </SubMenu>
-	      <Menu.Item indexkey='tool'>
-	        <a href='javascript:;' target='_blank'><div>配置管理</div></a>
-	      </Menu.Item>
-	    </Menu>
-	  </Header>
-	  <Breadcrumb>
-	    <Breadcrumb.Item>首页</Breadcrumb.Item>
-	    <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
-	    <Breadcrumb.Item>子菜单</Breadcrumb.Item>
-	  </Breadcrumb>
-	  <Content>
-	    <div className='content'>内容</div>
-	  </Content>
-	</Layout>
-  )
-}
+    return (
+      <Layout className='layout-horizontal'>
+        <Header>
+          <div className='logo'><div>LOGO</div></div>
+          <Menu
+            onClick={this.handleClick}
+            selectedKeys={[this.state.current]}
+            mode='horizontal'
+            theme='dark'>
+            <Menu.Item key='1'><div>首页</div></Menu.Item>
+            <Menu.Item key='2'><div>工作台</div></Menu.Item>
+            <SubMenu key='sub1' title={<div>订单中心</div>}>
+              <Menu.Item key='3'>子菜单一</Menu.Item>
+              <Menu.Item key='4'>子菜单二</Menu.Item>
+              <Menu.Item key='5'>子菜单三</Menu.Item>
+              <Menu.Item key='6'>子菜单四</Menu.Item>
+            </SubMenu>
+            <Menu.Item indexkey='tool'>
+              <a href='javascript:;' target='_blank'><div>配置管理</div></a>
+            </Menu.Item>
+          </Menu>
+        </Header>
+        <Breadcrumb>
+          <Breadcrumb.Item>首页</Breadcrumb.Item>
+          <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
+          <Breadcrumb.Item>子菜单</Breadcrumb.Item>
+        </Breadcrumb>
+        <Content>
+          <div className='content'>内容</div>
+        </Content>
+      </Layout>
+    )
+  }
 }
 <LayoutView />
 ```
@@ -152,7 +151,7 @@ class LayoutView extends React.Component {
   }
   inlineMenu () {
     if (this.state.flag) {
-      return <Menu
+      return (<Menu
         onClick={this.handleClickBread}
         defaultSelectedKeys={['7']}
         mode={this.state.modeMenu}
@@ -176,15 +175,14 @@ class LayoutView extends React.Component {
           <Menu.Item key='18'>子菜单十一</Menu.Item>
           <Menu.Item key='19'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>
+      </Menu>)
     } else {
-      return <Menu
+      return (<Menu
         onClick={this.handleClickBread}
         defaultSelectedKeys={['7']}
         openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
-        mode={this.state.modeMenu}
->
+        mode={this.state.modeMenu}>
         <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
         <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
           <Menu.Item key='8'>子菜单一</Menu.Item>
@@ -204,39 +202,39 @@ class LayoutView extends React.Component {
           <Menu.Item key='18'>子菜单十一</Menu.Item>
           <Menu.Item key='19'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>
+      </Menu>)
     }
   }
   render() {
-  return (
-    <div className='layout-inlineNav'>
-      <Layout>
-        <Sider >
-          <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-          {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
-        </Sider>
+    return (
+      <div className='layout-inlineNav'>
         <Layout>
-          <Header style={{height: '56px'}} >
-            <Icon type='message' />
-            <Avatar size='small' style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
-            <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
-              Alvin
-            </DropdownNormal>
-          </Header>
-          <Breadcrumb>
-            <Breadcrumb.Item>首页</Breadcrumb.Item>
-            <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
-            <Breadcrumb.Item>子菜单</Breadcrumb.Item>
-          </Breadcrumb>
-          <Content>
-            <div className='content'>内容</div>
-          </Content>
+          <Sider >
+            <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+            {this.inlineMenu()}
+            <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+          </Sider>
+          <Layout>
+            <Header style={{height: '56px'}} >
+              <Icon type='message' />
+              <Avatar size='small' style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
+              <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
+                Alvin
+              </DropdownNormal>
+            </Header>
+            <Breadcrumb>
+              <Breadcrumb.Item>首页</Breadcrumb.Item>
+              <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
+              <Breadcrumb.Item>子菜单</Breadcrumb.Item>
+            </Breadcrumb>
+            <Content>
+              <div className='content'>内容</div>
+            </Content>
+          </Layout>
         </Layout>
-      </Layout>
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 <LayoutView />
 ```
@@ -290,7 +288,6 @@ class LayoutView extends React.Component {
       });
   }
   handleClickTabs (e) {
-    // console.log(e.key)
     array.push(...e.keyPath)
     this.setState({
       current: e.key,
@@ -342,7 +339,7 @@ class LayoutView extends React.Component {
   }
   inlineMenu () {
     if (this.state.flag) {
-      return <Menu
+      return (<Menu
         onClick={this.handleClickTabs}
         defaultSelectedKeys={['27']}
         selectedKeys={[this.state.activeKey]}
@@ -367,16 +364,15 @@ class LayoutView extends React.Component {
           <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
           <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>
+      </Menu>)
     } else {
-      return <Menu
+      return (<Menu
         onClick={this.handleClickTabs}
         defaultSelectedKeys={['27']}
         selectedKeys={[this.state.activeKey]}
         openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
-        mode={this.state.modeMenu}
->
+        mode={this.state.modeMenu}>
         <Menu.Item title='首页' key='27'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
         <SubMenu key='sub1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
           <Menu.Item title='子菜单一' key='28'>子菜单一</Menu.Item>
@@ -396,36 +392,36 @@ class LayoutView extends React.Component {
           <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
           <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>
+      </Menu>)
     }
   }
   render() {
-  return (
-    <div className='layout-inlineNav inlineTabs'>
-      <Layout>
-        <Sider >
-          <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-          {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
-        </Sider>
+    return (
+      <div className='layout-inlineNav inlineTabs'>
         <Layout>
-          <Header style={{height: '56px'}} >
-            <Icon type='message' />
-            <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
-            <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
-              Alvin
-            </DropdownNormal>
-          </Header>
-          <Content>
-            <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
-              {this.state.panes.map(pane => <TabPane closable={pane.key === '27' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
-            </Tabs>
-          </Content>
+          <Sider >
+            <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+            {this.inlineMenu()}
+            <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+          </Sider>
+          <Layout>
+            <Header style={{height: '56px'}} >
+              <Icon type='message' />
+              <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
+              <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
+                Alvin
+              </DropdownNormal>
+            </Header>
+            <Content>
+              <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
+                {this.state.panes.map(pane => <TabPane closable={pane.key === '27' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+              </Tabs>
+            </Content>
+          </Layout>
         </Layout>
-      </Layout>
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 <LayoutView />
 ```

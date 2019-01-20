@@ -42,11 +42,11 @@ import {Tag} from 'dbox-ui';
 ```jsx
 import {Tag} from 'dbox-ui';
 <div>
-	<span>热门话题:</span>
-	<Tag hot>电影</Tag>
-	<Tag hot checked>书籍</Tag>
-	<Tag hot>音乐</Tag>
-	<Tag hot>运动</Tag>
+  <span>热门话题:</span>
+  <Tag hot>电影</Tag>
+  <Tag hot checked>书籍</Tag>
+  <Tag hot>音乐</Tag>
+  <Tag hot>运动</Tag>
 </div>
 ```
 
@@ -55,7 +55,7 @@ import {Tag} from 'dbox-ui';
 ```jsx
 import {Tag} from 'dbox-ui';
 const TagGroup = Tag.Group;
-<TagGroup></TagGroup>
+<TagGroup tags={['电影', '书籍', '音乐']} id={0} text='爱好' iconType='tag' />
 ```
 
 
