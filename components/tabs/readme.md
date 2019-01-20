@@ -18,13 +18,13 @@ const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
-    <div>
-      <Tabs defaultActiveKey='5'>
-        <TabPane tab='选项一' key='5'>选项一</TabPane>
-        <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
-        <TabPane tab='选项三' key='3'>选项三</TabPane>
-      </Tabs>
-    </div>
+      <div>
+        <Tabs defaultActiveKey='5'>
+          <TabPane tab='选项一' key='5'>选项一</TabPane>
+          <TabPane disabled tab='选项二' key='4'>选项二</TabPane>
+          <TabPane tab='选项三' key='3'>选项三</TabPane>
+        </Tabs>
+      </div>
     )
   }
 }
@@ -39,17 +39,17 @@ const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
-    	<Tabs defaultActiveKey='7'>
-	      <TabPane tab={<span><Icon type='bars' />选项一</span>} key='7'>
-	      选项一
-	      </TabPane>
-	      <TabPane disabled tab={<span><Icon type='appstore-o' />选项二</span>} key='8'>
-	      选项二
-	      </TabPane>
-	      <TabPane tab={<span><Icon type='user' />选项三</span>} key='9'>
-	      选项三
-	      </TabPane>
-	    </Tabs>
+      <Tabs defaultActiveKey='7'>
+        <TabPane tab={<span><Icon type='bars' />选项一</span>} key='7'>
+        选项一
+        </TabPane>
+        <TabPane disabled tab={<span><Icon type='appstore-o' />选项二</span>} key='8'>
+        选项二
+        </TabPane>
+        <TabPane tab={<span><Icon type='user' />选项三</span>} key='9'>
+        选项三
+        </TabPane>
+      </Tabs>
     )
   }
 }
@@ -80,25 +80,25 @@ class TabsView extends React.Component {
   return (
     <div>
       <RadioGroup onChange={this.handleModeChange} value={this.state.mode} style={{marginBottom: 8}}>
-          <RadioButton value='top'>水平</RadioButton>
-          <RadioButton value='left'>垂直</RadioButton>
-        </RadioGroup>
-        <Tabs defaultActiveKey='11' tabPosition={this.state.mode} style={{height: 247}}>
-          <TabPane tab='选项一' key='11'>选项一</TabPane>
-          <TabPane tab='选项二' key='12'>选项二</TabPane>
-          <TabPane tab='选项三' key='13'>选项三</TabPane>
-          <TabPane tab='选项四' key='14'>选项四</TabPane>
-          <TabPane tab='选项五' key='15'>选项五</TabPane>
-          <TabPane tab='选项六' key='16'>选项六</TabPane>
-          <TabPane tab='选项七' key='17'>选项七</TabPane>
-          <TabPane tab='选项八' key='18'>选项八</TabPane>
-          <TabPane tab='选项九' key='19'>选项九</TabPane>
-          <TabPane tab='选项十' key='20'>选项十</TabPane>
-          <TabPane tab='选项十一' key='21'>选项十一</TabPane>
-          <TabPane tab='选项十二' key='22'>选项十二</TabPane>
-          <TabPane tab='选项十三' key='23'>选项十三</TabPane>
-          <TabPane tab='选项十四' key='24'>选项十四</TabPane>
-        </Tabs>
+        <RadioButton value='top'>水平</RadioButton>
+        <RadioButton value='left'>垂直</RadioButton>
+      </RadioGroup>
+      <Tabs defaultActiveKey='11' tabPosition={this.state.mode} style={{height: 247}}>
+        <TabPane tab='选项一' key='11'>选项一</TabPane>
+        <TabPane tab='选项二' key='12'>选项二</TabPane>
+        <TabPane tab='选项三' key='13'>选项三</TabPane>
+        <TabPane tab='选项四' key='14'>选项四</TabPane>
+        <TabPane tab='选项五' key='15'>选项五</TabPane>
+        <TabPane tab='选项六' key='16'>选项六</TabPane>
+        <TabPane tab='选项七' key='17'>选项七</TabPane>
+        <TabPane tab='选项八' key='18'>选项八</TabPane>
+        <TabPane tab='选项九' key='19'>选项九</TabPane>
+        <TabPane tab='选项十' key='20'>选项十</TabPane>
+        <TabPane tab='选项十一' key='21'>选项十一</TabPane>
+        <TabPane tab='选项十二' key='22'>选项十二</TabPane>
+        <TabPane tab='选项十三' key='23'>选项十三</TabPane>
+        <TabPane tab='选项十四' key='24'>选项十四</TabPane>
+      </Tabs>
     </div>
   )
 }
@@ -114,23 +114,23 @@ const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
-    	<Tabs type='card'>
-	      <TabPane tab='分页一' key='25'>
-	        <p>分页内容一</p>
-	        <p>分页内容一</p>
-	        <p>分页内容一</p>
-	      </TabPane>
-	      <TabPane tab='分页二' key='26'>
-	        <p>分页内容二</p>
-	        <p>分页内容二</p>
-	        <p>分页内容二</p>
-	      </TabPane>
-	      <TabPane tab='分页三' key='27'>
-	        <p>分页内容三</p>
-	        <p>分页内容三</p>
-	        <p>分页内容三</p>
-	      </TabPane>
-	    </Tabs>
+      <Tabs type='card'>
+        <TabPane tab='分页一' key='25'>
+          <p>分页内容一</p>
+          <p>分页内容一</p>
+          <p>分页内容一</p>
+        </TabPane>
+        <TabPane tab='分页二' key='26'>
+          <p>分页内容二</p>
+          <p>分页内容二</p>
+          <p>分页内容二</p>
+        </TabPane>
+        <TabPane tab='分页三' key='27'>
+          <p>分页内容三</p>
+          <p>分页内容三</p>
+          <p>分页内容三</p>
+        </TabPane>
+      </Tabs>
     )
   }
 }
@@ -147,17 +147,17 @@ const panes = [
   { title: '分页二', content: '分页内容二', key: '2' }
 ];
 class TabsView extends React.Component {
-	constructor(props) {
-	this.newTabIndex = 0;
-    super(props);
-    this.state = {
-      panes,
-      activeKey: panes[0].key
-    }
-    this.onChange = this.onChange.bind(this);
-    this.onEdit = this.onEdit.bind(this);
-    this.add = this.add.bind(this);
-    this.remove = this.remove.bind(this)
+  constructor(props) {
+  this.newTabIndex = 0;
+  super(props);
+  this.state = {
+    panes,
+    activeKey: panes[0].key
+  }
+  this.onChange = this.onChange.bind(this);
+  this.onEdit = this.onEdit.bind(this);
+  this.add = this.add.bind(this);
+  this.remove = this.remove.bind(this)
   };
   add () {
     const panes = this.state.panes;
@@ -187,9 +187,9 @@ class TabsView extends React.Component {
   };
   render() {
     return(
-    	<Tabs onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
-          {this.state.panes.map(pane => <TabPane closable={pane.key === '1' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
-        </Tabs>
+      <Tabs onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
+        {this.state.panes.map(pane => <TabPane closable={pane.key === '1' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+      </Tabs>
      )
   }
 }
@@ -205,22 +205,22 @@ const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
   render() {
     return(
-    	<Tabs type='cardTabs'>
-          <TabPane tab='分页一' key='28'>
-            <p>分页内容一</p>
-            <p>分页内容一</p>
-            <p>分页内容一</p>
-          </TabPane>
-          <TabPane tab='分页二' key='29'>
-            <p>分页内容二</p>
-            <p>分页内容二</p>
-            <p>分页内容二</p>
-          </TabPane>
-          <TabPane tab='分页三' key='30'>
-            <p>分页内容三</p>
-            <p>分页内容三</p>
-            <p>分页内容三</p></TabPane>
-        </Tabs>
+      <Tabs type='cardTabs'>
+        <TabPane tab='分页一' key='28'>
+          <p>分页内容一</p>
+          <p>分页内容一</p>
+          <p>分页内容一</p>
+        </TabPane>
+        <TabPane tab='分页二' key='29'>
+          <p>分页内容二</p>
+          <p>分页内容二</p>
+          <p>分页内容二</p>
+        </TabPane>
+        <TabPane tab='分页三' key='30'>
+          <p>分页内容三</p>
+          <p>分页内容三</p>
+          <p>分页内容三</p></TabPane>
+      </Tabs>
     )
   }
 }
@@ -234,7 +234,7 @@ import ReactDOM from 'react-dom';
 import {Tabs} from 'dbox-ui';
 const TabPane = Tabs.TabPane;
 class TabsView extends React.Component {
-	componentDidMount () {
+  componentDidMount () {
     const element = ReactDOM.findDOMNode(this.refs.box_table);
     const currentHeight = element.offsetTop - element.offsetHeight;
     const left = `${element.offsetLeft -21}px`;
@@ -258,11 +258,11 @@ class TabsView extends React.Component {
   }
   render() {
     return(
-    	<Tabs ref='box_table'>
-          <TabPane tab='分页一' key='31'>分页内容一</TabPane>
-          <TabPane tab='分页二' key='32'>分页内容二</TabPane>
-          <TabPane tab='分页三' key='33'>分页内容三</TabPane>
-        </Tabs>
+      <Tabs ref='box_table'>
+        <TabPane tab='分页一' key='31'>分页内容一</TabPane>
+        <TabPane tab='分页二' key='32'>分页内容二</TabPane>
+        <TabPane tab='分页三' key='33'>分页内容三</TabPane>
+      </Tabs>
     )
   }
 }

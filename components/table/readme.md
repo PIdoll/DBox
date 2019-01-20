@@ -336,8 +336,8 @@ class TableView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-	    selectedRowKeys: [],
-	    loading: false,
+      selectedRowKeys: [],
+      loading: false,
     }
     this.start = this.start.bind(this)
     this.onSelectChange = this.onSelectChange.bind(this)
@@ -363,18 +363,18 @@ class TableView extends React.Component {
       onChange: this.onSelectChange,
     };
     const hasSelected = selectedRowKeys.length > 0;
-  return (
-	<div>
-		<div style={{ marginBottom: 12 }}>
-		  <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>批量操作</Button>
-		  <span style={{ marginLeft: 16 }}>
-		    {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
-		  </span>
-		</div>
-		<Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-	</div>
-  )
-}
+    return (
+      <div>
+        <div style={{ marginBottom: 12 }}>
+          <Button type='primary' onClick={this.start} disabled={!hasSelected} loading={loading}>批量操作</Button>
+          <span style={{ marginLeft: 16 }}>
+            {hasSelected ? `已选择 ${selectedRowKeys.length} 条数据` : ''}
+          </span>
+        </div>
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+      </div>
+    )
+  }
 }
 <TableView />
 ```
@@ -408,11 +408,10 @@ class App extends React.Component {
   };
     this.handleTableChange = this.handleTableChange.bind(this)
     this.fetch = this.fetch.bind(this)
-}
+  }
   componentDidMount() {
     this.fetch();
   }
-
   handleTableChange (pagination, filters, sorter) {
     const pager = { ...this.state.pagination };
     pager.current = pagination.current;
@@ -427,7 +426,6 @@ class App extends React.Component {
       ...filters,
     });
   }
-
   fetch (params = {}) {
     this.setState({ loading: true });
     reqwest({
@@ -459,7 +457,7 @@ class App extends React.Component {
         loading={this.state.loading}
         onChange={this.handleTableChange}
       />
-    );
+    )
   }
 }
 <App />

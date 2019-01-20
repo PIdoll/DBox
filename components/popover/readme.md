@@ -125,32 +125,31 @@ class PopoverView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-		visible: false
+      visible: false
     }
     this.hide = this.hide.bind(this);
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
   };
-	hide () {
-		this.setState({
-		  visible: false
-		});
-	};
-	handleVisibleChange (visible) {
-		this.setState({ visible });
-	};
+  hide () {
+    this.setState({
+      visible: false
+    })
+  };
+  handleVisibleChange (visible) {
+    this.setState({ visible });
+  };
   render() {
-  return (
-	<Popover
-	  content={<a onClick={this.hide}>关闭</a>}
-	  title='标题'
-	  trigger='click'
-	  visible={this.state.visible}
-	  onVisibleChange={this.handleVisibleChange}
-	>
-	  <Button>单击鼠标</Button>
-	</Popover>
-  )
-}
+    return (
+      <Popover
+        content={<a onClick={this.hide}>关闭</a>}
+        title='标题'
+        trigger='click'
+        visible={this.state.visible}
+        onVisibleChange={this.handleVisibleChange}>
+        <Button>单击鼠标</Button>
+      </Popover>
+    )
+  }
 }
 <PopoverView />
 ```
@@ -181,51 +180,49 @@ class PopoverView extends React.Component {
     this.handleHoveredChange = this.handleHoveredChange.bind(this);
     this.handleClickChange = this.handleClickChange.bind(this);
   };
-	hide () {
-		this.setState({
-		  visible: false,
-		  hovered: false,
-		  clicked: false
-		});
-	};
-	hidele () {
-	    this.setState({
-	      clicked: false,
-	      hovered: false
-	    });
-	  };
-	handleHoveredChange (visible) {
-		this.setState({ clicked: false, hovered: visible });
-	};
-	handleClickChange (visible) {
-		this.setState({ clicked: visible, hovered: false });
-	};
+  hide () {
+    this.setState({
+      visible: false,
+      hovered: false,
+      clicked: false
+    });
+  };
+  hidele () {
+    this.setState({
+      clicked: false,
+      hovered: false
+    });
+  };
+  handleHoveredChange (visible) {
+    this.setState({ clicked: false, hovered: visible });
+  };
+  handleClickChange (visible) {
+    this.setState({ clicked: visible, hovered: false });
+  };
   render() {
-	  return (
-			<Popover
-  trigger='hover'
-  title='悬停标题'
-  content={hoverContent}
-  visible={this.state.hovered}
-  onVisibleChange={this.handleHoveredChange}
->
-  <Popover
-    content={(
-      <div>
-        {clickContent}
-        <a onClick={this.hidele}>关闭</a>
-      </div>
-    )}
-    title='点击标题'
-    trigger='click'
-    visible={this.state.clicked}
-    onVisibleChange={this.handleClickChange}
-  >
-    <Button>悬停并点击</Button>
-  </Popover>
-</Popover>
-	  )
-	}
+    return (
+      <Popover
+        trigger='hover'
+        title='悬停标题'
+        content={hoverContent}
+        visible={this.state.hovered}
+        onVisibleChange={this.handleHoveredChange}>
+        <Popover
+          content={(
+            <div>
+              {clickContent}
+              <a onClick={this.hidele}>关闭</a>
+            </div>
+          )}
+          title='点击标题'
+          trigger='click'
+          visible={this.state.clicked}
+          onVisibleChange={this.handleClickChange}>
+          <Button>悬停并点击</Button>
+        </Popover>
+      </Popover>
+    )
+  }
 }
 <PopoverView />
 

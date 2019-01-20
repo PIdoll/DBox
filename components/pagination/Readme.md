@@ -4,7 +4,7 @@
 较简单的基础用法，不设置 defaultPageSize 时默认为每页10条数据；通过 total 可以设置总条数。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination defaultCurrent={5} total={500} showLessItems></Pagination>
+<Pagination defaultCurrent={5} total={500} showLessItems />
 ```
 
 ##### **更多分页**
@@ -12,7 +12,7 @@ import {Pagination} from 'dbox-ui';
 
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination defaultCurrent={6} total={500}></Pagination>
+<Pagination defaultCurrent={6} total={500} />
 ```
 
 ##### **改变每页显示条数目**
@@ -25,13 +25,13 @@ function onShowSizeChange(current, pageSize) {
 function onChange(pageNumber) {
   console.log('Page: ', pageNumber);
 };
-<Pagination onChange={onChange} onShowSizeChange={onShowSizeChange} defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger></Pagination>
+<Pagination onChange={onChange} onShowSizeChange={onShowSizeChange} defaultCurrent={1} defaultPageSize={11} pageSizeOptions={['11', '21', '31', '41']} total={50} showSizeChanger />
 ```
 ##### **跳转分页**
 添加 showQuickJumper 设置快速页面跳转。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination defaultCurrent={2} total={500} showQuickJumper></Pagination>
+<Pagination defaultCurrent={2} total={500} showQuickJumper />
 ```
 ##### **迷你分页**
 较小的分页器，可通过 showSizeChanger showQuickJumper showTotal={showTotal} 来控制是否
@@ -42,11 +42,11 @@ function showTotal(total) {
   return `总 ${total} 条`;
 }
 <div>
-  <Pagination size='small' total={50}></Pagination>
+  <Pagination size='small' total={50} />
   <br />
-  <Pagination size='small' total={50} showSizeChanger showQuickJumper></Pagination>
+  <Pagination size='small' total={50} showSizeChanger showQuickJumper />
   <br />
-  <Pagination size='small' total={50} showTotal={showTotal}></Pagination>
+  <Pagination size='small' total={50} showTotal={showTotal} />
 </div>
 ```
 
@@ -54,14 +54,14 @@ function showTotal(total) {
 通过 simple 设置简洁分页器，常用户弹出框中。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination simple defaultCurrent={2} total={500}></Pagination>
+<Pagination simple defaultCurrent={2} total={500} />
 ```
 
 ##### **包含总数**
 与表格搭配较常用的分页器。
 ```jsx
 import {Pagination} from 'dbox-ui';
-<Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper></Pagination>
+<Pagination showTotal={(total) => (`总 ${total} 条`)} defaultCurrent={2} total={5000} pageSize={50} showQuickJumper />
 ```
 
 ##### **Pagination**
