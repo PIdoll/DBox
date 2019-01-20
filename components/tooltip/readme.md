@@ -70,7 +70,7 @@ import { Tooltip,Button } from 'dbox-ui';
 const text = <span>提示文字</span>;
 <div className='arrow'>
     <Tooltip placement='topLeft' title={text} >
-        <Button>边缘对齐</Button>
+        <Button style={{marginRight: '10px'}}>边缘对齐</Button>
     </Tooltip>
     <Tooltip placement='topLeft' title={text} arrowPointAtCenter>
         <Button>箭头指向中心 </Button>

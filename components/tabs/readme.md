@@ -46,7 +46,7 @@ class TabsView extends React.Component {
 	      <TabPane disabled tab={<span><Icon type='appstore-o' />选项二</span>} key='8'>
 	      选项二
 	      </TabPane>
-	      <TabPane tab={<span><Icon type='detail' />选项三</span>} key='9'>
+	      <TabPane tab={<span><Icon type='user' />选项三</span>} key='9'>
 	      选项三
 	      </TabPane>
 	    </Tabs>
