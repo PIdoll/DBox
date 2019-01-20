@@ -8,12 +8,12 @@ import {Button, Dropdown, Menu} from 'dbox-ui';
 const MenuItem = Menu.MenuItem;
 const DropdownNormal = Dropdown.DropdownNormal;
 const menu2 = (
-      <Menu theme = 'light' onClick={handleMenu1Click}>
-        <MenuItem key='2.1'><a >操作选项</a></MenuItem>
-        <MenuItem key='2.2'><a >操作选项</a></MenuItem>
-        <MenuItem key='2.3'><a >操作选项</a></MenuItem>
-      </Menu>
-    );
+  <Menu theme = 'light' onClick={handleMenu1Click}>
+    <MenuItem key='2.1'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.2'><a >操作选项</a></MenuItem>
+    <MenuItem key='2.3'><a >操作选项</a></MenuItem>
+  </Menu>
+);
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1'><a >操作选项</a></MenuItem>
@@ -28,14 +28,14 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 <div>
-	<DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
-	  下拉菜单
-	</DropdownNormal>
-	<Dropdown overlay={menu1} trigger={['hover']} onClick={handleButtonClick}>
-	  <Button>
-	  默认菜单
-	  </Button>
-	</Dropdown>
+  <DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
+    下拉菜单
+  </DropdownNormal>
+  <Dropdown overlay={menu1} trigger={['hover']} onClick={handleButtonClick}>
+    <Button>
+    默认菜单
+    </Button>
+  </Dropdown>
 </div>
 ```
 
@@ -139,7 +139,7 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 <div>
-	<DropdownButton size='small' overlay={menu2} trigger={['hover']}>
+  <DropdownButton size='small' overlay={menu2} trigger={['hover']}>
       默认菜单
     </DropdownButton>
     <DropdownButton style={{marginLeft: '50px', marginRight: '50px' }} overlay={menu2} trigger={['hover']}>
@@ -147,7 +147,7 @@ function handleMenu1Click(e) {
     </DropdownButton>
     <DropdownButton size='large' overlay={menu2} trigger={['hover']}>
       默认菜单
-    </DropdownButton>
+  </DropdownButton>
 </div>
 ```
 
@@ -167,24 +167,24 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 <div>
-	<Dropdown overlay={menu} placement='topLeft'>
-      <Button>上左</Button>
-    </Dropdown>
-    <Dropdown overlay={menu} placement='topCenter'>
-      <Button  style={{marginLeft: 25, marginRight: 25}}>上中</Button>
-    </Dropdown>
-    <Dropdown overlay={menu} placement='topRight'>
-      <Button>上右</Button>
-    </Dropdown>
-    <Dropdown overlay={menu} placement='bottomLeft'>
-      <Button  style={{marginLeft: 25, marginRight: 25}}>下左</Button>
-    </Dropdown>
-    <Dropdown overlay={menu} placement='bottomCenter'>
-      <Button>下中</Button>
-    </Dropdown>
-    <Dropdown overlay={menu} placement='bottomRight'>
-      <Button style={{marginLeft: 25}}>下右</Button>
-    </Dropdown>
+  <Dropdown overlay={menu} placement='topLeft'>
+    <Button>上左</Button>
+  </Dropdown>
+  <Dropdown overlay={menu} placement='topCenter'>
+    <Button  style={{marginLeft: 25, marginRight: 25}}>上中</Button>
+  </Dropdown>
+  <Dropdown overlay={menu} placement='topRight'>
+    <Button>上右</Button>
+  </Dropdown>
+  <Dropdown overlay={menu} placement='bottomLeft'>
+    <Button  style={{marginLeft: 25, marginRight: 25}}>下左</Button>
+  </Dropdown>
+  <Dropdown overlay={menu} placement='bottomCenter'>
+    <Button>下中</Button>
+  </Dropdown>
+  <Dropdown overlay={menu} placement='bottomRight'>
+    <Button style={{marginLeft: 25}}>下右</Button>
+  </Dropdown>
 </div>
 ```
 
@@ -215,14 +215,14 @@ function handleButtonClick(e) {
   console.info('click left button', e);
 };
 <div>
-	<DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
-      点击下拉菜单
-    </DropdownNormal>
-    <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
-      <Button>
-      hover默认菜单
-      </Button>
-    </Dropdown>
+  <DropdownNormal overlay={menu2} type='caret-down' trigger={['click']} >
+    点击下拉菜单
+  </DropdownNormal>
+  <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
+    <Button>
+    hover默认菜单
+    </Button>
+  </Dropdown>
 </div>
 ```
 
@@ -260,6 +260,7 @@ function handleButtonClick(e) {
 import {Icon, Button, Dropdown, Menu} from 'dbox-ui';
 const MenuItem = Menu.MenuItem;
 const SubMenu = Menu.SubMenu;
+const DropdownButton = Dropdown.DropdownButton;
 const menu1 = (
   <Menu theme = 'light' onClick={handleMenu1Click}>
     <MenuItem key='1.1'><a >操作选项</a></MenuItem>
@@ -272,7 +273,7 @@ const menu1 = (
 )
 function handleMenu1Click(e) {
   console.info('click', e);
-};const DropdownButton = Dropdown.DropdownButton;
+};
 <DropdownButton placement='bottomLeft' overlay={menu1} trigger={['hover']}>
   默认菜单
 </DropdownButton>

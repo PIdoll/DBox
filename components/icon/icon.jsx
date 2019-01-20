@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style'
+import './style/index'
 
 export default props => {
 	let { type, className = '', ...other } = props;

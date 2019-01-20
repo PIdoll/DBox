@@ -50,8 +50,8 @@ import {Avatar, Badge} from 'dbox-ui';
 import {Avatar} from 'dbox-ui';
 <div>
   <Avatar style={{ marginRight: 47 }}>DBox</Avatar>
-	<Avatar style={{ marginRight: 47 }}>Alvin</Avatar>
-	<Avatar style={{ marginRight: 47 }}>react</Avatar>
+  <Avatar style={{ marginRight: 47 }}>Alvin</Avatar>
+  <Avatar style={{ marginRight: 47 }}>react</Avatar>
 </div>
 ```
 
