@@ -50,14 +50,18 @@
   &:focus {
     // .button-color(@color; @primary-hover; @primary-hover);
     > .@{iconfont-css-prefix} {
-      color: @color;
+      // color: @color;
+      color: @primary-hover;
     }
     .button-color(@color; @primary-hover; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(@color;  ~`colorPalette("@{primary-hover}", 7)`; ~`colorPalette("@{primary-hover}", 7)`;);
+    > .@{iconfont-css-prefix} {
+      color: @primary-pressed;
+    }
+    .button-color(@color; @primary-pressed;@primary-pressed);
   }
 
   .button-disabled();
@@ -70,14 +74,17 @@
   &:focus {
     // 图标颜色
     > .@{iconfont-css-prefix} {
-      color: @primary-color;
+      color: @primary-hover;
     }
     .button-color(@primary-color; @background; @primary-color);
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-hover}", 7)`; @background; ~`colorPalette("@{primary-hover}", 7)`;);
+    > .@{iconfont-css-prefix} {
+      color: @primary-pressed;
+    }
+    .button-color(@primary-pressed; @background; @primary-pressed);
   }
 
   .button-disabled();
@@ -96,7 +103,7 @@
 
   &:active,
   &.active {
-    .button-color(@background; ~`colorPalette("@{error-hover}", 7)`; ~`colorPalette("@{error-hover}", 7)`);
+    .button-color(@background; @primary-pressed; @primary-pressed);
   }
 
   .button-disabled();
@@ -107,12 +114,12 @@
 
   &:hover,
   &:focus {
-    .button-color(~`colorPalette("@{color}", 5)`; transparent; ~`colorPalette("@{color}", 5)`);
+    .button-color(darken(@color, 10%); transparent; darken(@color, 10%));
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{color}", 7)`; transparent; ~`colorPalette("@{color}", 7)`);
+    .button-color(darken(@color, 15%); transparent; darken(@color, 15%));
   }
 
   // 幽灵按钮禁用状态设置
@@ -243,7 +250,7 @@
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-hover}", 7)`; @btn-primary-color; ~`colorPalette("@{primary-hover}", 7)`);
+    .button-color(@primary-pressed; @btn-primary-color; @primary-pressed);
   }
 
   .button-disabled();
@@ -256,7 +263,7 @@
   &:focus,
   &:active,
   &.active {
-    .button-color(@btn-primary-color; @btn-primary-bg; @btn-primary-bg);
+    .button-color(@primary-pressed; @btn-primary-bg; @primary-pressed);
   }
 }
 // 次按钮
@@ -264,10 +271,12 @@
   // fade(#000, 65%); #fff; #E2E2E2;
   .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
   &:hover,
-  &:focus,
+  &:focus {
+    .button-color(@primary-hover; @btn-default-bg;@primary-hover);
+  }
   &:active,
   &.active {
-    background: @btn-default-bg;
+    .button-color(@primary-pressed; @btn-default-bg; @primary-pressed);
   }
 }
 
@@ -284,7 +293,6 @@
 
 // 危险按钮
 .btn-danger() {
-  // .button-variant-danger(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
   .button-variant-danger(@error-color, @btn-default-bg,  @btn-default-border);
 }
 
@@ -401,11 +409,6 @@
     color: @color;
     z-index: 1;
     font-size: @size;
-    // border:1px solid;
-    // border-left:1px solid transparent;
-    // border-radius: 50%;
-    // width: @size;
-    // height: @size;
     opacity: 1;
     background: none;
   }
