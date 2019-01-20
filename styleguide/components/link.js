@@ -15,19 +15,10 @@ const styles = ({ color }) => ({
     cursor: 'pointer',
     paddingLeft: '8px',
   },
-  topLink: {
-    display: 'block',
-		color: '#333',
-		lineHeight: '40px',
-		overflow: 'hidden',
-		fontWeight: '400',
-		fontSize: '14px',
-    cursor: 'pointer',
-  },
-	h1: {
+	h3: {
 		fontSize: '12px',
     color: '#aaa',
-    padding: '5px 0',
+    padding: '5px 8px',
   },
   chinese: {
 		fontSize: '12px',
@@ -54,7 +45,7 @@ export function LinkRenderer({ classes, children, ...props }) {
 	for (const item of headline.values()) {
 		if (children === item) {
 			return (
-  <h3 className={cx(classes.h1, props.className)} >
+  <h3 className={cx(classes.h3, props.className)} >
     {Data[children]}
   </h3>
 			);
@@ -64,7 +55,7 @@ export function LinkRenderer({ classes, children, ...props }) {
   for (const item of chineseName.values()) {
 		if (children === item) {
 			return (
-  <a {...props} style={handleActiveLink(children)} className={cx(classes.topLink, props.className)} >
+  <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
     {Data[children]}
   </a>
 			);

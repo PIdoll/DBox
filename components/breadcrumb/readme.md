@@ -5,11 +5,12 @@
 最基本的用法
 ```jsx
 import { Breadcrumb } from 'dbox-ui';
+
 class BreadcrumbView extends React.Component {
   render() {
     return (
       <Breadcrumb>
-        <Breadcrumb.Item>首页</Breadcrumb.Item>
+        <Breadcrumb.Item><a href='#'>首页</a></Breadcrumb.Item>
         <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
         <Breadcrumb.Item>设置</Breadcrumb.Item>
       </Breadcrumb>
@@ -54,7 +55,7 @@ class BreadcrumbView extends React.Component {
   render() {
     return (
       <Breadcrumb separator='>'>
-        <Breadcrumb.Item>首页</Breadcrumb.Item>
+        <Breadcrumb.Item><a href='#'>首页</a></Breadcrumb.Item>
         <Breadcrumb.Item><a href='javascript:void(0);'>个人中心</a></Breadcrumb.Item>
         <Breadcrumb.Item>设置</Breadcrumb.Item>
       </Breadcrumb>
