@@ -29,16 +29,14 @@ class RadioView extends React.Component {
     });
 	}
   render() {
-  return (
-	<div>
-		<Radio defaultChecked={false} disabled >不能操作</Radio>
-		<Radio disabled={this.state.disabled}>不允许操作</Radio>
-		<Button type='primary' onClick={this.toggleDisabled}>
-			控制能否操作
-		</Button>
-	</div>
-  )
-}
+		return (
+			<div>
+				<Radio defaultChecked={false} disabled >不能操作</Radio>
+				<Radio disabled={this.state.disabled}>不允许操作</Radio>
+				<Button type='primary' onClick={this.toggleDisabled}>控制能否操作</Button>
+			</div>
+		)
+	}
 }
 <RadioView />
 ```
@@ -62,15 +60,15 @@ class RadioView extends React.Component {
 		})
 	}
   render() {
-  return (
-	<RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
-		<Radio value='1'>A</Radio>
-		<Radio disabled value='2'>B</Radio>
-		<Radio value='3'>C</Radio>
-		<Radio value='4'>D</Radio>
-	</RadioGroup>
-  )
-}
+		return (
+			<RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
+				<Radio value='1'>A</Radio>
+				<Radio disabled value='2'>B</Radio>
+				<Radio value='3'>C</Radio>
+				<Radio value='4'>D</Radio>
+			</RadioGroup>
+		)
+	}
 }
 <RadioView />
 ```
@@ -94,15 +92,15 @@ class RadioView extends React.Component {
 		})
 	}
   render() {
-  return (
-	<RadioGroup direction='vertical' onChange={this.onChange} defaultValue='3'>
-		<Radio value='1'>A</Radio>
-		<Radio value='2'>B</Radio>
-		<Radio value='3'>C</Radio>
-		<Radio value='4'>D</Radio>
-	</RadioGroup>
-  )
-}
+		return (
+			<RadioGroup direction='vertical' onChange={this.onChange} defaultValue='3'>
+				<Radio value='1'>A</Radio>
+				<Radio value='2'>B</Radio>
+				<Radio value='3'>C</Radio>
+				<Radio value='4'>D</Radio>
+			</RadioGroup>
+		)
+	}
 }
 <RadioView />
 ```
@@ -124,26 +122,26 @@ class RadioView extends React.Component {
 		this.setState({
 			value: e.target.value
 		})
-	}
+	};
   render() {
-  return (
-	<div>
-		<RadioGroup onChange={this.onChange} defaultValue='6'>
-			<Radio value='5'>A</Radio>
-			<Radio value='6'>B</Radio>
-			<Radio value='7'>C</Radio>
-			<Radio value='8'>D</Radio>
-		</RadioGroup>
-		<br />
-		<RadioGroup onChange={this.onChange} defaultValue='11'>
-			<Radio value='10'>A</Radio>
-			<Radio value='9'>B</Radio>
-			<Radio value='11'>C</Radio>
-			<Radio value='12'>D</Radio>
-		</RadioGroup>
-	</div>
-  )
-}
+		return (
+			<div>
+				<RadioGroup onChange={this.onChange} defaultValue='6'>
+					<Radio value='5'>A</Radio>
+					<Radio value='6'>B</Radio>
+					<Radio value='7'>C</Radio>
+					<Radio value='8'>D</Radio>
+				</RadioGroup>
+				<br />
+				<RadioGroup onChange={this.onChange} defaultValue='11'>
+					<Radio value='10'>A</Radio>
+					<Radio value='9'>B</Radio>
+					<Radio value='11'>C</Radio>
+					<Radio value='12'>D</Radio>
+				</RadioGroup>
+			</div>
+		)
+	}
 }
 <RadioView />
 ```
@@ -165,17 +163,17 @@ class RadioView extends React.Component {
 		this.setState({
 			value: e.target.value
 		})
-	}
+	};
   render() {
-  return (
-	<RadioGroup name='radioGroup' onChange={this.onChange} defaultValue={this.state.value}>
-		<Radio value='1'>A</Radio>
-		<Radio value='2'>B</Radio>
-		<Radio value='3'>C</Radio>
-		<Radio value='4'>D</Radio>
-	</RadioGroup>
-  )
-}
+		return (
+			<RadioGroup name='radioGroup' onChange={this.onChange} defaultValue={this.state.value}>
+				<Radio value='1'>A</Radio>
+				<Radio value='2'>B</Radio>
+				<Radio value='3'>C</Radio>
+				<Radio value='4'>D</Radio>
+			</RadioGroup>
+		)
+	}
 }
 <RadioView />
 ```

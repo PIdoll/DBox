@@ -180,7 +180,6 @@ class PicturesWall extends React.Component {
   this.handleChange =this.handleChange.bind(this)
 }
   handleCancel () {this.setState({ previewVisible: false })}
-
   handlePreview (file) {
     console.log('1')
     this.setState({
@@ -200,7 +199,6 @@ class PicturesWall extends React.Component {
     return isJPG && isLt1M;
   }
   handleChange ({ fileList }) {this.setState({ fileList })}
-
   render() {
     const { previewVisible, previewImage, fileList } = this.state;
     console.log('previewVisible', previewVisible)
@@ -249,7 +247,6 @@ const fileList = [{
   url: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
   thumbUrl: 'https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg',
 }];
-
 const props3 = {
   action: 'https://jsonplaceholder.typicode.com/posts/',
   listType: 'picture',
@@ -289,29 +286,29 @@ const props3 = {
 import reqwest from 'reqwest';
 import {Upload, Message, Button, Icon} from 'dbox-ui';
 class Demo extends React.Component {
-	constructor(props) {
-	super(props)
-      this.state = {
-      fileList: [{
-        uid: -1,
-        name: 'xxx.jpg',
-        status: 'done',
-        url: 'http://www.google.com/xxx.jpg',
-      }, {
-        uid: -2,
-        name: 'yyy.png',
-        status: 'done',
-        url: 'http://www.google.com/yyy.png',
-      }, {
-        uid: -3,
-        name: 'zzz.png',
-        status: 'error',
-        response: 'Server Error 500',
-        url: 'http://www.google.com/zzz.png',
-      }],
-      uploading: false,
-    }
-    this.handleUpload = this.handleUpload.bind(this);
+  constructor(props) {
+  super(props)
+  this.state = {
+  fileList: [{
+    uid: -1,
+    name: 'xxx.jpg',
+    status: 'done',
+    url: 'http://www.google.com/xxx.jpg',
+  }, {
+    uid: -2,
+    name: 'yyy.png',
+    status: 'done',
+    url: 'http://www.google.com/yyy.png',
+  }, {
+    uid: -3,
+    name: 'zzz.png',
+    status: 'error',
+    response: 'Server Error 500',
+    url: 'http://www.google.com/zzz.png',
+  }],
+  uploading: false,
+  }
+  this.handleUpload = this.handleUpload.bind(this);
   };
   handleUpload () {
     const { fileList } = this.state;
@@ -323,7 +320,6 @@ class Demo extends React.Component {
       uploading: true,
       fileList: formData
     });
-
     // 你可以用AJAX类似这样
     reqwest({
       url: 'https://jsonplaceholder.typicode.com/posts/',
@@ -379,22 +375,21 @@ class Demo extends React.Component {
       fileList,
     };
     return (
-        <div className='manual'>
-          <Upload {...props4}>
-            <Button type='secondary'><Icon type='file' />选择文件</Button>
-            <p>支持上传jpg/png文件格式，且不超过1024kb</p>
-          </Upload>
-            <Button
-              type='primary'
-              className='beginUpload'
-              disabled={this.state.fileList.length <= 3}
-              onClick={this.handleUpload}
-              loading={this.state.uploading}
-              style={{ marginTop: 16 }}
-            >
-              {!this.state.uploading ? <Icon type='cloud-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
-            </Button>
-        </div>
+      <div className='manual'>
+        <Upload {...props4}>
+          <Button type='secondary'><Icon type='file' />选择文件</Button>
+          <p>支持上传jpg/png文件格式，且不超过1024kb</p>
+        </Upload>
+        <Button
+          type='primary'
+          className='beginUpload'
+          disabled={this.state.fileList.length <= 3}
+          onClick={this.handleUpload}
+          loading={this.state.uploading}
+          style={{ marginTop: 16 }}>
+          {!this.state.uploading ? <Icon type='cloud-upload' /> : null}{this.state.uploading ? '正在上传' : '开始上传' }
+        </Button>
+      </div>
     )
   }
 };

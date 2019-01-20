@@ -66,7 +66,7 @@ const styles = ({ mq }) => ({
     width: '100%',
   },
   innerCont: {
-    marginLeft: '280px',
+    marginLeft: '22%',
   },
   footer: {
     display: 'flex',

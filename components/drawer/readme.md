@@ -26,25 +26,24 @@ class DrawerView extends React.Component {
     });
   };
   render() {
-  return (
-    <div>
-      <Button type='primary' onClick={this.showDrawer}>
-        打开基础抽屉
-      </Button>
-      <Drawer
-        title='基础抽屉'
-        placement='right'
-        closable={false}
-        onClose={this.onClose}
-        visible={this.state.visible}
-      >
-        <p>一些基本内容...</p>
-        <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
-        <p>一些基本内容...</p>
-      </Drawer>
-    </div>
-  )
-}
+    return (
+      <div>
+        <Button type='primary' onClick={this.showDrawer}>
+          打开基础抽屉
+        </Button>
+        <Drawer
+          title='基础抽屉'
+          placement='right'
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}>
+          <p>一些基本内容...</p>
+          <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
+          <p>一些基本内容...</p>
+        </Drawer>
+      </div>
+    )
+  }
 }
 <DrawerView />
 ```
@@ -64,7 +63,6 @@ class DrawerView extends React.Component {
     this.showDrawer = this.showDrawer.bind(this)
     this.onClose = this.onClose.bind(this)
     this.onChange = this.onChange.bind(this)
-
   };
   onChange (e) {
     this.setState({
@@ -82,35 +80,34 @@ class DrawerView extends React.Component {
     });
   };
   render() {
-  return (
-    <div>
-      <RadioGroup
-        style={{ marginRight: 8 }}
-        defaultValue={this.state.placement}
-        onChange={this.onChange}
-    >
-        <Radio value='top'>上</Radio>
-        <Radio value='bottom'>下</Radio>
-        <Radio value='left'>左</Radio>
-        <Radio value='right'>右</Radio>
-      </RadioGroup>
-      <br />
-      <Button type='primary' onClick={this.showDrawer}>
-      打开方位抽屉
-      </Button>
-      <Drawer
-        title='基础抽屉'
-        placement={this.state.placement}
-        closable={false}
-        onClose={this.onClose}
-        visible={this.state.visible}
-    >
-        <p>一些基本内容...</p>
-        <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
-        <p>一些基本内容...</p>
-      </Drawer>
-    </div>  )
-}
+    return (
+      <div>
+        <RadioGroup
+          style={{ marginRight: 8 }}
+          defaultValue={this.state.placement}
+          onChange={this.onChange}>
+          <Radio value='top'>上</Radio>
+          <Radio value='bottom'>下</Radio>
+          <Radio value='left'>左</Radio>
+          <Radio value='right'>右</Radio>
+        </RadioGroup>
+        <br />
+        <Button type='primary' onClick={this.showDrawer}>
+        打开方位抽屉
+        </Button>
+        <Drawer
+          title='基础抽屉'
+          placement={this.state.placement}
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}>
+          <p>一些基本内容...</p>
+          <p style={{marginTop: 24, marginBottom: 24}}>一些基本内容...</p>
+          <p>一些基本内容...</p>
+        </Drawer>
+      </div>
+    )
+  }
 }
 <DrawerView />
 ```
@@ -133,15 +130,13 @@ const DescriptionItem = ({ title, content }) => (
       lineHeight: '22px',
       marginBottom: 7,
       color: 'rgba(0,0,0,0.65)',
-    }}
-  >
+    }}>
     <p
       style={{
         marginRight: 8,
         display: 'inline-block',
         color: 'rgba(0,0,0,0.85)',
-      }}
-    >
+      }}>
       {title}:
     </p>
     {content}
@@ -167,100 +162,96 @@ class DrawerView extends React.Component {
     });
   };
   render() {
-  return (
-        <div>
-          <Button type='primary' href='javascript:;' onClick={this.showDrawer}>查看个人信息</Button>
-          <Drawer
-            width={620}
-            placement='right'
-            closable={false}
-            onClose={this.onClose}
-            visible={this.state.visible}
-        >
-            <p style={{ ...pStyle, marginBottom: 24 }}>个人信息</p>
-            <p style={pStyle}>私人信息</p>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='名称' content='小明' />{' '}
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='账户' content='Idoll@example.com' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='城市' content='上海' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='国家' content='中国' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='生日' content='2018-8-8' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='个人博客' content={<a target='_black' href='http://github.com'>http://github.com</a>} />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <DescriptionItem
-                  title='座右铭'
-                  content='不忘初心,方得始终'
-              />
-              </Col>
-            </Row>
-            <Divider />
-            <p style={pStyle}>公司信息</p>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='职业' content='程序猿' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='特长' content='码代码' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='部门' content='开发部' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='业务组' content='贷款组' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <DescriptionItem
-                  title='技能'
-                  content='C / C + +, Javascript, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.'
-              />
-              </Col>
-            </Row>
-            <Divider />
-            <p style={pStyle}>🔗地址</p>
-            <Row>
-              <Col span={12}>
-                <DescriptionItem title='📮邮箱' content='Dbox@example.com' />
-              </Col>
-              <Col span={12}>
-                <DescriptionItem title='📱手机' content='+86 188 8888 6666' />
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <DescriptionItem
-                  title='Github'
-                  content={(
-                    <a href='http://github.com'>Github</a>
-                )}
-              />
-              </Col>
-            </Row>
-          </Drawer>
-        </div>
+    return (
+      <div>
+        <Button type='primary' href='javascript:;' onClick={this.showDrawer}>查看个人信息</Button>
+        <Drawer
+          width={620}
+          placement='right'
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}>
+          <p style={{ ...pStyle, marginBottom: 24 }}>个人信息</p>
+          <p style={pStyle}>私人信息</p>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='名称' content='小明' />{' '}
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='账户' content='Idoll@example.com' />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='城市' content='上海' />
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='国家' content='中国' />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='生日' content='2018-8-8' />
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='个人博客' content={<a target='_black' href='http://github.com'>http://github.com</a>} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24}>
+              <DescriptionItem
+                title='座右铭'
+                content='不忘初心,方得始终' />
+            </Col>
+          </Row>
+          <Divider />
+          <p style={pStyle}>公司信息</p>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='职业' content='程序猿' />
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='特长' content='码代码' />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='部门' content='开发部' />
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='业务组' content='贷款组' />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24}>
+              <DescriptionItem
+                title='技能'
+                content='C / C + +, Javascript, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.' />
+            </Col>
+          </Row>
+          <Divider />
+          <p style={pStyle}>🔗地址</p>
+          <Row>
+            <Col span={12}>
+              <DescriptionItem title='📮邮箱' content='Dbox@example.com' />
+            </Col>
+            <Col span={12}>
+              <DescriptionItem title='📱手机' content='+86 188 8888 6666' />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24}>
+              <DescriptionItem
+                title='Github'
+                content={(
+                  <a href='http://github.com'>Github</a>
+              )} />
+            </Col>
+          </Row>
+        </Drawer>
+      </div>
     )
-}
+  }
 }
 <DrawerView />
 ```
@@ -273,9 +264,9 @@ class DrawerView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    visible: false,
-  	 placement: 'right',
-  	 childrenDrawer: false,
+      visible: false,
+      placement: 'right',
+      childrenDrawer: false,
     }
     this.showDrawer = this.showDrawer.bind(this)
     this.onClose = this.onClose.bind(this)
@@ -303,57 +294,45 @@ class DrawerView extends React.Component {
     });
   };
   render() {
-  return (
-    <div>
-      <Button type='primary' onClick={this.showDrawer}>
-      打开多层抽屉
-      </Button>
-      <Drawer
-        title='多层级抽屉'
-        width={520}
-        closable={false}
-        onClose={this.onClose}
-        visible={this.state.visible}
-    >
-        <Button type='primary' onClick={this.showChildrenDrawer}>
-        打开次级抽屉
+    return (
+      <div>
+        <Button type='primary' onClick={this.showDrawer}>
+        打开多层抽屉
         </Button>
         <Drawer
-          title='次级抽屉'
-          width={320}
+          title='多层级抽屉'
+          width={520}
           closable={false}
-          onClose={this.onChildrenDrawerClose}
-          visible={this.state.childrenDrawer}
-      >
-        这是次级抽屉
-        </Drawer>
-        <div
-          style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          borderTop: '1px solid #e8e8e8',
-          padding: '10px 16px',
-          textAlign: 'right',
-          left: 0,
-          background: '#fff',
-          borderRadius: '0 0 4px 4px',
-        }}
-      >
-          <Button
+          onClose={this.onClose}
+          visible={this.state.visible}>
+          <Button type='primary' onClick={this.showChildrenDrawer}>
+          打开次级抽屉
+          </Button>
+          <Drawer
+            title='次级抽屉'
+            width={320}
+            closable={false}
+            onClose={this.onChildrenDrawerClose}
+            visible={this.state.childrenDrawer}>
+          这是次级抽屉
+          </Drawer>
+          <div
             style={{
-            marginRight: 8,
-          }}
-            onClick={this.onClose}
-        >
-          取消
-          </Button>
-          <Button onClick={this.onClose} type='primary'>
-          提交
-          </Button>
-        </div>
-      </Drawer>
-    </div>
+            position: 'absolute',
+            bottom: 0,
+            width: '100%',
+            borderTop: '1px solid #e8e8e8',
+            padding: '10px 16px',
+            textAlign: 'right',
+            left: 0,
+            background: '#fff',
+            borderRadius: '0 0 4px 4px',
+          }}>
+            <Button style={{ marginRight: 8 }} onClick={this.onClose}>取消</Button>
+            <Button onClick={this.onClose} type='primary'>提交</Button>
+          </div>
+        </Drawer>
+      </div>
      )
   }
 }
@@ -389,143 +368,134 @@ class DrawerDemo extends React.Component {
     });
   }
   render() {
-  const { getFieldDecorator } = this.props.form;
-  return (
-         <div>
-          <Button type='primary' onClick={this.showDrawer}>
-          创建表单抽屉
-          </Button>
-          <Drawer
-            title='创建'
-            width={720}
-            placement='right'
-            onClose={this.onClose}
-            visible={this.state.visible}
+    const { getFieldDecorator } = this.props.form;
+    return (
+      <div>
+        <Button type='primary' onClick={this.showDrawer}>
+        创建表单抽屉
+        </Button>
+        <Drawer
+          title='创建'
+          width={720}
+          placement='right'
+          onClose={this.onClose}
+          visible={this.state.visible}
+          style={{
+          height: 'calc(100% - 55px)',
+          overflow: 'auto',
+          paddingBottom: 53,
+        }}>
+          <Form layout='vertical' hideRequiredMark>
+            <Row gutter={16}>
+              <Col span={12}>
+                <FormItem label='姓名'>
+                  {getFieldDecorator('name', {
+                  rules: [{ required: true, message: '请输入用户名' }],
+                })(<Input placeholder='请输入用户名' />)}
+                </FormItem>
+              </Col>
+              <Col span={12}>
+                <FormItem label='URL'>
+                  {getFieldDecorator('url', {
+                  rules: [{ required: true, message: '请输入 url' }],
+                })(
+                  <Input
+                    style={{ width: '100%' }}
+                    addonBefore='http://'
+                    addonAfter='.com'
+                    placeholder='请输入 url'
+                  />
+                )}
+                </FormItem>
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col span={12}>
+                <FormItem label='选择'>
+                  {getFieldDecorator('owner', {
+                  rules: [{ required: true, message: '请选择' }],
+                })(
+                  <Select placeholder='请选择'>
+                    <Option value='liu'>刘岳然</Option>
+                    <Option value='li'>李欣桐</Option>
+                  </Select>
+                )}
+                </FormItem>
+              </Col>
+              <Col span={12}>
+                <FormItem label='类型'>
+                  {getFieldDecorator('type', {
+                  rules: [{ required: true, message: '请选择类型' }],
+                })(
+                  <Select placeholder='请选择类型'>
+                    <Option value='private'>私密</Option>
+                    <Option value='public'>公开</Option>
+                  </Select>
+                )}
+                </FormItem>
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col span={12}>
+                <FormItem label='批复'>
+                  {getFieldDecorator('approver', {
+                  rules: [{ required: true, message: '请选择批复人' }],
+                })(
+                  <Select placeholder='请选择批复人'>
+                    <Option value='jack'>杰瑞</Option>
+                    <Option value='tom'>汤姆</Option>
+                  </Select>
+                )}
+                </FormItem>
+              </Col>
+              <Col span={12}>
+                <FormItem label='时间'>
+                  {getFieldDecorator('dateTime', {
+                  rules: [{ required: true, message: '请选择日期时间' }],
+                })(
+                  <RangePicker
+                    style={{width: '100%'}}
+                    showTime={{ format: 'HH:mm' }}
+                    format='YYYY-MM-DD HH:mm'
+                    placeholder={['开始时间', '结束时间']}
+                  />
+                )}
+                </FormItem>
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col span={24}>
+                <FormItem label='描述'>
+                  {getFieldDecorator('description', {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请输入描述',
+                    },
+                  ],
+                })(<Textarea rows={23} placeholder='请输入描述' />)}
+                </FormItem>
+              </Col>
+            </Row>
+          </Form>
+          <div
             style={{
-            height: 'calc(100% - 55px)',
-            overflow: 'auto',
-            paddingBottom: 53,
-          }}
-        >
-            <Form layout='vertical' hideRequiredMark>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <FormItem label='姓名'>
-                    {getFieldDecorator('name', {
-                    rules: [{ required: true, message: '请输入用户名' }],
-                  })(<Input placeholder='请输入用户名' />)}
-                  </FormItem>
-                </Col>
-                <Col span={12}>
-                  <FormItem label='URL'>
-                    {getFieldDecorator('url', {
-                    rules: [{ required: true, message: '请输入 url' }],
-                  })(
-                    <Input
-                      style={{ width: '100%' }}
-                      addonBefore='http://'
-                      addonAfter='.com'
-                      placeholder='请输入 url'
-                    />
-                  )}
-                  </FormItem>
-                </Col>
-              </Row>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <FormItem label='选择'>
-                    {getFieldDecorator('owner', {
-                    rules: [{ required: true, message: '请选择' }],
-                  })(
-                    <Select placeholder='请选择'>
-                      <Option value='liu'>刘岳然</Option>
-                      <Option value='li'>李欣桐</Option>
-                    </Select>
-                  )}
-                  </FormItem>
-                </Col>
-                <Col span={12}>
-                  <FormItem label='类型'>
-                    {getFieldDecorator('type', {
-                    rules: [{ required: true, message: '请选择类型' }],
-                  })(
-                    <Select placeholder='请选择类型'>
-                      <Option value='private'>私密</Option>
-                      <Option value='public'>公开</Option>
-                    </Select>
-                  )}
-                  </FormItem>
-                </Col>
-              </Row>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <FormItem label='批复'>
-                    {getFieldDecorator('approver', {
-                    rules: [{ required: true, message: '请选择批复人' }],
-                  })(
-                    <Select placeholder='请选择批复人'>
-                      <Option value='jack'>杰瑞</Option>
-                      <Option value='tom'>汤姆</Option>
-                    </Select>
-                  )}
-                  </FormItem>
-                </Col>
-                <Col span={12}>
-                  <FormItem label='时间'>
-                    {getFieldDecorator('dateTime', {
-                    rules: [{ required: true, message: '请选择日期时间' }],
-                  })(
-                    <RangePicker
-                      style={{width: '100%'}}
-                      showTime={{ format: 'HH:mm' }}
-                      format='YYYY-MM-DD HH:mm'
-                      placeholder={['开始时间', '结束时间']}
-                    />
-                  )}
-                  </FormItem>
-                </Col>
-              </Row>
-              <Row gutter={16}>
-                <Col span={24}>
-                  <FormItem label='描述'>
-                    {getFieldDecorator('description', {
-                    rules: [
-                      {
-                        required: true,
-                        message: '请输入描述',
-                      },
-                    ],
-                  })(<Textarea rows={23} placeholder='请输入描述' />)}
-                  </FormItem>
-                </Col>
-              </Row>
-            </Form>
-            <div
-              style={{
-              position: 'absolute',
-              bottom: 0,
-              width: '100%',
-              borderTop: '1px solid #e8e8e8',
-              padding: '10px 16px',
-              textAlign: 'right',
-              left: 0,
-              background: '#fff',
-              borderRadius: '0 0 4px 4px',
-            }}
-          >
-              <Button
-                style={{
-                marginRight: 8,
-              }}
-                onClick={this.onClose}
-            >
-              取消
-              </Button>
-              <Button onClick={this.onClose} type='primary'>提交</Button>
-            </div>
-          </Drawer>
-        </div>
-      )
+            position: 'absolute',
+            bottom: 0,
+            width: '100%',
+            borderTop: '1px solid #e8e8e8',
+            padding: '10px 16px',
+            textAlign: 'right',
+            left: 0,
+            background: '#fff',
+            borderRadius: '0 0 4px 4px',
+          }}>
+            <Button style={{ marginRight: 8 }} onClick={this.onClose} >取消</Button>
+            <Button onClick={this.onClose} type='primary'>提交</Button>
+          </div>
+        </Drawer>
+      </div>
+    )
   }
 }
 const DrawerView = Form.create()(DrawerDemo);

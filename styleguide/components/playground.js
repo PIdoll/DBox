@@ -36,7 +36,6 @@ export function PlaygroundRenderer({
 	previewProps,
 	tabButtons,
 	tabBody,
-	toolbar,
 }) {
 	const { className, ...props } = previewProps;
 	return (

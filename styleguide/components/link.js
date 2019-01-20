@@ -8,13 +8,22 @@ const styles = ({ color }) => ({
 	link: {
 		display: 'block',
 		color: '#333',
-		lineHeight: '32px',
+		lineHeight: '40px',
 		overflow: 'hidden',
 		fontWeight: '400',
 		fontSize: '14px',
     cursor: 'pointer',
     paddingLeft: '8px',
-	},
+  },
+  topLink: {
+    display: 'block',
+		color: '#333',
+		lineHeight: '40px',
+		overflow: 'hidden',
+		fontWeight: '400',
+		fontSize: '14px',
+    cursor: 'pointer',
+  },
 	h1: {
 		fontSize: '12px',
     color: '#aaa',
@@ -55,7 +64,7 @@ export function LinkRenderer({ classes, children, ...props }) {
   for (const item of chineseName.values()) {
 		if (children === item) {
 			return (
-  <a {...props} style={handleActiveLink(children)} className={cx(classes.link, props.className)} >
+  <a {...props} style={handleActiveLink(children)} className={cx(classes.topLink, props.className)} >
     {Data[children]}
   </a>
 			);

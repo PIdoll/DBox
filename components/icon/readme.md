@@ -27,6 +27,7 @@
 
 ```jsx
 import {Icon} from 'dbox-ui';
+
 const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up', 'down', 'forward', 'fullscreen-exit','fullscreen', 'left','left-circle-o', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','right-circle-o','shrink','swap-horiz','swap-vert','undo','up','zoom-out','insertion','demolitions','caret-right-circle','caret-left-circle','caret-up-circle','caret-down-circle'];
 class IconView extends React.Component {
   render() {
@@ -62,44 +63,19 @@ class IconView extends React.Component {
 
 ```jsx
 import {Icon} from 'dbox-ui';
-const icons4 = ['account-circle-o','account-circle','achievement','appstore-o','assessment','bank-o','bank','book','calendar','chart','clear','clip','clock-o','cloud-download','cloud-upload','cloud','computer','copy','copyright','creditcard','dashboard','download','edit','email','equalizer','explore','eye_close','eye','file','flag','folder','home','hourglass','image','link-off','link','lock','logout','message','notifications','phone','platform','sad','setting','share','smile','star-half','star-o','star','tag','thumb-down','thumb-up','tool','trophy','unlock','upload','user-add','user-group','user','verified','voice','volume-down','volume-mute','volume-off','volume-up','wallet','widgets','training','idle','transfer','phone-circle-o','process','match','knowledge','headset','group','phone-callback','phone-second-forward','phone-in-talk','phone-paused','phone-transfer','phone-end','phone-deal','print'
+const icons3 = ['account-circle-o','account-circle','achievement','appstore-o','assessment','bank-o','bank','book','calendar','chart','clear','clip','clock-o','cloud-download','cloud-upload','cloud','computer','copy','copyright','creditcard','dashboard','download','edit','email','equalizer','explore','eye_close','eye','file','flag','folder','home','hourglass','image','link-off','link','lock','logout','message','notifications','phone','platform','sad','setting','share','smile','star-half','star-o','star','tag','thumb-down','thumb-up','tool','trophy','unlock','upload','user-add','user-group','user','verified','voice','volume-down','volume-mute','volume-off','volume-up','wallet','widgets','training','idle','transfer','phone-circle-o','process','match','knowledge','headset','group','phone-callback','phone-second-forward','phone-in-talk','phone-paused','phone-transfer','phone-end','phone-deal','print'
 ,'phone-locked','sign-out','sign-in','security'];
 
 class IconView extends React.Component {
   render() {
     return (
-      icons4.map(function(val,index){
+      icons3.map(function(val,index){
       return <li className='iconList' key={val}><Icon type={val} /><span>{val}</span></li>})
     )
   }
 }
 <IconView />
 ```
-
-<style>
-.iconList {
-  list-style:none;
-  float:left;
-  width: 25%;
-  font-size:18px;
-  height: 100px;
-  text-align:center;
-  transition: all .3s;
-}
-.iconList:hover i {
-  color: #13B886;
-  transition: all .3s;
-  font-size:32px
-}
-.iconList:hover span {
-  font-size:14px;
-  transition: all .3s;
-}
-.iconList i,.iconList span {
-  display:block;
-  transition: all .3s;
-}
-</style>
 
 ```jsx noeditor
 import {BackTop} from 'dbox-ui';
