@@ -30,6 +30,6 @@ ReactDOM.render(<Button />, node);
 
 引入样式:
 ```jsx
-@import ~dbox-ui/dist/css/dbox-ui.main.css
+@import '~dbox-ui/dist/css/dbox-ui.main.css'
 ```
 
