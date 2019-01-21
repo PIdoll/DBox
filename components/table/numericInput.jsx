@@ -1,5 +1,6 @@
 import React from 'react';
-import {Tooltip, Input} from 'components';
+import Tooltip from '../tooltip';
+import Input from '../input';
 
 export default class NumericInput extends React.Component {
   constructor(props) {
