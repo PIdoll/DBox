@@ -26,34 +26,22 @@ div.layout_temp {
 
 .@{idoll-prefix}-layout-sider {
   color: @layout-backgound-color ;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: @layout-sider-basic-width;
   height: 100%;
+  transition: width .3s;
   background-color: @layout-sider-background;
-  .@{idoll-prefix}-menu-inline {
-    transition: none;
-  }
 }
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
   color: @layout-backgound-color;
-  display: flex;
   height: @layout-header-base-height;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  text-align: right;
   background-color: @layout-header-background;
 }
 
 .@{idoll-prefix}-layout-content {
    width: 100%;
    height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
    color: @layout-bg;
    background-color: @layout-content-background;
 }
@@ -61,9 +49,6 @@ div.layout_temp {
 .@{idoll-prefix}-layout-footer {
   width: 100%;
   color: @layout-backgound-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: @layout-footer-height;
   background-color: @layout-footer-background;
 }
@@ -104,14 +89,12 @@ div.layout_temp {
   .@{idoll-prefix}-layout-content {
     padding: @padding-lg;
     background-color: @layout-backgound;
+    overflow: hidden;
     .content {
       width: 100%;
       height: 100%;
       background-color: @layout-backgound-color;
       color: @text-color;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }
@@ -119,10 +102,10 @@ div.layout_temp {
 .layout-inlineNav {
   .@{idoll-prefix}-layout {
     &-sider {
-      width: auto;
       display: block;
       position: relative;
       background-color: @navbar;
+      transition: width .3s;
       div.logo {
         padding: @padding-sm @layout-logo-padding-top @layout-logo-padding-bottom @layout-logo-padding-top;
         div {
@@ -163,8 +146,6 @@ div.layout_temp {
       }
     }
     &-header {
-      display: flex;
-      justify-content: flex-end;
       background-color: @layout-backgound-color;
       padding-right: @padding-lg;
       line-height:@layout-header-seat;
@@ -198,16 +179,13 @@ div.layout_temp {
       padding: @padding-md @padding-lg;
     }
     .@{idoll-prefix}-layout-content {
+      overflow: hidden;
       padding: 0 @padding-lg @padding-lg @padding-lg;
       background-color: @layout-backgound;
-      > div {
-        width: 100%;
+      > .content {
         height: 100%;
         background-color: @layout-backgound-color;
         color: @text-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
   }
@@ -226,6 +204,7 @@ div.layout_temp {
       padding-bottom: @padding-lg ;
       > .@{idoll-prefix}-tabs {
         display: block;
+        height: 100%;
         div.@{idoll-prefix}-tabs-bar {
           margin: 0;
           border-right: @border-width-base @border-style-base @layout-backgound;
@@ -245,14 +224,12 @@ div.layout_temp {
         }
         div.@{idoll-prefix}-tabs-content {
           height: 100%;
+          overflow: hidden;
           background-color: @layout-backgound;
-          padding: @padding-lg @padding-lg @layout-tabs-content-padding @padding-lg;
-          > div.@{idoll-prefix}-tabs-tabpane-active {
+          padding: @padding-lg;
+          > .@{idoll-prefix}-tabs-tabpane-active {
             background-color: @layout-backgound-color;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
           }
         }
       }

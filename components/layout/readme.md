@@ -9,25 +9,25 @@ const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
 <div className='layout_temp'>
-  <Layout>
-    <Header>头部</Header>
+  <Layout style={{textAlign: 'center'}} >
+    <Header style={{textAlign: 'center'}}>头部</Header>
     <Content>内容</Content>
     <Footer>底部</Footer>
   </Layout>
   <br />
-  <Layout>
-    <Header>头部</Header>
+  <Layout style={{textAlign: 'center'}}>
+    <Header style={{textAlign: 'center'}}>头部</Header>
     <Layout>
-      <Sider style={{ lineHight: '20vh' }}>侧边栏</Sider>
+      <Sider style={{ lineHight: '20vh', width: '10vh' }}>侧边栏</Sider>
       <Content>内容</Content>
     </Layout>
     <Footer>底部</Footer>
   </Layout>
   <br />
-  <Layout>
-    <Sider>侧边栏</Sider>
-    <Layout>
-      <Header>头部</Header>
+  <Layout style={{textAlign: 'center'}}>
+    <Sider style={{ width: '10vh'}}>侧边栏</Sider>
+    <Layout style={{textAlign: 'center'}}>
+      <Header style={{textAlign: 'center'}}>头部</Header>
       <Content style={{ height: '100%' }}>内容</Content>
       <Footer>底部</Footer>
     </Layout>
@@ -228,7 +228,7 @@ class LayoutView extends React.Component {
               <Breadcrumb.Item>子菜单</Breadcrumb.Item>
             </Breadcrumb>
             <Content>
-              <div className='content'>内容</div>
+              <div className='content' style={{textAlign: 'center'}}>内容</div>
             </Content>
           </Layout>
         </Layout>

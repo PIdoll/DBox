@@ -16,15 +16,15 @@ export default class BasicLayout extends React.Component {
         <br />
         <Layout>
           <Header>头部</Header>
-          <Layout>
-            <Sider style={{ lineHight: '20vh' }}>侧边栏</Sider>
+          <Layout >
+            <Sider style={{ lineHight: '20vh', width: '10vh' }}>侧边栏</Sider>
             <Content>内容</Content>
           </Layout>
           <Footer>底部</Footer>
         </Layout>
         <br />
         <Layout>
-          <Sider>侧边栏</Sider>
+          <Sider style={{ width: '10vh' }}>侧边栏</Sider>
           <Layout>
             <Header>头部</Header>
             <Content style={{ height: '100%' }}>内容</Content>

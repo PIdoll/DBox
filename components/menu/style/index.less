@@ -28,6 +28,9 @@
   }
 
   &-item {
+    >div {
+      height: 100%;
+    }
     span {
       vertical-align: middle;
     }
@@ -168,6 +171,9 @@
     white-space: nowrap;
     user-select: none;
     transition: color .3s @ease-in-out, border-color .3s @ease-in-out, background .3s @ease-in-out;
+    >div {
+      height: 100%;
+    }
     .@{iconfont-css-prefix} {
       min-width: 14px;
       margin-right: 8px;
@@ -650,9 +656,9 @@
   &-light&-vertical-right {
     widows: 89px;
   }
-  &-dark&-vertical-right,&-light&-vertical-right {
-    width: 168px;
-  }
+  // &-dark&-vertical-right,&-light&-vertical-right {
+  //   width: 168px;
+  // }
   &-light&-vertical-right {
     > li.@{menu-prefix-cls}-item-selected {
       position: relative;

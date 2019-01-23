@@ -1,4 +1,5 @@
 import React from 'react';
+// import Bars from './Bars';
 import {Menu, Breadcrumb, Avatar, Icon, Dropdown, Layout} from 'components';
 const SubMenu = Menu.SubMenu;
 const Header = Layout.Header;
@@ -130,7 +131,8 @@ export default class BreadLayout extends React.Component {
             <Breadcrumb.Item>子菜单</Breadcrumb.Item>
           </Breadcrumb>
           <Content>
-            <div className='content'>内容</div>
+            <div className='content'>首页
+            </div>
           </Content>
         </Layout>
       </Layout>
