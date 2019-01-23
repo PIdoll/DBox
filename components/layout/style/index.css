@@ -1,0 +1,212 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
+div.layout_temp .idoll-layout {
+  height: 50vh;
+}
+.idoll-layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  font-size: 20px;
+  font-weight: 500;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+.idoll-layout-has-sider {
+  flex-direction: row;
+}
+.idoll-layout-sider {
+  color: #FFFFFF;
+  height: 100%;
+  transition: width .3s;
+  background-color: rgba(19, 184, 134, 0.8);
+}
+.idoll-layout-header {
+  width: 100%;
+  color: #FFFFFF;
+  height: 10vh;
+  text-align: right;
+  background-color: rgba(19, 184, 134, 0.6);
+}
+.idoll-layout-content {
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  background-color: rgba(19, 184, 134, 0.4);
+}
+.idoll-layout-footer {
+  width: 100%;
+  color: #FFFFFF;
+  height: 10vh;
+  background-color: rgba(19, 184, 134, 0.6);
+}
+.layout-horizontal .idoll-layout-header {
+  width: 100%;
+  color: #FFFFFF;
+  display: block;
+  height: 56px;
+  line-height: 56px;
+  background: #2F323B;
+}
+.layout-horizontal .idoll-layout-header div.logo {
+  float: left;
+  padding: 12px 28px;
+}
+.layout-horizontal .idoll-layout-header div.logo div {
+  border-radius: 3px;
+  font-size: 24px;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 21px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-horizontal .idoll-layout-header .idoll-menu-horizontal {
+  height: 100%;
+  float: left;
+}
+.layout-horizontal .idoll-layout-header .idoll-menu-horizontal li.idoll-menu-item {
+  height: 100%;
+}
+.layout-horizontal .idoll-breadcrumb {
+  background-color: #F5F5F5;
+  padding: 16px 24px 0 24px;
+}
+.layout-horizontal .idoll-layout-content {
+  padding: 24px;
+  background-color: #F5F5F5;
+  overflow: hidden;
+}
+.layout-horizontal .idoll-layout-content .content {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.6);
+}
+.layout-inlineNav .idoll-layout-sider {
+  display: block;
+  position: relative;
+  background-color: #2F323B;
+  transition: width .3s;
+}
+.layout-inlineNav .idoll-layout-sider div.logo {
+  padding: 12px 28px 44px 28px;
+}
+.layout-inlineNav .idoll-layout-sider div.logo div {
+  border-radius: 3px;
+  font-size: 24px;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 21px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-inlineNav .idoll-layout-sider div.miniLogo {
+  padding: 12px 12px 44px 12px;
+}
+.layout-inlineNav .idoll-layout-sider div.miniLogo div {
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 4px;
+  color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
+}
+.layout-inlineNav .idoll-layout-sider > i:before {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+}
+.layout-inlineNav .idoll-layout-sider > i:hover:before {
+  color: #FFFFFF;
+  transition: color 0.3s;
+}
+.layout-inlineNav .idoll-layout-header {
+  background-color: #FFFFFF;
+  padding-right: 24px;
+  line-height: 56px;
+  font-size: 14px;
+  border: 1px solid #F5F5F5;
+  border-left: none;
+}
+.layout-inlineNav .idoll-layout-header .idoll-icon-message {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.layout-inlineNav .idoll-layout-header .idoll-avatar {
+  margin-right: 8px !important;
+  margin-left: 24px;
+  cursor: pointer;
+}
+.layout-inlineNav .idoll-layout-header > a {
+  margin-right: 0;
+}
+.layout-inlineNav .idoll-layout-header > a i:before {
+  content: "\E6DE";
+  font-family: 'idollicon' !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+.layout-inlineNav .idoll-layout-header > a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.layout-inlineNav .idoll-layout .idoll-breadcrumb {
+  background-color: #F5F5F5;
+  padding: 16px 24px;
+}
+.layout-inlineNav .idoll-layout .idoll-layout-content {
+  overflow: hidden;
+  padding: 0 24px 24px 24px;
+  background-color: #F5F5F5;
+}
+.layout-inlineNav .idoll-layout .idoll-layout-content > .content {
+  height: 100%;
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.6);
+}
+.layout-inlineNav.inlineTabs .idoll-layout-header > span {
+  margin-left: 24px;
+  margin-right: 8px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content {
+  padding: 0;
+  padding-bottom: 24px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs {
+  display: block;
+  height: 100%;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar {
+  margin: 0;
+  border-right: 1px solid #F5F5F5;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-bar div.idoll-tabs-nav-container {
+  height: 40px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll {
+  margin-left: 4px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll div.idoll-tabs-tab {
+  height: 40px;
+  line-height: 16px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-nav-scroll div.idoll-tabs-tab i {
+  margin-right: 0;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content {
+  height: 100%;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  padding: 24px;
+}
+.layout-inlineNav.inlineTabs .idoll-layout .idoll-layout-content > .idoll-tabs div.idoll-tabs-content > .idoll-tabs-tabpane-active {
+  background-color: #FFFFFF;
+  height: 100%;
+}
