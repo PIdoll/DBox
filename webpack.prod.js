@@ -48,19 +48,20 @@ const common = require('./webpack.common.js');
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/dbox-ui.[name].css',
-			chunkFilename: 'css/dbox-ui.[contenthash:12].css' // use contenthash *
+			filename: 'style/dbox-ui.[name].css',
+			chunkFilename: 'style/dbox-ui.[contenthash:12].css' // use contenthash *
 		  }),
 
-		new CopyWebpackPlugin([
-			{
+		new CopyWebpackPlugin([{
 				from: path.resolve(__dirname, 'assets'),
 				to: path.resolve(__dirname, 'dist/assets'),
 				ignore: ['.*']
-			},
-			{
+			}, {
 				from: path.resolve(__dirname, 'favicon.ico'),
 				to: path.resolve(__dirname, 'dist/')
+			}, {
+				from: path.resolve(__dirname, 'style/dbox-ui.less'),
+				to: path.resolve(__dirname, 'dist/style')
 			}
 		]),
 
