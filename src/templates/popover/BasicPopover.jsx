@@ -11,7 +11,7 @@ export default class BasicPopover extends React.Component {
     return (
       <div>
         <Popover content={content} title='标题' trigger='hover'>
-          <Button>鼠标移入</Button>
+          <Button style={{marginRight: 40}}>鼠标移入</Button>
         </Popover>
         <Popover content={content} title='标题' trigger='click'>
           <Button>鼠标点击</Button>

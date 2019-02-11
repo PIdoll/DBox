@@ -8,28 +8,28 @@ const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
-<div className='layout_temp'>
-  <Layout style={{textAlign: 'center'}} >
-    <Header style={{textAlign: 'center'}}>头部</Header>
+<div>
+  <Layout style={{textAlign: 'center', height: '50vh', color: '#fff'}} >
+    <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
     <Content>内容</Content>
-    <Footer>底部</Footer>
+    <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
   </Layout>
   <br />
-  <Layout style={{textAlign: 'center'}}>
-    <Header style={{textAlign: 'center'}}>头部</Header>
+  <Layout style={{textAlign: 'center', height: '50vh', color: '#fff'}}>
+    <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
     <Layout>
-      <Sider style={{ lineHight: '20vh', width: '10vh' }}>侧边栏</Sider>
+      <Sider style={{width: '10vh'}}>侧边栏</Sider>
       <Content>内容</Content>
     </Layout>
-    <Footer>底部</Footer>
+    <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
   </Layout>
   <br />
-  <Layout style={{textAlign: 'center'}}>
+  <Layout style={{textAlign: 'center',height: '50vh', color: '#fff'}}>
     <Sider style={{ width: '10vh'}}>侧边栏</Sider>
-    <Layout style={{textAlign: 'center'}}>
-      <Header style={{textAlign: 'center'}}>头部</Header>
-      <Content style={{ height: '100%' }}>内容</Content>
-      <Footer>底部</Footer>
+    <Layout style={{height: '50vh'}}>
+      <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
+      <Content>内容</Content>
+      <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
     </Layout>
   </Layout>
 </div>
@@ -151,7 +151,9 @@ class LayoutView extends React.Component {
   }
   inlineMenu () {
     if (this.state.flag) {
-      return (<Menu
+      return (<Sider className='miniSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
         onClick={this.handleClickBread}
         defaultSelectedKeys={['7']}
         mode={this.state.modeMenu}
@@ -175,9 +177,13 @@ class LayoutView extends React.Component {
           <Menu.Item key='18'>子菜单十一</Menu.Item>
           <Menu.Item key='19'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>)
+      </Menu>
+      <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>)
     } else {
-      return (<Menu
+      return (<Sider className='normalSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
         onClick={this.handleClickBread}
         defaultSelectedKeys={['7']}
         openKeys={this.state.openKeys}
@@ -202,22 +208,20 @@ class LayoutView extends React.Component {
           <Menu.Item key='18'>子菜单十一</Menu.Item>
           <Menu.Item key='19'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>)
+      </Menu>
+      <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>)
     }
   }
   render() {
     return (
       <div className='layout-inlineNav'>
         <Layout>
-          <Sider >
-            <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-            {this.inlineMenu()}
-            <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
-          </Sider>
+          {this.inlineMenu()}
           <Layout>
-            <Header style={{height: '56px'}} >
+            <Header style={{height: '56px', paddingRight: 24}} >
               <Icon type='message' />
-              <Avatar size='small' style={{ marginRight: 47 }} src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
+              <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
               <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
                 Alvin
               </DropdownNormal>
@@ -339,7 +343,9 @@ class LayoutView extends React.Component {
   }
   inlineMenu () {
     if (this.state.flag) {
-      return (<Menu
+      return (<Sider className='miniSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
         onClick={this.handleClickTabs}
         defaultSelectedKeys={['27']}
         selectedKeys={[this.state.activeKey]}
@@ -364,9 +370,13 @@ class LayoutView extends React.Component {
           <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
           <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>)
+      </Menu>
+      <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>)
     } else {
-      return (<Menu
+      return (<Sider className='normalSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
         onClick={this.handleClickTabs}
         defaultSelectedKeys={['27']}
         selectedKeys={[this.state.activeKey]}
@@ -392,20 +402,18 @@ class LayoutView extends React.Component {
           <Menu.Item title='子菜单十一' key='38'>子菜单十一</Menu.Item>
           <Menu.Item title='子菜单十二' key='39'>子菜单十二</Menu.Item>
         </SubMenu>
-      </Menu>)
+      </Menu>
+      <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>)
     }
   }
   render() {
     return (
       <div className='layout-inlineNav inlineTabs'>
         <Layout>
-          <Sider >
-            <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-            {this.inlineMenu()}
-            <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
-          </Sider>
+          {this.inlineMenu()}
           <Layout>
-            <Header style={{height: '56px'}} >
+            <Header style={{height: '56px', paddingRight: 24}} >
               <Icon type='message' />
               <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
               <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >

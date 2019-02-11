@@ -88,7 +88,7 @@ export default function confirm(config) {
   if (props.okCancel) {
     footer = (
       <div className='idoll-confirm-btns'>
-        <Button type='ghost' onClick={onCancel}>
+        <Button onClick={onCancel}>
           {props.cancelText}
         </Button>
         <Button type='primary' onClick={onOk}>

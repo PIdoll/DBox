@@ -84,7 +84,6 @@ export default class Modal extends React.Component {
     const defaultFooter = [
       <Button
         key='cancel'
-        type='ghost'
         onClick={this.handleCancel}
         >
         {cancelText || '取消'}
