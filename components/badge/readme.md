@@ -28,9 +28,9 @@ const content = {
   display: 'inline-block',
 };
 <div>
-  <Badge count={55} />
-  <Badge count={8} style={{ backgroundColor: '#13B886' }} />
-  <Badge count={999} style={{ backgroundColor: '#87d068' }} />
+  <Badge count={55} style={{marginRight: 60}} />
+  <Badge count={8} style={{ marginRight: 60, backgroundColor: '#13B886' }} />
+  <Badge count={999} style={{ marginRight: 60, backgroundColor: '#87d068' }} />
 </div>
 ```
 
@@ -49,9 +49,11 @@ const content = {
   <Badge count={9} overflowCount='10'>
     <a href='javascript:;' style={content} />
   </Badge>
-  <Badge count={200}>
-    <a href='javascript:;' style={content} />
-  </Badge>
+  <div style={{display: 'inline-block', margin: '0 60px 0 60px'}}>
+    <Badge count={200} style={{marginRight: 60}}>
+      <a href='javascript:;' style={content} />
+    </Badge>
+  </div>
   <Badge count={1000} overflowCount='999'>
     <a href='javascript:;' style={content} />
   </Badge>
@@ -65,13 +67,13 @@ const content = {
 import {Badge, Icon} from 'dbox-ui';
 <div>
   <Badge>
-    <Icon type='phone' />
+    <Icon type='phone' style={{marginRight: 60}} />
   </Badge>
   <Badge dot status='error'>
     <Icon type='phone' />
   </Badge>
   <Badge dot status='processing'>
-    <a href='javascript:;' style={{marginLeft: '60px'}} target='_blank'>一些通知</a>
+    <a href='javascript:;' style={{marginLeft: 60}} target='_blank'>一些通知</a>
   </Badge>
 </div>
 ```
@@ -154,7 +156,7 @@ class BadgeView extends React.Component {
           <Badge count={this.state.count}>
             <a href='javascript:;' style={content} />
           </Badge>
-          <ButtonGroup>
+          <ButtonGroup style={{marginLeft: 60}}>
             <Button onClick={this.decline}>
             <Icon type='remove' />
             </Button>
@@ -168,7 +170,7 @@ class BadgeView extends React.Component {
           <Badge dot={this.state.show}>
             <a href='javascript:;' style={content} />
           </Badge>
-          <Switch checked={this.state.show} onChange={this.onChange} />
+          <Switch style={{marginLeft: 60}} checked={this.state.show} onChange={this.onChange} />
         </div>
       </div>
     )

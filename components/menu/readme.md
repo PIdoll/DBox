@@ -26,7 +26,8 @@ class MenuView extends React.Component {
         onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode='horizontal'
-        theme='dark'>
+        theme='dark'
+        >
         <Menu.Item key='home'>首页</Menu.Item>
         <Menu.Item key='platform' disabled>工作台</Menu.Item>
         <SubMenu key='bars' title={<span>订单中心</span>}>

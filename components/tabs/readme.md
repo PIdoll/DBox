@@ -243,6 +243,7 @@ class TabsView extends React.Component {
         element.style.position = 'fixed';
         element.style.top = '0';
         element.style.left = left;
+        element.style.zIndex = '999';
         element.style.width = '100%';
         element.style.padding = '20px 20px';
         element.style.backgroundColor = '#fff';

@@ -92,6 +92,7 @@ class DrawerView extends React.Component {
           <Radio value='right'>右</Radio>
         </RadioGroup>
         <br />
+        <br />
         <Button type='primary' onClick={this.showDrawer}>
         打开方位抽屉
         </Button>

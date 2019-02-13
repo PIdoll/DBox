@@ -21,20 +21,18 @@
   }
 
   &-normal {
-    margin-right: @dropdown-margin;
     text-decoration: none;
     color: @text-color;
     i:before {
-      margin-left: 8px - 4px;
+      margin-left: 4px;
       color: @text-color-disable
     }
   }
   &-normal:hover {
     color: @primary-color;
-    margin-right: @dropdown-margin;
     text-decoration: none;
     i:before {
-      margin-left: 8px - 4px;
+      margin-left: 4px;
       color: @primary-color;
     }
   }
@@ -264,22 +262,9 @@
   }
 }
 
-h1.h1:first-child {
-  margin-top: 0;
-}
-
-.dropdown {
-  button {
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-}
-.@{idoll-prefix}-btn-group.buttonGroup {
-  button {
-    margin-right: 0;
-  }
+.@{idoll-prefix}-btn-group {
   >.@{idoll-prefix}-btn-group {
-    float: none !important;
+    float: none
   }
 }
 
