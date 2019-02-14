@@ -1,18 +1,14 @@
 @import '../../../style/theme/default/index';
 @import './mixin';
 
-div.layout_temp {
-  .@{idoll-prefix}-layout{
-    height: 50vh;
-  }
-}
+
 
 .@{idoll-prefix}-layout {
   box-sizing: border-box;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   flex: 1;
-  height: 100vh;
   font-size: @font-size-lg + 4px ;
   font-weight: 500;
   overflow: hidden;
@@ -25,16 +21,20 @@ div.layout_temp {
 }
 
 .@{idoll-prefix}-layout-sider {
-  color: @layout-backgound-color ;
   height: 100%;
-  transition: width .3s;
   background-color: @layout-sider-background;
+}
+.@{idoll-prefix}-layout-sider-miniSlider {
+  width: 88px;
+  transition: width .3s;
+}
+.@{idoll-prefix}-layout-sider-normalSlider {
+  width: 168px;
+  transition: width .3s;
 }
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
-  color: @layout-backgound-color;
-  height: @layout-header-base-height;
   text-align: right;
   background-color: @layout-header-background;
 }
@@ -42,14 +42,12 @@ div.layout_temp {
 .@{idoll-prefix}-layout-content {
    width: 100%;
    height: 100%;
-   color: @layout-bg;
+  //  color: @layout-bg;
    background-color: @layout-content-background;
 }
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
-  color: @layout-backgound-color;
-  height: @layout-footer-height;
   background-color: @layout-footer-background;
 }
 
@@ -59,7 +57,6 @@ div.layout_temp {
     color: @layout-backgound-color;
     display: block;
     height: @layout-header-seat;
-    line-height: @layout-header-seat;
     background: @navbar;
     div.logo {
       float: left;
@@ -147,7 +144,6 @@ div.layout_temp {
     }
     &-header {
       background-color: @layout-backgound-color;
-      padding-right: @padding-lg;
       line-height:@layout-header-seat;
       font-size: @font-size-base;
       border: @border-width-base @border-style-base @layout-backgound;
@@ -158,7 +154,7 @@ div.layout_temp {
         cursor: pointer;
       }
       .@{idoll-prefix}-avatar {
-        margin-right: 8px !important;
+        margin-right: @padding-xs !important;
         margin-left: @padding-lg;
         cursor: pointer;
       }

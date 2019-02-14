@@ -6,7 +6,7 @@
 import {Radio} from 'dbox-ui';
 <div>
 	<Radio>A</Radio>
-	<Radio checked>B</Radio>
+	<Radio checked style={{margin: '0 8px 0 8px'}}>B</Radio>
 	<Radio defaultChecked>C</Radio>
 </div>
 ```
@@ -32,7 +32,7 @@ class RadioView extends React.Component {
 		return (
 			<div>
 				<Radio defaultChecked={false} disabled >不能操作</Radio>
-				<Radio disabled={this.state.disabled}>不允许操作</Radio>
+				<Radio disabled={this.state.disabled} style={{margin: '0 8px 0 8px'}}>不允许操作</Radio>
 				<Button type='primary' onClick={this.toggleDisabled}>控制能否操作</Button>
 			</div>
 		)
@@ -63,9 +63,9 @@ class RadioView extends React.Component {
 		return (
 			<RadioGroup onChange={this.onChange} defaultValue={this.state.value}>
 				<Radio value='1'>A</Radio>
-				<Radio disabled value='2'>B</Radio>
+				<Radio disabled value='2' style={{margin: '0 8px 0 8px'}}>B</Radio>
 				<Radio value='3'>C</Radio>
-				<Radio value='4'>D</Radio>
+				<Radio value='4' style={{margin: '0 0 0 8px'}}>D</Radio>
 			</RadioGroup>
 		)
 	}
@@ -95,9 +95,9 @@ class RadioView extends React.Component {
 		return (
 			<RadioGroup direction='vertical' onChange={this.onChange} defaultValue='3'>
 				<Radio value='1'>A</Radio>
-				<Radio value='2'>B</Radio>
+				<Radio value='2' style={{margin: '8px 0 8px 0'}}>B</Radio>
 				<Radio value='3'>C</Radio>
-				<Radio value='4'>D</Radio>
+				<Radio value='4' style={{margin: '8px 0 0 0'}}>D</Radio>
 			</RadioGroup>
 		)
 	}
@@ -128,16 +128,17 @@ class RadioView extends React.Component {
 			<div>
 				<RadioGroup onChange={this.onChange} defaultValue='6'>
 					<Radio value='5'>A</Radio>
-					<Radio value='6'>B</Radio>
+					<Radio value='6' style={{margin: '0 8px 0 8px'}}>B</Radio>
 					<Radio value='7'>C</Radio>
-					<Radio value='8'>D</Radio>
+					<Radio value='8' style={{margin: '0 8px 0 8px'}}>D</Radio>
 				</RadioGroup>
+				<br />
 				<br />
 				<RadioGroup onChange={this.onChange} defaultValue='11'>
 					<Radio value='10'>A</Radio>
-					<Radio value='9'>B</Radio>
+					<Radio value='9' style={{margin: '0 8px 0 8px'}}>B</Radio>
 					<Radio value='11'>C</Radio>
-					<Radio value='12'>D</Radio>
+					<Radio value='12' style={{margin: '0 8px 0 8px'}}>D</Radio>
 				</RadioGroup>
 			</div>
 		)
@@ -168,9 +169,9 @@ class RadioView extends React.Component {
 		return (
 			<RadioGroup name='radioGroup' onChange={this.onChange} defaultValue={this.state.value}>
 				<Radio value='1'>A</Radio>
-				<Radio value='2'>B</Radio>
+				<Radio value='2' style={{margin: '0 8px 0 8px'}}>B</Radio>
 				<Radio value='3'>C</Radio>
-				<Radio value='4'>D</Radio>
+				<Radio value='4' style={{margin: '0 8px 0 8px'}}>D</Radio>
 			</RadioGroup>
 		)
 	}

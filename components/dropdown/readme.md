@@ -28,11 +28,11 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 <div>
-  <DropdownNormal overlay={menu2} type='caret-down' trigger={['hover']} >
+  <DropdownNormal style={{marginRight: 20}} overlay={menu2} type='caret-down' trigger={['hover']} >
     下拉菜单
   </DropdownNormal>
   <Dropdown overlay={menu1} trigger={['hover']} onClick={handleButtonClick}>
-    <Button>
+    <Button style={{marginLeft: '50px'}}>
     默认菜单
     </Button>
   </Dropdown>
@@ -109,7 +109,7 @@ function handleMenu1Click(e) {
   console.info('click', e);
 };
 
-<ButtonGroup className='ButtonGroup'>
+<ButtonGroup>
   <Button>
     操作一
   </Button>
@@ -219,7 +219,7 @@ function handleButtonClick(e) {
     点击下拉菜单
   </DropdownNormal>
   <Dropdown overlay={menu} trigger={['hover']} onClick={handleButtonClick}>
-    <Button>
+    <Button style={{marginLeft: 25}}>
     hover默认菜单
     </Button>
   </Dropdown>
