@@ -3,23 +3,19 @@
 ##### **基本用法**
 最简单用法
 ```jsx
-import { Popconfirm } from 'dbox-ui';
+import { Popconfirm,Message } from 'dbox-ui';
 class PopconfirmDemo extends React.Component {
     constructor() {
         super();
-        this.state = {
-            visible: false,
-        }
         this.confirm = this.confirm.bind(this);
         this.cancel = this.cancel.bind(this);
     }
 
     confirm(){
-        this.setState({ visible: false });
         Message.success('删除成功');
     }
     cancel(){
-        this.setState({ visible: false });
+        Message.error('删除取消');
     }
     render() {
         return (
@@ -38,26 +34,21 @@ class PopconfirmDemo extends React.Component {
 ##### **12个方向**
 弹出框位置有十二个方向。可通过设置 `placement` 属性控制。
 ```jsx
-import { Popconfirm,Button } from 'dbox-ui';
+import { Popconfirm,Button,Message } from 'dbox-ui';
 const buttonWidth = '70px';
 const text = '确定要删除吗';
 class PopconfirmDemo extends React.Component {
     constructor() {
         super();
-        this.state = {
-             visible: false,
-        }
         this.confirm = this.confirm.bind(this);
         this.cancel = this.cancel.bind(this);
     }
 
     confirm(){
-        this.setState({ visible: false });
         Message.success('删除成功');
     }
     cancel(){
-        this.setState({ visible: false });
-        console.log('click cancel');
+        Message.error('删除取消');
     }
     render() {
         return (
@@ -117,7 +108,7 @@ class PopconfirmDemo extends React.Component {
 ##### **条件触发**
 可以判断是否需要弹出。
 ```jsx
-import { Popconfirm,Switch } from 'dbox-ui';
+import { Popconfirm,Switch,Message } from 'dbox-ui';
 class PopconfirmDemo extends React.Component {
     constructor() {
         super();
