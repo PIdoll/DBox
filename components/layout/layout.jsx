@@ -8,7 +8,7 @@ import './style';
  * @visibleName Layout 布局
  */
 function Layout(props) {
-    const { children, className } = props;
+    const { children, className, style } = props;
     // // console.log('LayoutchildrenLength', children.length);
     let sider = []
     if (children && children.length) {
@@ -20,7 +20,7 @@ function Layout(props) {
        'idoll-layout': 'idoll-layout',
       'idoll-layout-has-sider': sider.length,
     }, className);
-  	return <div {...props} className={classes}>{children}</div>;
+  	return <div {...props} style={{style}} className={classes}>{children}</div>;
 }
 
 Layout.propTypes = {
