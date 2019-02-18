@@ -8,28 +8,28 @@ const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const Sider = Layout.Sider;
-<div>
-  <Layout style={{textAlign: 'center', height: '50vh', color: '#fff'}} >
-    <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
+<div className='base'>
+  <Layout style={{ height: '50vh'}}>
+    <Header style={{ height: '10vh'}}>头部</Header>
     <Content>内容</Content>
-    <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
+    <Footer style={{ height: '10vh'}}>底部</Footer>
   </Layout>
   <br />
-  <Layout style={{textAlign: 'center', height: '50vh', color: '#fff'}}>
-    <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
+  <Layout style={{ height: '50vh'}}>
+    <Header style={{ height: '10vh'}}>头部</Header>
     <Layout>
       <Sider style={{width: '10vh'}}>侧边栏</Sider>
       <Content>内容</Content>
     </Layout>
-    <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
+    <Footer style={{ height: '10vh'}}>底部</Footer>
   </Layout>
   <br />
-  <Layout style={{textAlign: 'center',height: '50vh', color: '#fff'}}>
+  <Layout style={{height: '50vh'}}>
     <Sider style={{ width: '10vh'}}>侧边栏</Sider>
     <Layout style={{height: '50vh'}}>
-      <Header style={{textAlign: 'center', height: '10vh'}}>头部</Header>
+      <Header style={{height: '10vh'}}>头部</Header>
       <Content>内容</Content>
-      <Footer style={{textAlign: 'center', height: '10vh'}}>底部</Footer>
+      <Footer style={{height: '10vh'}}>底部</Footer>
     </Layout>
   </Layout>
 </div>
@@ -84,8 +84,8 @@ class LayoutView extends React.Component {
           <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
           <Breadcrumb.Item>子菜单</Breadcrumb.Item>
         </Breadcrumb>
-        <Content>
-          <div className='content'>内容</div>
+        <Content style={{padding: 24, backgroundColor: '#f5f5f5'}}>
+          <div className='content' style={{backgroundColor: '#fff'}}>内容</div>
         </Content>
       </Layout>
     )
@@ -231,8 +231,8 @@ class LayoutView extends React.Component {
               <Breadcrumb.Item><a href='javascript:void(0);'>订单中心</a></Breadcrumb.Item>
               <Breadcrumb.Item>子菜单</Breadcrumb.Item>
             </Breadcrumb>
-            <Content>
-              <div className='content' style={{textAlign: 'center'}}>内容</div>
+            <Content style={{padding: '0 24px 24px 24px', backgroundColor: '#f5f5f5'}}>
+              <div className='content' style={{backgroundColor: '#fff'}}>内容</div>
             </Content>
           </Layout>
         </Layout>
@@ -420,8 +420,8 @@ class LayoutView extends React.Component {
                 Alvin
               </DropdownNormal>
             </Header>
-            <Content>
-              <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
+            <Content style={{backgroundColor: '#f5f5f5'}}>
+              <Tabs conentStyle={{padding: '24px'}} hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type='editable-card' onEdit={this.onEdit}>
                 {this.state.panes.map(pane => <TabPane closable={pane.key === '27' ? false : 'true'} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
               </Tabs>
             </Content>

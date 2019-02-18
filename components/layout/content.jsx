@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import './style'
 
 function Content(props) {
-	  const { children, className } = props;
+	  const { children, className, style } = props;
 	  const classes = classNames({
 		'idoll-layout-content': 'idoll-layout-content',
 	  }, className)
-  	return <div className={classes}>{children}</div>;
+  	return <div className={classes} style={style}>{children}</div>;
 }
 
 Content.propTypes = {
