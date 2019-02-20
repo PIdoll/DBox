@@ -28,7 +28,7 @@ class Sider extends Component {
   }
 
   render() {
-    const { span, children, className, collapsed, onCollapse } = this.props
+    const { span, children, className, collapsed, onCollapse, style } = this.props
 
     let currentSpan
     if (typeof span === 'number') {
@@ -54,7 +54,7 @@ class Sider extends Component {
     ]);
 
     return (
-      <div {...otherProps} className={classes}>
+      <div {...otherProps} style={style} className={classes}>
         {children}
       </div>
     )
@@ -69,6 +69,7 @@ Sider.propTypes = {
   collapsed: PropTypes.bool,
   children: PropTypes.node,
   onCollapse: PropTypes.func,
+  style: PropTypes.object,
 }
 
 export default Sider

@@ -10,12 +10,13 @@ function Header(props) {
       'idoll-layout-header': 'idoll-layout-header',
       [`idoll-layout-header-${span}`]: span
     }, className);
-  	return <div {...props} className={classes} style={{style}} >{children}</div>;
+  	return <div {...props} className={classes} style={style} >{children}</div>;
 }
 
 Header.propTypes = {
   span: PropTypes.number,
-  children: PropTypes.node
+  children: PropTypes.node,
+  style: PropTypes.object
 };
 
 export default Header;
