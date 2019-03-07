@@ -270,18 +270,18 @@ export default class Input extends Component {
     this.setState({
       isOnInput: true,
     });
-    this.props.onInput()
+    this.props.onInput(e)
   }
 
   onBlur = (e) => {
     this.setState({
       isOnInput: false,
     });
-    this.props.onBlur()
+    this.props.onBlur(e)
   }
 
-  onChange = () => {
-    this.props.onChange()
+  onChange = (e) => {
+    this.props.onChange(e)
   }
 
   renderInput() {
