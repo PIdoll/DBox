@@ -28,6 +28,9 @@
   }
 
   &-item {
+    >div {
+      height: 100%;
+    }
     span {
       vertical-align: middle;
     }
@@ -44,8 +47,6 @@
   &-submenu,
   &-submenu-inline {
     transition: border-color .3s @ease-in-out, background .3s @ease-in-out;
-    margin-top: 4px;
-    margin-bottom: 4px;
   }
 
   &-submenu &-sub {
@@ -58,6 +59,7 @@
     color: @menu-item-color;
     &:hover {
       color: @menu-highlight-color;
+      transition: all .3s;
     }
     &:focus {
       text-decoration: none;
@@ -82,6 +84,7 @@
     color: @menu-highlight-color;
     > a {
       color: @menu-highlight-color;
+      transition: all .3s;
     }
     i {
       color: @menu-highlight-color ;
@@ -93,6 +96,7 @@
         opacity: 1;
         &:before {
           color: @menu-highlight-color;//!!
+          transition: all .3s;
         }
       }
     }
@@ -100,10 +104,11 @@
 
   &-horizontal &-item,
   &-horizontal &-submenu {
-    margin-top: -1px;
+    // margin-top: -1px;
     font-size: @font-size-base;
     vertical-align: middle;
     padding: 0 @padding-lg;
+    margin: 0;
     height: 56px;
     line-height: 56px;
   }
@@ -114,6 +119,7 @@
     background-color: transparent;
     i {
       color: @menu-color;
+      transition: all .3s;
     }
   }
 
@@ -122,6 +128,7 @@
     > a,
     > a:hover {
       color: @menu-highlight-color;
+      transition: all .3s;
     }
   }
 
@@ -168,6 +175,9 @@
     white-space: nowrap;
     user-select: none;
     transition: color .3s @ease-in-out, border-color .3s @ease-in-out, background .3s @ease-in-out;
+    >div {
+      height: 100%;
+    }
     .@{iconfont-css-prefix} {
       min-width: 14px;
       margin-right: 8px;
@@ -277,26 +287,28 @@
         color: @menu-item-color;
         &:hover {
           color: @menu-highlight-color;
+          transition: all .3s;
         }
       }
     }
   }
-  &-horizontal&-dark {
-    border-bottom-color: @navbar !important;
+  &&-dark&-horizontal {
+    border-bottom-color: @navbar;
     li.@{menu-prefix-cls}-submenu-active {
       color: @menu-color;
     }
     li.@{menu-prefix-cls}-submenu-horizontal:hover {
-      color: @text-color-secondary-dark !important;
+      color: @text-color-secondary-dark;
       i {
         color: @text-color-disable-dark;
+        transition: all .3s;
       }
     }
     li.@{menu-prefix-cls}-item-disabled {
-      color:@text-color-disable-dark !important;
+      color:@text-color-disable-dark;
       div {
         i {
-          color:@text-color-disable-dark !important;
+          color:@text-color-disable-dark;
         }
       }
     }
@@ -444,49 +456,52 @@
   // 设置不可用状态的字体颜色、边框颜色以及鼠标手势提醒，并且取消 hover/tab 的影响
   &-item-disabled:hover {
     i {
-      color: @text-color-disable !important;
+      color: @text-color-disable;
     }
   }
   &-item-disabled,
   &-submenu-disabled {
-    color: @text-color-disable !important;
+    color: @text-color-disable;
     cursor: not-allowed;
     background: none;
-    border-color: transparent !important;
+    border-color: transparent;
     > a {
-      color: @text-color-disable !important;
+      color: @text-color-disable;
       pointer-events: none;
     }
     > .@{menu-prefix-cls}-submenu-title {
-      color: @text-color-disable !important;
+      color: @text-color-disable;
       cursor: not-allowed;
     }
     i {
-      color: @text-color-disable !important;
+      color: @text-color-disable;
     }
   }
   &-dark&-root&-vertical {
     width: 88px;
     >.@{menu-prefix-cls}-item-selected {
-      i {
-        color: @menu-color ;
-      }
+        text-align: center;
+        i {
+          color: @menu-color ;
+        }
     }
     >.@{menu-prefix-cls}-item {
       padding: 0 @padding-lg + 6px ; 
+      text-align: center;
       span {
         display: block;
-        transition: none;
+        transition: all .3s;
       }
       i {
         font-size: @font-size-lg;
         margin-right: 0;
-        transition: none;
+        transition: all .3s;
       }
     }
     >.@{menu-prefix-cls}-item:hover {
       i {
         color: @menu-color;
+        transition: all .3s;
       }
     }
     >.@{menu-prefix-cls}-submenu-vertical {
@@ -495,14 +510,13 @@
         .@{menu-prefix-cls}-submenu-arrow {
           display: none;
         }
-        div {
-          span {
-            display: none;
-          }
-          i {
-            font-size: @font-size-lg;
-            margin-right: 0;
-          }
+        text-align: center;
+        span {
+          display: none;
+        }
+        i {
+          font-size: @font-size-lg;
+          margin-right: 0;
         }
       }
     }
@@ -535,6 +549,7 @@
         div {
           i {
             color: @title-color-dark;
+            transition: all .3s;
           }
         }
       }
@@ -553,13 +568,15 @@
     width: 89px;
     position: relative;
     >.@{menu-prefix-cls}-item-selected {
-      i {
-        color: @menu-highlight-color;
-      }
+        text-align: center;
+        i {
+          color: @menu-highlight-color;
+        }
     }
     >.@{menu-prefix-cls}-item {
       transition: none;
-      padding: 0 @menu-padding; 
+      padding: 0 @menu-padding;
+      text-align: center;
       span {
         display: block;
       }
@@ -575,7 +592,7 @@
         .@{menu-prefix-cls}-submenu-arrow {
           display: none;
         }
-        div {
+          text-align: center;
           span {
             display: none;
           }
@@ -583,7 +600,6 @@
             font-size: @font-size-lg;
             margin-right: 0;
           }
-        }
       }
     }
   }
@@ -596,7 +612,7 @@
     }
     >.@{menu-prefix-cls}-item {
       font-size: @font-size-base;
-      padding: 0 0 0 @padding-md !important;
+      padding: 0 0 0 @padding-md;
       margin: 4px 0;
       span {
         vertical-align: middle;
@@ -605,7 +621,7 @@
     }
     .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
       div.@{menu-prefix-cls}-submenu-title {
-        padding-left: @padding-md  !important;
+        padding-left: @padding-md;
         font-size: @font-size-base;
         span {
           vertical-align: middle;
@@ -615,15 +631,15 @@
         box-shadow: none;
         .@{menu-prefix-cls}-submenu.@{menu-prefix-cls}-submenu-inline {
           div.@{menu-prefix-cls}-submenu-title {
-            padding-left: 40px !important;
+            padding-left: 40px;
             font-size: @font-size-base;
           }
           .@{menu-prefix-cls}-item {
-            padding-left: 60px !important;
+            padding-left: 60px;
           }
         }
         >.@{menu-prefix-cls}-item {
-          padding-left: 40px !important;
+          padding-left: 40px;
           margin: 4px 0;
         }
       }
@@ -650,9 +666,9 @@
   &-light&-vertical-right {
     widows: 89px;
   }
-  &-dark&-vertical-right,&-light&-vertical-right {
-    width: 168px;
-  }
+  // &-dark&-vertical-right,&-light&-vertical-right {
+  //   width: 168px;
+  // }
   &-light&-vertical-right {
     > li.@{menu-prefix-cls}-item-selected {
       position: relative;
@@ -675,12 +691,13 @@
     }
   }
 }
-
-li.@{menu-prefix-cls}-item-disabled {
-  color:@menu-dark-color !important;
-  div {
-    i {
-      color:@menu-dark-color !important;
+.@{menu-prefix-cls}-light {
+  li.@{menu-prefix-cls}-item-disabled {
+    color:@menu-dark-color;
+    div {
+      i {
+        color:@menu-dark-color;
+      }
     }
   }
 }

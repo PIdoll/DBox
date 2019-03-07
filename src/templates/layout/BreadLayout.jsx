@@ -52,70 +52,74 @@ export default class BreadLayout extends React.Component {
   }
   inlineMenu () {
     if (this.state.flag) {
-      return <Menu
-        onClick={this.handleClickBread}
-        defaultSelectedKeys={['7']}
-        mode={this.state.modeMenu}
+      return <Sider className='miniSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
+          onClick={this.handleClickBread}
+          defaultSelectedKeys={['7']}
+          mode={this.state.modeMenu}
 >
-        <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-        <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-          <Menu.Item key='8'>子菜单一</Menu.Item>
-          <Menu.Item key='9'>子菜单二</Menu.Item>
-          <Menu.Item key='10'>子菜单三</Menu.Item>
-          <Menu.Item key='11'>子菜单四</Menu.Item>
-        </SubMenu>
-        <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-          <Menu.Item key='12'>子菜单五</Menu.Item>
-          <Menu.Item key='13'>子菜单六</Menu.Item>
-          <Menu.Item key='14'>子菜单七</Menu.Item>
-          <Menu.Item key='15'>子菜单八</Menu.Item>
-        </SubMenu>
-        <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-          <Menu.Item key='16'>子菜单九</Menu.Item>
-          <Menu.Item key='17'>子菜单十</Menu.Item>
-          <Menu.Item key='18'>子菜单十一</Menu.Item>
-          <Menu.Item key='19'>子菜单十二</Menu.Item>
-        </SubMenu>
-      </Menu>
+          <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <Menu.Item key='8'>子菜单一</Menu.Item>
+            <Menu.Item key='9'>子菜单二</Menu.Item>
+            <Menu.Item key='10'>子菜单三</Menu.Item>
+            <Menu.Item key='11'>子菜单四</Menu.Item>
+          </SubMenu>
+          <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <Menu.Item key='12'>子菜单五</Menu.Item>
+            <Menu.Item key='13'>子菜单六</Menu.Item>
+            <Menu.Item key='14'>子菜单七</Menu.Item>
+            <Menu.Item key='15'>子菜单八</Menu.Item>
+          </SubMenu>
+          <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <Menu.Item key='16'>子菜单九</Menu.Item>
+            <Menu.Item key='17'>子菜单十</Menu.Item>
+            <Menu.Item key='18'>子菜单十一</Menu.Item>
+            <Menu.Item key='19'>子菜单十二</Menu.Item>
+          </SubMenu>
+        </Menu>
+        <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>
     } else {
-      return <Menu
-        onClick={this.handleClickBread}
-        defaultSelectedKeys={['7']}
-        openKeys={this.state.openKeys}
-        onOpenChange={this.onOpenChange}
-        mode={this.state.modeMenu}
+      return <Sider className='normalSlider'>
+        <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
+        <Menu
+          onClick={this.handleClickBread}
+          defaultSelectedKeys={['7']}
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
+          mode={this.state.modeMenu}
 >
-        <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
-        <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
-          <Menu.Item key='8'>子菜单一</Menu.Item>
-          <Menu.Item key='9'>子菜单二</Menu.Item>
-          <Menu.Item key='10'>子菜单三</Menu.Item>
-          <Menu.Item key='11'>子菜单四</Menu.Item>
-        </SubMenu>
-        <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
-          <Menu.Item key='12'>子菜单五</Menu.Item>
-          <Menu.Item key='13'>子菜单六</Menu.Item>
-          <Menu.Item key='14'>子菜单七</Menu.Item>
-          <Menu.Item key='15'>子菜单八</Menu.Item>
-        </SubMenu>
-        <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
-          <Menu.Item key='16'>子菜单九</Menu.Item>
-          <Menu.Item key='17'>子菜单十</Menu.Item>
-          <Menu.Item key='18'>子菜单十一</Menu.Item>
-          <Menu.Item key='19'>子菜单十二</Menu.Item>
-        </SubMenu>
-      </Menu>
+          <Menu.Item key='7'><div><Icon type='home' /><span>首页</span></div></Menu.Item>
+          <SubMenu key='item_1' title={<div><Icon type='platform' /><span>工作台</span></div>}>
+            <Menu.Item key='8'>子菜单一</Menu.Item>
+            <Menu.Item key='9'>子菜单二</Menu.Item>
+            <Menu.Item key='10'>子菜单三</Menu.Item>
+            <Menu.Item key='11'>子菜单四</Menu.Item>
+          </SubMenu>
+          <SubMenu key='item_2' title={<div><Icon type='bars' /><span>订单中心</span></div>}>
+            <Menu.Item key='12'>子菜单五</Menu.Item>
+            <Menu.Item key='13'>子菜单六</Menu.Item>
+            <Menu.Item key='14'>子菜单七</Menu.Item>
+            <Menu.Item key='15'>子菜单八</Menu.Item>
+          </SubMenu>
+          <SubMenu key='item_3' title={<div><Icon type='tool' /><span>配置管理</span></div>}>
+            <Menu.Item key='16'>子菜单九</Menu.Item>
+            <Menu.Item key='17'>子菜单十</Menu.Item>
+            <Menu.Item key='18'>子菜单十一</Menu.Item>
+            <Menu.Item key='19'>子菜单十二</Menu.Item>
+          </SubMenu>
+        </Menu>
+        <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
+      </Sider>
     }
   }
   render() {
   return (
     <div className='layout-inlineNav'>
       <Layout>
-        <Sider >
-          <div className={this.state.flag ? 'miniLogo' : 'logo'}><div>LOGO</div></div>
-          {this.inlineMenu()}
-          <Icon type={this.state.flag ? 'right-circle-o' : 'left-circle-o'} onClick={this.changeModel} />
-        </Sider>
+        {this.inlineMenu()}
         <Layout>
           <Header style={{height: '56px'}} >
             <Icon type='message' />
@@ -130,7 +134,8 @@ export default class BreadLayout extends React.Component {
             <Breadcrumb.Item>子菜单</Breadcrumb.Item>
           </Breadcrumb>
           <Content>
-            <div className='content'>内容</div>
+            <div className='content'>首页
+            </div>
           </Content>
         </Layout>
       </Layout>

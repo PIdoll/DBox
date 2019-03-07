@@ -49,6 +49,26 @@ const buttonStyle = {
   <Button icon='delete' shape='square' size='small' style={buttonStyle}/>
   <Button icon='delete' shape='square' style={buttonStyle}/>
   <Button icon='delete' shape='square' size='large' style={buttonStyle}/>
+
+  <br /><br />
+  <Button type='primary' icon='delete' shape='square' size='small' style={buttonStyle}/>
+  <Button type='primary' icon='delete' shape='square' style={buttonStyle}/>
+  <Button type='primary' icon='delete' shape='square' size='large' style={buttonStyle}/>
+
+  <br /><br />
+  <Button type='secondary' icon='delete' shape='square' size='small' style={buttonStyle}/>
+  <Button type='secondary' icon='delete' shape='square' style={buttonStyle}/>
+  <Button type='secondary' icon='delete' shape='square' size='large' style={buttonStyle}/>
+
+  <br /><br />
+  <Button type='dashed' icon='delete' shape='square' size='small' style={buttonStyle}/>
+  <Button type='dashed' icon='delete' shape='square' style={buttonStyle}/>
+  <Button type='dashed' icon='delete' shape='square' size='large' style={buttonStyle}/>
+
+  <br /><br />
+  <Button type='danger' icon='delete' shape='square' size='small' style={buttonStyle}/>
+  <Button type='danger' icon='delete' shape='square' style={buttonStyle}/>
+  <Button type='danger' icon='delete' shape='square' size='large' style={buttonStyle}/>
 </div>
 ```
 

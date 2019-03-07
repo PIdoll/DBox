@@ -51,7 +51,7 @@
     // .button-color(@color; @primary-hover; @primary-hover);
     > .@{iconfont-css-prefix} {
       // color: @color;
-      color: @primary-hover;
+      color: @color;
     }
     .button-color(@color; @primary-hover; @primary-hover);
   }
@@ -59,7 +59,7 @@
   &:active,
   &.active {
     > .@{iconfont-css-prefix} {
-      color: @primary-pressed;
+      color: @color;
     }
     .button-color(@color; @primary-pressed;@primary-pressed);
   }
@@ -96,14 +96,23 @@
 
   &:hover {
     .button-color(@background; @color;  @color);
+    > .@{iconfont-css-prefix} {
+      color: @background;
+    }
   }
   &:focus {
     .button-color(@color; @background; @error-hover);
+    > .@{iconfont-css-prefix} {
+      color: @color;
+    }
   }
 
   &:active,
   &.active {
-    .button-color(@background; @primary-pressed; @primary-pressed);
+    .button-color(@background; @error-pressed; @error-pressed);
+    > .@{iconfont-css-prefix} {
+      color: @background;
+    }
   }
 
   .button-disabled();
@@ -245,12 +254,21 @@
 
   &:hover,
   &:focus {
+    > .@{iconfont-css-prefix} {
+      color: @primary-hover;
+    }
     .button-color(@primary-hover;@btn-primary-color; @primary-hover);
   }
 
   &:active,
   &.active {
+    > .@{iconfont-css-prefix} {
+      color: @primary-hover;
+    }
     .button-color(@primary-pressed; @btn-primary-color; @primary-pressed);
+  }
+  .idoll-icon {
+    color: @btn-primary-bg;
   }
 
   .button-disabled();
@@ -294,6 +312,9 @@
 // 危险按钮
 .btn-danger() {
   .button-variant-danger(@error-color, @btn-default-bg,  @btn-default-border);
+  .idoll-icon {
+    color: @error-color;
+  }
 }
 
 // 特定按钮: 内容只包含 icon

@@ -43,9 +43,8 @@
         position: absolute;
         left: 40px;
         font-size:@font-size-base;
-        font-family:PingFangSC-Medium;
+        font-family: @font-family;
         font-weight:500;
-        color:@white;
       }
 
       &-selected >:first-child {
@@ -79,7 +78,7 @@
         min-height: 32px;
         transition: all .3s;
         font-size:@font-size-base;
-        font-family:PingFangSC-Regular;
+        font-family: @font-family;
         font-weight:400;
         color: @text-color;
         > span {
@@ -135,6 +134,9 @@
         font-size: @font-size-sm;
       }
     }
+    .@{idoll-prefix}-btn-primary:hover .@{iconfont-css-prefix} {
+      color: @white;
+    }
   }
 
   .disabled-icon {
@@ -142,6 +144,9 @@
       color: @text-color-disable;
     }
     .@{iconfont-css-prefix}-right {
+      color: @text-color-disable;
+    }
+    .@{idoll-prefix}-btn-primary:hover .@{iconfont-css-prefix} {
       color: @text-color-disable;
     }
   }

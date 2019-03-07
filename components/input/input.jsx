@@ -23,7 +23,9 @@ export default class Input extends Component {
     type: 'text',
     onPressEnter() {},
     onKeyDown() {},
-    onChange() {}
+    onChange() {},
+    onBlur() {},
+    onInput() {}
   };
 
   static propTypes = {
@@ -267,13 +269,19 @@ export default class Input extends Component {
   onInput = (e) => {
     this.setState({
       isOnInput: true,
-    })
+    });
+    this.props.onInput(e)
   }
 
   onBlur = (e) => {
     this.setState({
       isOnInput: false,
     });
+    this.props.onBlur(e)
+  }
+
+  onChange = (e) => {
+    this.props.onChange(e)
   }
 
   renderInput() {
