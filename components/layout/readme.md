@@ -219,7 +219,7 @@ class LayoutView extends React.Component {
         <Layout>
           {this.inlineMenu()}
           <Layout>
-            <Header style={{height: '56px', paddingRight: 24}} >
+            <Header style={{height: 56, paddingRight: 24, border: '1px solid #f5f5f5', lineHeight: '56px'}} >
               <Icon type='message' />
               <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
               <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >
@@ -413,7 +413,7 @@ class LayoutView extends React.Component {
         <Layout>
           {this.inlineMenu()}
           <Layout>
-            <Header style={{height: '56px', paddingRight: 24}} >
+            <Header style={{height: 56, paddingRight: 24, border: '1px solid #f5f5f5', lineHeight: '56px'}} >
               <Icon type='message' />
               <Avatar size='small' src='https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces' alt='DBox' />
               <DropdownNormal overlay={menu} type='caret-down' trigger={['hover']} >

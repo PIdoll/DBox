@@ -5,6 +5,8 @@
 可通过设置 `disabled` 属性为禁用状态，设置 `readOnly` 属性为只读状态，设置`clearable` 属性为支持可清除。
 ```jsx
 import { Input } from 'dbox-ui';
+
+
 <div>
     <Input type='text' placeholder='请输入' style={{width: '200px'}} clearable/><br /><br />
     <Input type='text' disabled placeholder='请输入' style={{width: '200px'}} /><br /><br />
@@ -255,6 +257,10 @@ class NumericInputDemo extends React.Component {
 | type | 声明 input 类型，同原生 input 标签的 type 属性 | string | `text` |
 | value | 输入框内容 | string |  |
 | onPressEnter | 按下回车的回调 | function(e) |  |
+| onChange | 内容改变回调 | function(e) |  |
+| onInput | 内容输入的回调 | function(e) |  |
+| onBlur | 失去焦点的回调 | function(e) |  |
+| onFocus | 获取焦点的回调 | function(e) |  |
 
 ##### **Input.TextArea**
 

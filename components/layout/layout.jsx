@@ -9,7 +9,6 @@ import './style';
  */
 function Layout(props) {
     const { children, className, style } = props;
-    // // console.log('LayoutchildrenLength', children.length);
     let sider = []
     if (children && children.length) {
       sider = children.filter((item) => {
@@ -20,7 +19,7 @@ function Layout(props) {
        'idoll-layout': 'idoll-layout',
       'idoll-layout-has-sider': sider.length,
     }, className);
-  	return <div {...props} style={{style}} className={classes}>{children}</div>;
+  	return <div {...props} style={style} className={classes}>{children}</div>;
 }
 
 Layout.propTypes = {
