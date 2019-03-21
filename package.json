@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development webpack-dev-server --open --hot --config webpack.dev.js --mode development",
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode production",
     "npm": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode production && node ./scripts/buildEs.js  && babel components -d lib && gulp --gulpfile ./scripts/buildStyle.js",
-    "doc": "NODE_ENV=development styleguidist server",
+    "doc": "set NODE_ENV=development && styleguidist server",
     "doc:build": "NODE_ENV=development styleguidist build"
   },
   "repository": {
