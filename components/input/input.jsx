@@ -14,6 +14,23 @@ function fixControlledValue(value) {
   return value;
 }
 
+document.onkeydown =function (e) {
+  let ev = e || window.event; //获取event对象
+  if (ev.keyCode == 8) {
+      let obj = ev.target || ev.srcElement; //获取事件源
+      let t = obj.type || obj.getAttribute('type'); //获取事件源类型
+      //获取作为判断条件的事件类型
+      let vReadOnly = obj.getAttribute('readonly') || obj.readOnly;
+      let vdisabled = obj.getAttribute('disabled') || obj.disabled;
+      let flag1 = ((t == "password" || t == "text" || t == "textarea"|| t == "email"|| t == "url"|| t == "number"|| t == "range"|| t == "Date"|| t == "search"|| t == "color") && (vReadOnly == true || vdisabled == true)) ? true : false;
+      let flag2 = (t != "password" && t != "text" && t != "textarea"&& t != "email"&&t != "url"&& t != "number"&& t != "range"&& t != "Date"&& t != "search"&& t != "color") ? true : false;
+      //判断
+      if (flag1 || flag2) {
+          return false;
+      }
+  }
+};
+
 export default class Input extends Component {
   static defaultProps = {
     // intialValue: '',
@@ -72,6 +89,23 @@ export default class Input extends Component {
       isOnInput: false,
       isInputHover: false,
       isIconHover: false,
+    }
+  }
+
+  isIE = () => {
+    if (window.ActiveXObject || "ActiveXObject" in window){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  isEdge = () => {
+    const isEdge = navigator.userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
+    if(isEdge){
+        return true;
+    }else{
+        return false;
     }
   }
 
@@ -309,6 +343,7 @@ export default class Input extends Component {
     return this.renderLaybeldIcon(
       <input
         {...otherProps}
+        unselectable={this.props.readOnly && (this.isEdge() || this.isIE()) ? 'on' : null}
         clearable={toString(otherProps.clearable)}
         className={classNames(this.getInputClassName(), className)}
         onKeyDown={this.handleKeyDown}
