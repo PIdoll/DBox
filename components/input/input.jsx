@@ -339,7 +339,6 @@ export default class Input extends Component {
       // specify either the value prop, or the defaultValue props, but no both
       delete otherProps.defaultValue;
     }
-    console.log(this.isEdge())
 
     return this.renderLaybeldIcon(
       <input
