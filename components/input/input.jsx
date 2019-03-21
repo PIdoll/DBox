@@ -14,17 +14,17 @@ function fixControlledValue(value) {
   return value;
 }
 
-document.onkeydown =function (e) {
-  let ev = e || window.event; //获取event对象
-  if (ev.keyCode == 8) {
-      let obj = ev.target || ev.srcElement; //获取事件源
-      let t = obj.type || obj.getAttribute('type'); //获取事件源类型
-      //获取作为判断条件的事件类型
+document.onkeydown = function (e) {
+  let ev = e || window.event; // 获取event对象
+  if (ev.keyCode === 8) {
+      let obj = ev.target || ev.srcElement; // 获取事件源
+      let t = obj.type || obj.getAttribute('type'); // 获取事件源类型
+      // 获取作为判断条件的事件类型
       let vReadOnly = obj.getAttribute('readonly') || obj.readOnly;
       let vdisabled = obj.getAttribute('disabled') || obj.disabled;
-      let flag1 = ((t == "password" || t == "text" || t == "textarea"|| t == "email"|| t == "url"|| t == "number"|| t == "range"|| t == "Date"|| t == "search"|| t == "color") && (vReadOnly == true || vdisabled == true)) ? true : false;
-      let flag2 = (t != "password" && t != "text" && t != "textarea"&& t != "email"&&t != "url"&& t != "number"&& t != "range"&& t != "Date"&& t != "search"&& t != "color") ? true : false;
-      //判断
+      let flag1 = !!(((t === 'password' || t === 'text' || t === 'textarea' || t === 'email' || t === 'url' || t === 'number' || t === 'range' || t === 'Date' || t === 'search' || t === 'color') && (vReadOnly === true || vdisabled === true)));
+      let flag2 = !!((t !== 'password' && t !== 'text' && t !== 'textarea' && t !== 'email' && t !== 'url' && t !== 'number' && t !== 'range' && t !== 'Date' && t !== 'search' && t !== 'color'));
+      // 判断
       if (flag1 || flag2) {
           return false;
       }
@@ -93,18 +93,18 @@ export default class Input extends Component {
   }
 
   isIE = () => {
-    if (window.ActiveXObject || "ActiveXObject" in window){
+    if (window.ActiveXObject || 'ActiveXObject' in window) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
   isEdge = () => {
-    const isEdge = navigator.userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
-    if(isEdge){
+    const isEdge = navigator.userAgent.indexOf('Edge') > -1; // 判断是否IE的Edge浏览器
+    if (isEdge) {
         return true;
-    }else{
+    } else {
         return false;
     }
   }
