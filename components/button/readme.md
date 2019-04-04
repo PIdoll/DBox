@@ -26,6 +26,10 @@ import { Button } from 'dbox-ui';
 const buttonStyle = {
   marginLeft: '10px'
 };
+
+handleOnClick = () => {
+  console.log('click');
+}
 <div>
   <Button icon='delete' size='small' style={buttonStyle}>图标</Button>
   <Button icon='delete' style={buttonStyle}>图标</Button>
@@ -36,9 +40,9 @@ const buttonStyle = {
   <Button icon='down' iconLocation='right' size='large' style={buttonStyle}>图标</Button>
   <br /><br />
 
-  <Button loading iconLocation='right' size='small' style={buttonStyle}>加载中</Button>
-  <Button loading iconLocation='right' style={buttonStyle}>加载中</Button>
-  <Button loading iconLocation='right' size='large' style={buttonStyle}>加载中</Button>
+  <Button type='primary' loading iconLocation='right' size='small' style={buttonStyle} onClick={this.handleOnClick}>加载中</Button>
+  <Button type='primary' loading iconLocation='right' style={buttonStyle}>加载中</Button>
+  <Button type='primary' loading iconLocation='right' size='large' style={buttonStyle}>加载中</Button>
   <br /><br />
 
   <Button icon='delete' size='small' shape='circle' style={buttonStyle}/>
