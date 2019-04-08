@@ -214,8 +214,9 @@ export default class Input extends Component {
   }
 
   // 清除输入框
-  onClear = () => {
+  onClear = (e) => {
     this.input.value = '';
+    this.onChange(e); // form表单可清空
     this.setState({
       isHover: false,
     })
