@@ -915,6 +915,80 @@ const WrappedFormDemo = Form.create()(FormDemo);
 <WrappedFormDemo />
 ```
 
+##### **表单布局**
+表单三种布局方式
+```jsx
+import { Form,Row,Col,Input,Button,Radio} from 'dbox-ui';
+const RadioGroup = Radio.RadioGroup;
+const RadioButton = Radio.RadioButton;
+const FormItem = Form.Item;
+class FormDemo extends React.Component {
+  constructor(){
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFormLayoutChange = this.handleFormLayoutChange.bind(this);
+    this.state = {
+      formLayout: 'horizontal',
+    };
+  }
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('表单提交内容: ', values);
+      }
+    });
+  }
+
+  handleFormLayoutChange(e){
+    this.setState({ formLayout: e.target.value });
+  }
+
+  render(){
+    const { getFieldDecorator } = this.props.form;
+    const { formLayout } = this.state;
+    const formItemLayout = formLayout === 'horizontal' ? {
+      labelCol: { span: 4 },
+      wrapperCol: { span: 14 },
+    } : null;
+    const buttonItemLayout = formLayout === 'horizontal' ? {
+      wrapperCol: { span: 14, offset: 4 },
+    } : null;
+    return(
+        <Form layout={formLayout}>
+          <Form.Item
+            label="Form Layout"
+            {...formItemLayout}
+          >
+            <RadioGroup defaultValue="horizontal" onChange={this.handleFormLayoutChange}>
+              <RadioButton value="horizontal">Horizontal</RadioButton>
+              <RadioButton value="vertical">Vertical</RadioButton>
+              <RadioButton value="inline">Inline</RadioButton>
+            </RadioGroup>
+          </Form.Item>
+          <Form.Item
+            label="Field A"
+            {...formItemLayout}
+          >
+            <Input placeholder="input placeholder" />
+          </Form.Item>
+          <Form.Item
+            label="Field B"
+            {...formItemLayout}
+          >
+            <Input placeholder="input placeholder" />
+          </Form.Item>
+          <Form.Item {...buttonItemLayout}>
+            <Button type="primary">Submit</Button>
+          </Form.Item>
+        </Form>
+    )
+  }
+}
+const WrappedFormDemo = Form.create()(FormDemo);
+<WrappedFormDemo />
+```
+
 ##### **自定义校验**
 自定义一些表单空间的校验规则
 ```jsx
