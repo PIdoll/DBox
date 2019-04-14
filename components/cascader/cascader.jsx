@@ -162,14 +162,36 @@ export default class Cascader extends React.Component {
     }
   }
 
+  getFilledFieldNames = (fieldNames) => {
+    let names = {
+      children: 'children',
+      label: 'label',
+      value: 'value',
+    };
+    if (fieldNames) {
+      names = {
+        children: fieldNames.children || 'children',
+        label: fieldNames.label || 'label',
+        value: fieldNames.value || 'value',
+      };
+    }
+    return names;
+  }
+
   getLabel() {
-    const { options, displayRender = defaultDisplayRender } = this.props;
+    const { options, displayRender = defaultDisplayRender, fieldNames } = this.props;
+    const names = this.getFilledFieldNames(fieldNames);
     const value = this.state.value;
+    // const unwrappedValue = Array.isArray(value[0]) ? value[0] : value;
+    // const selectedOptions = arrayTreeFilter(options,
+    //   (o, level) => o.value === unwrappedValue[level],
+    // );
+    // const label = selectedOptions.map(o => o.label);
     const unwrappedValue = Array.isArray(value[0]) ? value[0] : value;
     const selectedOptions = arrayTreeFilter(options,
-      (o, level) => o.value === unwrappedValue[level],
+      (o, level) => o[names.value] === unwrappedValue[level], { childrenKeyName: names.children }
     );
-    const label = selectedOptions.map(o => o.label);
+    const label = selectedOptions.map(o => o[names.label]);
     return displayRender(label, selectedOptions);
   }
 
@@ -241,7 +263,6 @@ export default class Cascader extends React.Component {
       prefixCls, inputPrefixCls, children, placeholder, size, disabled,
       className, style, allowClear, autoFocus, showSearch = false, ...otherProps
     } = props;
-
     const value = state.value;
 
     const sizeCls = classNames({
