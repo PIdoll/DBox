@@ -73,7 +73,7 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    let { okText, confirmLoading, cancelText, footer, visible } = this.props;
+    let { style, okText, confirmLoading, cancelText, footer, visible } = this.props;
 
     if (this.context.idollLocale && this.context.idollLocale.Modal) {
       okText = okText || this.context.idollLocale.Modal.okText;
@@ -102,6 +102,7 @@ export default class Modal extends React.Component {
         onClose={this.handleCancel}
         footer={footer || defaultFooter}
         {...this.props}
+        style={style}
         visible={visible}
         mousePosition={mousePosition}
       />
