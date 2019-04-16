@@ -20,7 +20,6 @@ export default class Modal extends React.Component {
     prefixCls: 'idoll-modal',
     onOk: noop,
     onCancel: noop,
-    width: 560,
     transitionName: 'zoom',
     maskTransitionName: 'fade',
     visible: false

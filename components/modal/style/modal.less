@@ -7,6 +7,7 @@
   position: relative;
   margin: 0 auto;
   top: 100px;
+  width: 560px;
 
   &-wrap {
     position: fixed;
@@ -75,19 +76,12 @@
 
   &-header {
     position: relative;
-    padding: @padding-md @padding-md+8;
+    padding: @padding-md @padding-lg @padding-md 0;
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: @white;
     color: @text-color ;
-  }
-  &-header:after {
-    position: absolute;
-    top: 100%;
-    left: @padding-md+8;
-    content: '';
-    width: 560 - (@padding-md+8) - (@padding-md+8);
-    height: 1px;
-    background-color: @border;
+    margin: @padding-lg;
+    border-bottom: 1px solid @border;
   }
 
   &-body {
