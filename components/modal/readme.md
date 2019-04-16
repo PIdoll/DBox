@@ -205,6 +205,7 @@ class ModalView extends React.Component {
 | iconType   | 图标 Icon 类型    | String | question-circle |
 | okText     | 确认按钮文字    | String           | 确定       |
 | cancelText | 取消按钮文字    | String           | 取消       |
+| bodyStyle | Modal内body样式    | Object           | -       |
 
 
 ```jsx noeditor
