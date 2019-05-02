@@ -259,10 +259,12 @@ export default class Cascader extends React.Component {
 
   render() {
     const { props, state } = this;
+    const newProps = Object.assign({}, props);
+    delete newProps.fieldNames;
     const {
       prefixCls, inputPrefixCls, children, placeholder, size, disabled,
       className, style, allowClear, autoFocus, showSearch = false, ...otherProps
-    } = props;
+    } = newProps;
     const value = state.value;
 
     const sizeCls = classNames({
