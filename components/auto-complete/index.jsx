@@ -1,3 +1,4 @@
-import autoComplete from './autoComplete';
-
-export default autoComplete;
+import AutoComplete from './autoComplete';
+const {Option} = AutoComplete;
+export {Option};
+export default AutoComplete;

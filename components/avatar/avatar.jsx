@@ -25,7 +25,7 @@ class Avatar extends React.Component {
         src: PropType.string
     }
     static defaultProps = {
-        prefixCls: 'dbox-avatar',
+        prefixCls: 'idoll-avatar',
         size: 'default',
         shape: 'cirecle'
     };

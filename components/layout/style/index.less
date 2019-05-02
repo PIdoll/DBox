@@ -1,14 +1,34 @@
 @import '../../../style/theme/default/index';
 @import './mixin';
 
+
+.base {
+  text-align: center;
+  .@{idoll-prefix}-layout-header{
+    text-align: center;
+    height: 10vh;
+    background-color: @layout-header-background
+  }
+  .@{idoll-prefix}-layout-sider{
+    background-color: @layout-sider-background
+  }
+  .@{idoll-prefix}-layout-content{
+    background-color: @layout-content-background
+  }
+  .@{idoll-prefix}-layout-footer {
+    background-color: @layout-footer-background
+  }
+}
 .@{idoll-prefix}-layout {
   box-sizing: border-box;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   flex: 1;
-  height: 100vh;
+  font-size: @font-size-lg + 4px ;
+  font-weight: 500;
   overflow: hidden;
-  background-color: @layout-backgound-color;
+
 }
 
 .@{idoll-prefix}-layout-has-sider {
@@ -16,42 +36,206 @@
 }
 
 .@{idoll-prefix}-layout-sider {
-  // position: relative;
-  width: @layout-sider-basic-width;
   height: 100%;
-  background-color: @layout-sider-background;
 }
-
-.@{idoll-prefix}-silder-toggle{
-  position: absolute;
-  top: 20px;
-  right: -30px;
+.@{idoll-prefix}-layout-sider-miniSlider {
+  width: 88px;
+  transition: width .3s;
 }
-
-.make-sider-span();
+.@{idoll-prefix}-layout-sider-normalSlider {
+  width: 168px;
+  transition: width .3s;
+}
 
 .@{idoll-prefix}-layout-header {
   width: 100%;
-  height: @layout-header-base-height;
-  background-color: @layout-header-background;
-}
-
-.@{idoll-prefix}-layout-header-1{
-  height: @layout-header-base-height + 15*1;
-}
-
-.@{idoll-prefix}-layout-header-2{
-  height: @layout-header-base-height + 15*2;
+  text-align: right;
 }
 
 .@{idoll-prefix}-layout-content {
    width: 100%;
    height: 100%;
-   background-color: @layout-content-background;
 }
 
 .@{idoll-prefix}-layout-footer {
   width: 100%;
-  height: @layout-footer-height;
-  background-color: @layout-footer-background;
 }
+
+.layout-horizontal {
+  .@{idoll-prefix}-layout-header {
+    width: 100%;
+    color: @layout-backgound-color;
+    display: block;
+    height: @layout-header-seat;
+    background: @navbar;
+    div.logo {
+      float: left;
+      padding: @padding-sm @padding-lg + 4px ;
+      div {
+        border-radius: @border-radius-base;
+        font-size: @layout-font-size ;
+        line-height: @horizontal-light;
+        height: @horizontal-light;
+        padding: 0 @padding-lg - 3px ;
+        text-align: center;
+        color: @layout-logo-color;
+        background-color: @layout-logo-color;
+      }
+    }
+    .@{idoll-prefix}-menu-horizontal {
+      height: 100%;
+      float: left;
+      li.@{idoll-prefix}-menu-item {
+        height: 100%;
+      }
+    }
+  }
+  .@{idoll-prefix}-breadcrumb {
+    background-color: @layout-backgound;
+    padding: @padding-md @padding-lg 0 @padding-lg;
+  }
+  .@{idoll-prefix}-layout-content {
+    overflow: auto;
+    .content {
+      width: 100%;
+      height: 100%;
+      background-color: @layout-backgound-color;
+      color: @text-color;
+    }
+  }
+}
+
+.layout-inlineNav {
+  .@{idoll-prefix}-layout {
+    &-sider {
+      display: block;
+      position: relative;
+      background-color: @navbar;
+      transition: width .3s;
+      div.logo {
+        padding: @padding-sm @layout-logo-padding-top @layout-logo-padding-bottom @layout-logo-padding-top;
+        div {
+          border-radius: @border-radius-base;
+          font-size: @layout-font-size;
+          line-height: @horizontal-light;
+          height: @horizontal-light;
+          padding: 0 @padding-lg - 3px;
+          text-align: center;
+          color: @layout-logo-color;
+          background-color: @layout-logo-color;
+        }
+      }
+      div.miniLogo {
+        padding: @padding-sm @padding-sm @layout-logo-padding-bottom @padding-sm;
+        div {
+          border-radius: @border-radius-base;
+          font-size: @font-size-base + 4px;
+          line-height: @horizontal-light;
+          height: @horizontal-light;
+          padding: 0 @padding-xs - 4px;
+          text-align: center;
+          color: @layout-logo-color;
+          background-color: @layout-logo-color;
+        }
+      }
+      > i:before {
+        position: absolute;
+        left: @padding-md;
+        bottom: @padding-md;
+        cursor: pointer;
+        color: @text-color-secondary-dark;
+        transition: color .3s
+      }
+      > i:hover {
+        &:before {
+          color: @layout-backgound-color;
+          transition: color .3s
+        }
+      }
+    }
+    &-header {
+      background-color: @layout-backgound-color;
+      font-size: @font-size-base;
+      border-left: none;
+      .@{idoll-prefix}-icon-message {
+        font-size: @font-size-lg;
+        color: @text-color;
+        cursor: pointer;
+      }
+      .@{idoll-prefix}-avatar {
+        margin-right: @padding-xs !important;
+        margin-left: @padding-lg;
+        cursor: pointer;
+      }
+      > a{
+        margin-right: 0;
+        i:before {
+          content: "\E6DE";
+          font-family: 'idollicon' !important;
+          color: @text-color;
+        } 
+      }
+      > a:hover {
+          color: @text-color;
+      }
+    }
+    .@{idoll-prefix}-breadcrumb {
+      background-color: @layout-backgound;
+      padding: @padding-md @padding-lg;
+    }
+    .@{idoll-prefix}-layout-content {
+      overflow: auto;
+      > .content {
+        height: 100%;
+        background-color: @layout-backgound-color;
+        color: @text-color;
+      }
+    }
+  }
+}
+
+.layout-inlineNav.inlineTabs {
+  .@{idoll-prefix}-layout {
+    &-header {
+      >span {
+        margin-left: @padding-lg;
+        margin-right: @padding-xs;
+      }
+    }
+    .@{idoll-prefix}-layout-content {
+      padding-bottom: @padding-lg ;
+      > .@{idoll-prefix}-tabs {
+        display: block;
+        height: 100%;
+        div.@{idoll-prefix}-tabs-bar {
+          margin: 0;
+          border-right: @border-width-base @border-style-base @layout-backgound;
+          div.@{idoll-prefix}-tabs-nav-container {
+            height: @horizontal-light + 8px;
+          }
+        }
+        div.@{idoll-prefix}-tabs-nav-scroll {
+          margin-left: 4px;
+          div.@{idoll-prefix}-tabs-tab {
+            height: @horizontal-light + 8px;
+            line-height: @horizontal-light / 2;
+            i {
+              margin-right: 0;
+            }
+          }
+        }
+        div.@{idoll-prefix}-tabs-content {
+          height: 100%;
+          overflow: auto;
+          > .@{idoll-prefix}-tabs-tabpane-active {
+            background-color: @layout-backgound-color;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

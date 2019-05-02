@@ -1,35 +1,34 @@
-@import '../../../style/theme/default/default.less';
+@import '../../../style/theme/default/index.less';
 
-@badge-prefix-cls: idoll-badge;
-@number-prefix-cls: idoll-scroll-number;
+@badge-prefix-cls: ~'@{idoll-prefix}-badge';
+@number-prefix-cls: ~'@{idoll-prefix}-scroll-number';
 .@{badge-prefix-cls} {
   position: relative;
   display: inline-block;
   line-height: 1;
-  vertical-align: middle;;
-  margin-right: 60px;
+  vertical-align: middle;
   
   &-count {
     position: absolute;
     transform: translateX(-50%);
-    top: -10px;
-    height: 20px;
-    border-radius: 10px;
-    min-width: 20px;
+    top: -15%;
+    height: @badge-height;
+    border-radius: @badge-radius;
+    min-width: @badge-height;
     background: @error-color;
-    color: #fff;
-    line-height: 20px;
+    color: @badge-color;
+    line-height: @badge-height;
     text-align: center;
-    padding: 0 5px;
-    font-size: 12px;
+    padding: 0 @padding-xs - 3px;
+    font-size: @font-size-sm;
     white-space: nowrap;
     transform-origin: -10% center;
     z-index: 10;
     font-family: @font-family;
-    box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 @border-width-base @badge-color ;
     a,
     a:hover {
-      color: #fff;
+      color: @badge-color ;
     }
   }
 
@@ -41,22 +40,22 @@
     position: absolute;
     transform: translateX(-50%);
     transform-origin: 0px center;
-    top: -3px;
-    height: 6px;
-    width: 6px;
+    top: -(@badge-dot-size / 2);
+    height: @badge-dot-size;
+    width: @badge-dot-size;
     border-radius: 100%;
     background: @error-color;
     z-index: 10;
-    box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 @border-width-base @badge-color;
   }
   &-zoom-appear,
   &-zoom-enter {
-    animation: enterIn .3s @ease-out-back;
+    animation: enterIn @animation-duration-slow @ease-out-back;
     animation-fill-mode: both;
   }
 
   &-zoom-leave {
-    animation: enterOut .3s @ease-in-back;
+    animation: enterOut @animation-duration-slow @ease-in-back;
     animation-fill-mode: both;
   }
 
@@ -77,19 +76,11 @@ a & {
   }
 }
 
-span.example {
-  width: 64px;
-  height: 64px;
-  border-radius: @border-radius-base;
-  background: rgb(226, 226, 226);
-  display: inline-block;
-}
-
 .@{number-prefix-cls} {
   overflow: hidden;
   &-only {
     display: inline-block;
-    transition: transform .3s @ease-in-out;
+    transition: transform @animation-duration-slow @ease-in-out;
   }
   // for IE8/9 display
   &.not-support-css-animation &-only {
@@ -101,62 +92,51 @@ span.example {
     }
   }
 
-  &.@{badge-prefix-cls}-success-dot {
-    background-color: @success-color;
-    width: 6px;
-    height: 6px;
-    top: 8px;
-    left: -10px;
+  &.@{badge-prefix-cls}-success-dot,&.@{badge-prefix-cls}-error-dot, &.@{badge-prefix-cls}-default-dot,&.@{badge-prefix-cls}-processing-dot,&.@{badge-prefix-cls}-warning-dot {
+    width: @badge-dot-size;
+    height: @badge-dot-size;
+    top: 0;
+    left: 100%;
     position: absolute;
     border-radius: 100%;
   }
 
-  
+  &.@{badge-prefix-cls}-success-dot {
+    background-color: @success-color;
+  }
   &.@{badge-prefix-cls}-error-dot {
     background-color: @error-color;
-    width: 6px;
-    height: 6px;
-    top: 8px;
-    left: -10px;
-    position: absolute;
-    border-radius: 100%;
   }
   &.@{badge-prefix-cls}-default-dot {
-    background-color: @default-color;
-    width: 6px;
-    height: 6px;
-    top: 8px;
-    left: -10px;
-    position: absolute;
-    border-radius: 100%;
+    background-color: @badge-default-color;
+  }
+  &.@{badge-prefix-cls}-warning-dot {
+    background-color: @warning-color;
   }
   &.@{badge-prefix-cls}-processing-dot {
-    background-color: @processing-color;
-    width: 6px;
-    height: 6px;
-    top: 8px;
-    left: -10px;
-    position: absolute;
-    border-radius: 100%;
+    background-color: @badge-processing-color;
     overflow: visible;
     &:after {
       content: '';
-      width: 6px;
-      height: 6px;
+      width: @badge-dot-size;
+      height: @badge-dot-size;
       left: 0;
       top: 0;
       position: absolute;
-      border: 1px solid @processing-color;
+      border: @border-width-base @border-style-base @primary-color;
       border-radius: 100%;
       animation: enterEffect 1.2s infinite;
     }
   }
-  &.@{badge-prefix-cls}-warning-dot {
-    background-color: @warning-color;
-    width: 6px;
-    height: 6px;
-    top: 8px;
-    left: -10px;
+}
+
+.state {
+  .@{badge-prefix-cls}-success-dot,.@{badge-prefix-cls}-error-dot,.@{badge-prefix-cls}-default-dot,.@{badge-prefix-cls}-processing-dot,.@{badge-prefix-cls}-warning-dot {
+    width: @badge-dot-size;
+    height: @badge-dot-size;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 0px;
     position: absolute;
     border-radius: 100%;
   }
@@ -177,6 +157,10 @@ span.example {
     opacity: 1;
   }
 }
+.@{badge-prefix-cls}-success,.@{badge-prefix-cls}-error,.@{badge-prefix-cls}-default,.@{badge-prefix-cls}-processing,.@{badge-prefix-cls}-warning {
+  padding-left: @badge-dot-size;
+  position: relative;
+}
 
 @keyframes enterIn {
   0% {
@@ -190,13 +174,3 @@ span.example {
     transform: scale(0) translateX(-50%);
   }
 }
-
-// @keyframes enterOut {
-//   100% {
-//     transform: scale(1);
-//   }
-//   0% {
-//     opacity: 0;
-//     transform: scale(0);
-//   }
-// }

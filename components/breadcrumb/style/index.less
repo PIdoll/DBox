@@ -8,14 +8,18 @@
   color: @text-color-secondary;
 
   .@{iconfont-css-prefix} {
-    font-size: @font-size-sm;
+    font-size: @font-size-base;
+    line-height: 1.5;
+    margin-top: -2px;
   }
-
-  a {
+ a {
     color: @text-color-secondary;
     transition: color .3s;
     &:hover {
-      color: @primary-color;
+      color: @primary-hover;
+    }
+    &:active {
+      color: @primary-pressed,
     }
   }
 
@@ -37,4 +41,5 @@
       margin-left: 4px;
     }
   }
+
 }

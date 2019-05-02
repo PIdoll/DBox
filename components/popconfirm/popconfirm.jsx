@@ -2,8 +2,6 @@ import * as React from 'react';
 import Tooltip from '../tooltip';
 import Icon from '../icon';
 import Button from '../button';
-// import LocaleReceiver from '../locale-provider/LocaleReceiver';
-// import defaultLocale from '../locale-provider/default';
 
 export default class Popconfirm extends React.Component {
   static defaultProps = {
@@ -11,7 +9,8 @@ export default class Popconfirm extends React.Component {
     transitionName: 'zoom-big',
     placement: 'topRight',
     trigger: 'click',
-    okType: 'primary'
+    okType: 'danger',
+    icon: React.ReactNode
   };
 
 
@@ -79,25 +78,20 @@ export default class Popconfirm extends React.Component {
       title,
       okText,
       cancelText,
+      okType,
+      icon,
       ...restProps
     } = this.props;
-    // const overlay = (
-    //   <LocaleReceiver
-    //     componentName='Popconfirm'
-    //     defaultLocale={defaultLocale.Popconfirm}>
-    //     {this.renderOverlay}
-    //   </LocaleReceiver>
-    // );
     const overlay = (
       <div>
         <div className={`${prefixCls}-inner-content`}>
           <div className={`${prefixCls}-message`}>
-            <Icon type='warning-circle' />
+            {icon || <Icon type='warning' />}
             <div className={`${prefixCls}-message-title`}>{title}</div>
           </div>
           <div className={`${prefixCls}-buttons`}>
-            <Button onClick={this.onConfirm} type='danger' size='small'>{okText || '确定'}</Button>
-            <Button onClick={this.onCancel} type='ghost' size='small'>{cancelText || '取消'}</Button>
+            <Button onClick={this.onConfirm} type={okType} size='small'>{okText || '确定'}</Button>
+            <Button onClick={this.onCancel} size='small'>{cancelText || '取消'}</Button>
           </div>
         </div>
       </div>

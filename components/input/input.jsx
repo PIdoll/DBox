@@ -1,8 +1,9 @@
 // object.omit github.com/jonschlinkert/object.omit
-import React, { Component } from 'react'
-import classNames from 'classnames'
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import omit from 'object.omit';
+import Icon from '../icon';
 
 import './style'
 
@@ -13,15 +14,35 @@ function fixControlledValue(value) {
   return value;
 }
 
+document.onkeydown = function (e) {
+  let ev = e || window.event; // 获取event对象
+  if (ev.keyCode === 8) {
+      let obj = ev.target || ev.srcElement; // 获取事件源
+      let t = obj.type || obj.getAttribute('type'); // 获取事件源类型
+      // 获取作为判断条件的事件类型
+      let vReadOnly = obj.getAttribute('readonly') || obj.readOnly;
+      let vdisabled = obj.getAttribute('disabled') || obj.disabled;
+      let flag1 = !!(((t === 'password' || t === 'text' || t === 'textarea' || t === 'email' || t === 'url' || t === 'number' || t === 'range' || t === 'Date' || t === 'search' || t === 'color') && (vReadOnly === true || vdisabled === true)));
+      let flag2 = !!((t !== 'password' && t !== 'text' && t !== 'textarea' && t !== 'email' && t !== 'url' && t !== 'number' && t !== 'range' && t !== 'Date' && t !== 'search' && t !== 'color'));
+      // 判断
+      if (flag1 || flag2) {
+          return false;
+      }
+  }
+};
+
 export default class Input extends Component {
   static defaultProps = {
     // intialValue: '',
+    search: false, // is search input
     disabled: false,
     prefixCls: 'idoll-input',
     type: 'text',
     onPressEnter() {},
     onKeyDown() {},
-    onChange() {}
+    onChange() {},
+    onBlur() {},
+    onInput() {}
   };
 
   static propTypes = {
@@ -55,10 +76,38 @@ export default class Input extends Component {
     onChange: PropTypes.func,
     beforelength: PropTypes.string, // 前置的宽度
     afterlength: PropTypes.string, // 后置的宽度
+    clearable: PropTypes.bool,
+    search: PropTypes.bool,
     // onClick: PropTypes.func,
     // onFocus: PropTypes.func,
     // onBlur: PropTypes.func
   };
+
+  constructor() {
+    super();
+    this.state = {
+      isOnInput: false,
+      isInputHover: false,
+      isIconHover: false,
+    }
+  }
+
+  isIE = () => {
+    if (window.ActiveXObject || 'ActiveXObject' in window) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isEdge = () => {
+    const isEdge = navigator.userAgent.indexOf('Edge') > -1; // 判断是否IE的Edge浏览器
+    if (isEdge) {
+        return true;
+    } else {
+        return false;
+    }
+  }
 
   handleKeyDown = (e) => {
     const { onPressEnter, onKeyDown } = this.props;
@@ -66,7 +115,7 @@ export default class Input extends Component {
       onPressEnter(e);
     }
     if (onKeyDown) {
-      onKeyDown(e)
+      onKeyDown(e);
     }
   }
 
@@ -131,10 +180,6 @@ export default class Input extends Component {
         )
     ) : null;
 
-    // const className = classNames({
-    //   [`${props.prefixCls}-wrap`]: true,
-    //   [wrapperClassName]: (addonBefore || addonAfter)
-    // });
     const className = classNames(`${props.prefixCls}-wrapper`, {
       [wrapperClassName]: (addonBefore || addonAfter),
     });
@@ -168,10 +213,19 @@ export default class Input extends Component {
     );
   }
 
+  // 清除输入框
+  onClear = (e) => {
+    this.input.value = '';
+    this.onChange(e); // form表单可清空
+    this.setState({
+      isHover: false,
+    })
+  }
+
   renderLaybeldIcon = (children) => {
     const { props } = this;
 
-    if (!('prefix' in props || 'suffix' in props)) {
+    if (!('prefix' in props || 'suffix' in props || 'clearable' in props)) {
       return children;
     }
     const prefix = props.prefix ? (
@@ -180,18 +234,38 @@ export default class Input extends Component {
       </span>
     ) : null;
 
-    const suffix =
-      <span style={{display: props.suffix ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
-        {props.suffix}
+    const clearIcon = <Icon onMouseLeave={this.handleIconOnMouseLeave} onMouseEnter={this.handleIconOnMouseEnter} type='close-circle' className={`${props.prefixCls}-picker-clear`} />;
+    const clearSuffix = React.cloneElement(clearIcon, {
+      onMouseDown: this.onClear,
+      className: 'icon-hover',
+    });
+
+    const clearIconDisplay = this.input && this.input.value && (this.state.isOnInput || this.state.isInputHover || this.state.isIconHover) && !this.props.disabled && !this.props.readOnly && !this.props.autoComplete && !this.props.search;
+
+    let clearAfter = (
+      <span
+        style={{display: clearIconDisplay ? 'block' : 'none'}}
+        className={`${props.prefixCls}-clear-icon`}
+        >
+        {clearSuffix}
       </span>
+    );
+
+    const suffix =
+      <span style={{display: (props.suffix || (props.clearable && clearIconDisplay)) ? 'block' : 'none'}} className={`${props.prefixCls}-suffix`}>
+        {(clearAfter)}
+        {clearIconDisplay ? null : props.suffix }
+      </span>
+
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
     });
 
+
+
     return (
       <span
-        // className={classNames(props.className, `${props.prefixCls}-affix-wrapper`)}
         className={affixWrapperCls}
         style={props.style}
       >
@@ -200,6 +274,49 @@ export default class Input extends Component {
         {suffix}
       </span>
     );
+  }
+
+  handleIconOnMouseEnter = () => {
+    this.setState({
+      isIconHover: true,
+    })
+  }
+
+  handleIconOnMouseLeave = () => {
+    this.setState({
+      isIconHover: false,
+      isInputHover: true
+    })
+  }
+
+  handleInputonMouseLeave = (e) => {
+    this.setState({
+      isInputHover: false,
+    })
+  }
+
+  handleInputonMouseEnter = (e) => {
+    this.setState({
+      isInputHover: true
+    })
+  }
+
+  onInput = (e) => {
+    this.setState({
+      isOnInput: true,
+    });
+    this.props.onInput(e)
+  }
+
+  onBlur = (e) => {
+    this.setState({
+      isOnInput: false,
+    });
+    this.props.onBlur(e)
+  }
+
+  onChange = (e) => {
+    this.props.onChange(e)
   }
 
   renderInput() {
@@ -212,15 +329,10 @@ export default class Input extends Component {
       'addonBefore',
       'addonAfter',
       'prefix',
-      'suffix'
+      'suffix',
+      'search',
     ]);
 
-
-    // const node = <Icon className={`${prefixCls}-icon`} type='close' />;
-    // const clearSuffix = React.cloneElement(node, {
-    //   onClick: this.onClear,
-    //   className: 'icon-hover',
-    // });
 
     if ('value' in this.props) {
       otherProps.value = fixControlledValue(value);
@@ -228,14 +340,21 @@ export default class Input extends Component {
       // specify either the value prop, or the defaultValue props, but no both
       delete otherProps.defaultValue;
     }
+
     return this.renderLaybeldIcon(
       <input
         {...otherProps}
+        unselectable={this.props.readOnly && (this.isEdge() || this.isIE()) ? 'on' : null}
+        clearable={toString(otherProps.clearable)}
         className={classNames(this.getInputClassName(), className)}
         onKeyDown={this.handleKeyDown}
         ref={this.saveInput}
-      />
-    );
+        onMouseEnter={this.handleInputonMouseEnter}
+        onMouseLeave={this.handleInputonMouseLeave}
+        onInput={this.onInput}
+        onBlur={this.onBlur}
+        />
+    )
   }
 
   render() {

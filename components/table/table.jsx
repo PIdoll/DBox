@@ -5,6 +5,7 @@ import Checkbox from '../checkbox';
 import Radio from '../radio';
 import FilterDropdown from './filterDropdown';
 import Pagination from '../pagination';
+// import Tooltip from '../tooltip';
 import Icon from '../icon';
 import Spin from '../spin';
 import classNames from 'classnames';
@@ -55,7 +56,6 @@ export default class Table extends React.Component {
     size: 'large',
     loading: false,
     bordered: false,
-    indentSize: 20,
     onChange: noop,
     locale: {},
     rowKey: 'key',
@@ -73,6 +73,11 @@ export default class Table extends React.Component {
 
     this.state = {
       // 减少状态
+      flag: false,
+      // value: '',
+      // loading: false,
+      // editingKey: '',
+      boxChecked: false,
       selectedRowKeys: (props.rowSelection || {}).selectedRowKeys || [],
       filters: this.getFiltersFromColumns(),
       selectionDirty: false,
@@ -349,6 +354,7 @@ export default class Table extends React.Component {
 
   handleSelect = (record, rowIndex, e) => {
     const checked = e.target.checked;
+    this.setState({boxChecked: e.target.checked})
     const defaultSelection = this.state.selectionDirty ? [] : this.getDefaultSelection();
     let selectedRowKeys = this.state.selectedRowKeys.concat(defaultSelection);
     let key = this.getRecordKey(record, rowIndex);
@@ -525,7 +531,7 @@ export default class Table extends React.Component {
         selectionColumn = {
           key: 'selection-column',
           render: this.renderSelectionRadio,
-          className: 'idoll-table-selection-column',
+          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       } else {
         const checkboxAllDisabled = data.every(item => this.getCheckboxPropsByItem(item).disabled);
@@ -539,7 +545,7 @@ export default class Table extends React.Component {
           key: 'selection-column',
           title: checkboxAll,
           render: this.renderSelectionCheckBox,
-          className: 'idoll-table-selection-column',
+          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       }
       if (columns.some(column => column.fixed === 'left' || column.fixed === true)) {
@@ -755,7 +761,6 @@ export default class Table extends React.Component {
     }
     return data;
   }
-
   render() {
     const { style, className, ...restProps } = this.props;
     const data = this.getCurrentPageData();
@@ -784,7 +789,7 @@ export default class Table extends React.Component {
         expandIconColumnIndex={(columns[0] && columns[0].key === 'selection-column') ? 1 : 0}
         expandIconAsCell={expandIconAsCell}
         emptyText={() => locale.emptyText}
-      />
+    />
     );
     // if there is no pagination or no data,
     // the height of spin should decrease by half of pagination

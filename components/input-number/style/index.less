@@ -2,15 +2,16 @@
 @import "../../../style/mixins/index";
 @import "../../input/style/mixin";
 
-@input-number-prefix-cls: ~"@{idoll-prefix}-input-number";
 
+
+@input-number-prefix-cls: ~"@{idoll-prefix}-input-number";
 .@{input-number-prefix-cls} {
   .reset-component;
   .input;
   margin: 0;
   padding: 0;
   display: inline-block;
-  border: @border-width-base @border-style-base @border-color-base;
+  border: @border-width-base @border-style-base @border;
   border-radius: @border-radius-base;
   width: 120px;
 
@@ -26,11 +27,11 @@
     width: 100%;
     font-weight: bold;
     &:active {
-      background: #f4f4f4;
+      background: @InputNumber-active-color;
     }
     &:hover &-up-inner,
     &:hover &-down-inner {
-      color: @primary-5;
+      color: red;
     }
   }
 
@@ -71,12 +72,12 @@
     text-align: left;
     outline: 0;
     -moz-appearance: textfield;
-    height: @input-height-base - 2px;
+    height: 30px;
     transition: all 0.3s linear;
     background-color: transparent;
     border: 0;
     border-radius: @border-radius-base;
-    padding: 0 @control-padding-horizontal - 1px;
+    padding: 0 @padding-sm - 1px;
     .placeholder();
   }
 
@@ -94,15 +95,15 @@
 
     input {
       height: @input-height-sm - 2px;
-      padding: 0 @control-padding-horizontal-sm - 1px;
+      padding: 0 @padding-sm - 1px;
     }
   }
 
   &-handler-wrap {
-    border-left: @border-width-base @border-style-base @border-color-base;
+    border-left: @border-width-base @border-style-base @border;
     width: 22px;
     height: 100%;
-    background: @component-background;
+    background: @white;
     position: absolute;
     top: 0;
     right: 0;
@@ -121,6 +122,7 @@
 
   &-handler-up {
     cursor: pointer;
+    font-size: 10px;
     &-inner {
       top: 50%;
       margin-top: -5px;
@@ -132,8 +134,9 @@
   }
 
   &-handler-down {
-    border-top: @border-width-base @border-style-base @border-color-base;
+    border-top: @border-width-base @border-style-base @border;
     top: 0;
+    font-size:10px;
     cursor: pointer;
     &-inner {
       top: 50%;

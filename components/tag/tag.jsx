@@ -28,14 +28,6 @@ export default class Tag extends Component {
         closable: false,
         hover: false
     }
-    componentWillUnmount() {
-		if (this.clickedTimeout) {
-			clearTimeout(this.clickedTimeout);
-		}
-		if (this.timeout) {
-			clearTimeout(this.timeout);
-		}
-	}
     clearButton = (button) => {
 		button.className = button.className.replace(`${this.props.prefixCls}-clicked`, '');
     }
@@ -66,7 +58,8 @@ export default class Tag extends Component {
         const {children, prefixCls, target, color, href, hot, closable} = this.props;
         let isChecked = this.state.checked;
         let iconStyle = {
-            marginLeft: 4
+            marginLeft: 4,
+            color: color
         }
         const closeIcon = closable ? <Icon style={iconStyle} type='close' onClick={this.close} /> : null;
         const cls = classNames(prefixCls, {
@@ -79,11 +72,12 @@ export default class Tag extends Component {
         })
 
         const deletableTag = <div
+          style={{ borderColor: /blue|red|green|yellow/.test(color) ? color : color }}
           data-show={this.state.closable}
           key={children}
           className={cls}
           onClick={this.handleClick}>
-          <div>{children}</div>
+          <div style={{ color: /blue|red|green|yellow/.test(color) ? color : color }}>{children}</div>
           {closeIcon}
         </div>
         const tag = !this.state.closable ? null : (deletableTag);

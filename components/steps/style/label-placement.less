@@ -2,20 +2,20 @@
   .@{steps-prefix-cls}-item {
     overflow: visible;
     &-tail {
-      margin-left: 48px;
-      padding-right: 10px;
+      margin-left: @steps-icon-size + 12;
+      padding-right: @steps-current-dot-size;
     }
 
     &-content {
       display: block;
       text-align: center;
-      margin-top: 8px;
+      margin-top: @steps-dot-size;
       width: @steps-description-max-width;
     }
 
     &-icon {
       display: inline-block;
-      margin-left: 76px;
+      margin-left: 72px;
     }
 
     &-title {

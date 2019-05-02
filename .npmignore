@@ -1,0 +1,26 @@
+# webpack
+webpack.common.js
+webpack.dev.js
+webpack.dll.config.js
+webpack.prod.js
+styleguide.config.js
+postcss.config.js
+webpack.doc.js
+
+
+# babel
+.babelrc
+
+# node_module
+/node_modules
+
+
+/assets
+/components
+/src
+/styleguide
+
+.*
+*.html
+*.log
+*.ico

@@ -1,25 +1,361 @@
-# [cascader] (http://naotu.baidu.com/file/d1a03b70d870257010a976d9129552b6?token=17e98a49d802129c)
+级联选择器，用于在同一浮层中从一组关联的数据中进行选择。
 
----
-category: Components
-type: Data Entry
-title: Cascader
-subtitle: 级联选择
----
+##### **基本使用**
+可通过设置 `options` 属性来展示数据,其中 `disabled` 字段可设置是否禁用。
 
-级联选择框。
+```jsx
+import { Cascader } from 'dbox-ui';
+const basicDatas = [{
+    value: '浙江',
+    label: '浙江',
+    children: [{
+      value: '杭州',
+      label: '杭州',
+      children: [{
+        value: '西湖',
+        label: '西湖',
+      }],
+    }],
+  }, {
+    value: '江苏',
+    label: '江苏',
+    children: [{
+      value: '南京',
+      label: '南京',
+      children: [{
+        value: '中华门',
+        label: '中华门',
+      }],
+    }],
+  }, {
+    value: '安徽',
+    label: '安徽',
+    disabled: true,
+    children: [{
+      value: '合肥',
+      label: '合肥',
+      children: [{
+        value: '三国',
+        label: '三国',
+      }],
+    }],
+  }];
 
-## 何时使用
+function onChange(value) {
+  console.log(value);
+}
 
-- 需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。
-- 从一个较大的数据集合中进行选择时，用多级分类进行分隔，方便选择。
-- 比起 Select 组件，可以在同一个浮层中完成选择，有较好的体验。
-
-## API
-
-```html
-<Cascader options={options} onChange={onChange} />
+<Cascader options={basicDatas} onChange={onChange} />
 ```
+
+
+##### **默认值**
+可通过设置 `defaultValue` 属性用于展示默认值。
+```jsx
+import { Cascader } from 'dbox-ui';
+const basicDatas = [{
+    value: '浙江',
+    label: '浙江',
+    children: [{
+      value: '杭州',
+      label: '杭州',
+      children: [{
+        value: '西湖',
+        label: '西湖',
+      }],
+    }],
+  }, {
+    value: '江苏',
+    label: '江苏',
+    children: [{
+      value: '南京',
+      label: '南京',
+      children: [{
+        value: '中华门',
+        label: '中华门',
+      }],
+    }],
+  }, {
+    value: '安徽',
+    label: '安徽',
+    children: [{
+      value: '合肥',
+      label: '合肥',
+      children: [{
+        value: '三国',
+        label: '三国',
+      }],
+    }],
+  }];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ <Cascader defaultValue={['浙江', '杭州', '西湖']} options={basicDatas} disabled onChange={onChange} />
+```
+
+##### **移入展开**
+可通过设置 `expandTrigger` 属性为 `hover` 来移入展开下级菜单，点击完成选择。
+```jsx
+import { Cascader } from 'dbox-ui';
+const basicDatas = [{
+    value: '浙江',
+    label: '浙江',
+    children: [{
+      value: '杭州',
+      label: '杭州',
+      children: [{
+        value: '西湖',
+        label: '西湖',
+      }],
+    }],
+  }, {
+    value: '江苏',
+    label: '江苏',
+    children: [{
+      value: '南京',
+      label: '南京',
+      children: [{
+        value: '中华门',
+        label: '中华门',
+      }],
+    }],
+  }, {
+    value: '安徽',
+    label: '安徽',
+    children: [{
+      value: '合肥',
+      label: '合肥',
+      children: [{
+        value: '三国',
+        label: '三国',
+      }],
+    }],
+}];
+
+function displayRender(label) {
+    return label[label.length - 1];
+}
+
+function onChange(value) {
+  console.log(value);
+}
+
+<Cascader
+    options={basicDatas}
+    expandTrigger='hover'
+    displayRender={displayRender}
+    onChange={onChange}
+/>
+```
+
+##### **尺寸**
+可通过设置 `size` 属性控制级联框的尺寸，默认为中。
+```jsx
+import { Cascader } from 'dbox-ui';
+const basicDatas = [{
+    value: '浙江',
+    label: '浙江',
+    children: [{
+      value: '杭州',
+      label: '杭州',
+      children: [{
+        value: '西湖',
+        label: '西湖',
+      }],
+    }],
+  }, {
+    value: '江苏',
+    label: '江苏',
+    children: [{
+      value: '南京',
+      label: '南京',
+      children: [{
+        value: '中华门',
+        label: '中华门',
+      }],
+    }],
+  }, {
+    value: '安徽',
+    label: '安徽',
+    children: [{
+      value: '合肥',
+      label: '合肥',
+      children: [{
+        value: '三国',
+        label: '三国',
+      }],
+    }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+<div>
+    <Cascader size='small' options={basicDatas} onChange={onChange} /><br /><br />
+    <Cascader options={basicDatas} onChange={onChange} /><br /><br />
+    <Cascader size='large' options={basicDatas} onChange={onChange} />
+</div>
+```
+
+##### **自定义字段名**
+通过设置`fieldNames`可自定义字段名
+```jsx
+import { Cascader } from 'dbox-ui';
+const basicDatas = [{
+    code: '浙江',
+    name: '浙江',
+    items: [{
+      code: '杭州',
+      name: '杭州',
+      items: [{
+        code: '西湖',
+        name: '西湖',
+      }],
+    }],
+  }, {
+    code: '江苏',
+    name: '江苏',
+    items: [{
+      code: '南京',
+      name: '南京',
+      items: [{
+        code: '中华门',
+        name: '中华门',
+      }],
+    }],
+  }, {
+    code: '安徽',
+    name: '安徽',
+    items: [{
+      code: '合肥',
+      name: '合肥',
+      items: [{
+        code: '三国',
+        name: '三国',
+      }],
+    }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+<div>
+    <Cascader fieldNames={{ label: 'name', value: 'code', children: 'items' }} options={basicDatas} onChange={onChange} />
+</div>
+```
+##### **动态加载选项**
+可通过设置 `loadData` 实现动态加载选项（注意：`loadData` 与 `showSearch` 无法一起使用。）
+```jsx
+import { Cascader } from 'dbox-ui';
+class CascaderExample extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            text: '未选择',
+            loadDataOptions: [{
+                value: '浙江',
+                label: '浙江',
+                isLeaf: false,
+            }, {
+                value: '江苏',
+                label: '江苏',
+                isLeaf: false,
+            },
+            {
+                value: '上海',
+                label: '上海',
+                isLeaf: false,
+            }]
+        };
+        this.onChange = this.onChange.bind(this);
+        this.loadData = this.loadData.bind(this);
+    }
+
+    onChange(value, selectOptions){
+         this.setState({
+             text: selectOptions.map(o => o.label).join(',')
+         })
+    };
+
+    loadData(selectedOptions){
+        const targetOption = selectedOptions[selectedOptions.length - 1];
+        targetOption.loading = true;
+        setTimeout(() => {
+            targetOption.loading = false;
+            targetOption.children = [{
+              label: `${targetOption.label} 城市`,
+              value: '城市',
+            }, {
+              label: `${targetOption.label} 地名`,
+              value: '地名',
+            }];
+            this.setState({
+              options: [...this.state.loadDataOptions],
+            });
+        }, 1000)
+    }
+
+    render(){
+        return (
+            <Cascader
+                options={this.state.loadDataOptions}
+                loadData={this.loadData}
+                onChange={this.onChange}
+                changeOnSelect
+                />
+        )
+    }
+}
+<CascaderExample />
+```
+
+##### **搜索**
+可设置 `showSearch` 属性实现级联框中内容的搜索。
+```jsx
+import { Cascader } from 'dbox-ui';
+const searchData = [{
+    value: '上海',
+    label: '上海',
+    children: [{
+      value: '浦东新区',
+      label: '浦东新区',
+      children: [{
+        value: '外滩',
+        label: '外滩',
+      }, {
+        value: '唐镇',
+        label: '唐镇',
+        disabled: true,
+      }],
+    }],
+  }, {
+    value: '浙江',
+    label: '浙江',
+    children: [{
+      value: '杭州',
+      label: '杭州',
+      children: [{
+        value: '西湖',
+        label: '西湖',
+      }],
+    }],
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+function filter(inputValue, path) {
+    return (path.some(option => (option.label).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
+}
+<Cascader
+    options={searchData}
+    onChange={onChange}
+    showSearch={{ filter }}
+/>
+```
+##### **Cascader**
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -31,7 +367,8 @@ subtitle: 级联选择
 | disabled | 禁用 | boolean | false |
 | displayRender | 选择后展示的渲染函数 | `(label, selectedOptions) => ReactNode` | `label => label.join(' / ')` |
 | expandTrigger | 次级菜单的展开方式，可选 'click' 和 'hover' | string | 'click' |
-| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。[示例](https://codepen.io/afc163/pen/zEjNOy?editors=0010) | Function(triggerNode) | () => document.body |
+| fieldNames | 自定义 options 中 label name children 的字段 | object | { label: 'label', value: 'value', children: 'children' } |
+| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。 | Function(triggerNode) | () => document.body |
 | loadData | 用于动态加载选项，无法与 `showSearch` 一起使用 | `(selectedOptions) => void` | - |
 | notFoundContent | 当下拉列表为空时显示的内容 | string | 'Not Found' |
 | options | 可选项数据源 | object | - |
@@ -55,9 +392,19 @@ subtitle: 级联选择
 | render | 用于渲染 filter 后的选项 | `function(inputValue, path): ReactNode` |  |
 | sort | 用于排序 filter 后的选项 | `function(a, b, inputValue)` |  |
 
-## 方法
+##### **方法**
 
 | 名称 | 描述 |
 | --- | --- |
 | blur() | 移除焦点 |
 | focus() | 获取焦点 |
+
+
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import CascaderView from '../prevPage/cascader.jsx';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <CascaderView />
+</div>
+```

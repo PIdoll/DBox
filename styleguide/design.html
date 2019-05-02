@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <title>设计原则</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="warper">
+      <header class='header-warper'>
+        <div class='header-warper-top'>
+          <a class='header-warper-logo' href='/'>
+              <img src='./assets/img/logo.png' alt='logo'/>
+              <span>DBOX</span>
+          </a>
+          <nav class='header-warper-navbar' >
+            <a href='/index.html'>首页</a>
+            <a id='design' href='/design.html'>设计原则</a>
+            <a href='/doc.html'>组件文档</a>
+            <a href='/resource.html'>设计资源</a>
+          </nav>
+        </div>
+      </header>
+      <div class="content_container">
+        <h1>设计原则</h1>
+        <p>
+            坚实的设计原则是整个体系得以良好运转的基础前提。设计模式的选择及运用方式,包括它们独特的组合方式,都会受到产品目标、特质及设计原则的影响。我们可以将设计原则看作"语法",而设计模式则是"单词";
+            只有在语法的指导和约束下,单词才能组成有意义的语句。同样,功能设计模式与品牌风格的进化也会对设计原则产生影响。两方面会始终相辅相成互相作用下去。
+        </p>
+        <p>
+            Alla&nbsp;Kholmatova&nbsp;在《Design&nbsp;Systems》中将"设计原则"定义为"可以帮助团队定义优秀设计的本质及实现方式的指导原则",也就是关于如何在团队与产品中实现最优设计的标准化共识。
+        </p>
+        <p>
+            DBox&nbsp;在调研和探究了团队以往的项目经验的基础上,结合团队现状和业务需求将"高效的创建简约而美观的产品体验",作为我们的目标,并在团队内部达成一致。为了确保这一目标能够清晰的贯彻在每一个设计
+            决策中,我们确立了"高效、清晰、美观、灵活"的设计原则。
+        </p>
+        <div class="tent_container">
+            <p>
+                <strong>高效</strong>打造丰富的、开箱即用的组件资源,拒绝重复造轮子;简化和优化工作流程,智能预测用户行为,让用户操作更自然。
+            </p>
+            <p>
+                <strong>清晰</strong>消除歧义,让用户直观的看到、理解并采取行动;页面结构清晰,信息层级一目了然。
+            </p>
+            <p>
+                <strong>美观</strong>提供细致入微的和优雅的视觉表现,体现对用户的时间和工作的尊重。
+            </p>
+            <p>
+                <strong>灵活</strong>设计周全的布局,规整和模块化的信息排布,为多变的的需求提供良好的扩展性。
+            </p>
+        </div>
+        <div class="principle">
+            <img src="assets/img/principle.png" alt="设计原则">
+        </div>
+      </div>
+    </div>
+    <script>
+      var url = window.location.pathname;
+      var designDOM = document.getElementById("design");
+      if (url === '/design.html') {
+        designDOM.style.cssText = "height: 61px; color: #13B866; border-bottom: 3px solid #13B866"
+      }
+    </script>
+</body>
+
+</html>

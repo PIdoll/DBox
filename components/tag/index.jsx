@@ -1,6 +1,6 @@
 import Tag from './tag';
 import TagGroup from './tagGroup';
-export {TagGroup};
+Tag.Group = TagGroup;
 export default Tag;
 
 

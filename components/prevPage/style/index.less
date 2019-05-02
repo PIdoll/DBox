@@ -1,0 +1,26 @@
+@import '../../../style/theme/default/index';
+.prevNextNav {
+  border-top: 1px solid @border;
+  margin-top: 80px;
+  padding: '20px';
+  .prevPage {
+    display: inline-block;
+    padding: 20px 30px;
+    &:hover {
+      color: @primary-hover;
+    }
+    &:active {
+      color: @primary-pressed;
+    }
+    .prevIcon {
+      margin-right: 8px;
+      font-size: 16px;
+      color: @primary-color;
+    }
+    .prevNext {
+      margin-left: 8px;
+      font-size: 16px;
+      color: @primary-color;
+    }
+  }
+}

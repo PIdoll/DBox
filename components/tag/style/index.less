@@ -1,7 +1,7 @@
-@import '../../../style/theme/default/index';
-@import '../../../style/index';
+@import "../../../style/theme/default/index";
+@import "../../../style/mixins/index";
 
-@tag-prefix-cls: idoll-tag;
+@tag-prefix-cls: ~"@{idoll-prefix}-tag";
 
 .@{tag-prefix-cls} {
     display: inline-block;
@@ -9,8 +9,8 @@
     color: @text-color;
     border: @border-width-base @border-style-base @border;
     border-radius:  @border-radius-base;
-    font-size: 12px;
-    padding: 0 7px;
+    font-size: @font-size-sm;
+    padding: 0 @padding-xs;
     box-sizing: border-box;
     text-align: center;
     margin-right: 8px;
@@ -18,9 +18,9 @@
 
     div {
         display: inline-block;
-        min-width: 24px;
-        max-height: 20px;
-        line-height: 20px;
+        min-width: @tag-min-width;
+        max-height: @tag-max-height;
+        line-height: @tag-line-height;
     }
     
     i {
@@ -34,65 +34,56 @@
     i:hover {
         color: @text-color-secondary;
         cursor: pointer;
-        transition: all .5s;
+        transition: all @animation-duration-slow;
     }
 
     &-close{
         cursor: pointer;
-        font-size: 12px;
-        padding: 0 8px;
-        font-size: 12px;
+        font-size: @font-size-sm;
+        padding: 0 @padding-xs;
     }
       //hot
     &-hot {
-    border:1px solid transparent;
+    border:@border-width-base @border-style-base transparent;
     border-radius: none;
     cursor: pointer;
     &-checked {
         border-radius: @border-radius-base ;
         background-color: @primary-color;
-        color: @background-color-base;
-        border:1px solid @primary-color;
+        color: hsv(0, 0, 96%);
+        border:@border-width-base @border-style-base @primary-color;
     }
     &-checked:hover {
-        background-color: @primary-Hover;
-        border-color: @primary-Hover;
-        border:1px solid @primary-Hover;
-        color: #fff !important;
+        background-color: @primary-hover;
+        border-color: @primary-hover;
+        border:@border-width-base @border-style-base @primary-hover;
+        color: @white !important;
     }
     }
     &-hot:hover {
         color: @primary-color;
     }
     &-peru {
-        border:1px solid RGBA(205, 133, 63, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(205, 133, 63, 0.3) !important;
     }
     &-coral {
-        border:1px solid RGBA(255, 127, 80, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(255, 127, 80, 0.3) !important;
     }&-hotpink {
-        border:1px solid RGBA(255, 105, 180, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(255, 105, 180, 0.3) !important;
     }&-orange {
-        border:1px solid RGBA(255, 165, 0, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(255, 165, 0, 0.3) !important;
     }&-limegreen {
-        border:1px solid RGBA(50, 205, 50, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(50, 205, 50, 0.3) !important;
     }&-deepskyblue {
-        border:1px solid RGBA(0, 191, 255, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(0, 191, 255, 0.3) !important;
     }&-mediumslateblue {
-        border:1px solid RGBA(123, 104, 238, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(123, 104, 238, 0.3) !important;
     }&-turquoise {
-        border:1px solid RGBA(64, 224, 208, 0.3) !important;
-        pointer-events: none;
+        border:@border-width-base @border-style-base RGBA(64, 224, 208, 0.3) !important;
     }
 }
 a.@{tag-prefix-cls} {
-    line-height: 20px;
+    line-height: @tag-line-height;
     color: @text-color;
 }
 a.@{tag-prefix-cls}:active {
@@ -122,7 +113,7 @@ a.@{tag-prefix-cls}:focus {
 
 .group {
     .@{tag-prefix-cls}:last-child {
-        border-style: dashed;
+        border-style: dashed !important;
         cursor: pointer;
     }
 }

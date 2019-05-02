@@ -41,7 +41,7 @@ function defaultSortFilteredOption(a, b, inputValue) {
 const defaultDisplayRender = (label) => label.join(' / ');
 
 export default class Cascader extends React.Component {
-  static PropTypes = {
+  static propTypes = {
       defaultValue: PropTypes.array,
       filter: PropTypes.bool,
       matchInputWidth: PropTypes.number,
@@ -51,19 +51,20 @@ export default class Cascader extends React.Component {
       placeholder: PropTypes.string,
       size: PropTypes.string,
       disabled: PropTypes.bool,
-      showSearch: PropTypes.bool,
       inputPrefixCls: PropTypes.string,
       popupVisible: PropTypes.bool,
       changeOnSelect: PropTypes.bool,
       loadData: PropTypes.func,
-      onChange: PropTypes.func
-
-
+      onChange: PropTypes.func,
+      showSearch: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+      ])
   }
   static defaultProps = {
     prefixCls: 'idoll-cascader',
     inputPrefixCls: 'idoll-input',
-    placeholder: '请选择 select',
+    placeholder: '请选择',
     transitionName: 'slide-up',
     popupPlacement: 'bottomLeft',
     options: [],
@@ -161,14 +162,36 @@ export default class Cascader extends React.Component {
     }
   }
 
+  getFilledFieldNames = (fieldNames) => {
+    let names = {
+      children: 'children',
+      label: 'label',
+      value: 'value',
+    };
+    if (fieldNames) {
+      names = {
+        children: fieldNames.children || 'children',
+        label: fieldNames.label || 'label',
+        value: fieldNames.value || 'value',
+      };
+    }
+    return names;
+  }
+
   getLabel() {
-    const { options, displayRender = defaultDisplayRender } = this.props;
+    const { options, displayRender = defaultDisplayRender, fieldNames } = this.props;
+    const names = this.getFilledFieldNames(fieldNames);
     const value = this.state.value;
+    // const unwrappedValue = Array.isArray(value[0]) ? value[0] : value;
+    // const selectedOptions = arrayTreeFilter(options,
+    //   (o, level) => o.value === unwrappedValue[level],
+    // );
+    // const label = selectedOptions.map(o => o.label);
     const unwrappedValue = Array.isArray(value[0]) ? value[0] : value;
     const selectedOptions = arrayTreeFilter(options,
-      (o, level) => o.value === unwrappedValue[level],
+      (o, level) => o[names.value] === unwrappedValue[level], { childrenKeyName: names.children }
     );
-    const label = selectedOptions.map(o => o.label);
+    const label = selectedOptions.map(o => o[names.label]);
     return displayRender(label, selectedOptions);
   }
 
@@ -238,7 +261,7 @@ export default class Cascader extends React.Component {
     const { props, state } = this;
     const {
       prefixCls, inputPrefixCls, children, placeholder, size, disabled,
-      className, style, allowClear, showSearch = false, ...otherProps
+      className, style, allowClear, autoFocus, showSearch = false, ...otherProps
     } = props;
     const value = state.value;
 
@@ -246,9 +269,13 @@ export default class Cascader extends React.Component {
       [`${inputPrefixCls}-lg`]: size === 'large',
       [`${inputPrefixCls}-sm`]: size === 'small',
     });
+
+    const autoFocusClass = classNames({
+      [`${prefixCls}-input-autoFocus`]: autoFocus,
+    });
     const clearIcon = (allowClear && !disabled && value.length > 0) || state.inputValue ? (
       <Icon
-        type='right'
+        type='close-circle'
         className={`${prefixCls}-picker-clear`}
         onClick={this.clearSelection}
       />
@@ -305,6 +332,16 @@ export default class Cascader extends React.Component {
       dropdownMenuColumnStyle.width = this.input.input.offsetWidth;
     }
 
+    const expandIcon = (
+      <Icon type='pro-right' />
+    );
+
+    const loadingIcon = (
+      <span className={`${prefixCls}-menu-item-loading-icon`}>
+        <Icon type='loading' />
+      </span>
+    );
+
     const input = children || (
       <span
         style={style}
@@ -318,7 +355,7 @@ export default class Cascader extends React.Component {
           ref={this.saveInput}
           prefixCls={inputPrefixCls}
           placeholder={value && value.length > 0 ? undefined : placeholder}
-          className={`${prefixCls}-input ${sizeCls}`}
+          className={`${prefixCls}-input ${sizeCls} ${autoFocusClass}`}
           value={state.inputValue}
           disabled={disabled}
           readOnly={!showSearch}
@@ -342,6 +379,8 @@ export default class Cascader extends React.Component {
         onPopupVisibleChange={this.handlePopupVisibleChange}
         onChange={this.handleChange}
         dropdownMenuColumnStyle={dropdownMenuColumnStyle}
+        expandIcon={expandIcon}
+        loadingIcon={loadingIcon}
       >
         {input}
       </RcCascader>

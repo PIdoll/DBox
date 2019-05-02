@@ -6,7 +6,7 @@ export default class Tooltip extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: !!props.visible || !!props.defaultVisible,
+      visible: props.visible || props.defaultVisible || false
     };
   }
   static defaultProps = {
@@ -26,7 +26,7 @@ export default class Tooltip extends React.Component {
       onVisibleChange(visible);
     }
   }
-  isNoTitle() {
+  isNoTitle = () => {
     // overlay是为了兼容老版本
     const { title, overlay } = this.props;
     return !title && !overlay;
@@ -34,13 +34,13 @@ export default class Tooltip extends React.Component {
   saveTooltip = (node) => {
     this.tooltip = node;
   }
-  getPopupDomNode() {
+  getPopupDomNode = () => {
     console.log(this.tooltip)
     return this.tooltip.getPopupDomNode();
   }
   // Tooltip在不可使用的button中无法隐藏的问题
   // Chrome中不可用button不会触发鼠标事件
-  getDisabledCompatibleChildren(element) {
+  getDisabledCompatibleChildren = (element) => {
     if ((element.type === 'button') && (element.props.disabled && this.isHoverTrigger())) {
       const spanStyle = {
         // ！！重要：默认设置为inline-block
@@ -59,7 +59,7 @@ export default class Tooltip extends React.Component {
     return element;
   }
   // 判断tooltip是否是hover触发的
-  isHoverTrigger() {
+  isHoverTrigger = () => {
     const { trigger } = this.props;
     if (!trigger || trigger === 'hover') {
       return true;
@@ -69,7 +69,7 @@ export default class Tooltip extends React.Component {
     }
     return false;
   }
-  getPlacements() {
+  getPlacements = () => {
     const { builtinPlacements, arrowPointAtCenter, autoAdjustOverflow } = this.props;
     return builtinPlacements || getPlacements({
       arrowPointAtCenter,
@@ -79,12 +79,12 @@ export default class Tooltip extends React.Component {
   }
   render() {
     // getTooltipContainer已经被重命名为getPopupContainer
-    const { prefixCls, overlay, title, children, openClassName, getPopupContainer, getTooltipContainer } = this.props;
-    let visible = this.state.visible;
+    const { prefixCls, visible, overlay, title, children, openClassName, getPopupContainer, getTooltipContainer } = this.props;
+    // let visible = this.state.visible;
     // 当没有传入“title”属性时，隐藏tooltip
-    if (!('visible' in this.props) && this.isNoTitle()) {
-      visible = false;
-    }
+    // if (!('visible' in this.props) && this.isNoTitle()) {
+    //   visible = false;
+    // }
     const child = this.getDisabledCompatibleChildren(React.isValidElement(children) ? children : <span>{children}</span>)
     const childProps = child.props;
     const childCls = classNames(childProps.className, {
@@ -92,15 +92,15 @@ export default class Tooltip extends React.Component {
     })
     return (
       <RcTooltip
+        {...this.props}
         ref={this.saveTooltip}
         overlay={overlay || title || ''}
-        visible={visible}
+        visible={visible || this.state.visible}
         onVisibleChange={this.onVisibleChange}
         getTooltipContainer={getPopupContainer || getTooltipContainer}
         builtinPlacements={this.getPlacements()}
-        {...this.props}
         >
-        {visible ? cloneElement(child, {className: childCls}) : child}
+        {visible || this.state.visible || this.state.visible ? cloneElement(child, {className: childCls}) : child}
       </RcTooltip>
     );
   }

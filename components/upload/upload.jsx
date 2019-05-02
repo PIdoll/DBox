@@ -1,6 +1,8 @@
 import React from 'react';
 import RcUpload from 'rc-upload';
 import UploadList from './uploadList';
+import defaultLocale from '../locale-provider/default';
+import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import getFileItem from './getFileItem';
 import classNames from 'classnames';
 const prefixCls = 'idoll-upload';
@@ -53,7 +55,7 @@ function genPercentAdd() {
 }
 
 function UploadDragger(props) {
-  return <Upload {...props} type='drag' style={{ height: props.height }} />;
+  return <Upload {...props} type='drag' style={{ height: props.height, width: props.width }} />;
 }
 
 export default class Upload extends React.Component {
@@ -84,27 +86,22 @@ export default class Upload extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    this.clearProgressTimer();
+  }
+
   onStart = (file) => {
     let targetItem;
     let nextFileList = this.state.fileList.concat();
-    if (file.length > 0) {
-      targetItem = file.map(f => {
-        const fileObject = fileToObject(f);
-        fileObject.status = 'uploading';
-        return fileObject;
-      });
-      nextFileList = nextFileList.concat(targetItem);
-    } else {
-      targetItem = fileToObject(file);
-      targetItem.status = 'uploading';
-      nextFileList.push(targetItem);
-    }
+    targetItem = fileToObject(file);
+    targetItem.status = 'uploading';
+    nextFileList.push(targetItem);
     this.onChange({
       file: targetItem,
       fileList: nextFileList,
     });
     // fix ie progress
-    if (!window.FormData) {
+    if (!(window).FormData) {
       this.autoUpdateProgress(0, targetItem);
     }
   }
@@ -112,6 +109,7 @@ export default class Upload extends React.Component {
   autoUpdateProgress(percent, file) {
     const getPercent = genPercentAdd();
     let curPercent = 0;
+    this.clearProgressTimer();
     this.progressTimer = setInterval(() => {
       curPercent = getPercent(curPercent);
       this.onProgress({
@@ -147,7 +145,7 @@ export default class Upload extends React.Component {
     targetItem.status = 'done';
     targetItem.response = response;
     this.onChange({
-      file: targetItem,
+      file: { ...targetItem },
       fileList,
     });
   }
@@ -162,7 +160,7 @@ export default class Upload extends React.Component {
     targetItem.percent = e.percent;
     this.onChange({
       event: e,
-      file: targetItem,
+      file: { ...targetItem },
       fileList: this.state.fileList,
     });
   }
@@ -178,7 +176,10 @@ export default class Upload extends React.Component {
     targetItem.error = error;
     targetItem.response = response;
     targetItem.status = 'error';
-    this.handleRemove(targetItem);
+    this.onChange({
+      file: { ...targetItem },
+      fileList,
+    });
   }
 
   handleRemove(file) {
@@ -192,22 +193,27 @@ export default class Upload extends React.Component {
   }
 
   handleManualRemove = (file) => {
-    this.refs.upload.abort(file);
+    // this.refs.upload.abort(file);
+    this.upload.abort(file);
     /* eslint-disable */
     file.status = 'removed';
     /* eslint-enable */
     if ('onRemove' in this.props) {
       this.props.onRemove(file);
+      this.handleRemove(file);
     } else {
       this.handleRemove(file);
     }
   }
 
-  onChange = (info) => {
-    if (!('fileList' in this.props)) {
+  onChange = (info, updateState = true) => {
+    if (!('fileList' in this.props) && updateState) {
       this.setState({ fileList: info.fileList });
     }
-    this.props.onChange(info);
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(info);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -224,48 +230,92 @@ export default class Upload extends React.Component {
     });
   }
 
+  beforeUpload = (file, fileList) => {
+    if (!this.props.beforeUpload) {
+      return true;
+    }
+    const result = this.props.beforeUpload(file, fileList);
+    if (result === false) {
+      return false;
+    } else if (result && (result).then) {
+      return result;
+    }
+    return true;
+  }
+
   clearProgressTimer() {
     clearInterval(this.progressTimer);
   }
 
+  saveUpload = (node) => {
+    this.upload = node;
+  }
+
+  renderUploadList = (locale) => {
+    const { showUploadList, listType, onPreview } = this.props;
+    const { showRemoveIcon, showPreviewIcon } = showUploadList;
+    return (
+      <UploadList
+        listType={listType}
+        items={this.state.fileList}
+        onPreview={onPreview}
+        onRemove={this.handleManualRemove}
+        showRemoveIcon={showRemoveIcon}
+        showPreviewIcon={showPreviewIcon}
+        locale={{ ...locale, ...this.props.locale }}
+      />
+    );
+  }
+
   render() {
-    let type = this.props.type || 'select';
-    let props = {
-      ...this.props,
+    const {
+      prefixCls = '',
+      className,
+      showUploadList,
+      listType,
+      type,
+      disabled,
+      children,
+    } = this.props;
+
+    const rcUploadProps = {
       onStart: this.onStart,
       onError: this.onError,
       onProgress: this.onProgress,
       onSuccess: this.onSuccess,
-      beforeUpload: this.props.beforeUpload,
+      ...this.props,
+      beforeUpload: this.beforeUpload,
     };
-    let uploadList;
-    if (this.props.showUploadList) {
-      uploadList = (
-        <UploadList listType={this.props.listType}
-          items={this.state.fileList}
-          onPreview={props.onPreview}
-          onRemove={this.handleManualRemove}
-        />
-      );
-    }
+
+    delete rcUploadProps.className;
+
+    const uploadList = showUploadList ? (
+      <LocaleReceiver
+        componentName='Upload'
+        defaultLocale={defaultLocale.Upload}
+      >
+        {this.renderUploadList}
+      </LocaleReceiver>
+    ) : null;
+
     if (type === 'drag') {
-      const dragCls = classNames({
-        [prefixCls]: true,
+      const dragCls = classNames(prefixCls, {
         [`${prefixCls}-drag`]: true,
         [`${prefixCls}-drag-uploading`]: this.state.fileList.some(file => file.status === 'uploading'),
         [`${prefixCls}-drag-hover`]: this.state.dragState === 'dragover',
-        [`${prefixCls}-disabled`]: this.props.disabled,
+        [`${prefixCls}-disabled`]: disabled,
       });
       return (
-        <span className={this.props.className}>
-          <div className={dragCls}
+        <span className={className}>
+          <div
+            className={dragCls}
             onDrop={this.onFileDrop}
             onDragOver={this.onFileDrop}
             onDragLeave={this.onFileDrop}
           >
-            <RcUpload {...props} ref='upload'>
+            <RcUpload {...rcUploadProps} ref={this.saveUpload} className={`${prefixCls}-btn`}>
               <div className={`${prefixCls}-drag-container`}>
-                {this.props.children}
+                {children}
               </div>
             </RcUpload>
           </div>
@@ -274,28 +324,28 @@ export default class Upload extends React.Component {
       );
     }
 
-    const uploadButtonCls = classNames({
-      [prefixCls]: true,
+    const uploadButtonCls = classNames(prefixCls, {
       [`${prefixCls}-select`]: true,
-      [`${prefixCls}-select-${this.props.listType}`]: true,
-      [`${prefixCls}-disabled`]: this.props.disabled,
+      [`${prefixCls}-select-${listType}`]: true,
+      [`${prefixCls}-disabled`]: disabled,
     });
 
-    const uploadButton = this.props.children
-      ? <div className={uploadButtonCls}><RcUpload {...props} ref='upload' /></div>
-      : null;
+    const uploadButton = (
+      <div className={uploadButtonCls} style={{ display: children ? '' : 'none' }}>
+        <RcUpload {...rcUploadProps} ref={this.saveUpload} />
+      </div>
+    );
 
-    if (this.props.listType === 'picture-card') {
+    if (listType === 'picture-card') {
       return (
-        <span className={this.props.className}>
+        <span className={className}>
           {uploadList}
           {uploadButton}
         </span>
       );
     }
-
     return (
-      <span className={this.props.className}>
+      <span className={className}>
         {uploadButton}
         {uploadList}
       </span>

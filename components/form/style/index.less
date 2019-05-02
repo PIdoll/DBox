@@ -9,7 +9,7 @@
 @form-component-height: @input-height-base;
 @form-component-max-height: @input-height-lg;
 @form-feedback-icon-size: 14px;
-@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 + 2px;
+@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 + 4px;
 
 .@{form-prefix-cls} {
   .reset-component;
@@ -82,20 +82,25 @@ input[type="checkbox"] {
   }
 
   &-control {
-    line-height: @form-component-max-height - 0.0001px; // https://github.com/ant-design/ant-design/issues/8220
+    // line-height: @form-component-max-height - 0.0001px;
+    // line-height: @input-height-base;
     position: relative;
     .clearfix;
+    .@{idoll-prefix}-radio-wrapper {
+      margin-right: 16px;
+    }
   }
 
   &-with-help {
-    margin-bottom: @form-item-margin-bottom - @font-size-base * @line-height-base - @form-help-margin-top;
+    margin-bottom: @form-item-margin-bottom - @font-size-base * 1.5 - @form-help-margin-top;
     transition: none;
   }
 
   &-label {
     text-align: right;
     vertical-align: middle;
-    line-height: @form-component-max-height - 0.0001px;
+    // line-height: @form-component-max-height - 0.0001px;
+    line-height: @input-height-base;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -117,6 +122,21 @@ input[type="checkbox"] {
     }
   }
 
+  &-label-compact {
+    // text-align: center;
+    padding-left: 12px;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    background-color: @input-addon-bg;
+    border: 1px solid @border;
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+    border-right: none;
+  }
+
   .@{idoll-prefix}-switch {
     margin: 2px 0 4px;
   }
@@ -126,13 +146,26 @@ input[type="checkbox"] {
   }
 }
 
+.@{form-prefix-cls}-item-compact {
+  .@{form-prefix-cls}-item-control {
+    line-height: 0;
+  }
+  .@{idoll-prefix}-input {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+  }
+  .@{idoll-prefix}-select-selection {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+  }
+}
+
 .@{form-prefix-cls}-explain,
 .@{form-prefix-cls}-extra {
   color: @text-color-secondary;
-  line-height: @line-height-base;
+  line-height: 1.5;
   transition: color .15s @ease-out;
   margin-top: @form-help-margin-top;
 }
+
 
 .@{form-prefix-cls}-extra {
   padding-top: 4px;
@@ -237,6 +270,10 @@ form {
     margin-right: 8px;
   }
 
+  .@{idoll-prefix}-input-number-handler-wrap {
+    z-index: 2;
+  }
+
   .@{idoll-prefix}-select,
   .@{idoll-prefix}-cascader-picker {
     width: 100%;
@@ -269,14 +306,14 @@ form {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     &:hover {
-      border-color: @border-color-base;
+      border-color: @border;
     }
   }
 
   .@{idoll-prefix}-select-selection--single {
     margin-left: -1px;
     height: @input-height-lg;
-    background-color: #eee;
+    background-color: @background;
     .@{idoll-prefix}-select-selection__rendered {
       padding-left: 8px;
       padding-right: 25px;
@@ -285,7 +322,7 @@ form {
   }
 
   .@{idoll-prefix}-select-open .@{idoll-prefix}-select-selection {
-    border-color: @border-color-base;
+    border-color: @border;
     box-shadow: none;
   }
 }
@@ -297,7 +334,7 @@ form {
   margin: @form-vertical-label-margin;
   display: block;
   text-align: left;
-  line-height: @line-height-base;
+  line-height: 1.5;
 
   label:after {
     display: none;
@@ -396,8 +433,10 @@ form {
     visibility: visible;
     pointer-events: none;
     width: @form-component-height;
-    height: @form-component-max-height;
-    line-height: @form-component-max-height;
+    // height: @form-component-max-height;
+    // line-height: @form-component-max-height;
+    height: @input-height-base;
+    line-height: @input-height-base;
     text-align: center;
     font-size: @form-feedback-icon-size;
     animation: zoomIn .3s @ease-out-back;
@@ -409,7 +448,7 @@ form {
 .has-success {
   &.has-feedback:after {
     animation-name: diffZoomIn1 !important;
-    content: '\e630';
+    content: '\E74e';
     color: @success-color;
   }
 }
@@ -418,7 +457,7 @@ form {
   .form-control-validation(@warning-color; @warning-color;);
 
   &.has-feedback:after {
-    content: '\e62c';
+    content: '\E749';
     color: @warning-color;
     animation-name: diffZoomIn3 !important;
   }
@@ -464,8 +503,14 @@ form {
 .has-error {
   .form-control-validation(@error-color; @error-color;);
 
+  .@{idoll-prefix}-input-group > .@{idoll-prefix}-input-group-addon {
+    color: @text-color;
+    border-color: @input-border-color;
+    background-color: @input-addon-bg;
+  }
+
   &.has-feedback:after {
-    content: '\e62e';
+    content: '\E6fb';
     color: @error-color;
     animation-name: diffZoomIn2 !important;
   }
@@ -532,7 +577,8 @@ form {
   &.has-feedback:after {
     display: inline-block;
     animation: loadingCircle 1s infinite linear;
-    content: "\e64d";
+    font-family: 'idollicon';
+    content: "\E712";
     color: @primary-color;
   }
 }
@@ -540,6 +586,9 @@ form {
 .@{idoll-prefix}-advanced-search-form {
   .@{form-prefix-cls}-item {
     margin-bottom: 24px;
+    &-with-help {
+      margin-bottom: 5px;
+    }
   }
 }
 

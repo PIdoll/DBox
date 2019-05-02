@@ -11,4 +11,3 @@ Layout.Footer = Footer
 
 
 export default Layout;
-export { Sider, Header, Content, Footer };

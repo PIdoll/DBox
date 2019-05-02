@@ -11,7 +11,7 @@
 .input-sm() {
   padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
   height: @input-height-sm;
-  border-radius: @border-radius-sm;
+  border-radius: 2px;
   font-size: @font-size-sm;
 }
 
@@ -22,20 +22,20 @@
   border-color: @color;
   outline: 0;
   // box-shadow: 0 0 0 2px fade(@color, 20%);
-  border-right-width: 1px !important;
+  border-right-width: @border-width-base !important;
 }
 
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
   // border-color: tint(@color, 20%);
   border-color: @color;
-  border-right-width: 1px !important;
+  border-right-width: @border-width-base !important;
 }
 
 .disabled() {
   background-color: @input-disabled-bg;
   opacity: 1;
-  cursor: @cursor-disabled;
+  cursor: not-allowed;
   color: @text-color-disable;
   &:hover {
     .hover(@input-border-color);
@@ -52,12 +52,11 @@
   height: @input-height-base;
   cursor: text;
   font-size: @font-size-base;
-  line-height: @line-height-base;
+  line-height: 1.5;
   color: @input-color;
   background-color: @input-bg;
   background-image: none;
-  border: 1px solid @border;
-  // border: 1px solid @input-border-color;
+  border: @border-width-base @border-style-base @border;
   border-radius: @border-radius-base;
   .placeholder(); // Reset placeholder
   // transition: border .2s @ease-in-out, background .2s @ease-in-out, box-shadow .2s @ease-in-out;
@@ -92,14 +91,22 @@
   &-sm {
     .input-sm();
   }
+
+  &-clear-icon {
+    color: @icon-default;
+    :hover {
+      color: @icon-hover;
+    }
+  }
 }
+
 
 // 只读状态
 .readOnly() {
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid @border;
+    border: @border-width-base @border-style-base @border;
     box-shadow: none;
   }
 }
@@ -107,14 +114,13 @@
 // Input with icons, you can define @height if you wish to change the input size
 .input-with-icon(@height: @input-height-base) {
   position: relative;
-
   .@{iconfont-css-prefix} {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 2;
     .square(@height);
-    font-size: 14px;
+    font-size: @font-size-base ;
     line-height: @height;
     text-align: center;
     pointer-events: none;
@@ -139,7 +145,7 @@
   }
 
   > [class*="col-"] {
-    padding-right: 8px;
+    padding-right: @padding-xs;
   }
   
   &:hover {
@@ -173,7 +179,7 @@
     float: left;
     width: 100%;
     margin-bottom: 0;
-    border: 1px solid @input-border-color;
+    border: @border-width-base @border-style-base @input-border-color;
     &:hover {
       z-index: 1;
       .hover();
@@ -193,7 +199,7 @@
     color: @input-color;
     text-align: center;
     background-color: @input-addon-bg;
-    border: 1px solid @input-border-color;
+    border: @border-width-base @border-style-base @input-border-color;
     border-radius: @border-radius-base;
 
     // Reset Select's style in addon
@@ -203,7 +209,7 @@
       .idoll-select-selection {
         background-color: inherit;
         margin: -1px;
-        border: 1px solid transparent;
+        border: @border-width-base @border-style-base transparent;
         box-shadow: none;
       }
     }
@@ -263,7 +269,7 @@
     &-wrap,
     > .@{inputClass} {
       &:not(:first-child):not(:last-child) {
-        border-right-width: 1px;
+        border-right-width: @border-width-base;
         border-right-color: transparent;
         &:hover {
           .hover();
@@ -300,7 +306,7 @@
     & > .@{idoll-prefix}-mention-wrapper .@{idoll-prefix}-mention-editor,
     & > .@{idoll-prefix}-time-picker .@{idoll-prefix}-time-picker-input {
       border-radius: 0;
-      border-right-width: 1px;
+      border-right-width: @border-width-base;
       border-right-color: transparent;
       &:hover {
         .hover();
@@ -378,6 +384,10 @@
     z-index: 2;
     line-height: 0;
     color: @input-color;
+    > :nth-child(2) {
+      margin-left: 2px;
+      transition: none;
+    }
   }
 
   .@{inputClass}-prefix {

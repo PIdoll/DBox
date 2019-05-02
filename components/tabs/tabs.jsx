@@ -6,7 +6,7 @@ import TabContent from 'rc-tabs/lib/TabContent';
 import classNames from 'classnames';
 import Icon from '../icon';
 import isFlexSupported from '../_util/isFlexSupported';
-import './style/index.jsx'
+import './style/index'
 
 export default class Tabs extends React.Component {
   static TabPane = TabPane;
@@ -60,6 +60,7 @@ export default class Tabs extends React.Component {
       tabBarExtraContent,
       tabBarStyle,
       hideAdd,
+      conentStyle,
       onTabClick,
       onPrevClick,
       onNextClick,
@@ -142,7 +143,7 @@ export default class Tabs extends React.Component {
         className={cls}
         tabBarPosition={tabPosition}
         renderTabBar={renderTabBar}
-        renderTabContent={() => <TabContent animated={tabPaneAnimated} animatedWithMargin />}
+        renderTabContent={() => <TabContent style={conentStyle} animated={tabPaneAnimated} animatedWithMargin />}
         onChange={this.handleChange}
       >
         {childrenWithClose.length > 0 ? childrenWithClose : children}

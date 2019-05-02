@@ -1,6 +1,6 @@
 import React from 'react';
 import RcTree, { TreeNode } from 'rc-tree';
-import animation from '../_util/openAnimation';
+// import animation from '../_util/openAnimation';
 import './style';
 
 export default class Tree extends React.Component {
@@ -10,8 +10,11 @@ export default class Tree extends React.Component {
     prefixCls: 'idoll-tree',
     checkable: false,
     showIcon: false,
-    openAnimation: animation,
+    // loadedKeys: [],
+    // onLoaded: (loadedKeys: string[], info: { event: 'load', node: AntTreeNode; }) => void;
+    // openAnimation: animation,
   };
+
 	render() {
 		const { prefixCls, className, children } = this.props;
 		let checkable = this.props.checkable;
@@ -19,8 +22,8 @@ export default class Tree extends React.Component {
   <RcTree
     {...this.props}
     className={className}
-    checkable={checkable ? <span className={`${prefixCls}-checkable-inner`} /> : checkable}
-  >
+    checkable={checkable ? <span className={`${prefixCls}-checkbox-inner`} /> : checkable}
+        >
     { children }
   </RcTree>
 		);

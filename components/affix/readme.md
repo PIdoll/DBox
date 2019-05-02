@@ -1,26 +1,75 @@
-# Affix
 
----
-category: Components
-subtitle: 固钉
-type: Navigation
-title: Affix
----
+将元素固定在特定区域，一般用于导航栏或反馈按钮。
 
-将页面元素钉在可视范围。
+##### **固定在顶部**
 
-## 何时使用
-
-当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。
-
-页面可视范围过小时，慎用此功能以免遮挡页面内容。
-
+最简单的用法
 
 ```jsx
+import { Affix, Button } from 'dbox-ui';
+
+class AffixView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      top: 64,
+    }
+  }
+  render() {
+    return (
+      <Affix offsetTop={this.state.top} ref='box_affix'>
+        <Button  >距离顶部64px触发</Button>
+      </Affix>
+    )
+  }
+}
+<AffixView />
+```
+
+##### **固定在底部**
+
+固定状态改变时的回调
+
+```jsx
+import { Affix, Button } from 'dbox-ui';
+
+const AffixView = () => {
+  return (
+    <Affix offsetBottom={0} onChange={affixed => console.log(affixed)}>
+      <Button >距离底部0px触发</Button>
+    </Affix>
+  )
+}
+<AffixView />
+```
+
+##### **固定在容器**
+
+使用target设置Affix需要监听其滚动事件的元素
+
+```jsx
+import { Affix, Button } from 'dbox-ui';
+
+class AffixView extends React.Component{
+  render() {
+    return (
+      <div ref={(node) => { this.div = node; }} style={{height: '100px', overflow: 'scroll'}}>
+        <div style={{backgroundColor: '#dedede', paddingTop: '30px', height: '300px'}}>
+          <Affix target={() => this.container}>
+            <Button type="primary">
+                固定在容器的顶部
+            </Button>
+          </Affix>
+        </div>
+      </div>
+    )
+  }
+}
+<AffixView />
 
 ```
 
-## API
+##### **API**
 
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -31,8 +80,11 @@ title: Affix
 
 **注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
 
-```jsx
-<Affix style={{ position: 'absolute', top: y, left: x }}>
-  ...
-</Affix>
+```jsx noeditor
+import {BackTop} from 'dbox-ui';
+import AffixView from '../prevPage/affix';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <AffixView />
+</div>
 ```

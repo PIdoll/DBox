@@ -2,7 +2,7 @@
 @import '../../../style/mixins/index.less';
 
 @timeline-prefix-cls: idoll-timeline;
-@timeline-color: @border-color-split;
+@timeline-color: @border;
 
 .@{timeline-prefix-cls} {
   .reset-component;
@@ -11,7 +11,6 @@
   padding: 0;
 
   &-item {
-    height: 72px;
     position: relative;
     padding: 0 0 12px 0;
     list-style: none;
@@ -22,7 +21,7 @@
       left: 6px;
       top: 0;
       height: 100%;
-      border-left: 2px solid @timeline-color;
+      border-left: @tooltip-border-width @border-style-base @timeline-color;
     }
 
     &-pending &-tail {
@@ -33,9 +32,9 @@
       position: absolute;
       width: 14px;
       height: 14px;
-      background-color: #fff;
+      background-color: @tooltip-head-bg;
       border-radius: 100px;
-      border: 2px solid transparent;
+      border: @tooltip-border-width @border-style-base transparent;
       &-blue {
         border-color: @primary-color;
         color: @primary-color;
@@ -47,6 +46,9 @@
       &-green {
         border-color: @success-color;
         color: @success-color;
+      }
+      .idoll-icon-loading:before {
+        animation: loadingCircle 1s infinite linear;
       }
     }
 
@@ -61,7 +63,7 @@
       height: auto;
       border-radius: 0;
       padding: 3px 0;
-      font-size: 12px;
+      font-size: @font-size-base;
       transform: translateY(-50%);
     }
 
@@ -74,7 +76,7 @@
 
     &-last {
       .@{timeline-prefix-cls}-item-tail {
-        border-left: 2px dotted @timeline-color;
+        border-left: @tooltip-border-width @tooltip-border-tail-style @timeline-color;
         display: none;
       }
       .@{timeline-prefix-cls}-item-content {
@@ -136,7 +138,7 @@
   }
 
   &&-pending &-item-last &-item-tail {
-    border-left: 2px dotted @timeline-color;
+    border-left: @tooltip-border-width @tooltip-border-tail-style @timeline-color;
     display: block;
   }
 
@@ -146,15 +148,11 @@
 
   &&-reverse &-item-pending {
     .@{timeline-prefix-cls}-item-tail {
-      border-left: 2px dotted @timeline-color;
+      border-left: @tooltip-border-width @tooltip-border-tail-style @timeline-color;
       display: block;
     }
     .@{timeline-prefix-cls}-item-content {
       min-height: 48px;
     }
   }
-
-  // &&-pending &-item-last &-item-tail {
-  //   display: block;
-  // }
 }

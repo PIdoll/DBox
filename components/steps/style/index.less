@@ -2,30 +2,6 @@
 @import "../../../style/mixins/index";
 
 @steps-prefix-cls: ~"@{idoll-prefix}-steps";
-@process-icon-color: @processing-color;
-@process-title-color: @heading-color;
-@process-description-color: @text-color;
-@process-tail-color: @border-color-split;
-@process-icon-text-color: #fff;
-@wait-icon-color: @disabled-color;
-@wait-title-color: @text-color-secondary;
-@wait-description-color: @wait-title-color;
-@wait-tail-color: @process-tail-color;
-@finish-icon-color: @process-icon-color;
-@finish-title-color: @text-color;
-@finish-description-color: @text-color-secondary;
-@finish-tail-color: @primary-color;
-@error-icon-color: @error-color;
-@error-title-color: @error-color;
-@error-description-color: @error-color;
-@error-tail-color: @wait-tail-color;
-@steps-background: @component-background;
-
-@steps-icon-size: 32px;
-@steps-small-icon-size: 24px;
-@steps-dot-size: 8px;
-@steps-current-dot-size: 10px;
-@steps-description-max-width: 160px;
 
 .@{steps-prefix-cls} {
   .reset-component;
@@ -41,7 +17,12 @@
   flex: 1;
   min-height: 70px;
   overflow: hidden;
-
+  .@{steps-prefix-cls}-finish-icon {
+    color: @finish-icon-color;
+  }
+  .@{steps-prefix-cls}-error-icon {
+    color: @error-icon-color;
+  }
   &:last-child {
     flex: none;
   }
@@ -57,18 +38,18 @@
     vertical-align: top;
   }
 
-  &-icon {
+  .@{steps-prefix-cls}  &-icon {
     border: @border-width-base @border-style-base @wait-icon-color;
     width: @steps-icon-size;
     height: @steps-icon-size;
-    line-height: 30px;
+    line-height: @steps-small-icon-size + 6;
     text-align: center;
     color: @primary-color;
     border-radius: @steps-icon-size;
     font-size: @font-size-lg;
-    margin-right: 8px;
+    margin-right: @steps-dot-size;
     transition: background-color 0.3s, border-color 0.3s;
-    font-family: @font-family-no-number;
+    font-family: @font-family;
 
     > .@{steps-prefix-cls}-icon {
       line-height: 1.2;
@@ -82,12 +63,12 @@
     left: 0;
     width: 100%;
     top: 16px;
-    padding: 0 10px;
+    padding: 0 @steps-current-dot-size;
 
     &:after {
       content: ' ';
       display: inline-block;
-      background: @border-color-split;
+      background: @border;
       height: 1px;
       border-radius: 1px;
       width: 100%;
@@ -95,24 +76,24 @@
     }
   }
 
-  //&-error {
-  //  .@{steps-prefix-cls}-item-icon {
-  //    border-color: @error-icon-color;
-  //    color: @error-icon-color;
-  //  }
-  //  .@{steps-prefix-cls}-item-content {
-  //    .@{steps-prefix-cls}-item-title,
-  //    .@{steps-prefix-cls}-item-description {
-  //      color: @error-icon-color;
-  //    }
-  //  }
-  //}
+  &-error {
+  .@{steps-prefix-cls}-item-icon {
+    border-color: @error-icon-color;
+    color: @error-icon-color;
+  }
+ .@{steps-prefix-cls}-item-content {
+  .@{steps-prefix-cls}-item-title,
+  .@{steps-prefix-cls}-item-description {
+    color: @error-icon-color;
+  }
+ }
+}
 
   &-title {
     font-size: @font-size-lg;
     color: @text-color;
     display: inline-block;
-    padding-right: 16px;
+    padding-right: @padding-md ;
     position: relative;
     line-height: @steps-icon-size;
 
@@ -158,7 +139,7 @@
 
 .@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) {
   .@{steps-prefix-cls}-item {
-    margin-right: 16px;
+    margin-right: @steps-current-dot-size + 6;
     white-space: nowrap;
 
     &:last-child {
@@ -213,18 +194,6 @@
 
   &-@{status} > &-tail:after {
     background-color: @@tail-color;
-  }
-}
-.idoll-icon-check{
-  color: @primary-color;
-  &:hover{
-    color: @primary-color;
-  }
-}
-.idoll-icon-close{
-  color: @error-icon-color;
-  &:hover{
-    color: @error-icon-color;
   }
 }
 @import 'progress-dot';

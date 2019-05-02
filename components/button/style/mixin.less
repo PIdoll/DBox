@@ -16,7 +16,7 @@
     &:focus,
     &:active,
     &.active {
-      .button-color(@btn-disable-color; @btn-disable-bg; @btn-disable-border);
+      .button-color(@btn-disable-border; @btn-disable-bg; @btn-disable-border);
     }
   }
 }
@@ -48,13 +48,20 @@
   .button-color(@color; @background; @background);
   &:hover,
   &:focus {
-    // .button-color(@color; @primary-spread-color; @primary-spread-color);
-    .button-color(@color; @primary-Hover; @primary-Hover);
+    // .button-color(@color; @primary-hover; @primary-hover);
+    > .@{iconfont-css-prefix} {
+      // color: @color;
+      color: @color;
+    }
+    .button-color(@color; @primary-hover; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(@color;  ~`colorPalette("@{primary-Pressed}", 7)`; ~`colorPalette("@{primary-Pressed}", 7)`;);
+    > .@{iconfont-css-prefix} {
+      color: @color;
+    }
+    .button-color(@color; @primary-pressed;@primary-pressed);
   }
 
   .button-disabled();
@@ -67,14 +74,17 @@
   &:focus {
     // 图标颜色
     > .@{iconfont-css-prefix} {
-      color: @primary-color;
+      color: @primary-hover;
     }
-    .button-color(@primary-color; @background; @primary-color);
+    .button-color(@primary-hover; @background; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-Pressed}", 7)`; @background; ~`colorPalette("@{primary-Pressed}", 7)`;);
+    > .@{iconfont-css-prefix} {
+      color: @primary-pressed;
+    }
+    .button-color(@primary-pressed; @background; @primary-pressed);
   }
 
   .button-disabled();
@@ -86,14 +96,23 @@
 
   &:hover {
     .button-color(@background; @color;  @color);
+    > .@{iconfont-css-prefix} {
+      color: @background;
+    }
   }
   &:focus {
-    .button-color(@color; @background; @error-Pressed);
+    .button-color(@color; @background; @error-hover);
+    > .@{iconfont-css-prefix} {
+      color: @color;
+    }
   }
 
   &:active,
   &.active {
-    .button-color(@background; ~`colorPalette("@{error-Pressed}", 7)`; ~`colorPalette("@{error-Pressed}", 7)`);
+    .button-color(@background; @error-pressed; @error-pressed);
+    > .@{iconfont-css-prefix} {
+      color: @background;
+    }
   }
 
   .button-disabled();
@@ -104,12 +123,12 @@
 
   &:hover,
   &:focus {
-    .button-color(~`colorPalette("@{color}", 5)`; transparent; ~`colorPalette("@{color}", 5)`);
+    .button-color(darken(@color, 10%); transparent; darken(@color, 10%));
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{color}", 7)`; transparent; ~`colorPalette("@{color}", 7)`);
+    .button-color(darken(@color, 15%); transparent; darken(@color, 15%));
   }
 
   // 幽灵按钮禁用状态设置
@@ -160,7 +179,6 @@
 }
 
 // 按钮的基本样式
-// --------------------------------------------------
 .btn() {
   display: inline-block;
   margin-bottom: 0;
@@ -225,6 +243,9 @@
 // 重要按钮
 .btn-primary() {
   .button-variant-primary(@btn-primary-color; @btn-primary-bg);
+  .idoll-icon {
+    color: @btn-default-bg;
+  }
 }
 
 // 次要按钮
@@ -233,12 +254,21 @@
 
   &:hover,
   &:focus {
-    .button-color(@primary-spread-color;@btn-primary-color; @primary-spread-color);
+    > .@{iconfont-css-prefix} {
+      color: @primary-hover;
+    }
+    .button-color(@primary-hover;@btn-primary-color; @primary-hover);
   }
 
   &:active,
   &.active {
-    .button-color(~`colorPalette("@{primary-Pressed}", 7)`; @btn-primary-color; ~`colorPalette("@{primary-Pressed}", 7)`);
+    > .@{iconfont-css-prefix} {
+      color: @primary-hover;
+    }
+    .button-color(@primary-pressed; @btn-primary-color; @primary-pressed);
+  }
+  .idoll-icon {
+    color: @btn-primary-bg;
   }
 
   .button-disabled();
@@ -251,7 +281,7 @@
   &:focus,
   &:active,
   &.active {
-    .button-color(@btn-primary-color; @btn-primary-bg; @btn-primary-bg);
+    .button-color(@primary-pressed; @btn-primary-bg; @primary-pressed);
   }
 }
 // 次按钮
@@ -259,10 +289,12 @@
   // fade(#000, 65%); #fff; #E2E2E2;
   .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
   &:hover,
-  &:focus,
+  &:focus {
+    .button-color(@primary-hover; @btn-default-bg;@primary-hover);
+  }
   &:active,
   &.active {
-    background: #fff;
+    .button-color(@primary-pressed; @btn-default-bg; @primary-pressed);
   }
 }
 
@@ -279,8 +311,10 @@
 
 // 危险按钮
 .btn-danger() {
-  // .button-variant-danger(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
   .button-variant-danger(@error-color, @btn-default-bg,  @btn-default-border);
+  .idoll-icon {
+    color: @error-color;
+  }
 }
 
 // 特定按钮: 内容只包含 icon
@@ -352,18 +386,14 @@
   > .@{btnClassName}:first-child {
     margin-left: 0;
     &:not(:last-child) {
-      // border-bottom-right-radius: 0;
-      // border-top-right-radius: 0;
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
+      border-bottom-left-radius: @border-radius-base;
+      border-top-left-radius: @border-radius-base;
     }
   }
 
   > .@{btnClassName}:last-child:not(:first-child) {
-    // border-bottom-left-radius: 0;
-    // border-top-left-radius: 0;
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
+    border-bottom-right-radius: @border-radius-base;
+    border-top-right-radius: @border-radius-base;
   }
 
   & > & {
@@ -378,13 +408,29 @@
     > .@{btnClassName}:last-child {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
-      padding-right: 8px;
+      padding-right: @padding-xs;
     }
   }
 
   & > &:last-child:not(:first-child) > .@{btnClassName}:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-    padding-left: 8px;
+    padding-left: @padding-xs;
+  }
+}
+
+.loading(@size:14px,@color:#13B886) {
+  &:before {
+    content: "\E914";
+    font-family: idollicon;
+    
+    animation: loadingCircle 1s infinite linear;
+    text-align: center;
+    display: inline-block;
+    color: @color;
+    z-index: 1;
+    font-size: @size;
+    opacity: 1;
+    background: none;
   }
 }

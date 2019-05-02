@@ -4,28 +4,25 @@
 @btn-border-radius-base : @border-radius-base;
 @btn-border-radius-sm   : @border-radius-base;
 
-@btn-primary-color      : #fff;
+@btn-primary-color      : @white;
 @btn-primary-bg         : @primary-color;
 
 @btn-default-color      : @text-color;
-@btn-default-bg         : #fff;
-@btn-default-border     : @border-color-base;
+@btn-default-bg         : @white;
+@btn-default-border     : @border;
 
 @btn-danger-color       : @error-color;
-@btn-danger-bg          : @background-color-base;
-@btn-danger-border      : @border-color-base;
+@btn-danger-bg          : hsv(0, 0, 96%);;
+@btn-danger-border      : @border;
 
-@btn-ghost-color        : @text-color;
+@btn-ghost-color        : #f8f8f8;
 @btn-ghost-bg           : transparent;
-@btn-ghost-border       : @border-color-base;
+@btn-ghost-border       : #f8f8f8;
 
 @btn-disable-color      : @disabled-color;
-@btn-disable-bg         : @disabled-bg;
-@btn-disable-border     : @border-color-base;
+@btn-disable-bg         : @disabled;
+@btn-disable-border     : @border;
 
-// @btn-padding-base       : @padding-sm - 6px @padding-sm + 2px;
-// @btn-padding-lg         : @btn-padding-base;
-// @btn-padding-sm         : 0 @padding-xs - 1px;
 @btn-padding-base       : 0 @padding-sm + 3px;
 @btn-padding-lg         : @btn-padding-base;
 @btn-padding-sm         : 0 @padding-xs - 1px;
@@ -47,6 +44,6 @@
 
 @btn-special-width     : 44px;
 
-@btn-group-border       : @primary-spread-color;
+@btn-group-border       : @primary-hover;
 
-@btn-icon-margin-left-base: @margin-xs - 2px;
+@btn-icon-margin-left-base: 10px;

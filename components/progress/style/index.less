@@ -2,19 +2,23 @@
 @import "../../../style/mixins/index";
 
 @progress-prefix-cls: ~"@{idoll-prefix}-progress";
-@progress-default-color: @highlight-color;
-@progress-remaining-color: @section-background-dark;
+
 
 .@{progress-prefix-cls} {
   .reset-component;
   display: inline-block;
-
+  line-height: 18px;
   &-line {
     width: 100%;
     font-size: @font-size-base;
     position: relative;
   }
-
+  .@{progress-prefix-cls}-error-icon {
+    color: @progress-error-icon-color;
+  }
+  .@{progress-prefix-cls}-success-icon {
+    color: @progress-success-icon-color;
+  }
   &-small&-line,
   &-small&-line &-text .@{iconfont-css-prefix} {
     font-size: @font-size-sm;
@@ -63,18 +67,17 @@
     margin-left: 8px;
     vertical-align: middle;
     display: inline-block;
-    color: @highlight-color;
+    color: @primary-hover;
     position: absolute;
     right: 0;
-    line-height: 1;
+    line-height: 18px;
     .@{iconfont-css-prefix} {
       font-size: @font-size-base;
     }
   }
-
   &-import {
     display: inline-block;
-    color: @highlight-color;
+    color: @primary-hover;
     position: absolute;
     left: 46%;
   }
@@ -88,7 +91,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: @component-background;
+      background: @white;
       border-radius: 10px;
       animation: ~"@{idoll-prefix}-progress-active" 2.4s @ease-out-quint infinite;
     }
@@ -134,9 +137,10 @@
     transform: translateY(-50%);
     left: 0;
     margin: 0;
+
     color: @text-color;
     .@{iconfont-css-prefix} {
-      font-size: 14 / 12em;
+      font-size: 14 / 10em;
     }
   }
 
@@ -145,13 +149,11 @@
       color: @error-color;
     }
   }
-
   &-circle&-status-success {
     .@{progress-prefix-cls}-text {
       color: @success-color;
     }
   }
-
   @keyframes ~"@{idoll-prefix}-progress-active" {
     0% {
       opacity: 0.1;
@@ -167,28 +169,4 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

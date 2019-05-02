@@ -1,7 +1,7 @@
 @import '../../../style/theme/default/index';
-@import '../../../style/index';
+@import "../../../style/mixins/index.less";
 
-@switch-prefix-cls: ~"dbox-switch";
+@switch-prefix-cls:  ~"@{idoll-prefix}-switch";
 
 .@{switch-prefix-cls} {
   .reset-component;
@@ -13,15 +13,14 @@
   line-height: @switch-height - 2px;
   vertical-align: middle;
   border-radius: 100px;
-  border: 1px solid transparent;
-  background-color: @disabled-color;
+  border: @border-width-base @border-style-base transparent;
+  background-color: @switch-disabled-color;
   cursor: pointer;
   transition: all @switch-duration;
   user-select: none;
-  margin-bottom: 5px;
 
   &-inner {
-    color: #fff;
+    color: @white;
     font-size: @font-size-sm;
     margin-left: 24px;
     margin-right: 6px;
@@ -36,7 +35,7 @@
     left: 1px;
     top: 1px;
     border-radius: 18px;
-    background-color: @component-background;
+    background-color: @white;
     content: " ";
     cursor: pointer;
     transition: all @switch-duration @ease-in-out-circ;
@@ -59,16 +58,16 @@
     background: transprent;
     z-index: 1;
     display: none;
-    font-size: 12px;
-    border:1px solid;
-    border-left:1px solid transparent;
-    border-bottom:1px solid transparent;
+    font-size: @font-size-sm;
+    border:@border-width-base @border-style-base;
+    border-left:@border-width-base @border-style-base transparent;
+    border-bottom:@border-width-base @border-style-base transparent;
     border-radius: 50%;
   }
 
   &-loading:before {
     display: inline-block;
-    color: @text-color;
+    color: @text-color-secondary;
     cursor: not-allowed
   }
 
@@ -130,6 +129,12 @@
   &-small&-loading:before {
     animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
     font-weight: bold;
+    cursor: pointer
+  }
+
+  &-disabled&-loading:before {
+    animation: dboxSwitchSmallLoadingCircle 1s infinite linear;
+    font-weight: bold;
     cursor: not-allowed
   }
 
@@ -153,7 +158,6 @@
     }
   }
 
-  &-loading,
   &-disabled {
     cursor: not-allowed;
     opacity: @switch-disabled-opacity;

@@ -1,46 +1,100 @@
+可提供成功、警告和错误等反馈信息,让用户知晓当前信息的状态。
+顶部居中显示并自动消失的方式，是一种不打断用户操作的轻量级提示方式,给与用户良好的视觉体验。
 
-#### **普通提示**
+##### **基本类型信息展示**
 
 ```jsx
-<Button type='primary' onClick={info}>Info</Button>
+import { Switch, Message, Button } from 'dbox-ui';
+  let normal = false;
+  onChange = () => {
+    normal = !normal
+  }
+  success = () => {
+    Message.success('这是成功信息提示', 30, () => console.log(1111), normal);
+  };
+  error = () => {
+    Message.error('这是错误信息提示', normal);
+  }
+  warn = () => {
+    Message.warn('这是警告信息提示', 3, normal);
+  };
+  info = () => {
+    Message.info('这是基本的信息提示', 3, () => console.log('关闭回调'), normal);
+  };
+  <div>
+    <h4>可切换Message以背景色展示</h4>
+    <Switch defaultChecked onChange={onChange} /><br /><br />
+    <Button style={{ marginRight: 10 }} onClick={success}>成功</Button>
+    <Button type='danger' style={{ marginRight: 10 }} onClick={error}>失败</Button>
+    <Button onClick={warn} style={{ marginRight: 10 }}>警告</Button>
+    <Button onClick={info}>信息</Button>
+  </div>
 ```
 
-#### **其他类型提示**
+##### **修改延时**
 
 ```jsx
-<Button style={{ marginRight: 10 }} onClick={success}>Success</Button>
-<Button type='danger' style={{ marginRight: 10 }} onClick={error}>Error</Button>
-<Button style={{ marginRight: 10 }} onClick={warning}>Warning</Button>
-<Button onClick={warn}>Warn</Button>
+import { Switch, Message, Button } from 'dbox-ui';
+
+let normal = false;
+onChange = () => {
+  normal = !normal
+}
+DelayInfo = () => {
+  Message.info('这是基本的信息提示，并且在10s之后会自动关闭', 10, normal);
+};
+<div>
+  <h4>可切换Message以背景色展示</h4>
+  <Switch defaultChecked onChange={onChange} /><br /><br />
+  <Button onClick={DelayInfo}>10s后关闭</Button>
+</div>
 ```
 
-#### **通过背景色展示提示信息**
+##### **加载中**
 
 ```jsx
-<Button type='primary' onClick={backgroundInfo}>backgroundShow</Button>
-```
+import { Switch, Message, Button } from 'dbox-ui';
 
-#### **修改延时**
-
-```jsx
-<Button onClick={DelayInfo}>10s后关闭</Button>
-```
-
-#### **加载中**
-
-```jsx
+LoadingSuccess = () => {
+  const hide = Message.loading('活动加载中..', 10);
+    setTimeout(hide, 250000);
+  };
 <Button onClick={LoadingSuccess}>加载中</Button>
 ```
 
-### API
+##### **Promise接口**
+
+```jsx
+import { Switch, Message, Button, Icon } from 'dbox-ui';
+
+let normal = false;
+onChange = () => {
+  normal = !normal
+}
+const PromiseSuccess = () => {
+  Message.loading('活动加载中..', 2.5)
+  Message.open({
+    content: 'open触发了',
+    normal: normal,
+    icon: <Icon type='check-circle' />,
+  })
+    .then(() => Message.success('加载结束', 2.5))
+    .then(() => Message.info('加载中的加载结束', 2.5));
+    };
+  <div>
+    <Button onClick={PromiseSuccess}>Promise</Button>
+  </div>
+```
+
+##### **API**
 
 组件提供了静态方法，使用参数和方式如下
-- message.success(content, [duration], onClose, true)
-- message.error(content, [duration], onClose, true)
-- message.info(content, [duration], onClose, true)
-- message.warning(content, [duration], onClose, true)
-- message.warn(content, [duration], onClose, true)
-- message.loading(content, [duration], onClose, true)
+- Message.success(content, [duration], onClose, true)
+- Message.error(content, [duration], onClose, true)
+- Message.info(content, [duration], onClose, true)
+- Message.warning(content, [duration], onClose, true)
+- Message.warn(content, [duration], onClose, true)
+- Message.loading(content, [duration], onClose)(不支持normal背景色展示)
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ----- | ----- | ----- | ----- |
@@ -49,19 +103,13 @@
 | onClose | 关闭时触发的回调函数 | Function | - |
 | normal | 是否采用无背景色的信息提示 | boolean | false |
 
-#### **Promise接口**
-
-```jsx
-<Button onClick={PromiseSuccess}>Promise</Button>
-```
-
-### API
+##### **API**
 
 组件同时提供promise接口
-- message[level](content, [duration]).then(afterClose)
-- message[level](content, [duration], onClose).then(afterClose)
-其中message[level]是组件已经提供的静态方法。then接口返回值是Promise。
-- message.open(config)
+- Message[level](content, [duration]).then(afterClose)
+- Message[level](content, [duration], onClose).then(afterClose)
+其中Message[level]是组件已经提供的静态方法。then接口返回值是Promise。
+- Message.open(config)
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ----- | ----- | ----- | ----- |
@@ -70,25 +118,29 @@
 | onClose | 关闭时触发的回调函数 | Function | - |
 | icon | 自定义图标 | ReactNode | - |
 
-### API
+##### **全局方法**
 还提供了全局配置和全局销毁方法：
-- message.config(options)
-- message.destroy()
+- Message.config(options)
+- Message.destroy()
 
-##### message.config
-
-`
-message.config({
+##### **message.config**
+Message.config({
   top: 100,
   duration: 2,
-  maxCount: 3,
-  normal: true
+  maxCount: 3
 })
-`
+
 | 参数 | 说明 | 类型 | 默认值 |
 | ----- | ----- | ----- | ----- |
-| getContainer | 配置渲染节点的输出位置 | () => HTMLElement | () => document.body |
 | duration | 默认自动关闭延时 | number | 3 |
 | maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - |
 | top | 消息距离顶部的位置 | number | 24 |
-| normal | 是否采用无背景色的信息提示 | boolean | false |
+
+
+```jsx noeditor
+import {PrevPage, BackTop} from 'dbox-ui';
+<div>
+  <BackTop visibilityHeight={20} style={{position: 'fixed', right: '50px'}}/>
+  <PrevPage />
+</div>
+```

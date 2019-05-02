@@ -1,14 +1,13 @@
-@import "../../../style/theme/default/default.less";
-@import "../../../style/mixins/index.less";
+@import "../../../style/mixins/index";
+@import "../../../style/theme/default/index";
 
-@dialog-prefix-cls: idoll-modal;
+@dialog-prefix-cls:  ~"@{idoll-prefix}-modal";
 
 .@{dialog-prefix-cls} {
   position: relative;
-  width: auto;
   margin: 0 auto;
   top: 100px;
-  padding-bottom: 24px;
+  width: 560px;
 
   &-wrap {
     position: fixed;
@@ -17,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: @zindex-modal;
+    z-index: @modal-zindex-mask;
     -webkit-overflow-scrolling: touch;
     outline: 0;
   }
@@ -25,13 +24,13 @@
   &-title {
     margin: 0;
     font-size: @font-size-base + 2;
-    line-height: 21px;
+    line-height: @modal-line-height + 2px;
     font-weight: bold;
   }
 
   &-content {
     position: relative;
-    background-color: #fff;
+    background-color: @white;
     border: 0;
     border-radius: @border-radius-base;
     background-clip: padding-box;
@@ -42,30 +41,27 @@
     border: 0;
     background: transparent;
     position: absolute;
-    right: 18px;
-    top: 16px;
+    right: 24px;
+    top: 20px;
     z-index: 10;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    transition: color .3s ease;
-    color: #999;
+    transition: color @animation-duration-slow ease;
+    color: @text-color-secondary;
     outline: 0;
 
     &-x {
       display: block;
       font-style: normal;
-      vertical-align: baseline;
       text-align: center;
       text-transform: none;
       text-rendering: auto;
-      width: 14px;
-      height: 14px;
-      font-size: 14px;
+      font-size: @padding-md;
       line-height: 1;
 
       &:before {
-        content: "\e91c";
+        content: "\E6EC";
         display: block;
         font-family: "idollicon"
       }
@@ -73,46 +69,42 @@
 
     &:focus,
     &-hover {
-      color: #444;
+      color: @text-color;
       text-decoration: none;
     }
   }
 
   &-header {
-    height: @title-height;
-    // padding: 14px 16px;
-    padding: @padding-md+2 @padding-md+4;
+    position: relative;
+    padding: @padding-md @padding-lg @padding-md 0;
     border-radius: @border-radius-base @border-radius-base 0 0;
-    background: #fff;
-    color: #666;
-    border-bottom: 1px solid @border-color-split;
+    background: @white;
+    color: @text-color ;
+    margin: @padding-lg;
+    border-bottom: 1px solid @border;
   }
 
   &-body {
-    min-height: 218px;
-    max-height: 488px;
-    padding: 20px;
-    font-size: 12px;
-    line-height: 1.5;
+    min-height: 180px;
+    padding: @padding-lg;
+    font-size: @font-size-base;
+    line-height: @modal-line-height;
     overflow:auto;
   }
 
   &-footer {
-    position: relative;
-    height:@footer-height ;
-    border-top: 1px solid @border-color-split;
-    padding:0 @padding-md+4;
+    padding:@padding-md @padding-md+8;
     text-align: right;
     border-radius: 0 0 @border-radius-base @border-radius-base;
-    button + button {
-      margin-left: 8px;
-      margin-top: 19px;
+    button {
+      margin-left:8px;
     }
+
   }
 
   &.zoom-enter,
   &.zoom-appear {
-    animation-duration: .3s;
+    animation-duration: @animation-duration-slow;
     transform: none;
     opacity: 0;
   }
@@ -123,10 +115,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #373737;
-    background-color: rgba(55, 55, 55, 0.6);
+    background-color: @modal-mask-bg;
     height: 100%;
-    z-index: @zindex-modal-mask;
+    z-index: @modal-zindex-mask;
     filter: ~"alpha(opacity=50)";
 
     &-hidden {
@@ -150,12 +141,3 @@
     }
   }
 }
-
-// .vertical-center-modal {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   .@{dialog-prefix-cls} {
-//     top: 0;
-//   }
-// }

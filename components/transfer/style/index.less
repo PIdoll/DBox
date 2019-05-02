@@ -1,0 +1,156 @@
+@import '../../../style/theme/default/index.less';
+@import '../../../style/mixins/index.less';
+@import '../../checkbox/style/mixin.less';
+
+@transfer-prefix-cls: ~"@{idoll-prefix}-transfer";
+
+.@{transfer-prefix-cls} {
+  .reset-component;
+  position: relative;
+
+  &-disabled {
+    .@{transfer-prefix-cls}-list {
+      background: @transfer-disabled-bg;
+    }
+  }
+
+  &-list {
+    border: @border-width-base @border-style-base @border;
+    display: inline-block;
+    border-radius: @border-radius-base;
+    vertical-align: middle;
+    position: relative;
+    width: @transfer-list-width;
+    height: @transfer-list-height;
+    padding-top: 40px;
+
+    &-header {
+      height: @transfer-header-height;
+      padding: 0 @padding-md;
+      line-height: @transfer-line-height;
+      border-radius: @border-radius-base @border-radius-base 0 0;
+      background: @transfer-base-bg;
+      color: @text-color;
+      border-bottom: @border-width-base @border-style-base @border;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+
+      &-title {
+        position: absolute;
+        left: 40px;
+        font-size:@font-size-base;
+        font-family: @font-family;
+        font-weight:500;
+      }
+
+      &-selected >:first-child {
+        position: absolute;
+        right: 16px;
+      }
+    }
+
+    &-body {
+      font-size: @font-size-base;
+      position: relative;
+      height: 100%;
+    }
+
+    &-content {
+      height: 100%;
+      overflow: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      > .LazyLoad {
+        animation: transferHighlightIn 1s;animation: transferHighlightIn 1s;
+      }
+
+      &-item {
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 9px @padding-md;
+        min-height: 32px;
+        transition: all .3s;
+        font-size:@font-size-base;
+        font-family: @font-family;
+        font-weight:400;
+        color: @text-color;
+        > span {
+          padding-right: 0;
+        }
+      }
+
+      &-item:not(&-item-disabled):hover {
+        cursor: pointer;
+        background-color: @primary-lightBg;
+      }
+
+      &-item-disabled {
+        cursor: not-allowed;
+        color: @text-color-disable;
+      }
+    }
+
+    &-body-not-found {
+      padding-top: 0;
+      color: @text-color-disable;
+      text-align: center;
+      display: none;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -10px;
+    }
+
+    &-content:empty + &-body-not-found {
+      display: block;
+    }
+  }
+
+  &-operation {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 32px;
+    vertical-align: middle;
+
+    .@{idoll-prefix}-btn {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 16px;
+      }
+
+      span {
+        margin: 0;
+      }
+
+      .@{iconfont-css-prefix} {
+        font-size: @font-size-sm;
+      }
+    }
+  }
+
+  .disabled-icon {
+    .@{iconfont-css-prefix}-left {
+      color: @text-color-disable;
+    }
+    .@{iconfont-css-prefix}-right {
+      color: @text-color-disable;
+    }
+  }
+}
+
+@keyframes transferHighlightIn {
+  0% {
+    // background: @primary-color;
+  }
+  100% {
+    // background: transparent;
+  }
+}

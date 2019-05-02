@@ -23,7 +23,6 @@ export default class Timeline extends React.Component {
     const { prefixCls, children, pending, pendingDot, reverse, className, ...restProps } = this.props;
 
     const pendingNode = typeof pending === 'boolean' ? null : pending;
-    console.log('pendingNode' + pendingNode);
     const classString = classNames({
       [prefixCls]: true,
       [`${prefixCls}-pending`]: !!pending,
@@ -34,7 +33,7 @@ export default class Timeline extends React.Component {
     const pendingItem = pending ? (
       <TimelineItem
         pending={!!pending}
-        dot={pendingDot || <Icon type='pro-sync' />}
+        dot={pendingDot || <Icon type='loading' />}
       >
         {pendingNode}
       </TimelineItem>

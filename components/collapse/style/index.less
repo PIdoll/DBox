@@ -2,25 +2,23 @@
 @import "../../../style/mixins/index.less";
 
 @collapse-prefix-cls: ~"@{idoll-prefix}-collapse";
-@collapse-header-bg: @background-color-light;
-@collapse-active-bg: @background-color-base;
+@collapse-header-bg: @table-header-color;
 
 .collapse-close() {
   transform: rotate(0);
 }
 .collapse-open() {
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 
 .@{collapse-prefix-cls} {
 	.reset-component;
-	background-color: @collapse-header-bg;
 	border-radius: @border-radius-base;
-	border: @border-width-base @border-style-base @border-color-base;
+	border: @border-width-base @border-style-base @border;
 	border-bottom: 0;
 
 	& > &-item {
-		border-bottom: @border-width-base @border-style-base @border-color-base;
+		border-bottom: @border-width-base @border-style-base @border;
 
 		&:last-child {
 			&,
@@ -30,12 +28,12 @@
 		}
 
 		> .@{collapse-prefix-cls}-header {
-			line-height: 22px;
-			padding: 12px 0 12px 40px;
-			color: @heading-color;
+			line-height: @collapse-header-line-height;
+			padding: @padding-sm @padding-lg;
+			color: @title-color;
 			cursor: pointer;
 			position: relative;
-			transition: all .3s;
+			transition: all @animation-duration-slow;
 
 			.arrow {
 				.iconfont-mixin();
@@ -43,36 +41,37 @@
 				font-size: @font-size-sm;
 				position: absolute;
 				display: inline-block;
-				line-height: 46px;
+				line-height: @collapse-item-line-height;
 				vertical-align: top;
-				transition: transform 0.24s;
+				transition: transform @animation-duration-slow;
 				top: 0;
-				left: @padding-md;
+				right: @padding-lg;
 				&:before {
-					content: "\E92C";
+					content: "\E6F5";
 				}
 			}
 		}
 	}
 
 	&-anim-active {
-		transition: height .2s @ease-out
+		transition: height @animation-duration-base @ease-out;
 	}
 
 	&-content {
 		overflow: hidden;
 		color: @text-color;
-		padding: 0 @padding-md;
-		background-color: @component-background;
-		border-top: @border-width-base @border-style-base @border-color-base;
+		padding: 0 @padding-lg;
+		background-color: @collapse-color;
+		border-width: 0;
 
 		& > &-box {
-		padding-top: @padding-md;
-      	padding-bottom: @padding-md;
+			padding-top: @padding-md;
+			padding-bottom: @padding-md;
 		}
 
 		&-inactive {
 			display: none;
+			border-bottom: 0;
 		}
 	}
 
@@ -82,19 +81,25 @@
 		}
 	}
 
+	& > &-item > &-header {
+		background-color: @collapse-header-bg;
+	}
+
 	& > &-item > &-header[aria-expanded="true"] {
+		outline-width: 0;
+		border-top: 0;
 		.arrow {
 			.collapse-open();
 		}
 	}
 
-	&-borderless {
-		background-color: @component-background;
-		border: 0;
+	& > &-item > &-header:focus {
+		outline-width: 0;
 	}
 
-	&-borderless > &-item {
-		border-bottom: 1px solid @border-color-base;
+	&-borderless {
+		background-color: @collapse-color;
+		border: 0;
 	}
 
 	&-borderless > &-item:last-child,
@@ -102,21 +107,56 @@
 		border-radius: 0;
 	}
 
+	&-borderless > &-item >&-header {
+		padding: @padding-sm 0;
+		background-color: @collapse-color;
+		.arrow {
+			right: 0;
+		}
+	}
+
+	&-borderless > &-item >&-header[aria-expanded="false"] {
+		border-bottom: 0;
+	}
+
 	&-borderless > &-item > &-content {
 		background-color: transparent;
 		border-top: 0;
+		padding: 0; 
+		border-radius: 0;
 	}
 
 	&-borderless > &-item > &-content > &-content-box {
 		padding-top: 4px;
+		border-bottom: 0;
 	}
 
 	& &-item-disabled > &-header {
 		&,
 		& > .arrow {
 			cursor: not-allowed;
-			color: @disabled-color;
+			color: @text-color-disable;
 		}
 	}
-
+	&-bgColor {
+		border: none;
+		.@{collapse-prefix-cls}-item {
+			border-bottom: 0;
+			margin-bottom: @padding-lg;
+			.@{collapse-prefix-cls}-content {
+				background-color: #FCFCFC;
+				border-bottom: 0;
+				&-box {
+					border-bottom: 0;
+				}	
+			}
+		}
+		.@{collapse-prefix-cls}-item:last-child {
+			.@{collapse-prefix-cls}-content {
+				border-bottom: 0;
+			}
+		}
+	}
 }
+
+

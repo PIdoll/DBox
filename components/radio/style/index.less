@@ -22,8 +22,6 @@
   .reset-component;
   display: inline-block;
   white-space: nowrap;
-  margin-right: @padding-lg + 24px;
-  margin-bottom: @padding-lg - 8px;
   cursor: pointer;
 }
 
@@ -82,7 +80,7 @@
     display: block;
     width: @radio-radius-base - 2px;
     height: @radio-radius-base - 2px;
-    border: @border-width-base solid @border-color-base;
+    border: @border-width-base solid @border;
     border-radius: @radio-radius-base/2;
     background-color: @radio-button-bg;
     transition:all @radio-duration;
@@ -116,14 +114,13 @@
 .@{radio-prefix-cls}-disabled {
   cursor:not-allowed;
   .@{radio-inner-prefix-cls} {
-    border-color: @border-color-base !important;
+    border-color: @border !important;
     cursor:not-allowed;
     background-color: @input-disabled-bg;
     &:after {
       cursor:not-allowed;
-      border-color: @border-color-base;
-      // background-color:@input-disabled-bg;
-      background-color: #e6e6e6;
+      border-color: @border;
+      background-color: @input-disabled-bg;
     }
   }
 
@@ -137,7 +134,7 @@
 
   & + span {
     cursor: not-allowed;
-    color: @disabled-color;
+    color: @text-color-disable;
     cursor: not-allowed;
   }
 }
@@ -155,7 +152,7 @@ span.@{radio-prefix-cls} + * {
   display: inline-block;
   transition:all 0.3s ease;
   cursor: pointer;
-  border: @border-width-base @border-style-base @border-color-base;
+  border: @border-width-base @border-style-base @border;
   border-left: 0;
   background: @radio-button-bg;
   padding: 0 @padding-md - 2px;
@@ -181,7 +178,7 @@ span.@{radio-prefix-cls} + * {
     font-size: @radio-size-sm;
     height: @input-height-sm;
     line-height: @input-height-sm - 2px;
-    padding: 0 @control-padding-horizontal-sm - 1px;
+    padding: 0  @padding-xs - 1px;
   }
 
   &:not(:first-child) {
@@ -192,13 +189,13 @@ span.@{radio-prefix-cls} + * {
       left: -1px;
       height: 100%;
       position: absolute;
-      background-color: @border-color-base;
+      background-color: @border;
     }
   }
 
   &:first-child {
     border-radius: @border-radius-base 0 0 @border-radius-base;
-    border-left: @border-width-base @border-style-base @border-color-base;
+    border-left: @border-width-base @border-style-base @border;
   }
 
   &:last-child {
@@ -238,56 +235,56 @@ span.@{radio-prefix-cls} + * {
       box-shadow: none !important;
     }
     &:hover {
-      border-color:@primary-Hover;
-      box-shadow: -1px 0 0 0 @primary-Hover;
-      color: @primary-Hover;
+      border-color:@primary-hover;
+      box-shadow: -1px 0 0 0 @primary-hover;
+      color: @primary-hover;
     }
     &:active {
       border-color: @primary-color;
       box-shadow: -1px 0 0 0 @primary-color;
-      color: @primary-Hover;
+      color: @primary-hover;
     }
   }
 
   &:disabled {
-    border-color: @border-color-base;
+    border-color: @border;
     background-color: @input-disabled-bg;
     cursor: not-allowed;
-    color: @disabled-color;
+    color: @text-color-disable;
 
     &-first-child,
     &:hover {
       cursor: not-allowed;
-      border-color: @border-color-base;
+      border-color: @border;
       background-color: @input-disabled-bg;
-      color: @disabled-color;
+      color: @text-color-disable;
     }
 
     &:first-child {
-      border-left-color: @border-color-base;
+      border-left-color: @border;
     }
   }
 
   &-disabled,&-disabled:hover {
     cursor: not-allowed;
-    color:rgba(0,0,0,0.2);
-    background-color: #f5f5f5;
+    color:@shadow-color;
+    background-color: @radio-disabled-bg;
     .@{radio-inner-prefix-cls} {
       border-color: @primary-color;
     }
   }
 
   &-disabled&-checked {
-    color: #fff;
-    background-color: #e6e6e6;
-    border-color: @border-color-base;
+    color: @radio-checked-disabled;
+    background-color: @radio-disabled-checked-bg;
+    border-color: @border;
     box-shadow: none;
     cursor: not-allowed;
   }
 }
 
 .@{radio-prefix-cls}-button-wrapper-disabled:hover{
-  border-color: @border-color-base;
+  border-color: @border;
 }
 
 .@{radio-solid-prefix-cls} {
@@ -299,9 +296,9 @@ span.@{radio-prefix-cls} + * {
     display: inline-block;
     transition:all 0.3s ease;
     cursor: pointer;
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     border-left: 0;
-    background: #fff;
+    background: @radio-bg ;
     padding: 0 @padding-md - 2px;
     position: relative;
   
@@ -326,7 +323,7 @@ span.@{radio-prefix-cls} + * {
   
     &:first-child {
       border-radius: @border-radius-base 0 0 @border-radius-base;
-      border-left: @border-width-base @border-style-base @border-color-base;
+      border-left: @border-width-base @border-style-base @border;
     }
   
     &:last-child {
@@ -340,7 +337,7 @@ span.@{radio-prefix-cls} + * {
     &:hover,
     &-focused {
       color: @primary-color;
-      border:-1px solid @border-color-base;
+      border:-1px @border-style-base @border;
       position: relative;
     }
   
@@ -355,7 +352,7 @@ span.@{radio-prefix-cls} + * {
     &-checked {
       background: @primary-color;
       border-color: @primary-color;
-      color: #fff;
+      color: @radio-bg ;
       box-shadow: -1px 0 0 0 @primary-color;
       z-index: 1;
       &::before {
@@ -367,10 +364,10 @@ span.@{radio-prefix-cls} + * {
         box-shadow: none !important;
       }
       &:hover {
-        border-color:@primary-Hover;
-        box-shadow: -1px 0 0 0 @primary-Hover;
-        background-color: @primary-Hover;
-        color: #fff;
+        border-color:@primary-hover;
+        box-shadow: -1px 0 0 0 @primary-hover;
+        background-color: @primary-hover;
+        color: @radio-bg ;
       }
       &:active {
         border-color: @primary-color;
@@ -380,36 +377,36 @@ span.@{radio-prefix-cls} + * {
     }
   
     &:disabled {
-      border-color: @border-color-base;
+      border-color: @border;
       background-color: @input-disabled-bg;
       cursor: not-allowed;
-      color: @disabled-color;
+      color: @text-color-disable;
   
       &-first-child,
       &:hover {
         cursor: not-allowed;
-        border-color: @border-color-base;
+        border-color: @border;
         background-color: @input-disabled-bg;
-        color: @disabled-color;
+        color: @text-color-disable;
       }
   
       &:first-child {
-        border-left-color: @border-color-base;
+        border-left-color: @border;
       }
     }
   
     &-disabled,&-disabled:hover {
       cursor: not-allowed;
-      color:rgba(0,0,0,0.2);
-      background-color: #f5f5f5;
+      color:@shadow-color;
+      background-color: @radio-disabled-bg;
       .@{radio-inner-prefix-cls} {
         border-color: @primary-color;
       }
     }
     &-disabled&-checked {
-      color: #fff;
-      background-color: #e6e6e6;
-      border-color: @border-color-base;
+      color: @radio-checked-disabled;
+      background-color: @radio-disabled-checked-bg;
+      border-color: @border;
       box-shadow: none;
       cursor: not-allowed;
     }
@@ -424,9 +421,9 @@ span.@{radio-prefix-cls} + * {
     display: inline-block;
     transition:all 0.3s ease;
     cursor: pointer;
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     border-left: 0;
-    background: #fff;
+    background: @radio-bg ;
     padding: 0 @padding-md - 2px;
     position: relative;
   
@@ -451,7 +448,7 @@ span.@{radio-prefix-cls} + * {
   
     &:first-child {
       border-radius: @border-radius-base 0 0 @border-radius-base;
-      border-left: @border-width-base @border-style-base @border-color-base;
+      border-left: @border-width-base @border-style-base @border;
     }
   
     &:last-child {
@@ -465,7 +462,7 @@ span.@{radio-prefix-cls} + * {
     &:hover,
     &-focused {
       color: @primary-color;
-      border:-1px solid @border-color-base;
+      border:-1px @border-style-base @border;
       position: relative;
     }
   
@@ -480,7 +477,7 @@ span.@{radio-prefix-cls} + * {
     &-checked {
       background: @primary-color;
       border-color: @primary-color;
-      color: #fff;
+      color: @radio-bg ;
       box-shadow: -1px 0 0 0 @primary-color;
       z-index: 1;
       &::before {
@@ -492,41 +489,41 @@ span.@{radio-prefix-cls} + * {
         box-shadow: none !important;
       }
       &:hover{
-        border-color:@primary-Hover;
-        box-shadow: -1px 0 0 0 @primary-Hover;
-        background-color: @primary-Hover;
-        color: #fff;
+        border-color:@primary-hover;
+        box-shadow: -1px 0 0 0 @primary-hover;
+        background-color: @primary-hover;
+        color: @radio-bg ;
       }
       &:active {
         border-color: @primary-color;
         box-shadow: -1px 0 0 0 @primary-color;
-        color:#fff;
+        color:@radio-bg ;
       }
     }
   
     &:disabled {
-      border-color: @border-color-base;
+      border-color: @border;
       background-color: @input-disabled-bg;
       cursor: not-allowed;
-      color: @disabled-color;
+      color: @text-color-disable;
   
       &-first-child,
       &:hover {
         cursor: not-allowed;
-        border-color: @border-color-base;
+        border-color: @border;
         background-color: @input-disabled-bg;
-        color: @disabled-color;
+        color: @text-color-disable;
       }
   
       &:first-child {
-        border-left-color: @border-color-base;
+        border-left-color: @border;
       }
     }
   
     &-disabled,&-disabled:hover {
       cursor: not-allowed;
-      color:rgba(0,0,0,0.2);
-      background-color: #f5f5f5;
+      color:@shadow-color;
+      background-color: @radio-disabled-bg ;
       .@{radio-inner-prefix-cls} {
         border-color: @primary-color;
       }
@@ -539,14 +536,14 @@ span.@{radio-prefix-cls} + * {
     font-size: @radio-size-sm;
     height: @input-height-sm;
     line-height: @input-height-sm - 2px;
-    padding: 0 @control-padding-horizontal-sm - 1px;
+    padding: 0  @padding-xs - 1px;
     color: @text-color;
     display: inline-block;
     transition:all 0.3s ease;
     cursor: pointer;
-    border: @border-width-base @border-style-base @border-color-base;
+    border: @border-width-base @border-style-base @border;
     border-left: 0;
-    background: #fff;
+    background: @radio-bg ;
     position: relative;
   
     .@{radio-prefix-cls}-button {
@@ -570,7 +567,7 @@ span.@{radio-prefix-cls} + * {
   
     &:first-child {
       border-radius: @border-radius-base 0 0 @border-radius-base;
-      border-left: @border-width-base @border-style-base @border-color-base;
+      border-left: @border-width-base @border-style-base @border;
     }
   
     &:last-child {
@@ -584,7 +581,7 @@ span.@{radio-prefix-cls} + * {
     &:hover,
     &-focused {
       color: @primary-color;
-      border:-1px solid @border-color-base;
+      border:-1px solid @border;
       position: relative;
     }
   
@@ -599,7 +596,7 @@ span.@{radio-prefix-cls} + * {
     &-checked {
       background: @primary-color;
       border-color: @primary-color;
-      color: #fff;
+      color: @radio-bg ;
       box-shadow: -1px 0 0 0 @primary-color;
       z-index: 1;
       &::before {
@@ -611,49 +608,49 @@ span.@{radio-prefix-cls} + * {
         box-shadow: none !important;
       }
       &:hover {
-        border-color:@primary-Hover;
-        box-shadow: -1px 0 0 0 @primary-Hover;
-        background-color: @primary-Hover;
-        color: #fff;
+        border-color:@primary-hover;
+        box-shadow: -1px 0 0 0 @primary-hover;
+        background-color: @primary-hover;
+        color: @radio-bg ;
       }
       &:active {
         border-color: @primary-color;
         box-shadow: -1px 0 0 0 @primary-color;
-        color: #fff;
+        color: @radio-bg ;
       }
     }
   
     &:disabled {
-      border-color: @border-color-base;
+      border-color: @border;
       background-color: @input-disabled-bg;
       cursor: not-allowed;
-      color: @disabled-color;
+      color: @text-color-disable;
   
       &-first-child,
       &:hover {
         cursor: not-allowed;
-        border-color: @border-color-base;
+        border-color: @border;
         background-color: @input-disabled-bg;
-        color: @disabled-color;
+        color: @text-color-disable;
       }
   
       &:first-child {
-        border-left-color: @border-color-base;
+        border-left-color: @border;
       }
     }
   
     &-disabled,&-disabled:hover {
       cursor: not-allowed;
-      color:rgba(0,0,0,0.2);
-      background-color: #f5f5f5;
+      color:@shadow-color;
+      background-color: @radio-disabled-bg ;
       .@{radio-inner-prefix-cls} {
         border-color: @primary-color;
       }
     }
     &-disabled&-checked {
-      color: #fff;
-      background-color: #e6e6e6;
-      border-color: @border-color-base;
+      color: @radio-checked-disabled;
+      background-color: @radio-disabled-checked-bg;
+      border-color: @border;
       box-shadow: none;
       cursor: not-allowed;
     }
@@ -662,11 +659,18 @@ span.@{radio-prefix-cls} + * {
 
 .@{radio-solid-prefix-cls} {
   .@{radio-prefix-cls}-button-wrapper-disabled-checked,.@{radio-prefix-cls}-button-wrapper-disabled-checked:hover {
-    color: #fff;
-      background-color: #e6e6e6;
-      border-color: @border-color-base;
-      box-shadow: none;
-      cursor: not-allowed;
+    color: @radio-checked-disabled;
+    background-color: @radio-disabled-checked-bg;
+    border-color: @border;
+    box-shadow: none;
+    cursor: not-allowed;
   }
 }
 
+.@{radio-prefix-cls}.@{radio-prefix-cls}-checked.@{radio-prefix-cls}-disabled {
+  .@{radio-inner-prefix-cls} {
+    &:after {
+      background-color: @border
+    }
+  }
+}
