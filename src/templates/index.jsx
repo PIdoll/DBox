@@ -44,6 +44,7 @@ import Tree from './tree';
 import Transfer from './transfer';
 import TreeSelect from './treeSelect';
 import Upload from './upload';
+import Empty from './empty';
 
 
 export { Affix };
@@ -93,4 +94,5 @@ export { Tree };
 export { Transfer };
 export { TreeSelect };
 export { Upload };
+export { Empty };
 

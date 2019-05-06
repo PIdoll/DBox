@@ -47,6 +47,8 @@ import TreeSelect from './tree-select';
 import Upload from './upload';
 import Version from './version';
 import PrevPage from './prevPage';
+import Empty from './empty';
+import ConfigProvider from './config-provider';
 
 
 export { Affix };
@@ -97,4 +99,6 @@ export { TreeSelect };
 export { Upload };
 export { Version };
 export { PrevPage };
+export { Empty };
+export { ConfigProvider };
 
