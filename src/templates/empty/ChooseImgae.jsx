@@ -11,11 +11,11 @@ export default class ChooseImage extends React.Component {
             }}
             description={
               <span>
-                Customize <a href='#API'>Description</a>
+                自定义 <a href='#API'>描述</a>
               </span>
             }
           >
-            <Button type='primary'>Create Now</Button>
+            <Button type='primary'>创建</Button>
           </Empty>
         )
     }

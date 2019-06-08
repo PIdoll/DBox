@@ -85,7 +85,7 @@ import { ConfigConsumer } from '../config-provider';
 import omit from 'omit.js';
 import warning from '../_util/warning';
 import Icon from '../icon';
-import './index';
+import './style';
 
 export default class Select extends React.Component {
   static propTypes = {
@@ -98,6 +98,13 @@ export default class Select extends React.Component {
     transitionName: PropTypes.string,
     choiceTransitionName: PropTypes.string,
     id: PropTypes.string,
+  }
+
+  static defaultProps = {
+    prefixCls: 'idoll-select',
+    transitionName: 'slide-up',
+    choiceTransitionName: 'zoom',
+    showSearch: false
   }
   static Option = Option;
   static OptGroup = OptGroup;

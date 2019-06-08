@@ -36,6 +36,8 @@ import {
                 <div className='config-provider'>
                   <h3>Select</h3>
                   <Select style={style} />
+                  <h3>TreeSelect</h3>
+                  <TreeSelect style={style} treeData={[]} />
                 </div>
               </ConfigProvider>
             </div>
