@@ -3,9 +3,10 @@
 @import '../../input/style/mixin.less';
 
 @timepicker-prefix-cls: idoll-time-picker;
+@timepicker-item-height: 32px;
 
 .@{timepicker-prefix-cls}-panel {
-  // max-width: 168px;
+  .reset-component;
   font-family: @font-family;
   z-index: @zindex-picker;
   position: absolute;
@@ -24,6 +25,7 @@
   }
 
   &-input {
+    width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -37,42 +39,12 @@
     &-wrap {
       box-sizing: border-box;
       position: relative;
-      padding: 7px @padding-sm;
+      padding: 7px 2px 7px @padding-sm;
       border-bottom: @border-width-base @border-style-base @border;
     }
 
     &-invalid {
       border-color: @error-color;
-    }
-  }
-
-  &-clear-btn {
-    position: absolute;
-    right: 8px;
-    cursor: pointer;
-    overflow: hidden;
-    width: @time-clear-btn-width;
-    height: @time-clear-btn-height;
-    text-align: center;
-    line-height: @time-clear-btn-line-height;
-    top: 10px;
-    margin: 0;
-
-    &-icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      font-size: @font-size-base;
-      color: @disabled-color;
-      display: inline-block;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: @text-color-secondary;
-      }
     }
   }
 
@@ -144,6 +116,7 @@
 
     li&-option-disabled {
       color: @text-color-disable;
+      font-weight: bold;
       &:hover {
         background: transparent;
         cursor: not-allowed;
@@ -205,7 +178,8 @@
     opacity: 0;
   }
 
-  &-icon {
+  &-icon,
+  &-clear {
     position: absolute;
     user-select: none;
     transition: all .3s @ease-in-out;
@@ -213,14 +187,30 @@
     height: @time-icon-height;
     line-height: @time-icon-line-height;
     right: @padding-sm - 1px;
-    color: @disabled-color;
+    color: @text-color-disable;
     top: 50%;
     margin-top: -7px;
     .@{timepicker-prefix-cls}-clock-icon {
-      color: @disabled-color;
+      color: @text-color-disable;
       display: block;
       line-height: @time-clock-icon-line-height;
     }
+  }
+
+  &-clear {
+    z-index: 2;
+    background: @input-bg;
+    opacity: 0;
+    pointer-events: none;
+    &:hover {
+      color: @text-color-secondary;
+      cursor: pointer;
+    }
+  }
+
+  &:hover &-clear {
+    opacity: 1;;
+    pointer-events: auto;
   }
 
   &-large &-input {

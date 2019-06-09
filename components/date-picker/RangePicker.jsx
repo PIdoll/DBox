@@ -440,7 +440,6 @@ function formatDate(
 }
 
 function getShowDateFromValue(value) {
-  console.log('getShowDateFromValue', value)
   const [start, end] = value;
   // value could be an empty array, then we should not reset showDate
   if (!start && !end) {
@@ -453,7 +452,6 @@ function getShowDateFromValue(value) {
 function pickerValueAdapter(
   value,
 ) {
-  console.log('pickerValueAdapter')
   if (!value) {
     return;
   }
@@ -464,7 +462,6 @@ function pickerValueAdapter(
 }
 
 function isEmptyArray(arr) {
-  console.log('isEmptyArray')
   if (Array.isArray(arr)) {
     return arr.length === 0 || arr.every(i => !i);
   }
@@ -472,7 +469,6 @@ function isEmptyArray(arr) {
 }
 
 function fixLocale(value, localeCode) {
-  console.log('fixLocale')
   if (!localeCode) {
     return;
   }
@@ -503,7 +499,6 @@ class RangePicker extends React.Component {
         value,
       };
       if (!shallowequal(nextProps.value, prevState.value)) {
-        console.log('getDerivedStateFromProps')
         state = {
           ...state,
           showDate: getShowDateFromValue(value) || prevState.showDate,
@@ -559,7 +554,6 @@ class RangePicker extends React.Component {
   handleChange = (value) => {
     const props = this.props;
     if (!('value' in props)) {
-      console.log('value', value)
       this.setState(({ showDate }) => ({
         value,
         showDate: getShowDateFromValue(value) || showDate,
@@ -852,7 +846,6 @@ class RangePicker extends React.Component {
   };
 
   render() {
-    console.log(moment('20190909').format('YYYY-MM-DD'))
     return <ConfigConsumer>{this.renderRangePicker}</ConfigConsumer>;
   }
 }

@@ -225,8 +225,8 @@
 //   polyfill(CalendarWrapper);
 //   return CalendarWrapper;
 // }
-import * as React from 'react';
-import * as moment from 'moment';
+import React from 'react';
+import moment from 'moment';
 import { polyfill } from 'react-lifecycles-compat';
 import MonthCalendar from 'rc-calendar/lib/MonthCalendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';

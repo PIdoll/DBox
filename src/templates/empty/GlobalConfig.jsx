@@ -1,9 +1,7 @@
 import React from 'react';
 import {
     ConfigProvider, Switch, Divider, Icon,
-    TreeSelect, Select, Cascader,
-    Transfer,
-    Table, List,
+    TreeSelect, Select
   } from 'components';
   const style = { width: 200 };
 

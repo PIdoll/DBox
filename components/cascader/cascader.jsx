@@ -720,7 +720,7 @@ class Cascader extends React.Component {
   };
 
   renderCascader = (
-    { getPopupContainer: getContextPopupContainer, getPrefixCls, renderEmpty }: ConfigConsumerProps,
+    { getPopupContainer: getContextPopupContainer, getPrefixCls, renderEmpty },
     locale,
   ) => {
     const { props, state } = this;
