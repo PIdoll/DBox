@@ -7,7 +7,8 @@ import MonthPickerDemo from './MonthPickerDemo';
 import ControlledMonthPickerDemo from './ControlledMonthPickerDemo';
 import RangePickerBasicDemo from './RangePickerBasicDemo';
 import ControlledRangePickerDemo from './ControlledRangePickerDemo';
-
+import DisabledDatePicker from './DisabledDatePicker';
+import AdditionalFooter from './ AdditionalFooter';
 export default class DatePicker extends React.Component {
   render() {
     const styleObj = {
@@ -91,6 +92,20 @@ export default class DatePicker extends React.Component {
           <h2 className='h2'>value: 设置时间选择框的值，此设置会将时间选择器变成受控组件，需通过onChange一起使用</h2>
 
           <ControlledRangePickerDemo />
+        </div>
+
+        <div style={styleObj}>
+          <h1 className='h1'>九、禁用</h1>
+          <h2 className='h2'>选择框不可用状态</h2>
+
+          <DisabledDatePicker />
+        </div>
+
+        <div style={styleObj}>
+          <h1 className='h1'>十、额外的页脚</h1>
+          <h2 className='h2'>在悬浮层中加入额外的页脚，以满足某些定制信息的需求</h2>
+
+          <AdditionalFooter />
         </div>
       </div>
     )
