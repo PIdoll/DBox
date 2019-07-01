@@ -4,7 +4,8 @@ import moment from 'moment';
 
 export default class DatePickerShowTimeDemo extends React.Component {
   state = {
-    time: moment('2015-06-06', 'YYYY-MM-DD HH:mm:ss'),
+    // time: moment('2015-06-06', 'YYYY-MM-DD HH:mm:ss'),
+    time: null
   }
   onChange = (date, dateString) => {
     if (!dateString) {

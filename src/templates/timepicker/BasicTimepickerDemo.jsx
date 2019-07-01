@@ -7,7 +7,7 @@ export default class BasicTimepickerDemo extends React.Component {
   }
   render() {
     return (
-      <TimePicker placeholder='选择时间' onChange={this.onChange} />
+      <TimePicker placeholder='选择时间' minuteStep={15} secondStep={10} onChange={this.onChange} />
     )
   }
 }

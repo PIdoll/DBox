@@ -7,13 +7,13 @@ import WeekPicker from './WeekPicker';
 
 import './style/index';
 
-const DatePicker = wrapPicker(createPicker(RcCalendar));
-const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'YYYY-MM');
+const DatePicker = wrapPicker(createPicker(RcCalendar), 'date');
+const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'month');
 
 Object.assign(DatePicker, {
-  RangePicker: wrapPicker(RangePicker),
+  RangePicker: wrapPicker(RangePicker, 'date'),
   MonthPicker,
-  WeekPicker: wrapPicker(WeekPicker, 'gggg-wo'),
+  WeekPicker: wrapPicker(WeekPicker, 'week'),
 });
 
 export default DatePicker;
