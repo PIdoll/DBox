@@ -14,7 +14,7 @@ export default class BasicDatePickerDemo extends React.Component {
     return (
       <div>
         <div style={{ marginBottom: 15 }}>
-          <DatePicker allowClear={false} suffixIcon={SmileIcon} onChange={this.onChange} />
+          <DatePicker allowClear={false} showTime={{minuteStep: 5}} format='YYYY-MM-DD HH:mm' suffixIcon={SmileIcon} onChange={this.onChange} />
         </div>
         <div style={{ marginBottom: 15 }}>
           <MonthPicker placeholder='选择月份' autoFocus onChange={this.onChange} />
