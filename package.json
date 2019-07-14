@@ -1,6 +1,6 @@
 {
   "name": "dbox-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "react components",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,6 +30,7 @@
     "array-tree-filter": "^2.1.0",
     "classnames": "^2.2.5",
     "create-react-class": "^15.6.3",
+    "create-react-context": "^0.3.0",
     "css-animation": "^1.4.1",
     "enquire-js": "^0.1.1",
     "gregorian-calendar": "^4.1.0",
