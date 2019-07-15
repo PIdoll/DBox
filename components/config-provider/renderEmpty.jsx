@@ -1,7 +1,7 @@
 import React from 'react';
 import Empty from '../empty';
-import { ConfigConsumer } from './index.jsx';
-import emptyImg from './empty.svg';
+import { ConfigConsumer } from './ConfigProvider.jsx';
+import emptyImg from '../../assets/images/empty.svg';
 
 const renderEmpty = (componentName) => (
   <ConfigConsumer>
