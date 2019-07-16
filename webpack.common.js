@@ -60,9 +60,16 @@ module.exports = {
         // exclude: path.resolve(__dirname, 'node_modules')
       },
       {
-        test: /\.(png|svg|jpg|gif|webp|ico)$/,
+        test: /\.(png|jpg|gif|webp|ico)$/,
         use: [
            'file-loader'
+         ],
+         exclude: path.resolve(__dirname, 'node_modules')
+      },
+      {
+        test: /\.(svg)$/,
+        use: [
+           'url-loader'
          ],
          exclude: path.resolve(__dirname, 'node_modules')
       },
