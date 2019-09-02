@@ -60,7 +60,7 @@ export default class Button extends React.Component {
         <h2 className='h2'>
           测试场景: <br />
           1)设置ghost属性，测试是否为幽灵按钮<br />
-          2)设置ghost属性，并且设置type为primary、dashed、danger，测试幽灵按钮是否正常<br />
+          2)设置ghost属性，并且设置type为primary、success, warning, dashed、danger，测试幽灵按钮是否正常<br />
           3)设置ghost属性，并且设置disabled，测试幽灵按钮是否正常
         </h2>
         <GhostButton />

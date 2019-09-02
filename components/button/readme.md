@@ -118,7 +118,7 @@ const buttonStyle = {
 ```
 
 ##### **幽灵按钮**
-通过添加 `ghost` 属性来设置幽灵按钮
+幽灵按钮将按钮的内容反色，背景变为透明，常用在有色背景上。
 ```jsx
 import { Button } from 'dbox-ui';
 const buttonStyle = {
@@ -127,6 +127,8 @@ const buttonStyle = {
 <div style={{ background: '#2F323B',height: '50px',paddingTop: '10px',paddingLeft: '10px'}}>
   <Button ghost style={buttonStyle}>默认</Button>
   <Button type='primary' ghost style={buttonStyle}>重要</Button>
+  <Button type='success' ghost style={buttonStyle}>成功</Button>
+  <Button type='warning' ghost style={buttonStyle}>警告</Button>
   <Button type='dashed' ghost style={buttonStyle}>虚线</Button>
   <Button type='danger' ghost style={buttonStyle}>危险</Button>
   <Button disabled ghost style={buttonStyle}>禁用</Button>
@@ -180,6 +182,7 @@ const ButtonGroup = Button.Group;
 | --- | --- | --- | --- |
 | block | 将按钮宽度调整为其父宽度的选项 | boolean | `false` |
 | disabled | 按钮失效状态 | boolean | `false` |
+| htmlType | 设置 `button` 原生的 `type` 值 `[button, reset, submit]`| string | `button` |
 | ghost | 幽灵属性，使按钮背景透明| boolean | `false` |
 | href | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 | string | - |
 | icon | 设置按钮的图标类型 | string | - |
@@ -190,7 +193,7 @@ const ButtonGroup = Button.Group;
 | target | 相当于 a 链接的 target 属性，href 存在时生效 | string | - |
 | text | 设置按钮为文字按钮 | boolean | `false` |
 | type | 设置按钮类型，可选值为 `default`、 `primary`、 `secondary`、 `disabled`、 `dashed`、 `danger`或者不设 | string | - |
-| onClick | `click` 事件的 handler | function | - |
+| onClick | 点击按钮时的回调 | function | - |
 
 
 ```jsx noeditor
