@@ -40,11 +40,6 @@ handleOnClick = () => {
   <Button icon='down' iconLocation='right' size='large' style={buttonStyle}>图标</Button>
   <br /><br />
 
-  <Button type='primary' loading iconLocation='right' size='small' style={buttonStyle} onClick={this.handleOnClick}>加载中</Button>
-  <Button type='primary' loading iconLocation='right' style={buttonStyle}>加载中</Button>
-  <Button type='primary' loading iconLocation='right' size='large' style={buttonStyle}>加载中</Button>
-  <br /><br />
-
   <Button icon='delete' size='small' shape='circle' style={buttonStyle}/>
   <Button icon='delete' shape='circle' style={buttonStyle}/>
   <Button icon='delete' size='large' shape='circle' style={buttonStyle}/>
