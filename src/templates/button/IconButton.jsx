@@ -29,11 +29,6 @@ export default class IconButton extends React.Component {
         <Button icon='down' iconLocation='right' size='small'>图标</Button>&nbsp;&nbsp;
         <Button icon='down' iconLocation='right' >图标</Button>&nbsp;&nbsp;
         <Button icon='down' iconLocation='right' size='large'>图标</Button>&nbsp;&nbsp;
-        <br /><br />
-
-        <Button loading iconLocation='right' size='small' >加载中</Button>&nbsp;&nbsp;
-        <Button loading iconLocation='right' >加载中</Button>&nbsp;&nbsp;
-        <Button loading iconLocation='right' size='large' >加载中</Button>&nbsp;&nbsp;
       </div>
     )
   }

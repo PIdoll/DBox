@@ -8,6 +8,7 @@ import GhostButton from './GhostButton';
 import BlockButton from './BlockButton';
 import GroupButton from './GroupButton';
 import OnClickButton from './OnClickButton';
+import LoadingButton from './LoadingButton';
 
 export default class Button extends React.Component {
   handleOnClick = () => {
@@ -56,7 +57,13 @@ export default class Button extends React.Component {
         </h2>
         <IconButton />
 
-        <h1 className='h1'>6.幽灵按钮</h1>
+        <h1 className='h1'>6.加载中按钮</h1>
+        <h2 className='h2'>
+          添加 loading 属性即可让按钮处于加载状态，点击按钮后进行数据加载操作，在按钮上显示加载状态。
+        </h2>
+        <LoadingButton />
+
+        <h1 className='h1'>7.幽灵按钮</h1>
         <h2 className='h2'>
           测试场景: <br />
           1)设置ghost属性，测试是否为幽灵按钮<br />
@@ -65,21 +72,21 @@ export default class Button extends React.Component {
         </h2>
         <GhostButton />
 
-        <h1 className='h1'>7.block按钮</h1>
+        <h1 className='h1'>8.block按钮</h1>
         <h2 className='h2'>
           测试场景: <br />
           1)设置block属性，测试按钮是否为其为其父宽度
         </h2>
         <BlockButton />
 
-        <h1 className='h1'>8.组合按钮</h1>
+        <h1 className='h1'>9.组合按钮</h1>
         <h2 className='h2'>
           测试场景: <br />
           1)多个Button按钮被ButtonGroup包裹，测试按钮是否正确组合，注意相接处不要有border-radius
         </h2>
         <GroupButton />
 
-        <h1 className='h1'>9.onclick事件</h1>
+        <h1 className='h1'>10.onclick事件</h1>
         <h2 className='h2'>
           测试场景: <br />
           1）点击按钮测试是否能监听onClick事件

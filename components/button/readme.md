@@ -76,6 +76,18 @@ handleOnClick = () => {
 </div>
 ```
 
+##### **记载中按钮**
+通过`loading`属性，点击按钮后进行数据加载操作，在按钮上显示加载状态。
+```jsx
+import { Button } from 'dbox-ui';
+const buttonStyle = {
+  marginLeft: '10px'
+};
+<div>
+  <Button type='parmily' loading style={buttonStyle}>加载中</Button>
+</div>
+```
+
 ##### **文字按钮**
 通过添加 `text` 属性可以设置文字按钮，文字按钮常用于链接跳转。
 ```jsx
