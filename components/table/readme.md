@@ -1156,6 +1156,7 @@ class TableView extends React.Component {
 | locale        | 默认文案设置，目前包括排序、过滤、空数据文案 | Object | filterConfirm: '确定' <br> filterReset: '重置' <br> emptyText: '暂无数据' <br> |
 | onRowClick    | 处理行点击事件 | Function(record, index)   | - |
 | bordered  | 是否展示外边框和列边框 | Boolean | false      |
+| zebraColor  | 是否展示斑马线表格 | Boolean | false      |
 | showHeader  | 是否显示表头 | Boolean          | true      |
 | footer  | 表格底部自定义渲染函数         | Function(currentPageData)   | |
 | title  | 表格头部自定义渲染函数         | Function(currentPageData)   | |
