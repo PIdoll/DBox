@@ -8,6 +8,8 @@ export default class GhostButton extends React.Component {
       <div className='youling'>
         <Button ghost>默认</Button>&nbsp;&nbsp;
         <Button type='primary' ghost>重要</Button>&nbsp;&nbsp;
+        <Button type='success' ghost>成功</Button>&nbsp;&nbsp;
+        <Button type='warning' ghost>警告</Button>&nbsp;&nbsp;
         <Button type='dashed' ghost>虚线</Button>&nbsp;&nbsp;
         <Button type='danger' ghost>危险</Button>&nbsp;&nbsp;
         <Button disabled ghost>禁用</Button>

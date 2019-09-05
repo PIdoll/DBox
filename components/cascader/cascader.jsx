@@ -11,7 +11,7 @@ import Icon from '../icon';
 import { ConfigConsumer } from '../config-provider';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import warning from '../_util/warning';
-
+import './style'
 // We limit the filtered item count by default
 const defaultLimit = 50;
 

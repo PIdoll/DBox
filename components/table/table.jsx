@@ -762,7 +762,7 @@ export default class Table extends React.Component {
     return data;
   }
   render() {
-    const { style, className, ...restProps } = this.props;
+    const { style, className, zebraColor, ...restProps } = this.props;
     const data = this.getCurrentPageData();
     let columns = this.renderRowSelection();
     const expandIconAsCell = this.props.expandedRowRender && this.props.expandIconAsCell !== false;
@@ -787,6 +787,7 @@ export default class Table extends React.Component {
         columns={columns}
         className={classString}
         expandIconColumnIndex={(columns[0] && columns[0].key === 'selection-column') ? 1 : 0}
+        rowClassName={(data, index) => { return index % 2 === 1 ? zebraColor && `${this.props.prefixCls}-row-zebraColor-even` : zebraColor && `${this.props.prefixCls}-row-zebraColor-odd` }}
         expandIconAsCell={expandIconAsCell}
         emptyText={() => locale.emptyText}
     />
