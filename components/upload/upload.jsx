@@ -200,8 +200,9 @@ export default class Upload extends React.Component {
     /* eslint-enable */
     if ('onRemove' in this.props) {
       this.props.onRemove(file);
-      this.handleRemove(file);
-    } else {
+      if (this.props.onRemove(file) === false) {
+        return false
+      }
       this.handleRemove(file);
     }
   }
