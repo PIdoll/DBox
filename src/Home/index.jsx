@@ -295,6 +295,12 @@ function Home() {
           <div className='info'>upload</div>
         </NavLink>
       </div>
+      <div className='widget-item'>
+        <NavLink className='widget-wrap' to='/empty'>
+          <div className='name'>空状态</div>
+          <div className='info'>empty</div>
+        </NavLink>
+      </div>
     </div>
   );
 }

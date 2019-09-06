@@ -27,6 +27,7 @@ export default {
   Badge: '徽标数',
   Collapse: '折叠面板',
   Calendar: '日历',
+  Empty: '空状态',
   Popover: '气泡卡片',
   Tree: '树形控件',
   Tooltip: '文字提示',
@@ -48,6 +49,7 @@ export default {
   Form: '表单',
   Checkbox: '多选框',
   Popconfirm: '气泡确认框',
+
   Color: '色彩',
   Typography: '字体',
   General: '通用',
