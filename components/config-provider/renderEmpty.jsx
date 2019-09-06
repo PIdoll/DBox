@@ -1,7 +1,8 @@
 import React from 'react';
-import Empty from '../empty';
+// import Empty from '../empty';
 import { ConfigConsumer } from './';
-import emptyImg from './empty.svg';
+// import emptyImg from './empty.svg';
+import Empty from '../empty';
 
 const renderEmpty = (componentName) => (
   <ConfigConsumer>
@@ -10,12 +11,12 @@ const renderEmpty = (componentName) => (
             switch (componentName) {
                 case 'Table':
                 case 'List':
-                    return <Empty image={emptyImg} className={`${prefix}-normal`} />;
+                    return <Empty image={Empty.PRESENTED_IMAGE_DEFAULT} className={`${prefix}-normal`} />;
                 case 'Select':
                 case 'TreeSelect':
                 case 'Cascader':
                 case 'Transfer':
-                    return <Empty image={emptyImg} className={`${prefix}-small`} />
+                    return <Empty image={Empty.PRESENTED_IMAGE_DEFAULT} className={`${prefix}-small`} />
                 default:
                 return <Empty />
             }
