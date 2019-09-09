@@ -96,7 +96,8 @@ class RangePicker extends React.Component {
         open: nextProps.open,
       };
     }
-    return state;
+    state = nextProps.value ? [] : state;
+    return state
   }
 
   constructor(props) {
@@ -130,22 +131,31 @@ class RangePicker extends React.Component {
   clearSelection = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    this.setState({ value: [] });
-    this.handleChange([]);
+    this.setState({ value: [] }, () => {
+      this.handleChange(this.state.value);
+    });
   };
 
   clearHoverValue = () => this.setState({ hoverValue: [] });
 
   handleChange = (value) => {
     const props = this.props;
+    const [start, end] = value;
+    if (this.props.value) {
+      this.setState({value: []}, () => {
+        props.onChange(this.state.value, [formatDate(start, props.format), formatDate(end, props.format)]);
+      })
+      return false
+    }
+    this.setState({value})
     if (!('value' in props)) {
       this.setState(({ showDate }) => ({
         value,
         showDate: getShowDateFromValue(value) || showDate,
-      }));
+      }), () => {
+        props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
+      });
     }
-    const [start, end] = value;
-    props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
   };
 
   handleOpenChange = (open) => {
@@ -163,7 +173,9 @@ class RangePicker extends React.Component {
     }
   };
 
-  handleShowDateChange = (showDate) => this.setState({ showDate });
+  handleShowDateChange = (showDate) => {
+    this.setState({ showDate })
+  };
 
   handleHoverChange = (hoverValue) => this.setState({ hoverValue });
 
@@ -174,10 +186,10 @@ class RangePicker extends React.Component {
   };
 
   handleCalendarInputSelect = (value) => {
-    const [start] = value;
-    if (!start) {
-      return;
-    }
+    // const [start] = value;
+    // if (!start) {
+    //   return;
+    // }
     this.setState(({ showDate }) => ({
       value,
       showDate: getShowDateFromValue(value) || showDate,
