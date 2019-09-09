@@ -196,6 +196,13 @@ class RangePicker extends React.Component {
     }));
   };
 
+  onCalendarChange = (value) => {
+    const props = this.props;
+    const [start, end] = value;
+    this.handleChange(value)
+    props.onCalendarChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
+  }
+
   handleRangeClick = (value) => {
     if (typeof value === 'function') {
       value = value();
@@ -285,7 +292,6 @@ class RangePicker extends React.Component {
       localeCode,
       format,
       dateRender,
-      onCalendarChange,
       suffixIcon,
       separator,
     } = props;
@@ -337,7 +343,7 @@ class RangePicker extends React.Component {
       <RangeCalendar
         {...calendarProps}
         seperator={separator}
-        onChange={onCalendarChange}
+        onChange={this.onCalendarChange}
         format={format}
         prefixCls={prefixCls}
         className={calendarClassName}
