@@ -11,6 +11,7 @@ import { ConfigConsumer } from '../config-provider';
 import warning from '../_util/warning';
 import interopDefault from '../_util/interopDefault';
 
+// 支出多种校验格式，当格式为数组时默认选择第一个
 function formatDate(
   value,
   format,
@@ -46,6 +47,7 @@ function pickerValueAdapter(
   return [value, value.clone().add(1, 'month')];
 }
 
+// 判断是否为空数组
 function isEmptyArray(arr) {
   if (Array.isArray(arr)) {
     return arr.length === 0 || arr.every(i => !i);
@@ -78,6 +80,7 @@ class RangePicker extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     let state = null;
+    // 默认state值的设置
     if ('value' in nextProps || prevState.open) {
       const value = nextProps.value || prevState.value || [];
       state = {
@@ -96,7 +99,8 @@ class RangePicker extends React.Component {
         open: nextProps.open,
       };
     }
-    return state;
+    state = nextProps.value ? [] : state;
+    return state
   }
 
   constructor(props) {
@@ -108,8 +112,7 @@ class RangePicker extends React.Component {
       (end && !interopDefault(moment).isMoment(end))
     ) {
       throw new Error(
-        'The value/defaultValue of RangePicker must be a moment object array after `antd@2.0`, ' +
-          'see: https://u.ant.design/date-picker-value',
+        'The value/defaultValue of RangePicker must be a moment object array !'
       );
     }
     const pickerValue = !value || isEmptyArray(value) ? props.defaultPickerValue : value;
@@ -121,33 +124,53 @@ class RangePicker extends React.Component {
     };
   }
 
+  // 日期面板打开时自动获焦
   componentDidUpdate(_, prevState) {
     if (!('open' in this.props) && prevState.open && !this.state.open) {
       this.focus();
     }
   }
 
+  // 清除选中日期
   clearSelection = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    this.setState({ value: [] });
-    this.handleChange([]);
+    this.setState({ value: [] }, () => {
+      this.handleChange(this.state.value);
+    });
   };
 
+  // 日期面板收起时清除hoverValue的值
   clearHoverValue = () => this.setState({ hoverValue: [] });
 
+  // 日期面板发生变化时的回调
   handleChange = (value) => {
     const props = this.props;
+    // 将输入值结构为开始值和结束值
+    const [start, end] = value;
+    // 清除已存在的值
+    if (this.props.value) {
+      this.setState({value: []}, () => {
+        props.onChange(this.state.value, [formatDate(start, props.format), formatDate(end, props.format)]);
+      })
+      return false
+    }
+
+    // 将点击面板的选择值更新到输入框里
+    this.setState({value})
+
+    // 受控组件
     if (!('value' in props)) {
       this.setState(({ showDate }) => ({
         value,
         showDate: getShowDateFromValue(value) || showDate,
-      }));
+      }), () => {
+        props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
+      });
     }
-    const [start, end] = value;
-    props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
   };
 
+  // 日历面板打开
   handleOpenChange = (open) => {
     if (!('open' in this.props)) {
       this.setState({ open });
@@ -163,8 +186,11 @@ class RangePicker extends React.Component {
     }
   };
 
-  handleShowDateChange = (showDate) => this.setState({ showDate });
+  handleShowDateChange = (showDate) => {
+    this.setState({ showDate })
+  };
 
+  // hover情况下的日历面板
   handleHoverChange = (hoverValue) => this.setState({ hoverValue });
 
   handleRangeMouseLeave = () => {
@@ -173,16 +199,27 @@ class RangePicker extends React.Component {
     }
   };
 
+  // 日历面板打开且输入正确的回调
   handleCalendarInputSelect = (value) => {
-    const [start] = value;
-    if (!start) {
-      return;
-    }
     this.setState(({ showDate }) => ({
       value,
       showDate: getShowDateFromValue(value) || showDate,
     }));
   };
+
+  // 日历面板待选日期发生变化的回调
+  onCalendarChange = (value) => {
+    const props = this.props;
+    const [start, end] = value;
+    this.setState(({ showDate }) => ({
+      value,
+      showDate: getShowDateFromValue(value) || showDate,
+    }));
+    // 当开始值和结束值全部正确输入后向外返回值
+    if (start && end) {
+      props.onCalendarChange && props.onCalendarChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
+    }
+  }
 
   handleRangeClick = (value) => {
     if (typeof value === 'function') {
@@ -273,7 +310,6 @@ class RangePicker extends React.Component {
       localeCode,
       format,
       dateRender,
-      onCalendarChange,
       suffixIcon,
       separator,
     } = props;
@@ -325,7 +361,7 @@ class RangePicker extends React.Component {
       <RangeCalendar
         {...calendarProps}
         seperator={separator}
-        onChange={onCalendarChange}
+        onChange={this.onCalendarChange}
         format={format}
         prefixCls={prefixCls}
         className={calendarClassName}
