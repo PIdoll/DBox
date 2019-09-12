@@ -100,6 +100,11 @@ class RangePicker extends React.Component {
       };
     }
     state = nextProps.value ? [] : state;
+    if (!nextProps.value) {
+      state = {
+        value: []
+      }
+    }
     return state
   }
 
@@ -123,13 +128,14 @@ class RangePicker extends React.Component {
       hoverValue: [],
     };
   }
-
+  getDerivedStateFromProps
   // 日期面板打开时自动获焦
   componentDidUpdate(_, prevState) {
     if (!('open' in this.props) && prevState.open && !this.state.open) {
       this.focus();
     }
   }
+
 
   // 清除选中日期
   clearSelection = (e) => {
@@ -148,16 +154,12 @@ class RangePicker extends React.Component {
     const props = this.props;
     // 将输入值结构为开始值和结束值
     const [start, end] = value;
-    // 清除已存在的值
-    if (this.props.value) {
-      this.setState({value: []}, () => {
+    if (this.props.value && this.props.value.length !== 0) {
+      this.setState({value}, () => {
         props.onChange(this.state.value, [formatDate(start, props.format), formatDate(end, props.format)]);
       })
       return false
     }
-
-    // 将点击面板的选择值更新到输入框里
-    this.setState({value})
 
     // 受控组件
     if (!('value' in props)) {
@@ -167,6 +169,7 @@ class RangePicker extends React.Component {
       }), () => {
         props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
       });
+      return false;
     }
   };
 
@@ -217,6 +220,7 @@ class RangePicker extends React.Component {
     }));
     // 当开始值和结束值全部正确输入后向外返回值
     if (start && end) {
+      props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
       props.onCalendarChange && props.onCalendarChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
     }
   }
