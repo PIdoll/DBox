@@ -1,6 +1,6 @@
 {
   "name": "dbox-ui",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react components",
   "main": "lib/index.js",
   "module": "es/index.js",
