@@ -81,11 +81,20 @@ class RangePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     let state = null;
     // 默认state值的设置
-    if ('value' in nextProps || prevState.open) {
-      const value = nextProps.value || prevState.value || [];
-      state = {
-        value,
-      };
+    if ('value' in nextProps) {
+      let value;
+      // 区分是不是form清除prevState.open为非form清除
+      if (prevState.open) {
+        value = prevState.value || [];
+        state = {
+          value,
+        };
+      } else {
+        value = nextProps.value || [];
+        state = {
+          value,
+        };
+      }
       if (!shallowequal(nextProps.value, prevState.value)) {
         state = {
           ...state,
@@ -98,12 +107,6 @@ class RangePicker extends React.Component {
         ...state,
         open: nextProps.open,
       };
-    }
-    state = nextProps.value ? [] : state;
-    if (!nextProps.value) {
-      state = {
-        value: []
-      }
     }
     return state
   }
@@ -142,25 +145,25 @@ class RangePicker extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.setState({ value: [] }, () => {
-      this.handleChange(this.state.value);
+      this.handleChange([]);
     });
   };
 
   // 日期面板收起时清除hoverValue的值
-  clearHoverValue = () => this.setState({ hoverValue: [] });
+  clearHoverValue = () => {
+    const props = this.props;
+    const {value} = this.state;
+    const [start, end] = value
+    this.setState({ hoverValue: [], value: start && end ? value : [] }, () => {
+      props.onChange(start && end ? value : [], [formatDate(start && end ? start : '', props.format), formatDate(start && end ? end : '', props.format)]);
+    })
+  };
 
   // 日期面板发生变化时的回调
   handleChange = (value) => {
     const props = this.props;
     // 将输入值结构为开始值和结束值
     const [start, end] = value;
-    if (this.props.value && this.props.value.length !== 0) {
-      this.setState({value}, () => {
-        props.onChange(this.state.value, [formatDate(start, props.format), formatDate(end, props.format)]);
-      })
-      return false
-    }
-
     // 受控组件
     if (!('value' in props)) {
       this.setState(({ showDate }) => ({
@@ -171,6 +174,9 @@ class RangePicker extends React.Component {
       });
       return false;
     }
+    this.setState({value: value.length === 0 ? [] : value}, () => {
+      props.onChange(value.length === 0 ? [] : value, [formatDate(start, props.format), formatDate(end, props.format)]);
+    })
   };
 
   // 日历面板打开
@@ -202,14 +208,6 @@ class RangePicker extends React.Component {
     }
   };
 
-  // 日历面板打开且输入正确的回调
-  handleCalendarInputSelect = (value) => {
-    this.setState(({ showDate }) => ({
-      value,
-      showDate: getShowDateFromValue(value) || showDate,
-    }));
-  };
-
   // 日历面板待选日期发生变化的回调
   onCalendarChange = (value) => {
     const props = this.props;
@@ -218,9 +216,9 @@ class RangePicker extends React.Component {
       value,
       showDate: getShowDateFromValue(value) || showDate,
     }));
+    props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
     // 当开始值和结束值全部正确输入后向外返回值
     if (start && end) {
-      props.onChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
       props.onCalendarChange && props.onCalendarChange(value, [formatDate(start, props.format), formatDate(end, props.format)]);
     }
   }
@@ -383,7 +381,6 @@ class RangePicker extends React.Component {
         onHoverChange={this.handleHoverChange}
         onPanelChange={props.onPanelChange}
         showToday={showToday}
-        onInputSelect={this.handleCalendarInputSelect}
       />
     );
 
