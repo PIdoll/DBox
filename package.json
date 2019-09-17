@@ -134,7 +134,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^4.25.1",
     "webpack-bundle-analyzer": "^2.9.2",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.1"
   }

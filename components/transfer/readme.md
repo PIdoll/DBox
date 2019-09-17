@@ -94,6 +94,7 @@ class TransferView extends React.Component {
 | className | 自定义类 | string |  |
 | dataSource | 数据源，其中的数据将会被渲染到左边一栏中，targetKeys 中指定的除外。 | TransferItem[] | [] |
 | targetKeys | 显示在右侧框数据的key集合 | string[] | [] |
+| sort | 自定义排序 | bool | false |
 | disabled | 是否禁用 | boolean | false |
 | lazy | Transfer 使用了 react-lazy-load 优化性能，这里可以设置相关参数。设为 false 可以关闭懒加载。 | object , boolean | { height: 32, offset: 32 } |
 | listStyle | 两个穿梭框的自定义样式 | object |  |
