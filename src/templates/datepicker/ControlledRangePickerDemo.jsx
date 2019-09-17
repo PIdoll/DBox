@@ -37,15 +37,17 @@ export default class ControlledRangePickerDemo extends React.Component {
   }
 
   onChange = (dates, dateStrings) => {
-    if (!dateStrings[0] && !dateStrings[1]) {
+    if (!dateStrings[0] || !dateStrings[1]) {
       this.setState({
         time: null,
       });
       return;
     }
+    if (dateStrings[0] && dateStrings[1]) {
     this.setState({
       time: [moment(dateStrings[0], dateFormat), moment(dateStrings[1], dateFormat)],
     })
+    }
   }
   render() {
     return (

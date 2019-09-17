@@ -81,14 +81,34 @@
         font-family: @font-family;
         font-weight:400;
         color: @text-color;
+        clear: both;
+        > div {
+          float: right;
+          i {
+            display: none;
+          }
+        }
+        label {
+          float: left;
+        }
         > span {
           padding-right: 0;
+          float: left;
         }
       }
 
       &-item:not(&-item-disabled):hover {
         cursor: pointer;
         background-color: @primary-lightBg;
+      }
+      &-item:hover {
+        i {
+          display: block;
+          cursor: pointer;
+        }
+        i:hover {
+          color: @primary-color
+        }
       }
 
       &-item-disabled {

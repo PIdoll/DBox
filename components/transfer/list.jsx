@@ -127,7 +127,7 @@ export default class TransferList extends React.Component {
     const {
       prefixCls, dataSource, titleText, checkedKeys, lazy, disabled,
       body, footer, showSearch, style, filter,
-      searchPlaceholder, notFoundContent, itemUnit, itemsUnit, onScroll,
+      searchPlaceholder, notFoundContent, itemUnit, itemsUnit, onScroll, sort
     } = this.props;
 
     const footerDom = footer && footer(this.props);
@@ -140,7 +140,7 @@ export default class TransferList extends React.Component {
     const filteredDataSource = [];
     const totalDataSource = [];
 
-    const showItems = dataSource.map((item) => {
+    const showItems = dataSource.map((item, index) => {
       const { renderedText, renderedEl } = this.renderItem(item);
       if (filter && filter.trim() && !this.matchFilter(renderedText, item)) {
         return null;
@@ -163,7 +163,12 @@ export default class TransferList extends React.Component {
           renderedText={renderedText}
           renderedEl={renderedEl}
           checked={checked}
+          index={index}
+          sort={sort}
+          length={dataSource.length}
           prefixCls={prefixCls}
+          onUpClick={() => { this.props.onUpClick(item, index) }}
+          onDownClick={() => { this.props.onDownClick(item, index) }}
           onClick={this.handleSelect} />
       );
     });

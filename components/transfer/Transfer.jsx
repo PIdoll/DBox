@@ -66,6 +66,7 @@ export default class Transfer extends React.Component {
       rightFilter: '',
       sourceSelectedKeys: selectedKeys.filter(key => targetKeys.indexOf(key) === -1),
       targetSelectedKeys: selectedKeys.filter(key => targetKeys.indexOf(key) > -1),
+      flag: false // 触发上下移渲染
     };
   }
 
@@ -293,6 +294,31 @@ export default class Transfer extends React.Component {
 
     return ({ ...transferLocale, ...oldLocale, ...this.props.locale });
   }
+  // 上下排序
+  onLeftUpClick = (item, index) => {
+    const { leftDataSource } = this.separateDataSource(this.props);
+    leftDataSource.splice(index, 1)
+    leftDataSource.splice(index - 1, 0, item)
+    this.setState({flag: !this.state.flag})
+  }
+  onLeftDownClick = (item, index) => {
+    const { leftDataSource } = this.separateDataSource(this.props);
+    leftDataSource.splice(index, 1)
+    leftDataSource.splice(index + 1, 0, item)
+    this.setState({flag: !this.state.flag})
+  }
+  onRightUpClick = (item, index) => {
+    const { rightDataSource } = this.separateDataSource(this.props);
+    rightDataSource.splice(index, 1)
+    rightDataSource.splice(index - 1, 0, item)
+    this.setState({flag: !this.state.flag})
+  }
+  onRightDownClick = (item, index) => {
+    const { rightDataSource } = this.separateDataSource(this.props);
+    rightDataSource.splice(index, 1)
+    rightDataSource.splice(index + 1, 0, item)
+    this.setState({flag: !this.state.flag})
+  }
 
   renderTransfer = (transferLocale) => {
     const {
@@ -309,6 +335,7 @@ export default class Transfer extends React.Component {
       filterOption,
       render,
       lazy,
+      sort,
     } = this.props;
     const locale = this.getLocale(transferLocale);
     const { leftFilter, rightFilter, sourceSelectedKeys, targetSelectedKeys } = this.state;
@@ -326,6 +353,8 @@ export default class Transfer extends React.Component {
         <List
           prefixCls={`${prefixCls}-list`}
           titleText={titles[0]}
+          flag={this.state.flag}
+          sort={sort}
           dataSource={leftDataSource}
           filter={leftFilter}
           filterOption={filterOption}
@@ -337,6 +366,8 @@ export default class Transfer extends React.Component {
           handleSelectAll={this.handleLeftSelectAll}
           render={render}
           showSearch={showSearch}
+          onDownClick={this.onLeftDownClick}
+          onUpClick={this.onLeftUpClick}
           body={body}
           footer={footer}
           lazy={lazy}
@@ -358,6 +389,8 @@ export default class Transfer extends React.Component {
         <List
           prefixCls={`${prefixCls}-list`}
           titleText={titles[1]}
+          flag={this.state.flag}
+          sort={sort}
           dataSource={rightDataSource}
           filter={rightFilter}
           filterOption={filterOption}
@@ -374,6 +407,8 @@ export default class Transfer extends React.Component {
           lazy={lazy}
           onScroll={this.handleRightScroll}
           disabled={disabled}
+          onDownClick={this.onRightDownClick}
+          onUpClick={this.onRightUpClick}
           {...locale}
         />
       </div>
