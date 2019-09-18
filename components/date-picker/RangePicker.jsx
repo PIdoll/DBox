@@ -78,7 +78,7 @@ class RangePicker extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     let state = null;
-    let value;
+    let value = null;
     if ('value' in nextProps) {
       if (prevState.open) {
         value = prevState.value || [];
