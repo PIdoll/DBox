@@ -1,6 +1,6 @@
 {
   "name": "dbox-ui",
-  "version": "0.1.7",
+  "version": "0.2.5",
   "description": "react components",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -41,7 +41,7 @@
     "omit.js": "1.0.0",
     "prop-types": "^15.6.0",
     "rc-animate": "^2.4.4",
-    "rc-calendar": "^9.8.1",
+    "rc-calendar": "9.8.1",
     "rc-cascader": "^0.16.0",
     "rc-checkbox": "^2.1.1",
     "rc-collapse": "^1.10.0",
