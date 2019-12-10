@@ -147,7 +147,7 @@ export default class Header extends React.Component {
         className={`${prefixCls}-year-select`}
         value={String(year)}
         onChange={this.onYearChange}
-        style={{ width: 75, height: 24 }}>
+        style={{ width: 88, height: 24 }}>
         {options}
       </Select>
     );
@@ -189,7 +189,7 @@ export default class Header extends React.Component {
         className={`${prefixCls}-month-select`}
         value={String(month)}
         onChange={this.onMonthChange}
-        style={{ width: 58, height: 24 }}>
+        style={{ width: 72, height: 24 }}>
         {options}
       </Select>
     );

@@ -19,9 +19,12 @@
     justify-content: space-between;
     background-color: @primary-color;
 
+    .idoll-icon {
+      color: @calendar-choose-icon-color;
+    }
+
     &-left, &-right {
       font-size: @calendar-choose-icon-size;
-      color: @calendar-choose-icon-color;
       margin-top: 6px;
     }
 
@@ -163,7 +166,7 @@
 
   &-last-month-cell &-value,
   &-next-month-btn-day &-value {
-    color: @disabled-color;
+    color: @text-color-disable;
   }
 
   &-month-panel-table {
@@ -263,6 +266,27 @@
     width: auto;
     left: auto;
     bottom: auto;
+  }
+
+  &-disabled-cell&-selected-day &-value{
+    border: @border-width-base @border-style-base @text-color-disable;
+    box-shadow: none;
+    background-color: @disabled;
+    &:hover {
+      background-color: @disabled;
+      color: @text-color-disable;
+    }
+  }
+
+  &-disabled-cell&-today &-value {
+    border: @border-width-base @border-style-base @text-color-disable;
+    box-shadow: none;
+    font-weight: bold;
+  }
+
+  &-disabled-cell &-value:hover {
+    color: @text-color-disable;
+    background-color: @white;
   }
 
   &-disabled-cell &-date {
