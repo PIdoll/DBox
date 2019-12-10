@@ -531,7 +531,6 @@ export default class Table extends React.Component {
         selectionColumn = {
           key: 'selection-column',
           render: this.renderSelectionRadio,
-          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       } else {
         const checkboxAllDisabled = data.every(item => this.getCheckboxPropsByItem(item).disabled);
@@ -545,7 +544,7 @@ export default class Table extends React.Component {
           key: 'selection-column',
           title: checkboxAll,
           render: this.renderSelectionCheckBox,
-          className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
+          // className: this.state.boxChecked ? 'idoll-table-selection-column idoll-table-selection-column-selected' : 'idoll-table-selection-column',
         };
       }
       if (columns.some(column => column.fixed === 'left' || column.fixed === true)) {
@@ -761,8 +760,17 @@ export default class Table extends React.Component {
     }
     return data;
   }
+  getOddEven = (index) => {
+    if (this.props.zebraColor) {
+      return index % 2 === 1 ? `${this.props.prefixCls}-row-zebraColor-even` : `${this.props.prefixCls}-row-zebraColor-odd`;
+    } else if (this.state.selectedRowKeys.includes(`${index + 1}`)) {
+      return `${this.props.prefixCls}-row-zebraColor-even`
+    } else {
+      return null
+    }
+  }
   render() {
-    const { style, className, zebraColor, ...restProps } = this.props;
+    const { style, className, ...restProps } = this.props;
     const data = this.getCurrentPageData();
     let columns = this.renderRowSelection();
     const expandIconAsCell = this.props.expandedRowRender && this.props.expandIconAsCell !== false;
@@ -780,14 +788,13 @@ export default class Table extends React.Component {
       newColumn.key = this.getColumnKey(newColumn, i);
       return newColumn;
     });
-
     let table = (
       <RcTable {...restProps}
         data={data}
         columns={columns}
         className={classString}
         expandIconColumnIndex={(columns[0] && columns[0].key === 'selection-column') ? 1 : 0}
-        rowClassName={(data, index) => { return index % 2 === 1 ? zebraColor && `${this.props.prefixCls}-row-zebraColor-even` : zebraColor && `${this.props.prefixCls}-row-zebraColor-odd` }}
+        rowClassName={(data, index) => this.getOddEven(index)}
         expandIconAsCell={expandIconAsCell}
         emptyText={() => locale.emptyText}
     />
