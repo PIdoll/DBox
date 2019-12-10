@@ -1169,6 +1169,7 @@ class TableView extends React.Component {
 | 参数       | 说明                       | 类型            |  默认值  |
 |-----------|----------------------------|-----------------|---------|
 | title      | 列头显示文字               | String or React.Element | - |
+| hidden     | 是否显示当前表头            | Boolen         | - |
 | key        | React 需要的 key，建议设置 | String          | - |
 | dataIndex  | 列数据在数据项中对应的 key，支持 `a.b.c` 的嵌套写法 | String | - |
 | render     | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return里面可以设置表格行/列合并 | Function(text, record, index) {} | - |
