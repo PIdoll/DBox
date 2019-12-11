@@ -15,7 +15,6 @@ export default class Form extends React.Component {
   static defaultProps = {
     prefixCls: 'idoll-form',
     layout: 'horizontal',
-    hideRequiredMark: true,
     onSubmit(e) {
       e.preventDefault();
     },
@@ -26,7 +25,6 @@ export default class Form extends React.Component {
     // layout: PropTypes.oneOf(['horizontal', 'inline', 'vertical']),
     children: PropTypes.any,
     onSubmit: PropTypes.func,
-    hideRequiredMark: PropTypes.bool
   };
 
   static childContextTypes = {
@@ -65,13 +63,12 @@ export default class Form extends React.Component {
 
   render() {
     const {
-      prefixCls, hideRequiredMark, className = '', layout,
+      prefixCls, className = '', layout,
     } = this.props;
     const formClassName = classNames(prefixCls, {
       [`${prefixCls}-horizontal`]: layout === 'horizontal',
       [`${prefixCls}-vertical`]: layout === 'vertical',
       [`${prefixCls}-inline`]: layout === 'inline',
-      [`${prefixCls}-hide-required-mark`]: hideRequiredMark,
     }, className);
 
     const formProps = omit(this.props, [
@@ -79,7 +76,6 @@ export default class Form extends React.Component {
       'className',
       'layout',
       'form',
-      'hideRequiredMark',
     ]);
 
     return <form {...formProps} className={formClassName} />;
