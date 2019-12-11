@@ -64,7 +64,10 @@ export default function wrapPicker(Picker, pickerType) {
     }
 
     static propTypes = {
-      format: PropTypes.string,
+      format: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+      ]),
       transitionName: PropTypes.string,
       popupStyle: PropTypes.object,
       locale: PropTypes.object,
