@@ -48,7 +48,8 @@ export default class Badge extends React.Component {
     const badgeCls = classNames({
       [className]: !!className,
       [prefixCls]: true,
-      [`${prefixCls}-not-a-wrapper`]: !children
+      [`${prefixCls}-not-a-wrapper`]: !children,
+      [`state-dot-text`]: dot && text
     });
     if (offset) {
     }
