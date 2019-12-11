@@ -67,7 +67,6 @@ export default class Table extends React.Component {
   }
 
   constructor(props) {
-
     super(props);
 
     const pagination = props.pagination || {};
