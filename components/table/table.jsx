@@ -505,7 +505,13 @@ export default class Table extends React.Component {
   }
 
   renderRowSelection() {
-    const columns = this.props.columns.concat();
+    const columns = this.props.columns.concat().filter(item => {
+      if (item.hidden) {
+        return !item.hidden
+      } else {
+        return item
+      }
+    });
     if (this.props.rowSelection) {
       const data = this.getFlatCurrentPageData().filter((item) => {
         if (this.props.rowSelection.getCheckboxProps) {
