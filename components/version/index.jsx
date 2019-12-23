@@ -17,26 +17,21 @@ class Version extends React.Component {
       <div >
         <Timeline >
           <Timeline.Item >
-            <h2>1.0.0</h2>
-            <p >2018-10-12</p>
-            <p>🐞 修复 Avatar 图标不能垂直居中的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p>
+            <h2>0.2.8</h2>
+            <p >2019-12-26</p>
+            <p>🐞 修复 设置format设为<code>HH:mm</code> 时，时间面板秒的一列会空白一列。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/487">#487</a></p>
+            <p>🐞 修复 API <code>allowEmpty</code> 无清除效果的问题。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/476">#486</a></p>
+            <p>🐞 修复 table带选择框选中所在行背景无变化。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/484">#484</a></p>
+            <p>🐞 移除 Form <code>hideRequiredMark。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/477">#477</a></code></p>
+            <p>🐞 修复 Cascader禁用文字样式看不清。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/476">#476</a></p>
+            <p>🐞 修复 Calendar禁用文字样式看不清。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/475">#475</a></p>
+            <p>🐞 移除 Modal头部，底部多余的margin。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/470">#470</a></p>
+            <p>🐞 修复 menu在禁用条件下<code>hover</code>状态不正确、顶部导航高度写死问题。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/482">#482</a></p>
+
+            <p>🐞 修复 DatePicker组件中format属性为数组时，PropType数组校验报错。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/478">#478</a></p>
+            <p>🛠 新增Table columns的显隐API <code>hidden</code>。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/485">#485</a></p>
+            <p>🐞 修复 Badge必须在最顶层添加state，类名才能生效。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/474">#474</a></p>
           </Timeline.Item>
-          <Timeline.Item>
-            <h2>主要变化</h2>
-            <p>全新的色彩系统，组件主色由『#108EE9』改为『#1890FF』，新主色我们称之为『拂晓蓝』。</p>
-            <p>全新的视觉样式和组件尺寸，更现代更美观。</p>
-            <p>基础字体大小由 12px 增大到 14px。</p>
-            <p>默认语言由中文改为英文。</p>
-            <p>全面支持 React 16。</p>
-            <p> 新的 Divider 组件。</p>
-            <p>新增 30 个图标。</p>
-          </Timeline.Item>
-          <Timeline.Item>
-            <h2>1.0.0</h2>
-            <p >2018-10-12</p>
-            <p>🐞 修复 Avatar 图标不能垂直居中的问题。</p>
-            <p>🐞 修复会导致 Button 中的图标显示变小的问题。</p></Timeline.Item>
         </Timeline>
       </div>
     )
