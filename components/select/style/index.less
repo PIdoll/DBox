@@ -109,7 +109,7 @@
   }
 
   &-disabled {
-    color: @disabled-color;
+    color: @text-color-disable;
   }
 
   &-disabled &-selection {
@@ -132,7 +132,7 @@
   &-disabled &-selection--multiple &-selection__choice {
     padding-right: 10px;
     color: @text-color-secondary;
-    background: @text-color-secondary;
+    background-color: @border-color-dark;
     &__remove {
       display: none;
     }
@@ -150,7 +150,6 @@
     margin-right: @padding-sm - 1px;
     margin-left: @padding-sm - 1px;
     line-height: @input-height-base - 2px;
-    // https://github.com/ant-design/ant-design/issues/3481#issuecomment-254721026
     &::after {
       display: inline-block;
       width: 0;
