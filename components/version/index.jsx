@@ -31,6 +31,7 @@ class Version extends React.Component {
             <p>🐞 修复 DatePicker组件中format属性为数组时，PropType数组校验报错。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/478">#478</a></p>
             <p>🛠 新增Table columns的显隐API <code>hidden</code>。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/485">#485</a></p>
             <p>🐞 修复 Badge必须在最顶层添加state，类名才能生效。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/474">#474</a></p>
+            <p>🐞 修复 Select disabled 为true 时字体颜色和背景颜色一致 。<a target='_blank' href="https://github.com/PIdoll/DBox/pull/490">#490</a></p>
           </Timeline.Item>
         </Timeline>
       </div>
