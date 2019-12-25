@@ -126,7 +126,6 @@ a {
 	color: #000;
 	font-size: 14px;
 	margin-right: 48px;
-	font-family:PingFangSC-Regular;
 }
 
 .content_container .principle {
@@ -151,7 +150,6 @@ a {
 	font-weight: 500px;
 	margin-bottom: 24px;
 	color: rgba(0, 0, 0, .8);
-	font-family:PingFangSC-Regular;
 }
 
 .design_source p {
@@ -159,7 +157,6 @@ a {
 	font-weight: 400;
 	margin-bottom: 64px;
 	color: rgba(0, 0, 0, .6);
-	font-family:PingFangSC-Regular;
 }
 
 .design_source a {
@@ -190,7 +187,6 @@ a {
 	margin-top: 14px;
 	font-weight: 500;
 	margin-bottom: 48px;
-	font-family: PingFangSC-Regular;
 }
 
 .design_source_logo_container .operation a {
@@ -204,7 +200,6 @@ a {
   font-size: 14px;
   height: 39px;
   color: rgba(0, 0, 0, .6);
-	font-family:PingFangSC-Regular;
 }
 .design_source_logo_container .operation .getlink {
   height: 40px;
@@ -214,7 +209,6 @@ a {
 	font-size: 14px;
 	border-top-color: #13B886;
 	background-color: #13B886;
-	font-family:PingFangSC-Regular;
 }
 
 .Happy_qrcode {
@@ -302,7 +296,6 @@ a {
   text-align: right;
   margin-bottom: 32px;
   color: rgba(0, 0, 0, .4);
-  font-family:PingFangSC-Regular;
 }
 
 .descript_container .component_name {
@@ -311,7 +304,7 @@ a {
   font-weight:500;
   text-align: right;
   margin-bottom: 40px;
-  font-family:PingFangSC-Medium;
+  font-family:Arial;
 }
 
 .descript_container .component_name2 {
@@ -320,7 +313,6 @@ a {
   font-weight:500;
   text-align: right;
   margin-bottom: 32px;
-  font-family:PingFangSC-Medium;
 }
 
 .descript_container .purpose {
@@ -329,7 +321,6 @@ a {
   text-align: right;
   margin-bottom: 72px;
   color: rgba(0, 0, 0, .6);
-  font-family:PingFangSC-Medium;
 }
 .descript_container .operation {
   text-align: right;
