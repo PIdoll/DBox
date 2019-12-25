@@ -41,6 +41,7 @@ const handleActiveLink = (linkItem) => {
 }
 
 export function LinkRenderer({ classes, children, ...props }) {
+	console.log('props', children);
 	const headline = ['Components', 'General', 'Navigation', 'DataEntry', 'DataDisplay', 'Feedback', 'Others'];
 	for (const item of headline.values()) {
 		if (children === item) {
