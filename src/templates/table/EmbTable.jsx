@@ -80,7 +80,7 @@ const data = [{
   const columnsSubmenu = [
     { title: '操作日期', dataIndex: 'date', key: 'date' },
     { title: '操作人员', dataIndex: 'name', key: 'name' },
-    { title: '操作状态', key: 'state', render: () => <span className='state' style={{position: 'relative'}}><Badge dot status='success' text='成功' /></span> },
+    { title: '操作状态', key: 'state', render: () => <Badge dot status='success' text='成功' /> },
     { title: '操作次数', dataIndex: 'upgradeNum', key: 'upgradeNum' },
     {
       title: '异常状态',

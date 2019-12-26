@@ -99,10 +99,10 @@ module.exports = {
       name: 'GetStarted',
       content: 'components/getStarted.md',
     },
-/*     {
+    {
       name: 'Version',
       content: 'components/version/readme.md',
-    }, */
+    },
     {
       name: 'Color',
       content: 'components/color/readme.md',

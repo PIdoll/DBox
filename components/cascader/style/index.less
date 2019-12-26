@@ -200,16 +200,16 @@
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.3s;
-    &:hover {
+    &:not(&-disabled):hover {
       background-color: @primary-lightBg;
       color: @select-hover-color;
     }
     &-disabled {
       cursor: not-allowed;
-      color: @disabled-color;
-      &:hover {
-        color: @disabled-color;
-      }
+      color: @text-color-disable;
+      // &:hover {
+      //   color: @disabled-color;
+      // }
 
       .@{idoll-prefix}-icon-right {
         color: @disabled-color;

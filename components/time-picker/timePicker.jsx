@@ -87,8 +87,7 @@ class TimePicker extends React.Component {
     const value = props.value || props.defaultValue;
     if (value && !interopDefault(moment).isMoment(value)) {
       throw new Error(
-        'The value/defaultValue of TimePicker must be a moment object after `antd@2.0`, ' +
-          'see: https://u.ant.design/time-picker-value',
+        'The value/defaultValue of TimePicker must be a moment object'
       );
     }
     this.state = {
@@ -140,14 +139,6 @@ class TimePicker extends React.Component {
     return 'HH:mm:ss';
   }
 
-  getAllowClear() {
-    const { allowClear, allowEmpty } = this.props;
-    if ('allowClear' in this.props) {
-      return allowClear;
-    }
-    return allowEmpty;
-  }
-
   renderInputIcon(prefixCls) {
     const { suffixIcon } = this.props;
     const clockIcon = (suffixIcon &&
@@ -169,7 +160,6 @@ class TimePicker extends React.Component {
         className: classNames(clearIcon.props.className, clearIconPrefixCls),
       });
     }
-
     return <Icon type='close-circle' className={clearIconPrefixCls} theme='filled' />;
   }
 
@@ -192,7 +182,7 @@ class TimePicker extends React.Component {
           placeholder,
           ...props
         } = this.props;
-        const { size } = props;
+        const { size, allowEmpty } = props;
         const pickerProps = omit(props, ['defaultValue', 'suffixIcon', 'allowEmpty', 'allowClear']);
 
         const format = this.getDefaultFormat();
@@ -203,12 +193,11 @@ class TimePicker extends React.Component {
 
         const pickerAddon = (panel) =>
           addon ? <div className={`${prefixCls}-panel-addon`}>{addon(panel)}</div> : null;
-
         return (
           <RcTimePicker
             {...generateShowHourMinuteSecond(format)}
             {...pickerProps}
-            allowEmpty={this.getAllowClear()}
+            allowEmpty={allowEmpty}
             prefixCls={prefixCls}
             getPopupContainer={getPopupContainer || getContextPopupContainer}
             ref={this.saveTimePicker}

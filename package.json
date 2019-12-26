@@ -1,6 +1,6 @@
 {
   "name": "dbox-ui",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "react components",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development webpack-dev-server --open --hot --config webpack.dev.js --mode development",
     "build": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode production",
     "npm": "NODE_ENV=production webpack --config webpack.dll.config.js && webpack --config webpack.prod.js --mode production && node ./scripts/buildEs.js  && babel components -d lib && gulp --gulpfile ./scripts/buildStyle.js",
-    "doc": "NODE_ENV=development styleguidist server",
+    "doc": "NODE_ENV=development styleguidist server --open",
     "doc:build": "NODE_ENV=development styleguidist build"
   },
   "repository": {
@@ -62,7 +62,7 @@
     "rc-switch": "^1.8.0",
     "rc-table": "^6.4.0",
     "rc-tabs": "^9.4.7",
-    "rc-time-picker": "3.4.0",
+    "rc-time-picker": "3.7.2",
     "rc-tooltip": "^3.7.3",
     "rc-tree": "^1.14.8",
     "rc-tree-select": "^2.4.3",
