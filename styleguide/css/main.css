@@ -104,7 +104,8 @@ a {
   background: #fff;
 }
 .header-warper-top {
-  max-width: 90%;
+  /* max-width: 90%; */
+  padding: 0 120px;
   height:64px;
   margin: 0 auto;
   display: flex;
@@ -451,6 +452,12 @@ a {
   letter-spacing: 2px;
   margin-bottom: 48px;
   color: rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 1280px) {
+  .description {
+    width: 382px;
+  }
 }
 
 .divider {
