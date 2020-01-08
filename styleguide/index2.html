@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+  <title>Dbox UI(一套基于React.js实现的PC端UI组件库,启发产品经理、设计师和开发者高效的创建简约而美观的设计体验)</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="swiper/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body>
+  <div class="bg_container">
+      <header class='header-warper noBg'>
+        <div class='header-warper-top'>
+          <a class='header-warper-logo' href='javascript:;'>
+              <img src='./assets/img/logo.png' alt='logo' />
+          </a>
+          <div class='header-warper-navbar'>
+            <a href='design.html'>设计原则</a>
+            <a href='index.html'>组件文档</a>
+            <a href='resource.html'>设计资源</a>
+          </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="left_title">
+            <img class="cloud1" src="./assets/img/cloud.svg" alt="">
+            <div class="componentName">DBOX UI</div>
+            <div class="description">
+                一套基于React.js实现的PC端UI组件库,启发产品经理、设计师和开发者高效的创建简约而美观的设计体验
+            </div>
+            <div class="divider"></div>
+            <div class="btn_content">
+                <a class="start_use" href="/doc.html">开始使用</a>
+                <a class="tele_me" onmouseenter="handleHappyMouseEnter()" onmouseout="handleHappyMouseOut()">联系我们</a>
+                <div class="Happy" id="Happy">
+                    <img src="./assets/img/pingan.png" alt="快乐平安">
+                    <span class="scamQR">使用快乐平安扫码加群</span>
+                </div>
+            </div>
+            <img class="line" src="./assets/img/line.svg" alt="">
+        </div>
+        <div>
+            <div class="tower">
+                <img class="tower_up bounceInDown animated" src="./assets/img/Tower_up_crane.svg" alt="">
+                <img class="tower_down bounceInDown animated" src="./assets/img/tower_down_crane.svg" alt="">
+                <img class="bounceInDown animated" src="./assets/img/ground.svg" alt="">
+                <img class="UI bounceInDown animated delay-1s" src="./assets/img/UI.svg" alt="">
+                <img class="laptop bounceInDown animated delay-2s" src="./assets/img/laptop.svg" alt="">
+                <img class="building bounceInDown animated delay-2s" src="./assets/img/building.svg" alt="">
+                <img class="dbox bounceInRight animated delay-2s" src="./assets/img/dbox.svg" alt="">
+                <img class="cloud1" src="./assets/img/cloud.svg" alt="">
+                <img class="cloud2" src="./assets/img/cloud.svg" alt="">
+                <img class="cloud3" src="./assets/img/cloud.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="principle">
+        <p class="design_title">设计原则</p>
+        <div class="design_content">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide principle_02">
+                        <div class="text_content">
+                            <p class="title">清晰</p>
+                            <p>
+                                消除歧义，让人们直观的看到、理解并采取行动；页面结构清晰，信息层级一目了然。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide principle_03">
+                            <div class="text_content">
+                                <p class="title">美观</p>
+                                <p>
+                                    提供细致入微和优雅​​协调的视觉表现，体现对用户的时间和工作的尊重。
+                                </p>
+                            </div>
+                    </div>
+                    <div class="swiper-slide principle_04">
+                        <div class="text_content">
+                            <p class="title">灵活</p>
+                                <p>
+                                    设计周全的布局，规整和模块化的信息排布，为多变的需求提供良好的扩展性。
+                                </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide principle_01">
+                        <div class="text_content">
+                            <p class="title">高效</p>
+                            <p>
+                                打造丰富的、开箱即用的组件资源，拒绝重复造轮子；简化和优化工作流程，智能预测用户行为，让用户操作更自然。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+         </div>
+    </div>
+    <div class="resources_content">
+        <p class="resources_title">组件资源</p>
+        <p class="resources_text">
+            提供设计资源 Sketch Library 下载与前端代码 Code 在线文档，帮您快速搭建业务系统，提升产品设计效率
+        </p>
+        <div class="resources_download">
+            <div class="download_size" style="margin-right: 48px">
+                <img src="./assets/img/Sketch.png" alt="">
+                <div>
+                    <p class="Skeych">Skeych Libray</p>
+                    <p class="Skeych_descript">
+                        提供给产品经理、交互设计师和 UI 设计师快速搭建近乎高保真的原型，对于设计资源匮乏，项目周期短的项目，可快速交付开发。
+                    </p>
+                </div>
+                <a class="download" href='./assets/resource/DBox_sketch.zip'>
+                    <img src="./assets/img/download.svg" alt="">
+                </a>
+            </div>
+            <div class="download_size">
+                <img src="./assets/img/Code.svg" alt="">
+                <div>
+                    <p class="Skeych">Components Code</p>
+                    <p class="Skeych_descript">
+                        提供给开发丰富的组件集合，让开发变得简单、快速、轻松，统一的组件风格，让应用看起来更加的具有完整性。
+                    </p>
+                </div>
+                <div class="download">
+                    <img src="./assets/img/Jump.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team">
+        <p class="resources_title">贡献成员</p>
+        <p class="resources_text">
+            以下为 DBox UI 核心贡献人员，感谢他们利用工作之余的积极和辛勤付出
+        </p>
+        <div class="tooltip_container">
+            <div class="Avatar">
+                <div class="tooltip liuTip"><div class="tip bottom"><div>刘洪博</div>前端开发工程师</div></div>
+                <div class="tooltip yangTip"><div class="tip bottom"><div>杨洋</div>前端开发工程师</div></div>
+                <div class="tooltip wangTip"><div class="tip bottom"><div>王云辉</div>前端开发工程师</div></div>
+                <div class="tooltip luTip"><div class="tip bottom"><div>卢露</div>前端开发工程师</div></div>
+                <div class="tooltip chenTip"><div class="tip bottom"><div>陈旭敏</div>前端开发工程师</div></div>
+                <div class="tooltip zhangTip"><div class="tip bottom"><div>张斌</div>前端开发工程师</div></div>
+                <div class="tooltip zhouTip"><div class="tip bottom"><div>周晓明</div>UI设计师</div></div>
+                <div class="circle translate0" onmouseover="handleMouseOver('translate0')" onmouseout="handleMouseOut('translate0')"><img src="./assets/img/liu.jpeg" alt=""></div>
+                <div class="circle translate1" onmouseover="handleMouseOver('translate1')" onmouseout="handleMouseOut('translate1')"><img src="./assets/img/yang.jpeg" alt=""></div>
+                <div class="circle translate2" onmouseover="handleMouseOver('translate2')" onmouseout="handleMouseOut('translate2')"><img src="./assets/img/wang.png" alt=""></div>
+                <div class="circle translate3" onmouseover="handleMouseOver('translate3')" onmouseout="handleMouseOut('translate3')"><img src="./assets/img/lu.png" alt=""></div>
+                <div class="circle translate4" onmouseover="handleMouseOver('translate4')" onmouseout="handleMouseOut('translate4')"><img src="./assets/img/chen.png" alt=""></div>
+                <div class="circle translate6" onmouseover="handleMouseOver('translate6')" onmouseout="handleMouseOut('translate6')"><img src="./assets/img/zhang.png" alt=""></div>
+                <div class="circle translate5" onmouseover="handleMouseOver('translate5')" onmouseout="handleMouseOut('translate5')"><img src="./assets/img/zhou.jpeg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <p class="resources_title">服务项目</p>
+        <p class="resources_text">
+            目前已服务于平安普惠电销系统和人管云系统
+        </p>
+        <div class="case">
+            <div>
+                <img src="./assets/img/case_01.svg" alt="">
+            </div>
+            <div>
+                <img src="./assets/img/case_02.svg" alt="">
+            </div>
+        </div>
+        <div class="join">
+            如果您对我们的产品感兴趣，欢迎联系 <a class="email_path" href="mailto:LIUHONGBO050@pingan.con.cn">LIUHONGBO050@pingan.con.cn</a>
+        </div>
+    </div>
+    <div class="footer">
+        © 2018-2020 DBox team. 平安科技·远程服销平台·贷款销售应用组
+    </div>
+  </div>
+</body>
+<script src="swiper/swiper.min.js"></script>
+<script>
+  var Happy = document.getElementById('Happy');
+  var TowerUp = document.getElementsByClassName('tower_up');
+  var towerDown = document.getElementsByClassName('tower_down');
+  var liuTip = document.getElementsByClassName('liuTip')[0];
+  var yangTip = document.getElementsByClassName('yangTip')[0];
+  var wangTip = document.getElementsByClassName('wangTip')[0];
+  var luTip = document.getElementsByClassName('luTip')[0];
+  var chenTip = document.getElementsByClassName('chenTip')[0];
+  var zhouTip = document.getElementsByClassName('zhouTip')[0];
+  var zhangTip = document.getElementsByClassName('zhangTip')[0];
+  var noBg = document.getElementsByClassName('noBg')[0];
+  var headerWarper = document.getElementsByClassName('header-warper')[0];
+
+  function RemoverClass(element, anmimate) {
+      setTimeout(function() {
+        element[0].classList.remove('bounceInDown');
+        element[0].classList.remove('animated');
+        element[0].classList.add(anmimate);
+      }, 1000);
+  }
+  function handleHappyMouseEnter() {
+    Happy.classList.add('show');
+  }
+  function handleHappyMouseOut() {
+    Happy.classList.remove('show');
+  }
+  function handleMouseOver(attr) {
+    if (attr === 'translate0') {
+        liuTip.classList.add('show');
+    } else if (attr === 'translate1') {
+        yangTip.classList.add('show');
+    } else if (attr === 'translate2') {
+        wangTip.classList.add('show');
+    } else if(attr === 'translate3') {
+        luTip.classList.add('show');
+    } else if (attr === 'translate4') {
+        chenTip.classList.add('show');
+    } else if (attr === 'translate5') {
+        zhouTip.classList.add('show');
+    } else {
+        zhangTip.classList.add('show');
+    }
+  }
+  function handleMouseOut(attr) {
+    if (attr === 'translate0') {
+        liuTip.classList.remove('show');
+    } else if (attr === 'translate1') {
+        yangTip.classList.remove('show');
+    } else if (attr === 'translate2') {
+        wangTip.classList.remove('show');
+    } else if(attr === 'translate3') {
+        luTip.classList.remove('show');
+    } else if (attr === 'translate4') {
+        chenTip.classList.remove('show');
+    } else if (attr === 'translate5') {
+        zhouTip.classList.remove('show');
+    } else {
+        zhangTip.classList.remove('show');
+    }
+  }
+  window.onload = function() {
+    handleWindownChange();
+    window.addEventListener('resize', handleWindownChange);
+    window.addEventListener('scroll', handleBodyScroll);
+
+    RemoverClass(TowerUp, 'tower_up_custom_animated');
+    RemoverClass(towerDown, 'tower_down_custom_animated');
+    var mySwiper = new Swiper ('.swiper-container', {
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        setWrapperSize: true,
+        spaceBetween: 220,
+        direction: 'horizontal',
+        loop: true, // 循环模式选项
+        slidesPerView: 'auto',
+        // updateOnWindowResize: true,
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    function handleWindownChange() {
+      if (window.innerWidth >= 1680) {
+        mySwiper && (mySwiper.params.spaceBetween = 220);
+      } else if (window.innerWidth <= 1366) {
+        mySwiper && (mySwiper.params.spaceBetween = 80);
+      }
+    }
+  }
+  function handleBodyScroll() {
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    if(scrollTop) {
+        if (scrollTop >= 64) {
+            headerWarper.style.position = 'fixed';
+            headerWarper.classList.add('animated');
+            headerWarper.classList.add('slideInDown');
+            headerWarper.style.animationDuration = '2s';
+            noBg.style.boxShadow = '0 2px 8px 1px rgba(0, 0, 0, .1)';
+            return;
+        }
+    }
+    headerWarper.style.position = 'none';
+    headerWarper.classList.remove('animated');
+    headerWarper.classList.remove('slideInDown');
+    noBg.style.boxShadow = 'none';
+  }
+  window.onbeforeunload=function(e){
+　　var e = window.event||e;
+　　window.removeEventListener('resize', handleWindownChange);
+   window.removeEventListener('scroll', handleBodyScroll);
+};
+</script>
+</html>
