@@ -140,18 +140,26 @@
         </p>
         <div class="tooltip_container">
             <div class="Avatar">
+                <div class="tooltip yueTip"><div class="tip bottom"><div>张岳欣</div>高级经理</div></div>
                 <div class="tooltip liuTip"><div class="tip bottom"><div>刘洪博</div>前端开发工程师</div></div>
                 <div class="tooltip yangTip"><div class="tip bottom"><div>杨洋</div>前端开发工程师</div></div>
                 <div class="tooltip wangTip"><div class="tip bottom"><div>王云辉</div>前端开发工程师</div></div>
                 <div class="tooltip luTip"><div class="tip bottom"><div>卢露</div>前端开发工程师</div></div>
                 <div class="tooltip chenTip"><div class="tip bottom"><div>陈旭敏</div>前端开发工程师</div></div>
                 <div class="tooltip zhangTip"><div class="tip bottom"><div>张斌</div>前端开发工程师</div></div>
+                <div class="tooltip wuTip"><div class="tip bottom"><div>吴俊强</div>前端开发工程师</div></div>
+                <div class="tooltip lvTip"><div class="tip bottom"><div>吕新新</div>高级开发工程师</div></div>
+                <div class="tooltip weiTip"><div class="tip bottom"><div>张蔚然</div>产品经理</div></div>
                 <div class="tooltip zhouTip"><div class="tip bottom"><div>周晓明</div>UI设计师</div></div>
+                <div class="circle translate10" onmouseover="handleMouseOver('translate10')" onmouseout="handleMouseOut('translate10')"><img src="./assets/img/yue.jpeg" alt=""></div>
                 <div class="circle translate0" onmouseover="handleMouseOver('translate0')" onmouseout="handleMouseOut('translate0')"><img src="./assets/img/liu.jpeg" alt=""></div>
                 <div class="circle translate1" onmouseover="handleMouseOver('translate1')" onmouseout="handleMouseOut('translate1')"><img src="./assets/img/yang.jpeg" alt=""></div>
                 <div class="circle translate2" onmouseover="handleMouseOver('translate2')" onmouseout="handleMouseOut('translate2')"><img src="./assets/img/wang.png" alt=""></div>
                 <div class="circle translate3" onmouseover="handleMouseOver('translate3')" onmouseout="handleMouseOut('translate3')"><img src="./assets/img/lu.png" alt=""></div>
                 <div class="circle translate4" onmouseover="handleMouseOver('translate4')" onmouseout="handleMouseOut('translate4')"><img src="./assets/img/chen.png" alt=""></div>
+                <div class="circle translate7" onmouseover="handleMouseOver('translate7')" onmouseout="handleMouseOut('translate7')"><img src="./assets/img/wu.jpeg" alt=""></div>
+                <div class="circle translate8" onmouseover="handleMouseOver('translate8')" onmouseout="handleMouseOut('translate8')"><img src="./assets/img/lv.png" alt=""></div>
+                <div class="circle translate9" onmouseover="handleMouseOver('translate9')" onmouseout="handleMouseOut('translate9')"><img src="./assets/img/wei.jpeg" alt=""></div>
                 <div class="circle translate6" onmouseover="handleMouseOver('translate6')" onmouseout="handleMouseOut('translate6')"><img src="./assets/img/zhang.png" alt=""></div>
                 <div class="circle translate5" onmouseover="handleMouseOver('translate5')" onmouseout="handleMouseOut('translate5')"><img src="./assets/img/zhou.jpeg" alt=""></div>
             </div>
@@ -170,8 +178,10 @@
                 <img src="./assets/img/case_02.svg" alt="">
             </div>
         </div>
-        <div class="join">
-            如果您对我们的产品感兴趣，欢迎联系 <a class="email_path" href="mailto:LIUHONGBO050@pingan.con.cn">LIUHONGBO050@pingan.con.cn</a>
+        <div class="join_content">
+            <div class="join">
+                如果您对我们的产品感兴趣，欢迎联系 <a class="email_path" href="mailto:LIUHONGBO050@pingan.con.cn">LIUHONGBO050@pingan.con.cn</a>
+            </div>
         </div>
     </div>
     <div class="footer">
@@ -191,6 +201,10 @@
   var chenTip = document.getElementsByClassName('chenTip')[0];
   var zhouTip = document.getElementsByClassName('zhouTip')[0];
   var zhangTip = document.getElementsByClassName('zhangTip')[0];
+  var wuTip = document.getElementsByClassName('wuTip')[0];
+  var lvTip = document.getElementsByClassName('lvTip')[0];
+  var weiTip = document.getElementsByClassName('weiTip')[0];
+  var yueTip = document.getElementsByClassName('yueTip')[0];
   var noBg = document.getElementsByClassName('noBg')[0];
   var headerWarper = document.getElementsByClassName('header-warper')[0];
 
@@ -220,8 +234,16 @@
         chenTip.classList.add('show');
     } else if (attr === 'translate5') {
         zhouTip.classList.add('show');
-    } else {
+    } else if (attr === 'translate6') {
         zhangTip.classList.add('show');
+    } else if (attr === 'translate7') {
+        wuTip.classList.add('show');
+    } else if (attr === 'translate8') {
+        lvTip.classList.add('show');
+    } else if (attr === 'translate9') {
+        weiTip.classList.add('show');
+    } else {
+        yueTip.classList.add('show');
     }
   }
   function handleMouseOut(attr) {
@@ -237,8 +259,16 @@
         chenTip.classList.remove('show');
     } else if (attr === 'translate5') {
         zhouTip.classList.remove('show');
-    } else {
+    } else if (attr === 'translate6') {
         zhangTip.classList.remove('show');
+    } else if (attr === 'translate7') {
+        wuTip.classList.remove('show');
+    } else if (attr === 'translate8') {
+        lvTip.classList.remove('show');
+    } else if (attr === 'translate9') {
+        weiTip.classList.remove('show');
+    } else {
+        yueTip.classList.remove('show');
     }
   }
   window.onload = function() {
@@ -271,6 +301,9 @@
     function handleWindownChange() {
       if (window.innerWidth >= 1680) {
         mySwiper && (mySwiper.params.spaceBetween = 220);
+      } else if (window.innerWidth <= 1280) {
+          console.log('window.innerWidth111', window.innerWidth)
+        mySwiper && (mySwiper.params.spaceBetween = 50);
       } else if (window.innerWidth <= 1366) {
         mySwiper && (mySwiper.params.spaceBetween = 80);
       }

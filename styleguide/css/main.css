@@ -19,7 +19,7 @@ a {
   position: relative;
 }
 
-.liuTip,.yangTip,.wangTip,.luTip, .chenTip, .zhouTip, .zhangTip {
+.liuTip,.yangTip,.wangTip,.luTip, .chenTip, .zhouTip, .zhangTip, .weiTip, .wuTip, .lvTip, .yueTip {
   opacity: 0;
   transition: opacity 0.4s;
   position: absolute;
@@ -27,31 +27,47 @@ a {
 }
 
 .liuTip {
-  left: -20px;
-}
-
-.yangTip {
   left: 76px;
 }
 
+.yangTip {
+  left: 174px;
+}
+
 .wangTip {
-  left: 163px;
+  left: 262px;
 }
 
 .luTip {
-  left: 252px;
+  left: 350px;
 }
 
 .chenTip {
-  left: 340px
+  left: 436px
 }
 
 .zhouTip {
-  left: 510px;
+  right: 94px;
 }
 
 .zhangTip {
-  left: 426px
+  right: 184px;
+}
+
+.weiTip {
+  right: 266px;
+}
+
+.wuTip {
+  right: 438px;
+}
+
+.lvTip {
+  right: 354px;
+}
+
+.yueTip {
+  left: -20px;
 }
 
 .home_page {
@@ -713,11 +729,15 @@ a {
   justify-content: space-around;
 }
 
+.join_content{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .join {
   position: absolute;
   top: 708px;
-  left: 50%;
-  transform: translateX(-50%);
   color: #333333;
   font-size: 20px;
 }
@@ -740,7 +760,7 @@ a {
   display: flex;
   position: absolute;
   top: 228px;
-  left: 53%;
+  left: 55%;
   transform: translateX(-50%);
 }
 
@@ -811,11 +831,23 @@ a {
   left: -50px;
 }
 .translate5 {
-  left: -76px;
+  left: -118px;
 }
 
 .translate6 {
+  left: -106px;
+}
+
+.translate7 {
   left: -62px;
+}
+
+.translate8 {
+  left: -78px;
+}
+
+.translate9 {
+  left: -90px;
 }
 
 .tooltip_container {
