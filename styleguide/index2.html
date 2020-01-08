@@ -282,7 +282,7 @@
         centeredSlides: true,
         centeredSlidesBounds: true,
         setWrapperSize: true,
-        spaceBetween: 220,
+        spaceBetween: initSpaceBetween(),
         direction: 'horizontal',
         loop: true, // 循环模式选项
         slidesPerView: 'auto',
@@ -298,11 +298,22 @@
         },
     });
 
+    function initSpaceBetween() {
+        var spaceBetween;
+        if (window.innerWidth >= 1680) {
+            spaceBetween = 220;
+      } else if (window.innerWidth <= 1280) {
+        spaceBetween = 50;
+      } else if (window.innerWidth <= 1366) {
+        spaceBetween = 80;
+      }
+      return spaceBetween;
+    }
+
     function handleWindownChange() {
       if (window.innerWidth >= 1680) {
         mySwiper && (mySwiper.params.spaceBetween = 220);
       } else if (window.innerWidth <= 1280) {
-          console.log('window.innerWidth111', window.innerWidth)
         mySwiper && (mySwiper.params.spaceBetween = 50);
       } else if (window.innerWidth <= 1366) {
         mySwiper && (mySwiper.params.spaceBetween = 80);

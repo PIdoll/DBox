@@ -656,6 +656,7 @@ a {
 }
 
 .resources_text {
+  width: 100%;
   position: absolute;
   top: 158px;
   color: rgba(0, 0, 0, .6);
@@ -707,6 +708,7 @@ a {
 }
 
 .team {
+  text-align: center;
   position: relative;
   width: 100%;
   height: 380px;
@@ -716,6 +718,7 @@ a {
 }
 
 .project {
+  text-align: center;
   position: relative;
   width: 100%;
   height: 808px;
