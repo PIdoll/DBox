@@ -148,6 +148,7 @@ import {Checkbox} from 'dbox-ui';
 | checked | 指定当前是否选中 | boolean | false |
 | defaultChecked | 初始是否选中 | boolean | false |
 | disabled | 失效状态 | boolean | false |
+| readOnly | 只读状态 | boolean | false |
 | indeterminate | 设置 indeterminate 状态，只负责样式控制 | boolean | false |
 | onChange | 变化时回调函数 | Function(e:Event) | - |
 | onClick | 点击时回调函数 | Function(e:Event) | - |
@@ -160,6 +161,7 @@ import {Checkbox} from 'dbox-ui';
 | options | 指定可选项 | string\[] | \[] |
 | value | 指定选中的选项 | string\[] | \[] |
 | disabled | 整组失效 | boolean | false |
+| readOnly | 整组只读状态 | boolean | false |
 | onChange | 变化时回调函数 | Function(checkedValue) | - |
 
 <style>.idoll-steps{margin-bottom: 10px}</style>
