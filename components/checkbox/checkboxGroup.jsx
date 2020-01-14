@@ -82,7 +82,7 @@ export default class checkboxGroup extends React.Component {
     let children = props.children;
     if (options && options.length > 0) {
       children = this.getOptions().map(option => (
-        <Checkbox key={option.value} disabled={'disabled' in option ? option.disabled : props.disabled} value={option.value} checked={state.value.indexOf(option.value) !== -1} onChange={() => this.toggleOption(option)} className={`${prefixCls}-item`}>
+        <Checkbox key={option.value} readOnly={'readOnly' in option ? option.readOnly : props.readOnly} disabled={'disabled' in option ? option.disabled : props.disabled} value={option.value} checked={state.value.indexOf(option.value) !== -1} onChange={() => this.toggleOption(option)} className={`${prefixCls}-item`}>
           {option.label}
         </Checkbox>
       ));

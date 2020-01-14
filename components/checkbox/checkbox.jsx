@@ -33,11 +33,15 @@ export default class Checkbox extends React.Component {
     const { prefixCls, className, children, indeterminate, style, onMouseEnter, onMouseLeave, ...restProps } = this.props;
     const { checkboxGroup } = context;
     let checkboxProps = { ...restProps };
+    if (props.readOnly) {
+      checkboxProps.disabled = props.readOnly;
+    }
     if (checkboxGroup) {
       checkboxProps.onChange = () => checkboxGroup.toggleOption({label: children, value: props.value});
       checkboxProps.checked = checkboxGroup.value.indexOf(props.value) !== -1;
-      checkboxProps.disabled = checkboxGroup.disabled || props.disabled;
+      checkboxProps.disabled = checkboxGroup.disabled || checkboxGroup.readOnly || props.readOnly || props.disabled;
     }
+    console.log('checkboxGroup', checkboxGroup && checkboxGroup.readOnly)
     const classString = classNames(className, {
       [`${prefixCls}-wrapper`]: true
     })
@@ -47,7 +51,7 @@ export default class Checkbox extends React.Component {
     return (
       <label className={classString} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <RcCheckbox {...checkboxProps} prefixCls={prefixCls} className={checkboxClass} ref={this.saveCheckbox} />
-        {children !== undefined ? <span>{children}</span> : null}
+        {children !== undefined ? <span id={((props && props.readOnly) || (checkboxGroup && checkboxGroup.readOnly)) && `${prefixCls}-text`}>{children}</span> : null}
       </label>
     )
   }
