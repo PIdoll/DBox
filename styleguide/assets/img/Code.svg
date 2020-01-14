@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="71px" height="72px" viewBox="0 0 71 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>Code</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="96" height="96"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页-20191225" transform="translate(-780.000000, -1586.000000)">
+            <g id="section-03" transform="translate(0.000000, 1290.000000)">
+                <g id="编组-5" transform="translate(120.000000, 260.000000)">
+                    <g id="编组-3" transform="translate(624.000000, 0.000000)">
+                        <g id="Code" transform="translate(24.000000, 24.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="蒙版"></g>
+                            <path d="M74,12 C76.209139,12 78,13.790861 78,16 L78,49 L74,49 L74,18 C74,16.9456382 73.1841222,16.0818349 72.1492623,16.0054857 L72,16 L18,16 C16.8954305,16 16,16.8954305 16,18 L16,18 L16,78 C16,79.1045695 16.8954305,80 18,80 L18,80 L72,80 C73.1045695,80 74,79.1045695 74,78 L74,78 L74,73 L78,73 L78,80 C78,82.209139 76.209139,84 74,84 L16,84 C13.790861,84 12,82.209139 12,80 L12,16 C12,13.790861 13.790861,12 16,12 L74,12 Z M74,32 L74,36 L16,36 L16,32 L74,32 Z M24,21 C25.6568542,21 27,22.3431458 27,24 C27,25.6568542 25.6568542,27 24,27 C22.3431458,27 21,25.6568542 21,24 C21,22.3431458 22.3431458,21 24,21 Z M33,21 C34.6568542,21 36,22.3431458 36,24 C36,25.6568542 34.6568542,27 33,27 C31.3431458,27 30,25.6568542 30,24 C30,22.3431458 31.3431458,21 33,21 Z M42,21 C43.6568542,21 45,22.3431458 45,24 C45,25.6568542 43.6568542,27 42,27 C40.3431458,27 39,25.6568542 39,24 C39,22.3431458 40.3431458,21 42,21 Z" id="形状结合" fill="#569AFF" mask="url(#mask-2)"></path>
+                            <text id="HTTP://" mask="url(#mask-2)" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" fill="#569AFF">
+                                <tspan x="20.832" y="66">HTTP://</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'rsg-components/Styled';
-import logo from '../assets/img/logo.svg';
+import logo from '../assets/img/logo.png';
 
 const styles = () => ({
 	logo: {
-		display: 'flex',
-		alignItems: 'center',
-		margin: 0,
+    display: 'flex',
+    alignItems: 'center',
+    height: '64px',
+    margin: 0,
+    lineHeight: '64px',
 		fontSize: 20,
     color: '#000',
     cursor: 'pointer',
@@ -18,7 +20,9 @@ const styles = () => ({
     }
 	},
 	image: {
-    width: '22px',
+    width: '88px',
+    height: '28px',
+    verticalAlign: 'middle',
     marginRight: '6px'
   },
   text: {
@@ -31,7 +35,6 @@ export function LogoRenderer({ classes }) {
 	return (
   <a href='/' className={classes.logo}>
     <img className={classes.image} src={logo} />
-    <span>DBOX</span>
   </a>
 	);
 }
