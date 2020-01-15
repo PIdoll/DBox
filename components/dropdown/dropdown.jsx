@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import RcDropdown from 'rc-dropdown';
+import classNames from 'classnames';
 import './style/index'
 
 export default class Dropdown extends React.Component {
@@ -22,8 +23,13 @@ export default class Dropdown extends React.Component {
 }
 
   render() {
+    const {disabled, className, ...resetProps} = this.props;
+    const cls = classNames({
+      [`idoll-dropdown-disabled`]: disabled,
+      [className]: !!className
+    })
     return (
-      <RcDropdown {...this.props} />
+      <RcDropdown className={cls} {...resetProps} />
     )
   }
 }

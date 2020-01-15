@@ -12,6 +12,15 @@
   font-weight: normal;
   line-height: 1.5;
 
+  &-disabled,&-disabled:hover {
+    color: @text-color-disable;
+    background-color: @disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+    i {
+      color: @text-color-disable;
+    }
+  }
   .idoll-icon,
   .idoll-icon:hover,
   .idoll-icon:focus,
@@ -25,7 +34,16 @@
     color: @text-color;
     i:before {
       margin-left: 4px;
-      color: @text-color-disable
+      color: @text-color-disable;
+      transition: all 0.3s;
+    }
+    &-disabled,&-disabled:hover {
+      color: @text-color-disable;
+      cursor: not-allowed;
+      pointer-events: none;
+      i {
+        color: @text-color-disable;
+      }
     }
   }
   &-normal:hover {
@@ -104,6 +122,7 @@
 
       &-selected {
         color: @text-color;
+        background-color: @primary-lightBg;
       }
 
       &:hover {
@@ -118,7 +137,12 @@
         cursor: not-allowed;
         &:hover {
           color: @text-color-disable;
-          background-color: @dropdown-color;
+          cursor: not-allowed;
+          background-color: @white;
+        }
+        a,a:hover {
+          color: @text-color-disable;
+          background-color: @white;
           cursor: not-allowed;
         }
       }
@@ -229,6 +253,7 @@
   .@{iconfont-css-prefix}-down {
     font-size: @font-size-base;
     color: @text-color-disable;
+    transition: all 0.3s;
   }
 }
 

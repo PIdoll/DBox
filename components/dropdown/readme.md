@@ -289,7 +289,7 @@ function handleMenu1Click(e) {
 | trigger     | 触发下拉的行为   | ['click'] or ['hover'] | ['hover']        |
 | placement   | 菜单弹出位置   | string (`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`) | `bottomLeft`|
 | overlay     | 菜单  | Menu | - |
-| disabled     | 菜单是否禁用搭配按钮一起使用并放置于按钮身上 | `boolean` | false    |
+| disabled     | 菜单是否禁用 | `boolean` | false    |
 | visible     | 菜单是否显示 | Bool   | 无           |
 | onVisibleChange  | 菜单显示状态改变时调用，参数为 { visible } | Function | - |
 
