@@ -21,7 +21,7 @@ const styles = () => ({
 	},
 	image: {
     width: '88px',
-    height: '28px',
+    // height: '28px',
     verticalAlign: 'middle',
     marginRight: '6px'
   },
