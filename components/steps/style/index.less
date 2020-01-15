@@ -137,6 +137,28 @@
   }
 }
 
+.@{steps-prefix-cls}-label-vertical {
+  .@{steps-prefix-cls}-title {
+    font-size: @font-size-lg;
+    color: @text-color;
+    display: inline-block;
+    padding-right: @padding-md ;
+    position: relative;
+    line-height: @steps-icon-size;
+
+    &:after {
+      content: ' ';
+      height: 1px;
+      width: 9999px;
+      background: @wait-icon-color;
+      display: block;
+      position: absolute;
+      top: @steps-icon-size / 2;
+      left: 100%;
+    }
+  }
+}
+
 .@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) {
   .@{steps-prefix-cls}-item {
     margin-right: @steps-current-dot-size + 6;
@@ -162,37 +184,30 @@
 }
 
 .step-item-status(@status) {
-  @icon-color: "@{status}-icon-color";
-  @title-color: "@{status}-title-color";
-  @description-color: "@{status}-description-color";
-  @tail-color: "@{status}-tail-color";
-
+  @icon-color: '@{status}-icon-color';
+  @title-color: '@{status}-title-color';
+  @description-color: '@{status}-description-color';
+  @tail-color: '@{status}-tail-color';
   &-@{status} &-icon {
-    border-color: @@icon-color;
     background-color: @steps-background;
-
+    border-color: @@icon-color;
     > .@{steps-prefix-cls}-icon {
       color: @@icon-color;
-
       .@{steps-prefix-cls}-icon-dot {
         background: @@icon-color;
       }
     }
   }
-
-  &-@{status} > &-content > &-title {
+  &-@{status} > &-container > &-content > &-title {
     color: @@title-color;
-
-    &:after {
+    &::after {
       background-color: @@tail-color;
     }
   }
-
-  &-@{status} > &-content > &-description {
+  &-@{status} > &-container > &-content > &-description {
     color: @@description-color;
   }
-
-  &-@{status} > &-tail:after {
+  &-@{status} > &-container > &-tail::after {
     background-color: @@tail-color;
   }
 }
