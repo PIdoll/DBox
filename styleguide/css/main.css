@@ -114,7 +114,7 @@ a {
 }
 .header-warper-logo img {
   width: 88px;
-  height: 28px;
+  /* height: 28px; */
   vertical-align: middle;
   position: relative;
   top: -1px;
