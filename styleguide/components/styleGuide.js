@@ -23,7 +23,8 @@ const styles = ({ mq }) => ({
     background: 'rgba(255,255,255,1)',
 	},
 	bar: {
-    width: '90%',
+    padding: '0 120px',
+    height: '64px',
     margin: '0 auto',
 		display: 'flex',
 		alignItems: 'center',
@@ -44,7 +45,7 @@ const styles = ({ mq }) => ({
     borderRight: '1px solid #eaeefb',
     minWidth: '120px',
     position: 'fixed',
-    top: '0',
+    top: '10px',
     left: '5%',
     marginRight: '-16%',
     marginTop: '72px',

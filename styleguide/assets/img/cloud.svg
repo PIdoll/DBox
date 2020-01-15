@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="116px" height="97px" viewBox="0 0 116 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>cloud</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M898.526316,41 C898.340356,41 898.161436,40.9698618 897.994172,40.9142034 C897.512952,40.9707836 897.02301,41 896.526316,41 C889.608223,41 884,35.3321154 884,28.3404255 C884,21.3487356 889.608223,15.6808511 896.526316,15.6808511 C897.320213,15.6808511 898.09686,15.7554919 898.849761,15.8982085 C900.880531,10.1300847 906.331447,6 912.736842,6 C920.875775,6 927.473684,12.6680995 927.473684,20.893617 C927.473684,21.3073004 927.456996,21.7170445 927.424262,22.1221993 C928.366834,21.8079702 929.374337,21.6382979 930.421053,21.6382979 C935.711359,21.6382979 940,25.9725625 940,31.3191489 C940,36.1119284 936.553793,40.0912402 932.029091,40.8641834 C931.826867,40.9519373 931.603257,41 931.368421,41 L898.526316,41 Z" id="path-2"></path>
+        <filter x="-92.9%" y="-125.7%" width="285.7%" height="397.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页-20191225" transform="translate(-923.000000, -120.000000)">
+            <g id="section-01" transform="translate(0.000000, 80.000000)">
+                <g id="插图" transform="translate(69.000000, 56.000000)">
+                    <g id="colud">
+                        <g id="cloud">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
