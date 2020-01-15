@@ -53,9 +53,9 @@ import { Affix, Button } from 'dbox-ui';
 class AffixView extends React.Component{
   render() {
     return (
-      <div ref={(node) => { this.div = node; }} style={{height: '100px', overflow: 'scroll'}}>
+      <div id='container' style={{height: '100px', overflow: 'scroll'}}>
         <div style={{backgroundColor: '#dedede', paddingTop: '30px', height: '300px'}}>
-          <Affix target={() => this.container}>
+          <Affix target={() => document.getElementById('container')}>
             <Button type="primary">
                 固定在容器的顶部
             </Button>
