@@ -139,10 +139,10 @@ export function StyleGuideRenderer({ classes, title, children, toc }) {
       </aside>
       <main className={classes.content}>
         <div className={classes.innerCont}>{children}</div>
-        <footer className={classes.footer}>
+        {/* <footer className={classes.footer}>
           <a className={classes.aboutUs}>关于我们</a>
           <a className={classes.github} href='https://github.com/PIdoll'><img src={githubImg} className={classes.images} /><span>Github</span></a>
-        </footer>
+        </footer> */}
       </main>
     </div>
   </div>
