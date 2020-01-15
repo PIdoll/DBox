@@ -3,6 +3,7 @@
   .@{steps-prefix-cls}-item {
     display: block;
     overflow: visible;
+    min-height: 92px;
     &-icon {
       float: left;
       margin-right: 16px;
@@ -83,6 +84,12 @@
 .@{steps-prefix-cls}-vertical {
   .steps-vertical;
 }
+
+.@{steps-prefix-cls}-vertical.@{steps-prefix-cls}-small {
+    .@{steps-prefix-cls}-item {
+      min-height: 66px;
+    }
+  }
 
 @media (max-width: @screen-xs) {
   .@{steps-prefix-cls}-horizontal.@{steps-prefix-cls}-label-horizontal {
