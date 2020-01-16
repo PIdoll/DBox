@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>download</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页-20191225" transform="translate(-608.000000, -1590.000000)">
+            <g id="section-03" transform="translate(0.000000, 1290.000000)">
+                <g id="编组-5" transform="translate(120.000000, 260.000000)">
+                    <g id="编组-3">
+                        <g id="download" transform="translate(488.000000, 40.000000)">
+                            <circle id="椭圆形" fill="#13B886" cx="32" cy="32" r="32"></circle>
+                            <g transform="translate(12.000000, 12.000000)" fill-rule="nonzero">
+                                <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="40" height="40"></rect>
+                                <path d="M31.6666667,20 L31.6666667,31.6666667 L8.33333332,31.6666667 L8.33333332,20 L5,20 L5,31.6666667 C5,33.5 6.5,35 8.33333332,35 L31.6666667,35 C33.5,35 35,33.5 35,31.6666667 L35,20 L31.6666667,20 Z M21.6666667,21.1666667 L26,16.8333333 L28.3333333,19.1666667 L20,27.5 L11.6666667,19.1666667 L14,16.8333333 L18.3333333,21.1666667 L18.3333333,5 L21.6666667,5 L21.6666667,21.1666667 L21.6666667,21.1666667 Z" id="形状" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

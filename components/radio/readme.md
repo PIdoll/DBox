@@ -279,6 +279,7 @@ const RadioButton = Radio.RadioButton;
 | --- | --- | --- | --- | --- |
 | checked | 指定当前是否选中 | boolean | false |
 | disabled | 禁用 | boolean | false |
+| readOnly | 只读 | boolean | false |
 | defaultChecked | 初始是否选中 | boolean | false |
 | value | 根据 value 进行比较，判断是否选中 | any | 无 |
 
@@ -293,6 +294,7 @@ const RadioButton = Radio.RadioButton;
 | name | RadioGroup 下所有 `input[type="radio"]` 的 `name` 属性 | string | 无 |
 | size | 大小，只对按钮样式生效 | `large` \ `default` \ `small` |`default`|
 | value | 用于设置当前选中的值 | any | 1 |
+| readOnly | 只读 | boolean | false |
 | onChange | 选项变化时的回调函数 | Function(e:Event) | 无 |
 | buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | 默认描边 \ `solid`填充 | 无 |
 

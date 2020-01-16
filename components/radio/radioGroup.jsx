@@ -46,7 +46,8 @@ export default class RadioGroup extends React.Component {
         onChange: this.onRadioChange,
         value: this.state.value,
         disabled: this.props.disabled,
-        name: this.props.name
+        name: this.props.name,
+        readOnly: this.props.readOnly
       }
     }
   }
@@ -83,7 +84,7 @@ export default class RadioGroup extends React.Component {
   }
   render() {
     const props = this.props;
-    const { prefixCls = props.buttonStyle === 'solid' ? 'idoll-radio-group-solid' : 'idoll-radio-group', className = '', options } = props;
+    const { prefixCls = props.buttonStyle === 'solid' ? 'idoll-radio-group-solid' : 'idoll-radio-group', className = '', options, readOnly } = props;
     const classString = classNames(prefixCls, {
       [`${prefixCls}-${props.size}`]: props.size,
       [`${prefixCls}-vertical`]: props.direction
@@ -93,13 +94,13 @@ export default class RadioGroup extends React.Component {
       children = options.map((option, index) => {
         if (typeof option === 'string') {
           return (
-            <Radio key={index} disabled={this.props.disabled} value={option} onChange={this.onRadioChange} checked={this.state.value === option}>
+            <Radio readOnly={readOnly} key={index} disabled={this.props.disabled} value={option} onChange={this.onRadioChange} checked={this.state.value === option}>
               {option}
             </Radio>
           )
         } else {
           return (
-            <Radio key={index} disabled={option.disabled || this.props.disabled} value={option.value} onChange={this.onRadioChange} checked={this.state.value === option.value}>
+            <Radio readOnly={readOnly} key={index} disabled={option.disabled || this.props.disabled} value={option.value} onChange={this.onRadioChange} checked={this.state.value === option.value}>
               {option.label}
             </Radio>
           )

@@ -8,6 +8,7 @@ export default class BasicRadio extends React.Component {
         <Radio>A</Radio>
         <Radio checked>B</Radio>
         <Radio defaultChecked>C</Radio>
+        <Radio readOnly>D</Radio>
       </div>
     )
   }

@@ -4,6 +4,9 @@ import Dropdown from './dropdown'
 import classNames from 'classnames'
 
 export default class DropdownNormal extends React.Component {
+  static defaultProps = {
+    prefixCls: 'idoll-dropdown-normal'
+  };
   state = {
     visible: false
   };
@@ -19,10 +22,11 @@ export default class DropdownNormal extends React.Component {
   }
   render() {
     const {
-      children, className, overlay, trigger, align, ...restProps
+      children, prefixCls, disabled, className, overlay, trigger, align, ...restProps
     } = this.props;
     const cls = classNames({
-      'idoll-dropdown-normal': true,
+      [prefixCls]: true,
+      [`${prefixCls}-disabled`]: disabled,
       [className]: !!className
     })
     return (

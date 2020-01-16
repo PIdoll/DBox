@@ -37,11 +37,15 @@ export default class Radio extends React.Component {
     const { prefixCls, className, children, style, ...restProps } = props;
     const { radioGroup } = context;
     let radioProps = Object.assign({}, restProps);
+    if (radioProps.readOnly) {
+      radioProps.disabled = radioProps.readOnly
+    }
     if (radioGroup) {
       radioProps.name = radioGroup.name;
       radioProps.onChange = radioGroup.onChange;
+      radioProps.readOnly = radioGroup.readOnly;
       radioProps.checked = props.value === radioGroup.value;
-      radioProps.disabled = props.disabled || radioGroup.disabled;
+      radioProps.disabled = props.disabled || radioGroup.disabled || radioProps.readOnly;
     }
     const wrapperClassString = classNames(className, {
       [`${prefixCls}-wrapper`]: true,
@@ -52,7 +56,7 @@ export default class Radio extends React.Component {
     return (
       <label className={wrapperClassString} style={style} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
         <RcCheckbox {...radioProps} prefixCls={prefixCls} ref={this.saveCheckbox} />
-        {children !== undefined ? <span>{children}</span> : null}
+        {children !== undefined ? <span id={radioProps.readOnly && `${prefixCls}-readOnly`}>{children}</span> : null}
       </label>
     )
   }
