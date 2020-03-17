@@ -145,6 +145,14 @@
     border-color: @btn-ghost-border;
     color: @btn-ghost-color;
     .button-variant-ghost(@btn-ghost-color);
+    .@{idoll-prefix}-icon {
+      color: @btn-ghost-border;
+    }
+    &:hover,&:active,&:focus {
+      .@{idoll-prefix}-icon {
+        color: @btn-ghost-border;
+      }
+    }
   }
 
   &-background-ghost&-primary {
