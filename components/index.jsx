@@ -49,56 +49,63 @@ import Version from './version';
 import PrevPage from './prevPage';
 import Empty from './empty';
 import ConfigProvider from './config-provider';
+import Color from './color';
+import Typography from './typography';
 
+export {
+  Affix,
+  Alert,
+  AutoComplete,
+  Avatar,
+  Anchor,
+  BackTop,
+  Badge,
+  Breadcrumb,
+  Button,
+  Calendar,
+  Cascader,
+  Checkbox,
+  Collapse,
+  DatePicker,
+  Divider,
+  Dropdown,
+  Drawer,
+  Form,
+  Row,
+  Col,
+  Icon,
+  Input,
+  InputNumber,
+  Layout,
+  Menu,
+  Message,
+  Modal,
+  Pagination,
+  Popconfirm,
+  Popover,
+  Progress,
+  Radio,
+  Select,
+  Slider,
+  Spin,
+  Steps,
+  Switch,
+  Table,
+  Tabs,
+  Tag,
+  TimePicker,
+  Timeline,
+  Tooltip,
+  Tree,
+  Transfer,
+  TreeSelect,
+  Upload,
+  Version,
+  PrevPage,
+  Empty,
+  ConfigProvider,
+  Color,
+  Typography
+};
 
-export { Affix };
-export { Alert };
-export { AutoComplete };
-export { Avatar };
-export { Anchor };
-export { BackTop };
-export { Badge };
-export { Breadcrumb };
-export { Button };
-export { Calendar };
-export { Cascader };
-export { Checkbox };
-export { Collapse };
-export { DatePicker };
-export { Divider };
-export { Dropdown };
-export { Drawer };
-export { Form };
-export { Row, Col };
-export { Icon };
-export { Input };
-export { InputNumber };
-export { Layout };
-export { Menu };
-export { Message };
-export { Modal };
-export { Pagination };
-export { Popconfirm };
-export { Popover };
-export { Progress };
-export { Radio };
-export { Select };
-export { Slider };
-export { Spin };
-export { Steps };
-export { Switch };
-export { Table };
-export { Tabs };
-export { Tag };
-export { TimePicker };
-export { Timeline };
-export { Tooltip };
-export { Tree };
-export { Transfer };
-export { TreeSelect };
-export { Upload };
-export { Version };
-export { PrevPage };
-export { Empty };
-export { ConfigProvider };
 
