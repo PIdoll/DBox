@@ -769,7 +769,7 @@ export default class Table extends React.Component {
   getOddEven = (index) => {
     if (this.props.zebraColor) {
       return index % 2 === 1 ? `${this.props.prefixCls}-row-zebraColor-even` : `${this.props.prefixCls}-row-zebraColor-odd`;
-    } else if (this.state.selectedRowKeys.includes(`${index + 1}`)) {
+    } else if (this.state.selectedRowKeys.includes(index)) {
       return `${this.props.prefixCls}-row-zebraColor-even`
     } else {
       return null

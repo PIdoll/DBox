@@ -28,7 +28,7 @@
 ```jsx
 import {Icon} from 'dbox-ui';
 
-const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up', 'down', 'forward', 'fullscreen-exit','fullscreen', 'left','left-circle-o', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','right-circle-o','shrink','swap-horiz','swap-vert','undo','up','zoom-out','insertion','demolitions','caret-right-circle','caret-left-circle','caret-up-circle','caret-down-circle'];
+const icons1 = ['arrows-alt', 'backspace', 'backward', 'caret-down','caret-left', 'caret-right', 'caret-up','caret-right-circle','caret-left-circle', 'caret-up-circle','caret-down-circle', 'demolitions', 'down', 'forward', 'fullscreen-exit','fullscreen','insertion', 'left','left-circle-o', 'menu-fold', 'menu-unfold','redo', 'reply-all','reply','right','right-circle-o','shrink','swap-horiz','swap-vert','undo','up','zoom-out'];
 class IconView extends React.Component {
   render() {
     return (
@@ -44,8 +44,7 @@ class IconView extends React.Component {
 
 ```jsx
 import {Icon} from 'dbox-ui';
-const icons2 = ['bars','block','check','check-circle-o','check-circle','checkbox-blank-o', 'checkbox-checked','checkbox-indeterminate','close-circle','close-circle-o','close','delete','done',
-'error-circle-o','error-circle','filter','help-circle-o','help-circle','history', 'info-circle-o','info-circle', 'list','loading','menu','more','plus_box','plus-circle-o',
+const icons2 = ['bars','block','check','check-circle-o','check-circle','checkbox-blank-o', 'checkbox-checked','checkbox-indeterminate','close-circle','close-circle-o','close','delete','done', 'error-circle-o','error-circle','filter','help-circle-o','help-circle','history', 'info-circle-o','info-circle', 'list','loading','menu','more','plus_box','plus-circle-o',
 'plus-circle','plus','radio-checked','radio-unchecked','refresh','remove-circle-o','remove-circle','remove','search','warning-o','warning'];
 
 class IconView extends React.Component {
@@ -63,8 +62,7 @@ class IconView extends React.Component {
 
 ```jsx
 import {Icon} from 'dbox-ui';
-const icons3 = ['account-circle-o','account-circle','achievement','appstore-o','assessment','bank-o','bank','book','calendar','chart','clear','clip','clock-o','cloud-download','cloud-upload','cloud','computer','copy','copyright','creditcard','dashboard','download','edit','email','equalizer','explore','eye_close','eye','file','flag','folder','home','hourglass','image','link-off','link','lock','logout','message','notifications','phone','platform','sad','setting','share','smile','star-half','star-o','star','tag','thumb-down','thumb-up','tool','trophy','unlock','upload','user-add','user-group','user','verified','voice','volume-down','volume-mute','volume-off','volume-up','wallet','widgets','training','idle','transfer','phone-circle-o','process','match','knowledge','headset','group','phone-callback','phone-second-forward','phone-in-talk','phone-paused','phone-transfer','phone-end','phone-deal','print'
-,'phone-locked','sign-out','sign-in','security'];
+const icons3 = ['assistant', 'account-circle-o','account-circle','achievement','appstore-o','assessment','bank-o','bank','book','calendar','chart','clear','clip','clock-o','cloud-download','cloud-upload','cloud','computer','copy','copyright','creditcard','dashboard','download','edit','email','equalizer','explore','eye_close','eye','file','flag','folder','group','home','hourglass','headset','image','idle','knowledge','link-off','link','lock','logout','message','match','notifications','phone-circle-o','process', 'position', 'pause_circle','phone','phone-locked', 'phone-callback','phone-second-forward','phone-in-talk','phone-paused','phone-transfer','phone-end','phone-deal','print','platform','sad','setting','share','smile','star-half','star-o','star','sign-out','sign-in','security','training','transfer','tag','thumb-down','thumb-up','tool','trophy','unlock','upload','user-add','user-group','user','verified','voice','volume-down','volume-mute','volume-off','volume-up','wechat', 'wallet','widgets'];
 
 class IconView extends React.Component {
   render() {
