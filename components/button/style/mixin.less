@@ -48,9 +48,7 @@
   .button-color(@color; @background; @background);
   &:hover,
   &:focus {
-    // .button-color(@color; @primary-hover; @primary-hover);
     > .@{iconfont-css-prefix} {
-      // color: @color;
       color: @color;
     }
     .button-color(@color; @primary-hover; @primary-hover);
@@ -124,11 +122,23 @@
   &:hover,
   &:focus {
     .button-color(darken(@color, 10%); transparent; darken(@color, 10%));
+    i {
+      .button-color(darken(@color, 10%); transparent; darken(@color, 10%));
+      transition: all .3s @ease-in-out;
+    }
+  }
+
+  i {
+    color: @color;
   }
 
   &:active,
   &.active {
     .button-color(darken(@color, 15%); transparent; darken(@color, 15%));
+    i {
+      .button-color(darken(@color, 15%); transparent; darken(@color, 15%));
+      transition: all .3s @ease-in-out;
+    }
   }
 
   // 幽灵按钮禁用状态设置
@@ -140,6 +150,9 @@
     &:active,
     &.active {
       .button-color(@text-color-disable-dark; @btn-disable-bg; @text-color-disable-dark);
+      i {
+        color: @text-color-disable-dark
+      }
     }
   }
 }
@@ -312,9 +325,6 @@
 // 危险按钮
 .btn-danger() {
   .button-variant-danger(@error-color, @btn-default-bg,  @btn-default-border);
-  .idoll-icon {
-    color: @error-color;
-  }
 }
 
 // 特定按钮: 内容只包含 icon
