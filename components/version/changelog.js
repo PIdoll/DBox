@@ -1,3 +1,11 @@
+let version031 = [
+  {
+    title: '🐞 修复 色彩和字体中图片引入错误的问题 ',
+    href: 'https://github.com/PIdoll/DBox/pull/530',
+    reqId: '#530'
+  }
+];
+
 let version030 = [
     {
         title: '🐞 修复 组件文档色彩和字体模块报错 ',
@@ -163,6 +171,7 @@ let version028 = [
 ];
 
 export {
+    version031,
     version030,
     version029,
     version028
