@@ -1,6 +1,7 @@
 import React from 'react';
 import Timeline from '../timeline';
 import {
+  version031,
   version030,
   version029,
   version028
@@ -20,6 +21,13 @@ class Version extends React.Component {
     return (
       <div >
         <Timeline >
+          <Timeline.Item>
+            <h2>0.3.1</h2>
+            <p >2020-03-26</p>
+            <ul>
+              {item(version031)}
+            </ul>
+          </Timeline.Item>
           <Timeline.Item>
             <h2>0.3.0</h2>
             <p >2020-03-26</p>
