@@ -1,3 +1,11 @@
+let version032 = [
+  {
+    title: '🐞 修复 色彩和字体中图片引入错误的问题使用当前文件相对路径 ',
+    href: 'https://github.com/PIdoll/DBox/pull/534',
+    reqId: '#534'
+  }
+];
+
 let version031 = [
   {
     title: '🐞 修复 色彩和字体中图片引入错误的问题 ',
@@ -171,6 +179,7 @@ let version028 = [
 ];
 
 export {
+    version032,
     version031,
     version030,
     version029,
