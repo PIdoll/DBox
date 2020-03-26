@@ -1,5 +1,5 @@
 import React from 'react';
-import colorImg from 'assets/images/Color.png';
+import colorImg from './style/Color.png';
 
 import PrimaryColor from './primaryColor';
 import FunctionColor from './functionColor';
