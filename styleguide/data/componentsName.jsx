@@ -49,7 +49,6 @@ export default {
   Form: '表单',
   Checkbox: '多选框',
   Popconfirm: '气泡确认框',
-
   Color: '色彩',
   Typography: '字体',
   General: '通用',

@@ -464,7 +464,7 @@ class Cascader extends React.Component {
 
     const loadingIcon = (
       <span className={`${prefixCls}-menu-item-loading-icon`}>
-        <Icon type='redo' spin />
+        <Icon type='refresh' spin />
       </span>
     );
 
