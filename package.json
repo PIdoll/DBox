@@ -35,7 +35,7 @@
     "enquire-js": "^0.1.1",
     "gregorian-calendar": "^4.1.0",
     "gregorian-calendar-format": "^4.1.0",
-    "moment": "2.22.2",
+    "moment": "2.29.4",
     "object.omit": "^3.0.0",
     "omit": "^1.0.1",
     "omit.js": "1.0.0",
